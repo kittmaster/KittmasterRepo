@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="repository.kittmaster" name="KittmasterRepo" version="1.0.01" provider-name="kittmaster">
+<addons><addon id="repository.kittmaster" name="KittmasterRepo" version="1.0.02" provider-name="kittmaster">
     <extension point="xbmc.addon.repository" name="Kittmaster Repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml</info>
