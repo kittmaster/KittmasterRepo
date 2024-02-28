@@ -30,6 +30,11 @@
 		</requires>
 		<extension point="xbmc.gui.skin" debugging="false">
 			<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+			<dir>
+				<info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml</info>
+				<checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml.md5</checksum>
+				<datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/</datadir>
+			</dir>
 		</extension>
 		<extension point="xbmc.addon.metadata">
 			<summary lang="en_GB">A feature rich and fully customisable skin</summary>
