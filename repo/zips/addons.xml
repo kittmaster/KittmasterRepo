@@ -5,7 +5,7 @@
             <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/</datadir>
-			<hashes>false</hashes>
+			<hashes>true</hashes>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
