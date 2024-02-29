@@ -4,7 +4,7 @@
 
 Madnox is one of the most eye candy driven skins for Kodi.
 
-#### Features
+### Features
 
 * Clean and simple user interface
 * Smooth transitions and animations
@@ -14,7 +14,7 @@ Madnox is one of the most eye candy driven skins for Kodi.
 * Works on Amazon fire devices
 * Mouse and touchscreen capable
 
-#### Installation (2 options)
+### Installation (2 options)
 
 1. Install by zip file ( No auto updates ) 
 2. Install Kittmaster's Repository ( Auto update notifications & installation )
