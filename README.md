@@ -43,14 +43,14 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 ### Translations
 We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future capabilities to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve.
 
-#### Credits
+### Credits
 To: Mr. V and his predecessors work, of which this is a continuation.
 
-#### Further information
+### Further information
 See https://forum.kodi.tv/forumdisplay.php?fid=314 for more information.
 
-#### License
+### License
 Please make sure you observe the skin's license. All parts, including textures, are for non-commercial use.
 
-#### Contact
+### Contact
 Support should only be obtained via the forum link above. Bug reports can be listed on the forum or by adding an issue here.
