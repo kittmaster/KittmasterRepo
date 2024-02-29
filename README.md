@@ -106,3 +106,29 @@ And upload the contents of this repository to your host. It is **very important*
 After doing so, your file manager source will be:
 
 `https://YOUR_HOST_URL_HERE/`
+
+### Pushing an update
+0. To add a new addon, open terminal in repo folder: git submodule add https://github.com/realcopacetic/xyz
+1. Update the addon and bump the addon version number
+2. git submodule update --remote
+3. python3 _repo_generator.py
+3a. Manually delete older zip files now if needed
+3b. git maintenance start / run
+4. git diff / ls / git status to check
+5. git add .
+6. git commit -m "commit comment"
+7. git push origin
+
+### Troubleshooting
+If you clone repo with submodules on a new machine and get an error when updating submodules, check .gitmodules. script.copacetic.helper may need branch = main for it to know there is not a master branch.
+
+### Useful git commands
+1. git submodule update --init --recursive --remote
+** change the branch in .gitmodules then run this to update the branches used for submodules
+Then do normal submodule update
+
+2. git checkout --orphan new_branch_name
+** create a new branch without commit history (then do normal add ., commit, push origin to new repo name)
+
+3. git pull origin master --allow-unrelated-histories
+After doing 1, you need to do this to allow a pull request to be merged back to master, will need to manually resolve conflicts
