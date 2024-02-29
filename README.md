@@ -17,7 +17,7 @@ Madnox is one of the most eye candy driven skins for Kodi.
 #### Installation (2 options)
 
   A) Install by zip file ( no auto updates ) 
-  B) Install Kittmaster's Repository ( Auto update notifications & installation)
+  B) Install Kittmaster's Repository ( Auto update notifications & installation )
 
 Note: The skin is a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Madnox v3. This statement is written 2/24/2024 by Kittmaster.
 
