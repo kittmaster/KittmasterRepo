@@ -36,15 +36,15 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 2. Give the repository a name you will remember it as, or leave as the default value during installation.
 3. Click OK
 3. The Kittmaster Repository will now be installed as a source option in Add-ons to install the skin, this may take a few minutes.
-4. Go to System -> Add-ons -> Install from repository -> Select Kittmaster Repo (or the name you provided) -> Look and Feel -> Skin -> Click Madnox to Install Skin and all of its dependencies.
+4. Go to System -> Add-ons -> Install from repository -> Select Kittmaster Repo (or the name you provided) -> Look and Feel -> Skin -> Click Madnox to install skin and all of its dependencies.
 5. When complete, you will be asked if you would like to keep the new skin, select Yes.
 
 
 ### Translations
-We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future proof updates to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve.
+We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future capabilities to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve.
 
 #### Credits
-To Mr. V and his predecessors work, of which this is a continuation.
+To: Mr. V and his predecessors work, of which this is a continuation.
 
 #### Further information
 See https://forum.kodi.tv/forumdisplay.php?fid=314 for more information.
