@@ -32,11 +32,12 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 
 #### Option 2 (New way > Recommended for updates)
 
-1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK Add source -> DOUBLE CLICK <None> -> Paste (Control V): https://kittmaster.github.io/KittmasterRepo/ -> Click Done -> Click OK.
+1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK Add source -> DOUBLE CLICK <None> -> Paste (Control V): https://kittmaster.github.io/KittmasterRepo/ -> Click Done.
 2. Give the repository a name you will remember it as, or leave as the default value during installation.
-3. The Kittmaster Repository will now be installed as a source option in Add-ons, this may take a few minutes.
-4. Go to Add-ons -> Install from repository -> Select Kittmaster Repo (or the name you provided) -> Look and Feel -> Skin -> Click Madnox to Install & Dependencies.
-5. You will be asked if you would like to keep the new skin, select Yes.
+3. Click OK
+3. The Kittmaster Repository will now be installed as a source option in Add-ons to install the skin, this may take a few minutes.
+4. Go to System -> Add-ons -> Install from repository -> Select Kittmaster Repo (or the name you provided) -> Look and Feel -> Skin -> Click Madnox to Install Skin and all of its dependencies.
+5. When complete, you will be asked if you would like to keep the new skin, select Yes.
 
 
 ### Translations
