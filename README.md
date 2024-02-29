@@ -1,134 +1,52 @@
-Tutorial and example repository for setting up a GitHub-hosted Kodi repo. For an example of a repo created using this method (including submodules), see https://www.github.com/jurialmunkey/repository.jurialmunkey/.
+## Madnox for Kodi (Matrix/Nexus/Omega+)
 
-# BASIC - How to setup for hosting on GitHub Pages
+![Madnox Logo](https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png)
 
-In order to follow this tutorial, first [use this repository as a template](https://github.com/drinfernoo/repository.example/generate) for a new repository, and then clone your newly created repository locally. For the simplest file manager source URL, it is recommended to name your newly created repository as `YOUR_USERNAME_HERE.github.io`.
+Madnox is one of the most eye candy driven skins for Kodi.
 
-### Creating your repository add-on
----
-First, you'll need to edit the `addon.xml` file within the `/repo/repository.example` folder with your chosen add-on ID, a version number, and your username (or whatever you'd like) for `provider`, as seen on line 2:
+#### Features
 
-```XML
-<addon id="ADDON_ID_HERE" name="REPO_NAME_HERE" version="VERSION_NUMBER_HERE" provider-name="YOUR_USERNAME_HERE">
-```
+* Clean and simple user interface
+* Smooth transitions and animations
+* Dynamic theme and customization
+* Supports multiple languages
+* Support for low powered devices
+* Works on Amazon Fire Devices
+* Mouse and touchscreen capable
 
-You also need to replace `YOUR_USERNAME_HERE`, `REPOSITORY_NAME_HERE`, and `BRANCH_NAME_HERE` with your GitHub username, this repository's name, and the name of the branch (it's recommended to use the default branch, ususally `master` or `main`) respectively, as seen on lines 4-8:
+#### Installation (2 options: A) Install by zip ( no auto updates ) | B) Install Kittmaster's Repository ( Auto update notifications & install) )
 
-```XML
-<dir>
-    <info compressed="false">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/BRANCH_NAME_HERE/repo/zips/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/BRANCH_NAME_HERE/repo/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/BRANCH_NAME_HERE/repo/zips/</datadir>
-</dir>
-```
+Note: The skin a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Madnox. This statement is written 2/24/2024 by Kittmaster.
 
-You should also change the summary and description of your repository, as seen on lines 11-12:
+#### Option 1 (Old way)
 
-```XML
-<summary>REPO_NAME_HERE</summary>
-<description>DESCRIPTION OF YOUR REPO HERE</description>
-```
+1. Click the latest zip file found here: https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/skin.madnox/
+2. Download the zip by clicking the download icon (Download raw file -> left of the pencil): https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/skin.madnox/
+3. Start Kodi and go to Settings -> Add-ons and select "Install from zip file".
+4. Browse for the file downloaded and press "OK".
+5. The skin and dependencies will now be installed, this may take a few minutes.
+6. You will be asked if you would like to keep the new skin, select Yes.
 
-While not required, it is also recommended to replace `icon.png` and `fanart.jpg` in the `repository.example` folder with art relevant to your repository or the add-ons contained within. `icon.png` should be 512x512 px, and `fanart.jpg` should be 1920x1080 px, or a similar ratio.
+#### Option 2 (New way > Recommended for updates)
 
-Finally, rename the `repository.example` folder to match whatever add-on ID you chose earlier.
+1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK Add source -> DOUBLE CLICK <None> -> Paste (Control V): https://kittmaster.github.io/KittmasterRepo/ -> Click Done -> Click OK.
+2. Give the repository a name you will remember it as, or leave as the default value during installation.
+3. The Kittmaster Repository will now be installed as a source option in Add-ons, this may take a few minutes.
+4. Go to Add-ons -> Install from repository -> Select Kittmaster Repo (or the name you provided) -> Look and Feel -> Skin -> Click Madnox to Install & Dependencies.
+5. You will be asked if you would like to keep the new skin, select Yes.
 
-### Adding add-ons to your repository
----
-To build the repository, first place the add-on source folders for whichever add-ons you'd like to be contained in your Kodi repo inside this repository. For ease of updating included add-ons, the recommended method of doing this is via [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), which are supported by many Git clients, as well as the Git terminal. If you choose not to use submodules, you'll need to simply copy the source folders directly into this repository.
 
-The `_repo_xml_generator.py` script included in this repository with build `.zip` files for each included add-on, as well as generating the necessary `addons.xml` and `addons.xml.md5` files, so that Kodi can infer the contents of the repo. It is designed to handle multiple versions of Kodi (for example, to serve different add-ons to Leia than are served to Matrix), and single repositories that serve the same add-ons to all Kodi versions.
+### Translations
+We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future proof updates to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve.
 
-##### Same add-ons to all versions (default)
----
-Place your add-on source folders in the `repo` folder of this repository.
-##### Different add-ons to different versions (advanced)
----
-Place your add-on source folders into a folder named after the version of Kodi you wish to serve from it, instead of `/repo`. For example, `/leia` for a Leia-focused repo, or `/matrix` for a Matrix-focused one. In order for your repository to be able to differentiate which add-ons to serve, you'll need to add a new `dir` section to your `addon.xml`, that defines which versions should be served.
+#### Credits
+To Mr. V and his predecessors work, of which this is a continuation.
 
-For example, to serve Leia only:
-```XML
-<dir minversion="18.0.0" maxversion="18.9.9">
-    <info compressed="false">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/leia/zips/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/leia/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/leia/zips/</datadir>
-</dir>
-```
-And for Matrix and up:
-```XML
-<dir minversion="19.0.0">
-    <info compressed="false">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/matrix/zips/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/matrix/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/matrix/zips/</datadir>
-</dir>
-```
----
-After adding your source folders, simply run `_repo_generator.py`. This will create `.zip`s of all of the desired add-ons, and place them in subfolders called `zips`, along with the generated `addons.xml` and `addons.xml.md5`. As of version 3, this script can create distributions for Krypton, Leia, Matrix, and Nexus, as well as the generic "repo", which is intended to serve to any version (like for the repository itself, or any cross-version libraries and dependencies).
+#### Further information
+See https://forum.kodi.tv/forumdisplay.php?fid=314 for more information.
 
-### Make your repository zip installable inside Kodi
----
-Copy the zip file of your repository, located at `REPO_FOLDER/zips/ADDON_ID_HERE/ADDON_ID_HERE-VERSION_NUMBER_HERE.zip`,
-and paste it into the root folder.
+#### License
+Please make sure you observe the skin's license. All parts, including textures, are for non-commercial use.
 
-Edit the link inside `index.html` to reflect your add-on's filename, as seen on line 1:
-
-```HTML
-<a href="ADDON_ID_HERE-VERSION_NUMBER_HERE.zip">ADDON_ID_HERE-VERSION_NUMBER_HERE.zip</a>
-```
-
-After committing and pushing these changes to your repo, go to the "Settings" section for this repository on GitHub. In the first box, labeled "Repository name", change your repository's name. Generally, GitHub Pages repositories are named `YOUR_USERNAME_HERE.github.io`,  but it can be whatever you'd like.
-Next, scroll down to the "GitHub Pages" section, choose the default branch (or whichever you chose when modifying your `addon.xml`) as the source, and click "Save".
-
-After that, you should be all done!
-
-If you named this repository `YOUR_USERNAME_HERE.github.io` (as recommended), your file manager source will be:
-
-`https://YOUR_USERNAME_HERE.github.io/`
-
-If you named it something else, it will be:
-
-`https://YOUR_USERNAME_HERE.github.io/REPOSITORY_NAME_HERE/`
-
-# ADVANCED - How to set up for hosting without GitHub Pages
-
-If you want to host your Kodi repo on a different host besides GitHub Pages, simply download this repository as a `.zip`, and unzip it, rather than using it as a template. Continue to follow the rest of the setup procedure, except for the setting up of GitHub Pages. The only differences will be in your `addon.xml` file, as it will need to reference your host, rather than GitHub:
-
-```XML
-<dir>
-    <info compressed="false">https://YOUR_HOST_URL_HERE/repo/zips/addons.xml</info>
-    <checksum>https://YOUR_HOST_URL_HERE/repo/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://YOUR_HOST_URL_HERE/repo/zips/</datadir>
-</dir>
-```
-
-And upload the contents of this repository to your host. It is **very important** that `YOUR_HOST_URL_HERE` is the URL to the *root* folder of this repository.
-
-After doing so, your file manager source will be:
-
-`https://YOUR_HOST_URL_HERE/`
-
-### Pushing an update
-0. To add a new addon, open terminal in repo folder: git submodule add https://github.com/realcopacetic/xyz
-1. Update the addon and bump the addon version number
-2. git submodule update --remote
-3. python3 _repo_generator.py
-3a. Manually delete older zip files now if needed
-3b. git maintenance start / run
-4. git diff / ls / git status to check
-5. git add .
-6. git commit -m "commit comment"
-7. git push origin
-
-### Troubleshooting
-If you clone repo with submodules on a new machine and get an error when updating submodules, check .gitmodules. script.copacetic.helper may need branch = main for it to know there is not a master branch.
-
-### Useful git commands
-1. git submodule update --init --recursive --remote
-** change the branch in .gitmodules then run this to update the branches used for submodules
-Then do normal submodule update
-
-2. git checkout --orphan new_branch_name
-** create a new branch without commit history (then do normal add ., commit, push origin to new repo name)
-
-3. git pull origin master --allow-unrelated-histories
-After doing 1, you need to do this to allow a pull request to be merged back to master, will need to manually resolve conflicts
+#### Contact
+Support should only be obtained via the forum link above. Bug reports can be listed on the forum or by adding an issue here.
