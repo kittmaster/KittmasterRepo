@@ -157,14 +157,25 @@
 				<onright>605301</onright>
 			</control>
 		</control>
-		<!-- Media flags -->
+        <!-- Media flags -->
+		
+		<!-- Original code, causes icon overlap and should be abandoned        
 		<control type="group">
-			<visible>Control.IsVisible(530)</visible>
-			<include content="AnimationSlideBottomWindow">
-				<param name="slide">220</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos4</include>
+            <visible>Control.IsVisible(530)</visible>
+            <include content="AnimationSlideBottomWindow">
+                <param name="slide">220</param>
+            </include>
+            <include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
+            <include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos4</include>
+        </control> -->
+
+		<control type="group">
+			<visible>Control.IsVisible(530) + String.Contains(ListItem.DBType, "movie")</visible>
+			<include>MediaFlagsVideos4</include>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(530) + String.Contains(ListItem.DBType, "season")</visible>
+			<include>MediaFlagsTVShows</include>
 		</control>
 	</include>
 </includes>

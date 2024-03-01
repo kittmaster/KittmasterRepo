@@ -190,7 +190,7 @@
 						<onclick>SendClick(8)</onclick>
 					</item>
 					<item id="101">
-						<description>TMDb info</description>
+						<description>TMDb Info</description>
 						<visible>Skin.HasSetting(VideoInfoTMDb)</visible>
 						<label></label>
 						<label2>$LOCALIZE[31351]</label2>

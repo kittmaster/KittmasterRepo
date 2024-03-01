@@ -32,7 +32,7 @@
 			</control>
 			<!-- Video -->
 			<control type="grouplist">
-				<top>17</top>
+				<top>5</top> <!--  Was 17 --> 
 				<left>25</left>
 				<width>607</width>
 				<height>600</height>
@@ -43,12 +43,12 @@
 					<include>VideoOSDProcessInfo</include>
 				</control>
 				<control type="label">
-					<visible>Player.Proces(videohwdecoder)</visible>
+					<visible>Player.Process(videohwdecoder)</visible>
 					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[31075]  [/COLOR]$LOCALIZE[13281]</label>
 					<include>VideoOSDProcessInfo</include>
 				</control>
 				<control type="label">
-					<visible>!Player.Proces(videohwdecoder)</visible>
+					<visible>!Player.Process(videohwdecoder)</visible>
 					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[31075]  [/COLOR]$LOCALIZE[13419]</label>
 					<include>VideoOSDProcessInfo</include>
 				</control>
@@ -75,7 +75,7 @@
 			</control>
 			<!-- Audio -->
 			<control type="grouplist">
-				<top>17</top>
+				<top>5</top> <!--  Was 17 -->
 				<left>656</left>
 				<width>608</width>
 				<height>600</height>
@@ -95,9 +95,30 @@
 					<include>VideoOSDProcessInfo</include>
 				</control>
 			</control>
+			<control type="grouplist">
+				<top>128</top> <!--  Was 140 -->
+				<left>656</left>
+				<width>608</width>
+				<height>600</height>
+				<animation effect="slide" end="-631,273" condition="VideoPlayer.Content(livetv)">Conditional</animation>
+				<control type="label">
+					<label>$LOCALIZE[705]</label>
+					<font>Font26_Bold_Caps</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<include>VideoOSDProcessInfo</include>
+				</control>
+				<control type="label">
+					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[719]  [/COLOR]$INFO[Network.IPAddress]</label>
+					<include>VideoOSDProcessInfo</include>
+				</control>
+				<control type="label">
+					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[126]  [/COLOR]$INFO[Network.LinkState]</label>
+					<include>VideoOSDProcessInfo</include>
+				</control>
+			</control>			
 			<!-- PVR -->
 			<control type="grouplist">
-				<top>17</top>
+				<top>5</top> <!--  Was 17 -->
 				<left>656</left>
 				<width>608</width>
 				<height>600</height>
@@ -147,7 +168,7 @@
 			</control>
 			<!--  System -->
 			<control type="grouplist">
-				<top>17</top>
+				<top>5</top> <!--  Was 17 -->
 				<right>25</right>
 				<width>607</width>
 				<height>600</height>
@@ -180,6 +201,18 @@
 				</control>
 				<control type="progress">
 					<info>System.Memory(used)</info>
+				</control>
+				<control type="label">
+					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[20182] [/COLOR]$INFO[System.UsedSpacePercent] of $INFO[System.TotalSpace] </label>
+					<include>VideoOSDProcessInfo</include>
+				</control>					
+				<control type="label">
+					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[20093] [/COLOR]$INFO[System.ProfileName] </label>
+					<include>VideoOSDProcessInfo</include>
+				</control>
+				<control type="label">
+                    <label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[19114] [/COLOR] $VAR[BuildVersionName] v$INFO[System.BuildVersionShort] </label>
+                    <include>VideoOSDProcessInfo</include>
 				</control>
 			</control>
 			<!--  Signal -->
