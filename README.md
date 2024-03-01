@@ -23,7 +23,7 @@
 1. Install by zip file ( No auto updates ) 
 2. Install Kittmaster's Repository ( Auto update notifications & installation )
 
-Note: The skin is a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Madnox v3. This statement is written 2/24/2024 by Kittmaster.
+Note: The skin is a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Madnox v3. This statement was written 2/24/2024 by Kittmaster.
 
 #### <ins>Option 1</ins> ( Old way )
 
