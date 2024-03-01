@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.kittmaster" name="KittmasterRepo" version="1.0.02" provider-name="kittmaster">
-    <extension point="xbmc.addon.repository" name="Kittmaster Repository">
+<addon id="repository.kittmaster" name="Kittmaster's Repo" version="1.0.02" provider-name="kittmaster">
+    <extension point="xbmc.addon.repository" name="Kittmaster's Repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml.md5</checksum>
@@ -8,10 +8,16 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>KittmasterRepo</summary>
-        <description>Kittmaster's Repository for Madnox</description>
-        <disclaimer></disclaimer>
+        <summary>Kittmaster's Repository was built for sustained support for the Madnox skin v3. It will contain the skin and additional support files ensuring continued support as Kodi continues to evolve.</summary>
+        <description>Kittmaster's Repository for Madnox v3 2024+</description>
+        <disclaimer>The skin is a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Madnox v3.</disclaimer>
         <platform>all</platform>
+		<news>v1.0.02 (02/29/2024)
+			[new] Repository brought online
+		</news>
+		<forum>https://forum.kodi.tv/forumdisplay.php?fid=314</forum>
+		<source>https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/repository.kittmaster</source>
+        <website>https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/repository.kittmaster</website>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
