@@ -6,7 +6,7 @@
     <img width="50%" src="https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png">
 </p>
 
-Madnox is one of the most eye candy driven skins for Kodi.
+<align="center">Madnox is one of the most eye candy driven skins for Kodi.</align>
 
 ### <ins>Features</ins>
 
