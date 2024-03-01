@@ -4,7 +4,7 @@
 
 Madnox is one of the most eye candy driven skins for Kodi.
 
-### Features
+### <ins>Features</ins>
 
 * Clean and simple user interface
 * Smooth transitions and animations
@@ -14,14 +14,14 @@ Madnox is one of the most eye candy driven skins for Kodi.
 * Works on Amazon fire devices
 * Mouse and touchscreen capable
 
-### Installation ( 2 options )
+### <ins>Installation ( 2 options )</ins>
 
 1. Install by zip file ( No auto updates ) 
 2. Install Kittmaster's Repository ( Auto update notifications & installation )
 
 Note: The skin is a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Madnox v3. This statement is written 2/24/2024 by Kittmaster.
 
-#### Option 1 ( Old way )
+#### <ins>Option 1 ( Old way )</ins>
 
 1. Click the latest zip file found here: https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/skin.madnox/
 2. Download the zip by clicking the download icon (Download raw file -> left of the pencil).
@@ -30,7 +30,7 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 5. The skin and dependencies will now be installed, this may take a few minutes.
 6. You will be asked if you would like to keep the new skin, select "Yes".
 
-#### Option 2 ( New way -> Recommended for updates )
+#### <ins>Option 2 ( New way -> Recommended for updates )</ins>
 
 1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK Add source -> DOUBLE CLICK <None> -> Paste this link ( Copy/Paste ): https://kittmaster.github.io/KittmasterRepo/ -> Click "Done".
 2. Give the repository a name you will remember it as, or leave as the default value during installation.
@@ -43,14 +43,14 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 ### <ins>Translations</ins>
 We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future capabilities to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve.
 
-### Credits
+### <ins>Credits</ins>
 To: Mr. V and his predecessors work, of which this is a continuation.
 
-### Further information
+### <ins>Further information</ins>
 See https://forum.kodi.tv/forumdisplay.php?fid=314 for more information.
 
-### License
+### <ins>License</ins>
 Please make sure you observe the skin's license. All parts, including textures, are for non-commercial use.
 
-### Contact
+### <ins>Contact</ins>
 Support should only be obtained via the forum link above. Bug reports can be listed on the forum or by adding an issue here.
