@@ -1,9 +1,9 @@
 ## <ins>Madnox for Kodi</ins> ( <ins>Matrix / Nexus / Omega+</ins> )
 
-![Madnox Logo](https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png)
+[//]: #  ![Madnox Logo](https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png)
 
 <p align="center" width="100%">
-    <img width="100%" src="https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png">
+    <img width="60%" src="https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png">
 </p>
 
 
