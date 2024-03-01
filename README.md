@@ -14,7 +14,7 @@ Madnox is one of the most eye candy driven skins for Kodi.
 * Works on Amazon fire devices
 * Mouse and touchscreen capable
 
-### <ins>Installation ( 2 options )</ins>
+### <ins>Installation</ins> ( 2 options )
 
 1. Install by zip file ( No auto updates ) 
 2. Install Kittmaster's Repository ( Auto update notifications & installation )
@@ -30,7 +30,7 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 5. The skin and dependencies will now be installed, this may take a few minutes.
 6. You will be asked if you would like to keep the new skin, select "Yes".
 
-#### <ins>Option 2 ( New way -> Recommended for updates )</ins>
+#### <ins>Option 2</ins> ( New way -> Recommended for updates )
 
 1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK Add source -> DOUBLE CLICK <None> -> Paste this link ( Copy/Paste ): https://kittmaster.github.io/KittmasterRepo/ -> Click "Done".
 2. Give the repository a name you will remember it as, or leave as the default value during installation.
