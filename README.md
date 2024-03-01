@@ -40,7 +40,7 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 5. When complete, you will be asked if you would like to keep the new skin, select "Yes".
 
 
-### Translations
+### <ins>Translations</ins>
 We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future capabilities to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve.
 
 ### Credits
