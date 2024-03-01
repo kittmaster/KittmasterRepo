@@ -32,7 +32,7 @@ Note: The skin is a derivative retooled version of an official Kodi repository s
 
 #### <ins>Option 2</ins> ( New way -> Recommended for updates )
 
-1. Go to System -> Settings -> File Manager -> Left Panel -> <ins>Double click</ins> Add source -> ###<ins>Double click</ins> <None> -> Paste this link ( Copy/Paste ): https://kittmaster.github.io/KittmasterRepo/ -> Click "Done".
+1. Go to System -> Settings -> File Manager -> Left Panel -> <ins>Double click</ins> Add source -> <ins>**Double click**</ins> <None> -> Paste this link ( Copy/Paste ): https://kittmaster.github.io/KittmasterRepo/ -> Click "Done".
 2. Give the repository a name you will remember it as, or leave as the default value during installation.
 3. Click "OK".
 3. The Kittmaster Repository will now be installed as a source option in Add-ons to install the skin, this may take a few minutes.
