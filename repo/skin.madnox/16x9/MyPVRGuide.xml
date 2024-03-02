@@ -24,19 +24,19 @@
 			</include>
 			<!-- Content -->
 			<control type="image">
-				<top>104</top>
+				<top>140</top>
 				<left>100</left>
 				<right>100</right>
-				<height>90</height>
+				<height>50</height>
 				<texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
 			</control>
 			<control type="epggrid" id="50">
 				<top>140</top>
 				<left>100</left>
 				<width>1720</width>
-				<height>606</height>
+				<height>590</height>
 				<pagecontrol>6050</pagecontrol>
-				<scrolltime tween="quadratic" easing="out">300</scrolltime>
+				<include>ContainerScrollTime</include>
 				<timeblocks>20</timeblocks>
 				<rulerunit>6</rulerunit>
 				<onup>9070</onup>
@@ -44,7 +44,7 @@
 				<onright>6050</onright>
 				<viewtype label="">list</viewtype>
 				<progresstexture border="0,15,15,15" colordiffuse="$VAR[PanelHighlightColorVar]">pvr/PVR-EpgProgressIndicator.png</progresstexture>
-				<rulerlayout height="54" width="60">
+				<rulerlayout height="50" width="60">
 					<control type="image">
 						<left>400</left>
 						<width>4</width>
@@ -58,7 +58,7 @@
 						<selectedcolor>$VAR[PanelTextColorVar]</selectedcolor>
 					</control>
 				</rulerlayout>
-				<channellayout height="69" width="400">
+				<channellayout height="60" width="400">
 					<control type="image">
 						<texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
 					</control>
@@ -67,7 +67,7 @@
 						<top>10</top>
 						<left>20</left>
 						<width>53</width>
-						<height>49</height>
+						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
@@ -85,9 +85,9 @@
 						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 					</control>
 				</channellayout>
-				<focusedchannellayout height="69" width="400">
+				<focusedchannellayout height="60" width="400">
 					<control type="image">
-						<height>67</height>
+						<height>58</height>
 						<texture border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texture>
 					</control>
 					<control type="image">
@@ -98,7 +98,7 @@
 						<top>10</top>
 						<left>20</left>
 						<width>53</width>
-						<height>49</height>
+						<height>40</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
@@ -116,7 +116,7 @@
 						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
 					</control>
 				</focusedchannellayout>
-				<itemlayout width="60" height="69">
+				<itemlayout width="60" height="60">
 					<control type="image" id="14">
 						<texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
 					</control>
@@ -128,27 +128,27 @@
 						<texture border="3" fallback="pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),pvr/epg-genres/,.png]</texture>
 					</control>
 					<control type="label">
-						<width>100</width>
+						<width>80</width>
 						<font>Font32_Icon</font>
-						<textoffsetx>25</textoffsetx>
+						<textoffsetx>15</textoffsetx>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
 						<label>$VAR[PVRTimerIconVar]</label>
 					</control>
 					<control type="label" id="1">
-						<visible>ListItem.IsRecording | ListItem.HasTimerSchedule | ListItem.HasTimer | ListItem.HasRecording</visible>
+						<visible>ListItem.IsRecording | ListItem.HasTimerSchedule | ListItem.HasTimer | ListItem.HasRecording | ListItem.IsPlayable</visible>
 						<left>35</left>
-						<textoffsetx>25</textoffsetx>
+						<textoffsetx>15</textoffsetx>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label" id="1">
-						<visible>!ListItem.IsRecording + !ListItem.HasTimerSchedule + !ListItem.HasTimer + !ListItem.HasRecording</visible>
-						<textoffsetx>25</textoffsetx>
+						<visible>!ListItem.IsRecording + !ListItem.HasTimerSchedule + !ListItem.HasTimer + !ListItem.HasRecording + !ListItem.IsPlayable</visible>
+						<textoffsetx>15</textoffsetx>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="60" height="69">
+				<focusedlayout width="60" height="60">
 					<control type="image" id="2">
 						<texture border="3" colordiffuse="66FFFFFF" fallback="pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),pvr/epg-genres/,.png]</texture>
 					</control>
@@ -158,29 +158,29 @@
 					</control>
 					<control type="image" id="14">
 						<left>2</left>
-						<height>67</height>
+						<height>58</height>
 						<texture border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texture>
 					</control>
 					<control type="image" id="14">
 						<texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
 					</control>
 					<control type="label">
-						<width>100</width>
+						<width>80</width>
 						<font>Font32_Icon</font>
-						<textoffsetx>25</textoffsetx>
+						<textoffsetx>15</textoffsetx>
 						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
 						<label>$VAR[PVRTimerIconVar]</label>
 					</control>
 					<control type="label" id="1">
-						<visible>ListItem.IsRecording | ListItem.HasTimerSchedule | ListItem.HasTimer | ListItem.HasRecording</visible>
+						<visible>ListItem.IsRecording | ListItem.HasTimerSchedule | ListItem.HasTimer | ListItem.HasRecording | ListItem.IsPlayable</visible>
 						<left>35</left>
-						<textoffsetx>25</textoffsetx>
+						<textoffsetx>15</textoffsetx>
 						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label" id="1">
-						<visible>!ListItem.IsRecording + !ListItem.HasTimerSchedule + !ListItem.HasTimer + !ListItem.HasRecording</visible>
-						<textoffsetx>25</textoffsetx>
+						<visible>!ListItem.IsRecording + !ListItem.HasTimerSchedule + !ListItem.HasTimer + !ListItem.HasRecording + !ListItem.IsPlayable</visible>
+						<textoffsetx>15</textoffsetx>
 						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
