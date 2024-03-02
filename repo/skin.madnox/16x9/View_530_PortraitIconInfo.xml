@@ -167,20 +167,7 @@
             </include>
             <include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
             <include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos4</include>
-        </control> -->
-
-		<!-- Local debug - Remove upon release -->
-		<control type="label">
-			<left>660</left>
-			<top>650</top>
-			<width>1000</width>
-			<height>200</height> <!-- Adjust height as needed to accommodate the multiline content -->
-			<label>DBType: $INFO[ListItem.DBType] [CR]Title: $INFO[ListItem.Title] [CR]ContentType: $INFO[ListItem.ContentType]</label>
-			<font>Font12</font>
-			<textcolor>white</textcolor>
-			<visible>true</visible>
-			<align>left</align>
-		</control>		
+        </control> -->	
 		
 		<control type="group">
 			<visible>Control.IsVisible(530) + String.Contains(ListItem.DBType, "movie")</visible>
