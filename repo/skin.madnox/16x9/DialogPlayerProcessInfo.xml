@@ -108,13 +108,14 @@
 					<include>VideoOSDProcessInfo</include>
 				</control>
 				<control type="label">
-					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[719]: [/COLOR]$INFO[Network.IPAddress]</label>
+					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[719]: [/COLOR]$INFO[Network.IPAddress], $INFO[Network.LinkState]</label>
 					<include>VideoOSDProcessInfo</include>
 				</control>
-				<control type="label">
+<!-- 				<control type="label">
 					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[126]: [/COLOR]$INFO[Network.LinkState]</label>
+					<label>$INFO[Network.LinkState]</label>
 					<include>VideoOSDProcessInfo</include>
-				</control>
+				</control> -->
 			</control>			
 			<!-- PVR -->
 			<control type="grouplist">

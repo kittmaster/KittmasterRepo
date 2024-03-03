@@ -774,7 +774,8 @@
 							<include>SettingsLabel</include>
 						</control>
 						<control type="radiobutton" id="602">
-							<label>$LOCALIZE[31062]</label>
+							<!-- <label>$LOCALIZE[31062]</label> -->
+							<label>$LOCALIZE[737] icons</label>
 							<onclick>Skin.ToggleSetting(IconsColored)</onclick>
 							<selected>Skin.HasSetting(IconsColored)</selected>
 							<include>SettingsRadioButton</include>
@@ -822,7 +823,8 @@
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="624">
-							<label>Coloured studio icons</label>
+							<!-- <label>Coloured studio icons</label> -->
+							<label>$LOCALIZE[737] studio icons</label>
 							<label2>$VAR[AddonColouredStudiosVar]</label2>
 							<onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>
 							<include>SettingsRadioButton</include>
@@ -846,7 +848,7 @@
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="628">
-							<label>Coloured movie genre icons</label>
+							<label>$LOCALIZE[737] movie genre icons</label>
 							<label2>$VAR[AdoonMovieGenreIconsVar]</label2>
 							<onclick condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour)">InstallAddon(resource.images.moviegenreicons.filmstrip-hd.colour)</onclick>
 							<include>SettingsRadioButton</include>
@@ -938,7 +940,7 @@
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="713">
-							<label>CU LRC lycics</label>
+							<label>CU LRC lyrics</label>
 							<label2>$VAR[AddonLyricsVar]</label2>
 							<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
 							<onclick condition="System.HasAddon(script.cu.lrclyrics)">Addon.OpenSettings(script.cu.lrclyrics)</onclick>
@@ -949,7 +951,7 @@
 							<include>SettingsLabel</include>
 						</control>
 						<control type="button" id="721">
-							<label>Trakt</label>
+							<label>Trakt.TV</label>
 							<label2>$VAR[AddonTraktVar]</label2>
 							<onclick condition="!System.HasAddon(script.trakt)">InstallAddon(script.trakt)</onclick>
 							<onclick condition="System.HasAddon(script.trakt)">Addon.OpenSettings(script.trakt)</onclick>
@@ -970,7 +972,8 @@
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="723">
-							<label>Favourites script</label>
+							<!-- <label>Favourites script</label> -->
+							<label>$LOCALIZE[1036] script</label>
 							<label2>$VAR[AddonFavouritesVar]</label2>
 							<onclick condition="!System.HasAddon(script.favourites)">InstallAddon(script.favourites)</onclick>
 							<onclick condition="System.HasAddon(script.favourites)">Addon.OpenSettings(script.favourites)</onclick>
