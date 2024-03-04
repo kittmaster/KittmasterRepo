@@ -7,7 +7,7 @@
 		<param name="align">right</param>
 		<definition>
 			<control type="grouplist">
-				<visible>!ListItem.IsParentFolder + [Container.Content(tvshows) | Container.Content(seasons) | String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
+				<visible>!ListItem.IsParentFolder + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
 				<bottom>$PARAM[bottom]</bottom>
 				<left>$PARAM[left]</left>
 				<right>$PARAM[right]</right>
