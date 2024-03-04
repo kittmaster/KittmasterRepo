@@ -1,3 +1,8 @@
+v.21.00.08
+-Fixed logic error in media flags for episode correction.
+-Refactored and added additional logic branch to ensure season/episode container overlapping.
+-Removed v.21.00.06 fix as it created unnecessary logic branch that could be solved in view templates and restore original file logic
+
 v.21.00.07
 -Additional push to include missing files not included from v.21.00.06 update.
 
