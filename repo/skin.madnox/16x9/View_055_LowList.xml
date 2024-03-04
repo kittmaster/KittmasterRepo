@@ -217,13 +217,15 @@
 					<param name="bottom">15</param>
 				</include>
 			</control>
+
 			<control type="group">
-				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "season")</visible>
+				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "season") | String.Contains(ListItem.DBType, "episode")</visible>
 				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
 					<param name="right">20</param>
 					<param name="bottom">15</param>
 				</include>
 			</control>
+			
 			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudio">
 				<param name="right">20</param>
 				<param name="bottom">15</param>

@@ -82,7 +82,7 @@
 				<include>MediaFlagsVideos5</include>
 			</control>
 			<control type="group">
-				<visible>Control.IsVisible(53) + String.Contains(ListItem.DBType, "season")</visible>
+				<visible>Control.IsVisible(53) + String.Contains(ListItem.DBType, "season") | String.Contains(ListItem.DBType, "episode")</visible>
 				<include>MediaFlagsTVShows</include>
 			</control>
 			<include condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)">MediaFlagsAudio</include>

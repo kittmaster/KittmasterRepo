@@ -138,8 +138,9 @@
 			<visible>Control.IsVisible(56) + String.Contains(ListItem.DBType, "movie")</visible>
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos7</include>
 		</control>
+
 		<control type="group">
-			<visible>Control.IsVisible(56) + String.Contains(ListItem.DBType, "season")</visible>
+			<visible>Control.IsVisible(56) + String.Contains(ListItem.DBType, "season") | String.Contains(ListItem.DBType, "episode")</visible>
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
 		</control>
 
