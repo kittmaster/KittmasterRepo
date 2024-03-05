@@ -665,6 +665,13 @@
 					<param name="bottom">35</param>
 				</include>
 			</control>
+			<control type="group">
+				<visible>Control.IsVisible(506) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+					<param name="right">50</param>
+					<param name="bottom">35</param>
+				</include>
+			</control>			
 			
 <!-- 			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
 				<param name="right">50</param>
