@@ -45,7 +45,7 @@ Note: The Madnox skin is a derivative retooled version of an official Kodi repos
 
 
 ### <ins>Translations</ins>
-We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future capabilities to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve.
+We will do our best to support as many languages as possible, this will be an ongoing effort as there are multiple issues with getting the skin from an archive status to a future capabilities to support Omega and future revisions of Kodi. This will be a parallel effort as the skin continues to evolve and one of the lowest priorities until I can stabilize modifications for bugs and incoming Omega release build requirements.
 
 ### <ins>Credits</ins>
 To: Mr. V and his predecessors work, of which this is a continuation.
@@ -57,4 +57,5 @@ See https://forum.kodi.tv/forumdisplay.php?fid=314 for more information.
 Please make sure you observe the skin's license. All parts, including textures, are for non-commercial use.
 
 ### <ins>Contact</ins>
-Support should only be obtained via the forum link above. Bug reports can be listed on the forum or by adding an issue here.
+Support should only be obtained via the forum link: https://forum.kodi.tv/forumdisplay.php?fid=314 
+Bug reports can be reported on the forum or by adding an issue here, but prefer forum to ensure all issues have proper documentation and avoid repeat reporting.

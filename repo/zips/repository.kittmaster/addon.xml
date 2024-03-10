@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.kittmaster" name="Kittmaster's Repo" version="1.0.02" provider-name="kittmaster">
+<addon id="repository.kittmaster" name="Kittmaster's Repo" version="1.0.03" provider-name="kittmaster">
     <extension point="xbmc.addon.repository" name="Kittmaster's Repository">
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/</datadir>
+        <dir minversion="19.0.0" maxversion="19.9.9">
+            <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/matrix/zips/</datadir>
         </dir>
+		<dir minversion="20.0.0" maxversion="20.9.9">
+            <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/nexus/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/nexus/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/nexus/zips/</datadir>
+        </dir>
+        <dir minversion="21.0.0" maxversion="21.9.9">
+            <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/</datadir>
+        </dir>		
     </extension>
     <extension point="xbmc.addon.metadata">
 		<summary>Kittmaster's Repository for Madnox v3 2024+</summary>
@@ -22,5 +32,12 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
+		<news>Pushed to v.1.0.03[CR]
+		      Split repository for 3 builds: Matrix, Nexus, Omega[CR]
+			  Please report any/all issues in Madnox skin forums @ Kodi's website[CR]
+			  No support via GitHub to reduce workload or missed issues[CR]
+			  Greetz to everyone helping with feedback and support.[CR]
+			  Chris 3/10/2024
+		</news>		
     </extension>
 </addon>
