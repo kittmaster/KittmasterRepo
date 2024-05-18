@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
+	<!-- Override actions -->
+	<override action="ActivateWindow(Favourites)">
+		<action>ActivateWindow(favouritesbrowser)</action>
+	</override>
 	<!-- Do not share menu, other skins custom language strings and icons are not the same -->
 	<doNotShareMenu/>
 	<!-- Main menu/Shortcut icon default directory -->
@@ -74,6 +78,7 @@
 		<!-- Movies -->
 		<node label="342">
 			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://skin/extras/playlists/01movies/recentlyadded.xsp</shortcut>
+			<shortcut label="31386" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://skin/extras/playlists/01movies/recentlyadded(includewatched).xsp</shortcut>
 			<shortcut label="$ADDON[script.embuary.helper 32013]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">plugin://script.embuary.helper/?info=getinprogress&amp;type=movie&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
 			<shortcut label="$ADDON[script.embuary.helper 32007]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">plugin://script.embuary.helper/?info=getsimilar&amp;type=movie&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
 			<shortcut label="$ADDON[script.embuary.helper 32014]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">plugin://script.embuary.helper/?info=getsimilar&amp;type=movie&amp;pos=0&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
@@ -88,8 +93,10 @@
 		</node>
 		<!-- Episodes -->
 		<node label="20360">
-			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyreleased.xsp</shortcut>
 			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyadded.xsp</shortcut>
+			<shortcut label="31386" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyadded(includewatched).xsp</shortcut>
+			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyreleased.xsp</shortcut>
+			<shortcut label="31387" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyreleased(includewatched).xsp</shortcut>
 			<shortcut label="$ADDON[script.embuary.helper 32013]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://script.embuary.helper/?info=getinprogress&amp;type=tvshow&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
 			<shortcut label="$ADDON[script.embuary.helper 32008]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://script.embuary.helper/?info=getnextup&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
 			<shortcut label="31280" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper) + System.HasAddon(script.embuary.info)">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;startdate=0&amp;widget=True&amp;type=episode&amp;days=365&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</shortcut>
@@ -109,20 +116,24 @@
 		</node>
 		<!-- Live TV -->
 		<node label="31173">
+			<shortcut label="19025" icon="icons/addons/kodi.png" widget="info" widgetType="tvrecordings" widgetTarget="pvr" condition="Pvr.HasTVChannels">$INCLUDE[skinshortcuts-template-TVRecordings]</shortcut>
 			<shortcut label="10700" icon="icons/addons/kodi.png" widget="pvr" widgetType="tv" widgetTarget="pvr" condition="Pvr.HasTVChannels">pvr://channels/tv/*</shortcut>
 			<shortcut label="568" icon="icons/addons/kodi.png" widget="pvr" widgetType="tv" widgetTarget="pvr" condition="Pvr.HasTVChannels">pvr://channels/tv/*?view=lastplayed</shortcut>
 			<shortcut label="19017" icon="icons/addons/kodi.png" widget="pvr" widgetType="tv" widgetTarget="pvr" condition="Pvr.HasTVChannels">pvr://recordings/tv/active</shortcut>
+			<shortcut label="10703" icon="icons/addons/kodi.png" widget="pvr" widgetType="tv" widgetTarget="pvr" condition="Pvr.HasTVChannels">pvr://timers/tv/timers</shortcut>
 		</node>
 		<!-- Radio -->
 		<node label="19021">
+			<shortcut label="19025" icon="icons/addons/kodi.png" widget="info" widgetType="radiorecordings" widgetTarget="pvr" condition="Pvr.HasRadioChannels">$INCLUDE[skinshortcuts-template-RadioRecordings]</shortcut>
 			<shortcut label="19024" icon="icons/addons/kodi.png" widget="pvr" widgetType="radio" widgetTarget="pvr" condition="Pvr.HasRadioChannels">pvr://channels/radio/*</shortcut>
 			<shortcut label="568" icon="icons/addons/kodi.png" widget="pvr" widgetType="radio" widgetTarget="pvr" condition="Pvr.HasRadioChannels">pvr://channels/radio/*?view=lastplayed</shortcut>
 			<shortcut label="19017" icon="icons/addons/kodi.png" widget="pvr" widgetType="radio" widgetTarget="pvr" condition="Pvr.HasRadioChannels">pvr://recordings/radio/active</shortcut>
+			<shortcut label="10708" icon="icons/addons/kodi.png" widget="pvr" widgetType="radio" widgetTarget="pvr" condition="Pvr.HasTVChannels">pvr://timers/radio/timers</shortcut>
 		</node>
 		<!-- Albums -->
 		<node label="132">
-			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/recentlyreleased.xsp</shortcut>
 			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/recentlyadded.xsp</shortcut>
+			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/recentlyreleased.xsp</shortcut>
 			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/mostplayed.xsp</shortcut>
 			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/random.xsp</shortcut>
 		</node>
@@ -133,8 +144,8 @@
 		</node>
 		<!-- Songs -->
 		<node label="134">
-			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/recentlyreleased.xsp</shortcut>
 			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/recentlyadded.xsp</shortcut>
+			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/recentlyreleased.xsp</shortcut>
 			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/mostplayed.xsp</shortcut>
 			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/random.xsp</shortcut>
 		</node>
@@ -253,7 +264,7 @@
 	<property property="widgetArtwork.1" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.1),info)">portraiticon</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[31250]">landscapeicon</property>
-	<property property="widgetArtwork.1" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.1),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.1),picture) + !String.IsEqual(Container(211).ListItem.Property(widget.1),pvr)">fanart</property>
+	<property property="widgetArtwork.1" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.1),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.1),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.1),pvr)">fanart</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.1),library) | String.IsEqual(Container(211).ListItem.Property(widget.1),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.1),episodes)">thumb</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.1),library) | String.IsEqual(Container(211).ListItem.Property(widget.1),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.1),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),artists)]">landscape</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.1),library) | String.IsEqual(Container(211).ListItem.Property(widget.1),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.1),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),artists)]">clearart</property>
@@ -263,7 +274,7 @@
 	<property property="widgetArtwork.2" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.2),info)">portraiticon</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[31250]">landscapeicon</property>
-	<property property="widgetArtwork.2" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.2),picture) + !String.IsEqual(Container(211).ListItem.Property(widget.2),pvr)">fanart</property>
+	<property property="widgetArtwork.2" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.2),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.2),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.2),pvr)">fanart</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.2),library) | String.IsEqual(Container(211).ListItem.Property(widget.2),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.2),episodes)">thumb</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.2),library) | String.IsEqual(Container(211).ListItem.Property(widget.2),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.2),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),artists)]">landscape</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.2),library) | String.IsEqual(Container(211).ListItem.Property(widget.2),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.2),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),artists)]">clearart</property>
@@ -273,7 +284,7 @@
 	<property property="widgetArtwork.3" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.3),info)">portraiticon</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[31250]">landscapeicon</property>
-	<property property="widgetArtwork.3" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.3),picture) + !String.IsEqual(Container(211).ListItem.Property(widget.3),pvr)">fanart</property>
+	<property property="widgetArtwork.3" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.3),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.3),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.3),pvr)">fanart</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.3),library) | String.IsEqual(Container(211).ListItem.Property(widget.3),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.3),episodes)">thumb</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.3),library) | String.IsEqual(Container(211).ListItem.Property(widget.3),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.3),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),artists)]">landscape</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.3),library) | String.IsEqual(Container(211).ListItem.Property(widget.3),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.3),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),artists)]">clearart</property>
@@ -283,7 +294,7 @@
 	<property property="widgetArtwork.4" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.4),info)">portraiticon</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[31250]">landscapeicon</property>
-	<property property="widgetArtwork.4" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.4),picture) + !String.IsEqual(Container(211).ListItem.Property(widget.4),pvr)">fanart</property>
+	<property property="widgetArtwork.4" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.4),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.4),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.4),pvr)">fanart</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.4),library) | String.IsEqual(Container(211).ListItem.Property(widget.4),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.4),episodes)">thumb</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.4),library) | String.IsEqual(Container(211).ListItem.Property(widget.4),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.4),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),artists)]">landscape</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.4),library) | String.IsEqual(Container(211).ListItem.Property(widget.4),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.4),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),artists)]">clearart</property>
@@ -293,7 +304,7 @@
 	<property property="widgetArtwork.5" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.5),info)">portraiticon</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[31250]">landscapeicon</property>
-	<property property="widgetArtwork.5" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.5),picture) + !String.IsEqual(Container(211).ListItem.Property(widget.5),pvr)">fanart</property>
+	<property property="widgetArtwork.5" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.5),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.5),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.5),pvr)">fanart</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.5),library) | String.IsEqual(Container(211).ListItem.Property(widget.5),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.5),episodes)">thumb</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.5),library) | String.IsEqual(Container(211).ListItem.Property(widget.5),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.5),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),artists)]">landscape</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.5),library) | String.IsEqual(Container(211).ListItem.Property(widget.5),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.5),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),artists)]">clearart</property>
@@ -303,7 +314,7 @@
 	<property property="widgetArtwork.6" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.6),info)">portraiticon</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31250]">landscapeicon</property>
-	<property property="widgetArtwork.6" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.6),picture) + !String.IsEqual(Container(211).ListItem.Property(widget.6),pvr)">fanart</property>
+	<property property="widgetArtwork.6" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.6),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.6),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.6),pvr)">fanart</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.6),library) | String.IsEqual(Container(211).ListItem.Property(widget.6),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.6),episodes)">thumb</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.6),library) | String.IsEqual(Container(211).ListItem.Property(widget.6),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.6),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),artists)]">landscape</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.6),library) | String.IsEqual(Container(211).ListItem.Property(widget.6),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.6),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),artists)]">clearart</property>
@@ -508,10 +519,6 @@
 	<property property="InfoLine" label="$LOCALIZE[8]">weather</property>
 	<property property="InfoLine" label="$LOCALIZE[427]">disc</property>
 	<property property="InfoLine" label="$LOCALIZE[130]">systeminfo</property>
-	<!-- PVR widget -->
-	<property property="pvrWidget" label="PVR">pvr</property>
-	<property property="pvrWidget" label="$LOCALIZE[19020]">tv</property>
-	<property property="pvrWidget" label="$LOCALIZE[19021]">radio</property>
 	<!-- Override action of shortcuts to close modal dialog -->
 	<override action="globaloverride" group="shortcuts">
 		<action>Action(Close)</action>

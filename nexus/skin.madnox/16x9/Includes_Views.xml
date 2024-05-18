@@ -2220,7 +2220,7 @@
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="label">
-					<visible>Container.Content(genres) + ![System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour) + System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour) + System.HasAddon(resource.images.musicgenreicons.text)]</visible>
+					<visible>Container.Content(genres) + ![System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour) + System.AddonIsEnabled(resource.images.musicgenreicons.text)]</visible>
 					<left>$PARAM[left]</left>
 					<right>$PARAM[right]</right>
 					<bottom>8</bottom>

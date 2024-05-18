@@ -45,9 +45,6 @@
 					<texture>$VAR[StudioIconsVar]</texture>
 					<include>MediaFlagImage</include>
 				</control>
-				<control type="group">
-					<visible>Window.IsVisible(MyVideoNav.xml)</visible>
-				</control>
 			</control>
 		</definition>
 	</include>

@@ -26,7 +26,7 @@
 				</control>
 				<!-- Opacity slider -->
 				<control type="slider" id="3015">
-					<visible>!String.IsEqual(Window.Property(colorstring),None)</visible>
+					<visible>!String.IsEmpty(Window.Property(colorstring))</visible>
 					<width>350</width>
 					<include>DialogButton</include>
 					<texturesliderbar/>
@@ -68,7 +68,7 @@
 			</control>
 			<!-- Slider Focus -->
 			<control type="group">
-				<visible>!String.IsEqual(Window.Property(colorstring),None)</visible>
+				<visible>!String.IsEmpty(Window.Property(colorstring))</visible>
 				<top>165</top>
 				<left>20</left>
 				<height>75</height>
@@ -108,7 +108,6 @@
 				<pagecontrol>60</pagecontrol>
 				<onleft>60</onleft>
 				<preloaditems>4</preloaditems>
-				<pagecontrol>60</pagecontrol>
 				<include>ContainerScrollTime</include>
 				<itemlayout height="84" width="84">
 					<control type="image">

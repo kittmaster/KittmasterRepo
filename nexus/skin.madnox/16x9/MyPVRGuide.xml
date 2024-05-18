@@ -22,7 +22,6 @@
 			<include content="PanelDefault">
 				<param name="reflect">!Skin.HasSetting(PVRHideReflect)</param>
 			</include>
-			<!-- Content -->
 			<control type="image">
 				<top>140</top>
 				<left>100</left>
@@ -194,8 +193,6 @@
 				<onleft>50</onleft>
 			</control>
 		</control>
-		<!-- Media flags -->
-		<include>MediaFlagsPVR</include>
 		<!-- Topbar -->
 		<control type="label" id="29">
 			<include>HiddenObject</include>
