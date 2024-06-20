@@ -608,10 +608,8 @@
 		<control type="button" id="207">
 			<visible>System.getbool(lookandfeel.enablerssfeeds) + System.AddonIsEnabled(script.rss.editor)</visible>
 			<label>$LOCALIZE[21435]</label>
-			<onclick condition="!System.HasAddon(script.rss.editor)">InstallAddon(script.rss.editor)</onclick>
-			<onclick condition="System.HasAddon(script.rss.editor)">XBMC.RunScript(script.rss.editor)</onclick>
+			<onclick>RunScript(script.rss.editor)</onclick>
 			<include>MediaMenuRadioButton</include>
-			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
 		</control>
 		<control type="label" id="208">
 			<label>$LOCALIZE[31039]</label>
@@ -755,7 +753,9 @@
 		<control type="button" id="202">
 			<label>$LOCALIZE[31048]</label>
 			<label2>[COLOR $VAR[MainMenuShadowColorVar]]$VAR[MainMenuShadowColorLabelVar][/COLOR]</label2>
-			<onclick>RunScript(script.skin.helper.colorpicker,skinstring=MainMenuShadow.color,header=$LOCALIZE[31048])</onclick>
+			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuShadow.color,header=$LOCALIZE[31048])</onclick>
+			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
+			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="radiobutton" id="203">
@@ -816,8 +816,6 @@
 		<control type="button" id="203">
 			<label>$LOCALIZE[31051]</label>
 			<label2>$VAR[MainMenuTextureLabelVar]</label2>
-			<label>$LOCALIZE[31051]</label>
-			<label2>$VAR[MainMenuTextureLabelVar]</label2>
 			<onclick>SetProperty(CustomSelect,$LOCALIZE[31359],home)</onclick>
 			<onclick>ActivateWindow(1110)</onclick>
 			<include>MediaMenuButton</include>
@@ -855,25 +853,33 @@
 		<control type="button" id="211">
 			<label>$LOCALIZE[736]</label>
 			<label2>[COLOR $VAR[MainMenuStyleColorVar]]$VAR[MainMenuStyleColorLabelVar][/COLOR]</label2>
-			<onclick>RunScript(script.skin.helper.colorpicker,skinstring=MainMenuStyle.color,header=$LOCALIZE[736])</onclick>
+			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuStyle.color,header=$LOCALIZE[736])</onclick>
+			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
+			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="212">
 			<label>$LOCALIZE[31051]</label>
 			<label2>[COLOR $VAR[MainMenuTextureColorVar]]$VAR[MainMenuTextureColorLabelVar][/COLOR]</label2>
-			<onclick>RunScript(script.skin.helper.colorpicker,skinstring=MainMenuTexture.color,header=$LOCALIZE[31051])</onclick>
+			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuTexture.color,header=$LOCALIZE[31051])</onclick>
+			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
+			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="213">
 			<label>$LOCALIZE[31134]</label>
 			<label2>[COLOR $VAR[MainMenuGradientColorVar]]$VAR[MainMenuGradientColorLabelVar][/COLOR]</label2>
-			<onclick>RunScript(script.skin.helper.colorpicker,skinstring=MainMenuGradient.color,header=$LOCALIZE[31134])</onclick>
+			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuGradient.color,header=$LOCALIZE[31134])</onclick>
+			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
+			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="214">
 			<label>$LOCALIZE[31039]</label>
 			<label2>[COLOR $VAR[MainMenuWidgetColorVar]]$VAR[MainMenuWidgetColorLabelVar][/COLOR]</label2>
-			<onclick>RunScript(script.skin.helper.colorpicker,skinstring=MainMenuWidget.color,header=$LOCALIZE[31039])</onclick>
+			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuWidget.color,header=$LOCALIZE[31039])</onclick>
+			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
+			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
@@ -948,14 +954,13 @@
 		</control>
 		<!-- Add Node -->
 		<control type="radiobutton" id="9066">
+			<visible>System.AddonIsEnabled(plugin.library.node.editor) + Container.Content() + String.IsEmpty(Container.PluginName)</visible>
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/add.png</param>
 				<param name="iconoff">icons/mediamenu/add.png</param>
 			</include>
 			<label>$LOCALIZE[31089]</label>
-			<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
-			<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-			<visible>Container.Content() + String.IsEmpty(Container.PluginName)</visible>
+			<onclick>ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
 		</control>
 		<!-- Open Settings -->
 		<control type="radiobutton" id="9067">
@@ -1285,6 +1290,20 @@
 			<onclick>Skin.ToggleSetting(MusicHideTopBar)</onclick>
 			<selected>!Skin.HasSetting(MusicHideTopBar)</selected>
 			<include>MediaMenuRadioButton</include>
+		</control>
+		<control type="label" id="220">
+			<visible>Control.IsVisible(222)</visible>
+			<label>$LOCALIZE[31106]</label>
+			<include>MediaMenuLabel</include>
+		</control>
+		<control type="radiobutton" id="222">
+			<label>$LOCALIZE[31386]</label>
+			<include>MediaMenuRadioButton</include>
+			<onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>
+			<onclick condition="System.HasAddon(resource.images.studios.coloured)">Skin.ToggleSetting(MediaFlagsColored)</onclick>
+			<onclick condition="System.HasAddon(resource.images.studios.coloured)">Dialog.Close(all,true)</onclick>
+			<include>ReloadWindowOnClick</include>
+			<selected>Skin.HasSetting(MediaFlagsColored)</selected>
 		</control>
 	</include>
 	<include name="MediaMenuMusicPlayList">

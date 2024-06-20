@@ -1835,6 +1835,7 @@
 			</item>
 		</controls>
 	</other>
+	<!-- PVR -->
 	<other include="TVRecordings">
 		<condition tag="property" attribute="name|widgetType.1">tvrecordings</condition>
 		<condition tag="property" attribute="name|widgetType.2">tvrecordings</condition>

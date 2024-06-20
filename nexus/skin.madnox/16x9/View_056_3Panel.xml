@@ -138,19 +138,10 @@
 			<include condition="Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(videoplaylist)">MediaFlagsVideos7</include>
 		</control>
 		<control type="group">
-			<visible>Control.IsVisible(56) + !String.Contains(ListItem.DBType, "season") &amp; String.Contains(ListItem.DBType, "episode")</visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos7</include>
-		</control>		
-		<control type="group">
 			<visible>Control.IsVisible(56) + String.Contains(ListItem.DBType, "season")</visible>
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
 		</control>
-		<control type="group">
-			<visible>Control.IsVisible(56) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-		</control>
-
-		<!-- 		<control type="group">
+<!-- 		<control type="group">
 			<visible>Control.IsVisible(56)</visible>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>
@@ -158,9 +149,6 @@
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos7</include>
 		</control> -->
-
-
-
 	</include>
 	<!-- Includes panel -->
 	<include name="View56List">
