@@ -27,7 +27,7 @@ Note: The Madnox skin is a derivative retooled version of an official Kodi repos
 
 #### <ins>Option 1</ins> ( Old way )
 
-1. Click the latest zip file found here: https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/skin.madnox/
+1. Click the latest zip file found here: https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/repository.kittmaster	
 2. Download the zip by clicking the download icon (Download raw file -> left of the pencil).
 3. Start Kodi and go to System -> Settings -> Add-ons and select "Install from zip file".
 4. Browse for the file downloaded and press "OK".
