@@ -3,7 +3,7 @@
 <!--  ![Madnox Logo](https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png) -->
 
 <p align="center" width="100%">
-    <img width="50%" src="https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png">
+    <img width="50%" src="https://github.com/kittmaster/KittmasterRepo/blob/master/omega/skin.madnox/resources/icon.png">
 </p>
 
 <p align="center">Madnox is one of the most eye candy driven skins for Kodi.</p>
