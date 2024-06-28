@@ -249,6 +249,8 @@ class Generator:
 
         tree = ElementTree.parse(os.path.join(self.release_path, addon_id, "addon.xml"))
         root = tree.getroot()
+        
+        """
 
         copyfiles = ["addon.xml"]
         for ext in root.findall("extension"):
@@ -258,6 +260,18 @@ class Generator:
                     continue
                 for art in [a for a in assets if a.text]:
                     copyfiles.append(os.path.normpath(art.text))
+                    
+        """
+
+        copyfiles = ["addon.xml"]
+        for ext in root.findall("extension"):
+            if ext.get("point") in ["xbmc.addon.metadata", "kodi.addon.metadata"]:
+                assets = ext.find("assets")
+                if assets is None:  # Explicitly check if 'assets' is None
+                    continue
+                for art in [a for a in assets if a.text]:
+                    copyfiles.append(os.path.normpath(art.text))
+
 
         src_folder = os.path.join(self.release_path, addon_id)
         for file in copyfiles:
@@ -376,3 +390,9 @@ class Generator:
 if __name__ == "__main__":
     for release in [r for r in KODI_VERSIONS if os.path.exists(r)]:
         Generator(release)
+
+
+print()
+print()        
+input("Press Enter to Exit...")
+
