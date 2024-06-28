@@ -1,4 +1,4 @@
-## <p align="center"> <ins>Madnox for Kodi</ins> ( <ins>Matrix / Nexus / Omega+</ins> )</p>
+## <p align="center"> <ins>Madnox for Kodi</ins> ( <ins>Nexus / Omega+</ins> )</p>
 
 <!--  ![Madnox Logo](https://github.com/kittmaster/KittmasterRepo/blob/master/repo/skin.madnox/resources/icon.png) -->
 
