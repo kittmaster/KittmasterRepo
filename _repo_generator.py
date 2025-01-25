@@ -13,7 +13,14 @@ import zipfile
 from xml.etree import ElementTree
 
 SCRIPT_VERSION = 5
-KODI_VERSIONS = ["krypton", "leia", "matrix", "nexus", "repo", "skin", "omega"]
+
+""" 
+If adding a new "root" folder, add to this list so that it will get
+compiled, if not, it will be ignored. "Versions" is deceptive.
+Original variable: KODI_VERSIONS
+
+"""
+KODI_VERSIONS_FOLDER_ROOTS = ["scripts-addons", "repo", "skin", "krypton", "leia", "matrix", "nexus", "omega", "piers"]
 IGNORE = [
     ".git",
     ".github",
@@ -388,7 +395,7 @@ class Generator:
 
 
 if __name__ == "__main__":
-    for release in [r for r in KODI_VERSIONS if os.path.exists(r)]:
+    for release in [r for r in KODI_VERSIONS_FOLDER_ROOTS if os.path.exists(r)]:
         Generator(release)
 
 
