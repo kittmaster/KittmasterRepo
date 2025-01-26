@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.kittmaster" name="Kittmaster Repo" version="1.0.9" provider-name="Kittmaster">
+    <extension point="xbmc.addon.repository" name="KittmasterRepo">
+        <info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/scripts-addons/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/scripts-addons/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/scripts-addons/zips/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Kittmaster's custom repository for Kodi addons and skins</summary>
+        <description lang="en_GB">This repository contains various Kodi addons and skins maintained by Kittmaster.</description>
+        <platform>all</platform>
+        <license>GPL-2.0</license>
+        <source>https://github.com/kittmaster/KittmasterRepo</source>
+    </extension>
+</addon>
