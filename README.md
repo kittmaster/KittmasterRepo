@@ -17,6 +17,7 @@
 * Support for low powered devices
 * Works on Amazon fire devices
 * Mouse and touchscreen capable
+* Enhanced color picker for granular control
 
 ### <ins>Installation</ins> ( 2 options )
 
