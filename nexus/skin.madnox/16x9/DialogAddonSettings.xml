@@ -10,6 +10,14 @@
 				<param name="id" value="2"/>
 				<param name="diffusetexture">diffuse/rounded10-1701x750.png</param>
 			</include>
+			<control type="image">
+				<left>1474</left>
+				<top>14</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
 			<!-- Left -->
 			<control type="grouplist" id="3">
 				<left>20</left>

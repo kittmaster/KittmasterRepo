@@ -405,6 +405,7 @@
 		<value condition="!String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+		<value condition="!String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value> <!-- cmb -->
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="FanartVar">
@@ -981,15 +982,15 @@
 		<value condition="Skin.String(LibraryVideoDiscArtFallback,none)">$LOCALIZE[231]</value>
 		<value condition="Skin.String(LibraryVideoDiscArtFallback,vinyl)">$LOCALIZE[31182]</value>
 		<value condition="Skin.String(LibraryVideoDiscArtFallback,cd)">CD</value>
-		<value condition="Skin.String(LibraryVideoDiscArtFallback,white)">$LOCALIZE[31184]</value>
-		<value condition="Skin.String(LibraryVideoDiscArtFallback,blue)">$LOCALIZE[31185]</value>
+		<value condition="Skin.String(LibraryVideoDiscArtFallback,white)">$LOCALIZE[742]</value>
+		<value condition="Skin.String(LibraryVideoDiscArtFallback,blue)">$LOCALIZE[762]</value>
 		<value condition="Skin.String(LibraryVideoDiscArtFallback,golden)">$LOCALIZE[31186]</value>
-		<value condition="Skin.String(LibraryVideoDiscArtFallback,green)">$LOCALIZE[31187]</value>
-		<value condition="Skin.String(LibraryVideoDiscArtFallback,grey)">$LOCALIZE[31188]</value>
-		<value condition="Skin.String(LibraryVideoDiscArtFallback,orange)">$LOCALIZE[31189]</value>
+		<value condition="Skin.String(LibraryVideoDiscArtFallback,green)">$LOCALIZE[13341]</value>
+		<value condition="Skin.String(LibraryVideoDiscArtFallback,grey)">$LOCALIZE[767]</value>
+		<value condition="Skin.String(LibraryVideoDiscArtFallback,orange)">$LOCALIZE[13342]</value>
 		<value condition="Skin.String(LibraryVideoDiscArtFallback,purple)">$LOCALIZE[31190]</value>
-		<value condition="Skin.String(LibraryVideoDiscArtFallback,red)">$LOCALIZE[31191]</value>
-		<value>$LOCALIZE[31183]</value>
+		<value condition="Skin.String(LibraryVideoDiscArtFallback,red)">$LOCALIZE[13343]</value>
+		<value>$LOCALIZE[14234]</value>
 	</variable>
 	<variable name="LibraryAudioDiscArtVar">
 		<value condition="!String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
@@ -1011,16 +1012,44 @@
 	<variable name="LibraryAudioDiscArtLabelVar">
 		<value condition="Skin.String(LibraryMusicDiscArtFallback,none)">$LOCALIZE[231]</value>
 		<value condition="Skin.String(LibraryMusicDiscArtFallback,vinyl)">$LOCALIZE[31182]</value>
-		<value condition="Skin.String(LibraryMusicDiscArtFallback,bd)">$LOCALIZE[31183]</value>
-		<value condition="Skin.String(LibraryMusicDiscArtFallback,white)">$LOCALIZE[31184]</value>
-		<value condition="Skin.String(LibraryMusicDiscArtFallback,blue)">$LOCALIZE[31185]</value>
+		<value condition="Skin.String(LibraryMusicDiscArtFallback,bd)">$LOCALIZE[14234]</value>
+		<value condition="Skin.String(LibraryMusicDiscArtFallback,white)">$LOCALIZE[742]</value>
+		<value condition="Skin.String(LibraryMusicDiscArtFallback,blue)">$LOCALIZE[762]</value>
 		<value condition="Skin.String(LibraryMusicDiscArtFallback,golden)">$LOCALIZE[31186]</value>
-		<value condition="Skin.String(LibraryMusicDiscArtFallback,green)">$LOCALIZE[31187]</value>
-		<value condition="Skin.String(LibraryMusicDiscArtFallback,grey)">$LOCALIZE[31188]</value>
-		<value condition="Skin.String(LibraryMusicDiscArtFallback,orange)">$LOCALIZE[31189]</value>
+		<value condition="Skin.String(LibraryMusicDiscArtFallback,green)">$LOCALIZE[13341]</value>
+		<value condition="Skin.String(LibraryMusicDiscArtFallback,grey)">$LOCALIZE[767]</value>
+		<value condition="Skin.String(LibraryMusicDiscArtFallback,orange)">$LOCALIZE[13342]</value>
 		<value condition="Skin.String(LibraryMusicDiscArtFallback,purple)">$LOCALIZE[31190]</value>
-		<value condition="Skin.String(LibraryMusicDiscArtFallback,red)">$LOCALIZE[31191]</value>
+		<value condition="Skin.String(LibraryMusicDiscArtFallback,red)">$LOCALIZE[13343]</value>
 		<value>CD</value>
+	</variable>
+	<variable name="ResolutionMediaColorFlagUserLabelVar">
+	    <value condition="Skin.String(MediaFlagResolutionColorSettingsValue,none)">$LOCALIZE[231]</value>
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,red)">$LOCALIZE[13343]</value>	
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,orange)">$LOCALIZE[13342]</value>
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,green)">$LOCALIZE[13341]</value>
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,blue)">$LOCALIZE[762]</value>
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,cyan)">$LOCALIZE[765]</value>
+        <value condition="Skin.String(MediaFlagResolutionColorSettingsValue,violet)">$LOCALIZE[31396]</value>		
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,magenta)">$LOCALIZE[31397]</value>
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,yellow)">$LOCALIZE[743]</value>
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,turquoise)">$LOCALIZE[31398]</value>
+		<value condition="Skin.String(MediaFlagResolutionColorSettingsValue,brown)">$LOCALIZE[31399]</value>
+		<value>Default / Orange</value>
+	</variable>
+		<variable name="AspectRatioMediaColorFlagUserLabelVar">
+	    <value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,none)">$LOCALIZE[231]</value>
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,red)">$LOCALIZE[13343]</value>	
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,orange)">$LOCALIZE[13342]</value>
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,green)">$LOCALIZE[13341]</value>
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,blue)">$LOCALIZE[762]</value>
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,cyan)">$LOCALIZE[765]</value>
+        <value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,violet)">$LOCALIZE[31396]</value>		
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,magenta)">$LOCALIZE[31397]</value>
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,yellow)">$LOCALIZE[743]</value>
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,turquoise)">$LOCALIZE[31398]</value>
+		<value condition="Skin.String(MediaFlagAspectRatioColorSettingsValue,brown)">$LOCALIZE[31399]</value>
+		<value>Default / Orange</value>
 	</variable>
 	<!-- Folder paths -->
 	<variable name="VideoFolderPathVar">
@@ -1032,4 +1061,68 @@
 		<value condition="!ListItem.IsParentFolder + Container.Content(albums) + !String.IsEmpty(ListItem.DiscNumber)">$INFO[ListItem.FolderPath]</value>
 		<value condition="!ListItem.IsParentFolder + Container.Content(albums) + String.IsEmpty(ListItem.DiscNumber)">musicdb://albums/$INFO[ListItem.DBID]/-1/?albumid=180</value>
 	</variable>
+
+	<variable name="MovieMetaScrollingDelayVarA">
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,4)">4</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,5)">5</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,6)">6</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,7)">7</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,8)">8</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,9)">9</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,10)">10</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,15)">15</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,20)">20</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,30)">30</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,60)">60</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevara,90)">90</value>
+		<value>(Default) 7</value>
+	</variable>
+
+	<variable name="MovieMetaScrollingDelayVarB">
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,4)">00:04</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,5)">00:05</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,6)">00:06</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,7)">00:07</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,8)">00:08</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,9)">00:09</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,10)">00:10</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,15)">00:15</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,20)">00:20</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,30)">00:30</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,60)">01:00</value>
+		<value condition="Skin.String(moviemetascrollingdelayvaluevarb,90)">01:30</value>
+		<value>00:07</value>
+	</variable>	
+
+		<variable name="PersonMetaScrollingDelayVarA">
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,4)">4</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,5)">5</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,6)">6</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,7)">7</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,8)">8</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,9)">9</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,10)">10</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,15)">15</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,20)">20</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,30)">30</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,60)">60</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevara,90)">90</value>
+		<value>(Default) 7</value>
+	</variable>
+
+	<variable name="PersonMetaScrollingDelayVarB">
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,4)">00:04</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,5)">00:05</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,6)">00:06</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,7)">00:07</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,8)">00:08</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,9)">00:09</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,10)">00:10</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,15)">00:15</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,20)">00:20</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,30)">00:30</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,60)">01:00</value>
+		<value condition="Skin.String(personmetascrollingdelayvaluevarb,90)">01:30</value>
+		<value>00:07</value>
+	</variable>	
 </includes>

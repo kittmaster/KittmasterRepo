@@ -1,0 +1,2287 @@
+# Kodi Media Center language file
+# Addon Name: Madnox Redux
+# Addon Name: skin.madnox.redux
+# Addon Provider: Team Madnox
+msgid ""
+msgstr ""
+"Project-Id-Version: madnox swedish\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
+"Language-Team: sv\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#: /16x9/DialogAddonSettings.xml /16x9/Variables.xml /16x9/DialogTextViewer.xml /16x9/Custom_1100_TextViewer.xml /16x9/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31000"
+msgid "Page"
+msgstr "Sida"
+
+#: /16x9/DialogAddonSettings.xml /16x9/DialogMediaSource.xml /16x9/Includes_CommonObjects.xml /16x9/Variables.xml /16x9/DialogFavourites.xml /16x9/Includes_Dialogs.xml /16x9/Custom_1110_CustomSelectConatainer.xml /16x9/DialogSettings.xml /16x9/DialogSubtitles.xml
+msgctxt "#31001"
+msgid "Items"
+msgstr "Artiklar"
+
+#: /16x9/Home.xml /16x9/Variables.xml /16x9/Custom_1111_Topbar.xml
+msgctxt "#31002"
+msgid "Now playing"
+msgstr "Spelas nu"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31003"
+msgid "Order"
+msgstr "Order"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31004"
+msgid "Weather background"
+msgstr "Väderbakgrund"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31005"
+msgid "shadow"
+msgstr "skugga"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31006"
+msgid "Flat"
+msgstr "Platt"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31007"
+msgid "Single image"
+msgstr "Enstaka bild"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31008"
+msgid "Multi image"
+msgstr "Flera bilder"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31009"
+msgid "Music discart fallback"
+msgstr "Musik discart fallback"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31010"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Ange typ och lägg till regler för att skapa en smart spellista. Dessa spellistor är dynamiska och innehåller alla medieobjekt från din databas som omfattas av dina valda regler."
+
+#: /16x9/Variables.xml
+msgctxt "#31011"
+msgid "Returning"
+msgstr "Återkommande"
+
+#: /16x9/Variables.xml
+msgctxt "#31012"
+msgid "Ended"
+msgstr "Avslutad"
+
+#: /16x9/Variables.xml
+msgctxt "#31013"
+msgid "TBD"
+msgstr "TBD"
+
+#: /16x9/Variables.xml
+msgctxt "#31014"
+msgid "New series"
+msgstr "Ny serie"
+
+#: /16x9/Variables.xml
+msgctxt "#31015"
+msgid "Finale"
+msgstr "Final"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31016"
+msgid "Smaller pop-up notifications"
+msgstr "Mindre popup-meddelanden"
+
+#: /16x9/Home.xml /16x9/SkinSettings.xml
+msgctxt "#31017"
+msgid "Edit main menu"
+msgstr "Redigera huvudmeny"
+
+#: /16x9/Home.xml /16x9/SkinSettings.xml
+msgctxt "#31018"
+msgid "Reset main menu"
+msgstr "Återställ huvudmenyn"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31019"
+msgid "Show scroll letter"
+msgstr "Visa rullningsbrev"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31020"
+msgid "Dim screen on dialog popup"
+msgstr "Dimma skärmen i dialogrutan"
+
+#: /16x9/Home.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31021"
+msgid "Area"
+msgstr "Område"
+
+#: /16x9/SettingsSystemInfo.xml
+msgctxt "#31022"
+msgid "CPU"
+msgstr "CPU"
+
+#: /16x9/SettingsSystemInfo.xml
+msgctxt "#31023"
+msgid "Memory"
+msgstr "Minne"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31024"
+msgid "Customise shortcut menu"
+msgstr "Anpassa genvägsmenyn"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31025"
+msgid "View options"
+msgstr "Visa alternativ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31026"
+msgid "Predictive text for virtual keyboard"
+msgstr "Prediktiv text för virtuellt tangentbord"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31027"
+msgid "Global override"
+msgstr "Global åsidosättning"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31028"
+msgid "Manage"
+msgstr "Hantera"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31029"
+msgid "Video now playing background"
+msgstr "Video spelas nu bakgrund"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31030"
+msgid "Music now playing background"
+msgstr "Musik spelas nu i bakgrunden"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31031"
+msgid "Enable day and night colour themes"
+msgstr "Möjliggör färgteman för dag och natt"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31032"
+msgid "Theme for day time"
+msgstr "Tema för dagtid"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31033"
+msgid "Theme for night time"
+msgstr "Tema för nattetid"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31034"
+msgid "Weather icons"
+msgstr "Väderikoner"
+
+#: /16x9/Variables.xml
+msgctxt "#31035"
+msgid "Extra fanart"
+msgstr "Extramaterial-fanart"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31036"
+msgid "Fallback"
+msgstr "Reserv"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31037"
+msgid "Animated posters"
+msgstr "Animerade affischer"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31038"
+msgid "Animated background"
+msgstr "Animerad bakgrund"
+
+#: /16x9/Home.xml /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+msgctxt "#31039"
+msgid "Widgets"
+msgstr "Widgetar"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31040"
+msgid "Settings menu"
+msgstr "Inställningsmeny"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31041"
+msgid "Main menu"
+msgstr "Huvudmeny"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31042"
+msgid "Top bar"
+msgstr ""
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31043"
+msgid "Fixed list"
+msgstr "Fast lista"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31044"
+msgid "Artwork"
+msgstr "Bakgrund"
+
+#: /16x9/Custom_1110_Colors.xml /16x9/SkinSettings.xml /16x9/Variables_Colors.xml
+msgctxt "#31045"
+msgid "Global default"
+msgstr "Globalt standardvärde"
+
+#: /16x9/Custom_1111_Topbar.xml
+msgctxt "#31046"
+msgid "Item Count"
+msgstr "Antal poster"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31047"
+msgid "Floor"
+msgstr "Golv"
+
+#: /16x9/SkinSettings.xml /16x9/Variables_Themes.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31048"
+msgid "Shadow"
+msgstr "Skugga"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31049"
+msgid "Highlight"
+msgstr "Markera"
+
+#: /16x9/script-skinshortcuts.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31050"
+msgid "Info line"
+msgstr "Info-linje"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31051"
+msgid "Texture"
+msgstr "Textur"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31052"
+msgid "Coloured"
+msgstr "Färgade"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31053"
+msgid "Country icons"
+msgstr "Ikoner för länder"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31054"
+msgid "Default backgrounds"
+msgstr "Standardbakgrunder"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31055"
+msgid "Weather fanart"
+msgstr "Väder-fanart"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31056"
+msgid "Panel"
+msgstr "Panel"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31057"
+msgid "Installed"
+msgstr "Installerad"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31058"
+msgid "Not installed"
+msgstr "Inte installerad"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31059"
+msgid "Layout"
+msgstr "Layout"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31060"
+msgid "Language flags"
+msgstr "Språkflaggor"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml /16x9/script-skinshortcuts.xml
+msgctxt "#31061"
+msgid "Icon"
+msgstr "Ikon"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31062"
+msgid "Coloured icons"
+msgstr "Färgade ikoner"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31063"
+msgid "On air"
+msgstr "I direktsändning"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31064"
+msgid "Last aired"
+msgstr "Senast sändes"
+
+#: /16x9/Custom_1117_MusicVisSettings.xml
+msgctxt "#31065"
+msgid "Visualisation settings"
+msgstr "Inställningar för visualisering"
+
+#: /16x9/Custom_1117_MusicVisSettings.xml
+msgctxt "#31066"
+msgid "Choose presets"
+msgstr "Välj förinställningar"
+
+#: /16x9/DialogSubtitles.xml
+msgctxt "#31067"
+msgid "Local subtitle available"
+msgstr "Lokal undertext tillgänglig"
+
+#: /16x9/Custom_1117_MusicVisSettings.xml
+msgctxt "#31068"
+msgid "Lyrics add-on"
+msgstr "Tillägg för texter"
+
+#: /16x9/Custom_1117_MusicVisSettings.xml
+msgctxt "#31069"
+msgid "Lyrics add-on settings"
+msgstr "Inställningar för texttillägg"
+
+#: /16x9/View_507_FanartList.xml
+msgctxt "#31070"
+msgid "Fanart list"
+msgstr "Fanart lista"
+
+#: /16x9/View_700_RightList.xml
+msgctxt "#31071"
+msgid "Right list"
+msgstr "Höger lista"
+
+#: /16x9/DialogFullScreenInfo.xml
+msgctxt "#31072"
+msgid "Premiered"
+msgstr "Premiär"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31073"
+msgid "Video decoder"
+msgstr "Videoavkodare"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31074"
+msgid "Pixel format"
+msgstr "Bildpunktsformat"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31075"
+msgid "Decoding"
+msgstr "Avkodning"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31076"
+msgid "Movie set cover background"
+msgstr "Bakgrund för filminspelning"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31077"
+msgid "Signal"
+msgstr "Signal"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31078"
+msgid "Furniture"
+msgstr "Möbler"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31079"
+msgid "Prefer plot outline"
+msgstr "Föredrar handlingsskiss"
+
+#: /16x9/MyVideoNav.xml
+msgctxt "#31080"
+msgid "Edit Nodes"
+msgstr "Redigera noder"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31081"
+msgid "Media menu buttons"
+msgstr "Media-menyknappar"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31082"
+msgid "Info dialogs"
+msgstr "Info-dialogrutor"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31083"
+msgid "Favourites script"
+msgstr "Favoritmanus"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31084"
+msgid "Case"
+msgstr "Fodral"
+
+#: /16x9/Custom_1127_BackgroundCustomizer.xml
+msgctxt "#31085"
+msgid "Overlay"
+msgstr "Överlägg"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31086"
+msgid "Video playlist"
+msgstr "Videospellista"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31087"
+msgid "Embuary info"
+msgstr "Embuary-information"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31088"
+msgid "Trakt"
+msgstr "Trakt"
+
+#: /16x9/MyVideoNav.xml
+msgctxt "#31089"
+msgid "Add node"
+msgstr "Lägg till nod"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31090"
+msgid "Daily"
+msgstr "Dagligen"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31091"
+msgid "Map"
+msgstr "Karta"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31092"
+msgid "Overview"
+msgstr "Översikt"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31093"
+msgid "Backup"
+msgstr "Säkerhetskopia"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31094"
+msgid "Restore"
+msgstr "Återställ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31095"
+msgid "Hide view options"
+msgstr "Dölj visningsalternativ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31096"
+msgid "Hide view options & types"
+msgstr "Dölj visningsalternativ och -typer"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31097"
+msgid "Hide menus"
+msgstr "Dölj menyer"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31098"
+msgid "Kiosk mode"
+msgstr "Kiosk-läge"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31099"
+msgid "Dark"
+msgstr "Mörk"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31100"
+msgid "Light"
+msgstr "Ljus"
+
+#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+msgctxt "#31101"
+msgid "Submenu"
+msgstr "Undermeny"
+
+#: /16x9/script-skinshortcuts.xml /16x9/variables.xml
+msgctxt "#31102"
+msgid "Select live background"
+msgstr "Välj live-bakgrund"
+
+#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml /16x9/variables.xml
+msgctxt "#31103"
+msgid "Live background"
+msgstr "Bakgrund i realtid"
+
+#: /16x9/DialogSubtitles.xml
+msgctxt "#31104"
+msgid "Local subtitles available"
+msgstr "Lokala undertexter tillgängliga"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31105"
+msgid "colour"
+msgstr "färg"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31106"
+msgid "Global"
+msgstr "Global"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31107"
+msgid "background"
+msgstr "bakgrund"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31108"
+msgid "Disc art"
+msgstr "Skivkonst"
+
+#: /16x9/DialogVideoInfo.xml /16x9/DialogMusicInfo.xml
+msgctxt "#31109"
+msgid "Get art"
+msgstr "Få konst"
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31110"
+msgid "Similar"
+msgstr "Liknande"
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31111"
+msgid "Budget"
+msgstr "Budget"
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31112"
+msgid "Revenue"
+msgstr "Intäkter"
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31113"
+msgid "Awards"
+msgstr "Utmärkelser"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31114"
+msgid "Carbon"
+msgstr "Kol"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31115"
+msgid "Pixels"
+msgstr "Pixlar"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31116"
+msgid "Steel plate"
+msgstr "Stålplåt"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31117"
+msgid "Wallpaper"
+msgstr "Bakgrund"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31118"
+msgid "Wood"
+msgstr "Trä"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31119"
+msgid "Wrinkles"
+msgstr "Rynkor"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31120"
+msgid "Center"
+msgstr "Centrera"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31121"
+msgid "Icons wide"
+msgstr "Ikoner breda"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31122"
+msgid "Big icons wide"
+msgstr "Stora ikoner breda"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31123"
+msgid "Logo"
+msgstr "Logotyp"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31124"
+msgid "Required"
+msgstr "Obligatorisk"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31125"
+msgid "Recommended"
+msgstr "Rekommenderad"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31126"
+msgid "Optional"
+msgstr "Valfritt"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31127"
+msgid "RSS"
+msgstr "RSS"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31128"
+msgid "Dialog"
+msgstr "Dialog"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31129"
+msgid "style"
+msgstr "stil"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31130"
+msgid "Square"
+msgstr "Fyrkant"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31131"
+msgid "Emboss"
+msgstr "Relief"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31132"
+msgid "texture"
+msgstr "textur"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31133"
+msgid "Pattern"
+msgstr "Mönster"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31134"
+msgid "Gradient"
+msgstr "Gradient"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31135"
+msgid "Brushed"
+msgstr "Borstad"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31136"
+msgid "Text"
+msgstr "Text"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31137"
+msgid "Subtext"
+msgstr "Undertext"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31138"
+msgid "Focus text"
+msgstr "Fokus text"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31139"
+msgid "List separator"
+msgstr "Lista separator"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31140"
+msgid "White media flags"
+msgstr "Vita medieflaggor"
+
+#: 31140 /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31141"
+msgid "System bar"
+msgstr "Systembar"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31142"
+msgid "Submenu bar"
+msgstr "Undermenyfält"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31143"
+msgid "RSS bar"
+msgstr "RSS-fält"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31144"
+msgid "layout"
+msgstr "layout"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31145"
+msgid "Effects"
+msgstr "Effekter"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31146"
+msgid "Leaves"
+msgstr "Blad"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31147"
+msgid "Confetti"
+msgstr "Konfetti"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31148"
+msgid "Valentine"
+msgstr "Valentine"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31149"
+msgid "Easter"
+msgstr "Påsk"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31150"
+msgid "Concrete"
+msgstr "Betong"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31151"
+msgid "Media menu"
+msgstr "Media-meny"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31152"
+msgid "Focus icon"
+msgstr "Fokus-ikon"
+
+#: /16x9/Variables.xml
+msgctxt "#31153"
+msgid "PVR channels"
+msgstr "PVR-kanaler"
+
+#: /16x9/Variables.xml /shortcuts/overrides.xml
+msgctxt "#31154"
+msgid "Movies and TV shows"
+msgstr "Filmer och TV-program"
+
+#: /16x9/Variables.xml /shortcuts/overrides.xml
+msgctxt "#31155"
+msgid "Video and music add-ons"
+msgstr "Tillägg för video och musik"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31156"
+msgid "Weather icon"
+msgstr "Väder-ikon"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31157"
+msgid "Nofocus text"
+msgstr "Nofokus-text"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31158"
+msgid "Nofocus icon"
+msgstr "Nofokus-ikon"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31159"
+msgid "Now playing progress"
+msgstr "Nu spelas framsteg"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31160"
+msgid "Top bar / Main menu bars"
+msgstr "Översta fältet / Huvudmenyns fält"
+
+#: 31160 /16x9/Includes_CustomSelect.xml
+msgctxt "#31161"
+msgid "Extended info"
+msgstr "Utökad information"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31162"
+msgid "Character art"
+msgstr "Figurkonst"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31163"
+msgid "Prefer info"
+msgstr "Föredrar information"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31164"
+msgid "Blur background"
+msgstr "Suddig bakgrund"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31165"
+msgid "Clear art"
+msgstr "Klar konst"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31166"
+msgid "Replace play with cinema mode"
+msgstr "Ersätt lek med biografläge"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31167"
+msgid "Library backgrounds"
+msgstr "Bibliotekets bakgrunder"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31168"
+msgid "Tool tips"
+msgstr "Tips om verktyg"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31169"
+msgid "Music info"
+msgstr "Musikinformation"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31170"
+msgid "Audio info"
+msgstr "Ljudinformation"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31171"
+msgid "Glass"
+msgstr "Glas"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31172"
+msgid "CD clear"
+msgstr "CD-skiva klar"
+
+#: /16x9/Variables.xml /shortcuts/mainmenu.DATA.xml /shortcuts/overrides.xml
+msgctxt "#31173"
+msgid "Live TV"
+msgstr "Direktsänd TV"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31174"
+msgid "Disabled text"
+msgstr "Text för funktionshindrade"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31175"
+msgid "Default texture"
+msgstr "Standardtextur"
+
+#: 31175 /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31176"
+msgid "case"
+msgstr "referens"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31177"
+msgid "Visualisation music info"
+msgstr "Visualisering av musikinformation"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31178"
+msgid "Visualisation audio info"
+msgstr "Visualisering av ljudinformation"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31179"
+msgid "fanart"
+msgstr "fanart"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31180"
+msgid "Audio background"
+msgstr "Ljudbakgrund"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31181"
+msgid "Video background"
+msgstr "Videobakgrund"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31182"
+msgid "Vinyl"
+msgstr "Vinyl"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31183"
+msgid "Blu-ray"
+msgstr "Blu-ray"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31184"
+msgid "White"
+msgstr "Vit"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31185"
+msgid "Blue"
+msgstr "Blå"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31186"
+msgid "Golden"
+msgstr "Gyllene"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31187"
+msgid "Green"
+msgstr "Grön"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31188"
+msgid "Grey"
+msgstr "Grå"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31189"
+msgid "Orange"
+msgstr "Orange"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31190"
+msgid "Purple"
+msgstr "Lila"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31191"
+msgid "Red"
+msgstr "Röd"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31192"
+msgid "Skin helper extended art"
+msgstr "Skin helper extended art"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31193"
+msgid "On info"
+msgstr "På info"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31194"
+msgid "Persistant"
+msgstr "Beständig"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31195"
+msgid "Animated"
+msgstr "Animerat"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31196"
+msgid "Background now playing info"
+msgstr "Bakgrundsinformation om pågående spelning"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31197"
+msgid "Automatically open fullscreen music on play"
+msgstr "Öppna automatiskt musik i helskärm vid uppspelning"
+
+#: /16x9/Variables.xml
+msgctxt "#31198"
+msgid "Forward"
+msgstr "Framåt"
+
+#: /16x9/Variables.xml
+msgctxt "#31199"
+msgid "Rewind"
+msgstr "Backa"
+
+#: /16x9/Variables.xml
+msgctxt "#31200"
+msgid "Internet stream"
+msgstr "Internetström"
+
+#: /16x9/Variables.xml
+msgctxt "#31201"
+msgid "Landscape"
+msgstr "Liggande"
+
+#: /16x9/Variables.xml
+msgctxt "#31202"
+msgid "Clear logo"
+msgstr "Tydlig logotyp"
+
+#: /16x9/Variables.xml
+msgctxt "#31203"
+msgid "Portrait"
+msgstr "Porträtt"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31204"
+msgid "Recently released"
+msgstr "Nyligen släppt"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31205"
+msgid "Recommended"
+msgstr "Rekommenderad"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31206"
+msgid "Most played"
+msgstr "Mest spelade"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31207"
+msgid "Position"
+msgstr "Position"
+
+#: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31208"
+msgid "Bottom"
+msgstr "Botten"
+
+#: /16x9/Variables.xml /shortcuts/overrides.xml
+msgctxt "#31209"
+msgid "Top"
+msgstr "Topp"
+
+#: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31210"
+msgid "Big"
+msgstr "Stor"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31211"
+msgid "Movie/TV show info"
+msgstr "Information om film/TV-program"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31212"
+msgid "Big list"
+msgstr "Stor lista"
+
+#: /16x9/View_050_PosterList.xml /16x9/Custom_1115_ViewSettings.xml /16x9/Includes_MediaFlags.xml
+msgctxt "#31213"
+msgid "Poster list"
+msgstr "Posterlista"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31214"
+msgid "Reflect"
+msgstr "Reflektera"
+
+#: /16x9/View_051_SimpleList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31215"
+msgid "Simple list"
+msgstr "Enkel lista"
+
+#: /16x9/View_501_BigSimpleList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31216"
+msgid "Big simple list"
+msgstr "Stor enkel lista"
+
+#: /16x9/View_052_TwinList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31217"
+msgid "Twin list"
+msgstr "Tvillinglista"
+
+#: /16x9/View_502_BigTwinList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31218"
+msgid "Big twin list"
+msgstr "Stor tvillinglista"
+
+#: /16x9/View_053_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31219"
+msgid "Info list 1"
+msgstr "Info lista 1"
+
+#: /16x9/View_503_BigInfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31220"
+msgid "Big info list 1"
+msgstr "Stor informationslista 1"
+
+#: /16x9/View_054_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31221"
+msgid "Info list 2"
+msgstr "Info lista 2"
+
+#: /16x9/View_504_BigInfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31222"
+msgid "Big info list 2"
+msgstr "Stor informationslista 2"
+
+#: /16x9/View_55_LowList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31223"
+msgid "Low list"
+msgstr "Låg lista"
+
+#: /16x9/View_505_LowList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31224"
+msgid "Big low list"
+msgstr "Stor låg lista"
+
+#: /16x9/View_56_3Panel.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31225"
+msgid "3 panel"
+msgstr "3 panel"
+
+#: /16x9/View_506_Big3Panel.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31226"
+msgid "Big 3 panel"
+msgstr "Stor 3-panel"
+
+#: /16x9/Variables.xml
+msgctxt "#31227"
+msgid "Premiered"
+msgstr "Premiär"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31228"
+msgid "Video preview window"
+msgstr "Fönster för förhandsgranskning av video"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31229"
+msgid "Icon size"
+msgstr "Ikonstorlek"
+
+#: /16x9/View_553_ShowCase.xml
+msgctxt "#31230"
+msgid "Showcase"
+msgstr "Visningsfönster"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31231"
+msgid "2 thumbs"
+msgstr "2 tummar"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31232"
+msgid "4 thumbs"
+msgstr "4 tummar"
+
+#: /16x9/View_57_3PanelSquare.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31233"
+msgid "3 panel square"
+msgstr "3 paneler fyrkantiga"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31234"
+msgid "Media flags"
+msgstr "Flaggor i media"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31235"
+msgid "Small icons"
+msgstr "Små ikoner"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31236"
+msgid "Album case"
+msgstr "Albumfodral"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31237"
+msgid "Video case"
+msgstr "Videofodral"
+
+#: /16x9/View_051_SimpleList.xml
+msgctxt "#31238"
+msgid "Cover list"
+msgstr "Omslagslista"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31239"
+msgid "Cover flow portrait"
+msgstr "Porträtt av täckflöde"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31240"
+msgid "Press up for info"
+msgstr "Tryck upp för information"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31241"
+msgid "Cover flow square"
+msgstr "Täck flödesrutan"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31242"
+msgid "Cover flow banner"
+msgstr "Täckflödesbanner"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31243"
+msgid "Cover flow landscape"
+msgstr "Täcka flödeslandskap"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31244"
+msgid "Open case"
+msgstr "Öppet ärende"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31245"
+msgid "Focus"
+msgstr "Fokus"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31246"
+msgid "Cascade"
+msgstr "Kaskad"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31247"
+msgid "Kodiflix"
+msgstr "Kodiflix"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31248"
+msgid "Portrait icon"
+msgstr "Ikon för porträtt"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31249"
+msgid "Banner icon"
+msgstr "Banner-ikon"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31250"
+msgid "Landscape icon"
+msgstr "Liggande ikon"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31251"
+msgid "Portrait icon info"
+msgstr "Porträtt ikon info"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31252"
+msgid "Banner icon info"
+msgstr "Information om bannerikon"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31253"
+msgid "Landscape icon info"
+msgstr "Landskapsikon info"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31254"
+msgid "Portrait wall"
+msgstr "Porträttvägg"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31255"
+msgid "Square wall"
+msgstr "Fyrkantig vägg"
+
+#: /16x9/View_542_BannerWall.xml
+msgctxt "#31256"
+msgid "Banner wall"
+msgstr "Bannervägg"
+
+#: /16x9/View_543_LandscapeWall.xml
+msgctxt "#31257"
+msgid "Landscape wall"
+msgstr "Landskapsmur"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31258"
+msgid "Focus square"
+msgstr "Fokus kvadrat"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31259"
+msgid "Cover"
+msgstr "Täck"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31260"
+msgid "Square icon"
+msgstr "Fyrkantig ikon"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31261"
+msgid "Square icon info"
+msgstr "Info om fyrkantig ikon"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31262"
+msgid "Kodiflix square"
+msgstr "Kodiflix fyrkant"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31263"
+msgid "Cascade square"
+msgstr "Kaskadkvarter"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31264"
+msgid "Showcase square"
+msgstr "Utställningsfyrkanten"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31265"
+msgid "Kodiflix landscape"
+msgstr "Kodiflix landskap"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31266"
+msgid "Simple"
+msgstr "Enkel"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31267"
+msgid "Info 1"
+msgstr "Info 1"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31268"
+msgid "Info 2"
+msgstr "Info 2"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31269"
+msgid "Cover flow"
+msgstr "Täckflöde"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31270"
+msgid "Enable/Disable views"
+msgstr "Aktivera/inaktivera vyer"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31271"
+msgid "Icon info"
+msgstr "Ikoninformation"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31272"
+msgid "Wall"
+msgstr "Vägg"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31273"
+msgid "Info delay"
+msgstr "Fördröjning av information"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31274"
+msgid "Install genre icons"
+msgstr "Installera genreikoner"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31275"
+msgid "B/W genre icons"
+msgstr "S/V-genreikoner"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31276"
+msgid "Install colour genre icons"
+msgstr "Installera ikoner för färggenre"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31277"
+msgid "Install B/W genre icons"
+msgstr "Installera ikoner för svartvita genrer"
+
+#: /16x9/View_058_BannerList.xml
+msgctxt "#31278"
+msgid "Banner list"
+msgstr "Banner-lista"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31279"
+msgid "Right"
+msgstr "Höger"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31280"
+msgid "Next aired"
+msgstr "Nästa sändning"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31281"
+msgid "Panels"
+msgstr "Paneler"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31282"
+msgid "Mud"
+msgstr "Lera"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31283"
+msgid "Plain"
+msgstr "Enkel"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31284"
+msgid "Shadow texture"
+msgstr "Skuggstruktur"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31285"
+msgid "Themes & Colours"
+msgstr "Teman & färger"
+
+#: /16x9/Home.xml
+msgctxt "#31286"
+msgid "Menus"
+msgstr "Menyer"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31287"
+msgid "Shortcut menu"
+msgstr "Meny för genvägar"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31288"
+msgid "Hide"
+msgstr "Dölj"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31289"
+msgid "Widget"
+msgstr "Widget"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31290"
+msgid "Aspect"
+msgstr "Bildförhållande"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31291"
+msgid "Music case"
+msgstr "Musikfodral"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31292"
+msgid "Custom favourites"
+msgstr "Anpassade favoriter"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31293"
+msgid "Favourite"
+msgstr "Favorit"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31294"
+msgid "Custom favourite addons"
+msgstr "Anpassade favorittillägg"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31295"
+msgid "Cinema mode"
+msgstr "Biograf-läge"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31296"
+msgid "Trailer count"
+msgstr "Trailerräkning"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31297"
+msgid "Intro path"
+msgstr "Intro sökväg"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31298"
+msgid "Select theme"
+msgstr "Välj tema"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31299"
+msgid "Video discart fallback"
+msgstr "Video discart fallback"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31300"
+msgid "Customise"
+msgstr "Anpassa"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31301"
+msgid "Channel number"
+msgstr "Kanalnummer"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31302"
+msgid "Channel name"
+msgstr "Kanal namn"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31303"
+msgid "Repository"
+msgstr "Förvar"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31304"
+msgid "Progress bar"
+msgstr "Förloppsmätare"
+
+#: /16x9/DialogPVRChannelManager.xml
+msgctxt "#31305"
+msgid "Apply"
+msgstr "Tillämpa"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31306"
+msgid "TV Show season cover background"
+msgstr "TV-program säsong omslag bakgrund"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31307"
+msgid "Genre cover background"
+msgstr "Bakgrund för genreomslag"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31308"
+msgid "Artist album cover background"
+msgstr "Artist albumomslag bakgrund"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31309"
+msgid "Cover background"
+msgstr "Täck bakgrund"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31310"
+msgid "Fanart rotation speed"
+msgstr "Fanart rotationshastighet"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31311"
+msgid "seconds"
+msgstr "sekunder"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31312"
+msgid "Fullscreen audio"
+msgstr "Ljud i helskärm"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31313"
+msgid "Jump to letter"
+msgstr "Hoppa till brev"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31314"
+msgid "Disable library fanart"
+msgstr "Inaktivera bibliotek fanart"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31315"
+msgid "Music background"
+msgstr "Musikbakgrund"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31316"
+msgid "Stream/Radio background"
+msgstr "Sträm/Radiobakgrund"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31317"
+msgid "PVR status"
+msgstr "PVR-status"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31318"
+msgid "TV status"
+msgstr "TV-status"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31319"
+msgid "Radio status"
+msgstr "Radiostatus"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31320"
+msgid "TV widget"
+msgstr "TV-widget"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31321"
+msgid "Radio widget"
+msgstr "Radio widget"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31322"
+msgid "PVR widget"
+msgstr "PVR widget"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31323"
+msgid "Video info"
+msgstr "Videoinformation"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31324"
+msgid "Movie/Episode case"
+msgstr "Film/avsnittsfodral"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31325"
+msgid "Movie/TV show case"
+msgstr "Fodral för film/TV-program"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31326"
+msgid "Music video case"
+msgstr "Fall med musikvideo"
+
+#: /16x9/Includes_NowPlaying.xml
+msgctxt "#31327"
+msgid "Special"
+msgstr "Special"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31328"
+msgid "Show media flags"
+msgstr "Visa medieflaggor"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31329"
+msgid "Show cover"
+msgstr "Visa omslag"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31330"
+msgid "Video info settings"
+msgstr "Inställningar för videoinformation"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31331"
+msgid "Create"
+msgstr "Skapa"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31332"
+msgid "Set episode"
+msgstr "Ställ in avsnitt"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31333"
+msgid "Seek icon"
+msgstr "Sökikon"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31334"
+msgid "Visualisation presets"
+msgstr "Förinställningar för visualisering"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31335"
+msgid "Visualisation options"
+msgstr "Alternativ för visualisering"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31336"
+msgid "Music settings"
+msgstr "Inställningar för musik"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31337"
+msgid "Audio view settings"
+msgstr "Inställningar för ljudvisning"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31338"
+msgid "Video view settings"
+msgstr "Inställningar för videovisning"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31339"
+msgid "Contributors"
+msgstr "Medverkande"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31340"
+msgid "Rate"
+msgstr "Kurs"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31341"
+msgid "Next episode"
+msgstr "Nästa avsnitt"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31342"
+msgid "Movies and TV Shows starring"
+msgstr "Filmer och TV-serier med huvudrollsinnehavare"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31343"
+msgid "Directed by"
+msgstr "Regisserad av"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31344"
+msgid "More movies directed by"
+msgstr "Fler filmer regisserade av"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31345"
+msgid "Written by"
+msgstr "Skriven av"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31346"
+msgid "More movies written by"
+msgstr "Fler filmer skrivna av"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31347"
+msgid "More like this"
+msgstr "Fler som liknar detta"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31348"
+msgid "No information available."
+msgstr "Ingen information tillgänglig."
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31349"
+msgid "Info dialog"
+msgstr "Info-dialog"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31350"
+msgid "Music info settings"
+msgstr "Inställningar för musikinfo"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31351"
+msgid "TMDb info"
+msgstr "TMDb-info"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31352"
+msgid "TMDb actor info"
+msgstr "TMDb skådespelare info"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31353"
+msgid "Artist slideshow"
+msgstr "Bildspel för artister"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31354"
+msgid "Artist slideshow settings"
+msgstr "Inställningar för bildspel för artister"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31355"
+msgid "Stream/Radio now playing background"
+msgstr "Ström/Radio spelas nu i bakgrunden"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31356"
+msgid "Global now playing"
+msgstr "Global spelas nu"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31357"
+msgid "Panel texture"
+msgstr "Panelens struktur"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31358"
+msgid "Background texture"
+msgstr "Textur i bakgrunden"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31359"
+msgid "Main menu texture"
+msgstr "Huvudmeny textur"
+
+#: /16x9/Includes_Topbar.xml
+msgctxt "#31360"
+msgid "Filtered"
+msgstr "Filtrerade"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31361"
+msgid "Now playing music discart fallback"
+msgstr "Nu spelar musik discart fallback"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31362"
+msgid "Now playing video discart fallback"
+msgstr "Nu spelar video discart fallback"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31363"
+msgid "Watched status"
+msgstr "Bevakad status"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31364"
+msgid "Unwatched episode count"
+msgstr "Antal osedda avsnitt"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31365"
+msgid "Widget watched status"
+msgstr "Widget bevakad status"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31366"
+msgid "Movies starring"
+msgstr "Filmer med huvudrollsinnehavare"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31367"
+msgid "TV Shows starring"
+msgstr "TV-program med huvudrollsinnehavare"
+
+#: /16x9/script-embuary-video.xml
+msgctxt "#31368"
+msgid "Crew"
+msgstr "Filmteam"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31369"
+msgid "Crew"
+msgstr "Filmteam"
+
+#: /16x9/Custom_1112_Search.xml
+msgctxt "#31370"
+msgid "Search results for"
+msgstr "Sökresultat för"
+
+#: /16x9/Custom_1112_Search.xml
+msgctxt "#31371"
+msgid "Music video artists"
+msgstr "Musikvideoartister"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31372"
+msgid "Time remaining"
+msgstr "Återstående tid"
+
+#: /16x9/Includes_ViewsVariables.xml
+msgctxt "#31373"
+msgid "Labels"
+msgstr "Etiketter"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31374"
+msgid "Cover background settings"
+msgstr "Bakgrundsinställningar för täckning"
+
+#: /16x9/Settings.xml
+msgctxt "#31375"
+msgid "Management"
+msgstr "Hantering"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31376"
+msgid "Next button"
+msgstr "Nästa knapp"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31377"
+msgid "HDR/SDR"
+msgstr "HDR/SDR"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31378"
+msgid "Bit depth"
+msgstr "Bitdjup"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31379"
+msgid "Dim background"
+msgstr "Dimma bakgrund"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31380"
+msgid "Now playing dim background"
+msgstr "Spelar nu dim bakgrund"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31381"
+msgid "Appeared in"
+msgstr "Förekom i"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31382"
+msgid "Press up for actor info"
+msgstr "Tryck upp för skådespelarinformation"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31383"
+msgid "Press up for library items by actor"
+msgstr "Tryck upp för bibliotekslån av skådespelare"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31384"
+msgid "Source flags"
+msgstr "Källflaggor"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31385"
+msgid "Limit"
+msgstr "Gräns"
+
+#: SKIN SETTINGS DESCRIPTIONS /16x9/Includes_Settings.xml
+msgctxt "#31901"
+msgid "Customisation of the home screen, widgets and shortcuts menu."
+msgstr "Anpassning av startskärm, widgets och genvägsmeny."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31902"
+msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
+msgstr "Hjälpskript för att tillhandahålla extra funktioner för skinnet, inklusive extra widgets, bioläge och suddiga bakgrunder."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31903"
+msgid "Provides colour selection."
+msgstr "Ger möjlighet till färgval."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31904"
+msgid "Install and select image addons."
+msgstr "Installera och välj bildtillägg."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31905"
+msgid "Automatically adds extra artwork for media in your media libraries."
+msgstr "Lägger automatiskt till extra illustrationer för media i dina mediabibliotek."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31906"
+msgid "Next aired library information and widgets."
+msgstr "Därefter sändes biblioteksinformation och widgets."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31907"
+msgid "Lyrics for music. Required to enable animated lyrics."
+msgstr "Texter för musik. Krävs för att aktivera animerade texter."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31908"
+msgid "Sync your collection and watched status with trakt.tv."
+msgstr "Synkronisera din samling och bevakningsstatus med trakt.tv."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31909"
+msgid "TMDb information dialogs and widgets."
+msgstr "Dialogrutor och widgets för TMDb-information."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31910"
+msgid "Create a custom favourite from selected kodi favourites."
+msgstr "Skapa en egen favorit från utvalda Kodi-favoriter."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31911"
+msgid "Edit the home screen menu, widgets, backgrounds and infolines."
+msgstr "Redigera menyn på startskärmen, widgetar, bakgrunder och infolinjer."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31912"
+msgid "Reset the home screen menu, widgets, backgrounds and infolines to default."
+msgstr "Återställ startskärmens meny, widgets, bakgrunder och infolinjer till standardinställningarna."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31913"
+msgid "Create a custom favourite from selected kodi favourites. For use in main menu widgets. Requires script favourites to be installed."
+msgstr "Skapa en anpassad favorit från utvalda Kodi-favoriter. För användning i widgetar på huvudmenyn. Kräver att skriptfavoriter är installerade."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31914"
+msgid "Create a custom addon favourite from installed addons. For use in main menu widgets."
+msgstr "Skapa en anpassad addon-favorit från installerade addons. För användning i widgetar på huvudmenyn."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31915"
+msgid "Reset the skin theme and colours to default."
+msgstr "Återställ hudens tema och färger till standardinställningarna."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31916"
+msgid "Select from a list of pre-defined themes."
+msgstr "Välj från en lista med fördefinierade teman."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31917"
+msgid "Lock preferences to disable view mode, view options, info dialog and fullscreen settings."
+msgstr "Lås inställningar för att inaktivera visningsläge, visningsalternativ, informationsdialog och helskärmsinställningar."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31918"
+msgid "Customise the home screen, favourites, predefined themes and kiosk mode."
+msgstr "Anpassa startskärmen, favoriterna, fördefinierade teman och kioskläget."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31919"
+msgid "Change skin theme textures."
+msgstr "Ändra texturer för hudtema."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31920"
+msgid "Customise the skin texture colours."
+msgstr "Anpassa färgerna på hudstrukturen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31921"
+msgid "Customise the background and fallbacks for specific skin areas."
+msgstr "Anpassa bakgrund och fallbacks för specifika hudområden."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31922"
+msgid "Enable or disable various skin features."
+msgstr "Aktivera eller inaktivera olika funktioner i skinnet."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31923"
+msgid "Customise artwork and install supported artwork packs."
+msgstr "Anpassa illustrationer och installera illustrationspaket som stöds."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31924"
+msgid "Install and configure supported addons."
+msgstr "Installera och konfigurera tillägg som stöds."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31925"
+msgid "Enable and disable library views. Disabling library views on low spec systems may improve performance."
+msgstr "Aktivera och inaktivera biblioteksvyer. Om du avaktiverar biblioteksvyer på system med låg specifikation kan det förbättra prestandan."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31926"
+msgid "Shows scroll letter when scrolling in library views."
+msgstr "Visar rullningsbokstaven när du rullar i biblioteksvyer."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31927"
+msgid "Shows the alphabet to jump to a position of the container. Will only work for default sorting methods."
+msgstr "Visar alfabetet för att hoppa till en position i behållaren. Fungerar endast för standardsorteringsmetoder."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31928"
+msgid "Shows plot outline for tv shows and movies if available, otherwise will display the default plot."
+msgstr "Visar intrigskisser för tv-serier och filmer om sådana finns tillgängliga, annars visas standardintrigen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31929"
+msgid "Auto scroll the plot if it does not fit the control dimensions."
+msgstr "Automatisk rullning av diagrammet om det inte passar in i kontrolldimensionerna."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31930"
+msgid "Enable the shortcut menu for instant access to specific skin areas. In the media menu click left to open or click on the shortcut icon."
+msgstr "Aktivera genvägsmenyn för omedelbar åtkomst till specifika hudområden. Klicka på vänster i mediamenyn för att öppna eller klicka på genvägsikonen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31931"
+msgid "Edit the shortcut menu."
+msgstr "Redigera genvägsmenyn."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31932"
+msgid "Enable and disable the topbar elements."
+msgstr "Aktivera och inaktivera elementen i toppfältet."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31933"
+msgid "Change video info settings."
+msgstr "Ändra inställningar för videoinfo."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31934"
+msgid "Change music info settings."
+msgstr "Ändra inställningar för musikinfo."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31935"
+msgid "Change fullscreen video settings."
+msgstr "Ändra inställningar för helskärmsvideo."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31936"
+msgid "Change fullscreen audio settings."
+msgstr "Ändra ljudinställningar för helskärm."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31937"
+msgid "Reduce the size of pop up notifications."
+msgstr "Minska storleken på popup-meddelanden."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31938"
+msgid "Darkens the screen behind dialog popups. Not applicable for fullscreen video or audio."
+msgstr "Mörkar skärmen bakom popup-fönster för dialogrutor. Gäller inte för video eller ljud i helskärm."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31939"
+msgid "Automatically switches to fullscreen when you press play on an album or audio file. If audio is already playing no action will be taken."
+msgstr "Växlar automatiskt till helskärm när du trycker på play på ett album eller en ljudfil. Om ljudet redan spelas upp kommer ingen åtgärd att vidtas."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31940"
+msgid "Enable coloured icons for the topbar, media information and library views."
+msgstr "Aktivera färgade ikoner för toppfältet, medieinformation och biblioteksvyer."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31941"
+msgid "Enable coloured, HDR, bit depth and language media flags."
+msgstr "Aktivera mediaflaggor för färg, HDR, bitdjup och språk."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31943"
+msgid "Audio cd art fallback skin wide."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31944"
+msgid "Video cd art fallback skin wide."
+msgstr "Video cd art fallback skin wide."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31945"
+msgid "Select and install a weather icon pack for the topbar, widgets and weather."
+msgstr "Välj och installera ett ikonpaket för väder för toppfältet, widgetar och väder."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31946"
+msgid "Select and install a weather fanart pack for the backgrounds, widgets and weather."
+msgstr "Välj och installera ett fanartpaket för väder för bakgrunder, widgets och väder."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31947"
+msgid "Install white studio icons for use throughout the skin."
+msgstr "Installera vita studioikoner för användning i hela höljet."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31948"
+msgid "Install coloured studio icons for use throughout the skin."
+msgstr "Installera färgade studioikoner för användning i hela höljet."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31949"
+msgid "Install record label icons for use throughout the skin."
+msgstr "Installera ikoner för skivmärkning för användning i hela huden."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31950"
+msgid "Install language flags for library views and subtitle selection."
+msgstr "Installera språkflaggor för biblioteksvisning och val av undertexter."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31951"
+msgid "Install music genre icons for music and music videos."
+msgstr "Installera ikoner för musikgenrer för musik och musikvideor."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31952"
+msgid "Install coloured movie genre icons for movies and tv shows."
+msgstr "Installera färgade filmgenreikoner för filmer och tv-program."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31953"
+msgid "Install black and white movie genre icons for movies and tv shows."
+msgstr "Installera svartvita filmgenreikoner för filmer och tv-program."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31954"
+msgid "Install country icons for movies country node."
+msgstr "Installera landsikoner för landsnoder för filmer."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31955"
+msgid "Set the delay between fanart transitions skin wide."
+msgstr "Ställ in fördröjningen mellan fanart-övergångar och hudbredd."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31956"
+msgid "Falling background effects. Snow, Leaves etc."
+msgstr "Fallande bakgrundseffekter. Snö, löv etc."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31957"
+msgid "Show music fanart of currently playing item skin wide. Overrides library fanart."
+msgstr "Visa musikfanart för det objekt som spelas för tillfället på hela ytan. Åsidosätter biblioteket fanart."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31958"
+msgid "Enables music visualisation in background while playing music. Requires visualisation to be enabled in settings - Player settings/Music."
+msgstr "Möjliggör musikvisualisering i bakgrunden när du spelar musik. Kräver att visualisering är aktiverad i inställningar - Spelarinställningar/Musik."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31959"
+msgid "Show now playing video in background while browsing library. Overrides library fanart."
+msgstr "Visa video som spelas nu i bakgrunden när du bläddrar i biblioteket. Åsidosätter bibliotekets fanart."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31960"
+msgid "Download images and additional information from fanart.tv and theaudiodb.com of the currently playing artist. For fullscreen music, internet streams and radio."
+msgstr "Hämta ner bilder och ytterligare information från fanart.tv och theaudiodb.com om artisten som spelas för tillfället. För musik i helskärm, internetströmmar och radio."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31961"
+msgid "Show stream/radio fanart of currently playing item skin wide. Overrides library fanart."
+msgstr "Visa stream/radio fanart av aktuellt spelande objekt i hela huden. Åsidosätter bibliotek fanart."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31962"
+msgid "Artist slideshow script settings."
+msgstr "Inställningar för skript för bildspel för artister."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31963"
+msgid "A shortcut to the video playlist if not empty."
+msgstr "En genväg till videospelningslistan om den inte är tom."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31964"
+msgid "A shortcut to the music playlist if not empty."
+msgstr "En genväg till musikspellistan om den inte är tom."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31965"
+msgid "Shortcut to fullscreen when media is playing."
+msgstr "Genväg till helskärm när media spelas upp."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31966"
+msgid "Click to open shortcut menu."
+msgstr "Klicka för att öppna genvägsmenyn."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31967"
+msgid "Player controls when media is playing."
+msgstr "Spelaren styr när media spelas upp."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31968"
+msgid "Play the next tvshow episode automatically."
+msgstr "Spela upp nästa avsnitt av tv-serien automatiskt."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31969"
+msgid "Play themes while navigating TV Shows, Movies and Music Videos."
+msgstr "Spela upp teman när du navigerar bland TV-program, filmer och musikvideor."

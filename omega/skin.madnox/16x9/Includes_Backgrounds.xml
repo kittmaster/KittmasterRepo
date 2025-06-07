@@ -51,16 +51,40 @@
 				</control>
 				<control type="multiimage">
 					<visible>!Visualisation.Enabled | !Skin.HasSetting(NowplayingVizBackground)</visible>
-					<include content="BackgroundFanartImage">
+					<!-- <include content="BackgroundFanartImage">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include> -->
+					<include content="BackgroundFanartImageScale" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),scale)">
 						<param name="animatedfanart">$PARAM[animatedfanart]</param>
 					</include>
+					<include content="BackgroundFanartImageKeep" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),keep)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageStretch" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),stretch)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageCenter" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),center)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>				
 					<imagepath background="true">$VAR[NowPlayingMusicBackgroundVar]</imagepath>
 				</control>
 				<control type="multiimage">
 					<visible>Visualisation.Enabled + Skin.HasSetting(NowplayingVizBackground)</visible>
-					<include content="BackgroundFanartImage">
+					<!-- <include content="BackgroundFanartImage">
+							<param name="animatedfanart">$PARAM[animatedfanart]</param>
+						</include> -->
+					<include content="BackgroundFanartImageScale" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),scale)">
 						<param name="animatedfanart">$PARAM[animatedfanart]</param>
 					</include>
+					<include content="BackgroundFanartImageKeep" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),keep)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageStretch" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),stretch)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageCenter" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),center)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>						
 					<imagepath background="true" colordiffuse="AAFFFFFF">$VAR[NowPlayingMusicBackgroundVar]</imagepath>
 				</control>
 			</control>
@@ -70,16 +94,40 @@
 				<include>AnimationWindowFade</include>
 				<control type="multiimage">
 					<visible>!Player.HasAudio | [Player.HasAudio + [!Visualisation.Enabled | !Skin.HasSetting(NowplayingVizBackground)]]</visible>
-					<include content="BackgroundFanartImage">
+					<!-- <include content="BackgroundFanartImage">
+							<param name="animatedfanart">$PARAM[animatedfanart]</param>
+						</include> -->
+					<include content="BackgroundFanartImageScale" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),scale)">
 						<param name="animatedfanart">$PARAM[animatedfanart]</param>
 					</include>
+					<include content="BackgroundFanartImageKeep" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),keep)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageStretch" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),stretch)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageCenter" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),center)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>						
 					<imagepath background="true">$PARAM[imagepath]</imagepath>
 				</control>
 				<control type="multiimage">
 					<visible>Player.HasAudio + Visualisation.Enabled + Skin.HasSetting(NowplayingVizBackground)</visible>
-					<include content="BackgroundFanartImage">
+					<!-- <include content="BackgroundFanartImage">
+							<param name="animatedfanart">$PARAM[animatedfanart]</param>
+						</include> -->
+					<include content="BackgroundFanartImageScale" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),scale)">
 						<param name="animatedfanart">$PARAM[animatedfanart]</param>
 					</include>
+					<include content="BackgroundFanartImageKeep" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),keep)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageStretch" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),stretch)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>
+					<include content="BackgroundFanartImageCenter" condition="String.IsEqual(Skin.String(MusicFanartBackgroundGroupVarValue),center)">
+						<param name="animatedfanart">$PARAM[animatedfanart]</param>
+					</include>						
 					<imagepath background="true" colordiffuse="AAFFFFFF">$PARAM[imagepath]</imagepath>
 				</control>
 				<!-- Cover backgrounds -->
@@ -968,7 +1016,18 @@
 			</control>
 		</definition>
 	</include>
-	<include name="BackgroundFanartImage">
+	<!-- Rationale: 4 unique aspect ratios are required because of the different ways images can be displayed and aspect ratio requires hardcoding -->
+	<!--<include name="BackgroundFanartImage"> -->	<!-- Background Fanart Image Original Function -->
+		<!-- <animation type="Conditional" pulse="true" condition="$PARAM[animatedfanart]"> -->
+			<!-- <effect type="zoom" start="110" end="120" center="auto" time="12000" tween="sine" easing="inout"/> -->
+			<!-- <effect type="slide" start="-20,-20" end="20,20" time="6000" tween="sine" easing="inout"/> -->
+		<!-- </animation> -->
+		<!-- <include>FullScreenDimensions</include> -->
+		<!-- <randomize>true</randomize> -->
+		<!-- <aspectratio>scale</aspectratio> -->
+		<!-- <fadetime>TextureFadeTime</fadetime> -->
+	<!-- </include> -->
+	<include name="BackgroundFanartImageScale"> <!-- Scale -->
 		<animation type="Conditional" pulse="true" condition="$PARAM[animatedfanart]">
 			<effect type="zoom" start="110" end="120" center="auto" time="12000" tween="sine" easing="inout"/>
 			<effect type="slide" start="-20,-20" end="20,20" time="6000" tween="sine" easing="inout"/>
@@ -976,6 +1035,36 @@
 		<include>FullScreenDimensions</include>
 		<randomize>true</randomize>
 		<aspectratio>scale</aspectratio>
+		<fadetime>TextureFadeTime</fadetime>
+	</include>
+	<include name="BackgroundFanartImageKeep"> <!-- Keep -->
+		<animation type="Conditional" pulse="true" condition="$PARAM[animatedfanart]">
+			<effect type="zoom" start="110" end="120" center="auto" time="12000" tween="sine" easing="inout"/>
+			<effect type="slide" start="-20,-20" end="20,20" time="6000" tween="sine" easing="inout"/>
+		</animation>
+		<include>FullScreenDimensions</include>
+		<randomize>true</randomize>
+		<aspectratio>keep</aspectratio>
+		<fadetime>TextureFadeTime</fadetime>
+	</include>
+	<include name="BackgroundFanartImageStretch"> <!-- Stretch -->
+		<animation type="Conditional" pulse="true" condition="$PARAM[animatedfanart]">
+			<effect type="zoom" start="110" end="120" center="auto" time="12000" tween="sine" easing="inout"/>
+			<effect type="slide" start="-20,-20" end="20,20" time="6000" tween="sine" easing="inout"/>
+		</animation>
+		<include>FullScreenDimensions</include>
+		<randomize>true</randomize>
+		<aspectratio>stretch</aspectratio>
+		<fadetime>TextureFadeTime</fadetime>
+	</include>
+	<include name="BackgroundFanartImageCenter"> <!-- Center -->
+		<animation type="Conditional" pulse="true" condition="$PARAM[animatedfanart]">
+			<effect type="zoom" start="110" end="120" center="auto" time="12000" tween="sine" easing="inout"/>
+			<effect type="slide" start="-20,-20" end="20,20" time="6000" tween="sine" easing="inout"/>
+		</animation>
+		<include>FullScreenDimensions</include>
+		<randomize>true</randomize>
+		<aspectratio>center</aspectratio>
 		<fadetime>TextureFadeTime</fadetime>
 	</include>
 	<include name="MultiImageTime">
@@ -1162,4 +1251,14 @@
 		<value condition="!String.IsEmpty(Window(home).Property(EmbuaryBackground))">$INFO[Window(home).Property(EmbuaryBackground)]</value>
 		<value>special://skin/extras/backgrounds/videos.jpg</value>
 	</variable>
+	<variable name="MusicFanartBackgroundVar">
+		<value condition="!String.IsEmpty(Skin.String(MusicFanartBackgroundGroupVarValue))">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>		
+	</variable>
+	<variable name="MusicFanartBackgroundGroupVar">	
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,scale)">Scale</value>
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,keep)">Keep</value>
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,stretch)">Stretch</value>		
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,center)">Center</value>
+		<value>Scale (Default)</value>
+	</variable>	
 </includes>

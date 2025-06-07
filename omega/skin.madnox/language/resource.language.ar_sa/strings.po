@@ -1,13 +1,13 @@
 # Kodi Media Center language file
 # Addon Name: Madnox Redux
-# Addon Name: skin.madnox.redux
+# Addon id: skin.madnox.redux
 # Addon Provider: Team Madnox
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: "
+"Last-Translator: kittmaster"
 "Language-Team: \n"
 "Language: ar_SA\n"
 "MIME-Version: 1.0\n"
@@ -19,2269 +19,2494 @@ msgstr ""
 #: /16x9/DialogAddonSettings.xml /16x9/Variables.xml /16x9/DialogTextViewer.xml /16x9/Custom_1100_TextViewer.xml /16x9/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31000"
 msgid "Page"
-msgstr ""
+msgstr "صفحة"
 
-#: /16x9/DialogAddonSettings.xml /16x9/DialogMediaSource.xml /16x9/Includes_CommonObjects.xml /16x9/Variables.xml /16x9/DialogFavourites.xml /16x9/Includes_Dialogs.xml /16x9/Custom_1110_CustomSelectConatainer.xml /16x9/DialogSettings.xml /16x9/DialogSubtitles.xml
+#: /16x9/DialogAddonSettings.xml /16x9/DialogMediaSource.xml /16x9/Includes_CommonObjects.xml /16x9/Variables.xml /16x9/DialogFavourites.xml /16x9/Includes_Dialogs.xml /16x9/Custom_1110_CustomSelectContainer.xml /16x9/DialogSettings.xml /16x9/DialogSubtitles.xml
 msgctxt "#31001"
 msgid "Items"
-msgstr ""
+msgstr "عناصر"
 
 #: /16x9/Home.xml /16x9/Variables.xml /16x9/Custom_1111_Topbar.xml
 msgctxt "#31002"
 msgid "Now playing"
-msgstr ""
+msgstr "يعرض الآن"
 
 #: /16x9/SmartPlaylistEditor.xml
 msgctxt "#31003"
 msgid "Order"
-msgstr ""
+msgstr "ترتيب"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31004"
 msgid "Weather background"
-msgstr ""
+msgstr "خلفية الطقس"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31005"
 msgid "shadow"
-msgstr ""
+msgstr "ظل"
 
 #: /16x9/Variables_Themes.xml
 msgctxt "#31006"
 msgid "Flat"
-msgstr ""
+msgstr "مسطحة"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31007"
 msgid "Single image"
-msgstr ""
+msgstr "صورة واحدة"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31008"
 msgid "Multi image"
-msgstr ""
+msgstr "صور متعددة"
 
 #: /16x9/Includes_MediaMenu.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31009"
 msgid "Music discart fallback"
-msgstr ""
+msgstr "احتياطي صور الأقراص الموسيقية"
 
 #: /16x9/SmartPlaylistEditor.xml
 msgctxt "#31010"
 msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
-msgstr ""
+msgstr "قم بتعيين النوع وإضافة القواعد لإنشاء قائمة تشغيل ذكية. قوائم التشغيل هذه ديناميكية وتتضمن جميع عناصر الوسائط من قاعدة البيانات الخاصة بك والتي تنطبق على القواعد التي اخترتها."
 
 #: /16x9/Variables.xml
 msgctxt "#31011"
 msgid "Returning"
-msgstr ""
+msgstr "عائد"
 
 #: /16x9/Variables.xml
 msgctxt "#31012"
 msgid "Ended"
-msgstr ""
+msgstr "انتهى"
 
 #: /16x9/Variables.xml
 msgctxt "#31013"
 msgid "TBD"
-msgstr ""
+msgstr "سيتم تحديده"
 
 #: /16x9/Variables.xml
 msgctxt "#31014"
 msgid "New series"
-msgstr ""
+msgstr "سلسلة جديدة"
 
-#: /16x9/Variables.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31015"
 msgid "Finale"
-msgstr ""
+msgstr "النهائي"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31016"
 msgid "Smaller pop-up notifications"
-msgstr ""
+msgstr "إشعارات منبثقة أصغر"
 
 #: /16x9/Home.xml /16x9/SkinSettings.xml
 msgctxt "#31017"
 msgid "Edit main menu"
-msgstr ""
+msgstr "تعديل القائمة الرئيسية"
 
 #: /16x9/Home.xml /16x9/SkinSettings.xml
 msgctxt "#31018"
 msgid "Reset main menu"
-msgstr ""
+msgstr "إعادة تعيين القائمة الرئيسية"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31019"
 msgid "Show scroll letter"
-msgstr ""
+msgstr "إظهار حرف التمرير"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31020"
 msgid "Dim screen on dialog popup"
-msgstr ""
+msgstr "تعتيم الشاشة عند ظهور مربع حوار منبثق"
 
 #: /16x9/Home.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31021"
 msgid "Area"
-msgstr ""
+msgstr "منطقة"
 
 #: /16x9/SettingsSystemInfo.xml
 msgctxt "#31022"
 msgid "CPU"
-msgstr ""
+msgstr "وحدة المعالجة المركزية"
 
 #: /16x9/SettingsSystemInfo.xml
 msgctxt "#31023"
 msgid "Memory"
-msgstr ""
+msgstr "ذاكرة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31024"
 msgid "Customise shortcut menu"
-msgstr ""
+msgstr "تخصيص قائمة الاختصارات"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31025"
-msgid "View options"
-msgstr ""
+msgid "palette"
+msgstr "لوحة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31026"
 msgid "Predictive text for virtual keyboard"
-msgstr ""
+msgstr "النص التنبؤي للوحة المفاتيح الافتراضية"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31027"
 msgid "Global override"
-msgstr ""
+msgstr "تجاوز عام"
 
 #: /16x9/SkinSettings.xml /16x9/Custom_1110_Colors.xml
 msgctxt "#31028"
 msgid "Manage"
-msgstr ""
+msgstr "إدارة"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
 msgctxt "#31029"
 msgid "Video now playing background"
-msgstr ""
+msgstr "خلفية الفيديو قيد التشغيل الآن"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
 msgctxt "#31030"
 msgid "Music now playing background"
-msgstr ""
+msgstr "خلفية الموسيقى قيد التشغيل الآن"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31031"
 msgid "Enable day and night colour themes"
-msgstr ""
+msgstr "تمكين سمات الألوان الليلية والنهارية"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31032"
 msgid "Theme for day time"
-msgstr ""
+msgstr "سمة لوقت النهار"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31033"
 msgid "Theme for night time"
-msgstr ""
+msgstr "سمة لوقت الليل"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31034"
 msgid "Weather icons"
-msgstr ""
+msgstr "أيقونات الطقس"
 
 #: /16x9/Variables.xml
 msgctxt "#31035"
 msgid "Extra fanart"
-msgstr ""
+msgstr "فانارت إضافي"
 
 #: /16x9/Variables.xml /16x9/SkinSettings.xml
 msgctxt "#31036"
 msgid "Fallback"
-msgstr ""
+msgstr "احتياطي"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31037"
 msgid "Animated posters"
-msgstr ""
+msgstr "ملصقات متحركة"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31038"
 msgid "Animated background"
-msgstr ""
+msgstr "خلفية متحركة"
 
 #: /16x9/Home.xml /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
 msgctxt "#31039"
 msgid "Widgets"
-msgstr ""
+msgstr "الودجات"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31040"
 msgid "Settings menu"
-msgstr ""
+msgstr "قائمة الإعدادات"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31041"
 msgid "Main menu"
-msgstr ""
+msgstr "القائمة الرئيسية"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
 msgctxt "#31042"
 msgid "Top bar"
-msgstr ""
+msgstr "الشريط العلوي"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31043"
 msgid "Fixed list"
-msgstr ""
+msgstr "قائمة ثابتة"
 
-#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31044"
-msgid "Artwork"
-msgstr ""
+msgid "Palette color selected"
+msgstr "لون اللوحة المحدد"
 
 #: /16x9/Custom_1110_Colors.xml /16x9/SkinSettings.xml /16x9/Variables_Colors.xml
 msgctxt "#31045"
 msgid "Global default"
-msgstr ""
+msgstr "الافتراضي العام"
 
 #: /16x9/Custom_1111_Topbar.xml
 msgctxt "#31046"
 msgid "Item Count"
-msgstr ""
+msgstr "عدد العناصر"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
 msgctxt "#31047"
 msgid "Floor"
-msgstr ""
+msgstr "أرضية"
 
-#: /16x9/SkinSettings.xml /16x9/Variables_Themes.xml /16x9/Includes_CustomSelect.xml
+#: /16x9/SkinSettings.xml /16x9/DialogColorPicker.xml
 msgctxt "#31048"
-msgid "Shadow"
-msgstr ""
+msgid "Palette selected"
+msgstr "اللوحة المختارة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31049"
 msgid "Highlight"
-msgstr ""
+msgstr "تمييز"
 
 #: /16x9/script-skinshortcuts.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31050"
 msgid "Info line"
-msgstr ""
+msgstr "سطر المعلومات"
 
 #: /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
 msgctxt "#31051"
 msgid "Texture"
-msgstr ""
+msgstr "نسيج"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31052"
 msgid "Coloured"
-msgstr ""
+msgstr "ملون"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31053"
 msgid "Country icons"
-msgstr ""
+msgstr "أيقونات البلد"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31054"
 msgid "Default backgrounds"
-msgstr ""
+msgstr "الخلفيات الافتراضية"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31055"
 msgid "Weather fanart"
-msgstr ""
+msgstr "فانارت الطقس"
 
 #: /16x9/Variables.xml /16x9/SkinSettings.xml
 msgctxt "#31056"
 msgid "Panel"
-msgstr ""
+msgstr "لوحة"
 
-#: /16x9/SkinSettings.xml
+#: /16x9/Variables.xml /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31057"
-msgid "Installed"
-msgstr ""
+msgid "Seasons"
+msgstr "المواسم"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31058"
 msgid "Not installed"
-msgstr ""
+msgstr "غير مثبت"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31059"
 msgid "Layout"
-msgstr ""
+msgstr "تخطيط"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31060"
 msgid "Language flags"
-msgstr ""
+msgstr "أعلام اللغة"
 
 #: /16x9/Variables.xml /16x9/SkinSettings.xml /16x9/script-skinshortcuts.xml
 msgctxt "#31061"
 msgid "Icon"
-msgstr ""
+msgstr "أيقونة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31062"
 msgid "Coloured icons"
-msgstr ""
+msgstr "أيقونات ملونة"
 
 #: /16x9/Includes_MediaFlags.xml
 msgctxt "#31063"
 msgid "On air"
-msgstr ""
+msgstr "على الهواء"
 
 #: /16x9/Includes_MediaFlags.xml
 msgctxt "#31064"
 msgid "Last aired"
-msgstr ""
+msgstr "عرضت آخر مرة"
 
 #: /16x9/Custom_1117_MusicVisSettings.xml
 msgctxt "#31065"
 msgid "Visualisation settings"
-msgstr ""
+msgstr "إعدادات التصور"
 
 #: /16x9/Custom_1117_MusicVisSettings.xml
 msgctxt "#31066"
 msgid "Choose presets"
-msgstr ""
+msgstr "اختر الإعدادات المسبقة"
 
 #: /16x9/DialogSubtitles.xml
 msgctxt "#31067"
 msgid "Local subtitle available"
-msgstr ""
+msgstr "الترجمة المحلية متاحة"
 
 #: /16x9/Custom_1117_MusicVisSettings.xml
 msgctxt "#31068"
 msgid "Lyrics add-on"
-msgstr ""
+msgstr "إضافة كلمات الأغاني"
 
 #: /16x9/Custom_1117_MusicVisSettings.xml
 msgctxt "#31069"
 msgid "Lyrics add-on settings"
-msgstr ""
+msgstr "إعدادات إضافة كلمات الأغاني"
 
 #: /16x9/View_507_FanartList.xml
 msgctxt "#31070"
 msgid "Fanart list"
-msgstr ""
+msgstr "قائمة الفانارت"
 
 #: /16x9/View_700_RightList.xml
 msgctxt "#31071"
 msgid "Right list"
-msgstr ""
+msgstr "القائمة اليمنى"
 
-#: /16x9/DialogFullScreenInfo.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31072"
-msgid "Premiered"
-msgstr ""
+msgid "Artisans behind the scenes"
+msgstr "الحرفيون خلف الكواليس"
 
 #: /16x9/DialogPlayerProcessInfo.xml
 msgctxt "#31073"
 msgid "Video decoder"
-msgstr ""
+msgstr "فك ترميز الفيديو"
 
 #: /16x9/DialogPlayerProcessInfo.xml
 msgctxt "#31074"
 msgid "Pixel format"
-msgstr ""
+msgstr "صيغة البكسل"
 
 #: /16x9/DialogPlayerProcessInfo.xml
 msgctxt "#31075"
 msgid "Decoding"
-msgstr ""
+msgstr "فك التشفير"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31076"
 msgid "Movie set cover background"
-msgstr ""
+msgstr "خلفية غلاف مجموعة الأفلام"
 
 #: /16x9/DialogPlayerProcessInfo.xml
 msgctxt "#31077"
 msgid "Signal"
-msgstr ""
+msgstr "إشارة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31078"
 msgid "Furniture"
-msgstr ""
+msgstr "أثاث"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31079"
 msgid "Prefer plot outline"
-msgstr ""
+msgstr "تفضيل الخطوط العريضة للحبكة"
 
 #: /16x9/MyVideoNav.xml
 msgctxt "#31080"
 msgid "Edit Nodes"
-msgstr ""
+msgstr "تعديل العقد"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31081"
 msgid "Media menu buttons"
-msgstr ""
+msgstr "أزرار قائمة الوسائط"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31082"
 msgid "Info dialogs"
-msgstr ""
+msgstr "حوارات المعلومات"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31083"
 msgid "Favourites script"
-msgstr ""
+msgstr "برنامج المفضلة النصي"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31084"
 msgid "Case"
-msgstr ""
+msgstr "حالة"
 
 #: /16x9/Custom_1127_BackgroundCustomizer.xml
 msgctxt "#31085"
 msgid "Overlay"
-msgstr ""
+msgstr "تراكب"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31086"
 msgid "Video playlist"
-msgstr ""
+msgstr "قائمة تشغيل الفيديو"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31087"
 msgid "Embuary info"
-msgstr ""
+msgstr "معلومات Embuary"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31088"
 msgid "Trakt"
-msgstr ""
+msgstr "Trakt"
 
 #: /16x9/MyVideoNav.xml
 msgctxt "#31089"
 msgid "Add node"
-msgstr ""
+msgstr "إضافة عقدة"
 
 #: /16x9/MyWeather.xml
 msgctxt "#31090"
 msgid "Daily"
-msgstr ""
+msgstr "يومي"
 
 #: /16x9/MyWeather.xml
 msgctxt "#31091"
 msgid "Map"
-msgstr ""
+msgstr "خريطة"
 
 #: /16x9/MyWeather.xml
 msgctxt "#31092"
 msgid "Overview"
-msgstr ""
+msgstr "نظرة عامة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31093"
 msgid "Backup"
-msgstr ""
+msgstr "نسخ احتياطي"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31094"
 msgid "Restore"
-msgstr ""
+msgstr "استعادة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31095"
 msgid "Hide view options"
-msgstr ""
+msgstr "إخفاء خيارات العرض"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31096"
 msgid "Hide view options & types"
-msgstr ""
+msgstr "إخفاء خيارات وأنواع العرض"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31097"
 msgid "Hide menus"
-msgstr ""
+msgstr "إخفاء القوائم"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31098"
 msgid "Kiosk mode"
-msgstr ""
+msgstr "وضع الكشك"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31099"
 msgid "Dark"
-msgstr ""
+msgstr "مظلم"
 
-#: /16x9/Includes_CustomSelect.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31100"
-msgid "Light"
-msgstr ""
+msgid "Screen ensemble"
+msgstr "مجموعة الشاشة"
 
-#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31101"
-msgid "Submenu"
-msgstr ""
+msgid "YouTube"
+msgstr "يوتيوب"
 
 #: /16x9/script-skinshortcuts.xml /16x9/variables.xml
 msgctxt "#31102"
 msgid "Select live background"
-msgstr ""
+msgstr "تحديد خلفية حية"
 
 #: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml /16x9/variables.xml
 msgctxt "#31103"
 msgid "Live background"
-msgstr ""
+msgstr "خلفية حية"
 
 #: /16x9/DialogSubtitles.xml
 msgctxt "#31104"
 msgid "Local subtitles available"
-msgstr ""
+msgstr "تتوفر ترجمات محلية"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31105"
 msgid "colour"
-msgstr ""
+msgstr "لون"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31106"
 msgid "Global"
-msgstr ""
+msgstr "عام"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31107"
 msgid "background"
-msgstr ""
+msgstr "خلفية"
 
 #: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31108"
 msgid "Disc art"
-msgstr ""
+msgstr "صورة القرص"
 
 #: /16x9/DialogVideoInfo.xml /16x9/DialogMusicInfo.xml
 msgctxt "#31109"
 msgid "Get art"
-msgstr ""
+msgstr "الحصول على الفن"
 
 #: /16x9/DialogVideoInfo.xml
 msgctxt "#31110"
 msgid "Similar"
-msgstr ""
+msgstr "مشابه"
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31111"
-msgid "Budget"
-msgstr ""
+msgid "Production details"
+msgstr "تفاصيل الإنتاج"
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31112"
-msgid "Revenue"
-msgstr ""
+msgid "Movie Roles"
+msgstr "أدوار الفيلم"
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31113"
-msgid "Awards"
-msgstr ""
+msgid "TV Roles"
+msgstr "أدوار التلفزيون"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31114"
 msgid "Carbon"
-msgstr ""
+msgstr "كربون"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31115"
 msgid "Pixels"
-msgstr ""
+msgstr "بكسلات"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31116"
 msgid "Steel plate"
-msgstr ""
+msgstr "لوح فولاذي"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31117"
 msgid "Wallpaper"
-msgstr ""
+msgstr "ورق الجدران"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31118"
 msgid "Wood"
-msgstr ""
+msgstr "خشب"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31119"
 msgid "Wrinkles"
-msgstr ""
+msgstr "تجاعيد"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31120"
-msgid "Center"
-msgstr ""
+msgid "Facebook"
+msgstr "فيسبوك"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31121"
 msgid "Icons wide"
-msgstr ""
+msgstr "أيقونات عريضة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31122"
 msgid "Big icons wide"
-msgstr ""
+msgstr "أيقونات كبيرة عريضة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31123"
-msgid "Logo"
-msgstr ""
+msgid "Clearlogo or Title/Tagline"
+msgstr "شعار واضح أو عنوان/شعار"
 
 #: /16x9/Custom_1114_Addons.xml
 msgctxt "#31124"
 msgid "Required"
-msgstr ""
+msgstr "مطلوب"
 
-#: /16x9/Custom_1114_Addons.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31125"
-msgid "Recommended"
-msgstr ""
+msgid "Instagram"
+msgstr "انستغرام"
 
 #: /16x9/Custom_1114_Addons.xml
 msgctxt "#31126"
 msgid "Optional"
-msgstr ""
+msgstr "اختياري"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31127"
 msgid "RSS"
-msgstr ""
+msgstr "آر إس إس"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31128"
 msgid "Dialog"
-msgstr ""
+msgstr "حوار"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31129"
 msgid "style"
-msgstr ""
+msgstr "نمط"
 
 #: /16x9/Variables.xml /16x9/SkinSettings.xml
 msgctxt "#31130"
 msgid "Square"
-msgstr ""
+msgstr "مربع"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31131"
 msgid "Emboss"
-msgstr ""
+msgstr "نقش"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31132"
 msgid "texture"
-msgstr ""
+msgstr "نسيج"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31133"
 msgid "Pattern"
-msgstr ""
+msgstr "نمط"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31134"
 msgid "Gradient"
-msgstr ""
+msgstr "تدرج"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31135"
 msgid "Brushed"
-msgstr ""
+msgstr "مصقول"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31136"
 msgid "Text"
-msgstr ""
+msgstr "نص"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31137"
 msgid "Subtext"
-msgstr ""
+msgstr "نص فرعي"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31138"
 msgid "Focus text"
-msgstr ""
+msgstr "نص التركيز"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31139"
 msgid "List separator"
-msgstr ""
+msgstr "فاصل القائمة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31140"
 msgid "White media flags"
-msgstr ""
+msgstr "أعلام الوسائط البيضاء"
 
 #: 31140 /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31141"
 msgid "System bar"
-msgstr ""
+msgstr "شريط النظام"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31142"
 msgid "Submenu bar"
-msgstr ""
+msgstr "شريط القائمة الفرعية"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31143"
 msgid "RSS bar"
-msgstr ""
+msgstr "شريط آر إس إس"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31144"
 msgid "layout"
-msgstr ""
+msgstr "تخطيط"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31145"
 msgid "Effects"
-msgstr ""
+msgstr "تأثيرات"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31146"
 msgid "Leaves"
-msgstr ""
+msgstr "أوراق"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31147"
 msgid "Confetti"
-msgstr ""
+msgstr "قصاصات ورقية"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31148"
 msgid "Valentine"
-msgstr ""
+msgstr "عيد الحب"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31149"
 msgid "Easter"
-msgstr ""
+msgstr "عيد الفصح"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31150"
 msgid "Concrete"
-msgstr ""
+msgstr "خرسانة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31151"
 msgid "Media menu"
-msgstr ""
+msgstr "قائمة الوسائط"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31152"
 msgid "Focus icon"
-msgstr ""
+msgstr "أيقونة التركيز"
 
 #: /16x9/Variables.xml
 msgctxt "#31153"
 msgid "PVR channels"
-msgstr ""
+msgstr "قنوات PVR"
 
 #: /16x9/Variables.xml /shortcuts/overrides.xml
 msgctxt "#31154"
 msgid "Movies and TV shows"
-msgstr ""
+msgstr "أفلام وبرامج تلفزيونية"
 
 #: /16x9/Variables.xml /shortcuts/overrides.xml
 msgctxt "#31155"
 msgid "Video and music add-ons"
-msgstr ""
+msgstr "إضافات الفيديو والموسيقى"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31156"
 msgid "Weather icon"
-msgstr ""
+msgstr "أيقونة الطقس"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31157"
 msgid "Nofocus text"
-msgstr ""
+msgstr "نص بدون تركيز"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31158"
 msgid "Nofocus icon"
-msgstr ""
+msgstr "أيقونة بدون تركيز"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31159"
 msgid "Now playing progress"
-msgstr ""
+msgstr "تقدم التشغيل الحالي"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31160"
 msgid "Top bar / Main menu bars"
-msgstr ""
+msgstr "الشريط العلوي / أشرطة القائمة الرئيسية"
 
 #: 31160 /16x9/Includes_CustomSelect.xml
 msgctxt "#31161"
 msgid "Extended info"
-msgstr ""
+msgstr "معلومات موسعة"
 
 #: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31162"
 msgid "Character art"
-msgstr ""
+msgstr "فن الشخصيات"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31163"
 msgid "Prefer info"
-msgstr ""
+msgstr "تفضيل المعلومات"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31164"
 msgid "Blur background"
-msgstr ""
+msgstr "تمويه الخلفية"
 
 #: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31165"
 msgid "Clear art"
-msgstr ""
+msgstr "مسح الفن"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31166"
 msgid "Replace play with cinema mode"
-msgstr ""
+msgstr "استبدال التشغيل بوضع السينما"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31167"
 msgid "Library backgrounds"
-msgstr ""
+msgstr "خلفيات المكتبة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31168"
 msgid "Tool tips"
-msgstr ""
+msgstr "تلميحات الأدوات"
 
-#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31169"
-msgid "Music info"
-msgstr ""
+msgid "X (Twitter)"
+msgstr "X (تويتر)"
 
 #: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31170"
 msgid "Audio info"
-msgstr ""
+msgstr "معلومات الصوت"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31171"
 msgid "Glass"
-msgstr ""
+msgstr "زجاج"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31172"
 msgid "CD clear"
-msgstr ""
+msgstr "قرص مضغوط واضح"
 
 #: /16x9/Variables.xml /shortcuts/mainmenu.DATA.xml /shortcuts/overrides.xml
 msgctxt "#31173"
 msgid "Live TV"
-msgstr ""
+msgstr "تلفزيون مباشر"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31174"
 msgid "Disabled text"
-msgstr ""
+msgstr "نص معطل"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31175"
 msgid "Default texture"
-msgstr ""
+msgstr "النسيج الافتراضي"
 
 #: 31175 /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31176"
 msgid "case"
-msgstr ""
+msgstr "حالة"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31177"
 msgid "Visualisation music info"
-msgstr ""
+msgstr "معلومات تصور الموسيقى"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31178"
 msgid "Visualisation audio info"
-msgstr ""
+msgstr "معلومات تصور الصوت"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31179"
 msgid "fanart"
-msgstr ""
+msgstr "فانارت"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31180"
 msgid "Audio background"
-msgstr ""
+msgstr "خلفية الصوت"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31181"
 msgid "Video background"
-msgstr ""
+msgstr "خلفية الفيديو"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31182"
 msgid "Vinyl"
-msgstr ""
+msgstr "فينيل"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31183"
-msgid "Blu-ray"
-msgstr ""
+msgid "TikTok"
+msgstr "تيك توك"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31184"
-msgid "White"
-msgstr ""
+msgid "YouTube"
+msgstr "يوتيوب"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31185"
-msgid "Blue"
-msgstr ""
+msgid "Filename"
+msgstr "اسم الملف"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31186"
 msgid "Golden"
-msgstr ""
+msgstr "ذهبي"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31187"
-msgid "Green"
-msgstr ""
+msgid "Skin Variables helps skinners to construct variables and expressions for multiple containers and listitems using a template."
+msgstr "تساعد متغيرات السمة مصممي السمات على إنشاء متغيرات وتعبيرات لحاويات متعددة وعناصر قائمة باستخدام قالب."
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31188"
-msgid "Grey"
-msgstr ""
+msgid "Creator"
+msgstr "المنشئ"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_SkinSettings.xml
 msgctxt "#31189"
-msgid "Orange"
-msgstr ""
+msgid "Panel"
+msgstr "لوحة"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31190"
 msgid "Purple"
-msgstr ""
+msgstr "بنفسجي"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_SkinSettings.xml
 msgctxt "#31191"
-msgid "Red"
-msgstr ""
+msgid "Movies & TV shows / Seasons-Episode display"
+msgstr "أفلام وبرامج تلفزيونية / عرض المواسم والحلقات"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31192"
 msgid "Skin helper extended art"
-msgstr ""
+msgstr "فن موسع لمساعد السمة"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31193"
 msgid "On info"
-msgstr ""
+msgstr "على المعلومات"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31194"
 msgid "Persistant"
-msgstr ""
+msgstr "ثابت"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31195"
 msgid "Animated"
-msgstr ""
+msgstr "متحرك"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31196"
 msgid "Background now playing info"
-msgstr ""
+msgstr "خلفية معلومات التشغيل الحالي"
 
-#: /16x9/Includes_CustomSelect.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31197"
-msgid "Automatically open fullscreen music on play"
-msgstr ""
+msgid "Most recognized as"
+msgstr "الأكثر شهرة باسم"
 
 #: /16x9/Variables.xml
 msgctxt "#31198"
 msgid "Forward"
-msgstr ""
+msgstr "إلى الأمام"
 
 #: /16x9/Variables.xml
 msgctxt "#31199"
 msgid "Rewind"
-msgstr ""
+msgstr "إرجاع"
 
 #: /16x9/Variables.xml
 msgctxt "#31200"
 msgid "Internet stream"
-msgstr ""
+msgstr "تدفق الإنترنت"
 
 #: /16x9/Variables.xml
 msgctxt "#31201"
 msgid "Landscape"
-msgstr ""
+msgstr "أفقي"
 
 #: /16x9/Variables.xml
 msgctxt "#31202"
 msgid "Clear logo"
-msgstr ""
+msgstr "شعار واضح"
 
 #: /16x9/Variables.xml
 msgctxt "#31203"
 msgid "Portrait"
-msgstr ""
+msgstr "عمودي"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31204"
 msgid "Recently released"
-msgstr ""
+msgstr "صدر مؤخراً"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31205"
 msgid "Recommended"
-msgstr ""
+msgstr "موصى به"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31206"
 msgid "Most played"
-msgstr ""
+msgstr "الأكثر تشغيلاً"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31207"
 msgid "Position"
-msgstr ""
+msgstr "الموضع"
 
 #: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31208"
 msgid "Bottom"
-msgstr ""
+msgstr "أسفل"
 
 #: /16x9/Variables.xml /shortcuts/overrides.xml
 msgctxt "#31209"
 msgid "Top"
-msgstr ""
+msgstr "أعلى"
 
 #: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31210"
 msgid "Big"
-msgstr ""
+msgstr "كبير"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31211"
 msgid "Movie/TV show info"
-msgstr ""
+msgstr "معلومات الفيلم/البرنامج التلفزيوني"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31212"
-msgid "Big list"
-msgstr ""
+msgid "Select how long, in seconds, before the movie rows metadata grid slides left or right (If greater than 8 items)."
+msgstr "حدد المدة، بالثواني، قبل أن ينزلق جدول بيانات تعريف صفوف الأفلام إلى اليسار أو اليمين (إذا كان أكثر من 8 عناصر)."
 
 #: /16x9/View_050_PosterList.xml /16x9/Custom_1115_ViewSettings.xml /16x9/Includes_MediaFlags.xml
 msgctxt "#31213"
 msgid "Poster list"
-msgstr ""
+msgstr "قائمة الملصقات"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31214"
 msgid "Reflect"
-msgstr ""
+msgstr "انعكاس"
 
 #: /16x9/View_051_SimpleList.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31215"
 msgid "Simple list"
-msgstr ""
+msgstr "قائمة بسيطة"
 
 #: /16x9/View_501_BigSimpleList.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31216"
 msgid "Big simple list"
-msgstr ""
+msgstr "قائمة بسيطة كبيرة"
 
 #: /16x9/View_052_TwinList.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31217"
 msgid "Twin list"
-msgstr ""
+msgstr "قائمة مزدوجة"
 
 #: /16x9/View_502_BigTwinList.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31218"
 msgid "Big twin list"
-msgstr ""
+msgstr "قائمة مزدوجة كبيرة"
 
 #: /16x9/View_053_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31219"
 msgid "Info list 1"
-msgstr ""
+msgstr "قائمة المعلومات 1"
 
 #: /16x9/View_503_BigInfoList1.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31220"
 msgid "Big info list 1"
-msgstr ""
+msgstr "قائمة معلومات كبيرة 1"
 
 #: /16x9/View_054_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31221"
 msgid "Info list 2"
-msgstr ""
+msgstr "قائمة المعلومات 2"
 
 #: /16x9/View_504_BigInfoList1.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31222"
 msgid "Big info list 2"
-msgstr ""
+msgstr "قائمة معلومات كبيرة 2"
 
 #: /16x9/View_55_LowList.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31223"
 msgid "Low list"
-msgstr ""
+msgstr "قائمة منخفضة"
 
 #: /16x9/View_505_LowList.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31224"
 msgid "Big low list"
-msgstr ""
+msgstr "قائمة منخفضة كبيرة"
 
 #: /16x9/View_56_3Panel.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31225"
 msgid "3 panel"
-msgstr ""
+msgstr "3 لوحات"
 
 #: /16x9/View_506_Big3Panel.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31226"
 msgid "Big 3 panel"
-msgstr ""
+msgstr "3 لوحات كبيرة"
 
-#: /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31227"
-msgid "Premiered"
-msgstr ""
+msgid "Select how long, in seconds, before the persons row metadata grid slides left or right (If greater than 8 items)."
+msgstr "حدد المدة، بالثواني، قبل أن ينزلق جدول بيانات تعريف صف الأشخاص إلى اليسار أو اليمين (إذا كان أكثر من 8 عناصر)."
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31228"
 msgid "Video preview window"
-msgstr ""
+msgstr "نافذة معاينة الفيديو"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31229"
 msgid "Icon size"
-msgstr ""
+msgstr "حجم الأيقونة"
 
 #: /16x9/View_553_ShowCase.xml
 msgctxt "#31230"
 msgid "Showcase"
-msgstr ""
+msgstr "عرض"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31231"
 msgid "2 thumbs"
-msgstr ""
+msgstr "2 إبهام"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31232"
 msgid "4 thumbs"
-msgstr ""
+msgstr "4 إبهام"
 
 #: /16x9/View_57_3PanelSquare.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31233"
 msgid "3 panel square"
-msgstr ""
+msgstr "3 لوحات مربعة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31234"
 msgid "Media flags"
-msgstr ""
+msgstr "أعلام الوسائط"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31235"
 msgid "Small icons"
-msgstr ""
+msgstr "أيقونات صغيرة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31236"
 msgid "Album case"
-msgstr ""
+msgstr "غطاء الألبوم"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31237"
 msgid "Video case"
-msgstr ""
+msgstr "غطاء الفيديو"
 
 #: /16x9/View_051_SimpleList.xml
 msgctxt "#31238"
 msgid "Cover list"
-msgstr ""
+msgstr "قائمة الأغلفة"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31239"
 msgid "Cover flow portrait"
-msgstr ""
+msgstr "تدفق الغلاف عمودي"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31240"
 msgid "Press up for info"
-msgstr ""
+msgstr "اضغط للأعلى للحصول على معلومات"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31241"
 msgid "Cover flow square"
-msgstr ""
+msgstr "تدفق الغلاف مربع"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31242"
 msgid "Cover flow banner"
-msgstr ""
+msgstr "لافتة تدفق الغلاف"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31243"
 msgid "Cover flow landscape"
-msgstr ""
+msgstr "تدفق الغلاف أفقي"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31244"
 msgid "Open case"
-msgstr ""
+msgstr "فتح الحقيبة"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31245"
 msgid "Focus"
-msgstr ""
+msgstr "تركيز"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31246"
 msgid "Cascade"
-msgstr ""
+msgstr "شلال"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31247"
 msgid "Kodiflix"
-msgstr ""
+msgstr "كوديفليكس"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31248"
 msgid "Portrait icon"
-msgstr ""
+msgstr "أيقونة عمودية"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31249"
 msgid "Banner icon"
-msgstr ""
+msgstr "أيقونة لافتة"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31250"
 msgid "Landscape icon"
-msgstr ""
+msgstr "أيقونة أفقية"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31251"
 msgid "Portrait icon info"
-msgstr ""
+msgstr "معلومات أيقونة عمودية"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31252"
 msgid "Banner icon info"
-msgstr ""
+msgstr "معلومات أيقونة لافتة"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31253"
 msgid "Landscape icon info"
-msgstr ""
+msgstr "معلومات أيقونة أفقية"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31254"
 msgid "Portrait wall"
-msgstr ""
+msgstr "جدار عمودي"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31255"
 msgid "Square wall"
-msgstr ""
+msgstr "جدار مربع"
 
 #: /16x9/View_542_BannerWall.xml
 msgctxt "#31256"
 msgid "Banner wall"
-msgstr ""
+msgstr "جدار لافتة"
 
 #: /16x9/View_543_LandscapeWall.xml
 msgctxt "#31257"
 msgid "Landscape wall"
-msgstr ""
+msgstr "جدار أفقي"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31258"
 msgid "Focus square"
-msgstr ""
+msgstr "مربع التركيز"
 
 #: /16x9/Custom_1116_ViewMode.xml
 msgctxt "#31259"
 msgid "Cover"
-msgstr ""
+msgstr "غطاء"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31260"
 msgid "Square icon"
-msgstr ""
+msgstr "أيقونة مربعة"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31261"
 msgid "Square icon info"
-msgstr ""
+msgstr "معلومات أيقونة مربعة"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31262"
 msgid "Kodiflix square"
-msgstr ""
+msgstr "كوديفليكس مربع"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31263"
 msgid "Cascade square"
-msgstr ""
+msgstr "مربع متدرج"
 
 #: /16x9/Custom_1116_ViewMode.xml
 msgctxt "#31264"
 msgid "Showcase square"
-msgstr ""
+msgstr "مربع عرض"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31265"
 msgid "Kodiflix landscape"
-msgstr ""
+msgstr "كوديفليكس أفقي"
 
 #: /16x9/Custom_1116_ViewMode.xml
 msgctxt "#31266"
 msgid "Simple"
-msgstr ""
+msgstr "بسيط"
 
 #: /16x9/Custom_1116_ViewMode.xml
 msgctxt "#31267"
 msgid "Info 1"
-msgstr ""
+msgstr "معلومات 1"
 
 #: /16x9/Custom_1116_ViewMode.xml
 msgctxt "#31268"
 msgid "Info 2"
-msgstr ""
+msgstr "معلومات 2"
 
 #: /16x9/Custom_1116_ViewMode.xml
 msgctxt "#31269"
 msgid "Cover flow"
-msgstr ""
+msgstr "تدفق الغلاف"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31270"
 msgid "Enable/Disable views"
-msgstr ""
+msgstr "تمكين/تعطيل العروض"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31271"
 msgid "Icon info"
-msgstr ""
+msgstr "معلومات الأيقونة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31272"
 msgid "Wall"
-msgstr ""
+msgstr "جدار"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31273"
 msgid "Info delay"
-msgstr ""
+msgstr "تأخير المعلومات"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31274"
 msgid "Install genre icons"
-msgstr ""
+msgstr "تثبيت أيقونات الأنواع"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31275"
 msgid "B/W genre icons"
-msgstr ""
+msgstr "أيقونات أنواع أبيض/أسود"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31276"
 msgid "Install colour genre icons"
-msgstr ""
+msgstr "تثبيت أيقونات أنواع ملونة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31277"
 msgid "Install B/W genre icons"
-msgstr ""
+msgstr "تثبيت أيقونات أنواع أبيض/أسود"
 
 #: /16x9/View_058_BannerList.xml
 msgctxt "#31278"
 msgid "Banner list"
-msgstr ""
+msgstr "قائمة اللافتات"
 
-#: /16x9/Custom_1116_ViewMode.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31279"
-msgid "Right"
-msgstr ""
+msgid "TV shows season & returning text"
+msgstr "نص مواسم المسلسلات التلفزيونية والعودة"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31280"
 msgid "Next aired"
-msgstr ""
+msgstr "عرض القادم"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31281"
 msgid "Panels"
-msgstr ""
+msgstr "لوحات"
 
 #: /16x9/Variables_Themes.xml
 msgctxt "#31282"
 msgid "Mud"
-msgstr ""
+msgstr "طين"
 
 #: /16x9/Variables_Themes.xml
 msgctxt "#31283"
 msgid "Plain"
-msgstr ""
+msgstr "عادي"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31284"
 msgid "Shadow texture"
-msgstr ""
+msgstr "نسيج الظل"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31285"
 msgid "Themes & Colours"
-msgstr ""
+msgstr "سمات وألوان"
 
 #: /16x9/Home.xml
 msgctxt "#31286"
 msgid "Menus"
-msgstr ""
+msgstr "القوائم"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31287"
 msgid "Shortcut menu"
-msgstr ""
+msgstr "قائمة الاختصارات"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31288"
 msgid "Hide"
-msgstr ""
+msgstr "إخفاء"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31289"
 msgid "Widget"
-msgstr ""
+msgstr "ودجة"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31290"
 msgid "Aspect"
-msgstr ""
+msgstr "نسبة العرض"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31291"
 msgid "Music case"
-msgstr ""
+msgstr "غطاء الموسيقى"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31292"
 msgid "Custom favourites"
-msgstr ""
+msgstr "المفضلة المخصصة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31293"
 msgid "Favourite"
-msgstr ""
+msgstr "المفضلة"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31294"
 msgid "Custom favourite addons"
-msgstr ""
+msgstr "إضافات المفضلة المخصصة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31295"
 msgid "Cinema mode"
-msgstr ""
+msgstr "وضع السينما"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31296"
 msgid "Trailer count"
-msgstr ""
+msgstr "عدد المقاطع الدعائية"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31297"
 msgid "Intro path"
-msgstr ""
+msgstr "مسار المقدمة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31298"
 msgid "Select theme"
-msgstr ""
+msgstr "اختر السمة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31299"
 msgid "Video discart fallback"
-msgstr ""
+msgstr "احتياطي صور الأقراص الفيديو"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31300"
 msgid "Customise"
-msgstr ""
+msgstr "تخصيص"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31301"
 msgid "Channel number"
-msgstr ""
+msgstr "رقم القناة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31302"
 msgid "Channel name"
-msgstr ""
+msgstr "اسم القناة"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31303"
 msgid "Repository"
-msgstr ""
+msgstr "مستودع"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31304"
 msgid "Progress bar"
-msgstr ""
+msgstr "شريط التقدم"
 
 #: /16x9/DialogPVRChannelManager.xml
 msgctxt "#31305"
 msgid "Apply"
-msgstr ""
+msgstr "تطبيق"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31306"
 msgid "TV Show season cover background"
-msgstr ""
+msgstr "خلفية غلاف مواسم المسلسلات التلفزيونية"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31307"
 msgid "Genre cover background"
-msgstr ""
+msgstr "خلفية غلاف النوع"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31308"
 msgid "Artist album cover background"
-msgstr ""
+msgstr "خلفية غلاف ألبوم الفنان"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31309"
 msgid "Cover background"
-msgstr ""
+msgstr "خلفية الغلاف"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31310"
 msgid "Fanart rotation speed"
-msgstr ""
+msgstr "سرعة دوران الفن المعجبين"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31311"
 msgid "seconds"
-msgstr ""
+msgstr "ثواني"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31312"
 msgid "Fullscreen audio"
-msgstr ""
+msgstr "صوت بملء الشاشة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31313"
 msgid "Jump to letter"
-msgstr ""
+msgstr "القفز إلى الحرف"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31314"
 msgid "Disable library fanart"
-msgstr ""
+msgstr "تعطيل فن المكتبة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31315"
 msgid "Music background"
-msgstr ""
+msgstr "خلفية الموسيقى"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31316"
 msgid "Stream/Radio background"
-msgstr ""
+msgstr "خلفية البث/الراديو"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31317"
 msgid "PVR status"
-msgstr ""
+msgstr "حالة PVR"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31318"
 msgid "TV status"
-msgstr ""
+msgstr "حالة التلفزيون"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31319"
 msgid "Radio status"
-msgstr ""
+msgstr "حالة الراديو"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31320"
 msgid "TV widget"
-msgstr ""
+msgstr "ودجة التلفزيون"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31321"
 msgid "Radio widget"
-msgstr ""
+msgstr "ودجة الراديو"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31322"
 msgid "PVR widget"
-msgstr ""
+msgstr "ودجة PVR"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31323"
-msgid "Video info"
-msgstr ""
+msgid "Movie & TV shows meta countdown timer text"
+msgstr "نص مؤقت العد التنازلي للبيانات الوصفية للأفلام والبرامج التلفزيونية"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31324"
 msgid "Movie/Episode case"
-msgstr ""
+msgstr "غطاء الفيلم/الحلقة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31325"
 msgid "Movie/TV show case"
-msgstr ""
+msgstr "غطاء الفيلم/البرنامج التلفزيوني"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31326"
 msgid "Music video case"
-msgstr ""
+msgstr "غطاء الفيديو الموسيقي"
 
 #: /16x9/Includes_NowPlaying.xml
 msgctxt "#31327"
 msgid "Special"
-msgstr ""
+msgstr "خاص"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31328"
 msgid "Show media flags"
-msgstr ""
+msgstr "إظهار علامات الوسائط"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31329"
 msgid "Show cover"
-msgstr ""
+msgstr "إظهار الغلاف"
 
 #: /16x9/Custom_1111_CustomSelectGrouplist.xml
 msgctxt "#31330"
 msgid "Video info settings"
-msgstr ""
+msgstr "إعدادات معلومات الفيديو"
 
 #: /16x9/VideoOSDBookmarks.xml
 msgctxt "#31331"
 msgid "Create"
-msgstr ""
+msgstr "إنشاء"
 
 #: /16x9/VideoOSDBookmarks.xml
 msgctxt "#31332"
 msgid "Set episode"
-msgstr ""
+msgstr "تعيين الحلقة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31333"
 msgid "Seek icon"
-msgstr ""
+msgstr "أيقونة البحث"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31334"
 msgid "Visualisation presets"
-msgstr ""
+msgstr "إعدادات التصور المسبقة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31335"
 msgid "Visualisation options"
-msgstr ""
+msgstr "خيارات التصور"
 
 #: /16x9/Custom_1111_CustomSelectGrouplist.xml
 msgctxt "#31336"
 msgid "Music settings"
-msgstr ""
+msgstr "إعدادات الموسيقى"
 
 #: /16x9/Custom_1111_CustomSelectGrouplist.xml
 msgctxt "#31337"
 msgid "Audio view settings"
-msgstr ""
+msgstr "إعدادات عرض الصوت"
 
 #: /16x9/Custom_1111_CustomSelectGrouplist.xml
 msgctxt "#31338"
 msgid "Video view settings"
-msgstr ""
+msgstr "إعدادات عرض الفيديو"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31339"
 msgid "Contributors"
-msgstr ""
+msgstr "المساهمون"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31340"
 msgid "Rate"
-msgstr ""
+msgstr "تقييم"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31341"
 msgid "Next episode"
-msgstr ""
+msgstr "الحلقة التالية"
 
 #: /16x9/Includes_Temp.xml
 msgctxt "#31342"
 msgid "Movies and TV Shows starring"
-msgstr ""
+msgstr "أفلام ومسلسلات تلفزيونية من بطولة"
 
 #: /16x9/Includes_Temp.xml
 msgctxt "#31343"
 msgid "Directed by"
-msgstr ""
+msgstr "إخراج"
 
 #: /16x9/Includes_Temp.xml
 msgctxt "#31344"
 msgid "More movies directed by"
-msgstr ""
+msgstr "المزيد من الأفلام من إخراج"
 
 #: /16x9/Includes_Temp.xml
 msgctxt "#31345"
 msgid "Written by"
-msgstr ""
+msgstr "تأليف"
 
 #: /16x9/Includes_Temp.xml
 msgctxt "#31346"
 msgid "More movies written by"
-msgstr ""
+msgstr "المزيد من الأفلام من تأليف"
 
 #: /16x9/Includes_Temp.xml
 msgctxt "#31347"
 msgid "More like this"
-msgstr ""
+msgstr "المزيد مثل هذا"
 
 #: /16x9/Includes_Temp.xml
 msgctxt "#31348"
 msgid "No information available."
-msgstr ""
+msgstr "لا توجد معلومات متاحة."
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31349"
 msgid "Info dialog"
-msgstr ""
+msgstr "مربع حوار المعلومات"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31350"
 msgid "Music info settings"
-msgstr ""
+msgstr "إعدادات معلومات الموسيقى"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31351"
 msgid "TMDb info"
-msgstr ""
+msgstr "معلومات TMDb"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31352"
 msgid "TMDb actor info"
-msgstr ""
+msgstr "معلومات ممثل TMDb"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31353"
 msgid "Artist slideshow"
-msgstr ""
+msgstr "عرض شرائح الفنان"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31354"
 msgid "Artist slideshow settings"
-msgstr ""
+msgstr "إعدادات عرض شرائح الفنان"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31355"
 msgid "Stream/Radio now playing background"
-msgstr ""
+msgstr "خلفية بث/راديو قيد التشغيل الآن"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31356"
 msgid "Global now playing"
-msgstr ""
+msgstr "يعرض الآن عالمي"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31357"
 msgid "Panel texture"
-msgstr ""
+msgstr "نسيج اللوحة"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31358"
 msgid "Background texture"
-msgstr ""
+msgstr "نسيج الخلفية"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31359"
 msgid "Main menu texture"
-msgstr ""
+msgstr "نسيج القائمة الرئيسية"
 
 #: /16x9/Includes_Topbar.xml
 msgctxt "#31360"
 msgid "Filtered"
-msgstr ""
+msgstr "مفلتر"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31361"
 msgid "Now playing music discart fallback"
-msgstr ""
+msgstr "احتياطي صور الأقراص الموسيقية قيد التشغيل الآن"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31362"
 msgid "Now playing video discart fallback"
-msgstr ""
+msgstr "احتياطي صور الأقراص الفيديو قيد التشغيل الآن"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31363"
 msgid "Watched status"
-msgstr ""
+msgstr "حالة المشاهدة"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31364"
 msgid "Unwatched episode count"
-msgstr ""
+msgstr "عدد الحلقات غير المشاهدة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31365"
 msgid "Widget watched status"
-msgstr ""
+msgstr "حالة مشاهدة الودجة"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31366"
 msgid "Movies starring"
-msgstr ""
+msgstr "أفلام من بطولة"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31367"
 msgid "TV Shows starring"
-msgstr ""
+msgstr "برامج تلفزيونية من بطولة"
 
-#: /16x9/script-embuary-video.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31368"
-msgid "Crew"
-msgstr ""
+msgid "Movie & TV shows slider countdown enable"
+msgstr "تمكين مؤقت العد التنازلي لمؤشر أفلام وبرامج تلفزيونية"
 
-#: /16x9/Includes_InfoDialogs.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31369"
-msgid "Crew"
-msgstr ""
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0."
+msgstr "يقوم بتشغيل/إيقاف مؤقت العد التنازلي الرقمي أسفل مؤشرات أسهم البيانات الوصفية. قم بالتمكين لعرض متى سينتقل المؤشر إلى اليسار/اليمين عندما يصل إلى 0."
 
 #: /16x9/Custom_1112_Search.xml
 msgctxt "#31370"
 msgid "Search results for"
-msgstr ""
+msgstr "نتائج البحث لـ"
 
 #: /16x9/Custom_1112_Search.xml
 msgctxt "#31371"
 msgid "Music video artists"
-msgstr ""
+msgstr "فنانو الفيديو الموسيقي"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31372"
 msgid "Time remaining"
-msgstr ""
+msgstr "الوقت المتبقي"
 
 #: /16x9/Includes_ViewsVariables.xml
 msgctxt "#31373"
 msgid "Labels"
-msgstr ""
+msgstr "تسميات"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31374"
 msgid "Cover background settings"
-msgstr ""
+msgstr "إعدادات خلفية الغلاف"
 
 #: /16x9/Settings.xml
 msgctxt "#31375"
 msgid "Management"
-msgstr ""
+msgstr "إدارة"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31376"
 msgid "Next button"
-msgstr ""
+msgstr "زر التالي"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31377"
 msgid "HDR/SDR"
-msgstr ""
+msgstr "HDR/SDR"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31378"
 msgid "Bit depth"
-msgstr ""
+msgstr "عمق البت"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31379"
 msgid "Dim background"
-msgstr ""
+msgstr "تعتيم الخلفية"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31380"
 msgid "Now playing dim background"
-msgstr ""
+msgstr "تعتيم خلفية التشغيل الحالي"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31381"
 msgid "Appeared in"
-msgstr ""
+msgstr "ظهر في"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31382"
 msgid "Press up for actor info"
-msgstr ""
+msgstr "اضغط للأعلى لمعلومات الممثل"
 
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31383"
 msgid "Press up for library items by actor"
-msgstr ""
+msgstr "اضغط للأعلى لعناصر المكتبة حسب الممثل"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31384"
 msgid "Source flags"
-msgstr ""
+msgstr "علامات المصدر"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31385"
 msgid "Limit"
-msgstr ""
+msgstr "حد"
 
-#: SKIN SETTINGS DESCRIPTIONS /16x9/Includes_Settings.xml
+#: /shortcuts/overrides.xml
+msgctxt "#31386"
+msgid "Recently added (include watched)"
+msgstr "أضيف مؤخراً (بما في ذلك المشاهدة)"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31387"
+msgid "Recently released (include watched)"
+msgstr "صدر مؤخراً (بما في ذلك المشاهدة)"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31388"
+msgid "Character"
+msgstr "شخصية"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31389"
+msgid "Department"
+msgstr "قسم"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31390"
+msgid "Job"
+msgstr "وظيفة"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31391"
+msgid "Budget"
+msgstr "ميزانية"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31392"
+msgid "Years Old"
+msgstr "سنوات"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31393"
+msgid "Revenue"
+msgstr "إيرادات"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31394"
+msgid "Color icons"
+msgstr "أيقونات ملونة"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31395"
+msgid "Resolution icon color"
+msgstr "لون أيقونة الدقة"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31396"
+msgid "Violet"
+msgstr "بنفسجي"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31397"
+msgid "Magenta"
+msgstr "أرجواني"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31398"
+msgid "Turquoise"
+msgstr "فيروزي"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31399"
+msgid "Brown"
+msgstr "بني"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31400"
+msgid "       "
+msgstr "       "
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31401"
+msgid "Aspect ratio icon color"
+msgstr "لون أيقونة نسبة العرض إلى الارتفاع"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31402"
+msgid "Sets the color for the resolution flags."
+msgstr "يضبط لون علامات الدقة."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31403"
+msgid "Sets the color for the aspect ratio flags."
+msgstr "يضبط لون علامات نسبة العرض إلى الارتفاع."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31404"
+msgid "Large splash screen Madnox logo on startup"
+msgstr "شعار مادنوكس كبير على شاشة البداية عند التشغيل"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31405"
+msgid "Image gallery for"
+msgstr "معرض الصور لـ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31406"
+msgid "Image Gallery"
+msgstr "معرض الصور"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31407"
+msgid "Not Available or Listed"
+msgstr "غير متاح أو غير مدرج"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31408"
+msgid "Awards"
+msgstr "جوائز"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31409"
+msgid "Enable auto scrolling for movie's meta data"
+msgstr "تمكين التمرير التلقائي للبيانات الوصفية للأفلام"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31410"
+msgid "Movie meta rotation delay time"
+msgstr "وقت تأخير دوران بيانات الفيلم الوصفية"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31411"
+msgid "Enable auto scrolling for person's meta data"
+msgstr "تمكين التمرير التلقائي للبيانات الوصفية للشخص"
+
+#: /16x9/SkinSettings.xml /16x9/SkinSettings.xml
+msgctxt "#31412"
+msgid "Person meta rotation delay time"
+msgstr "وقت تأخير دوران بيانات الشخص الوصفية"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31413"
+msgid "Automatically scroll movie's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "يقوم بالتمرير التلقائي لبيانات الفيلم الوصفية عندما يكون هناك أكثر من 8 عناصر مرئية. يقوم بالتمرير لجميع البيانات بناءً على رؤية البيانات المتاحة."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31414"
+msgid "Automatically scroll person's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "يقوم بالتمرير التلقائي لبيانات الشخص الوصفية عندما يكون هناك أكثر من 8 عناصر مرئية. يقوم بالتمرير لجميع البيانات بناءً على رؤية البيانات المتاحة."
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31415"
+msgid "Crew"
+msgstr "طاقم"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31416"
+msgid "TMDb"
+msgstr "TMDb"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31417"
+msgid "TVDb"
+msgstr "TVDb"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31418"
+msgid "Recommendations"
+msgstr "توصيات"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31419"
+msgid "Guest stars"
+msgstr "ضيوف شرف"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31420"
+msgid "Display larger DPI scaled logo when Kodi first loads. Large logo: 1600x520px, Small logo: 800x260px. Kodi will auto-scale in windowed view."
+msgstr "يعرض شعارًا أكبر بحجم DPI عند تحميل Kodi لأول مرة. شعار كبير: 1600x520px، شعار صغير: 800x260px. سيقوم Kodi بالتحجيم التلقائي في العرض النافذي."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31421"
+msgid "Turn on saving to debug log"
+msgstr "تشغيل الحفظ إلى سجل التصحيح"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31422"
+msgid "Off by default, leave this setting off unless troubleshooting instructed to turn on. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
+msgstr "إيقاف التشغيل افتراضيًا، اترك هذا الإعداد متوقفًا إلا إذا طُلب منك تشغيله لاستكشاف الأخطاء وإصلاحها. سيؤدي هذا إلى زيادة سجل التصحيح وذاكرة التخزين المؤقت لجهازك بسرعة وقد يتسبب في عدم الاستقرار إذا تُرك دون مراقبة. لقد تم إخطارك."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31423"
+msgid "Fanart background size ratio"
+msgstr "نسبة حجم خلفية الفن المعجبين"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31424"
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center: Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgstr "يضبط نسبة حجم خلفية الفن المعجبين. قياس/احتفاظ/توسيط: يتم الحفاظ على نسبة العرض إلى الارتفاع. تمدد: لا يتم الحفاظ على نسبة العرض إلى الارتفاع."
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31425"
+msgid "Custom colour"
+msgstr "لون مخصص"
+
+#: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
-msgstr ""
+msgstr "تخصيص الشاشة الرئيسية، الودجات وقائمة الاختصارات."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31902"
 msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
-msgstr ""
+msgstr "برنامج نصي مساعد لتوفير ميزات ووظائف إضافية للسمة، بما في ذلك ودجات إضافية، وضع السينما والخلفيات الضبابية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31903"
 msgid "Provides colour selection."
-msgstr ""
+msgstr "يوفر اختيار الألوان."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
 msgid "Install and select image addons."
-msgstr ""
+msgstr "تثبيت واختيار إضافات الصور."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31905"
 msgid "Automatically adds extra artwork for media in your media libraries."
-msgstr ""
+msgstr "يضيف تلقائيًا أعمالًا فنية إضافية للوسائط في مكتبات الوسائط الخاصة بك."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31906"
 msgid "Next aired library information and widgets."
-msgstr ""
+msgstr "معلومات مكتبة العرض القادم والودجات."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31907"
 msgid "Lyrics for music. Required to enable animated lyrics."
-msgstr ""
+msgstr "كلمات الأغاني للموسيقى. مطلوب لتمكين كلمات الأغاني المتحركة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31908"
 msgid "Sync your collection and watched status with trakt.tv."
-msgstr ""
+msgstr "مزامنة مجموعتك وحالة المشاهدة مع trakt.tv."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31909"
 msgid "TMDb information dialogs and widgets."
-msgstr ""
+msgstr "مربعات حوار ومعلومات TMDb والودجات."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31910"
 msgid "Create a custom favourite from selected kodi favourites."
-msgstr ""
+msgstr "إنشاء مفضلة مخصصة من مفضلات كودي المختارة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31911"
 msgid "Edit the home screen menu, widgets, backgrounds and infolines."
-msgstr ""
+msgstr "تعديل قائمة الشاشة الرئيسية، الودجات، الخلفيات وخطوط المعلومات."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31912"
 msgid "Reset the home screen menu, widgets, backgrounds and infolines to default."
-msgstr ""
+msgstr "إعادة تعيين قائمة الشاشة الرئيسية، الودجات، الخلفيات وخطوط المعلومات إلى الإعدادات الافتراضية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31913"
 msgid "Create a custom favourite from selected kodi favourites. For use in main menu widgets. Requires script favourites to be installed."
-msgstr ""
+msgstr "إنشاء مفضلة مخصصة من مفضلات كودي المختارة. للاستخدام في ودجات القائمة الرئيسية. يتطلب تثبيت المفضلة النصية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31914"
 msgid "Create a custom addon favourite from installed addons. For use in main menu widgets."
-msgstr ""
+msgstr "إنشاء مفضلة إضافة مخصصة من الإضافات المثبتة. للاستخدام في ودجات القائمة الرئيسية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31915"
 msgid "Reset the skin theme and colours to default."
-msgstr ""
+msgstr "إعادة تعيين سمة السمة والألوان إلى الإعدادات الافتراضية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31916"
 msgid "Select from a list of pre-defined themes."
-msgstr ""
+msgstr "اختر من قائمة السمات المعرفة مسبقًا."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31917"
 msgid "Lock preferences to disable view mode, view options, info dialog and fullscreen settings."
-msgstr ""
+msgstr "قفل التفضيلات لتعطيل وضع العرض، خيارات العرض، مربع حوار المعلومات وإعدادات ملء الشاشة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31918"
 msgid "Customise the home screen, favourites, predefined themes and kiosk mode."
-msgstr ""
+msgstr "تخصيص الشاشة الرئيسية، المفضلة، السمات المعرفة مسبقًا ووضع الكشك."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31919"
 msgid "Change skin theme textures."
-msgstr ""
+msgstr "تغيير نسيج سمة السمة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31920"
 msgid "Customise the skin texture colours."
-msgstr ""
+msgstr "تخصيص ألوان نسيج السمة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31921"
 msgid "Customise the background and fallbacks for specific skin areas."
-msgstr ""
+msgstr "تخصيص الخلفية والاحتياطيات لمناطق سمة محددة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31922"
 msgid "Enable or disable various skin features."
-msgstr ""
+msgstr "تمكين أو تعطيل ميزات سمة مختلفة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31923"
 msgid "Customise artwork and install supported artwork packs."
-msgstr ""
+msgstr "تخصيص الأعمال الفنية وتثبيت حزم الأعمال الفنية المدعومة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31924"
 msgid "Install and configure supported addons."
-msgstr ""
+msgstr "تثبيت وتكوين الإضافات المدعومة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31925"
 msgid "Enable and disable library views. Disabling library views on low spec systems may improve performance."
-msgstr ""
+msgstr "تمكين وتعطيل عروض المكتبة. قد يؤدي تعطيل عروض المكتبة على الأنظمة ذات المواصفات المنخفضة إلى تحسين الأداء."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31926"
 msgid "Shows scroll letter when scrolling in library views."
-msgstr ""
+msgstr "يعرض حرف التمرير عند التمرير في عروض المكتبة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31927"
 msgid "Shows the alphabet to jump to a position of the container. Will only work for default sorting methods."
-msgstr ""
+msgstr "يعرض الحروف الأبجدية للقفز إلى موضع الحاوية. سيعمل فقط مع طرق الفرز الافتراضية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31928"
 msgid "Shows plot outline for tv shows and movies if available, otherwise will display the default plot."
-msgstr ""
+msgstr "يعرض الخطوط العريضة للحبكة للمسلسلات التلفزيونية والأفلام إذا كانت متاحة، وإلا سيعرض الحبكة الافتراضية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31929"
 msgid "Auto scroll the plot if it does not fit the control dimensions."
-msgstr ""
+msgstr "تمرير الحبكة تلقائيًا إذا لم تتناسب مع أبعاد التحكم."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31930"
 msgid "Enable the shortcut menu for instant access to specific skin areas. In the media menu click left to open or click on the shortcut icon."
-msgstr ""
+msgstr "تمكين قائمة الاختصارات للوصول الفوري إلى مناطق سمة محددة. في قائمة الوسائط، انقر يسارًا لفتح أو انقر على أيقونة الاختصار."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31931"
 msgid "Edit the shortcut menu."
-msgstr ""
+msgstr "تعديل قائمة الاختصارات."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31932"
 msgid "Enable and disable the topbar elements."
-msgstr ""
+msgstr "تمكين وتعطيل عناصر الشريط العلوي."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31933"
 msgid "Change video info settings."
-msgstr ""
+msgstr "تغيير إعدادات معلومات الفيديو."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31934"
 msgid "Change music info settings."
-msgstr ""
+msgstr "تغيير إعدادات معلومات الموسيقى."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31935"
 msgid "Change fullscreen video settings."
-msgstr ""
+msgstr "تغيير إعدادات الفيديو بملء الشاشة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31936"
 msgid "Change fullscreen audio settings."
-msgstr ""
+msgstr "تغيير إعدادات الصوت بملء الشاشة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31937"
 msgid "Reduce the size of pop up notifications."
-msgstr ""
+msgstr "تقليل حجم الإشعارات المنبثقة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31938"
 msgid "Darkens the screen behind dialog popups. Not applicable for fullscreen video or audio."
-msgstr ""
+msgstr "يغمق الشاشة خلف النوافذ المنبثقة للحوار. لا ينطبق على الفيديو أو الصوت بملء الشاشة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31939"
 msgid "Automatically switches to fullscreen when you press play on an album or audio file. If audio is already playing no action will be taken."
-msgstr ""
+msgstr "ينتقل تلقائيًا إلى وضع ملء الشاشة عند الضغط على تشغيل ألبوم أو ملف صوتي. إذا كان الصوت يعمل بالفعل فلن يتم اتخاذ أي إجراء."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31940"
 msgid "Enable coloured icons for the topbar, media information and library views."
-msgstr ""
+msgstr "تمكين أيقونات ملونة للشريط العلوي، معلومات الوسائط وعروض المكتبة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31941"
 msgid "Enable coloured, HDR, bit depth and language media flags."
-msgstr ""
+msgstr "تمكين علامات الوسائط الملونة، HDR، عمق البت واللغة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31943"
 msgid "Audio cd art fallback skin wide."
-msgstr ""
+msgstr "نسخة احتياطية من فن القرص الصوتي للسمة بأكملها."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31944"
 msgid "Video cd art fallback skin wide."
-msgstr ""
+msgstr "نسخة احتياطية من فن القرص الفيديو للسمة بأكملها."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31945"
 msgid "Select and install a weather icon pack for the topbar, widgets and weather."
-msgstr ""
+msgstr "اختر وقم بتثبيت حزمة أيقونات الطقس للشريط العلوي، الودجات والطقس."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31946"
 msgid "Select and install a weather fanart pack for the backgrounds, widgets and weather."
-msgstr ""
+msgstr "اختر وقم بتثبيت حزمة فن الطقس للخلفيات، الودجات والطقس."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31947"
 msgid "Install white studio icons for use throughout the skin."
-msgstr ""
+msgstr "تثبيت أيقونات الاستوديو البيضاء للاستخدام في جميع أنحاء السمة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31948"
 msgid "Install coloured studio icons for use throughout the skin."
-msgstr ""
+msgstr "تثبيت أيقونات الاستوديو الملونة للاستخدام في جميع أنحاء السمة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31949"
 msgid "Install record label icons for use throughout the skin."
-msgstr ""
+msgstr "تثبيت أيقونات تسميات التسجيل للاستخدام في جميع أنحاء السمة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31950"
 msgid "Install language flags for library views and subtitle selection."
-msgstr ""
+msgstr "تثبيت أعلام اللغة لعروض المكتبة واختيار الترجمة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31951"
 msgid "Install music genre icons for music and music videos."
-msgstr ""
+msgstr "تثبيت أيقونات أنواع الموسيقى للموسيقى ومقاطع الفيديو الموسيقية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31952"
 msgid "Install coloured movie genre icons for movies and tv shows."
-msgstr ""
+msgstr "تثبيت أيقونات أنواع الأفلام الملونة للأفلام والبرامج التلفزيونية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31953"
 msgid "Install black and white movie genre icons for movies and tv shows."
-msgstr ""
+msgstr "تثبيت أيقونات أنواع الأفلام باللونين الأبيض والأسود للأفلام والبرامج التلفزيونية."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31954"
 msgid "Install country icons for movies country node."
-msgstr ""
+msgstr "تثبيت أيقونات البلد لعقدة بلد الأفلام."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31955"
 msgid "Set the delay between fanart transitions skin wide."
-msgstr ""
+msgstr "تعيين التأخير بين انتقالات الفن المعجبين على مستوى السمة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31956"
 msgid "Falling background effects. Snow, Leaves etc."
-msgstr ""
+msgstr "تأثيرات الخلفية الساقطة. ثلوج، أوراق شجر إلخ."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31957"
 msgid "Show music fanart of currently playing item skin wide. Overrides library fanart."
-msgstr ""
+msgstr "إظهار فن الموسيقى للعنصر قيد التشغيل حاليًا على مستوى السمة. يتجاوز فن المكتبة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31958"
 msgid "Enables music visualisation in background while playing music. Requires visualisation to be enabled in settings - Player settings/Music."
-msgstr ""
+msgstr "يمكّن تصور الموسيقى في الخلفية أثناء تشغيل الموسيقى. يتطلب تمكين التصور في الإعدادات - إعدادات المشغل/الموسيقى."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31959"
-msgid "Show now playing video in background while browsing library. Overrides library fanart."
-msgstr ""
+msgid "Show now playing video in background while Browse library. Overrides library fanart."
+msgstr "عرض الفيديو قيد التشغيل حاليًا في الخلفية أثناء تصفح المكتبة. يتجاوز فن المعجبين بالمكتبة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31960"
 msgid "Download images and additional information from fanart.tv and theaudiodb.com of the currently playing artist. For fullscreen music, internet streams and radio."
-msgstr ""
+msgstr "تنزيل الصور والمعلومات الإضافية من fanart.tv و theaudiodb.com للفنان الذي يتم تشغيله حاليًا. للموسيقى بملء الشاشة، تدفقات الإنترنت والراديو."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31961"
 msgid "Show stream/radio fanart of currently playing item skin wide. Overrides library fanart."
-msgstr ""
+msgstr "إظهار فن البث/الراديو للعنصر قيد التشغيل حاليًا على مستوى السمة. يتجاوز فن المكتبة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31962"
 msgid "Artist slideshow script settings."
-msgstr ""
+msgstr "إعدادات برنامج عرض شرائح الفنان."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31963"
 msgid "A shortcut to the video playlist if not empty."
-msgstr ""
+msgstr "اختصار إلى قائمة تشغيل الفيديو إذا لم تكن فارغة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31964"
 msgid "A shortcut to the music playlist if not empty."
-msgstr ""
+msgstr "اختصار إلى قائمة تشغيل الموسيقى إذا لم تكن فارغة."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31965"
 msgid "Shortcut to fullscreen when media is playing."
-msgstr ""
+msgstr "اختصار إلى ملء الشاشة عند تشغيل الوسائط."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31966"
 msgid "Click to open shortcut menu."
-msgstr ""
+msgstr "انقر لفتح قائمة الاختصارات."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31967"
 msgid "Player controls when media is playing."
-msgstr ""
+msgstr "عناصر تحكم المشغل عند تشغيل الوسائط."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31968"
-msgid "Play the next tvshow episode automatically."
-msgstr ""
+msgid "Play the next TV show episode automatically."
+msgstr "تشغيل الحلقة التالية من البرنامج التلفزيوني تلقائيًا."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31969"
 msgid "Play themes while navigating TV Shows, Movies and Music Videos."
-msgstr ""
+msgstr "تشغيل السمات أثناء تصفح البرامج التلفزيونية، الأفلام ومقاطع الفيديو الموسيقية."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31970"
+msgid "The Library Node Editor allows you to create and customise custom video nodes and music nodes within Kodi."
+msgstr "يسمح محرر عقدة المكتبة بإنشاء وتخصيص عقد الفيديو والموسيقى المخصصة داخل Kodi."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31971"
+msgid "Show overlay marker information for watched, unwatched, and in progress media items."
+msgstr "إظهار معلومات علامة التراكب للعناصر الوسائطية المشاهدة، غير المشاهدة، وقيد التقدم."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31972"
+msgid "A script for editing Kodi's built in RSS Ticker."
+msgstr "برنامج نصي لتعديل شريط أخبار RSS المدمج في Kodi."
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31973"
+msgid "Crew"
+msgstr "طاقم"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31974"
+msgid "Similar"
+msgstr "مشابه"

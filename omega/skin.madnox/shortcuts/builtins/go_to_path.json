@@ -1,0 +1,15 @@
+{
+    "values": {
+        "command": [
+            {
+                "rules": ["Window.IsVisible({target})"],
+                "value": "Container.Update({folderpath})"
+            },
+            "ActivateWindow({target},{folderpath},return)"
+        ]
+    },
+    "actions": [
+        "Dialog.Close(all,true)",
+        "{command}"
+    ]
+}

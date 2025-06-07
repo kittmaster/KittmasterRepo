@@ -74,7 +74,7 @@
 				<control type="button" id="158">
 					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)</visible>
 					<visible>!Window.IsVisible(MyPlaylist.xml) + !Skin.HasSetting(DisableViewRightList)</visible>
-					<label>$LOCALIZE[31279]</label>
+					<label>$LOCALIZE[39164]</label>
 					<onclick>Container.SetViewMode(58)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>

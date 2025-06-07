@@ -34,6 +34,15 @@
 		<font>Font25_Cond</font>
 		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 	</include>
+	<include name="DialogCountLineLabelLeft">
+		<bottom>21</bottom>
+		<left>60</left>
+		<width>460</width>
+		<height>50</height>
+		<align>left</align>
+		<font>Font25_Cond</font>
+		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+	</include>	
 	<include name="DialogImage">
 		<param name="id"/>
 		<param name="visible">true</param>
@@ -53,7 +62,7 @@
 				<fadetime>TextureFadeTime</fadetime>
 				<colordiffuse>$PARAM[color]</colordiffuse>
 				<texture diffuse="diffuse/rounded5-280x280.png">$PARAM[texture]</texture>
-				<bordertexture border="10">thumbs/frame-rounded5.png</bordertexture>
+				<!-- <bordertexture border="10">thumbs/frame-rounded5.png</bordertexture> CMB -->
 				<aspectratio align="center" aligny="bottom" scalediffuse="true">$PARAM[aspect]</aspectratio>
 			</control>
 		</definition>
@@ -82,6 +91,16 @@
 		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
+	</include>
+		<include name="DialogInlineButton45">
+		<width>858</width>
+		<height>45</height> <!-- 75 -->
+		<!-- <textoffsetx>40</textoffsetx> -->
+		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+		<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
+		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
+		<texturefocus border="2" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
+		<texturenofocus border="2" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
 	<include name="DialogSpinControl">
 		<width>858</width>
@@ -586,7 +605,7 @@
 			</control>
 			<include content="DialogImage">
 				<param name="visible">Control.IsVisible(6)</param>
-				<param name="texture">$INFO[Container(6).ListItem.Icon]</param>
+				<param name="texture">$INFO[Container(6).ListItem.Thumb]</param>
 			</include>
 			<control type="image">
 				<include>DialogHorizontalSeparator</include>

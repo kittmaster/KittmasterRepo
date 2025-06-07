@@ -53,6 +53,10 @@
 	<include file="View_541_SquareWall.xml"/>
 	<include file="View_542_BannerWall.xml"/>
 	<include file="View_543_LandscapeWall.xml"/>
+	<include file="custom_debug_overlay.xml"/>
+	<include file="Custom_1103_Startup.xml"/>	
+	<include file="Custom_1104_DialogOverlayColorPicker.xml"/>
+	<include file="Timers.xml"/>
 	<constant name="TextureFadeTime">480</constant>
 	<expression name="AreaVisibleVideos">Window.IsVisible(videos) | Window.IsVisible(videoplaylist) | Window.IsVisible(1102)</expression>
 	<expression name="AreaVisibleMusic">Window.IsVisible(music) | Window.IsVisible(musicplaylist) | Window.IsVisible(musicplaylisteditor) | Window.IsVisible(visualisation)</expression>
@@ -65,9 +69,6 @@
 		<onunload condition="!Skin.HasSetting(SmartShortcuts.playlists)">Skin.SetBool(SmartShortcuts.playlists)</onunload>
 		<onunload condition="!Skin.HasSetting(BlurEnabled)">Skin.ToggleSetting(BlurEnabled)</onunload>
 		<onunload condition="System.AddonIsEnabled(script.artistslideshow)">RunScript(script.artistslideshow,daemon=True)</onunload>
-		<onunload condition="!Skin.HasSetting(TMDbHelper.Service)">Skin.SetBool(TMDbHelper.Service)</onunload>
-		<onunload condition="!Skin.HasSetting(TMDbHelper.DisableArtwork)">Skin.SetBool(TMDbHelper.DisableArtwork)</onunload>
-		<onunload condition="!Skin.HasSetting(TMDbHelper.DisablePersonStats)">Skin.SetBool(TMDbHelper.DisablePersonStats)</onunload>
 	</include>
 	<include name="ContainerScrollTime">
 		<scrolltime tween="sine">480</scrolltime>
@@ -93,6 +94,18 @@
 		<itemlayout/>
 		<focusedlayout/>
 	</include>
+	<include name="Hidden_PlayAll_Container_Music_Videos"> <!-- Play All button content list for music videos -->
+		<control type="panel" id="2090">
+		  <visible>false</visible>
+		  <content>$VAR[MusicInfoMusicVideoContent]</content>
+		</control>
+	</include>
+	<include name="Hidden_PlayAll_Container_Albums"> <!-- Play All button content list for music videos -->
+		<control type="panel" id="2091">
+		  <visible>false</visible>
+		  <content>$VAR[MusicInfoAlbumContentVar]</content>
+		</control>
+	</include>	
 	<include name="AutoScrollPlot">
 		<autoscroll time="3000" delay="4000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 	</include>
@@ -1005,4 +1018,957 @@
 			</control>
 		</definition>
 	</include>
+	<include name="3PageArrowIndicators">
+		<!-- Fixed 3 Page Indicator Max Limit 24 (Expandable) -->
+		<!-- Indicator for first page (right arrow only if there are more than 8 items) -->
+		<control type="image" id="firstPageRightIndicator">
+			<visible>
+					[Container(9000).HasFocus(112) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 8) + 
+					Integer.IsGreater(Container(9004).NumItems, 8)] |
+					[!Container(9002) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 8) + 
+					Integer.IsGreater(Container(9002).NumItems, 8)] |
+					[Container(9000).HasFocus(107) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 8) + 
+					Integer.IsGreater(Container(9010).NumItems, 8)]					
+			</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture> <!-- RIGHT ARROW  -->
+		</control>
+
+		<!-- Indicator for second page left arrow in 2-page mode -->
+		<control type="image" id="secondPageLeftIndicator2PageMode">
+			<visible>
+					[Integer.IsLessOrEqual(Container(9004).NumItems, 16) + 
+					Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
+					[Integer.IsLessOrEqual(Container(9002).NumItems, 16) + 
+					!Container(9002) + 
+					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
+					[Integer.IsLessOrEqual(Container(9010).NumItems, 16) + 
+					Container(9000).HasFocus(107) + 
+					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
+					
+			</visible>
+			<posx>1086</posx> <!-- Match the position of the right arrow from page 1 -->
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture> <!-- LEFT ARROW -->
+		</control>
+
+		<!-- Indicator for second page right arrow in 3-page mode -->
+		<control type="image" id="secondPageRightIndicator3PageMode">
+			<visible>
+					[Integer.IsGreater(Container(9004).NumItems, 16) + 
+					Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9002).NumItems, 16) + 
+					!Container(9002) + 
+					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9010).NumItems, 16) + 
+					Container(9000).HasFocus(107) + 
+					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]			
+			</visible>
+			<posx>1086</posx>			<!-- Right arrow in 3-page mode -->
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture> <!-- RIGHT ARROW -->
+		</control>
+
+		<!-- Indicator for second page left arrow in 3-page mode -->
+		<control type="image" id="secondPageLeftIndicator3PageMode">
+			<visible>
+					[Integer.IsGreater(Container(9004).NumItems, 16) + 
+					Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9002).NumItems, 16) + 
+					!Container(9002) + 
+					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9010).NumItems, 16) + 
+					Container(9000).HasFocus(107) + 
+					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
+			</visible>
+			<posx>1031</posx> <!-- Adjusted position to avoid overlap -->
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture> <!-- LEFT ARROW -->
+		</control>
+
+		<!-- Indicator for third page (left arrow only if more than 16 items) -->
+		<control type="image" id="thirdPageLeftIndicator">
+			<visible>
+					[Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 16)] |
+					[!Container(9002) +
+					Integer.IsGreater(Container(9002).CurrentItem, 16)]	|
+					[Container(9000).HasFocus(107) +
+					Integer.IsGreater(Container(9010).CurrentItem, 16)]										
+			</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture> <!-- LEFT ARROW -->
+		</control>
+	</include>
+	<variable name="ColorSelectedPicker">
+		<value condition="Window.IsActive(Custom_1104_DialogOverlayColorPicker.xml) + Control.HasFocus(6)">$LOCALIZE[31044]: $INFO[ListItem.Label] - [UPPERCASE]$INFO[ListItem.Label2,#][/UPPERCASE]</value>
+		<value>$LOCALIZE[31044]: Select a color from palette</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Alpha">
+		<value condition="String.IsEqual(Control.GetLabel(3015),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Red">
+		<value condition="String.IsEqual(Control.GetLabel(3200),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Green">
+		<value condition="String.IsEqual(Control.GetLabel(3201),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Blue">
+		<value condition="String.IsEqual(Control.GetLabel(3202),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Color">
+		<value>$VAR[Def_Percent_To_Hex_Alpha]$VAR[Def_Percent_To_Hex_Red]$VAR[Def_Percent_To_Hex_Green]$VAR[Def_Percent_To_Hex_Blue]</value>
+	</variable>
+
+	<variable name="AppliedColorString">
+		<value condition="!String.IsEmpty(Window(Home).Property(ActiveControlPanelNameValue))">#$INFO[Window(Home).Property(ActiveControlPanelNameValue)]</value>
+		<value>Default</value>
+	</variable>
+	
+	<!-- Invisible letter for spacing needs -->
+	<variable name="1BlankSpace">
+		<value>[COLOR=00ffffff]0[/COLOR]</value>
+	</variable>
+	<variable name="2BlankSpace">
+		<value>[COLOR=00ffffff]00[/COLOR]</value>
+	</variable>
+	<variable name="3BlankSpace">
+		<value>[COLOR=00ffffff]000[/COLOR]</value>
+	</variable>
+	<variable name="4BlankSpace">
+		<value>[COLOR=00ffffff]0000[/COLOR]</value>
+	</variable>
+	<variable name="5BlankSpace">
+		<value>[COLOR=00ffffff]00000[/COLOR]</value>
+	</variable>
+	<variable name="6BlankSpace">
+		<value>[COLOR=00ffffff]000000[/COLOR]</value>
+	</variable>
+	<variable name="7BlankSpace">
+		<value>[COLOR=00ffffff]0000000[/COLOR]</value>
+	</variable>
+	<variable name="8BlankSpace">
+		<value>[COLOR=00ffffff]00000000[/COLOR]</value>
+	</variable>
+	<variable name="9BlankSpace">
+		<value>[COLOR=00ffffff]000000000[/COLOR]</value>
+	</variable>
+	<variable name="10BlankSpace">
+		<value>[COLOR=00ffffff]0000000000[/COLOR]</value>
+	</variable>
+
+	<variable name="CountDownSelection1">
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),3)">$VAR[ItemListCountDownTimer3]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),4)">$VAR[ItemListCountDownTimer4]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),5)">$VAR[ItemListCountDownTimer5]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),6)">$VAR[ItemListCountDownTimer6]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),7)">$VAR[ItemListCountDownTimer7]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),8)">$VAR[ItemListCountDownTimer8]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),9)">$VAR[ItemListCountDownTimer9]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),10)">$VAR[ItemListCountDownTimer10]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),15)">$VAR[ItemListCountDownTimer15]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),30)">$VAR[ItemListCountDownTimer30]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),60)">$VAR[ItemListCountDownTimer60]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),90)">$VAR[ItemListCountDownTimer90]</value>
+	</variable>
+
+	<variable name="CountDownSelection2">
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),3)">$VAR[ItemListCountDownTimer3]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),4)">$VAR[ItemListCountDownTimer4]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),5)">$VAR[ItemListCountDownTimer5]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),6)">$VAR[ItemListCountDownTimer6]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),7)">$VAR[ItemListCountDownTimer7]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),8)">$VAR[ItemListCountDownTimer8]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),9)">$VAR[ItemListCountDownTimer9]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),10)">$VAR[ItemListCountDownTimer10]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),15)">$VAR[ItemListCountDownTimer15]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),30)">$VAR[ItemListCountDownTimer30]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),60)">$VAR[ItemListCountDownTimer60]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),90)">$VAR[ItemListCountDownTimer90]</value>
+	</variable>	
+
+	<variable name="ItemListCountDownTimer3">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_3),2)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_3),1)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_3),0)">2</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer4">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),3)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),2)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),1)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),0)">3</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer5">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),4)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),3)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),2)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),1)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),0)">4</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer6">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),5)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),4)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),3)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),2)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),1)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),0)">5</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer7">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),6)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),5)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),4)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),3)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),2)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),1)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),0)">6</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer8">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),7)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),6)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),5)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),4)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),3)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),2)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),1)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),0)">7</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer9">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),8)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),7)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),6)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),5)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),4)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),3)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),2)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),1)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),0)">8</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer10">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),9)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),8)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),7)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),6)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),5)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),4)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),3)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),2)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),1)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),0)">9</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer15">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),14)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),13)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),12)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),11)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),10)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),9)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),8)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),7)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),6)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),5)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),4)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),3)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),2)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),1)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),0)">14</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer20">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),19)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),18)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),17)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),16)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),15)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),14)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),13)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),12)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),11)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),10)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),9)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),8)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),7)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),6)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),5)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),4)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),3)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),2)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),1)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),0)">19</value>
+		<value>0</value>
+	</variable>
+	
+	<variable name="ItemListCountDownTimer30">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),29)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),28)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),27)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),26)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),25)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),24)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),23)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),22)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),21)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),20)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),19)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),18)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),17)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),16)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),15)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),14)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),13)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),12)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),11)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),10)">19</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),9)">20</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),8)">21</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),7)">22</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),6)">23</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),5)">24</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),4)">25</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),3)">26</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),2)">27</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),1)">28</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),0)">29</value>
+		<value>0</value>
+	</variable>
+	
+	<variable name="ItemListCountDownTimer60">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),59)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),58)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),57)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),56)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),55)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),54)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),53)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),52)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),51)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),50)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),49)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),48)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),47)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),46)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),45)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),44)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),43)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),42)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),41)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),40)">19</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),39)">20</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),38)">21</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),37)">22</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),36)">23</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),35)">24</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),34)">25</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),33)">26</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),32)">27</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),31)">28</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),30)">29</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),29)">30</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),28)">31</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),27)">32</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),26)">33</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),25)">34</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),24)">35</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),23)">36</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),22)">37</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),21)">38</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),20)">39</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),19)">40</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),18)">41</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),17)">42</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),16)">43</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),15)">44</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),14)">45</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),13)">46</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),12)">47</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),11)">48</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),10)">49</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),9)">50</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),8)">51</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),7)">52</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),6)">53</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),5)">54</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),4)">55</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),3)">56</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),2)">57</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),1)">58</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),0)">59</value>
+		<value>0</value>
+	</variable>
+	
+	<variable name="ItemListCountDownTimer90">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),89)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),88)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),87)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),86)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),85)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),84)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),83)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),82)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),81)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),80)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),79)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),78)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),77)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),76)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),75)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),74)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),73)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),72)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),71)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),70)">19</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),69)">20</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),68)">21</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),67)">22</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),66)">23</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),65)">24</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),64)">25</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),63)">26</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),62)">27</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),61)">28</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),60)">29</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),59)">30</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),58)">31</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),57)">32</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),56)">33</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),55)">34</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),54)">35</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),53)">36</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),52)">37</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),51)">38</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),50)">39</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),49)">40</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),48)">41</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),47)">42</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),46)">43</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),45)">44</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),44)">45</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),43)">46</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),42)">47</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),41)">48</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),40)">49</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),39)">50</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),38)">51</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),37)">52</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),36)">53</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),35)">54</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),34)">55</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),33)">56</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),32)">57</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),31)">58</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),30)">59</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),29)">60</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),28)">61</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),27)">62</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),26)">63</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),25)">64</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),24)">65</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),23)">66</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),22)">67</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),21)">68</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),20)">69</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),19)">70</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),18)">71</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),17)">72</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),16)">73</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),15)">74</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),14)">75</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),13)">76</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),12)">77</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),11)">78</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),10)">79</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),9)">80</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),8)">81</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),7)">82</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),6)">83</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),5)">84</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),4)">85</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),3)">86</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),2)">87</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),1)">88</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),0)">89</value>
+		<value>0</value>
+	</variable>
+
+	<!-- Large Startup Logo -->
+	<include name="StartUpLogoWidthLargeVar">
+		<width>1600</width>
+	</include>	
+	<include name="StartUpLogoHeightLargeVar">
+		<height>520</height>
+	</include>
+	<!-- Small Startup Logo -->
+	<include name="StartUpLogoWidthSmallVar">
+		<width>800</width>
+	</include>	
+	<include name="StartUpLogoHeightSmallVar">
+		<height>260</height>
+	</include>
+	<!-- Small/Large Logo Icon Selector-->
+	<variable name="StartUpLogoSizeVar">
+		<value condition="Skin.HasSetting(startuplogolargesizeonstart)">icons/logo-doubled.png</value>
+		<value>icons/logo.png</value>
+	</variable>
+
+	<variable name="ResolutionMediaColorFlagUserLabel2Var">
+    	<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
+    	<value condition="!Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
+    	<value>Icon Error</value> 
+	</variable>
+
+	<variable name="AspectRatioMediaColorFlagUserLabel2Var">
+    	<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
+    	<value condition="!Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
+    	<value>Icon Error</value> 
+	</variable>
+
+	<!-- Add any new include above this line -->
 </includes>

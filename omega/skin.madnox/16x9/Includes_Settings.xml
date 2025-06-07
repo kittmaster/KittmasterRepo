@@ -164,7 +164,7 @@
 				</control>
 				<control type="button" id="80$PARAM[id]4">
 					<visible>!String.IsEmpty(Container(211).ListItem.Property(widgetPath.$PARAM[id]))</visible>
-					<label>$LOCALIZE[31044]</label>
+					<label>$LOCALIZE[39123]</label>
 					<label2>$VAR[Widget$PARAM[id]ArtworkLabelVar]</label2>
 					<include>SettingsButton</include>
 				</control>
@@ -243,7 +243,8 @@
 	<!-- Background description -->
 	<variable name="BackgroundDescriptionVar">
 		<value condition="Control.HasFocus(402)">$LOCALIZE[31955]</value>
-		<value condition="Control.HasFocus(403)">$LOCALIZE[31956]</value>
+		<value condition="Control.HasFocus(403)">$LOCALIZE[31424]</value>
+		<value condition="Control.HasFocus(404)">$LOCALIZE[31956]</value>
 		<value condition="Control.HasFocus(411)">$LOCALIZE[31957]</value>
 		<value condition="Control.HasFocus(412)">$LOCALIZE[31961]</value>
 		<value condition="Control.HasFocus(413)">$LOCALIZE[31962]</value>
@@ -259,8 +260,14 @@
 		<value condition="Control.HasFocus(505)">$LOCALIZE[31928]</value>
 		<value condition="Control.HasFocus(506)">$LOCALIZE[31929]</value>
 		<value condition="Control.HasFocus(507)">$LOCALIZE[31971]</value>
+		<value condition="Control.HasFocus(508)">$LOCALIZE[31413]</value>
+		<value condition="Control.HasFocus(509)">$LOCALIZE[31212]</value>
 		<value condition="Control.HasFocus(511)">$LOCALIZE[31930]</value>
 		<value condition="Control.HasFocus(512)">$LOCALIZE[31931]</value>
+		<value condition="Control.HasFocus(513)">$LOCALIZE[31414]</value>
+		<value condition="Control.HasFocus(514)">$LOCALIZE[31227]</value>
+		<value condition="Control.HasFocus(515)">$LOCALIZE[31369]</value>
+		<value condition="Control.HasFocus(516)">$LOCALIZE[31422]</value>
 		<value condition="Control.HasFocus(521)">$LOCALIZE[31932]</value>
 		<value condition="Control.HasFocus(522)">$LOCALIZE[31933]</value>
 		<value condition="Control.HasFocus(523)">$LOCALIZE[31934]</value>
@@ -274,13 +281,16 @@
 		<value condition="Control.HasFocus(533)">$LOCALIZE[31965]</value>
 		<value condition="Control.HasFocus(534)">$LOCALIZE[31966]</value>
 		<value condition="Control.HasFocus(535)">$LOCALIZE[31967]</value>
+		<value condition="Control.HasFocus(537)">$LOCALIZE[31420]</value>
 	</variable>
 	<!-- Artwork description -->
 	<variable name="ArtworkDescriptionVar">
 		<value condition="Control.HasFocus(602)">$LOCALIZE[31940]</value>
 		<value condition="Control.HasFocus(603)">$LOCALIZE[31941]</value>
-		<value condition="Control.HasFocus(605)">$LOCALIZE[31943]</value>
-		<value condition="Control.HasFocus(606)">$LOCALIZE[31944]</value>
+		<value condition="Control.HasFocus(604)">$LOCALIZE[31402]</value>
+		<value condition="Control.HasFocus(606)">$LOCALIZE[31403]</value>
+		<value condition="Control.HasFocus(618)">$LOCALIZE[31943]</value>
+		<value condition="Control.HasFocus(619)">$LOCALIZE[31944]</value>
 		<value condition="Control.HasFocus(621)">$LOCALIZE[31945]</value>
 		<value condition="Control.HasFocus(622)">$LOCALIZE[31946]</value>
 		<value condition="Control.HasFocus(623)">$LOCALIZE[31947]</value>
@@ -298,6 +308,7 @@
 		<value condition="Control.HasFocus(703)">$LOCALIZE[31902]</value>
 		<value condition="Control.HasFocus(704)">$LOCALIZE[31903]</value>
 		<value condition="Control.HasFocus(705)">$LOCALIZE[31904]</value>
+		<value condition="Control.HasFocus(706)">$LOCALIZE[31187]</value>
 		<value condition="Control.HasFocus(711)">$LOCALIZE[31905]</value>
 		<value condition="Control.HasFocus(712)">$LOCALIZE[31906]</value>
 		<value condition="Control.HasFocus(713)">$LOCALIZE[31907]</value>
@@ -321,16 +332,21 @@
 		<value condition="!System.AddonIsEnabled(script.embuary.helper)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
 		<value>$INFO[System.AddonVersion(script.embuary.helper),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
-	<variable name="AddonColorPickerVar">
+	<!-- <variable name="AddonColorPickerVar">
 		<value condition="!System.HasAddon(script.skin.helper.colorpicker)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
 		<value>$INFO[System.AddonVersion(script.skin.helper.colorpicker),v, ][COLOR green]✓[/COLOR]</value>
-	</variable>
+	</variable> --> <!-- DEPRECATED & REMOVED -->
 	<variable name="AddonResourceSelectVar">
 		<value condition="!System.HasAddon(script.image.resource.select)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.image.resource.select)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
 		<value>$INFO[System.AddonVersion(script.image.resource.select),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
+	<variable name="AddonSkinVariablesVar">
+		<value condition="!System.HasAddon(script.skinvariables)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(script.skinvariables)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(script.skinvariables),v, ][COLOR green]✓[/COLOR]</value>
+	</variable>	
 	<!-- Recommended addons -->
 	<variable name="AddonTMDbHelperVar">
 		<value condition="!System.HasAddon(plugin.video.themoviedb.helper)">[COLOR red]✕[/COLOR]</value>
@@ -389,14 +405,24 @@
 		<value>$INFO[System.AddonVersion(plugin.library.node.editor),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 	<!-- Image resource addons -->
-	<variable name="AddonWeatherIconsVar">
+<!-- 	<variable name="AddonWeatherIconsVar">
 		<value condition="!Skin.String(WeatherIcons.name)">[COLOR red]✕[/COLOR]</value>
 		<value>$INFO[Skin.String(WeatherIcons.name),, ][COLOR green]✓[/COLOR]</value>
-	</variable>
-	<variable name="AddonWeatherFanartVar">
+	</variable> -->
+	<variable name="AddonWeatherIconsVar">
+	<value condition="!System.HasAddon(script.image.resource.select)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!Skin.String(WeatherIcons.name)">[COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[Skin.String(WeatherIcons.name),, ][COLOR green]✓[/COLOR]</value>
+	</variable>	
+<!-- 	<variable name="AddonWeatherFanartVar">
 		<value condition="!Skin.String(WeatherFanart.name)">[COLOR red]✕[/COLOR]</value>
 		<value>$INFO[Skin.String(WeatherFanart.name),, ][COLOR green]✓[/COLOR]</value>
-	</variable>
+	</variable> -->
+	<variable name="AddonWeatherFanartVar">
+		<value condition="!System.HasAddon(script.image.resource.select)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!Skin.String(WeatherFanart.name)">[COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[Skin.String(WeatherFanart.name),, ][COLOR green]✓[/COLOR]</value>
+	</variable>	
 	<variable name="AddonWhiteStudiosVar">
 		<value condition="!System.HasAddon(resource.images.studios.white)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(resource.images.studios.white)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
@@ -558,7 +584,7 @@
 		<value condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">$LOCALIZE[31039]</value>
 		<value condition="String.IsEqual(Window.Property(groupname),mainmenu)">$LOCALIZE[33061]</value>
 		<value condition="String.IsEqual(Window.Property(groupname),shortcuts)">$LOCALIZE[13398]</value>
-		<value>$LOCALIZE[31101]</value>
+		<value>$LOCALIZE[1034]</value>
 	</variable>
 	<variable name="NowPlayingMusicBackgroundLabelVar">
 		<value condition="Skin.String(NowPlayingMusicBackground,fanart)">$LOCALIZE[20445]</value>

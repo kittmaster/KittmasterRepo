@@ -141,7 +141,7 @@
 					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[20182]: [/COLOR]$INFO[System.UsedSpacePercent] of $INFO[System.TotalSpace] </label>
 					<include>VideoOSDProcessInfo</include>
 				</control>					
-				<control type="label">
+				<control type="label"> <!-- TODO Verify Vars-->
                     <label>[COLOR $VAR[PanelTextColorVar]]Kodi $LOCALIZE[19114]: [/COLOR] $VAR[BuildVersionName] v$INFO[System.BuildVersionShort] </label>
                     <include>VideoOSDProcessInfo</include>
 				</control>

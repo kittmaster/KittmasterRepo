@@ -7,5 +7,13 @@
 		<include condition="Window.IsActive(gamevideofilter)">DialogSelectGameFilter</include>
 		<include condition="Window.IsActive(gamestretchmode)">DialogSelectGameView</include>
 		<include condition="Window.IsActive(gamevideorotation)">DialogSelectGameView</include>
+		<control type="image">
+			<left>1304</left>
+			<top>174</top>
+			<width>161.5</width>
+			<height>86</height>
+			<aspectratio>keep</aspectratio>
+			<texture>icons/logo.png</texture>
+		</control>
 	</controls>
 </window>

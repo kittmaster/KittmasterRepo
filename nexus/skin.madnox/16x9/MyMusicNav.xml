@@ -122,7 +122,8 @@
 			<!-- Studio Logo check if image exists -->
 			<control type="image" id="811112">
 				<include>HiddenObject</include>
-				<texture fallback="none">$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture>
+				<!-- <texture fallback="none">$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture> -->
+				<texture fallback="DefaultMusicAlbums.png">$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture>
 			</control>
 			<!-- Topbar -->
 			<include content="TopBar">

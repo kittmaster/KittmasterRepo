@@ -165,4 +165,20 @@
 		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
 		<pulseonselect>false</pulseonselect>
 	</default>
+	<default type="colorbutton">
+			<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
+			<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/floor/floor.png</texturenofocus>
+			<!-- <texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus> -->			
+			<!-- <texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus> -->
+			<font>Font30_Reg</font>
+			<aligny>center</aligny>
+			<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
+			<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
+			<invalidcolor>invalid</invalidcolor>
+			<pulseonselect>false</pulseonselect>
+			<colorwidth>100</colorwidth>
+			<colorheight>40</colorheight>
+			<texturecolormask>colors/white.png</texturecolormask>
+			<texturecolordisabledmask colordiffuse="40FFFFFF">colors/white.png</texturecolordisabledmask>
+	</default>
 </includes>

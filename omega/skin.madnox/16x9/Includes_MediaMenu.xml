@@ -292,7 +292,7 @@
 				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
 				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
 			</include>
-			<label>$LOCALIZE[31025]</label>
+			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
@@ -714,7 +714,7 @@
 		</control>
 		<control type="button" id="210">
 			<visible>!Skin.HasSetting(NowplayingHomeDisable) + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
-			<label>$LOCALIZE[31323]</label>
+			<label>$LOCALIZE[12003]</label>
 			<label2>$VAR[NowPlayingHomeVideoInfoLabelVar]</label2>
 			<onclick condition="String.IsEmpty(NowPlayingHomeVideoInfo)">Skin.SetString(NowPlayingHomeVideoInfo,plot)</onclick>
 			<onclick condition="Skin.String(NowPlayingHomeVideoInfo,plot)">Skin.SetString(NowPlayingHomeVideoInfo,preview)</onclick>
@@ -724,7 +724,7 @@
 		</control>
 		<control type="button" id="211">
 			<visible>!Skin.HasSetting(NowplayingHomeDisable) + Player.HasAudio + ![Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream]</visible>
-			<label>$LOCALIZE[31169]</label>
+			<label>$LOCALIZE[12001]</label>
 			<label2>$VAR[NowPlayingHomeMusicInfoLabelVar]</label2>
 			<onclick condition="String.IsEmpty(NowPlayingHomeMusicInfo)">Skin.SetString(NowPlayingHomeMusicInfo,next)</onclick>
 			<onclick condition="Skin.String(NowPlayingHomeMusicInfo,next)">Skin.SetString(NowPlayingHomeMusicInfo,tracks)</onclick>
@@ -751,11 +751,12 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="button" id="202">
-			<label>$LOCALIZE[31048]</label>
+			<label>$LOCALIZE[39166]</label>
 			<label2>[COLOR $VAR[MainMenuShadowColorVar]]$VAR[MainMenuShadowColorLabelVar][/COLOR]</label2>
-			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuShadow.color,header=$LOCALIZE[31048])</onclick>
-			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuShadow.color,header=$LOCALIZE[39166])</onclick> -->
+			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
+			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
+			<onclick>Skin.SetColor(MainMenuShadow.color,$LOCALIZE[39166])</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="radiobutton" id="203">
@@ -853,33 +854,37 @@
 		<control type="button" id="211">
 			<label>$LOCALIZE[736]</label>
 			<label2>[COLOR $VAR[MainMenuStyleColorVar]]$VAR[MainMenuStyleColorLabelVar][/COLOR]</label2>
-			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuStyle.color,header=$LOCALIZE[736])</onclick>
-			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuStyle.color,header=$LOCALIZE[736])</onclick> -->
+			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
+			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
+			<onclick>Skin.SetColor(MainMenuStyle.color,$LOCALIZE[736])</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="212">
 			<label>$LOCALIZE[31051]</label>
 			<label2>[COLOR $VAR[MainMenuTextureColorVar]]$VAR[MainMenuTextureColorLabelVar][/COLOR]</label2>
-			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuTexture.color,header=$LOCALIZE[31051])</onclick>
-			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuTexture.color,header=$LOCALIZE[31051])</onclick> -->
+			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
+			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
+			<onclick>Skin.SetColor(MainMenuTexture.color,$LOCALIZE[31051])</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="213">
 			<label>$LOCALIZE[31134]</label>
 			<label2>[COLOR $VAR[MainMenuGradientColorVar]]$VAR[MainMenuGradientColorLabelVar][/COLOR]</label2>
-			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuGradient.color,header=$LOCALIZE[31134])</onclick>
-			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuGradient.color,header=$LOCALIZE[31134])</onclick> -->
+			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
+			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
+			<onclick>Skin.SetColor(MainMenuGradient.color,$LOCALIZE[31134])</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="214">
 			<label>$LOCALIZE[31039]</label>
 			<label2>[COLOR $VAR[MainMenuWidgetColorVar]]$VAR[MainMenuWidgetColorLabelVar][/COLOR]</label2>
-			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuWidget.color,header=$LOCALIZE[31039])</onclick>
-			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuWidget.color,header=$LOCALIZE[31039])</onclick> -->
+			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
+			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
+			<onclick>Skin.SetColor(MainMenuWidget.color,$LOCALIZE[31039])</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
@@ -1111,7 +1116,7 @@
 				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
 				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
 			</include>
-			<label>$LOCALIZE[31025]</label>
+			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1119)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
@@ -1487,7 +1492,7 @@
 				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
 				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
 			</include>
-			<label>$LOCALIZE[31025]</label>
+			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
@@ -1578,7 +1583,7 @@
 				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
 				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
 			</include>
-			<label>$LOCALIZE[31025]</label>
+			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
@@ -1590,7 +1595,7 @@
 				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
 				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
 			</include>
-			<label>$LOCALIZE[31025]</label>
+			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
@@ -1663,7 +1668,7 @@
 				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
 				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
 			</include>
-			<label>$LOCALIZE[31025]</label>
+			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
@@ -1767,7 +1772,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View50PVRBigList)</onclick>
 			<selected>Skin.HasSetting(View50PVRBigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -1793,7 +1798,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View51PVRBigList)</onclick>
 			<selected>Skin.HasSetting(View51PVRBigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -1819,7 +1824,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View52PVRBigList)</onclick>
 			<selected>Skin.HasSetting(View52PVRBigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -1866,7 +1871,7 @@
 				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
 				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
 			</include>
-			<label>$LOCALIZE[31025]</label>
+			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
@@ -1886,7 +1891,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View50BigList)</onclick>
 			<selected>Skin.HasSetting(View50BigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -1938,7 +1943,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View51BigList)</onclick>
 			<selected>Skin.HasSetting(View51BigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -1962,7 +1967,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View53BigList)</onclick>
 			<selected>Skin.HasSetting(View53BigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -1999,7 +2004,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View54BigList)</onclick>
 			<selected>Skin.HasSetting(View54BigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2050,7 +2055,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View55BigList)</onclick>
 			<selected>Skin.HasSetting(View55BigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2097,7 +2102,7 @@
 		</control>
 		<control type="radiobutton" id="101">
 			<visible>!Skin.HasSetting(View56BannerList) | Container.Content(episodes)</visible>
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View56BigList)</onclick>
 			<selected>Skin.HasSetting(View56BigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2141,7 +2146,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<label>$LOCALIZE[31212]</label>
+			<label>$LOCALIZE[537]</label>
 			<onclick>Skin.ToggleSetting(View57BigList)</onclick>
 			<selected>Skin.HasSetting(View57BigList)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2488,7 +2493,7 @@
 		</control>
 		<control type="button" id="105">
 			<visible>!Container.Content(episodes)</visible>
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<label2>$VAR[View503ArtworkLabelVar]</label2>
 			<onclick condition="String.IsEmpty(View503Art)">Skin.SetString(View503Art,clearlogo)</onclick>
 			<onclick condition="Skin.String(View503Art,clearlogo)">Skin.SetString(View503Art,clearart)</onclick>
@@ -3170,7 +3175,7 @@
 		</control>
 		<control type="button" id="101">
 			<visible>!Container.Content(images) + !Container.Content(episodes)</visible>
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<label2>$VAR[View523ArtworkLabelVar]</label2>
 			<onclick condition="String.IsEmpty(View523Art)">Skin.SetString(View523Art,clearlogo)</onclick>
 			<onclick condition="Skin.String(View523Art,clearlogo)">Skin.SetString(View523Art,clearart)</onclick>
@@ -3354,7 +3359,7 @@
 		</control>
 		<control type="button" id="102">
 			<visible>!Container.Content(episodes)</visible>
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<label2>$VAR[View533ArtworkLabelVar]</label2>
 			<onclick condition="String.IsEmpty(View533Art)">Skin.SetString(View533Art,clearlogo)</onclick>
 			<onclick condition="Skin.String(View533Art,clearlogo)">Skin.SetString(View533Art,clearart)</onclick>
@@ -3505,7 +3510,7 @@
 		</control>
 		<control type="button" id="102">
 			<visible>!Container.Content(episodes)</visible>
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<label2>$VAR[View543ArtworkLabelVar]</label2>
 			<onclick condition="String.IsEmpty(View543Art)">Skin.SetString(View543Art,clearlogo)</onclick>
 			<onclick condition="Skin.String(View543Art,clearlogo)">Skin.SetString(View543Art,clearart)</onclick>

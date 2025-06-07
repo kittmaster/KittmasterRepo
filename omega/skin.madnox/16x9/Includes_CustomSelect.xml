@@ -68,61 +68,278 @@
 	</include>
 	<include name="SelectFanartRotationSpeed">
 		<item>
+			<label>Default (5 $LOCALIZE[31311])</label>
+			<icon>$VAR[IconPathVar]\timers\05.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(FanartTimePerImage,5)</onclick>
+		</item>		
+		<item>
 			<label>5 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\05.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,5)</onclick>
 		</item>
 		<item>
 			<label>6 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\06.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,6)</onclick>
 		</item>
 		<item>
 			<label>7 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\07.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.Reset(FanartTimePerImage)</onclick>
+			<onclick>Skin.SetString(FanartTimePerImage,7)</onclick>
 		</item>
 		<item>
 			<label>8 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\08.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,8)</onclick>
 		</item>
 		<item>
 			<label>9 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\09.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,9)</onclick>
 		</item>
 		<item>
 			<label>10 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\10.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,10)</onclick>
 		</item>
 		<item>
 			<label>15 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\15.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,15)</onclick>
 		</item>
 		<item>
 			<label>20 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\20.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,20)</onclick>
 		</item>
 		<item>
 			<label>30 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\30.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,30)</onclick>
 		</item>
 		<item>
 			<label>60 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\60.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,60)</onclick>
 		</item>
 		<item>
 			<label>90 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\90.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,90)</onclick>
 		</item>
 	</include>
+<!-- CMB ***************************************************************** -->
+	<!-- Movie Time Selection -->
+	<include name="SelectMovieMetaScrollSpeed"> <!-- CMB -->
+		<!-- <item>
+			<label>Default (5 $LOCALIZE[31311])</label>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.Reset(moviemetascrollingdelayvaluevara)</onclick>
+		</item> -->
+		<item>
+			<label>3 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\03.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,3)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,3)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>	
+		<item>
+			<label>4 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\04.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,4)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,4)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>			
+		<item>
+			<label>5 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\05.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,5)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,5)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>6 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\06.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,6)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,6)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>7 $LOCALIZE[31311] (Default)</label>
+			<icon>$VAR[IconPathVar]\timers\07.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,7)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,7)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>8 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\08.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,8)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,8)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>9 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\09.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,9)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,9)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>10 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\10.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,10)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,10)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>15 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\15.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,15)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,15)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>20 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\20.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,20)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,20)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>30 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\30.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,30)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,30)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>60 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\60.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,60)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,60)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>90 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\90.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,90)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,90)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+	</include>
+	<!-- Person Time Selection -->
+	<include name="SelectPersonMetaScrollSpeed"> <!-- CMB -->
+		<!-- <item>
+			<label>Default (5 $LOCALIZE[31311])</label>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.Reset(personmetascrollingdelayvaluevara)</onclick>
+		</item> -->
+		<item>
+			<label>3 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\03.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,3)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,3)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>	
+		<item>
+			<label>4 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\04.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,4)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,4)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>			
+		<item>
+			<label>5 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\05.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,5)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,5)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>6 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\06.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,6)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,6)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>7 $LOCALIZE[31311] (Default)</label>
+			<icon>$VAR[IconPathVar]\timers\07.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,7)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,7)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>8 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\08.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,8)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,8)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>9 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\09.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,9)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,9)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>10 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\10.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,10)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,10)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>15 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\15.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,15)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,15)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>20 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\20.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,20)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,20)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>30 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\30.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,30)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,30)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>60 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\60.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,60)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,60)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+		<item>
+			<label>90 $LOCALIZE[31311]</label>
+			<icon>$VAR[IconPathVar]\timers\90.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,90)</onclick> <!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,90)</onclick> <!-- Sets Alarmclock timer seed value -->
+		</item>
+	</include>	
+<!-- CMB ***************************************************************** -->
 	<include name="SelectNowPlayingBackground">
 		<control type="label" id="301">
 			<visible>Player.HasMedia</visible>
@@ -976,6 +1193,142 @@
 			<selected>Skin.HasSetting(SourceFlags)</selected>
 		</control>
 	</include>
+	<!-- Media flags resolution color  --> <!-- CMB -->
+	<include name="MediaFlagResolutionColorSettings">
+		<item>
+			<label>$LOCALIZE[231]</label>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.Reset(MediaFlagResolutionColorSettingsValue,none)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13343]</label>
+			<icon>flags/colored/videoresolution/1-Red/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,red)</onclick>
+		</item>		
+		<item>
+			<label>$LOCALIZE[13342]</label>
+			<icon>flags/colored/videoresolution/2-Orange/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,orange)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13341]</label>
+			<icon>flags/colored/videoresolution/3-Green/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,green)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[762]</label>
+			<icon>flags/colored/videoresolution/4-Blue/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,blue)</onclick>
+		</item>		
+		<item>
+			<label>$LOCALIZE[765]</label>
+			<icon>flags/colored/videoresolution/5-Cyan/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,cyan)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31396]</label>
+			<icon>flags/colored/videoresolution/6-Violet/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,violet)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31397]</label>
+			<icon>flags/colored/videoresolution/7-Magenta/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,magenta)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[743]</label>
+			<icon>flags/colored/videoresolution/8-Yellow/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,yellow)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31398]</label>
+			<icon>flags/colored/videoresolution/9-Turquoise/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,turquoise)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31399]</label>
+			<icon>flags/colored/videoresolution/10-Brown/preview/1080.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,brown)</onclick>
+		</item>
+	</include>
+		<!-- Media flags aspect ratio color --> <!-- CMB -->
+	<include name="MediaFlagAspectRatioColorSettings">
+		<item>
+			<label>$LOCALIZE[231]</label>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.Reset(MediaFlagAspectRatioColorSettingsValue,none)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13343]</label>
+			<icon>flags/colored/videoaspect/1-Red/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,red)</onclick>
+		</item>		
+		<item>
+			<label>$LOCALIZE[13342]</label>
+			<icon>flags/colored/videoaspect/2-Orange/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,orange)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13341]</label>
+			<icon>flags/colored/videoaspect/3-Green/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,green)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[762]</label>
+			<icon>flags/colored/videoaspect/4-Blue/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,blue)</onclick>
+		</item>		
+		<item>
+			<label>$LOCALIZE[765]</label>
+			<icon>flags/colored/videoaspect/5-Cyan/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,cyan)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31396]</label>
+			<icon>flags/colored/videoaspect/6-Violet/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,violet)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31397]</label>
+			<icon>flags/colored/videoaspect/7-Magenta/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,magenta)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[743]</label>
+			<icon>flags/colored/videoaspect/8-Yellow/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,yellow)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31398]</label>
+			<icon>flags/colored/videoaspect/9-Turquoise/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,turquoise)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31399]</label>
+			<icon>flags/colored/videoaspect/10-Brown/preview/1.00.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,brown)</onclick>
+		</item>
+	</include>
 	<!-- Top bar -->
 	<include name="TopbarSettings">
 		<control type="radiobutton" id="102">
@@ -1031,7 +1384,7 @@
 		</control>
 		<control type="button" id="103">
 			<visible>Window.IsVisible(skinsettings) | ![Player.IsInternetStream | Pvr.IsPlayingRadio]</visible>
-			<label>$LOCALIZE[31169]</label>
+			<label>$LOCALIZE[12001]</label>
 			<label2>$VAR[MusicOSDMusicInfoLabelVar]</label2>
 			<onclick condition="String.IsEmpty(MusicOSDMusicInfo)">Skin.SetString(MusicOSDMusicInfo,next)</onclick>
 			<onclick condition="Skin.String(MusicOSDMusicInfo,next)">Skin.SetString(MusicOSDMusicInfo,tracks)</onclick>
@@ -1058,7 +1411,7 @@
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="label" id="110">
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
 		<control type="button" id="111">
@@ -1096,7 +1449,7 @@
 		</control>
 		<control type="radiobutton" id="116">
 			<visible>Skin.HasSetting(BackgroundShadow)</visible>
-			<label>$LOCALIZE[31048]</label>
+			<label>$LOCALIZE[39166]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableBackgroundShadow)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableBackgroundShadow)</selected>
@@ -1327,7 +1680,7 @@
 		</control>
 		<control type="label" id="120">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)</visible>
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
 		<control type="radiobutton" id="121">
@@ -1455,7 +1808,7 @@
 			<selected>Skin.HasSetting(VideoInfoTMDbActor)</selected>
 		</control>
 		<control type="label" id="111">
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
 		<control type="radiobutton" id="112">
@@ -1592,7 +1945,7 @@
 			<selected>!Skin.HasSetting(VideoInfoDisableRefresh)</selected>
 		</control>
 		<control type="radiobutton" id="142">
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableArtwork)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableArtwork)</selected>
@@ -1600,7 +1953,7 @@
 	</include>
 	<include name="MusicInfoDialogSettings">
 		<control type="label" id="111">
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
 		<control type="radiobutton" id="112">
@@ -1662,7 +2015,7 @@
 			<selected>!Skin.HasSetting(MusicInfoDisableRefresh)</selected>
 		</control>
 		<control type="radiobutton" id="121">
-			<label>$LOCALIZE[31044]</label>
+			<label>$LOCALIZE[39123]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableArtwork)</onclick>
 			<selected>!Skin.HasSetting(MusicInfoDisableArtwork)</selected>
@@ -1688,19 +2041,19 @@
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,vinyl)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31183]</label>
+			<label>$LOCALIZE[14234]</label>
 			<icon>thumbs/disc/bd.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,bd)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31184]</label>
+			<label>$LOCALIZE[742]</label>
 			<icon>thumbs/disc/white.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,white)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31185]</label>
+			<label>$LOCALIZE[762]</label>
 			<icon>thumbs/disc/blue.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,blue)</onclick>
@@ -1712,19 +2065,19 @@
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,golden)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31187]</label>
+			<label>$LOCALIZE[13341]</label>
 			<icon>thumbs/disc/green.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,green)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31188]</label>
+			<label>$LOCALIZE[767]</label>
 			<icon>thumbs/disc/grey.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,grey)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31189]</label>
+			<label>$LOCALIZE[13342]</label>
 			<icon>thumbs/disc/orange.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,orange)</onclick>
@@ -1736,7 +2089,7 @@
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,purple)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31191]</label>
+			<label>$LOCALIZE[13343]</label>
 			<icon>thumbs/disc/red.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,red)</onclick>
@@ -1767,13 +2120,13 @@
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,cd)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31184]</label>
+			<label>$LOCALIZE[742]</label>
 			<icon>thumbs/disc/white.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,white)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31185]</label>
+			<label>$LOCALIZE[762]</label>
 			<icon>thumbs/disc/blue.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,blue)</onclick>
@@ -1785,19 +2138,19 @@
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,golden)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31187]</label>
+			<label>$LOCALIZE[13341]</label>
 			<icon>thumbs/disc/green.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,green)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31188]</label>
+			<label>$LOCALIZE[767]</label>
 			<icon>thumbs/disc/grey.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,grey)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31189]</label>
+			<label>$LOCALIZE[13342]</label>
 			<icon>thumbs/disc/orange.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,orange)</onclick>
@@ -1809,7 +2162,7 @@
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,purple)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31191]</label>
+			<label>$LOCALIZE[13343]</label>
 			<icon>thumbs/disc/red.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,red)</onclick>
@@ -1834,19 +2187,19 @@
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,vinyl)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31183]</label>
+			<label>$LOCALIZE[14234]</label>
 			<icon>thumbs/disc/bd.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,bd)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31184]</label>
+			<label>$LOCALIZE[742]</label>
 			<icon>thumbs/disc/white.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,white)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31185]</label>
+			<label>$LOCALIZE[762]</label>
 			<icon>thumbs/disc/blue.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,blue)</onclick>
@@ -1858,19 +2211,19 @@
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,golden)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31187]</label>
+			<label>$LOCALIZE[13341]</label>
 			<icon>thumbs/disc/green.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,green)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31188]</label>
+			<label>$LOCALIZE[767]</label>
 			<icon>thumbs/disc/grey.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,grey)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31189]</label>
+			<label>$LOCALIZE[13342]</label>
 			<icon>thumbs/disc/orange.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,orange)</onclick>
@@ -1882,7 +2235,7 @@
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,purple)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31191]</label>
+			<label>$LOCALIZE[13343]</label>
 			<icon>thumbs/disc/red.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,red)</onclick>
@@ -1913,13 +2266,13 @@
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,cd)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31184]</label>
+			<label>$LOCALIZE[742]</label>
 			<icon>thumbs/disc/white.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,white)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31185]</label>
+			<label>$LOCALIZE[762]</label>
 			<icon>thumbs/disc/blue.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,blue)</onclick>
@@ -1931,19 +2284,19 @@
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,golden)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31187]</label>
+			<label>$LOCALIZE[13341]</label>
 			<icon>thumbs/disc/green.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,green)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31188]</label>
+			<label>$LOCALIZE[767]</label>
 			<icon>thumbs/disc/grey.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,grey)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31189]</label>
+			<label>$LOCALIZE[13342]</label>
 			<icon>thumbs/disc/orange.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,orange)</onclick>
@@ -1955,7 +2308,7 @@
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,purple)</onclick>
 		</item>
 		<item>
-			<label>$LOCALIZE[31191]</label>
+			<label>$LOCALIZE[13343]</label>
 			<icon>thumbs/disc/red.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,red)</onclick>
@@ -2195,23 +2548,74 @@
 		</item>
 		<item>
 			<label>$LOCALIZE[375]</label>
+			<icon>effects/snow/preview/01.png</icon>
 			<onclick>Skin.SetString(BackgroundEffect.texture,snow)</onclick>
 		</item>
 		<item>
 			<label>$LOCALIZE[31146]</label>
+			<icon>effects/leaves/preview/03.png</icon>
 			<onclick>Skin.SetString(BackgroundEffect.texture,leaves)</onclick>
 		</item>
 		<item>
 			<label>$LOCALIZE[31147]</label>
+			<icon>effects/confetti/preview/02.png</icon>
 			<onclick>Skin.SetString(BackgroundEffect.texture,confetti)</onclick>
 		</item>
 		<item>
 			<label>$LOCALIZE[31148]</label>
+			<icon>effects/valentine/preview/01.png</icon>
 			<onclick>Skin.SetString(BackgroundEffect.texture,valentine)</onclick>
 		</item>
 		<item>
 			<label>$LOCALIZE[31149]</label>
+			<icon>effects/easter/preview/05.png</icon>
 			<onclick>Skin.SetString(BackgroundEffect.texture,easter)</onclick>
+		</item>
+	</include>
+		<include name="SelectColoredResolutionMediaFlag">
+		<item>
+			<label>$LOCALIZE[231]</label>
+			<onclick>Skin.Reset(BackgroundEffect.texture)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13343]</label>
+			<onclick>Skin.SetString(BackgroundEffect.texture,red)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13342]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,orange)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[13341]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,green)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[762]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,blue)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[765]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,cyan)</onclick>
+		</item>
+				<item>
+			<label>$LOCALIZE[31396]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,violet)</onclick>
+		</item>
+				<item>
+			<label>$LOCALIZE[31397]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,magenta)</onclick>
+		</item>
+				<item>
+			<label>$LOCALIZE[743]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,yellow)</onclick>
+		</item>
+				<item>
+			<label>$LOCALIZE[31398]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,turquoise)</onclick>
+		</item>
+				<item>
+			<label>$LOCALIZE[31399]</label>
+			<onclick>Skin.SetString(ResolutionFlagUser.color,brown)</onclick>
 		</item>
 	</include>
 	<include name="SelectThemePanelTexture">
@@ -2458,4 +2862,78 @@
 			<onclick>Skin.SetString(MusicOSD.dim,E6FFFFFF)</onclick>
 		</item>
 	</include>
+
+
+
+		<!-- Variable for forced padding -->
+		<variable name="MediaColorFlagUserLabelForcedPadding">
+			<!-- <value>$LOCALIZE[31400]</value> Forced Padding for Right Align for resolution icons in admin panel, DO NOT change -->
+			<value>$VAR[4BlankSpace]</value> <!-- Forced Padding for Right Align for resolution icons in admin panel, DO NOT change -->
+		</variable>
+
+		<!-- Variable for the image path -->
+		<variable name="ResolutionStyleColorVar">
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),red)">flags/colored/videoresolution/1-Red/preview/preview_red.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),orange)">flags/colored/videoresolution/2-Orange/preview/preview_orange.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),green)">flags/colored/videoresolution/3-Green/preview/preview_green.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),blue)">flags/colored/videoresolution/4-Blue/preview/preview_blue.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),cyan)">flags/colored/videoresolution/5-Cyan/preview/preview_cyan.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),violet)">flags/colored/videoresolution/6-Violet/preview/preview_violet.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),magenta)">flags/colored/videoresolution/7-Magenta/preview/preview_magenta.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),yellow)">flags/colored/videoresolution/8-Yellow/preview/preview_yellow.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),turquoise)">flags/colored/videoresolution/9-Turquoise/preview/preview_turquoise.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),brown)">flags/colored/videoresolution/10-Brown/preview/preview_brown.png</value>
+			<value condition="String.IsEmpty(Skin.String(MediaFlagResolutionColorSettingsValue))">flags/colored/videoresolution/2-Orange/preview/preview_orange.png</value> <!-- Default image -->
+			<value>(No Match)</value>
+		</variable>
+
+		<!-- Variable for the image path -->
+		<variable name="AspectRatioStyleColorVar">
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),red)">flags/colored/videoaspect/1-Red/preview/preview_red.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),orange)">flags/colored/videoaspect/2-Orange/preview/preview_orange.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),green)">flags/colored/videoaspect/3-Green/preview/preview_green.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),blue)">flags/colored/videoaspect/4-Blue/preview/preview_blue.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),cyan)">flags/colored/videoaspect/5-Cyan/preview/preview_cyan.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),violet)">flags/colored/videoaspect/6-Violet/preview/preview_violet.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),magenta)">flags/colored/videoaspect/7-Magenta/preview/preview_magenta.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),yellow)">flags/colored/videoaspect/8-Yellow/preview/preview_yellow.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),turquoise)">flags/colored/videoaspect/9-Turquoise/preview/preview_turquoise.png</value>
+			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),brown)">flags/colored/videoaspect/10-Brown/preview/preview_brown.png</value>
+			<value condition="String.IsEmpty(Skin.String(MediaFlagAspectRatioColorSettingsValue))">flags/colored/videoaspect/2-Orange/preview/preview_orange.png</value> <!-- Default image -->
+			<value>(No Match)</value>
+		</variable>
+
+		<include name="MusicFanartBackgroundImageRatio">
+			<item>
+				<label>Scale (Default)</label>
+				<icon>$VAR[IconPathVar]\fanartaspectratio\scale.png</icon>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,scale)</onclick>
+			</item>
+			<item>
+				<label>Keep</label>
+				<icon>$VAR[IconPathVar]\fanartaspectratio\keep.png</icon>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,keep)</onclick>
+			</item>	
+			<item>
+				<label>Stretch</label>
+				<icon>$VAR[IconPathVar]\fanartaspectratio\stretch.png</icon>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,stretch)</onclick>
+			</item>
+			<item>
+				<label>Center</label>
+				<icon>$VAR[IconPathVar]\fanartaspectratio\center.png</icon>
+				<onclick>Dialog.Close(1110)</onclick>
+				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,center)</onclick>
+			</item>
+		</include>
+		<variable name="FanartDescriptionVar">	
+			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,scale)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
+			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,keep)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
+			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,stretch)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>		
+			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,center)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
+			<value>Not Found</value>
+		</variable>	
 </includes>

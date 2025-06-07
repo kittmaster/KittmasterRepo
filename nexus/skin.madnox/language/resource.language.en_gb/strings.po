@@ -1,6 +1,6 @@
 # Kodi Media Center language file
 # Addon Name: Madnox Redux
-# Addon id: skin.madnox
+# Addon id: skin.madnox.redux
 # Addon Provider: Team Madnox
 msgid ""
 msgstr ""
@@ -13,8 +13,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.1\n"
 
 #: /16x9/DialogAddonSettings.xml /16x9/Variables.xml /16x9/DialogTextViewer.xml /16x9/Custom_1100_TextViewer.xml /16x9/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31000"
@@ -91,7 +89,7 @@ msgctxt "#31014"
 msgid "New series"
 msgstr ""
 
-#: /16x9/Variables.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31015"
 msgid "Finale"
 msgstr ""
@@ -141,9 +139,9 @@ msgctxt "#31024"
 msgid "Customise shortcut menu"
 msgstr ""
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31025"
-msgid "View options"
+msgid "palette"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
@@ -236,9 +234,9 @@ msgctxt "#31043"
 msgid "Fixed list"
 msgstr ""
 
-#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31044"
-msgid "Artwork"
+msgid "Palette color selected"
 msgstr ""
 
 #: /16x9/Custom_1110_Colors.xml /16x9/SkinSettings.xml /16x9/Variables_Colors.xml
@@ -256,9 +254,9 @@ msgctxt "#31047"
 msgid "Floor"
 msgstr ""
 
-#: /16x9/SkinSettings.xml /16x9/Variables_Themes.xml /16x9/Includes_CustomSelect.xml
+#: /16x9/SkinSettings.xml /16x9/DialogColorPicker.xml
 msgctxt "#31048"
-msgid "Shadow"
+msgid "Palette selected"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
@@ -301,9 +299,9 @@ msgctxt "#31056"
 msgid "Panel"
 msgstr ""
 
-#: /16x9/SkinSettings.xml
+#: /16x9/Variables.xml /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31057"
-msgid "Installed"
+msgid "Seasons"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
@@ -376,9 +374,9 @@ msgctxt "#31071"
 msgid "Right list"
 msgstr ""
 
-#: /16x9/DialogFullScreenInfo.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31072"
-msgid "Premiered"
+msgid "Artisans behind the scenes"
 msgstr ""
 
 #: /16x9/DialogPlayerProcessInfo.xml
@@ -516,14 +514,14 @@ msgctxt "#31099"
 msgid "Dark"
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31100"
-msgid "Light"
+msgid "Screen ensemble"
 msgstr ""
 
-#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31101"
-msgid "Submenu"
+msgid "YouTube"
 msgstr ""
 
 #: /16x9/script-skinshortcuts.xml /16x9/variables.xml
@@ -571,19 +569,19 @@ msgctxt "#31110"
 msgid "Similar"
 msgstr ""
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31111"
-msgid "Budget"
+msgid "Production details"
 msgstr ""
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31112"
-msgid "Revenue"
+msgid "Movie Roles"
 msgstr ""
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31113"
-msgid "Awards"
+msgid "TV Roles"
 msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
@@ -616,9 +614,9 @@ msgctxt "#31119"
 msgid "Wrinkles"
 msgstr ""
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31120"
-msgid "Center"
+msgid "Facebook"
 msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
@@ -641,9 +639,9 @@ msgctxt "#31124"
 msgid "Required"
 msgstr ""
 
-#: /16x9/Custom_1114_Addons.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31125"
-msgid "Recommended"
+msgid "Instagram"
 msgstr ""
 
 #: /16x9/Custom_1114_Addons.xml
@@ -861,9 +859,9 @@ msgctxt "#31168"
 msgid "Tool tips"
 msgstr ""
 
-#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31169"
-msgid "Music info"
+msgid "X (Twitter)"
 msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
@@ -931,19 +929,19 @@ msgctxt "#31182"
 msgid "Vinyl"
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31183"
-msgid "Blu-ray"
+msgid "TikTok"
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31184"
-msgid "White"
+msgid "YouTube"
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31185"
-msgid "Blue"
+msgid "Filename"
 msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
@@ -951,19 +949,19 @@ msgctxt "#31186"
 msgid "Golden"
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31187"
-msgid "Green"
+msgid "Skin Variables helps skinners to construct variables and expressions for multiple containers and listitems using a template."
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31188"
-msgid "Grey"
+msgid "Creator"
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_SkinSettings.xml
 msgctxt "#31189"
-msgid "Orange"
+msgid "Panel"
 msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
@@ -971,9 +969,9 @@ msgctxt "#31190"
 msgid "Purple"
 msgstr ""
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_SkinSettings.xml
 msgctxt "#31191"
-msgid "Red"
+msgid "Movies & TV shows / Seasons-Episode display"
 msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
@@ -999,6 +997,11 @@ msgstr ""
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31196"
 msgid "Background now playing info"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31197"
+msgid "Most recognized as"
 msgstr ""
 
 #: /16x9/Variables.xml
@@ -1071,9 +1074,9 @@ msgctxt "#31211"
 msgid "Movie/TV show info"
 msgstr ""
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31212"
-msgid "Big list"
+msgid "Select how long, in seconds, before the movie rows metadata grid slides left or right (If greater than 8 items)."
 msgstr ""
 
 #: /16x9/View_050_PosterList.xml /16x9/Custom_1115_ViewSettings.xml /16x9/Includes_MediaFlags.xml
@@ -1146,9 +1149,9 @@ msgctxt "#31226"
 msgid "Big 3 panel"
 msgstr ""
 
-#: /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31227"
-msgid "Premiered"
+msgid "Select how long, in seconds, before the persons row metadata grid slides left or right (If greater than 8 items)."
 msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
@@ -1406,9 +1409,9 @@ msgctxt "#31278"
 msgid "Banner list"
 msgstr ""
 
-#: /16x9/Custom_1116_ViewMode.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31279"
-msgid "Right"
+msgid "TV shows season & returning text"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1626,9 +1629,9 @@ msgctxt "#31322"
 msgid "PVR widget"
 msgstr ""
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31323"
-msgid "Video info"
+msgid "Movie & TV shows meta countdown timer text"
 msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
@@ -1851,14 +1854,14 @@ msgctxt "#31367"
 msgid "TV Shows starring"
 msgstr ""
 
-#: /16x9/script-embuary-video.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31368"
-msgid "Crew"
+msgid "Movie & TV shows slider countdown enable"
 msgstr ""
 
-#: /16x9/Includes_InfoDialogs.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31369"
-msgid "Crew"
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0."
 msgstr ""
 
 #: /16x9/Custom_1112_Search.xml
@@ -1949,6 +1952,196 @@ msgstr ""
 #: /shortcuts/overrides.xml
 msgctxt "#31387"
 msgid "Recently released (include watched)"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31388"
+msgid "Character"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31389"
+msgid "Department"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31390"
+msgid "Job"
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31391"
+msgid "Budget"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31392"
+msgid "Years Old"
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31393"
+msgid "Revenue"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31394"
+msgid "Color icons"
+msgstr ""
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31395"
+msgid "Resolution icon color"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31396"
+msgid "Violet"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31397"
+msgid "Magenta"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31398"
+msgid "Turquoise"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31399"
+msgid "Brown"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31400"
+msgid "       "
+msgstr "       "
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31401"
+msgid "Aspect ratio icon color"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31402"
+msgid "Sets the color for the resolution flags."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31403"
+msgid "Sets the color for the aspect ratio flags."
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31404"
+msgid "Large splash screen Madnox logo on startup"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31405"
+msgid "Image gallery for"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31406"
+msgid "Image Gallery"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31407"
+msgid "Not Available or Listed"
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31408"
+msgid "Awards"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31409"
+msgid "Enable auto scrolling for movie's meta data"
+msgstr ""
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31410"
+msgid "Movie meta rotation delay time"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31411"
+msgid "Enable auto scrolling for person's meta data"
+msgstr ""
+
+#: /16x9/SkinSettings.xml /16x9/SkinSettings.xml
+msgctxt "#31412"
+msgid "Person meta rotation delay time"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31413"
+msgid "Automatically scroll movie's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31414"
+msgid "Automatically scroll person's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31415"
+msgid "Crew"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31416"
+msgid "TMDb"
+msgstr ""
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31417"
+msgid "TVDb"
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31418"
+msgid "Recommendations"
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31419"
+msgid "Guest stars"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31420"
+msgid "Display larger DPI scaled logo when Kodi first loads. Large logo: 1600x520px, Small logo: 800x260px. Kodi will auto-scale in windowed view."
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31421"
+msgid "Turn on saving to debug log"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31422"
+msgid "Off by default, leave this setting off unless troubleshooting instructed to turn on. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31423"
+msgid "Fanart background size ratio"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31424"
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center:	Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgstr ""
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31425"
+msgid "Custom colour"
 msgstr ""
 
 #: /16x9/Includes_Settings.xml
@@ -2293,7 +2486,7 @@ msgstr ""
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31970"
-msgid "The Library Node Editor allows you to create and customize custom video nodes and music nodes within Kodi."
+msgid "The Library Node Editor allows you to create and customise custom video nodes and music nodes within Kodi."
 msgstr ""
 
 #: /16x9/Includes_Settings.xml
@@ -2302,6 +2495,16 @@ msgid "Show overlay marker information for watched, unwatched, and in progress m
 msgstr ""
 
 #: /16x9/Includes_Settings.xml
-msgctxt "#38112"
-msgid "Automatically go to the visualisation window when audio playback starts"
+msgctxt "#31972"
+msgid "A script for editing Kodi's built in RSS Ticker."
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31973"
+msgid "Crew"
+msgstr ""
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31974"
+msgid "Similar"
 msgstr ""

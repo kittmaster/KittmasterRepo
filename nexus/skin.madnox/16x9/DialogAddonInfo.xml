@@ -11,6 +11,14 @@
 				<param name="textbox">$INFO[ListItem.AddonDescription]</param>
 				<param name="infocontent">AddonInfoContent</param>
 			</include>
+			<control type="image">
+				<left>1110</left>
+				<top>30</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
 			<!-- Preview thumbs -->
 			<control type="panel" id="50">
 				<visible>Container(9000).Hasfocus(105)</visible>

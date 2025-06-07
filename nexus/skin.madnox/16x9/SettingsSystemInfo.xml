@@ -79,7 +79,7 @@
 				<width>1325</width>
 				<height>67</height>
 				<orientation>horizontal</orientation>
-				<control type="label" id="52">
+				<control type="label" id="52"> 	 <!-- Kodi build label -->
 					<width>auto</width>
 					<font>Font33_Bold_Caps</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
@@ -87,17 +87,18 @@
 				<control type="label">
 					<width>auto</width>
 					<font>Font33_Bold_Caps</font>
-					<label> - </label>
+					<label> - </label> 	 <!-- Dash -->
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				</control>
-				<control type="label" id="53">
+				<control type="label" id="53"> 	 <!-- Kodi build date label -->
 					<width>auto</width>
 					<font>Font33_Bold_Caps</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				</control>
 			</control>
 
-			<control type="grouplist">
+			<!-- This is not needed, not sure why it was added, leaving for now, delete pending -->
+			<!-- <control type="grouplist">
 				<top>195</top>
 				<left>459</left>
 				<width>1325</width>
@@ -107,9 +108,7 @@
 					<label>[COLOR $VAR[SettingsLabelSystemInfo]]Kodi $LOCALIZE[19114]:[/COLOR] $VAR[BuildVersionName]</label>
 					<include>VideoOSDProcessInfo</include>
 				</control>
-			</control>
-
-
+			</control> -->
 
 			<control type="grouplist" id="8000">
 				<top>243</top>
@@ -149,6 +148,9 @@
 				<control type="label" id="12">
 					<include>SettingsLabelSystemInfo</include>
 				</control>
+				<control type="label" id="13">
+					<include>SettingsLabelSystemInfo</include>
+				</control>				
 			</control>
 			<control type="textbox" id="30">
 				<top>218</top>

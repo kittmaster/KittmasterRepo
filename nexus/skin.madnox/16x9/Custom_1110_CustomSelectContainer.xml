@@ -26,6 +26,8 @@
 				<content>
 					<!-- FanArt -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31310])">SelectFanartRotationSpeed</include>
+					<!-- FanArt Background Size-->
+					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31423])">MusicFanartBackgroundImageRatio</include>
 					<!-- Now playing -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31315])">SelectMusicOSDBackground</include>
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31030])">SelectNowPlayingMusicBackground</include>
@@ -45,7 +47,21 @@
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31359])">SelectThemeMainMenuTexture</include>
 					<!-- Dim background -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31380])">SelectDimMusicOSD</include>
+					<!-- Media Flag Custom Color Selection -->
+					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31395])">MediaFlagResolutionColorSettings</include>
+					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31401])">MediaFlagAspectRatioColorSettings</include>
+					<!-- Media Meta Data Scroller -->
+					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31410])">SelectMovieMetaScrollSpeed</include>
+					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31412])">SelectPersonMetaScrollSpeed</include>
 				</content>
+			</control>
+			<control type="image">
+				<left>952</left>
+				<top>14</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
 			</control>
 			<control type="image">
 				<right>338</right>
@@ -85,14 +101,25 @@
 				<param name="color">$VAR[MainMenuTextureColorVar]</param>
 			</include>
 			<include content="DialogImage">
-				<param name="visible">String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31009]) | String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31299]) | String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31361]) | String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31362])</param>
+				<param name="visible">String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31412]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31145]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31310]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31410]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31401]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31395]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31009]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31299]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31361]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31362]) |
+														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31423])
+														</param>
 				<param name="height">280</param>
 				<param name="aspect">keep</param>
 				<param name="texture">$INFO[Container(100).ListItem.Icon]</param>
 			</include>
 			<control type="image">
 				<include>DialogHorizontalSeparator</include>
-			</control>
+			</control>		
 			<control type="label">
 				<include>DialogItemCountLabel</include>
 				<label>$INFO[Container(100).NumItems,, $LOCALIZE[31001]]$INFO[Container(100).CurrentPage, - ]$INFO[Container(100).NumPages,/]</label>

@@ -221,18 +221,18 @@
 		<value>$LOCALIZE[231]</value>
 	</variable>
 	<variable name="MainMenuSystemBarLabelVar">
-		<value condition="Skin.String(MainMenuSystemBar.texture,shadow)">$LOCALIZE[31048]</value>
+		<value condition="Skin.String(MainMenuSystemBar.texture,shadow)">$LOCALIZE[39166]</value>
 		<value condition="Skin.String(MainMenuSystemBar.texture,wide)">$LOCALIZE[539]</value>
 		<value>$LOCALIZE[13278]</value>
 	</variable>
 	<variable name="MainMenuSubmenuBarLabelVar">
-		<value condition="Skin.String(MainMenuSubmenuBar.texture,shadow)">$LOCALIZE[31048]</value>
+		<value condition="Skin.String(MainMenuSubmenuBar.texture,shadow)">$LOCALIZE[39166]</value>
 		<value condition="Skin.String(MainMenuSubmenuBar.texture,wide)">$LOCALIZE[539]</value>
 		<value>$LOCALIZE[13278]</value>
 	</variable>
 	<variable name="MainMenuRSSBarLabelVar">
 		<value condition="Skin.String(MainMenuRSSBar.texture,wide)">$LOCALIZE[539]</value>
-		<value>$LOCALIZE[31048]</value>
+		<value>$LOCALIZE[39166]</value>
 	</variable>
 	<variable name="MainMenuStyleColorVar">
 		<value condition="!String.IsEmpty(Skin.String(MainMenuStyle.color)) + !String.IsEqual(Skin.String(MainMenuStyle.color),None)">$INFO[Skin.String(MainMenuStyle.color)]</value>
@@ -297,6 +297,19 @@
 		<value condition="Skin.String(BackgroundEffect.texture,easter)">$LOCALIZE[31149]</value>
 		<value>$LOCALIZE[231]</value>
 	</variable>
+		<variable name="ResolutionFlagUserLabelVar">
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/1-Red)">$LOCALIZE[13343]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/2-Orange)">$LOCALIZE[13342]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/3-Green)">$LOCALIZE[13341]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/4-Blue)">$LOCALIZE[762]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/5-Cyan)">$LOCALIZE[765]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/6-Violet)">$LOCALIZE[31396]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/7-Magenta)">$LOCALIZE[31397]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/8-Yellow)">$LOCALIZE[743]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/9-Turquoise)">$LOCALIZE[31398]</value>
+		<value condition="Skin.String(BackgroundEffect.texture,flags/colored/videoresolution/10-Brown)">$LOCALIZE[31399]</value>
+		<value>$LOCALIZE[231]</value>
+	</variable>
 	<variable name="BackgroundTextureColorVar">
 		<value condition="!String.IsEmpty(Skin.String(BackgroundTexture.color)) + !String.IsEqual(Skin.String(BackgroundTexture.color),None)">$INFO[Skin.String(BackgroundTexture.color)]</value>
 		<value>background</value>
@@ -315,7 +328,7 @@
 	</variable>
 	<!-- Topbar -->
 	<variable name="TopbarTextureLabelVar">
-		<value condition="Skin.String(TopbarTexture.texture,shadow)">$LOCALIZE[31048]</value>
+		<value condition="Skin.String(TopbarTexture.texture,shadow)">$LOCALIZE[39166]</value>
 		<value>$LOCALIZE[13278]</value>
 	</variable>
 	<variable name="TopbarTextureColorVar">
@@ -331,7 +344,7 @@
 		<value>black</value>
 	</variable>
 	<variable name="TopbarShadowTextureColorLabelVar">
-		<value condition="!String.IsEmpty(Skin.String(TopbarShadowTexture.color)) + !String.IsEqual(Skin.String(TopbarShadowTexture.color),None)">[UPPERCASE]#$INFO[Skin.String(TopbarTexture.color)][/UPPERCASE]</value>
+		<value condition="!String.IsEmpty(Skin.String(TopbarShadowTexture.color)) + !String.IsEqual(Skin.String(TopbarShadowTexture.color),None)">[UPPERCASE]#$INFO[Skin.String(TopbarShadowTexture.color)][/UPPERCASE]</value>
 		<value>$LOCALIZE[13278]</value>
 	</variable>
 	<!-- Floor -->
@@ -351,6 +364,34 @@
 		<value condition="!String.IsEmpty(Skin.String(FloorHighlight.color)) + !String.IsEqual(Skin.String(FloorHighlight.color),None)">[UPPERCASE]#$INFO[Skin.String(FloorHighlight.color)][/UPPERCASE]</value>
 		<value>$LOCALIZE[13278]</value>
 	</variable>
+	<variable name="PanelTextTVShowsColorVar">
+		<value condition="!String.IsEmpty(Skin.String(PanelTextTVShows.color)) + !String.IsEqual(Skin.String(PanelTextTVShows.color),None)">$INFO[Skin.String(PanelTextTVShows.color)]</value>
+		<value>text</value>
+	</variable>
+	<variable name="PanelTextTVShowsColorLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(PanelTextTVShows.color)) + !String.IsEqual(Skin.String(PanelTextTVShows.color),None)">[UPPERCASE]#$INFO[Skin.String(PanelTextTVShows.color)][/UPPERCASE]</value>
+		<value>$LOCALIZE[13278]</value>
+	</variable>
+	<variable name="CountDownTimerColorVar">
+		<value condition="!String.IsEmpty(Skin.String(CountDownTimer.color)) + !String.IsEqual(Skin.String(CountDownTimer.color),None)">$INFO[Skin.String(CountDownTimer.color)]</value>
+		<value>text</value>
+	</variable>
+	<variable name="CountDownTimerColorLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(CountDownTimer.color)) + !String.IsEqual(Skin.String(CountDownTimer.color),None)">[UPPERCASE]#$INFO[Skin.String(CountDownTimer.color)][/UPPERCASE]</value>
+		<value>$LOCALIZE[13278]</value>
+	</variable>
+	<variable name="CountDownTimerColorMovieLabelVar">
+		<value condition="!Skin.HasSetting(CountDownTimer.color)">[COLOR $INFO[Skin.String(CountDownTimer.color)]]$INFO[Window(Home).Property(ItemListCountDownTimerMovie)][/COLOR]</value>		
+		<value>$INFO[Window(Home).Property(ItemListCountDownTimerMovie)]</value>		
+	</variable>
+	<variable name="CountDownTimerColorPersonLabelVar">
+		<value condition="!Skin.HasSetting(CountDownTimer.color)">[COLOR $INFO[Skin.String(CountDownTimer.color)]]$INFO[Window(Home).Property(ItemListCountDownTimerPerson)][/COLOR]</value>		
+		<value>$INFO[Window(Home).Property(ItemListCountDownTimerPerson)]</value>		
+	</variable>
+	<variable name="CountDownTimerColorTMDBInfoLabelVar">
+		<value condition="!Skin.HasSetting(CountDownTimer.color)">[COLOR $INFO[Skin.String(CountDownTimer.color)]]$INFO[Window(Home).Property(ItemListCountDownTimerMovie)][/COLOR]</value>		
+		<value>$INFO[Window(Home).Property(ItemListCountDownTimerMovie)]</value>		
+	</variable>			
 	<!-- Color picker -->
 	<variable name="ColorPickerLabelVar">
 		<value condition="!String.IsEmpty(Window.Property(colorname)) + !String.IsEqual(Window.Property(colorname),None)">$LOCALIZE[737] [COLOR $INFO[Window.Property(colorstring)]]$INFO[Window.Property(colorname)][/COLOR]</value>
@@ -371,8 +412,22 @@
 			<textureradioonnofocus colordiffuse="$PARAM[ColorStringVar]">colors/white.png</textureradioonnofocus>
 			<textureradioofffocus colordiffuse="$PARAM[ColorStringVar]">colors/white.png</textureradioofffocus>
 			<textureradiooffnofocus colordiffuse="$PARAM[ColorStringVar]">colors/white.png</textureradiooffnofocus>
-			<onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
+			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
+		</definition>
+	</include>
+		<include name="CustomColorRadioButtonIcons">
+		<param name="ColorStringVar" />
+		<definition>
+			<width>1395</width>
+			<height>67</height>
+			<textoffsetx>35</textoffsetx>
+			<textureradioonfocus colordiffuse="$PARAM[ColorStringVar]">colors/white.png</textureradioonfocus>
+			<textureradioonnofocus colordiffuse="$PARAM[ColorStringVar]">colors/white.png</textureradioonnofocus>
+			<textureradioofffocus colordiffuse="$PARAM[ColorStringVar]">colors/white.png</textureradioofffocus>
+			<textureradiooffnofocus colordiffuse="$PARAM[ColorStringVar]">colors/white.png</textureradiooffnofocus>
+			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
+			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
 		</definition>
 	</include>
 </includes>
