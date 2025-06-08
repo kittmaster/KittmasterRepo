@@ -935,11 +935,6 @@ msgid "TikTok"
 msgstr "TikTok"
 
 #: /16x9/Includes_InfoDialogs.xml
-msgctxt "#31184"
-msgid "YouTube"
-msgstr "YouTube"
-
-#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31185"
 msgid "Filename"
 msgstr "Nombre de archivo"
@@ -958,11 +953,6 @@ msgstr "Las variables de la piel ayudan a los diseñadores a construir variables
 msgctxt "#31188"
 msgid "Creator"
 msgstr "Creador"
-
-#: /16x9/Includes_SkinSettings.xml
-msgctxt "#31189"
-msgid "Panel"
-msgstr "Panel"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31190"
@@ -1861,8 +1851,8 @@ msgstr "Habilitar cuenta regresiva del deslizador de películas y programas de T
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31369"
-msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0."
-msgstr "Activa o desactiva el temporizador de cuenta regresiva digital debajo de los deslizadores de flecha de metainformación. Habilítalo para mostrar cuándo el deslizador se moverá a la izquierda/derecha cuando llegue a 0."
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "Activa/desactiva el temporizador de cuenta atrás digital debajo de los controles deslizantes de la flecha meta de información. Habilítalo para mostrar cuándo el control deslizante se moverá a la izquierda/derecha cuando llegue a 0. El desplazamiento automático para películas o personas debe estar habilitado para activar esta función."
 
 #: /16x9/Custom_1112_Search.xml
 msgctxt "#31370"
@@ -2498,13 +2488,3 @@ msgstr "Muestra información de marcador de superposición para elementos multim
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "Un script para editar el ticker RSS incorporado de Kodi."
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31973"
-msgid "Crew"
-msgstr "Equipo"
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31974"
-msgid "Similar"
-msgstr "Similar"

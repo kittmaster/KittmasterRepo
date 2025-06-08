@@ -200,7 +200,7 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.02.02" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.02.03" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.16.0" />
 		<import addon="script.embuary.helper" version="2.0.8" />
@@ -253,7 +253,11 @@ v0.4.0 (2025-03-23)
 			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>		
-		<news>v.21.02.02
+		<news>v.21.02.03
+			-Removed duplicate language strings
+			-Fixed metadata slider and countdown timer inverted logic
+			-Add Norwegian language strings
+			v.21.02.02
 			-Added navigation corrections to TMDb Helper page
 			-Adjust default icon color include variable to correct for "icon error" where error is not present.
 			v.21.02.01

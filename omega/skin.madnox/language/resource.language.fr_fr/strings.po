@@ -935,11 +935,6 @@ msgid "TikTok"
 msgstr "TikTok"
 
 #: /16x9/Includes_InfoDialogs.xml
-msgctxt "#31184"
-msgid "YouTube"
-msgstr "YouTube"
-
-#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31185"
 msgid "Filename"
 msgstr "Nom de fichier"
@@ -958,11 +953,6 @@ msgstr "Les variables de skin aident les concepteurs de skins à construire des 
 msgctxt "#31188"
 msgid "Creator"
 msgstr "Créateur"
-
-#: /16x9/Includes_SkinSettings.xml
-msgctxt "#31189"
-msgid "Panel"
-msgstr "Panneau"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31190"
@@ -1861,8 +1851,8 @@ msgstr "Activer le compte à rebours des films et émissions de télévision"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31369"
-msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0."
-msgstr "Active/désactive le compte à rebours numérique sous les curseurs de flèches d'information méta. Activez pour afficher quand le curseur se déplacera vers la gauche/droite lorsqu'il atteindra 0."
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "Active/désactive le compte à rebours numérique sous les curseurs de flèche méta d'information. Activez-le pour afficher quand le curseur se déplacera vers la gauche/droite lorsqu'il atteindra 0. Le défilement automatique pour les films ou les personnes doit être activé pour activer cette fonctionnalité."
 
 #: /16x9/Custom_1112_Search.xml
 msgctxt "#31370"
@@ -2498,13 +2488,3 @@ msgstr "Afficher les informations de marqueur superposé pour les éléments mul
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "Un script pour éditer le téléscripteur RSS intégré de Kodi."
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31973"
-msgid "Crew"
-msgstr "Équipe"
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31974"
-msgid "Similar"
-msgstr "Similaire"

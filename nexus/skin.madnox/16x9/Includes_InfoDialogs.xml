@@ -612,7 +612,7 @@
 					<item>
 						<visible>!Container(9000).HasFocus(112) + !Container(9000).Hasfocus(100002) + !Container(9000).Hasfocus(100003) + !Container(9000).Hasfocus(100004)</visible>
 						<label>$VAR[YoutubeBio]</label>
-						<label2>$LOCALIZE[31184]:</label2>
+						<label2>$LOCALIZE[31101]:</label2>
 					</item>
 					<item>
 						<visible>!String.IsEmpty(ListItem.Property(IMDb_ID)) + !Container(9000).Hasfocus(100002) + !Container(9000).Hasfocus(100003) + !Container(9000).Hasfocus(100004)</visible>

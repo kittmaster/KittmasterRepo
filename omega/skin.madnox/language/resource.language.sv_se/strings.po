@@ -1,15 +1,15 @@
 # Kodi Media Center language file
 # Addon Name: Madnox Redux
-# Addon Name: skin.madnox.redux
+# Addon id: skin.madnox.redux
 # Addon Provider: Team Madnox
 msgid ""
 msgstr ""
 "Project-Id-Version: madnox swedish\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
+"Last-Translator: Daniel Nylander <github@danielnylander.se> / kittmaster\n"
 "Language-Team: sv\n"
-"Language: sv\n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,7 +61,7 @@ msgctxt "#31008"
 msgid "Multi image"
 msgstr "Flera bilder"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/Includes_MediaMenu.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31009"
 msgid "Music discart fallback"
 msgstr "Musik discart fallback"
@@ -91,7 +91,7 @@ msgctxt "#31014"
 msgid "New series"
 msgstr "Ny serie"
 
-#: /16x9/Variables.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31015"
 msgid "Finale"
 msgstr "Final"
@@ -141,10 +141,10 @@ msgctxt "#31024"
 msgid "Customise shortcut menu"
 msgstr "Anpassa genvägsmenyn"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31025"
-msgid "View options"
-msgstr "Visa alternativ"
+msgid "palette"
+msgstr "Palett"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31026"
@@ -229,17 +229,17 @@ msgstr "Huvudmeny"
 #: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
 msgctxt "#31042"
 msgid "Top bar"
-msgstr ""
+msgstr "Övre fältet"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31043"
 msgid "Fixed list"
 msgstr "Fast lista"
 
-#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+#: /16x9/DialogColorPicker.xml
 msgctxt "#31044"
-msgid "Artwork"
-msgstr "Bakgrund"
+msgid "Palette color selected"
+msgstr "Palettfärg vald"
 
 #: /16x9/Custom_1110_Colors.xml /16x9/SkinSettings.xml /16x9/Variables_Colors.xml
 msgctxt "#31045"
@@ -256,10 +256,10 @@ msgctxt "#31047"
 msgid "Floor"
 msgstr "Golv"
 
-#: /16x9/SkinSettings.xml /16x9/Variables_Themes.xml /16x9/Includes_CustomSelect.xml
+#: /16x9/SkinSettings.xml /16x9/DialogColorPicker.xml
 msgctxt "#31048"
-msgid "Shadow"
-msgstr "Skugga"
+msgid "Palette selected"
+msgstr "Palett vald"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31049"
@@ -301,10 +301,10 @@ msgctxt "#31056"
 msgid "Panel"
 msgstr "Panel"
 
-#: /16x9/SkinSettings.xml
+#: /16x9/Variables.xml /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31057"
-msgid "Installed"
-msgstr "Installerad"
+msgid "Seasons"
+msgstr "Årstider"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31058"
@@ -376,10 +376,10 @@ msgctxt "#31071"
 msgid "Right list"
 msgstr "Höger lista"
 
-#: /16x9/DialogFullScreenInfo.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31072"
-msgid "Premiered"
-msgstr "Premiär"
+msgid "Artisans behind the scenes"
+msgstr "Hantverkare bakom kulisserna"
 
 #: /16x9/DialogPlayerProcessInfo.xml
 msgctxt "#31073"
@@ -516,15 +516,15 @@ msgctxt "#31099"
 msgid "Dark"
 msgstr "Mörk"
 
-#: /16x9/Includes_CustomSelect.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31100"
-msgid "Light"
-msgstr "Ljus"
+msgid "Screen ensemble"
+msgstr "Skärmensemble"
 
-#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31101"
-msgid "Submenu"
-msgstr "Undermeny"
+msgid "YouTube"
+msgstr "YouTube"
 
 #: /16x9/script-skinshortcuts.xml /16x9/variables.xml
 msgctxt "#31102"
@@ -571,20 +571,20 @@ msgctxt "#31110"
 msgid "Similar"
 msgstr "Liknande"
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31111"
-msgid "Budget"
-msgstr "Budget"
+msgid "Production details"
+msgstr "Produktionsdetaljer"
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31112"
-msgid "Revenue"
-msgstr "Intäkter"
+msgid "Movie Roles"
+msgstr "Filmroller"
 
-#: /16x9/DialogVideoInfo.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31113"
-msgid "Awards"
-msgstr "Utmärkelser"
+msgid "TV Roles"
+msgstr "TV-roller"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
 msgctxt "#31114"
@@ -616,10 +616,10 @@ msgctxt "#31119"
 msgid "Wrinkles"
 msgstr "Rynkor"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31120"
-msgid "Center"
-msgstr "Centrera"
+msgid "Facebook"
+msgstr "Facebook"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31121"
@@ -633,18 +633,18 @@ msgstr "Stora ikoner breda"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31123"
-msgid "Logo"
-msgstr "Logotyp"
+msgid "Clearlogo or Title/Tagline"
+msgstr "Clearlogo eller Titel/Tagline"
 
 #: /16x9/Custom_1114_Addons.xml
 msgctxt "#31124"
 msgid "Required"
 msgstr "Obligatorisk"
 
-#: /16x9/Custom_1114_Addons.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31125"
-msgid "Recommended"
-msgstr "Rekommenderad"
+msgid "Instagram"
+msgstr "Instagram"
 
 #: /16x9/Custom_1114_Addons.xml
 msgctxt "#31126"
@@ -674,7 +674,7 @@ msgstr "Fyrkant"
 #: /16x9/SkinSettings.xml
 msgctxt "#31131"
 msgid "Emboss"
-msgstr "Relief"
+msgstr "Prägling"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31132"
@@ -724,7 +724,7 @@ msgstr "Vita medieflaggor"
 #: 31140 /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31141"
 msgid "System bar"
-msgstr "Systembar"
+msgstr "Systemfält"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31142"
@@ -759,7 +759,7 @@ msgstr "Konfetti"
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31148"
 msgid "Valentine"
-msgstr "Valentine"
+msgstr "Alla hjärtans dag"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31149"
@@ -861,10 +861,10 @@ msgctxt "#31168"
 msgid "Tool tips"
 msgstr "Tips om verktyg"
 
-#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31169"
-msgid "Music info"
-msgstr "Musikinformation"
+msgid "X (Twitter)"
+msgstr "X (Twitter)"
 
 #: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31170"
@@ -931,55 +931,45 @@ msgctxt "#31182"
 msgid "Vinyl"
 msgstr "Vinyl"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31183"
-msgid "Blu-ray"
-msgstr "Blu-ray"
+msgid "TikTok"
+msgstr "TikTok"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
-msgctxt "#31184"
-msgid "White"
-msgstr "Vit"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31185"
-msgid "Blue"
-msgstr "Blå"
+msgid "Filename"
+msgstr "Filnamn"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31186"
 msgid "Golden"
 msgstr "Gyllene"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31187"
-msgid "Green"
-msgstr "Grön"
+msgid "Skin Variables helps skinners to construct variables and expressions for multiple containers and listitems using a template."
+msgstr "Skinvariabler hjälper skinners att konstruera variabler och uttryck för flera behållare och listobjekt med hjälp av en mall."
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31188"
-msgid "Grey"
-msgstr "Grå"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
-msgctxt "#31189"
-msgid "Orange"
-msgstr "Orange"
+msgid "Creator"
+msgstr "Skapare"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31190"
 msgid "Purple"
 msgstr "Lila"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+#: /16x9/Includes_SkinSettings.xml
 msgctxt "#31191"
-msgid "Red"
-msgstr "Röd"
+msgid "Movies & TV shows / Seasons-Episode display"
+msgstr "Filmer & TV-serier / Visning av säsonger-avsnitt"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31192"
 msgid "Skin helper extended art"
-msgstr "Skin helper extended art"
+msgstr "Skinhjälpare utökad konst"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31193"
@@ -1001,10 +991,10 @@ msgctxt "#31196"
 msgid "Background now playing info"
 msgstr "Bakgrundsinformation om pågående spelning"
 
-#: /16x9/Includes_CustomSelect.xml
+#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31197"
-msgid "Automatically open fullscreen music on play"
-msgstr "Öppna automatiskt musik i helskärm vid uppspelning"
+msgid "Most recognized as"
+msgstr "Mest känd som"
 
 #: /16x9/Variables.xml
 msgctxt "#31198"
@@ -1076,10 +1066,10 @@ msgctxt "#31211"
 msgid "Movie/TV show info"
 msgstr "Information om film/TV-program"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31212"
-msgid "Big list"
-msgstr "Stor lista"
+msgid "Select how long, in seconds, before the movie rows metadata grid slides left or right (If greater than 8 items)."
+msgstr "Välj hur länge, i sekunder, innan metadatagalleriet för filmrader rullar vänster eller höger (om fler än 8 objekt)."
 
 #: /16x9/View_050_PosterList.xml /16x9/Custom_1115_ViewSettings.xml /16x9/Includes_MediaFlags.xml
 msgctxt "#31213"
@@ -1151,10 +1141,10 @@ msgctxt "#31226"
 msgid "Big 3 panel"
 msgstr "Stor 3-panel"
 
-#: /16x9/Variables.xml
+#: /16x9/Includes_Settings.xml
 msgctxt "#31227"
-msgid "Premiered"
-msgstr "Premiär"
+msgid "Select how long, in seconds, before the persons row metadata grid slides left or right (If greater than 8 items)."
+msgstr "Välj hur länge, i sekunder, innan metadatagalleriet för filmrader rullar vänster eller höger (om fler än 8 objekt)."
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31228"
@@ -1411,10 +1401,10 @@ msgctxt "#31278"
 msgid "Banner list"
 msgstr "Banner-lista"
 
-#: /16x9/Custom_1116_ViewMode.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31279"
-msgid "Right"
-msgstr "Höger"
+msgid "TV shows season & returning text"
+msgstr "TV-serier säsong & återkommande text"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31280"
@@ -1631,10 +1621,10 @@ msgctxt "#31322"
 msgid "PVR widget"
 msgstr "PVR widget"
 
-#: /16x9/Includes_MediaMenu.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31323"
-msgid "Video info"
-msgstr "Videoinformation"
+msgid "Movie & TV shows meta countdown timer text"
+msgstr "Film- och TV-seriers metanedräkningstimertext"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31324"
@@ -1764,7 +1754,7 @@ msgstr "Ingen information tillgänglig."
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31349"
 msgid "Info dialog"
-msgstr "Info-dialog"
+msgstr "Infodialog"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31350"
@@ -1856,15 +1846,15 @@ msgctxt "#31367"
 msgid "TV Shows starring"
 msgstr "TV-program med huvudrollsinnehavare"
 
-#: /16x9/script-embuary-video.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31368"
-msgid "Crew"
-msgstr "Filmteam"
+msgid "Movie & TV shows slider countdown enable"
+msgstr "Aktivera nedräkning för bildspel för filmer och TV-serier"
 
-#: /16x9/Includes_InfoDialogs.xml
+#: /16x9/SkinSettings.xml
 msgctxt "#31369"
-msgid "Crew"
-msgstr "Filmteam"
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "Slår på/av den digitala nedräkningstimern under info-meta-pilreglagen. Aktivera för att visa när reglaget flyttas åt vänster/höger när det når 0. Autoscrolling för filmer eller personer måste vara aktiverat för att aktivera den här funktionen."
 
 #: /16x9/Custom_1112_Search.xml
 msgctxt "#31370"
@@ -1946,20 +1936,220 @@ msgctxt "#31385"
 msgid "Limit"
 msgstr "Gräns"
 
-#: SKIN SETTINGS DESCRIPTIONS /16x9/Includes_Settings.xml
+#: /shortcuts/overrides.xml
+msgctxt "#31386"
+msgid "Recently added (include watched)"
+msgstr "Nyligen tillagda (inkludera tittade)"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31387"
+msgid "Recently released (include watched)"
+msgstr "Nyligen släppta (inkludera tittade)"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31388"
+msgid "Character"
+msgstr "Karaktär"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31389"
+msgid "Department"
+msgstr "Avdelning"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31390"
+msgid "Job"
+msgstr "Jobb"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31391"
+msgid "Budget"
+msgstr "Budget"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31392"
+msgid "Years Old"
+msgstr "År gammal"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31393"
+msgid "Revenue"
+msgstr "Intäkter"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31394"
+msgid "Color icons"
+msgstr "Färgikoner"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31395"
+msgid "Resolution icon color"
+msgstr "Upplösningsikonfärg"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31396"
+msgid "Violet"
+msgstr "Violett"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31397"
+msgid "Magenta"
+msgstr "Magenta"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31398"
+msgid "Turquoise"
+msgstr "Turkos"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31399"
+msgid "Brown"
+msgstr "Brun"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31400"
+msgid "       "
+msgstr "       "
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31401"
+msgid "Aspect ratio icon color"
+msgstr "Färgen på bildförhållandeikonen"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31402"
+msgid "Sets the color for the resolution flags."
+msgstr "Ställer in färgen för upplösningsflaggorna."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31403"
+msgid "Sets the color for the aspect ratio flags."
+msgstr "Ställer in färgen för bildförhållandeflaggorna."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31404"
+msgid "Large splash screen Madnox logo on startup"
+msgstr "Stor startskärm Madnox-logotyp vid uppstart"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31405"
+msgid "Image gallery for"
+msgstr "Bildgalleri för"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31406"
+msgid "Image Gallery"
+msgstr "Bildgalleri"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31407"
+msgid "Not Available or Listed"
+msgstr "Inte tillgänglig eller listad"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31408"
+msgid "Awards"
+msgstr "Utmärkelser"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31409"
+msgid "Enable auto scrolling for movie's meta data"
+msgstr "Aktivera automatisk rullning för filmers metadata"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31410"
+msgid "Movie meta rotation delay time"
+msgstr "Fördröjningstid för filmmeta-rotation"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31411"
+msgid "Enable auto scrolling for person's meta data"
+msgstr "Aktivera automatisk rullning för personers metadata"
+
+#: /16x9/SkinSettings.xml /16x9/SkinSettings.xml
+msgctxt "#31412"
+msgid "Person meta rotation delay time"
+msgstr "Fördröjningstid för personmeta-rotation"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31413"
+msgid "Automatically scroll movie's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "Rulla automatiskt filmers metadata när det finns fler än 8 synliga objekt. Rullar all data baserat på synlighet av tillgänglig data."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31414"
+msgid "Automatically scroll person's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "Rulla automatiskt personers metadata när det finns fler än 8 synliga objekt. Rullar all data baserat på synlighet av tillgänglig data."
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31415"
+msgid "Crew"
+msgstr "Besättning"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31416"
+msgid "TMDb"
+msgstr "TMDb"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31417"
+msgid "TVDb"
+msgstr "TVDb"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31418"
+msgid "Recommendations"
+msgstr "Rekommendationer"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31419"
+msgid "Guest stars"
+msgstr "Gäststjärnor"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31420"
+msgid "Display larger DPI scaled logo when Kodi first loads. Large logo: 1600x520px, Small logo: 800x260px. Kodi will auto-scale in windowed view."
+msgstr "Visa större DPI-skalad logotyp när Kodi startar. Stor logotyp: 1600x520px, Liten logotyp: 800x260px. Kodi skalar automatiskt i fönsterläge."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31421"
+msgid "Turn on saving to debug log"
+msgstr "Aktivera spara till fellogg"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31422"
+msgid "Off by default, leave this setting off unless troubleshooting instructed to turn on. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
+msgstr "Avstängd som standard, låt denna inställning vara avstängd om inte felsökning instruerar att slå på den. Detta kommer att få din fellogg och enhetens cache att öka snabbt och kan orsaka instabilitet om den lämnas okontrollerad. Du har blivit underrättad."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31423"
+msgid "Fanart background size ratio"
+msgstr "Bildförhållande för fanartbakgrundsstorlek"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31424"
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center:	Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgstr "Ställer in storleksförhållandet för fanartbakgrunden. Skala/Behåll/Centrera: Bildförhållandet behålls. Sträck: Bildförhållandet behålls inte."
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31425"
+msgid "Custom colour"
+msgstr "Anpassad färg"
+
+#: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
-msgstr "Anpassning av startskärm, widgets och genvägsmeny."
+msgstr "Anpassning av startskärmen, widgetar och genvägsmenyn."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31902"
 msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
-msgstr "Hjälpskript för att tillhandahålla extra funktioner för skinnet, inklusive extra widgets, bioläge och suddiga bakgrunder."
+msgstr "Hjälpskript för att tillhandahålla extra skinegenskaper och funktioner, inklusive ytterligare widgetar, biografläge och suddiga bakgrunder."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31903"
 msgid "Provides colour selection."
-msgstr "Ger möjlighet till färgval."
+msgstr "Tillhandahåller färgval."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
@@ -1969,12 +2159,12 @@ msgstr "Installera och välj bildtillägg."
 #: /16x9/Includes_Settings.xml
 msgctxt "#31905"
 msgid "Automatically adds extra artwork for media in your media libraries."
-msgstr "Lägger automatiskt till extra illustrationer för media i dina mediabibliotek."
+msgstr "Lägger automatiskt till extra konstverk för media i dina mediebibliotek."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31906"
 msgid "Next aired library information and widgets."
-msgstr "Därefter sändes biblioteksinformation och widgets."
+msgstr "Information om nästa sändning i biblioteket och widgetar."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31907"
@@ -1984,22 +2174,22 @@ msgstr "Texter för musik. Krävs för att aktivera animerade texter."
 #: /16x9/Includes_Settings.xml
 msgctxt "#31908"
 msgid "Sync your collection and watched status with trakt.tv."
-msgstr "Synkronisera din samling och bevakningsstatus med trakt.tv."
+msgstr "Synkronisera din samling och tittade status med trakt.tv."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31909"
 msgid "TMDb information dialogs and widgets."
-msgstr "Dialogrutor och widgets för TMDb-information."
+msgstr "TMDb informationsdialoger och widgetar."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31910"
 msgid "Create a custom favourite from selected kodi favourites."
-msgstr "Skapa en egen favorit från utvalda Kodi-favoriter."
+msgstr "Skapa en anpassad favorit från valda kodi-favoriter."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31911"
 msgid "Edit the home screen menu, widgets, backgrounds and infolines."
-msgstr "Redigera menyn på startskärmen, widgetar, bakgrunder och infolinjer."
+msgstr "Redigera startskärmsmenyn, widgetar, bakgrunder och informationsrader."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31912"
@@ -2154,7 +2344,7 @@ msgstr "Aktivera mediaflaggor för färg, HDR, bitdjup och språk."
 #: /16x9/Includes_Settings.xml
 msgctxt "#31943"
 msgid "Audio cd art fallback skin wide."
-msgstr ""
+msgstr "Ljud-CD-omslagsbild fallback över hela temat"
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31944"
@@ -2284,4 +2474,19 @@ msgstr "Spela upp nästa avsnitt av tv-serien automatiskt."
 #: /16x9/Includes_Settings.xml
 msgctxt "#31969"
 msgid "Play themes while navigating TV Shows, Movies and Music Videos."
-msgstr "Spela upp teman när du navigerar bland TV-program, filmer och musikvideor."
+msgstr "Spela teman när du navigerar i TV-serier, filmer och musikvideor."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31970"
+msgid "The Library Node Editor allows you to create and customise custom video nodes and music nodes within Kodi."
+msgstr "Biblioteksnodredigeraren låter dig skapa och anpassa egna videonoder och musiknoder i Kodi."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31971"
+msgid "Show overlay marker information for watched, unwatched, and in progress media items."
+msgstr "Visa överläggsmarkeringsinformation för tittade, otittade och pågående medieobjekt."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31972"
+msgid "A script for editing Kodi's built in RSS Ticker."
+msgstr "Ett skript för att redigera Kodis inbyggda RSS-ticker."

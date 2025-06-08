@@ -937,11 +937,6 @@ msgid "TikTok"
 msgstr "تيك توك"
 
 #: /16x9/Includes_InfoDialogs.xml
-msgctxt "#31184"
-msgid "YouTube"
-msgstr "يوتيوب"
-
-#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31185"
 msgid "Filename"
 msgstr "اسم الملف"
@@ -960,11 +955,6 @@ msgstr "تساعد متغيرات السمة مصممي السمات على إن
 msgctxt "#31188"
 msgid "Creator"
 msgstr "المنشئ"
-
-#: /16x9/Includes_SkinSettings.xml
-msgctxt "#31189"
-msgid "Panel"
-msgstr "لوحة"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31190"
@@ -1863,8 +1853,8 @@ msgstr "تمكين مؤقت العد التنازلي لمؤشر أفلام وب
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31369"
-msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0."
-msgstr "يقوم بتشغيل/إيقاف مؤقت العد التنازلي الرقمي أسفل مؤشرات أسهم البيانات الوصفية. قم بالتمكين لعرض متى سينتقل المؤشر إلى اليسار/اليمين عندما يصل إلى 0."
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "يقوم بتشغيل/إيقاف مؤقت العد التنازلي الرقمي أسفل أشرطة التمرير الخاصة بالمعلومات الوصفية. قم بالتمكين للعرض عندما ينتقل شريط التمرير إلى اليسار/اليمين عندما يصل إلى 0. يجب تمكين التمرير التلقائي للأفلام أو الأشخاص لتنشيط هذه الميزة."
 
 #: /16x9/Custom_1112_Search.xml
 msgctxt "#31370"
@@ -2500,13 +2490,3 @@ msgstr "إظهار معلومات علامة التراكب للعناصر ال�
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "برنامج نصي لتعديل شريط أخبار RSS المدمج في Kodi."
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31973"
-msgid "Crew"
-msgstr "طاقم"
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31974"
-msgid "Similar"
-msgstr "مشابه"

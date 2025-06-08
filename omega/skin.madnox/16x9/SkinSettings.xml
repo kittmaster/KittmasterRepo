@@ -324,7 +324,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelStyle.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelStyle.color)],Home)</onclick>
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[736],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[736],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelStyleColorVar]</param>
@@ -339,7 +339,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelTexture.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelTexture.color)],Home)</onclick>
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31051],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31051],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelTextureColorVar]</param>
@@ -354,7 +354,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelEmboss.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelEmboss.color)],Home)</onclick>
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31131],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31131],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelEmbossColorVar]</param>
@@ -369,7 +369,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelShadow.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelShadow.color)],Home)</onclick>							
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[39166],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[39166],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelShadowColorVar]</param>
@@ -384,7 +384,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelHighlight.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelHighlight.color)],Home)</onclick>								
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31049],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31049],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelHighlightColorVar]</param>
@@ -399,7 +399,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelText.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelText.color)],Home)</onclick>							
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelTextColorVar]</param>
@@ -414,7 +414,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelSubText.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelSubText.color)],Home)</onclick>	
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31137],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31137],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelSubTextColorVar]</param>
@@ -429,7 +429,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelFocusText.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelFocusText.color)],Home)</onclick>								
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31138],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31138],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelFocusTextColorVar]</param>
@@ -444,7 +444,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelDisabledText.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelDisabledText.color)],Home)</onclick>							
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31174],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31174],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelDisabledTextColorVar]</param>
@@ -459,7 +459,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelListSeparator.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelListSeparator.color)],Home)</onclick>								
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31139],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31139],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelListSeparatorColorVar]</param>
@@ -651,7 +651,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,PanelTextTVShows.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelTextTVShows.color)],Home)</onclick>							
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[PanelTextTVShowsColorVar]</param>
@@ -666,7 +666,7 @@
 							<onclick>SetProperty(ActiveControlPanelName,CountDownTimer.color,Home)</onclick>
 							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(CountDownTimer.color)],Home)</onclick>							
 							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
-							<onclick>SetProperty(DialogTitle,$LOCALIZE[31189]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
 							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 							<include content="CustomColorRadioButton">
 								<param name="ColorStringVar">$VAR[CountDownTimerColorVar]</param>
@@ -877,7 +877,7 @@
 						<control type="radiobutton" id="508"> <!-- CMB -->
 							<label>$LOCALIZE[31409]</label>
 							<onclick>Skin.ToggleSetting(disableautoscrollmoviemetadata)</onclick>
-							<selected>Skin.HasSetting(disableautoscrollmoviemetadata)</selected>
+							<selected>!Skin.HasSetting(disableautoscrollmoviemetadata)</selected>
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="509">
@@ -886,13 +886,13 @@
 							<onclick>SetProperty(CustomSelect,$LOCALIZE[31410],home)</onclick>
 							<onclick>ActivateWindow(1110)</onclick>
 							<include>SettingsButton</include>
-							<enable>Skin.HasSetting(disableautoscrollmoviemetadata)</enable>
+							<enable>!Skin.HasSetting(disableautoscrollmoviemetadata)</enable>
 							<onclick>Skin.SetString(ItemsSliderMyTimerSetting1, $INFO[Skin.String(MovieMetaScrollingDelayValueVarA)])</onclick>
 						</control>
 						<control type="radiobutton" id="513"> <!-- CMB -->
 							<label>$LOCALIZE[31411]</label>
 							<onclick>Skin.ToggleSetting(disableautoscrollpersonmetadata)</onclick>
-							<selected>Skin.HasSetting(disableautoscrollpersonmetadata)</selected>
+							<selected>!Skin.HasSetting(disableautoscrollpersonmetadata)</selected>
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="514">
@@ -901,19 +901,21 @@
 							<onclick>SetProperty(CustomSelect,$LOCALIZE[31412],home)</onclick>
 							<onclick>ActivateWindow(1110)</onclick>
 							<include>SettingsButton</include>
-							<enable>Skin.HasSetting(disableautoscrollpersonmetadata)</enable>
+							<enable>!Skin.HasSetting(disableautoscrollpersonmetadata)</enable>
 							<onclick>Skin.SetString(ItemsSliderMyTimerSetting2, $INFO[Skin.String(PersonMetaScrollingDelayValueVarA)])</onclick>
 						</control>
 						<control type="radiobutton" id="515"> <!-- CMB -->
 							<label>$LOCALIZE[31368]</label>
 							<onclick>Skin.ToggleSetting(enablemovietvshowslidercountdowntimer)</onclick>
-							<selected>!Skin.HasSetting(enablemovietvshowslidercountdowntimer)</selected>
+							<selected>[!Skin.HasSetting(disableautoscrollmoviemetadata) |
+									   !Skin.HasSetting(disableautoscrollpersonmetadata)] +
+							 		   !Skin.HasSetting(enablemovietvshowslidercountdowntimer)</selected>
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="radiobutton" id="516"> <!-- CMB -->
 							<label>$LOCALIZE[31421]</label>
 							<onclick>Skin.ToggleSetting(disablecounterscriptloggingall)</onclick>
-							<selected>Skin.HasSetting(disablecounterscriptloggingall)</selected>
+							<selected>!Skin.HasSetting(disablecounterscriptloggingall)</selected>
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="label" id="510">

@@ -935,11 +935,6 @@ msgid "TikTok"
 msgstr "TikTok"
 
 #: /16x9/Includes_InfoDialogs.xml
-msgctxt "#31184"
-msgid "YouTube"
-msgstr "YouTube"
-
-#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31185"
 msgid "Filename"
 msgstr "Dateiname"
@@ -958,11 +953,6 @@ msgstr "Skin-Variablen helfen Skin-Entwicklern, Variablen und Ausdrücke für me
 msgctxt "#31188"
 msgid "Creator"
 msgstr "Ersteller"
-
-#: /16x9/Includes_SkinSettings.xml
-msgctxt "#31189"
-msgid "Panel"
-msgstr "Bedienfeld"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31190"
@@ -1861,8 +1851,8 @@ msgstr "Film- & TV-Serien Schieberegler-Countdown aktivieren"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31369"
-msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0."
-msgstr "Schaltet den digitalen Countdown-Timer unter den Info-Meta-Pfeil-Schiebereglern ein/aus. Aktivieren Sie diese Option, um anzuzeigen, wann der Schieberegler nach links/rechts verschoben wird, wenn er 0 erreicht."
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "Schaltet den digitalen Countdown-Timer unter den Info-Meta-Pfeil-Schiebereglern ein/aus. Aktivieren Sie diese Option, um anzuzeigen, wann der Schieberegler nach links/rechts verschoben wird, wenn er 0 erreicht. Autoscrolling für Filme oder Personen muss aktiviert sein, um diese Funktion zu aktivieren."
 
 #: /16x9/Custom_1112_Search.xml
 msgctxt "#31370"
@@ -2498,13 +2488,3 @@ msgstr "Zeigt Überlagerungsmarkierungsinformationen für gesehene, ungesehene u
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "Ein Skript zum Bearbeiten des integrierten RSS-Tickers von Kodi."
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31973"
-msgid "Crew"
-msgstr "Crew"
-
-#: /16x9/script-tmdbhelper-recommendations.xml
-msgctxt "#31974"
-msgid "Similar"
-msgstr "Ähnlich"
