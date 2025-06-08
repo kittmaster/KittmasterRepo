@@ -12,6 +12,7 @@
 	
 		<onload condition="!Skin.HasSetting(disableautoscrollmoviemetadata)">AlarmClock(MetaData_Slide_Movie,RunScript(special://home/addons/skin.madnox/extras/scripts/script_decrement_movie.py),00:01,silent,loop)</onload>
 		<!-- <onload condition="!Skin.HasSetting(disableautoscrollpersonmetadata)">AlarmClock(MetaData_Slide_Person,RunScript(special://home/addons/skin.madnox/extras/scripts/script_decrement_person.py),00:01,silent,loop)</onload> -->
+	<onload>AlarmClock(Refocus9000,SetFocus(9000,0),00:00:01,silent)</onload>
 	<controls>
 
 		<!-- 10051 - Movie / TV Show details -->
@@ -345,6 +346,8 @@
 			<top>178</top> <!-- Locked do not move -->
 			<height>40</height> <!-- Locked do not move -->
 			<left>736</left> <!-- Locked do not move -->
+					    <onleft>SetFocus(9000)</onleft>
+    		<onright>SetFocus(9000)</onright>
 			<usecontrolcoords>true</usecontrolcoords>
 			<orientation>horizontal</orientation>
 			<control type="image">
@@ -372,6 +375,7 @@
 			<onup condition="Container(9000).HasFocus(104)">SetFocus(10058)</onup> <!-- 10058 - Seasons -->
 			<onup condition="Container(9000).HasFocus(105)">SetFocus(10053)</onup> <!-- 10053 - Similar titles -->
 			<onup condition="Container(9000).HasFocus(106)">SetFocus(10054)</onup> <!-- 10054 - YouTube results -->
+			<ondown>SetFocus(6000)</ondown>
 			<include>InfoDialogButtons</include>
 			<content>
 				<item id="101">
@@ -533,6 +537,7 @@
 			</control>
 			<control type="grouplist" id="6000">
 				<top>60</top>
+				<onup>SetFocus(9000)</onup>
 				<control type="panel" id="10060">
 					<include content="DialogExtraInfo">
 						<param name="art">$INFO[ListItem.Art(poster)]</param>

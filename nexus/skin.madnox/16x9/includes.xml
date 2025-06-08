@@ -1960,14 +1960,18 @@
 
 	<variable name="ResolutionMediaColorFlagUserLabel2Var">
     	<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
-    	<value condition="!Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
-    	<value>Icon Error</value> 
+    	<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
+    	<value>Icon Error        </value> 
 	</variable>
 
 	<variable name="AspectRatioMediaColorFlagUserLabel2Var">
     	<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
-    	<value condition="!Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
-    	<value>Icon Error</value> 
+    	<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
+    	<value>Icon Error        </value> 
 	</variable>
 
 	<!-- Add any new include above this line -->
