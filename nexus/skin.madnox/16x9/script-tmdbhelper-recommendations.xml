@@ -346,7 +346,7 @@
 			<top>178</top> <!-- Locked do not move -->
 			<height>40</height> <!-- Locked do not move -->
 			<left>736</left> <!-- Locked do not move -->
-					    <onleft>SetFocus(9000)</onleft>
+		    <onleft>SetFocus(9000)</onleft>
     		<onright>SetFocus(9000)</onright>
 			<usecontrolcoords>true</usecontrolcoords>
 			<orientation>horizontal</orientation>
@@ -375,6 +375,7 @@
 			<onup condition="Container(9000).HasFocus(104)">SetFocus(10058)</onup> <!-- 10058 - Seasons -->
 			<onup condition="Container(9000).HasFocus(105)">SetFocus(10053)</onup> <!-- 10053 - Similar titles -->
 			<onup condition="Container(9000).HasFocus(106)">SetFocus(10054)</onup> <!-- 10054 - YouTube results -->
+			<onup condition="Container(9000).HasFocus(107)">SetFocus(9010)</onup> <!-- Focus on metadata -->
 			<ondown>SetFocus(6000)</ondown>
 			<include>InfoDialogButtons</include>
 			<content>

@@ -189,7 +189,8 @@
 				<onup condition="Container(9000).Hasfocus(107)">SetFocus(1070)</onup>
 				<onup condition="Container(9000).Hasfocus(108)">SetFocus(1080)</onup>
 				<onup condition="Container(9000).Hasfocus(109)">SetFocus(1090)</onup>
-				<onup condition="Container(9000).Hasfocus(112)">SetFocus(9002,7)</onup>
+				<!-- <onup condition="Container(9000).Hasfocus(112)">SetFocus(9002,7)</onup> -->
+				<onup condition="Container(9000).Hasfocus(112)">SetFocus(9004)</onup>
 				<include>InfoDialogButtons</include>
 				<!-- <visible>!String.IsEqual(ListItem.Property(item.type),person)</visible> -->
 				<visible>!String.IsEqual(ListItem.DBTYPE,video)</visible>
@@ -315,8 +316,8 @@
 				<top>211</top>
 				<!-- Cast -->
 				<control type="panel" id="50">
-					<onup condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">1020</onup>
-					<onup condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190)</onup>
+					<onup condition="!Skin.HasSetting(VideoInfoTMDbActor)">1020</onup>
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190)</onup>
 					<include content="DialogExtraInfo">
 						<param name="visible">!Control.HasFocus(1020) + Container(9000).HasFocus(101)</param>
 						<param name="aspect">scale</param>

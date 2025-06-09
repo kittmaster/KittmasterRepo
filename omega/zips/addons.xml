@@ -200,7 +200,7 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.02.03" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.02.04" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.embuary.helper" version="2.0.8" />
@@ -240,8 +240,8 @@ v0.4.0 (2025-03-23)
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>https://forum.kodi.tv/forumdisplay.php?fid=314</forum>
-		<source>https://github.com/kittmaster/KittmasterRepo/tree/master/repo/skin.madnox</source>
-		<website>https://github.com/kittmaster/KittmasterRepo/tree/master/repo/skin.madnox</website>
+		<source>https://github.com/kittmaster/KittmasterRepo</source>
+		<website>https://github.com/kittmaster/KittmasterRepo</website>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
@@ -256,7 +256,9 @@ v0.4.0 (2025-03-23)
 			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>		
-		<news>v.21.02.03
+		<news>v.21.02.04
+			-Fixed navigation corrections to TMDb Helper page and Movie/TV Show buttons/panels.
+			v.21.02.03
 			-Removed duplicate language strings
 			-Fixed metadata slider and countdown timer inverted logic
 			-Add Norwegian language strings

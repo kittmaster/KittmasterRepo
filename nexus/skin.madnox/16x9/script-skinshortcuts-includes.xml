@@ -8,6 +8,7 @@
 			<thumb />
 			<property name="labelID">videos</property>
 			<property name="background">special://skin/extras/backgrounds/videos.jpg</property>
+			<property name="InfoLine">movies</property>
 			<onclick>ActivateWindow(videos,root)</onclick>
 			<property name="path">ActivateWindow(videos,root)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -37,6 +38,7 @@
 			<thumb />
 			<property name="labelID">music</property>
 			<property name="background">special://skin/extras/backgrounds/music.jpg</property>
+			<property name="InfoLine">music</property>
 			<onclick condition="Library.HasContent(Music)">ActivateWindow(music,musicdb://artists/,return)</onclick>
 			<property name="path">ActivateWindow(music,musicdb://artists/,return)</property>
 			<onclick condition="![Library.HasContent(Music)]">ActivateWindow(Music,sources://music/,return)</onclick>
@@ -52,6 +54,7 @@
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="background">special://skin/extras/backgrounds/movies.jpg</property>
+			<property name="InfoLine">movies</property>
 			<onclick condition="Library.HasContent(Movies)">ActivateWindow(videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://movies/titles/,return)</property>
 			<onclick condition="![Library.HasContent(Movies)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -67,6 +70,7 @@
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<property name="background">special://skin/extras/backgrounds/tvshows.jpg</property>
+			<property name="InfoLine">tvshows</property>
 			<onclick condition="Library.HasContent(TVShows)">ActivateWindow(videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://tvshows/titles/,return)</property>
 			<onclick condition="![Library.HasContent(TVShows)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -82,6 +86,7 @@
 			<thumb />
 			<property name="labelID">13000</property>
 			<property name="background">special://skin/extras/backgrounds/system.jpg</property>
+			<property name="InfoLine">systeminfo</property>
 			<onclick>ActivateWindow(settings)</onclick>
 			<property name="path">ActivateWindow(settings)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -96,6 +101,7 @@
 			<thumb />
 			<property name="labelID">musicvideos</property>
 			<property name="background">special://skin/extras/backgrounds/musicvideos.jpg</property>
+			<property name="InfoLine">musicvideos</property>
 			<onclick condition="Library.HasContent(MusicVideos)">ActivateWindow(videos,videodb://musicvideos/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://musicvideos/titles/,return)</property>
 			<onclick condition="![Library.HasContent(MusicVideos)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -111,6 +117,7 @@
 			<thumb />
 			<property name="labelID">31173</property>
 			<property name="background">special://skin/extras/backgrounds/tv.jpg</property>
+			<property name="InfoLine">tvstatus</property>
 			<visible>System.HasPVRAddon</visible>
 			<onclick>ActivateWindow(tvchannels)</onclick>
 			<property name="path">ActivateWindow(tvchannels)</property>
@@ -126,6 +133,7 @@
 			<thumb />
 			<property name="labelID">19021</property>
 			<property name="background">special://skin/extras/backgrounds/radio.jpg</property>
+			<property name="InfoLine">radiostatus</property>
 			<visible>System.HasPVRAddon</visible>
 			<onclick>ActivateWindow(radiochannels)</onclick>
 			<property name="path">ActivateWindow(radiochannels)</property>
@@ -155,6 +163,7 @@
 			<thumb />
 			<property name="labelID">8</property>
 			<property name="background">special://skin/extras/backgrounds/weather.jpg</property>
+			<property name="InfoLine">weather</property>
 			<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
 			<property name="path">ActivateWindow(weather)</property>
 			<onclick condition="![!String.IsEmpty(Weather.Plugin)]">ReplaceWindow(servicesettings,weather)</onclick>
