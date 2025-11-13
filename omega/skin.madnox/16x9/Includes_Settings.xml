@@ -8,12 +8,24 @@
 		<textoffsetx>35</textoffsetx>
 		<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 	</include>
+	<!-- ADD THIS NEW INCLUDE. IT CONTAINS ONLY THE STYLE TAGS. -->
+	<include name="DialogTitleFormatter">
+		<font>Font28_Bold</font>
+		<textoffsetx>35</textoffsetx>
+		<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+	</include>	
 	<include name="SettingsButton">
 		<width>1395</width>
 		<height>67</height>
 		<textoffsetx>35</textoffsetx>
 		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 	</include>
+	<include name="TestSettingsButton">
+		<!-- <width>1395</width> -->
+		<height>67</height>
+		<textoffsetx>35</textoffsetx>
+		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+	</include>	
 	<include name="SettingsRadioButton">
 		<width>1395</width>
 		<height>67</height>

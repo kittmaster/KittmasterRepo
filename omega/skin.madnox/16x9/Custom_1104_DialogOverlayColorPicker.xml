@@ -19,6 +19,7 @@
                 <height>50</height>
                 <align>left</align>
                 <label>$INFO[Window(Home).Property(DialogTitle)]</label>
+                <visible>!Window.IsVisible(DialogColorPicker.xml)</visible>
                 <include>SettingsLabel</include>
             </control>
 
@@ -46,7 +47,8 @@
                     <description>Cancel Button</description>
                     <width>350</width>
                     <include>DialogButton</include>
-                    <label>$LOCALIZE[13012] / $LOCALIZE[222]</label>
+                    <!-- <label>$LOCALIZE[13012] / $LOCALIZE[222]</label> -->
+                    <label>$LOCALIZE[222]</label>
                     <onclick>close</onclick>
                 </control>
 
@@ -74,7 +76,7 @@
                 <control type="button" id="3011">
                     <width>350</width>
                     <include>DialogButton</include>
-                    <label>$LOCALIZE[13007] / $LOCALIZE[571]</label>
+                    <label>$LOCALIZE[571] / $LOCALIZE[13007]</label>
                     <onclick>Dialog.Close(dialogcolorpicker)</onclick>
                     <onclick>Skin.Reset($INFO[Window(Home).Property(Reset.Color)])</onclick>
                 </control>
@@ -91,10 +93,6 @@
                         <left>10</left>
                         <width>152</width>
                         <include>DialogInlineButton45</include>
-                        <default>100</default>
-                        <onunfocus>SetProperty(LastSliderValue,$INFO[Control.GetLabel(3015)])</onunfocus>
-                        <onfocus>Control.SetPercentage(3015,$INFO[Window(Home).Property(LastSliderValue)])</onfocus>
-                        <onback>Control.SetPercentage(3015,100)</onback>
                         <onup>SetFocus(3011)</onup> 
                         <ondown>SetFocus(3200)</ondown>
                     </control>
@@ -137,30 +135,13 @@
                         <top>180</top>
                         <width>350</width>
                         <include>DialogInlineButton45</include>
-                        <label>Apply</label>
+                        <label>$LOCALIZE[31430] ($LOCALIZE[31305])</label>
                         <align>center</align>
                         <onup>SetFocus(3202)</onup>
                         <ondown>SetFocus(9)</ondown>
                         <onclick>Skin.SetString($INFO[Window(Home).Property(Reset.Color)],$VAR[Def_Percent_To_Hex_Color])</onclick>
                         <onclick>SetProperty(ActiveControlPanelNameValue,$VAR[Def_Percent_To_Hex_Color],Home)</onclick>
-                    </control>
-
-                    <control type="button" id="3203">
-                        <top>180</top>
-                        <width>350</width>
-                        <include>DialogInlineButton45</include>
-                        <label>Apply</label>
-                        <align>center</align>
-                        <onup>SetFocus(3202)</onup>
-                        <ondown>SetFocus(9)</ondown>
-
-                        <!-- This writes the final color into the user’s skin setting -->
-                        <onclick>Skin.SetString($INFO[Window(Home).Property(Reset.Color)],$VAR[Def_Percent_To_Hex_Color])</onclick>
-
-                        <!-- Keep this property as well if you use it in other places. -->
-                        <onclick>SetProperty(ActiveControlPanelNameValue,$VAR[Def_Percent_To_Hex_Color],Home)</onclick>
-
-                        <!-- NEW: also let Python code handle the same click, to refresh the dialog label -->
+                        <!-- Let Python code handle the same click, to refresh the dialog label -->
                         <onclick>SetFocus(3203)</onclick>
                     </control>
                 </control>
@@ -191,7 +172,7 @@
                         <left>250</left>
                         <width>100</width>
                         <textoffsetx>6</textoffsetx>
-                        <label>Alpha</label>
+                        <label>$LOCALIZE[31426]</label>
                         <align>Left</align>
                     </control>
                 </control>
@@ -221,7 +202,7 @@
                         <left>250</left>
                         <width>100</width>
                         <textoffsetx>6</textoffsetx>
-                        <label>Red</label>
+                        <label>$LOCALIZE[13343]</label>
                         <align>Left</align>
                     </control>
                 </control>
@@ -251,7 +232,7 @@
                         <left>250</left>
                         <width>110</width>
                         <textoffsetx>6</textoffsetx>
-                        <label>Green</label>
+                        <label>$LOCALIZE[13341]</label>
                         <align>Left</align>
                     </control>
                 </control>
@@ -281,39 +262,67 @@
                         <left>250</left>
                         <width>110</width>
                         <textoffsetx>6</textoffsetx>
-                        <label>Blue</label>
+                        <label>$LOCALIZE[762]</label>
                         <align>Left</align>
                     </control>
                 </control>
 
-                <!-- Live Preview -->
+                <!-- Live Preview Switch between slider & color picker palette -->
                 <control type="group">
                     <width>134</width>
-                    <control type="image">
-                        <top>57</top>
-                        <height>45</height>
-                        <left>42</left>
-                        <texture colordiffuse="$VAR[Def_Percent_To_Hex_Color]">colors/white.png</texture>
-                    </control>
                     <control type="label">
+                        <!-- This label is static and always visible -->
                         <width>78</width>
                         <top>57</top>
                         <left>150</left>
                         <height>45</height>
                         <font>Font25_Cond</font>
                         <align>right</align>
-                        <label>Preview:</label>
+                        <label>$LOCALIZE[31428]:</label>
                     </control>
-                    <control type="label">
-                        <width>164</width>
-                        <top>57</top>
-                        <left>235</left>
-                        <height>45</height>
-                        <font>Font25_Cond</font>
-                        <align>left</align>
-                        <label>#$VAR[Def_Percent_To_Hex_Color]</label>
+                    
+                    <!-- == STATE 1: Show focused color from the panel (ID=6) == -->
+                    <!-- This group is ONLY visible when the color panel has focus -->
+                    <control type="group">
+                        <visible>Control.HasFocus(6)</visible>
+                        <control type="image">
+                            <top>57</top>
+                            <height>45</height>
+                            <left>42</left>
+                            <texture colordiffuse="$INFO[Container(6).ListItem.Label2]">colors/white.png</texture>
+                        </control>
+                        <control type="label">
+                            <width>164</width>
+                            <top>57</top>
+                            <left>235</left>
+                            <height>45</height>
+                            <font>Font25_Cond</font>
+                            <align>left</align>
+                            <label>#$INFO[Container(6).ListItem.Label2]</label>
+                        </control>
                     </control>
-                </control>
+
+                    <!-- == STATE 2: Show color from the ARGB sliders == -->
+                    <!-- This group is ONLY visible when the color panel does NOT have focus -->
+                    <control type="group">
+                        <visible>!Control.HasFocus(6)</visible>
+                        <control type="image">
+                            <top>57</top>
+                            <height>45</height>
+                            <left>42</left>
+                            <texture colordiffuse="$VAR[Def_Percent_To_Hex_Color]">colors/white.png</texture>
+                        </control>
+                        <control type="label">
+                            <width>164</width>
+                            <top>57</top>
+                            <left>235</left>
+                            <height>45</height>
+                            <font>Font25_Cond</font>
+                            <align>left</align>
+                            <label>#$VAR[Def_Percent_To_Hex_Color]</label>
+                        </control>
+                    </control>
+                </control>                
 
                 <!-- Applied Color Preview -->
                 <control type="group">
@@ -331,7 +340,7 @@
                         <height>45</height>
                         <font>Font25_Cond</font>
                         <align>right</align>
-                        <label>Applied:</label>
+                        <label>$LOCALIZE[31427]:</label>
                     </control>
                     <control type="label">
                         <width>164</width>
@@ -340,7 +349,7 @@
                         <height>45</height>
                         <font>Font25_Cond</font>
                         <align>left</align>
-                        <label>$INFO[Window.Property(ColorSelectedPicker)]</label>
+                        <label>#$INFO[Window.Property(ColorSelectedPicker)]</label>
                     </control>
                 </control>
             </control>
@@ -457,7 +466,7 @@
                 <height>50</height>
                 <font>Font25_Cond</font>
                 <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-                <label>Selected palette: $INFO[Skin.String(mycolorfile)]</label>
+                <label>$LOCALIZE[31048]: $INFO[Skin.String(mycolorfile)]</label>
             </control>
 
             <control type="scrollbar" id="60">

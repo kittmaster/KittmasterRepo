@@ -1,3 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>ReplaceWindow(1104)</onload>
+    <onload condition="!Window.IsVisible(SettingsCategory.xml)">ReplaceWindow(1104)</onload>
+    <onload condition="Window.IsVisible(SettingsCategory.xml)">RunScript(special://home/addons/skin.madnox/extras/scripts/core_color_helper.py)</onload>
+    <defaultcontrol>6</defaultcontrol>
+    <controls>
+        <control type="group">
+            <include content="DialogBackground">
+                <description>Window Header Label</description>
+                <param name="width" value="1253"/>
+                <param name="height" value="855"/>
+                <param name="id">1</param>
+                <param name="diffusetexture">diffuse/rounded10-877x470.png</param>
+            </include>
+
+            <!-- Set Dialog Title -->
+            <!-- This group holds the custom title and seamless and opaque stacked patch -->
+            <control type="group">
+                <visible>Window.IsVisible(SettingsCategory.xml) + !String.IsEmpty(Window(Home).Property(MyPickerTitle))</visible>
+                <!-- Patch Layer 1 -->
+                <control type="image">
+                    <left>40</left>
+                    <top>30</top>
+                    <!-- The targeted width, just enough to cover the title -->
+                    <width>330</width>
+                    <height>52</height>
+                    <texture>colors/white.png</texture>
+                    <!-- A semi-transparent dark grey -->
+                    <colordiffuse>DD303030</colordiffuse>
+                </control>
+                <!-- Patch Layer 2 (Identical to Layer 1, drawn on top) -->
+                <control type="image">
+                    <left>40</left>
+                    <top>30</top>
+                    <!-- The targeted width, just enough to cover the title -->
+                    <width>330</width>
+                    <height>52</height>
+                    <texture>colors/white.png</texture>
+                    <colordiffuse>DD303030</colordiffuse>
+                </control>
+                <!-- Patch Layer 3 (Identical to Layer 1, drawn on top) -->
+                <control type="image">
+                    <left>40</left>
+                    <top>30</top>
+                    <!-- The targeted width, just enough to cover the title -->
+                    <width>330</width>
+                    <height>52</height>
+                    <texture>colors/white.png</texture>
+                    <colordiffuse>DD303030</colordiffuse>
+                </control>
+
+                <!-- 2. Custom Title Label (Drawn on top of the seamless, opaque patch) -->
+                <control type="label">
+                    <top>30</top>
+                    <left>25</left>
+                    <height>67</height>
+                    <label>$INFO[Window(Home).Property(MyPickerTitle)]</label>
+                    <include>DialogTitleFormatter</include>
+                </control>
+            </control>
+
+            <control type="image">
+                <left>1052</left>
+                <top>14</top>
+                <width>161.5</width>
+                <height>86</height>
+                <aspectratio>keep</aspectratio>
+                <texture>icons/logo.png</texture>
+            </control>
+
+            <!-- Left Side Panel -->
+            <control type="grouplist" id="9">
+                <left>20</left>
+                <top>90</top>
+                <width>350</width>
+                <height>640</height>
+                <onright>60</onright>
+
+                <control type="button" id="7">
+                    <description>Cancel Button</description>
+                    <width>350</width>
+                    <include>DialogButton</include>
+                    <label>$LOCALIZE[13012] / $LOCALIZE[222]</label>
+                    <onclick>close</onclick>
+                </control>
+
+                <!-- Custom Color -->
+                <!-- Allow side-by-side elements -->
+                <control type="group">
+                    <width>350</width>
+                    <height>70</height>
+
+                    <!-- 1. The main, clickable button that holds the text and background -->
+                    <control type="button" id="3010">
+                        <width>350</width>
+                        <include>DialogButton</include>
+                        <!-- The label is now just the text part -->
+                        <label>$LOCALIZE[31425]</label>
+                        <texturefocus>-</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onclick>noop</onclick>
+                    </control>
+
+                    <!-- 2. The static red 'X' icon, layered on top of the button -->
+                    <control type="label">
+                        <description>Status Icon</description>
+                        <top>4</top>
+                        <right>20</right>
+                        <width>50</width>
+                        <height>70</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>Font30_Reg</font>
+                        <textcolor>red</textcolor>
+                        <label>✕</label>
+                        <!-- This label is purely visual; it can't be focused or clicked -->
+                    </control>
+                </control>
+
+                <!-- Choose color palette -->
+                <control type="group">
+                    <width>350</width>
+                    <height>70</height>
+                    <!-- 1. The main clickable button with the text -->
+                    <control type="button" id="3030">
+                        <width>350</width>
+                        <include>DialogButton</include>
+                        <!-- The label now only contains the text, not the icon -->
+                        <label>$LOCALIZE[424] $LOCALIZE[31025]</label>
+                        <!-- We'll reload colors in Python after user picks a new file.
+                            This button won't automatically reload them from here. -->
+                        <texturefocus>-</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onclick>noop</onclick>
+                    </control>
+                    <!-- 2. The static red 'X' icon, layered on top of the button -->
+                    <control type="label">
+                        <description>Status Icon</description>
+                        <top>4</top>
+                        <right>20</right>
+                        <width>50</width>
+                        <height>70</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>Font30_Reg</font>
+                        <textcolor>red</textcolor>
+                        <label>✕</label>
+                    </control>
+                </control>
+
+                <!-- Default / Reset -->
+                <control type="group">
+                    <width>350</width>
+                    <height>70</height>
+                    <control type="button" id="3011">
+                        <width>350</width>
+                        <include>DialogButton</include>
+                        <label>$LOCALIZE[571] / $LOCALIZE[13007]</label>
+                        <texturefocus>-</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/core_color_helper.py, reset)</onclick>
+                        <onclick>SetFocus(3011)</onclick>
+                    </control>
+                    <control type="label">
+                        <description>Status Icon</description>
+                        <top>4</top>
+                        <right>20</right>
+                        <width>50</width>
+                        <height>70</height>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <font>Font30_Reg</font>
+                        <textcolor>green</textcolor>
+                        <label>✓</label>
+                    </control>
+                </control>
+
+                <!-- Sliders group for Opacity & RGB -->
+                <control type="group" id="3017">
+                    <orientation>horizontal</orientation>
+                    <position>20</position>
+                    <top>460</top>
+
+                    <!-- Opacity slider -->
+                    <control type="slider" id="3015">
+                        <visible>!Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>10</left>
+                        <width>152</width>
+                        <include>DialogInlineButton45</include>
+                    </control>
+
+                    <!-- Red slider -->
+                    <control type="slider" id="3200">
+                        <visible>!Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>45</top>
+                        <left>10</left>
+                        <width>152</width>
+                        <include>DialogInlineButton45</include>
+                    </control>
+
+                    <!-- Green slider -->
+                    <control type="slider" id="3201">
+                        <visible>!Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>90</top>
+                        <left>10</left>
+                        <width>152</width>
+                        <include>DialogInlineButton45</include>
+                    </control>
+
+                    <!-- Blue slider -->
+                    <control type="slider" id="3202">
+                        <visible>!Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>135</top>
+                        <left>10</left>
+                        <width>152</width>
+                        <include>DialogInlineButton45</include>
+                    </control>
+
+                    <!-- Apply Button -->
+                    <control type="group">
+                        <top>180</top>
+                        <width>350</width>
+                        <height>45</height>
+
+                        <!-- 1. The background button. It is clickable but has no text. -->
+                        <control type="button" id="3203">
+                            <width>100%</width>
+                            <height>100%</height>
+                            <include>DialogInlineButton45</include>
+                            <label></label> <!-- Label must be empty -->
+                            <texturefocus>-</texturefocus>
+                            <texturenofocus>-</texturenofocus>
+                            <onclick>noop</onclick>
+                        </control>
+
+                        <!-- 2. A new group to hold and center our three-part label -->
+                        <control type="group">
+                            <centerleft>56%</centerleft>
+                            <width>200</width>
+                            <height>100%</height>
+
+                            <!-- PART A: The "Sliders" text, vertically centered -->
+                            <control type="label">
+                                <left>0</left>
+                                <width>auto</width>
+                                <height>100%</height>
+                                <label>$LOCALIZE[31430] (</label>
+                                <align>left</align>
+                                <aligny>center</aligny>
+                            </control>
+
+                            <!-- The 'X' Icon with its own vertical offset -->
+                            <control type="label">
+                                <left>115</left>
+                                <width>auto</width>
+                                <top>5</top>
+                                <height>100%</height>
+                                <label>[COLOR red]✕[/COLOR]</label>
+                                <align>left</align>
+                            </control>
+
+                            <!-- The Right Parenthesis -->
+                            <control type="label">
+                                <left>145</left>
+                                <width>auto</width>
+                                <height>100%</height>
+                                <label>)</label>
+                                <align>left</align>
+                                <aligny>center</aligny>
+                            </control>
+                        </control>
+                    </control>
+                </control>
+
+                <!-- Opacity Slider Focus Label -->
+                <control type="group">
+                    <height>45</height>
+                    <control type="label">
+                        <top>9</top>
+                        <left>195</left>
+                        <visible>!Control.HasFocus(3015) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <width>152</width>
+                        <height>40</height>
+                        <left>170</left>
+                        <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                        <label>[COLOR red]✕[/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3015) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>250</left>
+                        <width>100</width>
+                        <textoffsetx>6</textoffsetx>
+                        <label>$LOCALIZE[31426]</label>
+                        <align>Left</align>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3015) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>0</left>
+                        <width>210</width>
+                        <textoffsetx>40</textoffsetx>
+                        <label>$LOCALIZE[13113]</label>
+                        <align>Left</align>
+                    </control>
+                </control>
+
+                <!-- Red Slider Focus Label -->
+                <control type="group">
+                    <top>45</top>
+                    <height>45</height>
+                    <control type="label">
+                        <top>9</top>
+                        <left>195</left>
+                        <visible>!Control.HasFocus(3200)</visible>
+                        <width>152</width>
+                        <height>40</height>
+                        <left>170</left>
+                        <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                        <label>[COLOR red]✕[/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3200) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>250</left>
+                        <width>100</width>
+                        <textoffsetx>6</textoffsetx>
+                        <label>$LOCALIZE[13343]</label>
+                        <align>Left</align>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3200) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>0</left>
+                        <width>210</width>
+                        <textoffsetx>40</textoffsetx>
+                        <label>$LOCALIZE[13113]</label>
+                        <align>Left</align>
+                    </control>
+                </control>
+
+                <!-- Green Slider Focus Label -->
+                <control type="group">
+                    <top>45</top>
+                    <height>45</height>
+                    <control type="label">
+                        <top>9</top>
+                        <left>195</left>
+                        <visible>!Control.HasFocus(3201)</visible>
+                        <width>152</width>
+                        <height>40</height>
+                        <left>170</left>
+                        <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                        <label>[COLOR red]✕[/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3201) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>250</left>
+                        <width>110</width>
+                        <textoffsetx>6</textoffsetx>
+                        <label>$LOCALIZE[13341]</label>
+                        <align>Left</align>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3201) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>0</left>
+                        <width>210</width>
+                        <textoffsetx>40</textoffsetx>
+                        <label>$LOCALIZE[13113]</label>
+                        <align>Left</align>
+                    </control>
+                </control>
+
+                <!-- Blue Slider Focus Label -->
+                <control type="group">
+                    <top>45</top>
+                    <height>45</height>
+                    <control type="label">
+                        <top>9</top>
+                        <left>195</left>
+                        <visible>!Control.HasFocus(3202)</visible>
+                        <width>252</width>
+                        <height>40</height>
+                        <left>170</left>
+                        <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                        <!-- <label>$INFO[Control.Getlabel(3202),,]</label> -->
+                        <label>[COLOR red]✕[/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3202) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>250</left>
+                        <width>110</width>
+                        <textoffsetx>6</textoffsetx>
+                        <label>$LOCALIZE[762]</label>
+                        <align>Left</align>
+                    </control>
+                    <control type="label">
+                        <visible>!Control.HasFocus(3202) + Window.IsVisible(SettingsCategory.xml)</visible>
+                        <top>0</top>
+                        <left>0</left>
+                        <width>210</width>
+                        <textoffsetx>40</textoffsetx>
+                        <label>$LOCALIZE[13113]</label>
+                        <align>Left</align>
+                    </control>
+                </control>
+
+                <!-- Live Preview -->
+                <control type="group">
+                    <width>134</width>
+                    <control type="image">
+                        <top>57</top>
+                        <height>45</height>
+                        <left>42</left>
+                        <texture colordiffuse="$INFO[Container(6).ListItem.Label2]">colors/white.png</texture>
+                    </control>
+                    <control type="label">
+                        <width>78</width>
+                        <top>57</top>
+                        <left>150</left>
+                        <height>45</height>
+                        <font>Font25_Cond</font>
+                        <align>right</align>
+                        <label>$LOCALIZE[31428]:</label>
+                    </control>
+                    <control type="label">
+                        <width>164</width>
+                        <top>57</top>
+                        <left>235</left>
+                        <height>45</height>
+                        <font>Font25_Cond</font>
+                        <align>left</align>
+                        <label>#$INFO[Container(6).ListItem.Label2]</label>
+                    </control>
+                </control>
+
+                <!-- APPLIED COLOR PREVIEW (CORE MODE) -->
+                <control type="group">
+                    <description>Applied Preview for Core Mode</description>
+                    <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+                    <width>134</width>
+                    <control type="image">
+                        <top>107</top>
+                        <height>45</height>
+                        <left>42</left>
+                        <texture colordiffuse="$INFO[Window(Home).Property(ActiveAppliedColor)]">colors/white.png</texture>
+                    </control>
+                    <control type="label">
+                        <width>78</width>
+                        <top>107</top>
+                        <left>150</left>
+                        <height>45</height>
+                        <font>Font25_Cond</font>
+                        <align>right</align>
+                        <label>$LOCALIZE[31427]:</label>
+                    </control>
+                    <control type="label">
+                        <width>164</width>
+                        <top>107</top>
+                        <left>235</left>
+                        <height>45</height>
+                        <font>Font25_Cond</font>
+                        <align>left</align>
+                        <label>#$INFO[Window(Home).Property(ActiveAppliedColor)]</label>
+                    </control>
+                </control>
+            </control>
+
+            <!-- Vertical line divider -->
+            <control type="image">
+                <top>90</top>
+                <left>370</left>
+                <bottom>121</bottom>
+                <width>4</width>
+                <texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+            </control>
+
+            <control type="image">
+                <bottom>120</bottom>
+                <left>0</left>
+                <right>20</right>
+                <height>170</height>
+                <texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
+            </control>
+
+            <!-- The panel that shows colors in a grid -->
+            <control type="panel" id="6">
+                <left>391</left>
+                <top>110</top>
+                <width>804</width>
+                <height>588</height>
+                <pagecontrol>60</pagecontrol>
+                <onleft>60</onleft>
+                <include>ContainerScrollTime</include>
+                <preloaditems>4</preloaditems>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <itemgap>0</itemgap>
+                <autoscroll>false</autoscroll>
+                <itemlayout height="84" width="84">
+                    <control type="image">
+                        <width>84</width>
+                        <height>84</height>
+                        <bordersize>1</bordersize>
+                        <texture colordiffuse="$INFO[ListItem.Label2]">colors/white.png</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="84" width="84">
+                    <control type="group">
+                        <animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="124" center="auto">Focus</animation>
+                        <control type="image">
+                            <width>84</width>
+                            <height>84</height>
+                            <texture colordiffuse="$INFO[ListItem.Label2]">colors/white.png</texture>
+                            <bordertexture border="5">colors/black.png</bordertexture>
+                            <bordersize>5</bordersize>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <control type="label">
+                <description>Color palette filename and page counter</description>
+                <bottom>66</bottom>
+                <right>60</right>
+                <width>460</width>
+                <height>50</height>
+                <align>right</align>
+                <font>Font25_Cond</font>
+                <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                <label>$INFO[Container(6).NumItems,, $LOCALIZE[14078]]$INFO[Container(6).CurrentPage, - $LOCALIZE[31000] (]$INFO[Container(6).NumPages,/,)]</label>
+            </control>
+
+            <!-- Label for (CORE MODE) -->
+            <control type="label">
+                <description>Selected color label (Core Mode)</description>
+                <bottom>68</bottom>
+                <left>60</left>
+                <width>900</width>
+                <height>50</height>
+                <font>Font25_Cond</font>
+                <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                <label>$LOCALIZE[31044]: $INFO[Container(6).ListItem.Label] - [UPPERCASE]#$INFO[Container(6).ListItem.Label2][/UPPERCASE]</label>
+                <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+            </control>
+
+            <control type="image">
+                <bottom>68</bottom>
+                <left>20</left>
+                <right>20</right>
+                <height>170</height>
+                <texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
+            </control>
+
+            <control type="image">
+                <top>90</top>
+                <left>1166</left>
+                <bottom>121</bottom>
+                <width>4</width>
+                <texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+            </control>
+
+            <!-- Palette path label (CORE MODE) -->
+            <control type="label">
+                <description>Palette selected filename and path label</description>
+                <bottom>20</bottom>
+                <left>60</left>
+                <width>1200</width>
+                <height>50</height>
+                <font>Font25_Cond</font>
+                <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                <label>$LOCALIZE[31431]: system/dialogcolors.xml</label>
+                <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+            </control>
+
+            <!-- Feature Status Enabled Text -->
+            <control type="label">
+                <description>Symbol Keys</description>
+                <bottom>20</bottom>
+                <left>805</left>
+                <width>250</width>
+                <height>50</height>
+                <font>Font25_Cond</font>
+                <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                <label>$LOCALIZE[31429] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]: [COLOR green]$LOCALIZE[305][/COLOR]</label>
+                <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+            </control>
+            <!-- Feature Status Checkmark -->
+            <control type="label">
+                <description>Symbol Keys</description>
+                <bottom>20</bottom>
+                <left>1030</left>
+                <width>200</width>
+                <height>50</height>
+                <label>[COLOR green]✓[/COLOR]</label>
+                <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+            </control>
+            <!-- Pipe -->
+            <control type="label">
+                <description>Symbol Keys</description>
+                <bottom>20</bottom>
+                <left>1060</left>
+                <width>250</width>
+                <height>50</height>
+                <font>Font25_Cond</font>
+                <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                <label> | </label>
+                <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+            </control>
+            <!-- Feature Status Disabled -->
+            <control type="label">
+                <description>Symbol Keys</description>
+                <bottom>20</bottom>
+                <left>1080</left>
+                <width>210</width>
+                <height>50</height>
+                <font>Font25_Cond</font>
+                <textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+                <label>[COLOR red]$LOCALIZE[1223][/COLOR]</label>
+                <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+            </control>
+            <!-- Feature Status X -->
+            <control type="label">
+                <description>Symbol Keys</description>
+                <bottom>20</bottom>
+                <left>1165</left>
+                <width>200</width>
+                <height>50</height>
+                <label>[COLOR red]✕[/COLOR]</label>
+                <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+            </control>
+
+            <control type="scrollbar" id="60">
+                <onleft>9</onleft>
+                <onright>6</onright>
+                <left>1148</left>
+                <include>DialogScrollBar</include>
+            </control>
+        </control>
+    </controls>
 </window>

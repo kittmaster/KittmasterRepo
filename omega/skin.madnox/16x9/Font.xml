@@ -106,6 +106,31 @@
 			<filename>OpenSans-Regular.ttf</filename>
 			<size>38</size>
 		</font>
+		<font>
+			<name>Font40_Reg</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>40</size>
+		</font>
+		<font>
+			<name>Font42_Reg</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>42</size>
+		</font>
+		<font>
+			<name>Font44_Reg</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>44</size>
+		</font>
+		<font>
+			<name>Font46_Reg</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>46</size>
+		</font>
+		<font>
+			<name>Font48_Reg</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>48</size>
+		</font>                        
 		<!-- Kodi required fonts (OpenSans-Regular.ttf) -->
 		<font>
 			<name>font13</name>
@@ -324,6 +349,7 @@
 			<filename>BebasNeue.ttf</filename>
 			<size>25</size>
 		</font>
+        <!-- MaterialDesignIcons Font -->
 		<font>
 			<name>Font28_Icon</name>
 			<filename>MaterialDesignIcons.ttf</filename>
@@ -345,12 +371,12 @@
 			<size>40</size>
 		</font>
 		<font>
-			<name>Font40_Icon1</name>
-			<filename>MaterialIcons-Regular.ttf</filename>
+			<name>Font42_Icon</name>
+			<filename>MaterialDesignIcons.ttf</filename>
 			<size>42</size>
 		</font>
 		<font>
-			<name>Font45_Icon</name>
+			<name>Font60_Icon</name>
 			<filename>MaterialDesignIcons.ttf</filename>
 			<size>60</size>
 		</font>
@@ -359,6 +385,12 @@
 			<filename>MaterialDesignIcons.ttf</filename>
 			<size>180</size>
 		</font>
+        <!-- MaterialDesignIcons RegularFont -->
+		<font>
+			<name>Font42_Icon</name>
+			<filename>MaterialIcons-Regular.ttf</filename>
+			<size>42</size>
+		</font>        
 		<!-- Lyrics fonts -->
 		<font>
 			<name>Font120_Caps_Lyrics</name>

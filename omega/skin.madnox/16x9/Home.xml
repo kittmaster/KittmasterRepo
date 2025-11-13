@@ -24,8 +24,8 @@
 	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(special://home/addons/skin.madnox/extras/scripts/tmdb_installed_validation.py)</onload>
 		<!-- Start TMDbH service -->
     <onload>Skin.SetBool(TMDbHelper.Service)</onload>
-	<!-- <onload>RunScript(special://skin/extras/scripts/firstrun_init.py)</onload> -->
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
+	<onload>RunScript(special://skin/extras/scripts/firstrun_init.py)</onload>
+	<!-- <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload> -->
 	
 	<controls>
 		<!-- Backdrop -->

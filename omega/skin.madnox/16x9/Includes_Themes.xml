@@ -391,6 +391,14 @@
 	<variable name="CountDownTimerColorTMDBInfoLabelVar">
 		<value condition="!Skin.HasSetting(CountDownTimer.color)">[COLOR $INFO[Skin.String(CountDownTimer.color)]]$INFO[Window(Home).Property(ItemListCountDownTimerMovie)][/COLOR]</value>		
 		<value>$INFO[Window(Home).Property(ItemListCountDownTimerMovie)]</value>		
+	</variable>	
+	<variable name="PanelTextPlayerOSDColorVar">
+		<value condition="!String.IsEmpty(Skin.String(PanelTextPlayerOSD.color)) + !String.IsEqual(Skin.String(PanelTextPlayerOSD.color),None)">$INFO[Skin.String(PanelTextPlayerOSD.color)]</value>
+		<value>text</value>
+	</variable>
+	<variable name="PanelTextPlayerOSDColorLabelVar">
+		<value condition="!String.IsEmpty(Skin.String(PanelTextPlayerOSD.color)) + !String.IsEqual(Skin.String(PanelTextPlayerOSD.color),None)">[UPPERCASE]#$INFO[Skin.String(PanelTextPlayerOSD.color)][/UPPERCASE]</value>
+		<value>$LOCALIZE[13278]</value>
 	</variable>			
 	<!-- Color picker -->
 	<variable name="ColorPickerLabelVar">

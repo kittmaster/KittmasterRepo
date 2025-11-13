@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1191">
+    <defaultcontrol always="true">20054</defaultcontrol>
+    <allowoverlay>true</allowoverlay>
+    <controls>
+        <onleft>Control.Move(20054,-1)</onleft>
+        <onright>Control.Move(20054,1)</onright>
+        <control type="list" id="9779">
+            <include>HiddenList</include>
+            <content target="videos">$INFO[Window(Home).Property(TMDbHelper.Path.Current)]</content>
+        </control>
+        <control type="group">
+            <visible>Container(20054).IsUpdating</visible>
+            <!-- <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible> -->
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <width>100</width>
+            <height>100</height>
+            <control type="image">
+                <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" condition="true">Conditional</animation>
+                <texture colordiffuse="$VAR[PanelHighlightColorVar]">panels/spinner.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+            <!-- Background Overlay -->
+            <control type="image">
+                <width>100%</width>
+                <height>100%</height>
+                <!-- CORRECTED TEXTURE PATH for skin.madnox -->
+                <texture colordiffuse="BF000000">colors/white.png</texture>
+                <animation type="fade" time="300">WindowOpen</animation>
+                <animation type="fade" time="300" end="0">WindowClose</animation>
+            </control>
+
+            <!-- The Main Image Display (Not focusable) -->
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1920</width>
+                <height>1080</height>
+                <aspectratio>keep</aspectratio>
+                <texture>$INFO[Container(20054).ListItem.thumb]</texture>
+                <fadetime>300</fadetime>
+                <animation type="fade" time="300" reversible="false">VisibleChange</animation>
+            </control>
+
+            <!-- 
+            The Invisible Focus Button.
+            This control covers the entire screen, is completely transparent,
+            and catches the focus so the window can respond to navigation.
+        -->
+            <control type="button" id="9000">
+                <left>0</left>
+                <top>0</top>
+                <width>100%</width>
+                <height>100%</height>
+                <texturefocus/>
+                <texturenofocus/>
+                <!-- Clicking the image will also close the gallery -->
+                <onclick>Close</onclick>
+            </control>
+        </control>
+    </controls>
+</window>

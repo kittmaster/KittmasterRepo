@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
- <!-- Begin Common to Both Video & Music GUI Interfaces -->
+	<!-- Begin Common to Both Video & Music GUI Interfaces -->
 	<include name="DialogInfoCommon">
 		<param name="blur"/>
 		<param name="art"/>
@@ -15,7 +15,7 @@
 			</control>
 			<!-- Background blur -->
 			<control type="group">
-				<visible>[$PARAM[blur] + System.AddonIsEnabled(script.embuary.helper) + Skin.HasSetting(BlurEnabled)</visible>
+				<visible>$PARAM[blur] + System.AddonIsEnabled(script.embuary.helper) + Skin.HasSetting(BlurEnabled)</visible>
 				<include>AnimationVisibleFade</include>
 				<include>AnimationWindowFade</include>
 				<control type="image" id="100000">
@@ -44,16 +44,16 @@
 			</control>
 		</definition>
 	</include>
- <!-- End Common to Both Video & Music GUI Interfaces -->
+	<!-- End Common to Both Video & Music GUI Interfaces -->
 
- <!-- Begin Video GUI Interface -->
+	<!-- Begin Video GUI Interface -->
 	<include name="DialogVideoInfo">
 		<!-- Get item details by DBID - Ratings -->
 		<control type="list" id="7005">
 			<visible>!Control.HasFocus(1050) + [String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
 			<include>HiddenList</include>
 			<!-- <content>plugin://script.embuary.helper/?info=getbydbid&amp;dbid=$INFO[Container.ListItem.DBID]&amp;type=$INFO[Container.ListItem.DBType]</content> -->
-			<!-- <content>plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=movie&amp;exclude_key=dbid&amp;exclude_value=is_empty</content> --> <!-- Replaced -->
+			<!-- <content>plugin://plugin.video.themoviedb.helper/?info=popular&amp;tmdb_type=movie&amp;exclude_key=dbid&amp;exclude_value=is_empty</content> -->			<!-- Replaced -->
 			<content>plugin://plugin.video.themoviedb.helper/?action=getdetails&amp;dbid=$INFO[Container.ListItem.DBID]&amp;type=$INFO[Container.ListItem.DBType]</content>
 		</control>
 		<!-- Check if Studio Image exists -->
@@ -110,12 +110,12 @@
 			<!--  Show directional arrows for Movie Meta Info Container 9004-->
 			<include>3PageArrowIndicators</include>
 			<!-- <control type="label"> --> <!-- Regular Count Up Timer X.XXXXXX DEBUG ONLY-->
-				<!-- <color>orange</color>
+			<!-- <color>orange</color>
 				<top>500</top>
 				<left>700</left>
 				<label>$INFO[Skin.TimerElapsedSecs(infoline_changer),, seconds]</label>
-			</control>  -->	
-			<control type="label"> <!-- Locked do not move -->
+			</control>  -->
+			<control type="label">				<!-- Locked do not move -->
 				<visible>Container(9000).HasFocus(112) +
 							   !Skin.HasSetting(enablemovietvshowslidercountdowntimer) +
 							   [Integer.IsGreater(Container(9002).NumItems, 8) | Integer.IsGreater(Container(9004).NumItems, 8) | Integer.IsGreater(Container(9010).NumItems, 8)]
@@ -126,7 +126,7 @@
 				<!-- <label>$INFO[Window(Home).Property(ItemListCountDownTimerMovie)]</label> DEBUG ONLY -->
 				<label>$VAR[CountDownTimerColorMovieLabelVar]</label>
 			</control>
-			<!-- Title 		(Global)	--> 
+			<!-- Title (Global)	-->
 			<control type="label">
 				<height>50</height>
 				<font>Font49_Bold_Caps</font>
@@ -134,7 +134,7 @@
 				<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				<scroll>true</scroll>
 			</control>
-			<!-- Subtitle Control 		(Global)	--> 
+			<!-- Subtitle Control (Global)	-->
 			<control type="label">
 				<top>52</top>
 				<height>40</height>
@@ -231,13 +231,13 @@
 						<onclick>Runscript(plugin.video.themoviedb.helper,recommendations=10051|info=details|true|info||10052|info=cast|true|info||10053|info=similar|true|play||10054|info=videos|true|play||10056|info=crew|true|info||10057|info=collection|true|play||10060|info=recommendations|true|info||10061|info=similar|true|info,window_id=1190,$VAR[TMDbHelperTypeVar],$VAR[TMDbHelperIDVar],winprop_plot='"$VAR[VideoInfoPlotVar]"',winprop_poster=$VAR[VideoInfoPosterVar])</onclick>
 					</item>
 					<!-- <item id="101"> -->
-						<!-- <description>TMDb info</description> -->
-						<!-- <visible>Skin.HasSetting(VideoInfoTMDb) + String.IsEqual(ListItem.DBTYPE,episode) + String.IsEqual(ListItem.DBTYPE,episode)</visible> -->
-						<!-- <label></label> -->
-						<!-- <label2>[CAPITALIZE]$LOCALIZE[31351][/CAPITALIZE]</label2> -->
-						<!-- <onclick>Runscript(plugin.video.themoviedb.helper,recommendations=10051|info=details|true|info||10052|info=cast|true|info||10053|info=similar|true|play||10054|info=videos|true|play||10056|info=crew|true|info||10057|info=collection|true|play||10060|info=recommendations|true|info||10061|info=similar|true|info,window_id=1190,$VAR[TMDbHelperTypeVar],$VAR[TMDbHelperIDVar],winprop_plot='"$VAR[VideoInfoPlotVar]"',winprop_poster=$VAR[VideoInfoPosterVar])</onclick> -->
-						<!-- <onclick>RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=tv$INFO[Window(Home).Property(TMDbHelper.ListItem.TVShow.TMDb_ID),&amp;tmdb_id=,]$INFO[ListItem.Season,&amp;season=,]$INFO[ListItem.Episode,&amp;episode=,],call_auto=1190)</onclick> -->
-					<!-- </item>					 -->
+					<!-- <description>TMDb info</description> -->
+					<!-- <visible>Skin.HasSetting(VideoInfoTMDb) + String.IsEqual(ListItem.DBTYPE,episode) + String.IsEqual(ListItem.DBTYPE,episode)</visible> -->
+					<!-- <label></label> -->
+					<!-- <label2>[CAPITALIZE]$LOCALIZE[31351][/CAPITALIZE]</label2> -->
+					<!-- <onclick>Runscript(plugin.video.themoviedb.helper,recommendations=10051|info=details|true|info||10052|info=cast|true|info||10053|info=similar|true|play||10054|info=videos|true|play||10056|info=crew|true|info||10057|info=collection|true|play||10060|info=recommendations|true|info||10061|info=similar|true|info,window_id=1190,$VAR[TMDbHelperTypeVar],$VAR[TMDbHelperIDVar],winprop_plot='"$VAR[VideoInfoPlotVar]"',winprop_poster=$VAR[VideoInfoPosterVar])</onclick> -->
+					<!-- <onclick>RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=tv$INFO[Window(Home).Property(TMDbHelper.ListItem.TVShow.TMDb_ID),&amp;tmdb_id=,]$INFO[ListItem.Season,&amp;season=,]$INFO[ListItem.Episode,&amp;episode=,],call_auto=1190)</onclick> -->
+					<!-- </item> -->
 					<item id="104">
 						<description>Next episode</description>
 						<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0) + Integer.IsGreater(ListItem.DBID,0) + !Skin.HasSetting(VideoInfoDisableNext)</visible>
@@ -324,10 +324,10 @@
 						<param name="labelvisible">true</param>
 					</include>
 				</control>
-				<!-- Actor movies/tv shows -->
+				<!-- Actor movies/tv shows TODO Review -->
 				<control type="panel" id="1020">
 					<!-- <onclick condition="String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')</onclick> -->
-					<onclick condition="String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">PlayMedia($ESCINFO[ListItem.Filenameandpath])</onclick>					
+					<onclick condition="String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">PlayMedia($ESCINFO[ListItem.Filenameandpath])</onclick>
 					<!-- <onclick condition="!String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">RunScript(script.embuary.helper,action=goto,path='$ESCINFO[ListItem.FolderPath]',target=videos)</onclick> -->
 					<!-- <onclick condition="!String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">RunScript(plugin.video.themoviedb.helper,action=goto,path="$INFO[ListItem.FolderPath]")</onclick> -->
 					<onclick condition="!String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/go_to_path.json,use_rules=True,target=videos,"folderpath=$INFO[ListItem.FolderPath]")</onclick>
@@ -359,7 +359,6 @@
 				<control type="panel" id="1050">
 					<visible>String.IsEqual(ListItem.DBTYPE,tvshow)</visible>
 					<!-- <onclick>RunScript(script.embuary.helper,action=goto,path='$ESCINFO[ListItem.FolderPath]',target=videos)</onclick> -->
-					<!-- <onclick>RunScript(plugin.video.themoviedb.helper,action=goto,path="$INFO[ListItem.FolderPath]")</onclick> -->
 					<onclick> RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/go_to_path.json,use_rules=True,target=videos,"folderpath=$INFO[ListItem.FolderPath]")</onclick>
 					<include content="DialogExtraInfo">
 						<param name="visible">Control.HasFocus(1050) | Container(9000).HasFocus(105)</param>
@@ -390,12 +389,12 @@
 						<param name="art">$VAR[PosterVar]</param>
 						<param name="overlayiconvisible">true</param>
 					</include>
-						<!-- OLD -->
-						<!-- <content sortby="year" sortorder="descending">plugin://script.embuary.helper/?info=getdirectedby&amp;dbid=$INFO[ListItem.DBID]</content> -->
-						<!-- ONLINE DATA, NO LOCAL INFO ONLY-->				
-						<!-- <content sortby="year" sortorder="descending">videodb://movies/titles/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22director%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B"$INFO[ListItem.Director]"%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</content> -->
-						<!-- Working Equivalent old -->
-						<content sortby="year" sortorder="descending">plugin://script.skinvariables/?info=get_filter_dir&amp;library=video&amp;filter_key=director&amp;filter_value=$INFO[ListItem.Director]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;&amp;videodb://movies/titles/</content>
+					<!-- OLD -->
+					<!-- <content sortby="year" sortorder="descending">plugin://script.embuary.helper/?info=getdirectedby&amp;dbid=$INFO[ListItem.DBID]</content> -->
+					<!-- ONLINE DATA, NO LOCAL INFO ONLY-->
+					<!-- <content sortby="year" sortorder="descending">videodb://movies/titles/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22director%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B"$INFO[ListItem.Director]"%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</content> -->
+					<!-- Working Equivalent old -->
+					<content sortby="year" sortorder="descending">plugin://script.skinvariables/?info=get_filter_dir&amp;library=video&amp;filter_key=director&amp;filter_value=$INFO[ListItem.Director]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;&amp;videodb://movies/titles/</content>
 				</control>
 				<!-- Writer -->
 				<control type="panel" id="1080">
@@ -421,7 +420,7 @@
 						<param name="art">$VAR[PosterVar]</param>
 						<param name="overlayiconvisible">true</param>
 					</include>
-					<!-- Working Equivalent old -->								
+					<!-- Working Equivalent old -->
 					<content sortby="random" limit="10">$VAR[VideoInfoSimilarContent]</content>
 				</control>
 			</control>
@@ -434,7 +433,7 @@
 				<content>
 					<item id="900401">
 						<visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.awards))</visible>
-						<label>$INFO[Window(Home).Property(TMDbHelper.ListItem.awards),,]</label>	<!-- Movie Awards -->
+						<label>$INFO[Window(Home).Property(TMDbHelper.ListItem.awards),,]</label>						<!-- Movie Awards -->
 						<label2>$LOCALIZE[31408]:</label2>
 					</item>
 					<item id="900402">
@@ -514,25 +513,25 @@
 					</item>
 					<item id="900417">
 						<!-- <visible>!String.IsEmpty(ListItem.Path) + !String.IsEqual(ListItem.Property(item.type),person)</visible> Don't show if person -->
-						<visible>!String.IsEmpty(ListItem.Path) + !String.IsEqual(ListItem.DBTYPE,video)</visible> <!-- Don't show if person -->
+						<visible>!String.IsEmpty(ListItem.Path) + !String.IsEqual(ListItem.DBTYPE,video)</visible>						<!-- Don't show if person -->
 						<label>$INFO[ListItem.Path]</label>
 						<label2>$LOCALIZE[573]:</label2>
 					</item>
 					<item id="900418">
 						<!-- <visible>!String.IsEmpty(ListItem.Filename) + !String.IsEqual(ListItem.Property(item.type),person)</visible> Don't show if person -->
-						<visible>!String.IsEmpty(ListItem.Filename) + !String.IsEqual(ListItem.DBTYPE,video)</visible> <!-- Don't show if person -->
+						<visible>!String.IsEmpty(ListItem.Filename) + !String.IsEqual(ListItem.DBTYPE,video)</visible>						<!-- Don't show if person -->
 						<label>$INFO[ListItem.Filename]</label>
 						<label2>$LOCALIZE[31185]:</label2>
 					</item>
 					<item id="900419">
 						<!-- <visible>!String.IsEmpty(ListItem.Duration) + !String.IsEqual(ListItem.Property(item.type),person)</visible> Don't show if person -->
-						<visible>!String.IsEmpty(ListItem.Duration) + !String.IsEqual(ListItem.DBTYPE,video)</visible> <!-- Don't show if person -->
+						<visible>!String.IsEmpty(ListItem.Duration) + !String.IsEqual(ListItem.DBTYPE,video)</visible>						<!-- Don't show if person -->
 						<label>$INFO[ListItem.Duration]</label>
 						<label2>$LOCALIZE[180]:</label2>
 					</item>
 					<item id="900420">
 						<!-- <visible>!String.IsEmpty(ListItem.Premiered) + !String.IsEqual(ListItem.Property(item.type),person)</visible> Don't show if person -->
-						<visible>!String.IsEmpty(ListItem.Premiered) + !String.IsEqual(ListItem.DBTYPE,video)</visible> <!-- Don't show if person -->
+						<visible>!String.IsEmpty(ListItem.Premiered) + !String.IsEqual(ListItem.DBTYPE,video)</visible>						<!-- Don't show if person -->
 						<label>$INFO[ListItem.Premiered]</label>
 						<label2>$LOCALIZE[20473]:</label2>
 					</item>
@@ -629,7 +628,7 @@
 						<visible>!String.IsEmpty(ListItem.Property(TVDb_ID)) + !Container(9000).Hasfocus(100002) + !Container(9000).Hasfocus(100003) + !Container(9000).Hasfocus(100004)</visible>
 						<label>[UPPERCASE]$INFO[ListItem.Property(TVDb_ID),, ][/UPPERCASE]</label>
 						<label2>$LOCALIZE[31417]:</label2>
-					</item>					
+					</item>
 				</content>
 				<!-- End Person Social Icons ***************************************** -->
 			</control>
@@ -690,9 +689,10 @@
 						<label2>$LOCALIZE[31406]</label2>
 					</item>
 				</content>
+
 			</control>
-			<!-- Plot (Used for Person's Biography) -->	<!-- Biography Panel Section & Label -->
-			<!-- <control type="textbox" >
+			<!-- Plot (Used for Person's Biography) -->			<!-- Biography Panel Section & Label -->
+			<!-- <control type="textbox">
 				<visible>!String.IsEmpty(Control.GetLabel(200)) + String.IsEqual(ListItem.Property(item.type),person)</visible>
 				<top>644</top>
 				<right>340</right>
@@ -731,19 +731,23 @@
 						<param name="art">$INFO[ListItem.Art(thumb)]</param>
 						<param name="label">$INFO[ListItem.Title]</param>
 					</include>
-					<content>plugin://plugin.video.themoviedb.helper?info=images&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>								
+					<content>plugin://plugin.video.themoviedb.helper?info=images&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
+					<onclick>SetFocus(99)</onclick>
+					<onclick>SetProperty(fullscreen_actor,True)</onclick>
+					<onfocus>ClearProperty(fullscreen_actor,movieinformation)</onfocus>
+					<!-- <include>ActorGalleryArrowIndicators</include> -->
 				</control>
 			</control>
 			<!-- Person Biography Info panel End -->
 			<!-- *********************************************************************************************************************************** -->
-			
+
 			<!-- Movie/TV Plot(s) -->
-			<control type="textbox" >
+			<control type="textbox">
 				<!-- <visible>String.IsEmpty(Control.GetLabel(200)) + String.IsEqual(ListItem.Property(item.type),person)</visible> -->
 				<visible>String.IsEmpty(Control.GetLabel(200)) + String.IsEqual(ListItem.DBTYPE,video)</visible>
 				<top>644</top>
 				<right>10</right>
-				<bottom>44</bottom> <!-- Locked do not move -->
+				<bottom>44</bottom>				<!-- Locked do not move -->
 				<include>AutoScrollPlot</include>
 				<label>$VAR[VideoInfoPlotVar]</label>
 			</control>
@@ -765,7 +769,7 @@
 				<label>$VAR[VideoInfoPlotVar]</label>
 			</control>
 			<control type="label">
-			<!-- <visible>String.IsEqual(ListItem.Property(item.type),person) + 
+				<!-- <visible>String.IsEqual(ListItem.Property(item.type),person) + 
 							   Container(9000).Hasfocus(100001) +
 							   !Skin.HasSetting(enablemovietvshowslidercountdowntimer) +
 							   [Integer.IsGreater(Container(9002).NumItems, 8) | Integer.IsGreater(Container(9004).NumItems, 8) | Integer.IsGreater(Container(9010).NumItems, 8)]
@@ -774,23 +778,22 @@
 							   Container(9000).Hasfocus(100001) +
 							   !Skin.HasSetting(enablemovietvshowslidercountdowntimer) +
 							   [Integer.IsGreater(Container(9002).NumItems, 8) | Integer.IsGreater(Container(9004).NumItems, 8) | Integer.IsGreater(Container(9010).NumItems, 8)]
-				</visible>									
+				</visible>
 				<top>-874</top>
-				<right>59</right>				
+				<right>59</right>
 				<align>right</align>
 				<!-- <label>$INFO[Window(Home).Property(ItemListCountDownTimerPerson)]</label> -->
 				<label>$VAR[CountDownTimerColorPersonLabelVar]</label>
-			</control>	
+			</control>
 			<!--  Show directional arrows for Movie Meta Info Container (9002)-->
 			<include>3PageArrowIndicators</include>
 			<!-- Media flags-->
-			<include>MediaFlagsVideoInfo</include> <!-- CMB WORKING -->
+			<include>MediaFlagsVideoInfo</include>			<!-- CMB WORKING -->
 		</control>
 	</include>
+	<!-- End Video GUI Interface -->
 
- <!-- End Video GUI Interface -->
-
- <!-- Begin Music GUI Interface -->
+	<!-- Begin Music GUI Interface -->
 	<include name="DialogMusicInfo">
 		<!-- Studio Logo check if image exists -->
 		<control type="image" id="811115">
@@ -977,7 +980,7 @@
 						<label2>$LOCALIZE[22083]</label2>
 						<!-- <onclick>RunScript(script.embuary.helper,action=playall,id=1090)</onclick> -->
 						<onclick>Close</onclick>
-						<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/play_all_music_videos_from_container.py)</onclick>					
+						<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/play_all_music_videos_from_container.py)</onclick>
 					</item>
 					<item id="106">
 						<description>Albums</description>
@@ -1001,7 +1004,7 @@
 						<onclick>Close</onclick>
 						<!-- <onclick>RunScript(script.embuary.helper,action=playall,id=1090)</onclick> -->
 						<!-- <onclick>PlayMedia($INFO[Container(2090).FolderPath],isdir,playlist_type_hint=1)</onclick>	Uses hidden container 2090 for play all lists -->
-						<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/play_all_music_videos_from_container.py)</onclick>	
+						<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/play_all_music_videos_from_container.py)</onclick>
 					</item>
 					<item id="112">
 						<description>Rate</description>
@@ -1298,9 +1301,9 @@
 		</control>
 	</include>
 
- <!-- End Music GUI Interface -->
+	<!-- End Music GUI Interface -->
 
- <!-- Begin Addon GUI Interface -->
+	<!-- Begin Addon GUI Interface -->
 
 	<include name="DialogAddonInfo">
 		<param name="infovisible">true</param>
@@ -1452,9 +1455,9 @@
 		</definition>
 	</include>
 
- <!-- End Addon GUI Interface -->
+	<!-- End Addon GUI Interface -->
 
- <!-- Begin PVR GUI Interface -->
+	<!-- Begin PVR GUI Interface -->
 
 	<include name="PVRInfoContent">
 		<content>
@@ -1509,14 +1512,14 @@
 			</item>
 		</content>
 	</include>
+
 	<include name="DialogExtraInfo">
-		<!-- <param name="PanelID" /> -->		<!-- Added CMB -->
 		<param name="visible"/>
 		<param name="labelvisible">false</param>
 		<param name="overlayiconvisible">false</param>
-		<param name="art">$INFO[ListItem.Thumb]</param>
+		<!-- <param name="art">$INFO[ListItem.Thumb]</param> -->
 		<param name="art">$INFO[ListItem.icon]</param>
-		<param name="art">$INFO[ListItem.Poster]</param>		<!-- Added CMB -->
+		<!-- <param name="art">$INFO[ListItem.Poster]</param> -->
 		<param name="aspect">stretch</param>
 		<param name="diffuse">diffuse/rounded5-230x345.png</param>
 		<param name="width">235.8</param>
@@ -1535,12 +1538,12 @@
 				<effect type="slide" start="0" end="1920" time="0"/>
 			</animation>
 			<left>-10</left>
-			<!-- <width>1179</width> -->
 			<width>$PARAM[containerwidth]</width>
 			<height>$PARAM[containerheight]</height>
 			<ondown>9000</ondown>
 			<orientation>horizontal</orientation>
 			<include>ContainerScrollTime</include>
+
 			<itemlayout width="$PARAM[width]" height="$PARAM[height]">
 				<include content="ViewArtwork">
 					<param name="art">$PARAM[art]</param>
@@ -1597,6 +1600,7 @@
 					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				</control>
 			</itemlayout>
+
 			<focusedlayout width="$PARAM[width]" height="$PARAM[height]">
 				<control type="image">
 					<texture border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/panel-select-focus.png</texture>
@@ -1658,6 +1662,7 @@
 			</focusedlayout>
 		</definition>
 	</include>
+
 	<include name="InfoDialogDetails">
 		<param name="visible"/>
 		<param name="label">$INFO[ListItem.Label]</param>
@@ -2364,14 +2369,14 @@
 		<value>$INFO[ListItem.Title] ($INFO[ListItem.Year])</value>
 	</variable>
 	<!-- <variable name="VideoInfoTitleVar"> -->
-		<!-- <value condition="!String.IsEmpty(Container.ListItem.Title)">$INFO[Container.ListItem.Title] ($INFO[Container.ListItem.Year])</value> -->
-		<!-- <value condition="String.IsEqual(Container.ListItem.DBTYPE,episode)">$INFO[Container.ListItem.Season,,x]$INFO[Container.ListItem.Episode,,. ]$INFO[Container.ListItem.Title]</value> -->
-		<!-- <value condition="ControlGroup(9001).HasFocus + !Control.HasFocus(50)">$INFO[Container.ListItem.Title]</value> -->
-		<!-- <value condition="String.IsEqual(ListItem.DBTYPE,episode)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value> -->
-		<!-- <value condition="String.IsEqual(ListItem.DBTYPE,movie)">$INFO[ListItem.Title] ($INFO[ListItem.Year])</value> -->
-		<!--<value condition="String.IsEqual(ListItem.Property(item.type),person) + [!Container(9000).HasFocus(20052)]">$INFO[ListItem.Title]</value> --> <!--Not Use / Comment out -->
-		<!-- <value condition="String.IsEqual(ListItem.Property(item.type),person) | !Container(9000).HasFocus(20052)">$INFO[ListItem.Title]</value> -->
-		<!-- <value>$INFO[ListItem.Title]</value> -->
+	<!-- <value condition="!String.IsEmpty(Container.ListItem.Title)">$INFO[Container.ListItem.Title] ($INFO[Container.ListItem.Year])</value> -->
+	<!-- <value condition="String.IsEqual(Container.ListItem.DBTYPE,episode)">$INFO[Container.ListItem.Season,,x]$INFO[Container.ListItem.Episode,,. ]$INFO[Container.ListItem.Title]</value> -->
+	<!-- <value condition="ControlGroup(9001).HasFocus + !Control.HasFocus(50)">$INFO[Container.ListItem.Title]</value> -->
+	<!-- <value condition="String.IsEqual(ListItem.DBTYPE,episode)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value> -->
+	<!-- <value condition="String.IsEqual(ListItem.DBTYPE,movie)">$INFO[ListItem.Title] ($INFO[ListItem.Year])</value> -->
+	<!--<value condition="String.IsEqual(ListItem.Property(item.type),person) + [!Container(9000).HasFocus(20052)]">$INFO[ListItem.Title]</value> -->	<!--Not Use / Comment out -->
+	<!-- <value condition="String.IsEqual(ListItem.Property(item.type),person) | !Container(9000).HasFocus(20052)">$INFO[ListItem.Title]</value> -->
+	<!-- <value>$INFO[ListItem.Title]</value> -->
 	<!-- </variable>	 -->
 	<variable name="VideoInfoSubtitleVar">
 		<value condition="!String.IsEmpty(Container.ListItem.Tagline)">$INFO[Container.ListItem.Tagline]</value>
@@ -2451,7 +2456,7 @@
 		<value condition="Control.HasFocus(10056) + String.IsEqual(Container(10051).ListItem.DBType,season)">$INFO[Container(10056).ListItem.Label,, ]$INFO[Container(10056).ListItem.Label2,$LOCALIZE[20347] ]</value>
 		<value condition="Container(9000).HasFocus(102) + String.IsEqual(Container(10051).ListItem.DBType,season)">$LOCALIZE[31419]</value>
 		<value condition="Control.HasFocus(10057)">$INFO[Container(10057).ListItem.Label]$INFO[Container(10057).ListItem.Year, (,)]</value>
-		<!-- <value condition="Container(9000).HasFocus(103)">$INFO[Container(10051).ListItem.Property(Collection)]</value> --> <!-- Deprecated -->
+		<!-- <value condition="Container(9000).HasFocus(103)">$INFO[Container(10051).ListItem.Property(Collection)]</value> -->		<!-- Deprecated -->
 		<value condition="Container(9000).HasFocus(103)">$LOCALIZE[20141]$INFO[Container(10051).ListItem.Set,: ,]</value>
 		<value condition="Control.HasFocus(10058)">$INFO[Container(10058).ListItem.Season,$LOCALIZE[20373] ]</value>
 		<value condition="Container(9000).HasFocus(104)">$LOCALIZE[33054]</value>
@@ -2467,10 +2472,10 @@
 	</variable>
 	<variable name="TMDBHelperInfoPersonContainerLabel">
 		<value condition="Container(9000).HasFocus(100002)">$INFO[ListItem.Title,, ]$INFO[Container(20052).ListItem.Property(Role),$LOCALIZE[20347] ]</value>		<!-- Movie -->		<!-- OK -->
-		<value condition="Container(9000).HasFocus(100002)">$INFO[ListItem.Title,$LOCALIZE[31366] ]</value>	<!-- OK -->
+		<value condition="Container(9000).HasFocus(100002)">$INFO[ListItem.Title,$LOCALIZE[31366] ]</value>		<!-- OK -->
 		<value condition="Container(9000).HasFocus(100003)">$INFO[ListItem.Title,, ]$INFO[Container(20053).ListItem.Property(Role),$LOCALIZE[20347] ]</value>		<!-- TV Shows -->		<!-- OK -->
-		<value condition="Container(9000).HasFocus(100003)">$INFO[ListItem.Title,$LOCALIZE[31367] ]</value>	<!-- OK -->
-		<value condition="Container(9000).HasFocus(100004) | Control.HasFocus(20054)">$LOCALIZE[31405] $INFO[ListItem.Title]</value> <!-- OK -->
+		<value condition="Container(9000).HasFocus(100003)">$INFO[ListItem.Title,$LOCALIZE[31367] ]</value>		<!-- OK -->
+		<value condition="Container(9000).HasFocus(100004) | Control.HasFocus(20054)">$LOCALIZE[31405] $INFO[ListItem.Title]</value>		<!-- OK -->
 	</variable>
 	<variable name="VideoInfoSimilarContent">
 		<!-- <value condition="String.IsEqual(ListItem.DBType,movie)">plugin://script.embuary.helper/?info=getsimilar&amp;dbid=$INFO[ListItem.DBID]&amp;type=movie</value> -->

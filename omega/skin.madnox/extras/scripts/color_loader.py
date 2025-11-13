@@ -66,9 +66,9 @@ class MyColorDialog(xbmcgui.WindowXMLDialog):
         # 5) Forcibly set the sliders
         try:
             self.getControl(3015).setPercent(100)
-            self.getControl(3200).setPercent(50)
-            self.getControl(3201).setPercent(50)
-            self.getControl(3202).setPercent(50)
+            self.getControl(3200).setPercent(0)
+            self.getControl(3201).setPercent(0)
+            self.getControl(3202).setPercent(0)
             xbmc.log("[MyColorDialog] Successfully set sliders", xbmc.LOGINFO)
         except Exception as e:
             xbmc.log(f"[MyColorDialog] Failed to set slider percent: {e}", xbmc.LOGERROR)
@@ -158,9 +158,9 @@ class MyColorDialog(xbmcgui.WindowXMLDialog):
         elif controlId == 3011:
             try:
                 self.getControl(3015).setPercent(100)
-                self.getControl(3200).setPercent(50)
-                self.getControl(3201).setPercent(50)
-                self.getControl(3202).setPercent(50)
+                self.getControl(3200).setPercent(0)
+                self.getControl(3201).setPercent(0)
+                self.getControl(3202).setPercent(0)
                 xbmc.log("[MyColorDialog] Reset sliders to 100,50,50,50", xbmc.LOGINFO)
             except Exception as e:
                 xbmc.log("[MyColorDialog] Failed to reset sliders: {}".format(e), xbmc.LOGERROR)

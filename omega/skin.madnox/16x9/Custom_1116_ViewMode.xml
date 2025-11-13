@@ -296,7 +296,7 @@
 					<width>140</width>
 					<label></label>
 					<align>center</align>
-					<font>Font45_Icon</font>
+					<font>Font60_Icon</font>
 					<onclick>PageUp(60)</onclick>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 					<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
@@ -308,7 +308,7 @@
 					<width>140</width>
 					<label></label>
 					<align>center</align>
-					<font>Font45_Icon</font>
+					<font>Font60_Icon</font>
 					<onclick>PageDown(60)</onclick>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 					<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>

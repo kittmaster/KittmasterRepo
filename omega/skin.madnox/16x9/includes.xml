@@ -53,10 +53,6 @@
 	<include file="View_541_SquareWall.xml"/>
 	<include file="View_542_BannerWall.xml"/>
 	<include file="View_543_LandscapeWall.xml"/>
-	<include file="custom_debug_overlay.xml"/>
-	<include file="Custom_1103_Startup.xml"/>	
-	<include file="Custom_1104_DialogOverlayColorPicker.xml"/>
-	<include file="Timers.xml"/>
 	<constant name="TextureFadeTime">480</constant>
 	<expression name="AreaVisibleVideos">Window.IsVisible(videos) | Window.IsVisible(videoplaylist) | Window.IsVisible(1102)</expression>
 	<expression name="AreaVisibleMusic">Window.IsVisible(music) | Window.IsVisible(musicplaylist) | Window.IsVisible(musicplaylisteditor) | Window.IsVisible(visualisation)</expression>
@@ -94,18 +90,18 @@
 		<itemlayout/>
 		<focusedlayout/>
 	</include>
-	<include name="Hidden_PlayAll_Container_Music_Videos"> <!-- Play All button content list for music videos -->
+	<include name="Hidden_PlayAll_Container_Music_Videos">		<!-- Play All button content list for music videos -->
 		<control type="panel" id="2090">
-		  <visible>false</visible>
-		  <content>$VAR[MusicInfoMusicVideoContent]</content>
+			<visible>false</visible>
+			<content>$VAR[MusicInfoMusicVideoContent]</content>
 		</control>
 	</include>
-	<include name="Hidden_PlayAll_Container_Albums"> <!-- Play All button content list for music videos -->
+	<include name="Hidden_PlayAll_Container_Albums">		<!-- Play All button content list for music videos -->
 		<control type="panel" id="2091">
-		  <visible>false</visible>
-		  <content>$VAR[MusicInfoAlbumContentVar]</content>
+			<visible>false</visible>
+			<content>$VAR[MusicInfoAlbumContentVar]</content>
 		</control>
-	</include>	
+	</include>
 	<include name="AutoScrollPlot">
 		<autoscroll time="3000" delay="4000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 	</include>
@@ -1037,7 +1033,7 @@
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture> <!-- RIGHT ARROW  -->
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>			<!-- RIGHT ARROW  -->
 		</control>
 
 		<!-- Indicator for second page left arrow in 2-page mode -->
@@ -1057,11 +1053,11 @@
 					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
 					
 			</visible>
-			<posx>1086</posx> <!-- Match the position of the right arrow from page 1 -->
+			<posx>1086</posx>			<!-- Match the position of the right arrow from page 1 -->
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture> <!-- LEFT ARROW -->
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
 		</control>
 
 		<!-- Indicator for second page right arrow in 3-page mode -->
@@ -1084,7 +1080,7 @@
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture> <!-- RIGHT ARROW -->
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>			<!-- RIGHT ARROW -->
 		</control>
 
 		<!-- Indicator for second page left arrow in 3-page mode -->
@@ -1103,11 +1099,11 @@
 					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
 					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
 			</visible>
-			<posx>1031</posx> <!-- Adjusted position to avoid overlap -->
+			<posx>1031</posx>			<!-- Adjusted position to avoid overlap -->
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture> <!-- LEFT ARROW -->
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
 		</control>
 
 		<!-- Indicator for third page (left arrow only if more than 16 items) -->
@@ -1124,7 +1120,7 @@
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture> <!-- LEFT ARROW -->
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
 		</control>
 	</include>
 	<variable name="ColorSelectedPicker">
@@ -1556,37 +1552,37 @@
 		<value condition="!String.IsEmpty(Window(Home).Property(ActiveControlPanelNameValue))">#$INFO[Window(Home).Property(ActiveControlPanelNameValue)]</value>
 		<value>Default</value>
 	</variable>
-	
+
 	<!-- Invisible letter for spacing needs -->
 	<variable name="1BlankSpace">
-		<value>[COLOR=00ffffff]0[/COLOR]</value>
+		<value>[COLOR=00ffffff]1[/COLOR]</value>
 	</variable>
 	<variable name="2BlankSpace">
-		<value>[COLOR=00ffffff]00[/COLOR]</value>
+		<value>[COLOR=00ffffff]11[/COLOR]</value>
 	</variable>
 	<variable name="3BlankSpace">
-		<value>[COLOR=00ffffff]000[/COLOR]</value>
+		<value>[COLOR=00ffffff]111[/COLOR]</value>
 	</variable>
 	<variable name="4BlankSpace">
-		<value>[COLOR=00ffffff]0000[/COLOR]</value>
+		<value>[COLOR=00ffffff]1111[/COLOR]</value>
 	</variable>
 	<variable name="5BlankSpace">
-		<value>[COLOR=00ffffff]00000[/COLOR]</value>
+		<value>[COLOR=00ffffff]11111[/COLOR]</value>
 	</variable>
 	<variable name="6BlankSpace">
-		<value>[COLOR=00ffffff]000000[/COLOR]</value>
+		<value>[COLOR=00ffffff]111111[/COLOR]</value>
 	</variable>
 	<variable name="7BlankSpace">
-		<value>[COLOR=00ffffff]0000000[/COLOR]</value>
+		<value>[COLOR=00ffffff]1111111[/COLOR]</value>
 	</variable>
 	<variable name="8BlankSpace">
-		<value>[COLOR=00ffffff]00000000[/COLOR]</value>
+		<value>[COLOR=00ffffff]11111111[/COLOR]</value>
 	</variable>
 	<variable name="9BlankSpace">
-		<value>[COLOR=00ffffff]000000000[/COLOR]</value>
+		<value>[COLOR=00ffffff]111111111[/COLOR]</value>
 	</variable>
 	<variable name="10BlankSpace">
-		<value>[COLOR=00ffffff]0000000000[/COLOR]</value>
+		<value>[COLOR=00ffffff]1111111111[/COLOR]</value>
 	</variable>
 
 	<variable name="CountDownSelection1">
@@ -1617,7 +1613,7 @@
 		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),30)">$VAR[ItemListCountDownTimer30]</value>
 		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),60)">$VAR[ItemListCountDownTimer60]</value>
 		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),90)">$VAR[ItemListCountDownTimer90]</value>
-	</variable>	
+	</variable>
 
 	<variable name="ItemListCountDownTimer3">
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_3),2)">0</value>
@@ -1745,7 +1741,7 @@
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),0)">19</value>
 		<value>0</value>
 	</variable>
-	
+
 	<variable name="ItemListCountDownTimer30">
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),29)">0</value>
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),28)">1</value>
@@ -1779,7 +1775,7 @@
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),0)">29</value>
 		<value>0</value>
 	</variable>
-	
+
 	<variable name="ItemListCountDownTimer60">
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),59)">0</value>
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),58)">1</value>
@@ -1843,7 +1839,7 @@
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),0)">59</value>
 		<value>0</value>
 	</variable>
-	
+
 	<variable name="ItemListCountDownTimer90">
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),89)">0</value>
 		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),88)">1</value>
@@ -1941,14 +1937,14 @@
 	<!-- Large Startup Logo -->
 	<include name="StartUpLogoWidthLargeVar">
 		<width>1600</width>
-	</include>	
+	</include>
 	<include name="StartUpLogoHeightLargeVar">
 		<height>520</height>
 	</include>
 	<!-- Small Startup Logo -->
 	<include name="StartUpLogoWidthSmallVar">
 		<width>800</width>
-	</include>	
+	</include>
 	<include name="StartUpLogoHeightSmallVar">
 		<height>260</height>
 	</include>
@@ -1959,20 +1955,37 @@
 	</variable>
 
 	<variable name="ResolutionMediaColorFlagUserLabel2Var">
-    	<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
-    	<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
+		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
+		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
 						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
 						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
-    	<value>Icon Error        </value> 
+		<value>Icon Error        </value>
 	</variable>
 
+    <!-- Aspect Ratio Media Color Flag User Label 2 Variable -->
 	<variable name="AspectRatioMediaColorFlagUserLabel2Var">
-    	<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
-    	<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
+		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
+		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
 						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
 						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
-    	<value>Icon Error        </value> 
+		<value>Icon Error        </value>
 	</variable>
+
+    <!-- Hidden Control -->
+	<include name="HiddenControl">
+		<left>-20</left>
+		<top>-20</top>
+		<width>1</width>
+		<height>1</height>
+		<font/>
+		<texture/>
+		<texturefocus/>
+		<texturenofocus/>
+		<alttexturenofocus/>
+		<alttexturefocus/>
+		<textureradiofocus/>
+		<textureradionofocus/>
+	</include>	
 
 	<!-- Add any new include above this line -->
 </includes>

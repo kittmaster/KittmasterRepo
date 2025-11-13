@@ -595,7 +595,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="label" id="205">
-			<label>RSS</label>
+			<label>$LOCALIZE[31127]</label>
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="206">
@@ -857,7 +857,13 @@
 			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuStyle.color,header=$LOCALIZE[736])</onclick> -->
 			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
 			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<onclick>Skin.SetColor(MainMenuStyle.color,$LOCALIZE[736])</onclick>
+			<!-- <onclick>Skin.SetColor(MainMenuStyle.color,$LOCALIZE[736])</onclick> -->
+			<onclick>SetProperty(Reset.Color,MainMenuStyle.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,MainMenuStyle.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuStyle.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[736],Home)</onclick>
+			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="212">
@@ -866,7 +872,13 @@
 			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuTexture.color,header=$LOCALIZE[31051])</onclick> -->
 			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
 			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<onclick>Skin.SetColor(MainMenuTexture.color,$LOCALIZE[31051])</onclick>
+			<!-- <onclick>Skin.SetColor(MainMenuTexture.color,$LOCALIZE[31051])</onclick> -->
+			<onclick>SetProperty(Reset.Color,MainMenuTexture.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,MainMenuTexture.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuTexture.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31051],Home)</onclick>
+			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>			
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="213">
@@ -875,7 +887,13 @@
 			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuGradient.color,header=$LOCALIZE[31134])</onclick> -->
 			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
 			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<onclick>Skin.SetColor(MainMenuGradient.color,$LOCALIZE[31134])</onclick>
+			<!-- <onclick>Skin.SetColor(MainMenuGradient.color,$LOCALIZE[31134])</onclick> -->
+			<onclick>SetProperty(Reset.Color,MainMenuGradient.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,MainMenuGradient.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuGradient.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31134],Home)</onclick>
+			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>			
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="214">
@@ -884,7 +902,13 @@
 			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuWidget.color,header=$LOCALIZE[31039])</onclick> -->
 			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
 			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<onclick>Skin.SetColor(MainMenuWidget.color,$LOCALIZE[31039])</onclick>
+			<!-- <onclick>Skin.SetColor(MainMenuWidget.color,$LOCALIZE[31039])</onclick> -->
+			<onclick>SetProperty(Reset.Color,MainMenuWidget.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,MainMenuWidget.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuWidget.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31039],Home)</onclick>
+			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>			
 			<include>MediaMenuButton</include>
 		</control>
 	</include>

@@ -2,18 +2,19 @@
 <window>
     <defaultcontrol>9000</defaultcontrol>
     <onload>SetFocus(9000,0)</onload>
+    <onload>ClearProperty(fullscreen_actor,movieinformation)</onload>
 
-    <!-- 1) On load, set the seeded countdown property from the user’s setting -->
+    <!-- 1: On load, set the seeded countdown property from the user’s setting -->
     <onload condition="!Skin.HasSetting(disableautoscrollmoviemetadata)">SetProperty(ItemListCountDownTimerMovie,$INFO[Skin.String(moviemetascrollingdelayvaluevarb)],Home)</onload>
     <onload condition="!Skin.HasSetting(disableautoscrollpersonmetadata)">SetProperty(ItemListCountDownTimerPerson,$INFO[Skin.String(personmetascrollingdelayvaluevarb)],Home)</onload>
 
-    <!-- 2) Single AlarmClock: calls your decrement script every second to both handle the countdown label and do Control.Move(9004,1) at 0 -->
+    <!-- 2: Single AlarmClock: calls your decrement script every second to both handle the countdown label and do Control.Move(9004,1) at 0 -->
     <!-- <onload condition="!Skin.HasSetting(disableautoscrollmoviemetadata)">AlarmClock(MetaData_Slide_Movie,RunScript(special://home/addons/skin.madnox/extras/scripts/script_decrement.py),00:01,silent,loop)</onload> -->
     <!-- <onload condition="!Skin.HasSetting(disableautoscrollpersonmetadata)">AlarmClock(MetaData_Slide_Person,RunScript(special://home/addons/skin.madnox/extras/scripts/script_decrement.py),00:01,silent,loop)</onload> -->
 
     <onload condition="!Skin.HasSetting(disableautoscrollmoviemetadata)">AlarmClock(MetaData_Slide_Movie,RunScript(special://home/addons/skin.madnox/extras/scripts/script_decrement_movie.py),00:01,silent,loop)</onload>
     <onload condition="!Skin.HasSetting(disableautoscrollpersonmetadata)">AlarmClock(MetaData_Slide_Person,RunScript(special://home/addons/skin.madnox/extras/scripts/script_decrement_person.py),00:01,silent,loop)</onload>
-    
+
 
     <!-- EMBUARY / BLUR / ETC. -->
     <onload condition="System.AddonIsEnabled(script.embuary.helper) + Skin.HasSetting(BlurEnabled) + !String.IsEqual(ListItem.DBType,musicvideo) + Skin.HasSetting(VideoBlurEnabled)">RunScript(script.embuary.helper,action=blurimg,file=$ESCINFO[ListItem.Art(thumb)],prop=blurthumb,radius=2)</onload>
@@ -39,9 +40,140 @@
             <include condition="!String.IsEqual(ListItem.DBType,musicvideo)">DialogVideoInfo</include>
             <include condition="String.IsEqual(ListItem.DBType,musicvideo)">DialogMusicInfo</include>
         </control>
+
+        <control id="99" type="button">
+            <onup>noop</onup>
+            <ondown>noop</ondown>
+            <onleft condition="!String.IsEmpty(Container(20054).ListItemNoWrap(-1).Label)">Control.Move(20054,-1)</onleft>
+            <onright condition="!String.IsEmpty(Container(20054).ListItemNoWrap(1).Label)">Control.Move(20054,1)</onright>
+            <onback>20054</onback>
+            <include>HiddenControl</include>
+        </control>
+        <control type="button" id="999">
+            <onfocus>SetFocus(99)</onfocus>
+            <onclick>SetFocus(20054)</onclick>
+            <left>0</left>
+            <top>0</top>
+            <include>FullScreenDimensions</include>
+            <visible>System.Getbool(input.enablemouse) + !String.IsEmpty(Window(movieinformation).Property(fullscreen_actor))</visible>
+            <include>HiddenObject</include>
+        </control>
+
+        <control type="group">
+            <!-- <visible>Control.HasFocus(99)</visible> -->
+            <visible>Control.HasFocus(99) | Control.HasFocus(999)</visible>
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>colors/black.png</texture>
+            </control>
+            <control type="image">
+                <width>1920</width>
+                <height>1080</height>
+                <aspectratio>keep</aspectratio>
+                <texture>$INFO[Container(20054).ListItem.Icon]</texture>
+                <fadetime>200</fadetime>
+            </control>
+        </control>
+
+        <!-- Constant Status Label -->
+        <!-- Only visible when container 99 is active (actor images) -->
+        <!-- Left Arrow -->
+        <control type="label">
+            <description>Navigation Status Label</description>
+            <posx>1398</posx>
+            <posy>871</posy>
+            <width>100</width>
+            <height>100</height>
+            <font>Font60_Icon</font> <!-- Use a smaller font for the arrows -->
+            <textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+            <align>center</align>
+            <label></label>
+            <visible>Control.HasFocus(99)</visible>
+        </control>
+        <!-- Image Navigation Label -->
+        <control type="label">
+            <description>Navigation Status Label</description>
+            <posx>1380</posx>
+            <posy>905</posy>
+            <width>400</width>
+            <height>30</height>
+            <font>Font28_Reg</font>
+            <textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+            <align>center</align>
+            <!-- <label>• $LOCALIZE[31434] $LOCALIZE[31435] •</label> -->
+            <label>$LOCALIZE[31434] $LOCALIZE[31435]</label>
+            <visible>Control.HasFocus(99)</visible>
+        </control>
+        <!-- Right Arrow -->
+        <control type="label">
+            <description>Navigation Status Label</description>
+            <posx>1660</posx>
+            <posy>871</posy>
+            <width>100</width>
+            <height>100</height>
+            <font>Font60_Icon</font>
+            <textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+            <align>center</align>
+            <label></label> <!-- Use a font for the arrows ci-->
+            <visible>Control.HasFocus(99)</visible>
+        </control>        
+
+        <!-- LEFT SIDE GROUP (Arrow + "Previous" Label) -->
+        <control type="group" id="GalleryLeftGroup">
+            <visible>Control.HasFocus(99) + Integer.IsGreater(Container(20054).CurrentItem, 1)</visible>
+
+            <!-- The Left Arrow Image -->
+            <control type="image">
+                <posx>1550</posx>
+                <posy>950</posy>
+                <width>50</width>
+                <height>50</height>
+                <texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>
+            </control>
+
+            <!-- The "Previous" Label -->
+            <control type="label">
+                <description>Previous Label</description>
+                <posx>1540</posx>
+                <posy>960</posy>
+                <width>250</width>
+                <height>30</height>
+                <font>Font28_Reg</font>
+                <textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+                <label>$LOCALIZE[210]</label> <!-- 210 = Previous -->
+                <align>right</align>
+            </control>
+        </control>
+
+        <!-- RIGHT SIDE GROUP (Arrow + "Next" Label) -->
+        <control type="group" id="GalleryRightGroup">
+            <visible>Control.HasFocus(99) + Integer.IsLess(Container(20054).CurrentItem, Container(20054).NumItems)</visible>
+
+            <!-- The Right Arrow Image -->
+            <control type="image">
+                <posx>1610</posx>
+                <posy>950</posy>
+                <width>50</width>
+                <height>50</height>
+                <texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>
+            </control>
+
+            <!-- The "Next" Label -->
+            <control type="label">
+                <description>Next Label</description>
+                <posx>1670</posx>
+                <posy>960</posy>
+                <width>250</width>
+                <height>30</height>
+                <font>Font28_Reg</font>
+                <textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+                <label>$LOCALIZE[209]</label> <!-- 209 = Next -->
+                <align>left</align>
+            </control>
+        </control>
     </controls>
 
-    <!-- 3) On unload: cancel the unified AlarmClock for movies and the person metadata alarm -->
+    <!-- 3: On unload: cancel the unified AlarmClock for movies and the person metadata alarm -->
     <onunload>CancelAlarm(MetaData_Slide_Movie,true)</onunload>
     <onunload>CancelAlarm(MetaData_Slide_Person,true)</onunload>
 </window>

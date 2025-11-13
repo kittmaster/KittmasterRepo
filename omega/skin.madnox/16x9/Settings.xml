@@ -125,13 +125,13 @@
 					<item id="5">
 						<visible>System.AddonIsEnabled(service.libreelec.settings)</visible>
 						<label>LibreELEC $LOCALIZE[5]</label>
-						<icon>pecial://skin/extras/backgrounds/system/libreelec.jpg</icon>
+						<icon>special://skin/extras/backgrounds/system/libreelec.jpg</icon>
 						<onclick>RunScript(service.libreelec.settings)</onclick>
 					</item>
 					<item id="6">
 						<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 						<label>CoreELEC $LOCALIZE[5]</label>
-						<icon>pecial://skin/extras/backgrounds/system/libreelec.jpg</icon>
+						<icon>special://skin/extras/backgrounds/system/libreelec.jpg</icon>
 						<onclick>RunScript(service.coreelec.settings)</onclick>
 					</item>
 				</content>

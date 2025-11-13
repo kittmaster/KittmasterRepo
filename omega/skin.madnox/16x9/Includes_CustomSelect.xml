@@ -68,7 +68,7 @@
 	</include>
 	<include name="SelectFanartRotationSpeed">
 		<item>
-			<label>Default (5 $LOCALIZE[31311])</label>
+			<label>$LOCALIZE[571] (5 $LOCALIZE[31311])</label>
 			<icon>$VAR[IconPathVar]\timers\05.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,5)</onclick>
@@ -144,7 +144,7 @@
 	<!-- Movie Time Selection -->
 	<include name="SelectMovieMetaScrollSpeed"> <!-- CMB -->
 		<!-- <item>
-			<label>Default (5 $LOCALIZE[31311])</label>
+			<label>$LOCALIZE[571] (5 $LOCALIZE[31311])</label>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.Reset(moviemetascrollingdelayvaluevara)</onclick>
 		</item> -->
@@ -243,7 +243,7 @@
 	<!-- Person Time Selection -->
 	<include name="SelectPersonMetaScrollSpeed"> <!-- CMB -->
 		<!-- <item>
-			<label>Default (5 $LOCALIZE[31311])</label>
+			<label>$LOCALIZE[571] (5 $LOCALIZE[31311])</label>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.Reset(personmetascrollingdelayvaluevara)</onclick>
 		</item> -->
@@ -276,7 +276,7 @@
 			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,6)</onclick> <!-- Sets Alarmclock timer seed value -->
 		</item>
 		<item>
-			<label>7 $LOCALIZE[31311] (Default)</label>
+			<label>7 $LOCALIZE[31311] ($LOCALIZE[571])</label>
 			<icon>$VAR[IconPathVar]\timers\07.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,7)</onclick> <!-- Sets Visual Feedback in Control Panel -->
@@ -621,7 +621,7 @@
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
 	<include name="SelectFavouritesBackground">
-		<!-- <control type="radiobutton" id="101">
+		<!-- <control type="radiobutton" id="101" TODO>
 			<label>$LOCALIZE[31314]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(FavouritesDisableFanart)</onclick>
@@ -2905,25 +2905,25 @@
 
 		<include name="MusicFanartBackgroundImageRatio">
 			<item>
-				<label>Scale (Default)</label>
+				<label>$LOCALIZE[31432] ($LOCALIZE[571])</label>
 				<icon>$VAR[IconPathVar]\fanartaspectratio\scale.png</icon>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,scale)</onclick>
 			</item>
 			<item>
-				<label>Keep</label>
+				<label>$LOCALIZE[15014]</label>
 				<icon>$VAR[IconPathVar]\fanartaspectratio\keep.png</icon>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,keep)</onclick>
 			</item>	
 			<item>
-				<label>Stretch</label>
+				<label>$LOCALIZE[31433]</label>
 				<icon>$VAR[IconPathVar]\fanartaspectratio\stretch.png</icon>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,stretch)</onclick>
 			</item>
 			<item>
-				<label>Center</label>
+				<label>$LOCALIZE[39163]</label>
 				<icon>$VAR[IconPathVar]\fanartaspectratio\center.png</icon>
 				<onclick>Dialog.Close(1110)</onclick>
 				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,center)</onclick>

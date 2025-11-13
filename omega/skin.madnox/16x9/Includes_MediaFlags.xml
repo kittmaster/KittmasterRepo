@@ -1559,12 +1559,21 @@
 	</include>
 
 	<!-- Variables -->
-	<variable name="TVShowAirDateLabelVar">
+	<!-- <variable name="TVShowAirDateLabelVar">
 		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Next_Aired) + !Skin.HasSetting(PanelTextTVShows.color))">[COLOR $INFO[Skin.String(PanelTextTVShows.color)]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Episode),x, ]$LOCALIZE[31063][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired)][/B][/COLOR]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Last_Aired) + !Skin.HasSetting(PanelTextTVShows.color))">[COLOR $INFO[Skin.String(PanelTextTVShows.color)]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Episode),x, ]$LOCALIZE[31064][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired)][/B][/COLOR]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Next_Aired))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Episode),x, ]$LOCALIZE[31063][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired)][/B]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Last_Aired))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Episode),x, ]$LOCALIZE[31064][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired)][/B]</value>
-	</variable>
+	</variable> -->
+
+	<variable name="TVShowAirDateLabelVar">
+		<!-- CORRECTED: Removed extra parenthesis from the end of the condition -->
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Next_Aired)) + !Skin.HasSetting(PanelTextTVShows.color)">[COLOR $INFO[Skin.String(PanelTextTVShows.color)]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Episode),x, ]$LOCALIZE[31063][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired)][/B][/COLOR]</value>
+		<!-- CORRECTED: Removed extra parenthesis from the end of the condition -->
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Last_Aired)) + !Skin.HasSetting(PanelTextTVShows.color)">[COLOR $INFO[Skin.String(PanelTextTVShows.color)]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Episode),x, ]$LOCALIZE[31064][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired)][/B][/COLOR]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Next_Aired))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Episode),x, ]$LOCALIZE[31063][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired)][/B]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Last_Aired))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Episode),x, ]$LOCALIZE[31064][B][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired)][/B]</value>
+	</variable>	
 	<variable name="NextAiredStatusLabelVar">
 		<!-- Clips status word "Returning Soon down to Returning to fit icon width" -->
 		<value condition="String.StartsWith(Window(Home).Property(TMDbHelper.ListItem.Status),Returning)">[COLOR $INFO[Skin.String(PanelTextTVShows.color)]]$LOCALIZE[31011][/COLOR]</value>
@@ -1794,7 +1803,7 @@
 		<value condition="!String.IsEmpty(ListItem.VideoResolution)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]$INFO[ListItem.VideoResolution,,.png]</value>
 		<!-- <value>$VAR[MediaFlagsPathVar]$INFO[ListItem.VideoResolution,videoresolution/,.png]</value> -->
 		<!-- <value>$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]$INFO[ListItem.VideoResolution].png</value> -->
-		<value>flags/default/videoresolution/Video-Res-Not-Found-X.png</value>
+		<!-- <value>flags/default/videoresolution/Video-Res-Not-Found-X.png</value> -->
 	</variable>
 	<variable name="Container7005VideoResolutionFlagVar">		<!-- Media Video Resolution Flags -->
 		<value condition="String.Contains(Container(7005).Player.Filename,288) ">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]288.png</value>
@@ -1812,7 +1821,7 @@
 		<!-- <value>$VAR[MediaFlagsPathVar]$INFO[Container(7005).ListItem.VideoResolution,videoresolution/,.png]</value> -->
 		<!-- <value>$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]$INFO[Container(7005).ListItem.VideoResolution].png</value> -->
 		<value condition="!String.IsEmpty(Container(7005).ListItem.VideoResolution)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]$INFO[Container(7005).ListItem.VideoResolution,,.png]</value>
-		<value>flags/default/videoresolution/Video-Res-Not-Found-X.png</value>
+		<!-- <value>flags/default/videoresolution/Video-Res-Not-Found-X.png</value> -->
 	</variable>
 	<variable name="PlayerVideoResolutionFlagVar">		<!-- Main Menu > Videos > Media Player Info Panel Dropdown  Video Resolution Flags <Keyboard I> -->
 		<value condition="String.Contains(Player.Filename,288) ">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]288.png</value>
@@ -1830,22 +1839,25 @@
 		<!-- <value>$VAR[MediaFlagsPathVar]$INFO[VideoPlayer.VideoResolution,videoresolution/,.png]</value> -->
 		<!-- <value>$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]$INFO[VideoPlayer.VideoResolution].png</value> -->
 		<value condition="!String.IsEmpty(VideoPlayer.VideoResolution)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]$INFO[VideoPlayer.VideoResolution,,.png]</value>
-		<value>flags/default/videoresolution/Video-Res-Not-Found-X.png</value>
+		<!-- <value>flags/default/videoresolution/Video-Res-Not-Found-X.png</value> -->
 	</variable>
 	<variable name="AudioCodecFlagVar">
 		<value condition="String.Contains(ListItem.Filename,atmos)">$VAR[MediaFlagsPathVar]audiocodec/atmos.png</value>
 		<value condition="String.Contains(ListItem.Filename,dtsx) | String.Contains(ListItem.Filename,dts-x)">$VAR[MediaFlagsPathVar]audiocodec/dtsx.png</value>
+		<value condition="String.Contains(ListItem.AudioCodec, aac)">$VAR[MediaFlagsPathVar]audiocodec/aac.png</value>
 		<value>$VAR[MediaFlagsPathVar]$INFO[ListItem.AudioCodec,audiocodec/,.png]</value>
 	</variable>
 	<variable name="ContainerAudioCodecFlagVar">
 		<value condition="String.Contains(Container(7005).ListItem.Filename,atmos)">$VAR[MediaFlagsPathVar]audiocodec/atmos.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.Filename,dtsx) | String.Contains(Container(7005).Filename,dts-x)">$VAR[MediaFlagsPathVar]audiocodec/dtsx.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.AudioCodec,aac)">$VAR[MediaFlagsPathVar]audiocodec/aac.png</value>
 		<value condition="!String.IsEmpty(Container(7005).ListItem.AudioCodec)">$VAR[MediaFlagsPathVar]$INFO[Container(7005).ListItem.AudioCodec,audiocodec/,.png]</value>
 		<value>$VAR[MediaFlagsPathVar]$INFO[Container.ListItem.AudioCodec,audiocodec/,.png]</value>
 	</variable>
 	<variable name="PlayerAudioCodecFlagVar">
 		<value condition="String.Contains(Player.Filename,atmos)">$VAR[MediaFlagsPathVar]audiocodec/atmos.png</value>
 		<value condition="String.Contains(Player.Filename,dtsx) | String.Contains(Player.Filename,dts-x)">$VAR[MediaFlagsPathVar]audiocodec/dtsx.png</value>
+		<value condition="String.Contains(ListItem.AudioCodec, aac)">$VAR[MediaFlagsPathVar]audiocodec/aac.png</value>
 		<value>$VAR[MediaFlagsPathVar]$INFO[VideoPlayer.AudioCodec,audiocodec/,.png]</value>
 	</variable>
 	<variable name="HDRFlagVar">

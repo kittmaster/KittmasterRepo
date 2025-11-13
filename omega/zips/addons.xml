@@ -200,7 +200,7 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.02.04" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.02.05" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.embuary.helper" version="2.0.8" />
@@ -256,7 +256,12 @@ v0.4.0 (2025-03-23)
 			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>		
-		<news>v.21.02.04
+		<news>v.21.02.05
+            -Fixed widgets on main screen to use custom color picker
+            -Subtitle color parameters can now be adjusted within the skin using custom color picker
+            -Remove experimental replacement dev flag until next iteration
+            -Minor code cleanup and refactoring
+            v.21.02.04
 			-Fixed navigation corrections to TMDb Helper page and Movie/TV Show buttons/panels.
 			v.21.02.03
 			-Removed duplicate language strings

@@ -92,7 +92,7 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
-		<include name="DialogInlineButton45">
+	<include name="DialogInlineButton45">
 		<width>858</width>
 		<height>45</height> <!-- 75 -->
 		<!-- <textoffsetx>40</textoffsetx> -->
@@ -101,7 +101,7 @@
 		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
 		<texturefocus border="2" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="2" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
-	</include>
+	</include>	
 	<include name="DialogSpinControl">
 		<width>858</width>
 		<height>75</height>

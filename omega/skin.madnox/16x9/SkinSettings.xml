@@ -673,7 +673,32 @@
 							</include>
 							<include>SettingsButton</include>
 							<texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus>
-						</control>																	
+						</control>
+
+
+						<!-- Player Process Info Text Colors -->
+						<control type="label" id="357">
+							<label>$LOCALIZE[10116] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE] [LOWERCASE]$LOCALIZE[131][/LOWERCASE]</label>
+							<include>SettingsLabel</include>
+							<texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus>
+						</control>
+						<control type="radiobutton" id="358">
+							<label>$LOCALIZE[736]</label>
+							<label2>[COLOR $VAR[PanelTextPlayerOSDColorVar]]$VAR[PanelTextPlayerOSDColorLabelVar][/COLOR]$VAR[3BlankSpace]</label2>
+							<onclick>SetProperty(Reset.Color,PanelTextPlayerOSD.color,Home)</onclick>
+							<onclick>SetProperty(ActiveControlPanelName,PanelTextPlayerOSD.color,Home)</onclick>
+							<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(PanelTextPlayerOSD.color)],Home)</onclick>
+							<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+							<onclick>SetProperty(DialogTitle,$LOCALIZE[31056]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[736],Home)</onclick>
+							<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
+							<include content="CustomColorRadioButton">
+								<param name="ColorStringVar">$VAR[PanelTextPlayerOSDColorVar]</param>
+							</include>
+							<include>SettingsButton</include>
+							<texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus>
+						</control>				
+
+
 					</control>
 					<!-- Backgrounds -->
 					<control type="grouplist" id="7004">

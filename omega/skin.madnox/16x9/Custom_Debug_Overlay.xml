@@ -34,9 +34,17 @@
 				<visible>!String.IsEmpty(ListItem.Property(item.type))</visible>
 			</control>
 
+			<!-- My Temp Only Variable Watches -->
+			<!-- Container Num Items -->
+			<control type="label">
+				<height>30</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>Font25_Cond_Bold</font>
+				<label>$INFO[Container(20054).NumItems,[COLOR FF00FF00]Number of items in Container 20054- [/COLOR]]</label>
+			</control>
+			<!-- End My Temp Only Variable Watches -->
 
-			<!-- My Variable Watches -->
-     		<!-- My Variable Watches End-->
 
 			<control type="label">
 				<height>30</height>
@@ -116,6 +124,35 @@
 				<font>Font25_Cond_Bold</font>
 				<label>$INFO[Container.NumItems,[COLOR FF00FF00]Number of items in Container - [/COLOR]]</label>
 			</control>
+			<!-- My Permanent Added Variable Watches -->
+			<!-- Container Audio Codec -->
+			<control type="label">
+				<height>60</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>Font25_Cond_Bold</font>
+				<label>$INFO[VideoPlayer.AudioCodec,[COLOR FF00FF00]VideoPlayer.AudioCodec - [/COLOR]]</label>
+				<visible>!String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+			</control>
+			<!-- Container Audio Codec -->
+			<control type="label">
+				<height>60</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>Font25_Cond_Bold</font>
+				<label>$INFO[ListItem.AudioCodec,[COLOR FF00FF00]ListItem.AudioCodec - [/COLOR]]</label>
+				<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
+			</control>
+			<!-- Container Audio Codec -->
+			<control type="label">
+				<height>60</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>Font25_Cond_Bold</font>
+				<label>$INFO[Container(7005).ListItem.AudioCodec,[COLOR FF00FF00]Container(7005).ListItem.AudioCodec - [/COLOR]]</label>
+				<visible>!String.IsEmpty(Container(7005).ListItem.AudioCodec)</visible>
+			</control>				
+     		<!-- End My Permanent Added Variable Watches End-->			
 			<control type="label">
 				<height>30</height>
 				<textcolor>FFFF0000</textcolor>
