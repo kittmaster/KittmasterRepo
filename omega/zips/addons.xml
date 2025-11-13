@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons><addon id="plugin.video.themoviedb.helper" version="6.8.23" name="TMDb Helper" provider-name="jurialmunkey">
+<requires>
+  <import addon="xbmc.python" version="3.0.1" />
+  <import addon="script.module.requests" version="2.9.1" />
+  <import addon="script.module.pil" version="1.1.7" />
+  <import addon="script.module.addon.signals" version="0.0.6" />
+  <import addon="script.module.jurialmunkey" version="0.2.28" />
+  <import addon="script.module.infotagger" version="0.0.5" />
+  <import addon="script.module.qrcode" version="6.1.0" />
+</requires>
+<extension point="xbmc.python.pluginsource" library="resources/plugin.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.python.script" library="resources/script.py" />
+<extension point="xbmc.service" library="resources/service.py" />
+<extension point="xbmc.python.module" library="resources/modules" />
+<extension point="xbmc.addon.metadata">
+  <reuselanguageinvoker>false</reuselanguageinvoker>
+  <summary lang="en_GB">TMDb Helper</summary>
+  <summary lang="zh_CN">TMDb 助手</summary>
+  <description lang="en_GB">TMDb Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb TVDb MDbList and Trakt.</description>
+  <description lang="zh_CN">TMDb 助手从 TMDb（影视数据库） 获取电影、电视剧及演员的详细信息。用户可访问来自 TMDb、TVDb、MDbList 和 Trakt 的各类影视列表。</description>
+  <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com. Please consider supporting them. https://thetvdb.com/subscribe</disclaimer>
+  <disclaimer lang="zh_CN">数据由 TMDb、TVDb、MDbList、OMDb、FanartTV 和 Trakt 提供。部分信息由 TheTVDB.com 提供，建议您支持他们。订阅链接：https://thetvdb.com/subscribe</disclaimer>
+  <license>GPL-3.0-or-later</license>
+  <website>https://github.com/jurialmunkey/plugin.video.themoviedb.helper</website>
+  <forum>https://forum.kodi.tv/showthread.php?tid=345847</forum>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+    <screenshot>resources/screenshot-01.jpg</screenshot>
+    <screenshot>resources/screenshot-02.jpg</screenshot>
+  </assets>
+</extension>
+</addon><addon id="repository.jurialmunkey" name="jurialmunkey Alpha Repository" version="3.5" provider-name="jurialmunkey">
+    <extension point="xbmc.addon.repository" name="jurialmunkey Alpha Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/</datadir>
+        </dir>
+        <dir minversion="19.9.1" maxversion="20.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/</datadir>
+        </dir>
+        <dir minversion="20.9.1">
+            <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>jurialmunkey Alpha Repository</summary>
+        <description>A repository for the required TMDb Helper.</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="script.artwork.dump" name="Artwork Dump" version="0.4.1" provider-name="rmrector">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="xbmc.json" version="6.20.0" />
+		<import addon="script.module.requests" version="2.9.1" />
+	</requires>
+	<extension point="xbmc.python.script" library="python/default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<menu id="kodi.core.manage">
+				<item library="python/context.py">
+					<label>AD: $ADDON[script.artwork.dump 32410]</label>
+					<visible>Skin.HasSetting(enablecontext:script.artwork.dump) + [String.IsEqual(ListItem.DBTYPE, movie) | String.IsEqual(ListItem.DBTYPE, set) | String.IsEqual(ListItem.DBTYPE, tvshow) | String.IsEqual(ListItem.DBTYPE, episode) | String.IsEqual(ListItem.DBTYPE, musicvideo)]</visible>
+				</item>
+			</menu>
+			<item library="python/context.py">
+				<label>AD: $ADDON[script.artwork.dump 32410]</label>
+				<visible>Skin.HasSetting(enablecontext:script.artwork.dump) + [String.IsEqual(ListItem.DBTYPE, artist) | String.IsEqual(ListItem.DBTYPE, album) | String.IsEqual(ListItem.DBTYPE, song)]</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.service" library="python/service.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Automatically download artwork for your media.</summary>
+		<description lang="en_GB">Artwork Dump automatically downloads artwork for media in your video and music libraries into your media file system. It only downloads artwork already added to your libraries.</description>
+		<news>v0.4.1 (2025-04-12)
+- fix: error when manually pre-caching images
+
+v0.4.0 (2025-03-23)
+- feature: scan new music exactly by "date new" and "date modified"
+- feature: add option to scan new videos by "date added"
+- feature: add option to use or replace existing file when a new URL is in the library
+- fix: only show titles for updated media items in progress display</news>
+		<source>https://github.com/rmrector/script.artwork.dump</source>
+		<forum>https://forum.kodi.tv/showthread.php?tid=258886</forum>
+		<license>The MIT License</license>
+		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon><addon id="script.module.jurialmunkey" name="jurialmunkey common" provider-name="jurialmunkey" version="0.2.28">
+  <requires>
+    <import addon="xbmc.python" version="3.0.1" />
+    <import addon="script.module.requests" version="2.9.1" />
+    <import addon="script.module.infotagger" version="0.0.5" />
+  </requires>
+  <extension point="xbmc.python.module" library="resources/modules" />
+  <extension point="xbmc.addon.metadata">
+    <description lang="en_GB">Common code required by TMDbHelper and other related jurialmunkey add-ons</description>
+    <license>GPL-3.0-or-later</license>
+    <website>https://github.com/jurialmunkey/script.module.jurialmunkey</website>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="script.module.pil" name="Python Image Library" version="5.1.0" provider-name="PythonWare">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="service.tvtunes" name="TVTunes" version="2.1.1" provider-name="latts">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.simplejson" version="3.17.0+matrix.2" />
+		<import addon="script.module.beautifulsoup4" version="4.8.2+matrix.1" />
+		<import addon="script.module.requests" version="2.22.0+matrix.1" />
+	</requires>
+	<extension point="xbmc.service" library="service.py" start="login" />
+	<extension point="xbmc.python.module" library="resources/lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="bg">Сваля и възпроизвежда мелодиите от вашите филми и сериали</summary>
+		<summary lang="ca">Obté i reproduieix els temes de les seves pel·lícules i sèries de televisió</summary>
+		<summary lang="da">Hent og afspil dine Film og TV-show Temaer.</summary>
+		<summary lang="de">Hole und spiele die Titelmelodie beim Browsen der TV-Shows</summary>
+		<summary lang="el">Λήψη και αναπαραγωγή μουσικών θεμάτων (TvTunes) των τηλεοπτικών σας σειρών</summary>
+		<summary lang="en">Play your soundtrack or video themes whilst browsing your library</summary>
+		<summary lang="es">Descarga y reproduce las bandas sonoras de las series de tu biblioteca</summary>
+		<summary lang="fr">Récupérez et écoutez les génériques des séries TV</summary>
+		<summary lang="fr_CA">Récupérer et lire vos thèmes de bandes sonores tout en parcourant votre vidéothèque</summary>
+		<summary lang="gl">Obter e reproducir a música das súas Series de TV</summary>
+		<summary lang="he">הורדה וניגון נעימות של סרטים וסדרות בעת עיון בספריה</summary>
+		<summary lang="hr">Nabavite i reproducirajte temu vašeg omiljenog filma i TV serije prilikom pregledavanja svoje videoteke</summary>
+		<summary lang="it">Ottieni ed esegui i temi musicali delle tue Serie tV</summary>
+		<summary lang="ko">영화와 TV 쇼의 테마 음악을 가져와서 재생합니다</summary>
+		<summary lang="lt">gauti ir atkurti jūsų filmų ir tv laidų temas</summary>
+		<summary lang="nl">Verkrijg en speel je nummer of video thema`s tijdens zoeken in jouw bibliotheek</summary>
+		<summary lang="no">Hent og spill av kjenningsmelodier mens du blar gjennom biblioteket</summary>
+		<summary lang="pl">Pobieraj i odtwarzaj ścieżki dźwiękowe lub motywy wideo podczas przeglądania biblioteki</summary>
+		<summary lang="pt">Obtenha e reproduza as músicas dos seus filmes e séries de TV.</summary>
+		<summary lang="pt_BR">Obtenha e reproduza o tema musical das suas séries de TV</summary>
+		<summary lang="sv">Hämtar och spelar dina TV-serier-teman</summary>
+		<description lang="bg">Скриптът ще Ви помогне да се сдобиете с мелодии от филми и сериали. Когато преглеждате инф. за даден филм или епизодите от даден сериал, съответната мелодия ще се възпроизвежда автоматично. За целта е необходимо да ползвате съвместим облик.</description>
+		<description lang="ca">Aquest script t'ajudarà a cercar la banda sonora de les teves pel·lícules i sèries de televisió en www.televisiontunes.com Les guardarà en un fitxer theme[0-9].mp3 a la carpeta dels vídeos i seran reproduïdes mentre navegues per la teva col·lecció de vídeos, quant entris a la carpeta d'una sèrie o a la pantalla d'informació de vídeo. (Necessites una pell compatible per a aquesta funcionalitat)</description>
+		<description lang="da">Scriptet vil hjælpe dig med at hente temaer til dit film og serie bibliotek fra www.televisiontunes.com. Den gemmer dem som theme[0-9].mp3 i hver af dine videomapper, så de vil blive spillet mens du gennemser dit videobibliotek når du går ind i seriemappen eller Video Information (Dit skin skal være kompatibel med denne feature)</description>
+		<description lang="de">Dieses Skript unterstützt das Laden, Organisieren und Abspielen von Titelmelodien deiner Filme und TV-Serien. Diese werden dann abgespielt, wenn du in deiner Datenbank oder den Video-Ordnern stöberst (benötigt einen kompatiblen Skin)</description>
+		<description lang="el">Αυτό το script θα σας βοηθήσει να κατεβάσετε μουσικά θέματα των τηλεοπτικών σας σειρών από το www.televisiontunes.com, θα τα αποθηκεύει σε αρχεία μορφής theme.mp3 στο φάκελο της εκάστοτε σειράς, και θα τα αναπαράγει κατά την περιήγησή σας στη συλλογή τηλ. σειρών σας (απαιτείται να υποστηρίζεται από το κέλυφός σας)</description>
+		<description lang="en">TvTunes will play themes whilst browsing your Kodi library.</description>
+		<description lang="es">Este script te ayudará a buscar las bandas sonoras de tus películas y series de www.televisiontunes.com y guardará un fichero theme.mp3 en el directorio de tu serie y será reproducido mientras navegas dentro de la carpeta de la serie. (Necesitas una skin compatible para esta funcionalidad)</description>
+		<description lang="fr">Ce script aidera à télécharger les génériques de série depuis www.televisiontunes.com. Il les enregistrera dans un fichier theme.mp3 dans les dossiers des séries, et ils seront ensuite joués à l'entrée dans la série correspondante (cette fonctionnalité requiert un thème compatible)</description>
+		<description lang="fr_CA">TVTunes est équipé de fonctions puissantes qui permettent la récupération, l'organisation et la lecture de thèmes tout en parcourant votre vidéothèque Kodi.</description>
+		<description lang="gl">Este script axudaralle a obter dende www.televisiontunes.com o tema da súa biblioteca de series, gardándoo no ficheiro theme.mp3 por cada cartafol da biblioteca entón reproduciranse ao entrar nos diferentes cartafoles ao navegar pola biblioteca (precisa de que o seu tema sexa compatíbel con esta carácteristica)</description>
+		<description lang="he">סקריפט זה יעזור לך להשיג שירי נושא לספריות הסרטים והסדרות שלך מ-www.televisiontunes.com, ישמור אותם בקובץ בשם theme[0-9].mp3 בכל אחת מתיקיות הוידאו שלך והם ינוגנו בעת עיון בספריית הוידאו כאשר תיכנס לספריית סדרה או במסך מידע וידאו (נדרשת תאימות המעטפת עבור יכולת זו)</description>
+		<description lang="hr">TvTunes je opremljen s moćnim značajkama koje omogućavaju nabavljanje, organizaciju i reproduciranje glazbenih tema dok vi pregledavate vašu Kodi videoteku, kada se koristi zajedno s kompatibilnom presvlakom.</description>
+		<description lang="it">Questo script ti aiuterà ad ottenere il tema delle serie tv presenti nella tua libreria da www.televisiontunes.com, li salverà nel file theme.mp3 in ogni cartella delle tue serie così quando sfoglierai la serie tv il tema sarà eseguito (il tuo skin deve essere compatibile)</description>
+		<description lang="ko">라이브러리의 영화와 TV 쇼 테마 음악을 www.televisiontunes.com 에서 가져와서 theme[0-9].mp3 형식으로 비디오 폴더에 저장합니다. TV 쇼 폴더나 비디오 정보 화면으로 들어가면 비디오 라이브러리를 탐색하는 동안 주제음악이 재생됩니다. (이 기능 사용하려면 스킨에서 지원하여야 합니다.)</description>
+		<description lang="lt">Šis skriptas jums padės temas jūsų filmų ir tv laidų temas iš www.televisiontunes.com. Jos bus išsaugotos theme[0-9].mp3 faile, kiekviename jūsų vaizdo aplanke ir bus atkurtos, naršant vaizdo bibliotekoje, pasirinkus TV laidos aplanką arba vaizdo informacijos langą (teminė išvaizda turi būti suderinama su šia funkcija)</description>
+		<description lang="nl">Dit script zoekt thema`s van TV series in jouw TV seriebibliotheek op www.televisiontunes.com en slaat ze op in thema[0-9].mp3 bestand in elke TV serie map. Ze worden afgespeeld wanneer je de  TV serie in bibliotheek modus bekijkt of Video-informatiescherm (Het gebruikte ontwerp moet wel compatibel zijn met dit script)</description>
+		<description lang="no">TvTunes er velutrustet med kraftige funksjoner som gjør det mulig hente, organisere og spille av kjenningsmelodier mens du blar igjennom Kodi biblioteket.</description>
+		<description lang="pl">Dodatek TvTunes wyposażono w potężny zestaw funkcji umożliwiający pobieranie, organizowanie i odtwarzanie motywów muzycznych podczas przeglądania biblioteki Kodi.</description>
+		<description lang="pt">Com este addon, poderá obter as músicas dos filmes e séries TV na sua biblioteca a partir de televisiontunes.com. Serão guardadas em ficheiros theme[0-9].mp3 dentro das pastas de vídeo e serão reproduzidas durante a navegação na biblioteca de vídeo, quando entrar dentro da pasta de Séries TV ou no ecrã de Informação de Vídeo (é necessário um tema compatível).</description>
+		<description lang="pt_BR">Este script ajudará você a obter o tema da sua coleção de séries de TV de www.televisiontunes.com, que serão salvos em um arquivo theme.mp3 em cada uma das pastas de suas séries e serão reproduzidos sempre que você acessar uma série na sua coleção (a skin precisa ser compatível com este recurso)</description>
+		<description lang="sv">Detta skript hjälper dig att hitta teman till ditt tv-seriebibliotek från www.televisiontunes.com som sparas i theme.mp3 filer i varje tv-seriemapp som sedan spelas när du öppnar tv-seriemappen (ditt skal måste vara kompatibelt för detta)</description>
+		<language />
+		<platform>all</platform>
+		<news>[B][COLOR=FF2CD13B]v2.1.1[/COLOR][/B] - Release date January 26, 2024[CR]
+[B][COLOR=FFFFA500]FIXES[/COLOR][/B]
+• I removed the deprecated check for "videolibrary". It was throwing an error in the log.
+• I fixed a problem with the NFO log messages. Thanks to quickmic for reporting the bug!
+		</news>
+		<license>See LICENSE.txt</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=347428</forum>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<banner>resources/banner.jpg</banner>
+			<logo>resources/logo.png</logo>
+		</assets>
+	</extension>
+</addon><addon id="skin.madnox" version="21.02.05" name="Madnox" provider-name="Kittmaster">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0" />
+		<import addon="script.embuary.helper" version="2.0.8" />
+		<import addon="script.embuary.info" version="2.0.8" />
+		<import addon="script.skinshortcuts" version="1.0.17" />
+		<import addon="script.image.resource.select" version="2.0.4" />		
+		<import addon="script.cu.lrclyrics" version="6.6.9" />
+		<import addon="script.trakt" version="3.6.1" />
+		<import addon="service.upnext" version="1.1.9+matrix.1" />
+		<import addon="script.favourites" version="8.1.2" />
+		<import addon="script.artistslideshow" version="3.3.8" />
+		<import addon="script.rss.editor" version="4.0.2" />
+		<import addon="plugin.library.node.editor" version="2.0.5" />
+		<import addon="resource.images.weathericons.3d-coloured" version="0.0.6" />
+		<import addon="resource.images.weatherfanart.multi" version="0.0.6" />
+		<import addon="resource.images.studios.white" version="0.0.30" />
+		<import addon="resource.images.studios.coloured" version="0.0.23" />	
+		<import addon="resource.images.recordlabels.white" version="0.0.7" />
+		<import addon="resource.images.languageflags.rounded" version="0.0.2" />
+		<import addon="resource.images.musicgenreicons.text" version="0.1.0" />
+		<import addon="resource.images.moviegenreicons.filmstrip-hd.colour" version="0.0.2" />
+		<import addon="resource.images.moviegenreicons.filmstrip-hd.bw" version="0.0.2" />
+		<import addon="resource.images.moviecountryicons.flags" version="0.0.1" />
+		<import addon="script.skinvariables" version="2.1.14" />
+		
+		<import addon="plugin.video.themoviedb.helper" version="6.8.23" />		
+		<import addon="script.artwork.dump" version="0.4.1" />
+		<import addon="service.tvtunes" version="2.1.1" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">A feature rich and fully customizable skin</summary>
+		<description lang="en_GB">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
+		<disclaimer lang="en_GB">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>https://forum.kodi.tv/forumdisplay.php?fid=314</forum>
+		<source>https://github.com/kittmaster/KittmasterRepo</source>
+		<website>https://github.com/kittmaster/KittmasterRepo</website>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-08.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
+		</assets>		
+		<news>v.21.02.05
+            -Fixed widgets on main screen to use custom color picker
+            -Subtitle color parameters can now be adjusted within the skin using custom color picker
+            -Remove experimental replacement dev flag until next iteration
+            -Minor code cleanup and refactoring
+            v.21.02.04
+			-Fixed navigation corrections to TMDb Helper page and Movie/TV Show buttons/panels.
+			v.21.02.03
+			-Removed duplicate language strings
+			-Fixed metadata slider and countdown timer inverted logic
+			-Add Norwegian language strings
+			v.21.02.02
+			-Added navigation corrections to TMDb Helper page
+			-Adjust default icon color include variable to correct for "icon error" where error is not present.
+			v.21.02.01
+			-* Global *-
+			-Minor version increase to 21.02.01.
+			-(WIP) (Long Term) - Begin migration from Embuary Helper to TMDb Helper. Not a trivial change, maintained as much of the physical workflow as possible, some minor changes have been made and cannot be reverted to old methods, adoption should be easily understood.
+			-Restructured Information dialog to support Person/Bio info into same dialog structure.
+			-Multiple additions to Meta data fields providing more online and local data media labels.
+			-Choice of large or small Madnox logo on startup.
+			-Added Left/Right arrows for metadata when value is greater than 8 items for visual cue.
+			-User adjustable time interval for Left/Right arrow slide (i.e. how often it switches if greater than 8 items).
+			-Added countdown timer to display Left/Right switching duration and switch point (visual cue).
+			-Added icons to various dialogs like "effects" for snow/leaves to visually display icon in dialog selection.
+			-Added Madnox logo to all dialog popups.
+			-Updated multiple strings to add uniqueness and better user experience diverging from cookie cutter phrases.
+			-Added Recommendations panel to TMDb display dialog.
+			-Added additional icons, feedback, graphical elements based on restructured layout to TMDb Infopage.
+			-Fixed aspect ratio for "Videos" and removed limit of 2 in TMDb Infopage.
+			-Aspect Ratio and Resolution icons colors can be set globally in the admin panel (10 options).
+			-Entirely retooled color picker dialog replacing Kodi's built-in version allowing slider control of RGBA.
+			-Local script logging enable/disable, defaults to off to prevent bloating KODI log file for debugging.
+			-Automatic download of baseline image collections (weather, studio etc.), can be removed or replaced as needed. Rationale: provide better start point of visuals since most users can be overwhelmed on what they should or should not use based on taste/workflow. Default download and enable will provide a better user experience and will not affect lower tier hardware as it requires minimal space requirements.
+			-Removed errant label in system info right side panel
+			-Multiple mini scripts to replicate Embuary Helper to maintain core functionality, including play all, color picker, and new feature adds.
+			-Added Skin Variables addons to add additional capability to replicate local related type movies and future capability updates and features.
+			
+			-* Biography *-
+			-Added death date (if applicable).
+			-Updated Infoline with additional icons below main title.
+			-Added feedback on rollover of panel data across all buttons.
+			-Restructured page for better flow.
+			-Shows local discart if movies are in focus and rollover of local movie with artwork is present.			
+			
+			-* Movies *-			
+			-Added date to main title in Information view.
+			-Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
+			-Updated Infoline and icons below main title with several revised icons.
+			-Several string updates for uniformity between dialogs
+			-Increased icon sizes in Infoline.			
+			
+			-* TV Shows *-
+			-Added color control to TV Show returning/air date from grey to color picker selection with persistence.
+			-Updated icons for returning, not returning.
+			-Added date to main title in Information view.
+			-Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
+			-Updated Infoline and icons below main title with several revised icons.
+			-Increased icon sizes in Infoline.
+			
+			-* Music *-
+			-Added year to Now Playing after album (if present).
+			-Added Aspect Ratio adjust to Admin panel to control Fanart background.
+			-Added switch to Now Playing script view when Play All is activated.
+			-(WIP) - Looking at reworking ID tag area.
+		</news>
+	</extension>
+</addon></addons>
