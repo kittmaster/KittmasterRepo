@@ -1,8 +1,9 @@
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.items.database.basedata import ItemDetailsDatabaseAccess
 
 
 class ItemDetailsList(ItemDetailsDatabaseAccess):
+    conflict_constraint = 'id'
     conditions = 'parent_id=?'  # WHERE conditions
     keys = ()
 
@@ -35,8 +36,11 @@ class ItemDetailsList(ItemDetailsDatabaseAccess):
         return [tuple([self.get_configure_mapped_data_list(i, k) for k in self.keys]) for i in data[self.table]]
 
     def try_cached_data(self, online_data_mapped):
+        kwgs = {'conflict_constraint': self.conflict_constraint}
         args = (self.table, self.keys, self.configure_mapped_data_list(online_data_mapped))
-        return (self.set_cached_list_values, args, {})
+        return (self.set_or_update_null_cached_list_values, args, kwgs)
+        # args = (self.table, self.keys, self.configure_mapped_data_list(online_data_mapped))
+        # return (self.set_cached_list_values, args, {})
 
 
 class ArtworkDetailsMixin:
@@ -44,10 +48,18 @@ class ArtworkDetailsMixin:
     def image_path_func(v):
         return v
 
-    def get_cached_data_by_language(self):
+    def get_cached_data_by_iso_country(self):
+        conditions = f'iso_country=? AND {self.conditions}'
+        values = (self.common_apis.tmdb_api.iso_country, *self.values)
+        return self.get_cached_list_values(self.cached_data_table, self.cached_data_keys, values, conditions)
+
+    def get_cached_data_by_iso_language(self):
         conditions = f'iso_language=? AND {self.conditions}'
         values = (self.common_apis.tmdb_api.iso_language, *self.values)
         return self.get_cached_list_values(self.cached_data_table, self.cached_data_keys, values, conditions)
+
+    def get_cached_data_by_language(self):
+        return self.get_cached_data_by_iso_country() or self.get_cached_data_by_iso_language()
 
     def get_cached_data_by_english(self):
         conditions = f'iso_language=? AND {self.conditions}'
@@ -55,7 +67,7 @@ class ArtworkDetailsMixin:
         return self.get_cached_list_values(self.cached_data_table, self.cached_data_keys, values, conditions)
 
     def get_cached_data_by_null(self):
-        conditions = f'iso_language IS NULL AND {self.conditions}'
+        conditions = f'(iso_language IS NULL OR iso_language="xx") AND {self.conditions}'
         return self.get_cached_list_values(self.cached_data_table, self.cached_data_keys, self.values, conditions)
 
     def get_cached_data(self):

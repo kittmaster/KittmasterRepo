@@ -1,9 +1,11 @@
 from tmdbhelper.lib.items.directories.tmdb.lists_standard import ListStandard, ListStandardProperties
 from tmdbhelper.lib.api.tmdb.users import TMDbUser
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 
 
 class ListAuthenticatedProperties(ListStandardProperties):
+
+    request_kwgs = {}
 
     @cached_property
     def url(self):
@@ -11,8 +13,8 @@ class ListAuthenticatedProperties(ListStandardProperties):
         url = self.tmdb_user_api.format_authorised_path(url)
         return url
 
-    def get_uncached_response(self, page=1):
-        return self.tmdb_user_api.get_authorised_response_json(self.url, page=page)
+    def get_api_response(self, page=1):
+        return self.tmdb_user_api.get_authorised_response_json(self.url, page=page, **self.request_kwgs)
 
 
 class ListAuthenticatedNoCacheProperties(ListAuthenticatedProperties):
@@ -86,6 +88,7 @@ class ListFavourites(ListAuthenticatedNoCache):
     def configure_list_properties(self, list_properties):
         list_properties = super().configure_list_properties(list_properties)
         list_properties.request_url = 'account/{{account_id}}/{tmdb_type}/favorites'
+        list_properties.request_kwgs = {'sort_by': 'created_at.desc'}
         list_properties.localize = 1036
         return list_properties
 
@@ -94,6 +97,7 @@ class ListWatchlist(ListAuthenticatedNoCache):
     def configure_list_properties(self, list_properties):
         list_properties = super().configure_list_properties(list_properties)
         list_properties.request_url = 'account/{{account_id}}/{tmdb_type}/watchlist'
+        list_properties.request_kwgs = {'sort_by': 'created_at.desc'}
         list_properties.localize = 32193
         return list_properties
 
@@ -102,6 +106,7 @@ class ListRated(ListAuthenticatedNoCache):
     def configure_list_properties(self, list_properties):
         list_properties = super().configure_list_properties(list_properties)
         list_properties.request_url = 'account/{{account_id}}/{tmdb_type}/rated'
+        list_properties.request_kwgs = {'sort_by': 'created_at.desc'}
         list_properties.localize = 32521
         return list_properties
 

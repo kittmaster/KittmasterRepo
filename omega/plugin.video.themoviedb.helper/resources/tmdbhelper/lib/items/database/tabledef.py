@@ -18,6 +18,17 @@ BASEITEM_COLUMNS = {
         'data': 'INTEGER DEFAULT 0 NOT NULL',
         'indexed': True
     },
+    'fanart_tv': {
+        'data': 'INTEGER DEFAULT 0 NOT NULL',
+        'indexed': True
+    },
+    'translation': {
+        'data': 'INTEGER DEFAULT 0 NOT NULL',
+        'indexed': True
+    },
+    'language': {
+        'data': 'TEXT',
+    },
 }
 
 MOVIE_COLUMNS = {
@@ -232,7 +243,6 @@ EPISODE_COLUMNS = {
     },
 }
 
-
 BELONGS_COLUMNS = {
     'id': {
         'data': 'TEXT',
@@ -247,7 +257,6 @@ BELONGS_COLUMNS = {
         'unique': True,
     },
 }
-
 
 COLLECTION_COLUMNS = {
     'id': {
@@ -680,6 +689,10 @@ ART_COLUMNS = {
         'data': 'TEXT',
         'indexed': True,
     },
+    'iso_country': {
+        'data': 'TEXT',
+        'indexed': True,
+    },
     'icon': {
         'data': 'TEXT',
         'unique': True,
@@ -737,6 +750,22 @@ FANART_TV_COLUMNS = {
     },
 }
 
+USER_ART_COLUMNS = {
+    'type': {
+        'data': 'TEXT',
+        'unique': True,
+    },
+    'icon': {
+        'data': 'TEXT',
+    },
+    'parent_id': {
+        'data': 'TEXT',
+        'foreign_key': 'baseitem(id)',
+        'indexed': True,
+        'unique': True,
+    },
+}
+
 UNIQUE_ID_COLUMNS = {
     'key': {
         'data': 'TEXT',
@@ -750,6 +779,32 @@ UNIQUE_ID_COLUMNS = {
         'foreign_key': 'baseitem(id)',
         'indexed': True,
         'unique': True,
+    },
+}
+
+TRANSLATION_COLUMNS = {
+    'iso_country': {
+        'data': 'TEXT',
+        'unique': True,
+    },
+    'iso_language': {
+        'data': 'TEXT',
+        'unique': True,
+    },
+    'plot': {
+        'data': 'TEXT',
+    },
+    'title': {
+        'data': 'TEXT',
+    },
+    'tagline': {
+        'data': 'TEXT',
+    },
+    'parent_id': {
+        'data': 'TEXT',
+        'foreign_key': 'baseitem(id)',
+        'indexed': True,
+        'unique': True
     },
 }
 
@@ -781,8 +836,8 @@ SIMPLECACHE_COLUMNS = {
         'data': 'INTEGER',
         'sync': None
     },
-    'trakt_id': {
-        'data': 'INTEGER',
+    'trakt_slug': {
+        'data': 'TEXT',
         'sync': None
     },
     'premiered': {
@@ -939,6 +994,11 @@ SIMPLECACHE_COLUMNS = {
         'indexed': True
     },
     'next_episode_id': {
+        'data': 'TEXT',
+        'sync': ('tmdbhelper.lib.api.trakt.sync.datatype', 'SyncNextEpisodes', ),
+        'indexed': True
+    },
+    'next_episode_aired_at': {
         'data': 'TEXT',
         'sync': ('tmdbhelper.lib.api.trakt.sync.datatype', 'SyncNextEpisodes', ),
         'indexed': True

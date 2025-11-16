@@ -1,15 +1,23 @@
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 
 
 class TraktPlayData():
-    def __init__(self, pauseplayprogress=False, watchedindicators=False, unwatchedepisodes=False):
+    def __init__(self, pauseplayprogress=False, watchedindicators=False):
         self._pauseplayprogress = pauseplayprogress  # Set play progress using paused at position
         self._watchedindicators = watchedindicators  # Set watched status and playcount
-        self._unwatchedepisodes = unwatchedepisodes  # Set unwatched episode count to total episode count for unwatched tvshows (if false)
+
+    @property
+    def is_enabled(self):
+        if self.trakt_api.authenticator.is_authorized:
+            if self._watchedindicators:
+                return bool(self.trakt_syncdata)
+            if self._pauseplayprogress:
+                return bool(self.trakt_syncdata)
+        return False
 
     def is_sync(func):
         def wrapper(self, *args, **kwargs):
-            if not self.trakt_syncdata:
+            if not self.is_enabled:
                 return
             return func(self, *args, **kwargs)
         return wrapper
@@ -17,9 +25,7 @@ class TraktPlayData():
     @cached_property
     def trakt_api(self):
         from tmdbhelper.lib.api.trakt.api import TraktAPI
-        api = TraktAPI()
-        api.attempted_login = True  # Avoid asking for authorization
-        return api
+        return TraktAPI()
 
     @cached_property
     def trakt_syncdata(self):
@@ -34,7 +40,7 @@ class TraktPlayData():
             if self._pauseplayprogress:
                 self.trakt_syncdata.sync('movie', ('playback_progress', ))
 
-        info_tvshow = ('stars_in_tvshows', 'crew_in_tvshows', 'trakt_userlist', 'trakt_calendar', 'stars_in_both', 'crew_in_both',)
+        info_tvshow = ('stars_in_tvshows', 'crew_in_tvshows', 'trakt_userlist', 'trakt_calendar', 'stars_in_both', 'crew_in_both', 'specified_episodes')
         if tmdb_type in ('tv', 'season', 'both',) or info in info_tvshow:
             if self._watchedindicators:
                 self.trakt_syncdata.sync('show', ('plays', 'watched_episodes', 'aired_episodes', ))

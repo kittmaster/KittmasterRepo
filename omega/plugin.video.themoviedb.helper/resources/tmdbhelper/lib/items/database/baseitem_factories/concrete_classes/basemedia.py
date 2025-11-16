@@ -1,4 +1,4 @@
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.items.database.baseitem_factories.concrete_classes.baseclass import BaseItem
 
 
@@ -14,6 +14,7 @@ class MediaItem(BaseItem):
             self.return_basemeta_db('genre'),
             self.return_basemeta_db('country'),
             self.return_basemeta_db('certification'),
+            self.return_basemeta_db('translation'),
             self.return_basemeta_db('video'),
             self.return_basemeta_db('company'),
             self.return_basemeta_db('studio'),

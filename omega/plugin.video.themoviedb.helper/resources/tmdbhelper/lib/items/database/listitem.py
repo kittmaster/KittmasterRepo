@@ -1,6 +1,6 @@
 from tmdbhelper.lib.api.contains import CommonContainerAPIs
 from tmdbhelper.lib.items.database.baseitem_factories.factory import BaseItemFactory
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.items.listitem import ListItem
 from tmdbhelper.lib.addon.plugin import convert_type
 from tmdbhelper.lib.items.database.database import ItemDetailsDatabase
@@ -52,7 +52,7 @@ class ListItemConfig:
     def get_configured_listitem(self, data):
         if self.next_page and not self.parent.pagination:
             return
-        self.listitem.set_details(data, override=True) if data else None
+        self.listitem.set_details(data, override=True, reverse_artwork=True) if data else None
         return self.listitem
 
     @cached_property
@@ -183,7 +183,10 @@ class ListItemCacher:
         if not self.baseitem_db_cache:
             return
         # self.baseitem_db_cache.connection = connection
-        self.baseitem_db_cache.cache_refresh = 'basic' if self.parent.cache_refresh == 'basic' else None
+        self.baseitem_db_cache.cache_refresh = (
+            self.parent.cache_refresh if self.parent.cache_refresh in ('basic', 'langs')
+            else None
+        )
         return self.baseitem_db_cache.try_cached_data(return_queue=True)
 
 

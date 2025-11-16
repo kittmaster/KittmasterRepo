@@ -1,4 +1,4 @@
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.items.database.basedata import ItemDetailsDatabaseAccess
 from tmdbhelper.lib.addon.consts import DATALEVEL_MAX
 from jurialmunkey.locker import MutexPropLock
@@ -101,6 +101,4 @@ class BaseList(ItemDetailsDatabaseAccess):
             return self.try_cached_data()
         if self.cache_refresh == 'never':
             return self.get_cached_data()
-        if self.cache_refresh == 'check':
-            return self.get_cached_data() or self.try_cached_data()
         return self.get_cached_data() or self.try_cached_data(True)

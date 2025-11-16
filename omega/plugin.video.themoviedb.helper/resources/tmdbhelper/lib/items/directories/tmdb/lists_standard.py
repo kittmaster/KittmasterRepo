@@ -1,10 +1,6 @@
 from tmdbhelper.lib.items.directories.lists_default import ListDefault, ListProperties
 from tmdbhelper.lib.addon.plugin import get_setting
-from tmdbhelper.lib.files.ftools import cached_property
-from jurialmunkey.parser import try_int
-
-
-PAGES_LENGTH = get_setting('pagemulti_tmdb', 'int') or 1
+from jurialmunkey.ftools import cached_property
 
 
 class UncachedItemsPage:
@@ -14,10 +10,13 @@ class UncachedItemsPage:
 
     @cached_property
     def response(self):
-        return self.outer_class.get_uncached_response(self.page)
+        return self.outer_class.get_api_response(self.page)
 
     @cached_property
     def results(self):
+        return self.get_results()
+
+    def get_results(self):
         try:
             results = self.response[self.outer_class.results_key]
         except (TypeError, KeyError):
@@ -32,14 +31,17 @@ class UncachedItemsPage:
 
     @cached_property
     def items(self):
-        return [
+        return self.get_items()
+
+    def get_items(self):
+        return [j for j in [
             self.outer_class.get_mapped_item(i, add_infoproperties=(
                 ('total_pages', self.outer_class.total_pages),
                 ('total_results', self.outer_class.total_items),
                 ('rank', x),
             ))
             for x, i in enumerate(self.results, 1) if i
-        ]
+        ] if j]
 
 
 class ListStandardProperties(ListProperties):
@@ -50,9 +52,9 @@ class ListStandardProperties(ListProperties):
 
     @property
     def next_page(self):
-        return self.page + self.length
+        return self.page + self.pmax
 
-    def get_uncached_response(self, page=1):
+    def get_api_response(self, page=1):
         return self.tmdb_api.get_response_json(self.url, page=page)
 
     def get_uncached_items(self):
@@ -73,11 +75,12 @@ class ListStandardProperties(ListProperties):
 
 
 class ListStandard(ListDefault):
-
     list_properties_class = ListStandardProperties
 
-    def get_items(self, *args, length=None, **kwargs):
-        return super().get_items(*args, length=try_int(length) or PAGES_LENGTH, **kwargs)
+    def configure_list_properties(self, list_properties):
+        list_properties = super().configure_list_properties(list_properties)
+        list_properties.page_length = get_setting('pagemulti_tmdb', 'int') or 1
+        return list_properties
 
 
 class ListPopular(ListStandard):

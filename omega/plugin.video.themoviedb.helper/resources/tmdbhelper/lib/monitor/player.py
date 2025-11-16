@@ -1,200 +1,9 @@
 from xbmc import Player
-from json import loads
-from jurialmunkey.parser import boolean
-from jurialmunkey.window import get_property
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.monitor.images import ImageFunctions
 from tmdbhelper.lib.monitor.common import CommonMonitorFunctions
 from tmdbhelper.lib.addon.plugin import get_condvisibility, get_infolabel, get_setting
-
-
-class PlayerScrobbler():
-    def __init__(self, trakt_api, total_time):
-        self.trakt_api = trakt_api
-        self.current_time = 0
-        self.total_time = total_time
-        self.tvdb_id = self.playerstring.get('tvdb_id')
-        self.imdb_id = self.playerstring.get('imdb_id')
-        self.tmdb_id = self.playerstring.get('tmdb_id')
-        self.tmdb_type = self.get_playerstring_tmdb_type()
-        self.season = int(self.playerstring.get('season') or 0)
-        self.episode = int(self.playerstring.get('episode') or 0)
-        self.stopped = False
-        self.started = False
-
-    def get_playerstring_tmdb_type(self):
-        tmdb_type = self.playerstring.get('tmdb_type')
-        if tmdb_type in ('movie', ):
-            return 'movie'
-        if tmdb_type in ('season', 'episode', 'tv'):
-            return 'tv'
-        return ''
-
-    def is_trakt_authorized(func):
-        """ decorator to check that trakt is authorized  """
-
-        def wrapper(self, *args, **kwargs):
-            if not boolean(get_property('TraktIsAuth')):
-                return
-            if not get_setting('trakt_scrobbling'):
-                return
-            if not self.trakt_api.authorization:
-                return
-            if not self.trakt_item:
-                return
-            return func(self, *args, **kwargs)
-
-        return wrapper
-
-    def is_scrobbling(func):
-        """ decorator to check if available item should be scrobbled """
-
-        def wrapper(self, *args, **kwargs):
-            if self.stopped:
-                return
-            if not self.tmdb_type:
-                return
-            if not self.tmdb_id:
-                return
-            if not self.total_time:
-                return
-            return func(self, *args, **kwargs)
-
-        return wrapper
-
-    @property
-    def progress(self):
-        return ((self.current_time / self.total_time) * 100)
-
-    @cached_property
-    def playerstring(self):
-        return self.get_playerstring()
-
-    @staticmethod
-    def get_playerstring():
-        playerstring = get_property('PlayerInfoString')
-        if not playerstring:
-            return {}
-        return loads(playerstring)
-
-    def is_match(self, tmdb_type, tmdb_id):
-        if f'{self.tmdb_id}' != f'{tmdb_id}':
-            return False
-        if f'{self.tmdb_type}' != f'{tmdb_type}':
-            return False
-        return True
-
-    @is_scrobbling
-    def update_time(self, tmdb_type, tmdb_id, current_time):
-        if not self.is_match(tmdb_type, tmdb_id):
-            return
-        self.current_time = current_time
-
-    @cached_property
-    def trakt_item(self):
-        return self.get_trakt_item() or {}
-
-    @is_scrobbling
-    def get_trakt_item(self):
-        if self.tmdb_type == 'tv':
-            if not self.season or not self.episode:
-                return
-            return {
-                'show': {'ids': {'tmdb': self.tmdb_id}},
-                'episode': {'season': self.season, 'number': self.episode},
-                'progress': self.progress
-            }
-
-        if self.tmdb_type == 'movie':
-            return {
-                'movie': {'ids': {'tmdb': self.tmdb_id}},
-                'progress': self.progress
-            }
-
-    @is_scrobbling
-    @is_trakt_authorized
-    def trakt_scrobbling(self, method):
-        if method not in ('start', 'pause', 'stop'):
-            return
-        self.trakt_item['progress'] = self.progress
-        self.trakt_api.get_api_request(
-            f'https://api.trakt.tv/scrobble/{method}',
-            postdata=self.trakt_item,
-            headers=self.trakt_api.headers,
-            method='json'
-        )
-
-    @is_scrobbling
-    def start(self, tmdb_type, tmdb_id):
-        if not self.is_match(tmdb_type, tmdb_id):
-            return self.stop(tmdb_type, tmdb_id)
-        self.trakt_scrobbling('start')
-        self.started = True
-
-    @is_scrobbling
-    def pause(self, tmdb_type, tmdb_id):
-        if not self.is_match(tmdb_type, tmdb_id):
-            return self.stop(tmdb_type, tmdb_id)
-        self.trakt_scrobbling('pause')
-
-    @is_scrobbling
-    def stop(self, tmdb_type, tmdb_id):
-        if not self.started:
-            return
-        self.trakt_scrobbling('stop')
-        self.set_kodi_watched()
-        self.update_stats()
-        # TODO: Decide if we allow further scrobbling of item if restarted after stopped
-        # if self.is_match(tmdb_type, tmdb_id):
-        #     return
-        self.stopped = True
-
-    @is_scrobbling
-    @is_trakt_authorized
-    def update_stats(self):
-        from tmdbhelper.lib.script.method.trakt import get_stats
-        from tmdbhelper.lib.addon.consts import LASTACTIVITIES_DATA
-        get_property(LASTACTIVITIES_DATA, clear_property=True)
-        get_stats()
-
-    @is_scrobbling
-    def set_kodi_watched(self):
-        if not self.current_time:
-            return
-
-        # Only update if progress is 75% or more
-        if self.progress < 75:
-            return
-
-        import tmdbhelper.lib.api.kodi.rpc as rpc
-
-        if self.tmdb_type == 'tv':
-            tvshowid = rpc.KodiLibrary('tvshow').get_info(
-                info='dbid',
-                imdb_id=self.imdb_id,
-                tmdb_id=self.tmdb_id,
-                tvdb_id=self.tvdb_id)
-            if not tvshowid:
-                return
-            dbid = rpc.KodiLibrary('episode', tvshowid).get_info(
-                info='dbid',
-                season=self.season,
-                episode=self.episode)
-            if not dbid:
-                return
-            rpc.set_watched(dbid=dbid, dbtype='episode')
-            return
-
-        if self.tmdb_type == 'movie':
-            dbid = rpc.KodiLibrary('movie').get_info(
-                info='dbid',
-                imdb_id=self.imdb_id,
-                tmdb_id=self.tmdb_id,
-                tvdb_id=self.tvdb_id)
-            if not dbid:
-                return
-            rpc.set_watched(dbid=dbid, dbtype='movie')
-            return
+from tmdbhelper.lib.monitor.scrobbler import PlayerScrobbler
 
 
 class PlayerItem():
@@ -285,6 +94,12 @@ class PlayerItem():
         return self.meta.get('Year')
 
     @property
+    def episode_year(self):
+        if self.dbtype != 'episode':
+            return
+        return self.meta.get('Year')
+
+    @property
     def season(self):
         if self.dbtype != 'episode':
             return
@@ -304,37 +119,60 @@ class PlayerItem():
             return 'tv'
         return ''
 
+    @property
+    def infolabel_uniqueid_tmdb(self):
+        return self.meta.get('UniqueID.tmdb')
+
+    @property
+    def infolabel_uniqueid_tvshow_tmdb(self):
+        return self.meta.get('UniqueID.tvshow.tmdb')
+
+    @cached_property
+    def identifier_id(self):
+        from tmdbhelper.lib.query.database.identifier import make_identifier_id
+        return make_identifier_id(
+            dbtype=f'{self.dbtype}s' if self.dbtype else None,
+            query=self.query,
+            season=self.season,
+            episode=self.episode,
+            imdb_id=self.imdb_id,
+            year=self.year,
+            episode_year=self.episode_year,
+            infolabel_uniqueid_tmdb=self.infolabel_uniqueid_tmdb,
+            infolabel_uniqueid_tvshow_tmdb=self.infolabel_uniqueid_tvshow_tmdb,
+        )
+
     @cached_property
     def tmdb_id(self):
-        return self.get_tmdb_id()
+        identifier_details = self._parent.get_identifier_details(self.identifier_id)
+        identifier_details = identifier_details or self._parent.set_identifier_details(
+            self.identifier_id,
+            self.get_tmdb_id(),
+            self.tmdb_type
+        )
+        if identifier_details:
+            # self.tmdb_type = identifier_details.tmdb_type  # TODO: Check if we need this in player like service
+            return identifier_details.tmdb_id
 
     def get_tmdb_id_parent(self):
-        if self.dbtype != 'episode':
-            return self.meta.get('UniqueID.tmdb')
-
-        tmdb_id = self.meta.get('UniqueID.tvshow.tmdb')
-
-        return tmdb_id or self._parent.get_tmdb_id_parent(
-            tmdb_id=self.meta.get('UniqueID.tmdb'),
-            trakt_type='episode',
-            season_episode_check=(
-                self.season,
-                self.episode,
+        if self.dbtype == 'episode':
+            return self.infolabel_uniqueid_tvshow_tmdb or self._parent.get_tmdb_id_parent(
+                tmdb_id=self.infolabel_uniqueid_tmdb,
+                item_type='episode',
+                season=self.season,
+                episode=self.episode,
             )
-        )
+        return self.infolabel_uniqueid_tmdb
 
     def get_tmdb_id(self):
-        if self.dbtype not in ('episode', 'movie'):
-            return
-
-        tmdb_id = self.get_tmdb_id_parent()
-
-        return tmdb_id or self._parent.get_tmdb_id(
-            self.tmdb_type,
-            self.imdb_id,
-            self.query,
-            self.year,
-        )
+        if self.dbtype in ('episode', 'movie'):
+            return self.get_tmdb_id_parent() or self._parent.get_tmdb_id(
+                tmdb_type=self.tmdb_type,
+                query=self.query,
+                imdb_id=self.imdb_id,
+                year=self.year,
+                episode_year=self.episode_year,
+            )
 
     def get_ratings(self):
         if not self.details:
@@ -450,18 +288,32 @@ class PlayerMonitor(Player, CommonMonitorFunctions):
     def tmdb_id(self):
         return self.player_item.tmdb_id
 
+    def get_clearlogo(self):
+        art = self.details.get('art') or {}
+        return (
+            (
+                art.get('clearlogo')
+                or art.get('tvshow.clearlogo')
+                or get_infolabel('Player.Art(clearlogo)')
+                or get_infolabel('Player.Art(artist.clearlogo)')
+                or get_infolabel('Player.Art(tvshow.clearlogo)')
+            )
+            if get_setting('service_prefers_online_clearlogo') else
+            (
+                get_infolabel('Player.Art(clearlogo)')
+                or get_infolabel('Player.Art(artist.clearlogo)')
+                or get_infolabel('Player.Art(tvshow.clearlogo)')
+                or art.get('clearlogo')
+                or art.get('tvshow.clearlogo')
+            )
+
+        )
+
     def update_crop(self):
         if get_condvisibility("!Skin.HasSetting(TMDbHelper.EnableCrop)"):
             return
 
-        art = self.details.get('art') or {}
-
-        clearlogo = (
-            get_infolabel('Player.Art(clearlogo)')
-            or get_infolabel('Player.Art(artist.clearlogo)')
-            or get_infolabel('Player.Art(tvshow.clearlogo)')
-            or art.get('clearlogo')
-            or art.get('tvshow.clearlogo'))
+        clearlogo = self.get_clearlogo()
 
         if clearlogo != self.previous_clearlogo:
             ImageFunctions(method='crop', is_thread=False, prefix='Player', artwork=clearlogo).run()

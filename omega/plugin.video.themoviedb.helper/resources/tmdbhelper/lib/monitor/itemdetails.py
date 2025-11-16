@@ -1,8 +1,9 @@
 from tmdbhelper.lib.addon.plugin import get_condvisibility, get_setting
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.monitor.images import ImageManipulations
 from tmdbhelper.lib.items.listitem import ListItem
 from tmdbhelper.lib.api.mapping import get_empty_item
+from tmdbhelper.lib.query.database.identifier import make_identifier_id
 
 
 class MonitorItemDetails(ImageManipulations):
@@ -13,7 +14,8 @@ class MonitorItemDetails(ImageManipulations):
     allow_episode = ('episodes', 'multi')
     allow_season = ('seasons', 'episodes', 'multi')
     allow_base_id = ('movies', 'tvshows', 'actors', 'sets')
-    allow_year = ('movies', )
+    allow_episode_year = ('seasons', 'episodes', )
+    allow_year = ('movies', 'tvshows', )
 
     container_dbtype_to_tmdb_type = {
         'movies': 'movie',
@@ -38,6 +40,13 @@ class MonitorItemDetails(ImageManipulations):
         return get_condvisibility((
             '!Skin.HasSetting(TMDbHelper.DisableExtendedProperties) | '
             '!String.IsEmpty(Window.Property(TMDbHelper.EnableExtendedProperties))'
+        ))
+
+    @property
+    def is_translation(self):
+        return get_condvisibility((
+            'Skin.HasSetting(TMDbHelper.EnableTranslationProperties) | '
+            '!String.IsEmpty(Window.Property(TMDbHelper.EnableTranslationProperties))'
         ))
 
     @cached_property
@@ -92,6 +101,7 @@ class MonitorItemDetails(ImageManipulations):
             self.get_infolabel('filenameandpath'),
             self.get_infolabel('label'),
             self.get_infolabel('dbtype'),
+            self.get_property('Service.Reload'),
         ))
 
     """
@@ -114,7 +124,7 @@ class MonitorItemDetails(ImageManipulations):
 
     @cached_property
     def is_container_content_lookups(self):
-        if self.parent._container != 'Container.':
+        if self.parent.container != 'Container.':
             return False
         if not get_setting('service_container_content_fallback'):
             return False
@@ -167,6 +177,12 @@ class MonitorItemDetails(ImageManipulations):
         return self.get_infolabel('year')
 
     @cached_property
+    def episode_year(self):
+        if self.dbtype not in self.allow_episode_year:
+            return
+        return self.get_infolabel('year')
+
+    @cached_property
     def season(self):
         if self.dbtype not in self.allow_season:
             return
@@ -189,8 +205,10 @@ class MonitorItemDetails(ImageManipulations):
     def parent_tvshow_tmdb_id(self):
         return self.parent.get_tmdb_id_parent(
             tmdb_id=self.infolabel_uniqueid_tmdb,
-            trakt_type='episode',
-            season_episode_check=(self.season, self.episode,))
+            item_type='episode',
+            season=self.season,
+            episode=self.episode,
+        )
 
     @cached_property
     def parent_tmdb_id(self):
@@ -199,6 +217,7 @@ class MonitorItemDetails(ImageManipulations):
             query=self.query,
             imdb_id=self.imdb_id,
             year=self.year,
+            episode_year=self.episode_year,
         )
 
     @cached_property
@@ -227,7 +246,32 @@ class MonitorItemDetails(ImageManipulations):
         return tmdb_id
 
     @cached_property
+    def identifier_id(self):
+        return make_identifier_id(
+            dbtype=self.dbtype,
+            query=self.query,
+            season=self.season,
+            episode=self.episode,
+            imdb_id=self.imdb_id,
+            year=self.year,
+            episode_year=self.episode_year,
+            infolabel_uniqueid_tmdb=self.infolabel_uniqueid_tmdb,
+            infolabel_uniqueid_tvshow_tmdb=self.infolabel_uniqueid_tvshow_tmdb,
+        )
+
+    @cached_property
     def tmdb_id(self):
+        identifier_details = self.parent.get_identifier_details(self.identifier_id)
+        identifier_details = identifier_details or self.parent.set_identifier_details(
+            self.identifier_id,
+            self.get_tmdb_id(),
+            self.tmdb_type
+        )
+        if identifier_details:
+            self.tmdb_type = identifier_details.tmdb_type
+            return identifier_details.tmdb_id
+
+    def get_tmdb_id(self):
         if self.dbtype in self.allow_base_id:
             return self.infolabel_uniqueid_tmdb or self.parent_tmdb_id
 
@@ -286,7 +330,7 @@ class MonitorItemDetails(ImageManipulations):
 
     def get_lidc_item(self):
         self.parent.lidc.extendedinfo = self.is_extended
-        self.parent.lidc.cache_refresh = None
+        self.parent.lidc.cache_refresh = 'langs' if self.is_translation else None
         return self.parent.lidc.get_item(self.tmdb_type, self.tmdb_id, self.season, self.episode)
 
     def update_lidc_item(self):

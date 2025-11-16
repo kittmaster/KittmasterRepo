@@ -5,41 +5,12 @@ from tmdbhelper.lib.script.method.decorators import is_in_kwargs, get_tmdb_id
 from tmdbhelper.lib.addon.plugin import get_localized
 
 
-TMDB_USER_API_ROUTES = {
-    # 'add_favorite': {'func': 'add_favorite', 'name': get_localized(32490)},
-    # 'add_watchlist': {'func': 'add_watchlist', 'name': get_localized(32291)},
-    # 'del_favorite': {'func': 'del_favorite', 'name': get_localized(32491)},
-    # 'del_watchlist': {'func': 'del_watchlist', 'name': get_localized(32292)},
-    'modify_watchlist': {'func': 'modify_watchlist', 'name': get_localized(32526)},
-    'modify_favorite': {'func': 'modify_favorite', 'name': get_localized(32525)},
-    'modify_list': {'func': 'modify_list', 'name': get_localized(32523)},
-}
-
-
-def select_sync_type():
-    choices = [k for k in TMDB_USER_API_ROUTES.keys()]
-    d_items = [TMDB_USER_API_ROUTES[k]['name'] for k in choices]
-    from xbmcgui import Dialog
-    x = Dialog().select(get_localized(32522), d_items)
-    if x == -1:
-        return
-    return choices[x]
-
-
 @is_in_kwargs({'tmdb_type': ['movie', 'tv']})
 @get_tmdb_id
 def sync_tmdb(tmdb_type=None, tmdb_id=None, season=None, episode=None, sync_type=None, **kwargs):
-    sync_type = sync_type or select_sync_type()
-    if sync_type not in TMDB_USER_API_ROUTES:
-        return
-    return sync_tmdb_item(tmdb_type=tmdb_type, tmdb_id=tmdb_id, season=season, episode=episode, sync_type=sync_type, **kwargs)
-
-
-def sync_tmdb_item(tmdb_type=None, tmdb_id=None, season=None, episode=None, sync_type=None, **kwargs):
-    from tmdbhelper.lib.api.tmdb.users import TMDbUser
-    tmdb_user_api = TMDbUser()
-    func = getattr(tmdb_user_api, TMDB_USER_API_ROUTES[sync_type]['func'])
-    func(tmdb_type=tmdb_type, tmdb_id=tmdb_id, season=season, episode=episode)
+    """ Open sync trakt menu for item """
+    from tmdbhelper.lib.script.sync.tmdb.menu import sync_item
+    sync_item(tmdb_type=tmdb_type, tmdb_id=tmdb_id, season=season, episode=episode, sync_type=sync_type)
 
 
 def refresh_item(tmdb_type, tmdb_id, season=None, episode=None, **kwargs):
@@ -73,7 +44,7 @@ def refresh_item(tmdb_type, tmdb_id, season=None, episode=None, **kwargs):
 
 def delete_itemtype(mediatype=None, confirmation=True, **kwargs):
     from xbmcgui import Dialog
-    from tmdbhelper.lib.addon.dialog import BusyDialog
+    from tmdbhelper.lib.addon.dialog import ProgressDialog
     from tmdbhelper.lib.addon.logger import TimerFunc
     from tmdbhelper.lib.items.database.database import ItemDetailsDatabase
 
@@ -114,13 +85,22 @@ def delete_itemtype(mediatype=None, confirmation=True, **kwargs):
     ):
         return
 
-    with BusyDialog():
+    with ProgressDialog(
+        title=f'{get_localized(32387).format(mediatype.capitalize())}',
+        total=(len(routes[mediatype]['baseitems']) + len(routes[mediatype]['tables']) + 1),
+        background=False,
+    ) as progress_dialog:
         database = ItemDetailsDatabase()
         with TimerFunc(f'Deleting mediatype {mediatype}:', inline=True):
             for i in routes[mediatype]['baseitems']:
-                database.execute_sql(f'DELETE FROM baseitem WHERE mediatype="{i}"')
+                statement = f'DELETE FROM baseitem WHERE mediatype="{i}"'
+                progress_dialog.update(statement)
+                database.execute_sql(statement)
             for i in routes[mediatype]['tables']:
-                database.execute_sql(f'DELETE FROM {i}')
+                statement = f'DELETE FROM {i}'
+                progress_dialog.update(statement)
+                database.execute_sql(statement)
+            progress_dialog.update('Vacuuming database...')
             database.execute_sql('VACUUM')
 
     if confirmation:

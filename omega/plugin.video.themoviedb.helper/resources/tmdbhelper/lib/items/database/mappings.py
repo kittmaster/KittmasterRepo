@@ -31,17 +31,14 @@ class ItemMapperMethods:
             return 0
 
     @staticmethod
-    def add_art_type(item_id, path, art_type, aspect_ratio):
+    def add_art_type(item_id, image_path, image_type, ratio_type):
         from tmdbhelper.lib.addon.consts import IMAGEPATH_ASPECTRATIO
         return {
             'parent_id': item_id,
-            'aspect_ratio': IMAGEPATH_ASPECTRATIO.index(aspect_ratio),
-            'quality': 0,
-            'icon': get_blanks_none(path),
-            'type': art_type,
-            'extension': get_blanks_none(path.split('.')[-1] if path else None),
-            'rating': 0,
-            'votes': 0,
+            'aspect_ratio': IMAGEPATH_ASPECTRATIO.index(ratio_type),
+            'icon': get_blanks_none(image_path),
+            'type': image_type,
+            'extension': get_blanks_none(image_path.split('.')[-1] if image_path else None),
         }
 
     @staticmethod
@@ -129,6 +126,24 @@ class ItemMapperMethods:
         return data
 
     @staticmethod
+    def get_translations(items, **kwargs):
+        if not items:
+            return
+        results = items.get('translations')
+        if not results:
+            return
+        data = [
+            {
+                'iso_country': get_blanks_none(translation['iso_3166_1']),
+                'iso_language': get_blanks_none(translation['iso_639_1']),
+                'title': get_blanks_none(translation['data'].get('title') or translation['data'].get('name')),
+                'plot': get_blanks_none(translation['data'].get('overview')),
+                'tagline': get_blanks_none(translation['data'].get('tagline')),
+            } for translation in results
+        ]
+        return data
+
+    @staticmethod
     def get_certifications(items, **kwargs):
         if not items:
             return
@@ -162,17 +177,20 @@ class ItemMapperMethods:
         collection_item['id'] = collection_id
         data.append(ExtendedMap('collection', collection_id, False, collection_item))
 
-        for icon_type, aspect in (('poster_path', 'posters'), ('backdrop_path', 'backdrops')):
-            icon = i.get(icon_type)
-            if not icon:
+        for image_path, image_type, ratio_type in (
+            ('poster_path', 'posters', 'poster'),
+            ('backdrop_path', 'backdrops', 'landscape')
+        ):
+            image_path = i.get(image_path)
+            if not image_path:
                 continue
-            data.append(ExtendedMap('art', icon, False, {
-                'parent_id': collection_id,
-                'icon': icon,
-                'type': aspect,
-                'aspect_ratio': aspect,
-                'extension': icon.split('.')[-1],
-            }))
+
+            data.append(ExtendedMap('art', image_path, False, ItemMapperMethods.add_art_type(
+                item_id=item_id,
+                image_path=image_path,
+                image_type=image_type,
+                ratio_type=ratio_type
+            )))
 
         data.append(ExtendedMap('belongs', item_id, False, {
             'id': item_id,
@@ -183,12 +201,12 @@ class ItemMapperMethods:
             'id': collection_id,
             'mediatype': 'set',
             'expiry': 0,
+            'language': self.language,
         }))
 
         return data
 
-    @staticmethod
-    def get_collection(collection_object, **kwargs):
+    def get_collection(self, collection_object, **kwargs):
         data = []
 
         if not collection_object:
@@ -197,7 +215,7 @@ class ItemMapperMethods:
         collection_id = f"collection.{collection_object['id']}"
 
         for i in (collection_object.get('parts') or []):
-            data.extend(ItemMapperMethods.get_media_item_data(i, 'movie'))
+            data.extend(self.get_media_item_data(i, 'movie'))
             data.append(ExtendedMap('belongs', f'movie.{i["id"]}', False, {
                 'id': f'movie.{i["id"]}',
                 'parent_id': collection_id,
@@ -214,7 +232,7 @@ class ItemMapperMethods:
         collection_id = f"collection.{self.tmdb_id}"
 
         for i in parts:
-            data.extend(ItemMapperMethods.get_media_item_data(i, 'movie'))
+            data.extend(self.get_media_item_data(i, 'movie'))
             data.append(ExtendedMap('belongs', f'movie.{i["id"]}', False, {
                 'id': f'movie.{i["id"]}',
                 'parent_id': collection_id,
@@ -244,17 +262,18 @@ class ItemMapperMethods:
             data.append(ExtendedMap('person', item_id, False, person_item))
 
             if i.get('profile_path'):
-                artwork = self.add_art_type(
+                artwork = ItemMapperMethods.add_art_type(
                     item_id=item_id,
-                    path=i['profile_path'],
-                    art_type='profiles',
-                    aspect_ratio='poster')
+                    image_path=i['profile_path'],
+                    image_type='profiles',
+                    ratio_type='poster')
                 data.append(ExtendedMap('art', artwork['icon'], False, artwork))
 
             data.append(ExtendedMap('baseitem', item_id, False, {
                 'id': item_id,
                 'mediatype': 'person',
                 'expiry': 0,
+                'language': self.language,
             }))
 
         return data
@@ -295,20 +314,22 @@ class ItemMapperMethods:
             'id': item_id,
             'mediatype': 'episode',
             'expiry': 0,
+            'language': self.language,
         }))
 
         data.append(ExtendedMap('baseitem', season_id, False, {
             'id': season_id,
             'mediatype': 'season',
             'expiry': 0,
+            'language': self.language,
         }))
 
         if i.get('still_path'):
-            artwork = self.add_art_type(
+            artwork = ItemMapperMethods.add_art_type(
                 item_id=item_id,
-                path=i['still_path'],
-                art_type='stills',
-                aspect_ratio='landscape')
+                image_path=i['still_path'],
+                image_type='stills',
+                ratio_type='landscape')
             data.append(ExtendedMap('art', artwork['icon'], False, artwork))
 
         # Use last/next aired duration if available for tvshow duration
@@ -341,6 +362,7 @@ class ItemMapperMethods:
                     'id': item_id,
                     'mediatype': 'person',
                     'expiry': 0,
+                    'language': self.language,
                 }))
 
                 jobs = (i.get(jobkey) or []) if aggregrate else [i]
@@ -361,11 +383,11 @@ class ItemMapperMethods:
                 data.append(ExtendedMap('person', item_id, False, person_item))
 
                 if i.get('profile_path'):
-                    artwork = self.add_art_type(
+                    artwork = ItemMapperMethods.add_art_type(
                         item_id=item_id,
-                        path=i['profile_path'],
-                        art_type='profiles',
-                        aspect_ratio='poster')
+                        image_path=i['profile_path'],
+                        image_type='profiles',
+                        ratio_type='poster')
                     data.append(ExtendedMap('art', artwork['icon'], False, artwork))
 
         return data
@@ -387,7 +409,7 @@ class ItemMapperMethods:
         for subkey, mapkey, config in mappings:
             credits = items.get(subkey) or []
             for i in credits:
-                data.extend(ItemMapperMethods.get_media_item_data(i, tmdb_type))
+                data.extend(self.get_media_item_data(i, tmdb_type))
 
                 credit_item = ItemMapperMethods.get_configured_item(i, **config)
                 credit_item['parent_id'] = f'{tmdb_type}.{i["id"]}'
@@ -396,8 +418,7 @@ class ItemMapperMethods:
 
         return data
 
-    @staticmethod
-    def get_media_item_data(i, tmdb_type, **additional_params):
+    def get_media_item_data(self, i, tmdb_type, **additional_params):
         data = []
 
         item_id = f'{tmdb_type}.{i["id"]}'
@@ -426,19 +447,22 @@ class ItemMapperMethods:
             'id': item_id,
             'mediatype': mediatype,
             'expiry': 0,
+            'language': self.language,
         }))
 
-        for icon_type, aspect in (('poster_path', 'posters'), ('backdrop_path', 'backdrops')):
-            icon = i.get(icon_type)
-            if not icon:
+        for image_path, image_type, ratio_type in (
+            ('poster_path', 'posters', 'poster'),
+            ('backdrop_path', 'backdrops', 'landscape')
+        ):
+            image_path = i.get(image_path)
+            if not image_path:
                 continue
-            data.append(ExtendedMap('art', icon, False, {
-                'parent_id': item_id,
-                'icon': icon,
-                'type': aspect,
-                'aspect_ratio': aspect,
-                'extension': icon.split('.')[-1],
-            }))
+            data.append(ExtendedMap('art', image_path, False, ItemMapperMethods.add_art_type(
+                item_id=item_id,
+                image_path=image_path,
+                image_type=image_type,
+                ratio_type=ratio_type
+            )))
         return data
 
     def get_episodes(self, items, **kwargs):
@@ -467,17 +491,18 @@ class ItemMapperMethods:
             data.append(ExtendedMap('episode', item_id, True, episode_item))
 
             if i.get('still_path'):
-                artwork = self.add_art_type(
+                artwork = ItemMapperMethods.add_art_type(
                     item_id=item_id,
-                    path=i['still_path'],
-                    art_type='stills',
-                    aspect_ratio='landscape')
+                    image_path=i['still_path'],
+                    image_type='stills',
+                    ratio_type='landscape')
                 data.append(ExtendedMap('art', artwork['icon'], False, artwork))
 
             data.append(ExtendedMap('baseitem', item_id, False, {
                 'id': item_id,
                 'mediatype': 'episode',
                 'expiry': 0,
+                'language': self.language,
             }))
 
         return data
@@ -503,17 +528,18 @@ class ItemMapperMethods:
             data.append(ExtendedMap('season', item_id, True, season_item))
 
             if i.get('poster_path'):
-                artwork = self.add_art_type(
+                artwork = ItemMapperMethods.add_art_type(
                     item_id=item_id,
-                    path=i['poster_path'],
-                    art_type='posters',
-                    aspect_ratio='poster')
+                    image_path=i['poster_path'],
+                    image_type='posters',
+                    ratio_type='poster')
                 data.append(ExtendedMap('art', artwork['icon'], False, artwork))
 
             data.append(ExtendedMap('baseitem', item_id, False, {
                 'id': item_id,
                 'mediatype': 'season',
                 'expiry': 0,
+                'language': self.language
             }))
 
         return data
@@ -598,6 +624,7 @@ class ItemMapperMethods:
                             'id': parent_id,
                             'mediatype': 'season',
                             'expiry': 0,
+                            'language': self.language,
                         }))
 
                 data.append(ExtendedMap('fanart_tv', icon, True, item))
@@ -656,6 +683,7 @@ class ItemMapperMethods:
                         'aspect_ratio': ItemMapperMethods.get_aspect_ratio(artwork['aspect_ratio']),
                         'quality': int((artwork['width'] * artwork['height']) // 200000),  # Quality integer to nearest fifth of a megapixel
                         'iso_language': get_blanks_none(artwork['iso_639_1']),
+                        'iso_country': get_blanks_none(artwork['iso_3166_1']),
                         'icon': get_blanks_none(path),
                         'type': get_blanks_none(artwork_type),
                         'extension': get_blanks_none(path.split('.')[-1] if path else None),
@@ -738,7 +766,7 @@ class BlankNoneDict(dict):
 
 
 class ItemMapper(_ItemMapper, ItemMapperMethods):
-    def __init__(self):
+    def __init__(self, language, tmdb_id):
         self.blacklist = ()
         """ Mapping dictionary
         keys:       list of tuples containing parent and child key to add value. [('parent', 'child')]
@@ -797,6 +825,10 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
             'release_dates': [{
                 'keys': [('certification', None)],
                 'func': self.get_certifications,
+            }],
+            'translations': [{
+                'keys': [('translation', None)],
+                'func': self.get_translations,
             }],
             'production_countries': [{
                 'keys': [('country', None)],
@@ -894,6 +926,9 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
             'popularity': ('item', 'popularity')
         }
 
+        self.language = language
+        self.tmdb_id = tmdb_id
+
     def map_dict(self, item, data):
 
         map_dict = {}
@@ -959,6 +994,7 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
             'service': (),
             'video': (),
             'unique_id': (),
+            'translation': (),
 
             # Dictionary mappings
             'custom': (),

@@ -1,4 +1,4 @@
-from tmdbhelper.lib.files.ftools import cached_property
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.items.database.mappings import ItemMapperMethods
 from tmdbhelper.lib.items.database.itemmeta_factories.concrete_classes.baseclass import BaseItem
 from tmdbhelper.lib.items.database.itemmeta_factories.concrete_classes.baseroutes import MediaItemInfoLabelItemRoutes
@@ -15,95 +15,127 @@ class MediaItemArtworkRoutes:
             'affixes': (None, 'language', 'english', 'null'),
             'outputs': 'poster',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': True,
+            'art_api': 'ftv',
         },
         'fanart_tv_landscape': {
             'affixes': (None, 'language', 'english'),
             'outputs': 'landscape',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': True,
+            'art_api': 'ftv',
         },
         'fanart_tv_clearlogo': {
             'affixes': (None, 'language', 'english', 'null'),
             'outputs': 'clearlogo',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': True,
+            'art_api': 'ftv',
         },
         'fanart_tv_fanart': {
             'affixes': (None, ),
             'outputs': 'fanart',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': True,
+            'art_api': 'ftv',
         },
         'fanart_tv_clearart': {
             'affixes': (None, ),
             'outputs': 'clearart',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': True,
+            'art_api': 'ftv',
         },
         'fanart_tv_discart': {
             'affixes': (None, ),
             'outputs': 'discart',
             'parents': (None, ),
-            'ftv_api': True,
+            'art_api': 'ftv',
         },
         'fanart_tv_banner': {
             'affixes': (None, ),
             'outputs': 'banner',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': True,
+            'art_api': 'ftv',
         },
         'art_poster': {
             'affixes': (None, 'language', 'english', 'null'),
             'outputs': 'poster',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': False,
+            'art_api': 'tmdb',
         },
         'art_landscape': {
             'affixes': (None, 'language', 'english'),
             'outputs': 'landscape',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': False,
+            'art_api': 'tmdb',
         },
         'art_clearlogo': {
             'affixes': (None, 'language', 'english', 'null'),
             'outputs': 'clearlogo',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': False,
+            'art_api': 'tmdb',
         },
         'art_fanart': {
             'affixes': (None, ),
             'outputs': 'fanart',
             'parents': (None, 'tvshow', 'season'),
-            'ftv_api': False,
+            'art_api': 'tmdb',
         },
         'art_thumbs': {
             'affixes': (None, ),
             'outputs': 'thumb',
             'parents': (None, ),
-            'ftv_api': False,
+            'art_api': 'tmdb',
         },
         'art_profile': {
             'affixes': (None, ),
             'outputs': 'thumb',
             'parents': (None, ),
-            'ftv_api': False,
+            'art_api': 'tmdb',
         },
         'art_extrafanart': {
             'affixes': (None, ),
             'outputs': 'fanart',
             'parents': (None, ),
-            'ftv_api': False,
+            'art_api': 'tmdb',
+        },
+        'user_art_poster': {
+            'affixes': (None, ),
+            'outputs': 'poster',
+            'parents': (None, 'tvshow', 'season'),
+            'art_api': 'user',
+        },
+        'user_art_landscape': {
+            'affixes': (None, ),
+            'outputs': 'landscape',
+            'parents': (None, 'tvshow', 'season'),
+            'art_api': 'user',
+        },
+        'user_art_clearlogo': {
+            'affixes': (None, ),
+            'outputs': 'clearlogo',
+            'parents': (None, 'tvshow', 'season'),
+            'art_api': 'user',
+        },
+        'user_art_fanart': {
+            'affixes': (None, ),
+            'outputs': 'fanart',
+            'parents': (None, 'tvshow', 'season'),
+            'art_api': 'user',
+        },
+        'user_art_thumb': {
+            'affixes': (None, ),
+            'outputs': 'thumb',
+            'parents': (None, 'tvshow', 'season'),
+            'art_api': 'user',
         },
     }
 
-    def get_art_list(self, affix=None, allow_ftv=False, allow_tmdb=False, no_affix=False):
+    def get_art_list(self, affix=None, allow_ftv=False, allow_tmdb=False, allow_user=False, no_affix=False):
 
         def get_art_tuple(route):
             definition = self.routes[route]
-            if not allow_ftv and definition['ftv_api']:
+            if not allow_ftv and definition['art_api'] == 'ftv':
                 return
-            if not allow_tmdb and not definition['ftv_api']:
+            if not allow_tmdb and definition['art_api'] == 'tmdb':
+                return
+            if not allow_user and definition['art_api'] == 'user':
                 return
             if no_affix and len(definition['affixes']) != 1:
                 return
@@ -157,7 +189,7 @@ class MediaItemArtworkRoutes:
             + self.get_art_list_null(allow_tmdb=True)
 
     @property
-    def configured_routes(self):
+    def base_configured_routes(self):
         if not get_setting('fanarttv_lookup'):
             return self.get_art_list(allow_tmdb=True)
         if not get_setting('language_lookup'):
@@ -167,6 +199,14 @@ class MediaItemArtworkRoutes:
         if not get_setting('fanarttv_prefer'):
             return self.get_art_list_tmdb_language()
         return self.get_art_list_ftv_language()
+
+    @property
+    def user_configured_routes(self):
+        return self.get_art_list(allow_user=True)
+
+    @property
+    def configured_routes(self):
+        return self.user_configured_routes + self.base_configured_routes
 
 
 class MediaItem(BaseItem):
@@ -185,6 +225,7 @@ class MediaItem(BaseItem):
     infolabels_dbcitem_routes = (
         MediaItemInfoLabelItemRoutes.certification,
         MediaItemInfoLabelItemRoutes.trailer,
+        MediaItemInfoLabelItemRoutes.imdbnumber,
     )
 
     """
@@ -286,9 +327,28 @@ class MediaItem(BaseItem):
         },
     )
 
-    def get_infoproperties_custom(self, infoproperties):
-        for i in self.return_basemeta_db('custom').cached_data:
-            infoproperties[i['key']] = i['value']
+    def get_infoproperties_custom(self, infoproperties, subtype=None):
+        for i in self.return_basemeta_db('custom', subtype).cached_data:
+            infoproperties[self.get_subtype_key(i['key'], subtype)] = i['value']
+        return infoproperties
+
+    def get_infoproperties_translation(self, infoproperties, subtype=None):
+
+        generator = (
+            (
+                f"{i['iso_language']}_{subtype or ''}{k}",
+                f"{i['iso_language']}-{i['iso_country']}_{subtype or ''}{k}",
+                i[k]
+            )
+            for i in self.return_basemeta_db('translation', subtype).cached_data
+            for k in ('title', 'plot', 'tagline')
+            if i[k]
+        )
+
+        for key_language, key_combined, value in generator:
+            infoproperties[key_combined] = value
+            infoproperties[key_language] = infoproperties.get(key_language) or value
+
         return infoproperties
 
     def get_infoproperties_progress(self, infoproperties):
@@ -371,10 +431,10 @@ class MediaItem(BaseItem):
 
         return infoproperties
 
-    def get_unique_ids(self, unique_ids):
-        for i in (self.return_basemeta_db('unique_id').cached_data or ()):
-            unique_ids[i['key']] = i['value']
-        unique_ids['tmdb'] = self.parent_db_cache.tmdb_id
+    def get_unique_ids(self, unique_ids, subtype=None):
+        for i in (self.return_basemeta_db('unique_id', subtype).cached_data or ()):
+            unique_ids[self.get_subtype_key(i['key'], subtype)] = i['value']
+        unique_ids[self.get_subtype_key('tmdb', subtype)] = self.parent_db_cache.tmdb_id
         return unique_ids
 
     @cached_property
