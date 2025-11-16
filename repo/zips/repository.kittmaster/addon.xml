@@ -11,12 +11,12 @@
 			<checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/nexus/zips/addons.xml.md5</checksum>
 			<datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/nexus/zips/</datadir>
 		</dir>
-		<dir minversion="21.0.0" maxversion="21.9.9">
+		<dir minversion="21.0.0" maxversion="21.9.0">
 			<info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/addons.xml</info>
 			<checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/addons.xml.md5</checksum>
 			<datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/</datadir>
 		</dir>
-		<dir minversion="22.0.0" maxversion="22.9.9">
+		<dir minversion="21.9.1">
 			<info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/piers/zips/addons.xml</info>
 			<checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/piers/zips/addons.xml.md5</checksum>
 			<datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/piers/zips/</datadir>
