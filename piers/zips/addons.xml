@@ -178,7 +178,7 @@ v0.4.0 (2025-03-23)
 		<import addon="resource.images.moviecountryicons.flags" version="0.0.1" />
 		<import addon="script.skinvariables" version="2.1.14" />
 		
-		<import addon="plugin.video.themoviedb.helper" version="6.8.23" />		
+		<import addon="plugin.video.themoviedb.helper" minversion="6.8.23" />		
 		<import addon="script.artwork.dump" version="0.4.1" />
 		<import addon="service.tvtunes" version="2.1.1" />
 	</requires>
