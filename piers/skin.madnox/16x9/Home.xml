@@ -12,7 +12,7 @@
 	<!-- script.embuary.helper -->
 	<onload condition="!System.AddonIsEnabled(script.embuary.helper)">EnableAddon(script.embuary.helper)</onload>
 	<onload condition="!System.HasAddon(script.embuary.helper)">InstallAddon(script.embuary.helper)</onload>
-		<!-- script.embuary.info -->
+	<!-- script.embuary.info -->
 	<onload condition="!System.AddonIsEnabled(script.embuary.info)">EnableAddon(script.embuary.info)</onload>
 	<onload condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onload>
 	<!-- script.skinvariables -->
@@ -22,10 +22,10 @@
 	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">EnableAddon(plugin.video.themoviedb.helper)</onload>
 	<onload condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onload>
 	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(special://home/addons/skin.madnox/extras/scripts/tmdb_installed_validation.py)</onload>
-		<!-- Start TMDbH service -->
+	<!-- Start TMDbH service -->
     <onload>Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload>RunScript(special://skin/extras/scripts/firstrun_init.py)</onload>
-	<!-- <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload> -->
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
 	
 	<controls>
 		<!-- Backdrop -->

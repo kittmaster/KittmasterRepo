@@ -27,7 +27,7 @@
 		<!-- <import addon="plugin.video.themoviedb.helper" version="5.4.16"/> -->
 		<import addon="plugin.video.themoviedb.helper" version="6.11.5"/>		
 		<import addon="script.artwork.dump" version="0.4.1"/>
-		<import addon="service.tvtunes" version="2.1.1"/>
+		<import addon="service.tvtunes" version="2.1.2"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />

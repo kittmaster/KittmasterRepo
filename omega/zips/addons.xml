@@ -134,7 +134,7 @@ v0.4.0 (2025-03-23)
       <icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="service.tvtunes" name="TVTunes" version="2.1.1" provider-name="latts">
+</addon><addon id="service.tvtunes" name="TVTunes" version="2.1.2" provider-name="latts">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="3.17.0+matrix.2" />
@@ -188,10 +188,9 @@ v0.4.0 (2025-03-23)
 		<description lang="sv">Detta skript hjälper dig att hitta teman till ditt tv-seriebibliotek från www.televisiontunes.com som sparas i theme.mp3 filer i varje tv-seriemapp som sedan spelas när du öppnar tv-seriemappen (ditt skal måste vara kompatibelt för detta)</description>
 		<language />
 		<platform>all</platform>
-		<news>[B][COLOR=FF2CD13B]v2.1.1[/COLOR][/B] - Release date January 26, 2024[CR]
-[B][COLOR=FFFFA500]FIXES[/COLOR][/B]
-• I removed the deprecated check for "videolibrary". It was throwing an error in the log.
-• I fixed a problem with the NFO log messages. Thanks to quickmic for reporting the bug!
+		<news>[B][COLOR=FF2CD13B]v2.1.2[/COLOR][/B] - Release date October 31, 2025[CR]
+[B][COLOR=FFFFA500]FIX[/COLOR][/B]
+• I fixed a problem with the random song not playing for the artist while browsing music.
 		</news>
 		<license>See LICENSE.txt</license>
 		<forum>https://forum.kodi.tv/showthread.php?tid=347428</forum>
