@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol>8</defaultcontrol>
+	<controls>
+		<control type="videowindow">
+			<include>FullScreenDimensions</include>
+			<visible>Player.HasVideo</visible>
+		</control>
+		<control type="mover" id="8">
+			<include>AnimationWindowFade</include>
+			<width>128</width>
+			<height>128</height>
+			<texturefocus colordiffuse="$VAR[PanelHighlightColorVar]">calibration/calibrate-topleft.png</texturefocus>
+			<texturenofocus colordiffuse="grey">calibration/calibrate-topleft.png</texturenofocus>
+			<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
+				<eventconfig type="up" />
+				<eventconfig type="down" />
+				<eventconfig type="left" />
+				<eventconfig type="right" />
+			</movingspeed>
+		</control>
+		<control type="mover" id="9">
+			<include>AnimationWindowFade</include>
+			<left>1792</left>
+			<top>952</top>
+			<width>128</width>
+			<height>128</height>
+			<texturefocus flipx="true" flipy="true" colordiffuse="$VAR[PanelHighlightColorVar]">calibration/calibrate-topleft.png</texturefocus>
+			<texturenofocus flipx="true" flipy="true" colordiffuse="grey">calibration/calibrate-topleft.png</texturenofocus>
+			<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
+				<eventconfig type="up" />
+				<eventconfig type="down" />
+				<eventconfig type="left" />
+				<eventconfig type="right" />
+			</movingspeed>
+		</control>
+		<control type="mover" id="10">
+			<include>AnimationWindowFade</include>
+			<width>640</width>
+			<height>38</height>
+			<texturefocus colordiffuse="$VAR[PanelHighlightColorVar]">calibration/calibrate-subtitles.png</texturefocus>
+			<texturenofocus colordiffuse="grey">calibration/calibrate-subtitles.png</texturenofocus>
+			<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
+				<eventconfig type="up" />
+				<eventconfig type="down" />
+				<eventconfig type="left" />
+				<eventconfig type="right" />
+			</movingspeed>
+		</control>
+		<control type="resize" id="11">
+			<include>AnimationWindowFade</include>
+			<width>512</width>
+			<height>512</height>
+			<texturefocus colordiffuse="$VAR[PanelHighlightColorVar]">calibration/calibrate-pixelratio.png</texturefocus>
+			<texturenofocus colordiffuse="grey">calibration/calibrate-pixelratio.png</texturenofocus>
+			<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
+				<eventconfig type="up" />
+				<eventconfig type="down" />
+				<eventconfig type="left" />
+				<eventconfig type="right" />
+			</movingspeed>
+		</control>
+		<control type="mover" id="12">
+			<include>AnimationWindowFade</include>
+			<top>900</top>
+			<width>100</width>
+			<height>100</height>
+			<texturefocus colordiffuse="$VAR[PanelHighlightColorVar]">calibration/reset.png</texturefocus>
+			<texturenofocus>calibration/reset.png</texturenofocus>
+			<animation effect="fade" end="60" condition="true">conditional</animation>
+		</control>
+		<control type="group">
+			<include>AnimationWindowFade</include>
+			<control type="label" id="2">
+				<top>20</top>
+				<width>100%</width>
+				<height>40</height>
+				<align>center</align>
+				<shadowcolor>shadow</shadowcolor>
+				<font>Font36_Reg</font>
+			</control>
+			<control type="label" id="3">
+				<top>100</top>
+				<width>100%</width>
+				<height>40</height>
+				<align>center</align>
+				<shadowcolor>shadow</shadowcolor>
+				<font>Font36_Reg</font>
+			</control>
+			<control type="label" id="4">
+				<top>180</top>
+				<width>100%</width>
+				<height>40</height>
+				<align>center</align>
+				<shadowcolor>shadow</shadowcolor>
+				<font>Font36_Reg</font>
+			</control>
+		</control>
+	</controls>
+</window>

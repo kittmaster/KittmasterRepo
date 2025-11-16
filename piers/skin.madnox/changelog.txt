@@ -1,0 +1,126 @@
+v.21.02.01
+-* Global *-
+-Minor version increase to 21.02.01.
+-WIP (Long Term) - Begin migration from Embuary Helper to TMDb Helper. Not a trivial change, maintained as much as physical workflow as possible, some minor changes have been made and cannot be reverted to old methods, adoption should be easily understood.
+-Restructured Information dialog to support Person/Bio info into same dialog structure.
+-Multiple additions to Meta data fields providing more online and local data medialabel.
+-Choice of large or small Madnox logo on startup.
+-Added Left/Right arrows for metadata when value is greater than 8 items for visual cue.
+-User adjustable time interval for Left/Right arrow slide (i.e. how often it switches if greater than 8 items).
+-Added countdown timer to display Left/Right switching duration and switch point (visual cue).
+-Added icons to various dialogs like "effects" for snow/leaves to visually display icon in dialog selection.
+-Added Madnox logo to all dialog popups.
+-Updated multiple strings to add uniqueness and better user experience diverging from cookie cutter phrases.
+-Added Recommendations panel to TMDb display dialog.
+-Added additional icons, feedback, graphical elements based on restructured layout to TMDb Infopage.
+-Fixed aspect ratio for "Videos" and removed limit of 2 in TMDb Infopage.
+-Aspect Ratio and Resolution icons colors can be set globally in the admin panel (10 options).
+-Entirely retooled color picker dialog replacing Kodi's built-in version allowing slider control of RGBA.
+-Local script logging enable/disable, defaults to off to prevent bloating KODI log file for debugging.
+-Automatic download of baseline image collections (weather, studio etc.), can be removed or replaced as needed. Rationale: provide better start point of visuals since most users can be overwhelmed on what they should or should not use based on taste/workflow. Default download and enable will provide a better user experience and will not affect lower tier hardware as it requires minimal space requirements.
+-Removed errant label in system info right side panel
+-Multiple mini scripts to replicate Embuary Helper to maintain core functionality, including play all, color picker, and new feature adds.
+-Added Skin Variables capability to replicate local related type movies and future capability updates and features.
+
+-* Biography *-
+-Added death date (if applicable).
+-Updated Infoline with additional icons below main title.
+-Added feedback on rollover of panel data across all buttons.
+-Restructured page for better flow.
+-Shows local discart if movies are in focus and rollover of local movie with artwork is present.			
+
+-* Movies *-			
+-Added date to main title in Information view.
+-Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
+-Updated Infoline and icons below main title with several revised icons.
+-Several string updates for uniformity between dialogs
+-Increased icon sizes in Infoline.			
+
+-* TV Shows *-
+-Added color control to TV Show returning/air date from grey to color picker selection with persistence.
+-Updated icons for returning, not returning.
+-Added date to main title in Information view.
+-Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
+-Updated Infoline and icons below main title with several revised icons.
+-Increased icon sizes in Infoline.
+
+-* Music *-
+-Added year to Now Playing after album (if present).
+-Added Aspect Ratio adjust to Admin panel to control Fanart background.
+-Added switch to Now Playing script view when Play All is activated.
+-WIP - Looking at reworking ID tag area.
+
+v.21.01.01
+-Minor version increase.
+-Multiple change assists from Mike Silvo for Omega compliants (Thanks Mike!).
+-Updated Video resolution icons.
+-Updated Aspect Ratio icons from numeric to ratio.
+-Updated color picker and selection interface.
+-Added color picker box display to render color picker value.
+-Added color selection background image overlay so dark colors don't get lost in the background.
+-Replaced Artwork Beef with Artwork Dump.
+-Added missing options in player controls in the subtitles section.
+-Fixed Favorites for Omega's requirements.
+-Fixed remaining outstanding issues with overlapping media flags with Movies/TV shows linked together.
+-Updated audio channel icons.
+-Fixed PVR and Media OSD info screen and reformatted with added features.
+-Updated/Added multiple strings (EN) and some missing strings.
+-Updated OpenSans Regular, Bold, Condensed fonts to including all missing fractions i.e. Naked Gun 33 1/3.
+
+v.21.00.11
+-Fixed 3 additional views missing top level media flags.
+
+v.21.00.10
+-v.21.00.09 was a bust, do not use it, local mods were not copied over, now they are.
+
+v.21.00.09
+-Added 4th rule for top most root media flags not showing up.
+
+v.21.00.08
+-Fixed logic error in media flags for episode correction.
+-Refactored and added additional logic branch to ensure season/episode container overlapping.
+-Removed v.21.00.06 fix as it created unnecessary logic branch that could be solved in view templates and restore original file logic
+
+v.21.00.07
+-Additional push to include missing files not included from v.21.00.06 update.
+
+v.21.00.06
+-Added fix for episode media flags not displaying, includes file missing episode inclusion.
+
+v.21.00.05
+-Adjusted advanced diagnostics overlay width to account for longer strings and added data
+-Modified multiple view templates like v.21.00.01 View Linked Movie & TV Show media flags overlapping when selected
+-Modified advanced diagnostics network link text status and combined for better readability and flow
+-Multiple syntax/spelling errors in the skin interface settings and localized multiple strings colors/favorites
+
+v.21.00.04
+-Added colons to the advanced diagnostics menu screen for better data separation
+
+v.21.00.03
+-Removed local debug overlay that would interfere with user experience and not needed for normal operation
+
+v.21.00.02
+-Restored missing bug fix code that didn't make previous build revision
+-Merged multiple missing updates to labels, fonts, other objects throughout
+-Added missing font files to package
+
+v.21.00.01
+-GUI value adjusted form 5.14 to 5.15 for Matrix/Nexus installation
+-Fixed hardware/software diagnostics decoder bug (Keyboard Press "O")
+-Fixed PortraitIconInfo View Linked Movie & TV Show media flags overlapping when selected
+-Enhanced diagnostics decoder infomation adding features: Networking section, User Profile Active, Kodi build & version values
+-Added missing font values variable callouts in font.xml
+-Repaired DialogPVRInfo.xml missing data
+
+v.21.00.00
+-Uprev to redux version, mirror image of Mr.V's repository with no modifications
+
+v.20.12.26
+-Fix for info widgets not showing text
+-Update case variables for views and nowplaying
+-Add filename check '4k' for case variables
+-Change image aspect from stretch to scale for cover list when content is not set in a container
+
+
+v.20.11.23
+-Initial release

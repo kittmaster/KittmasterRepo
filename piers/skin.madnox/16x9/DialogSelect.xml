@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">3</defaultcontrol>
+	<include condition="![Window.IsActive(gamestretchmode) | Window.IsActive(gamevideofilter) | Window.IsActive(gamevideorotation)]">AnimationDialogPopupWindow</include>
+	<controls>
+		<include condition="![Window.IsActive(gamestretchmode) | Window.IsActive(gamevideofilter) | Window.IsActive(gamevideorotation)]">DialogSelect</include>
+		<include condition="Window.IsActive(gamevideofilter)">DialogSelectGameFilter</include>
+		<include condition="Window.IsActive(gamestretchmode)">DialogSelectGameView</include>
+		<include condition="Window.IsActive(gamevideorotation)">DialogSelectGameView</include>
+		<control type="image">
+			<left>1304</left>
+			<top>174</top>
+			<width>161.5</width>
+			<height>86</height>
+			<aspectratio>keep</aspectratio>
+			<texture>icons/logo.png</texture>
+		</control>
+	</controls>
+</window>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="repository.kittmaster" name="Kittmaster's Repo" version="1.0.10" provider-name="kittmaster">
+<addons><addon id="repository.kittmaster" name="Kittmaster's Repo" version="1.0.11" provider-name="kittmaster">
 	<extension point="xbmc.addon.repository" name="KittmasterRepo">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/repo/zips/addons.xml</info>
@@ -16,6 +16,11 @@
 			<checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/addons.xml.md5</checksum>
 			<datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/omega/zips/</datadir>
 		</dir>
+		<dir minversion="22.0.0" maxversion="22.9.9">
+			<info compressed="false">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/piers/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/piers/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/kittmaster/KittmasterRepo/master/piers/zips/</datadir>
+		</dir>		
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Kittmaster's Repository for Madnox v3 2024+</summary>
@@ -30,6 +35,8 @@
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
+		Pushed to v.1.0.11[CR]
+		-Adjusted for versioning correctly for Piers		
 		Pushed to v.1.0.10[CR]
 		-Adjusted for versioning correctly for Omega
 		Pushed to v.1.0.09[CR]

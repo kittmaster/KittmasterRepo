@@ -1,0 +1,1991 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<include file="Defaults.xml"/>
+	<include file="Includes_Themes.xml"/>
+	<include file="Includes_ThemeSelect.xml"/>
+	<include file="Includes_Dialogs.xml"/>
+	<include file="Includes_InfoDialogs.xml"/>
+	<include file="Includes_CustomSelect.xml"/>
+	<include file="Includes_Animations.xml"/>
+	<include file="Includes_Backgrounds.xml"/>
+	<include file="Includes_VideoLyrics.xml"/>
+	<include file="Includes_Home.xml"/>
+	<include file="Includes_NowPlaying.xml"/>
+	<include file="script-skinshortcuts-includes.xml"/>
+	<include file="Includes_MediaFlags.xml"/>
+	<include file="Includes_MediaMenu.xml"/>
+	<include file="Includes_Views.xml"/>
+	<include file="Includes_ViewsVariables.xml"/>
+	<include file="Includes_PVR.xml"/>
+	<include file="Includes_Settings.xml"/>
+	<include file="Includes_Topbar.xml"/>
+	<include file="View_050_CoverList.xml"/>
+	<include file="View_051_SimpleList.xml"/>
+	<include file="View_053_InfoList1.xml"/>
+	<include file="View_054_InfoList2.xml"/>
+	<include file="View_055_LowList.xml"/>
+	<include file="View_056_3Panel.xml"/>
+	<include file="View_057_3PanelSquare.xml"/>
+	<include file="View_058_RightList.xml"/>
+	<include file="View_500_Portrait.xml"/>
+	<include file="View_501_Square.xml"/>
+	<include file="View_502_Banner.xml"/>
+	<include file="View_503_Landscape.xml"/>
+	<include file="View_504_Focus.xml"/>
+	<include file="View_505_FocusSquare.xml"/>
+	<include file="View_506_Cascade.xml"/>
+	<include file="View_507_CascadeSquare.xml"/>
+	<include file="View_508_Showcase.xml"/>
+	<include file="View_509_ShowcaseSquare.xml"/>
+	<include file="View_510_KodiFlix.xml"/>
+	<include file="View_511_KodiFlixSquare.xml"/>
+	<include file="View_512_KodiFlixLandscape.xml"/>
+	<include file="View_520_PortraitIcon.xml"/>
+	<include file="View_521_SquareIcon.xml"/>
+	<include file="View_522_BannerIcon.xml"/>
+	<include file="View_523_LandscapeIcon.xml"/>
+	<include file="View_524_SquareIconAlbums.xml"/>
+	<include file="View_530_PortraitIconInfo.xml"/>
+	<include file="View_531_SquareIconInfo.xml"/>
+	<include file="View_532_BannerIconInfo.xml"/>
+	<include file="View_533_LandscapeIconInfo.xml"/>
+	<include file="View_540_PortraitWall.xml"/>
+	<include file="View_541_SquareWall.xml"/>
+	<include file="View_542_BannerWall.xml"/>
+	<include file="View_543_LandscapeWall.xml"/>
+	<constant name="TextureFadeTime">480</constant>
+	<expression name="AreaVisibleVideos">Window.IsVisible(videos) | Window.IsVisible(videoplaylist) | Window.IsVisible(1102)</expression>
+	<expression name="AreaVisibleMusic">Window.IsVisible(music) | Window.IsVisible(musicplaylist) | Window.IsVisible(musicplaylisteditor) | Window.IsVisible(visualisation)</expression>
+	<expression name="AreaVisibleAddons">Window.IsVisible(1114) | Window.IsVisible(programs) | Window.IsVisible(addonbrowser)</expression>
+	<expression name="SystemAnimationOpenCondition">![Window.Previous(settings) | Window.Previous(SettingsCategory.xml) | Window.Previous(skinsettings) | Window.Previous(profiles) | Window.Previous(systeminfo) | Window.Previous(eventlog) | Window.Previous(filemanager)]</expression>
+	<expression name="SystemAnimationCloseCondition">![Window.Next(settings) | Window.Next(SettingsCategory.xml) | Window.Next(skinsettings) | Window.Next(profiles) | Window.Next(systeminfo) | Window.Next(eventlog) | Window.Next(filemanager)]</expression>
+	<expression name="PVRAnimationOpenCondition">![Window.Previous(MyPVRChannels.xml) | Window.Previous(MyPVRGuide.xml) | Window.Previous(MyPVRRecordings.xml) | Window.Previous(MyPVRSearch.xml) | Window.Previous(MyPVRTimers.xml)]</expression>
+	<expression name="PVRAnimationCloseCondition">![Window.Next(MyPVRChannels.xml) | Window.Next(MyPVRGuide.xml) | Window.Next(MyPVRRecordings.xml) | Window.Next(MyPVRSearch.xml) | Window.Next(MyPVRTimers.xml)]</expression>
+	<include name="onunload_SkinSettings">
+		<onunload condition="!Skin.HasSetting(SmartShortcuts.playlists)">Skin.SetBool(SmartShortcuts.playlists)</onunload>
+		<onunload condition="!Skin.HasSetting(BlurEnabled)">Skin.ToggleSetting(BlurEnabled)</onunload>
+		<onunload condition="System.AddonIsEnabled(script.artistslideshow)">RunScript(script.artistslideshow,daemon=True)</onunload>
+	</include>
+	<include name="ContainerScrollTime">
+		<scrolltime tween="sine">480</scrolltime>
+	</include>
+	<include name="FullScreenDimensions">
+		<width>1920</width>
+		<height>1080</height>
+	</include>
+	<include name="HiddenObject">
+		<left>-2000</left>
+		<top>-1100</top>
+		<width>1</width>
+		<height>1</height>
+		<texturefocus/>
+		<texturenofocus/>
+		<font/>
+	</include>
+	<include name="HiddenList">
+		<left>-2000</left>
+		<top>-1100</top>
+		<width>1</width>
+		<height>1</height>
+		<itemlayout/>
+		<focusedlayout/>
+	</include>
+	<include name="Hidden_PlayAll_Container_Music_Videos">		<!-- Play All button content list for music videos -->
+		<control type="panel" id="2090">
+			<visible>false</visible>
+			<content>$VAR[MusicInfoMusicVideoContent]</content>
+		</control>
+	</include>
+	<include name="Hidden_PlayAll_Container_Albums">		<!-- Play All button content list for music videos -->
+		<control type="panel" id="2091">
+			<visible>false</visible>
+			<content>$VAR[MusicInfoAlbumContentVar]</content>
+		</control>
+	</include>
+	<include name="AutoScrollPlot">
+		<autoscroll time="3000" delay="4000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+	</include>
+	<include name="ReloadWindowOnClick">
+		<onclick condition="Window.IsActive(addonbrowser)">SetProperty(ActiveWindow,addons,home)</onclick>
+		<onclick condition="Window.IsActive(music)">SetProperty(ActiveWindow,music,home)</onclick>
+		<onclick condition="Window.IsActive(musicplaylist)">SetProperty(ActiveWindow,musicplaylist,home)</onclick>
+		<onclick condition="Window.IsActive(videoplaylist)">SetProperty(ActiveWindow,videoplaylist,home)</onclick>
+		<onclick condition="Window.IsActive(videos)">SetProperty(ActiveWindow,videos,home)</onclick>
+		<onclick condition="Window.IsActive(programs)">SetProperty(ActiveWindow,programs,home)</onclick>
+		<onclick>SetProperty(ContainerPath,$ESCINFO[Container.FolderPath],home)</onclick>
+		<onclick>Dialog.Close(1115)</onclick>
+		<onclick>ReplaceWindow(1117)</onclick>
+	</include>
+	<variable name="VolumeIconVar">
+		<value condition="Player.Muted">[COLOR white]panels/volume/mute.png[/COLOR]</value>
+		<value condition="Integer.IsGreater(Player.Volume,66)">panels/volume/volume.png</value>
+		<value condition="Integer.IsGreater(Player.Volume,33)">panels/volume/volume2.png</value>
+		<value condition="player.passthrough">panels/volume/volume.png</value>
+		<value>panels/volume/volume1.png</value>
+	</variable>
+	<variable name="IconPathVar">
+		<value condition="Skin.HasSetting(IconsColored)">icons/colored/</value>
+		<value>icons/default/</value>
+	</variable>
+	<!-- Floor -->
+	<include name="Floor">
+		<param name="visible">Skin.HasSetting(SettingsHideFloor)</param>
+		<param name="slide">220</param>
+		<param name="animationopen">true</param>
+		<param name="animationclose">true</param>
+		<param name="highlight">FloorHighlight</param>
+		<param name="top">880</param>
+		<definition>
+			<control type="group">
+				<include content="AnimationSlideBottomWindow">
+					<param name="slide">$PARAM[slide]</param>
+					<param name="opencondition">$PARAM[animationopen]</param>
+					<param name="closecondition">$PARAM[animationclose]</param>
+				</include>
+				<control type="group">
+					<visible>!$PARAM[visible]</visible>
+					<include content="AnimationSlideBottomVisible">
+						<param name="slide">$PARAM[slide]</param>
+					</include>
+					<control type="group">
+						<top>$PARAM[top]</top>
+						<control type="image">
+							<top>-20</top>
+							<width>1920</width>
+							<height>20</height>
+							<texture colordiffuse="$VAR[PanelShadowColorVar]" border="1">panels/floor/shadow.png</texture>
+						</control>
+					</control>
+					<control type="image">
+						<top>$PARAM[top]</top>
+						<bottom>0</bottom>
+						<width>1920</width>
+						<texture colordiffuse="$VAR[FloorStyleColorVar]" border="1">panels/floor/floor.png</texture>
+					</control>
+					<include content="$PARAM[highlight]">
+						<param name="top">$PARAM[top]</param>
+					</include>
+				</control>
+				<control type="image">
+					<visible>$PARAM[visible]</visible>
+					<include>AnimationVisibleFade</include>
+					<top>780</top>
+					<width>1920</width>
+					<height>300</height>
+					<texture border="1">panels/background-gradient.png</texture>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FloorHighlight">
+		<param name="top">880</param>
+		<definition>
+			<control type="image">
+				<top>$PARAM[top]</top>
+				<bottom>0</bottom>
+				<width>1920</width>
+				<texture colordiffuse="$VAR[FloorHighlightColorVar]">panels/floor/highlight.png</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="FloorHighlightLeft">
+		<param name="top">880</param>
+		<definition>
+			<control type="image">
+				<top>$PARAM[top]</top>
+				<bottom>0</bottom>
+				<width>1920</width>
+				<texture flipx="true" colordiffuse="$VAR[FloorHighlightColorVar]">panels/floor/highlight-right.png</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="FloorHighlightRight">
+		<param name="top">880</param>
+		<definition>
+			<control type="image">
+				<top>$PARAM[top]</top>
+				<bottom>0</bottom>
+				<width>1920</width>
+				<texture colordiffuse="$VAR[FloorHighlightColorVar]">panels/floor/highlight-right.png</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="FloorHighlightMiddle">
+		<param name="top">880</param>
+		<definition>
+			<control type="image">
+				<top>$PARAM[top]</top>
+				<bottom>0</bottom>
+				<width>1920</width>
+				<texture colordiffuse="$VAR[FloorHighlightColorVar]">panels/floor/highlight-middle.png</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="FloorShadow">
+		<param name="visible">true</param>
+		<definition>
+			<control type="image">
+				<visible>$PARAM[visible]</visible>
+				<top>780</top>
+				<width>1920</width>
+				<height>300</height>
+				<texture border="1">panels/background-gradient.png</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="FloorShadowWall">
+		<control type="image">
+			<top>900</top>
+			<width>1920</width>
+			<height>180</height>
+			<texture border="1">panels/wall-gradient.png</texture>
+		</control>
+	</include>
+	<!-- Panels -->
+	<include name="PanelWide">
+		<param name="top">860</param>
+		<param name="toptexture">880</param>
+		<param name="topshadow">860</param>
+		<param name="height">220</param>
+		<param name="heighttexture">200</param>
+		<param name="flipy">false</param>
+		<definition>
+			<control type="image">
+				<top>$PARAM[topshadow]</top>
+				<width>1920</width>
+				<height>20</height>
+				<texture flipy="$PARAM[flipy]" colordiffuse="$VAR[PanelShadowColorVar]" border="1">panels/floor/shadow.png</texture>
+			</control>
+			<control type="image">
+				<top>$PARAM[top]</top>
+				<width>1920</width>
+				<height>$PARAM[height]</height>
+				<texture flipy="$PARAM[flipy]" colordiffuse="$VAR[PanelStyleColorVar]" border="1,20,1,20">$VAR[PanelStyleFloorVar]</texture>
+			</control>
+			<control type="image">
+				<top>$PARAM[toptexture]</top>
+				<width>1920</width>
+				<height>$PARAM[heighttexture]</height>
+				<aspectratio align="right" scalediffuse="false">scale</aspectratio>
+				<texture flipy="$PARAM[flipy]" colordiffuse="$VAR[PanelTextureColorVar]" border="1">$INFO[Skin.String(PanelTexture.texture)]</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="PanelDefault">
+		<param name="left">80</param>
+		<param name="right">80</param>
+		<param name="top">80</param>
+		<param name="height">920</param>
+		<param name="lefttexture">100</param>
+		<param name="righttexture">100</param>
+		<param name="toptexture">100</param>
+		<param name="heighttexture">880</param>
+		<param name="diffusetexture">diffuse/rounded20-1720x880.png</param>
+		<param name="reflect">true</param>
+		<param name="reflecttop">965</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group">
+				<visible>$PARAM[visible]</visible>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[reflecttop]</top>
+					<height>$PARAM[height]</height>
+					<texture flipy="true" diffuse="panels/windows/reflect.png" colordiffuse="$VAR[PanelStyleColorVar]" border="40">$VAR[PanelStyleVar]</texture>
+					<visible>$PARAM[reflect]</visible>
+				</control>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[top]</top>
+					<height>$PARAM[height]</height>
+					<texture colordiffuse="$VAR[PanelShadowColorVar]" border="50">$VAR[PanelShadowVar]</texture>
+				</control>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[top]</top>
+					<height>$PARAM[height]</height>
+					<texture colordiffuse="$VAR[PanelStyleColorVar]" border="60">$VAR[PanelStyleVar]</texture>
+				</control>
+				<control type="image">
+					<left>$PARAM[lefttexture]</left>
+					<right>$PARAM[righttexture]</right>
+					<top>$PARAM[toptexture]</top>
+					<height>$PARAM[heighttexture]</height>
+					<aspectratio align="right" scalediffuse="false">scale</aspectratio>
+					<texture diffuse="$PARAM[diffusetexture]" colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
+					<visible>!Skin.HasSetting(PanelSquare.texture)</visible>
+				</control>
+				<control type="image">
+					<left>$PARAM[lefttexture]</left>
+					<right>$PARAM[righttexture]</right>
+					<top>$PARAM[toptexture]</top>
+					<height>$PARAM[heighttexture]</height>
+					<aspectratio align="right" scalediffuse="false">scale</aspectratio>
+					<texture colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
+					<visible>Skin.HasSetting(PanelSquare.texture)</visible>
+				</control>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[top]</top>
+					<height>$PARAM[height]</height>
+					<texture colordiffuse="$VAR[PanelEmbossColorVar]" border="40">$VAR[PanelEmbossVar]</texture>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="PanelSideBlade">
+		<param name="left">80</param>
+		<param name="top">110</param>
+		<param name="width">1760</param>
+		<param name="height">860</param>
+		<param name="lefttexture">100</param>
+		<param name="widthtexture">398</param>
+		<param name="toptexture">130</param>
+		<param name="heighttexture">820</param>
+		<param name="diffusetexture">diffuse/siderounded20-398x820.png</param>
+		<param name="flipx">false</param>
+		<param name="reflect">true</param>
+		<param name="reflecttop">935</param>
+		<definition>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[reflecttop]</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture flipx="$PARAM[flipx]" flipy="true" diffuse="panels/windows/reflect.png" colordiffuse="$VAR[PanelStyleColorVar]" border="40">$VAR[HalfPanelStyleVar]</texture>
+				<visible>$PARAM[reflect]</visible>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture flipx="$PARAM[flipx]" colordiffuse="$VAR[PanelShadowColorVar]" border="50">$VAR[HalfPanelShadowVar]</texture>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture flipx="$PARAM[flipx]" colordiffuse="$VAR[PanelStyleColorVar]" border="60">$VAR[HalfPanelStyleVar]</texture>
+			</control>
+			<control type="image">
+				<left>$PARAM[lefttexture]</left>
+				<top>$PARAM[toptexture]</top>
+				<width>$PARAM[widthtexture]</width>
+				<height>$PARAM[heighttexture]</height>
+				<aspectratio align="right" scalediffuse="false">scale</aspectratio>
+				<texture flipx="$PARAM[flipx]" diffuse="$PARAM[diffusetexture]" colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
+				<visible>!Skin.HasSetting(PanelSquare.texture)</visible>
+			</control>
+			<control type="image">
+				<left>$PARAM[lefttexture]</left>
+				<top>$PARAM[toptexture]</top>
+				<width>$PARAM[widthtexture]</width>
+				<height>$PARAM[heighttexture]</height>
+				<aspectratio align="right" scalediffuse="false">scale</aspectratio>
+				<texture flipx="$PARAM[flipx]" colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
+				<visible>Skin.HasSetting(PanelSquare.texture)</visible>
+			</control>
+			<control type="image">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture flipx="$PARAM[flipx]" colordiffuse="$VAR[PanelEmbossColorVar]" border="40">$VAR[HalfPanelEmbossVar]</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="PanelSide">
+		<param name="left">80</param>
+		<param name="right">80</param>
+		<param name="top">80</param>
+		<param name="height">920</param>
+		<param name="lefttexture">100</param>
+		<param name="righttexture">100</param>
+		<param name="toptexture">100</param>
+		<param name="heighttexture">880</param>
+		<param name="diffusetexture">diffuse/rounded20-1720x880.png</param>
+		<param name="reflect">true</param>
+		<param name="reflecttop">965</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group">
+				<visible>$PARAM[visible]</visible>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[top]</top>
+					<height>$PARAM[height]</height>
+					<texture colordiffuse="$VAR[PanelShadowColorVar]" border="40">$VAR[PanelShadowVar]</texture>
+				</control>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[top]</top>
+					<height>$PARAM[height]</height>
+					<texture colordiffuse="$VAR[PanelStyleColorVar]" border="346,40,40,40">$VAR[SidePanelStyleVar]</texture>
+				</control>
+				<control type="image">
+					<left>$PARAM[lefttexture]</left>
+					<right>$PARAM[righttexture]</right>
+					<top>$PARAM[toptexture]</top>
+					<height>$PARAM[heighttexture]</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="$PARAM[diffusetexture]" colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
+					<visible>!Skin.HasSetting(PanelSquare.texture)</visible>
+				</control>
+				<control type="image">
+					<left>$PARAM[lefttexture]</left>
+					<right>$PARAM[righttexture]</right>
+					<top>$PARAM[toptexture]</top>
+					<height>$PARAM[heighttexture]</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
+					<visible>Skin.HasSetting(PanelSquare.texture)</visible>
+				</control>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[top]</top>
+					<height>$PARAM[height]</height>
+					<texture colordiffuse="$VAR[PanelEmbossColorVar]" border="40">$VAR[PanelEmbossVar]</texture>
+				</control>
+				<control type="image">
+					<left>$PARAM[left]</left>
+					<right>$PARAM[right]</right>
+					<top>$PARAM[reflecttop]</top>
+					<height>$PARAM[height]</height>
+					<texture flipy="true" diffuse="panels/windows/reflect.png" colordiffuse="$VAR[PanelStyleColorVar]" border="346,40,40,40">$VAR[SidePanelStyleVar]</texture>
+					<visible>$PARAM[reflect]</visible>
+				</control>
+				<control type="image">
+					<left>100</left>
+					<bottom>90</bottom>
+					<width>323</width>
+					<height>172</height>
+					<aspectratio>keep</aspectratio>
+					<texture>icons/logo.png</texture>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<!-- Weather -->
+	<include name="WeatherIconAnimation">
+		<fadetime>1</fadetime>
+		<pauseatend>1</pauseatend>
+		<timeperimage>080</timeperimage>
+		<randomize>false</randomize>
+		<loop>true</loop>
+		<aspectratio align="center" aligny="center">keep</aspectratio>
+	</include>
+	<include name="WeatherVerticalList">
+		<include>AnimationVisibleFade</include>
+		<left>460</left>
+		<top>135</top>
+		<width>1325</width>
+		<height>810</height>
+		<onleft>8000</onleft>
+		<itemlayout height="202.5">
+			<control type="image">
+				<bordersize>15</bordersize>
+				<texture colordiffuse="FF000000" border="10">buttons/panel-select-focus.png</texture>
+			</control>
+			<control type="multiimage">
+				<left>35</left>
+				<width>132</width>
+				<include>WeatherIconAnimation</include>
+				<imagepath background="true">$INFO[ListItem.Icon]</imagepath>
+			</control>
+			<control type="label">
+				<top>34</top>
+				<left>188</left>
+				<height>50</height>
+				<font>Font33_Bold_Caps</font>
+				<textcolor>$VAR[PanelTextColorVar]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>71</top>
+				<left>188</left>
+				<height>100</height>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="label">
+				<top>14</top>
+				<right>50</right>
+				<height>172.5</height>
+				<align>right</align>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>$INFO[ListItem.Property(label3)]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout height="202.50">
+			<control type="image">
+				<bordersize>15</bordersize>
+				<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
+			</control>
+			<control type="multiimage">
+				<left>35</left>
+				<width>132</width>
+				<include>WeatherIconAnimation</include>
+				<imagepath background="true">$INFO[ListItem.Icon]</imagepath>
+			</control>
+			<control type="label">
+				<top>34</top>
+				<left>188</left>
+				<height>50</height>
+				<font>Font33_Bold_Caps</font>
+				<textcolor>$VAR[PanelTextColorVar]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<top>71</top>
+				<left>188</left>
+				<height>100</height>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="label">
+				<top>14</top>
+				<right>50</right>
+				<height>172.5</height>
+				<align>right</align>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>$INFO[ListItem.Property(label3)]</label>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="WeatherHorizontalList">
+		<param name="width">439</param>
+		<definition>
+			<include>AnimationVisibleFade</include>
+			<left>460</left>
+			<top>135</top>
+			<width>1325</width>
+			<height>810</height>
+			<orientation>horizontal</orientation>
+			<itemlayout width="$PARAM[width]">
+				<control type="image">
+					<bordersize>15</bordersize>
+					<texture colordiffuse="FF000000" border="10">buttons/panel-select-focus.png</texture>
+				</control>
+				<control type="multiimage">
+					<top>128</top>
+					<height>350</height>
+					<include>WeatherIconAnimation</include>
+					<imagepath background="true">$INFO[ListItem.Icon]</imagepath>
+				</control>
+				<control type="label">
+					<top>30</top>
+					<height>60</height>
+					<align>center</align>
+					<font>Font33_Bold_Caps</font>
+					<textoffsetx>60</textoffsetx>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>495</top>
+					<height>300</height>
+					<align>center</align>
+					<textoffsetx>60</textoffsetx>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="$PARAM[width]">
+				<control type="image">
+					<bordersize>15</bordersize>
+					<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
+				</control>
+				<control type="multiimage">
+					<top>128</top>
+					<height>350</height>
+					<include>WeatherIconAnimation</include>
+					<imagepath background="true">$INFO[ListItem.Icon]</imagepath>
+				</control>
+				<control type="label">
+					<top>30</top>
+					<height>60</height>
+					<align>center</align>
+					<font>Font33_Bold_Caps</font>
+					<textoffsetx>60</textoffsetx>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>495</top>
+					<height>300</height>
+					<align>center</align>
+					<textoffsetx>60</textoffsetx>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</focusedlayout>
+		</definition>
+	</include>
+	<include name="WeatherDayItem">
+		<param name="item"/>
+		<definition>
+			<item>
+				<label>$INFO[Window(weather).Property(Daily.$PARAM[item].LongDay)]</label>
+				<label2>$INFO[Window(weather).Property(Daily.$PARAM[item].Outlook)]</label2>
+				<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Daily.$PARAM[item].FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+				<property name="label3">[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Daily.$PARAM[item].HighTemperature)][/COLOR]$INFO[Window(weather).Property(Daily.$PARAM[item].LowTemperature), ]</property>
+				<visible>!String.IsEmpty(Window(Weather).Property(Daily.$PARAM[item].LongDay))</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="WeatherDailyItem">
+		<param name="item"/>
+		<definition>
+			<item>
+				<label>$INFO[Window.Property(Daily.$PARAM[item].LongDay)]$INFO[Window.Property(Daily.$PARAM[item].LongDate), ]</label>
+				<label2>[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window.Property(Daily.$PARAM[item].HighTemperature)][/COLOR]$INFO[Window.Property(Daily.$PARAM[item].LowTemperature), ]$INFO[Window.Property(Daily.$PARAM[item].Outlook),[CR]]</label2>
+				<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Daily.$PARAM[item].FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+				<property name="label3">$INFO[Window.Property(Daily.$PARAM[item].Precipitation),$LOCALIZE[1448] ][CR]$INFO[Window.Property(Daily.$PARAM[item].WindSpeed)]$INFO[Window.Property(Daily.$PARAM[item].WindDirection),  ]$INFO[Window.Property(Daily.$PARAM[item].WindDegree),  ,]$INFO[Window.Property(Daily.$PARAM[item].Humidity),[CR]$LOCALIZE[406] ]</property>
+				<visible>!String.IsEmpty(Window(weather).Property(Daily.$PARAM[item].LongDay))</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="WeatherHourlyItem">
+		<param name="item"/>
+		<definition>
+			<item>
+				<label>$INFO[Window(weather).Property(Hourly.$PARAM[item].Time)]$INFO[Window(weather).Property(Hourly.$PARAM[item].LongDate), ]</label>
+				<label2>$INFO[Window(weather).Property(Hourly.$PARAM[item].Outlook)][CR]$INFO[Window(weather).Property(Hourly.$PARAM[item].Temperature)]</label2>
+				<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Daily.$PARAM[item].FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+				<property name="label3">$INFO[Window.Property(Hourly.$PARAM[item].Precipitation),$LOCALIZE[1448] ][CR]$INFO[Window.Property(Hourly.$PARAM[item].WindSpeed)]$INFO[Window.Property(Hourly.$PARAM[item].WindDirection),  ]$INFO[Window.Property(Hourly.$PARAM[item].WindDegree),  ,]$INFO[Window.Property(Hourly.$PARAM[item].Humidity),[CR]$LOCALIZE[406] ]</property>
+				<visible>!String.IsEmpty(Window(weather).Property(Hourly.$PARAM[item].Time))</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="Weather36HourItem">
+		<param name="item"/>
+		<definition>
+			<item>
+				<label>$INFO[Window.Property(36Hour.$PARAM[item].Heading)]</label>
+				<label2>$INFO[Window.Property(36Hour.$PARAM[item].Outlook)]$INFO[Window.Property(36Hour.$PARAM[item].TemperatureHeading),[CR], ]$INFO[Window.Property(36Hour.$PARAM[item].Temperature)]$INFO[Window.Property(36Hour.$PARAM[item].FeelsLike),[CR]$LOCALIZE[402] ]$INFO[Window.Property(36Hour.$PARAM[item].Precipitation),[CR]$LOCALIZE[1448] ][CR]$INFO[Window.Property(36Hour.1.WindSpeed)]$INFO[Window.Property(36Hour.$PARAM[item].WindDirection),  ]$INFO[Window.Property(36Hour.$PARAM[item].WindDegree),  ,]$INFO[Window.Property(36Hour.$PARAM[item].Humidity),[CR]$LOCALIZE[406] ]</label2>
+				<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(36Hour.$PARAM[item].FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+				<visible>!String.IsEmpty(Window(weather).Property(36Hour.$PARAM[item].Heading))</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="WeatherWeekendItem">
+		<param name="item"/>
+		<definition>
+			<item>
+				<label>$INFO[Window.Property(Weekend.$PARAM[item].LongDay)] $INFO[Window.Property(Weekend.$PARAM[item].LongDate)]</label>
+				<label2>[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window.Property(Weekend.1.HighTemperature)][/COLOR]$INFO[Window.Property(Weekend.1.LowTemperature),  ]$INFO[Window.Property(Weekend.1.Outlook),[CR]]$INFO[Window.Property(Weekend.$PARAM[item].Precipitation),[CR]$LOCALIZE[1448] ][CR]$INFO[Window.Property(Weekend.1.WindSpeed)]$INFO[Window.Property(Weekend.$PARAM[item].WindDirection),  ]$INFO[Window.Property(Weekend.$PARAM[item].WindDegree),  ,]$INFO[Window.Property(Weekend.$PARAM[item].Humidity),[CR]$LOCALIZE[406] ]</label2>
+				<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Weekend.$PARAM[item].FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+				<visible>!String.IsEmpty(Window(weather).Property(36Hour.$PARAM[item].Heading))</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="WeatherMapItem">
+		<param name="item"/>
+		<param name="visible">false</param>
+		<definition>
+			<control type="group">
+				<visible>$PARAM[visible]</visible>
+				<include>AnimationVisibleFade</include>
+				<left>475</left>
+				<top>150</top>
+				<width>1295</width>
+				<height>780</height>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture>$INFO[Window(weather).Property(Map.$PARAM[item].Area)]</texture>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture colordiffuse="55FFFFFF">$INFO[Window(weather).Property(Map.$PARAM[item].Layer)]</texture>
+				</control>
+				<control type="image">
+					<right>20</right>
+					<bottom>20</bottom>
+					<width>356</width>
+					<height>100</height>
+					<aspectratio align="right" aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(weather).Property(Map.$PARAM[item].Legend)]</texture>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<!-- Search -->
+	<include name="Custom1112PortraitSearchContainer">
+		<param name="id"/>
+		<param name="case">false</param>
+		<param name="content"/>
+		<definition>
+			<control type="list" id="$PARAM[id]">
+				<visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+				<top>180</top>
+				<left>30</left>
+				<right>30</right>
+				<height>575</height>
+				<onleft>9050</onleft>
+				<orientation>horizontal</orientation>
+				<include>ContainerScrollTime</include>
+				<itemlayout height="339" width="232.5">
+					<control type="group">
+						<visible>!Skin.HasSetting(View540VideoCase)</visible>
+						<include content="ViewArtwork">
+							<param name="texturefadetime">0</param>
+							<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+							<param name="diffuse">diffuse/rounded5-243x364.png</param>
+						</include>
+					</control>
+					<control type="group">
+						<visible>Skin.HasSetting(View540VideoCase)</visible>
+						<include content="ViewArtworkVideoCase">
+							<param name="logoheight">27</param>
+							<param name="texturefadetime">0</param>
+							<param name="bordersize">16,35,16,18</param>
+							<param name="watchedstatustop">39</param>
+							<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="339" width="232.5">
+					<control type="group">
+						<control type="image">
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+						</control>
+						<control type="group">
+							<visible>!Skin.HasSetting(View540VideoCase)</visible>
+							<include content="ViewArtwork">
+								<param name="texturefadetime">0</param>
+								<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+								<param name="diffuse">diffuse/rounded5-243x364.png</param>
+							</include>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(View540VideoCase)</visible>
+							<include content="ViewArtworkVideoCase">
+								<param name="logoheight">27</param>
+								<param name="texturefadetime">0</param>
+								<param name="bordersize">16,36,16,18</param>
+								<param name="watchedstatustop">39</param>
+								<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+							</include>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>$PARAM[content]</content>
+				<content>$PARAM[content2]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="Custom1112SquareSearchContainer">
+		<param name="id"/>
+		<param name="case">false</param>
+		<param name="content"/>
+		<definition>
+			<control type="panel" id="$PARAM[id]">
+				<visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+				<top>180</top>
+				<left>30</left>
+				<right>30</right>
+				<height>545</height>
+				<onleft>9050</onleft>
+				<orientation>horizontal</orientation>
+				<include>ContainerScrollTime</include>
+				<itemlayout height="310" width="310">
+					<control type="group">
+						<visible>!Skin.HasSetting(View540VideoCase)</visible>
+						<include content="ViewArtwork">
+							<param name="texturefadetime">0</param>
+							<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+							<param name="diffuse">diffuse/rounded5-243x364.png</param>
+						</include>
+					</control>
+					<control type="group">
+						<visible>Skin.HasSetting(View540VideoCase)</visible>
+						<include content="ViewArtworkVideoCase">
+							<param name="logoheight">27</param>
+							<param name="texturefadetime">0</param>
+							<param name="bordersize">16,35,16,18</param>
+							<param name="watchedstatustop">39</param>
+							<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="310" width="310">
+					<control type="group">
+						<control type="image">
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+						</control>
+						<control type="group">
+							<visible>!Skin.HasSetting(View540VideoCase)</visible>
+							<include content="ViewArtwork">
+								<param name="texturefadetime">0</param>
+								<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+								<param name="diffuse">diffuse/rounded5-243x364.png</param>
+							</include>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(View540VideoCase)</visible>
+							<include content="ViewArtworkVideoCase">
+								<param name="logoheight">27</param>
+								<param name="texturefadetime">0</param>
+								<param name="bordersize">16,36,16,18</param>
+								<param name="watchedstatustop">39</param>
+								<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
+							</include>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>$PARAM[content]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="Custom1112SearchInfoContainer">
+		<param name="id"/>
+		<param name="label"/>
+		<param name="content"/>
+		<definition>
+			<control type="grouplist" id="$PARAM[id]0">
+				<visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+				<left>40</left>
+				<width>910</width>
+				<height>180</height>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label" id="$PARAM[id]1">
+					<height>32</height>
+					<font>Font30_Bold</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<label>$INFO[Container($PARAM[id]).NumItems,$PARAM[label] (,)]</label>
+				</control>
+				<control type="image" id="$PARAM[id]2">
+					<width>388</width>
+					<height>4</height>
+					<aspectratio>scale</aspectratio>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+				<control type="label" id="$PARAM[id]3">
+					<visible>!String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,episode)</visible>
+					<height>30</height>
+					<scroll>true</scroll>
+					<font>Font32_Reg</font>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<label>$INFO[Container($PARAM[id]).ListItem.Label]</label>
+				</control>
+				<control type="label" id="$PARAM[id]4">
+					<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,episode)</visible>
+					<height>30</height>
+					<scroll>true</scroll>
+					<font>Font32_Reg</font>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<label>$INFO[Container($PARAM[id]).ListItem.Season,,x]$INFO[Container($PARAM[id]).ListItem.Episode,,. ]$INFO[Container($PARAM[id]).ListItem.Title]</label>
+				</control>
+				<control type="label" id="$PARAM[id]5">
+					<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,movie) + !String.IsEmpty(Container($PARAM[id]).ListItem.Tagline)</visible>
+					<height>30</height>
+					<scroll>true</scroll>
+					<font>Font28_Reg</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<label>$INFO[Container($PARAM[id]).ListItem.Tagline]</label>
+				</control>
+				<control type="label" id="$PARAM[id]6">
+					<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,artist) | [String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,movie) + String.IsEmpty(Container($PARAM[id]).ListItem.Tagline)]</visible>
+					<height>30</height>
+					<scroll>true</scroll>
+					<font>Font28_Reg</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<label>$INFO[Container($PARAM[id]).ListItem.Genre]</label>
+				</control>
+				<control type="label" id="$PARAM[id]7">
+					<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,episode)</visible>
+					<height>30</height>
+					<scroll>true</scroll>
+					<font>Font28_Reg</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<label>$INFO[Container($PARAM[id]).ListItem.TVShowTitle]</label>
+				</control>
+				<control type="label" id="$PARAM[id]9">
+					<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,album) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,musicvideo) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,song)</visible>
+					<height>30</height>
+					<scroll>true</scroll>
+					<font>Font28_Reg</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<label>$INFO[Container($PARAM[id]).ListItem.Artist]</label>
+				</control>
+				<control type="grouplist">
+					<height>37</height>
+					<usecontrolcoords>true</usecontrolcoords>
+					<orientation>horizontal</orientation>
+					<control type="image">
+						<visible>String.IsEmpty(Container($PARAM[id]).ListItem.AddonName)</visible>
+						<top>9</top>
+						<width>22</width>
+						<height>22</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[IconPathVar]calendar.png</texture>
+					</control>
+					<control type="label" id="5301">
+						<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,episode)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.Date, ,  ]</label>
+					</control>
+					<control type="label" id="5301">
+						<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,album) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,song) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,musicvideo)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.Year, ,  ]</label>
+					</control>
+					<control type="label" id="5301">
+						<visible>String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,artist)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.Property(Artist_YearsActive), ,  ]</label>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Duration)</visible>
+						<top>9</top>
+						<width>22</width>
+						<height>22</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[IconPathVar]timer.png</texture>
+					</control>
+					<control type="label" id="5302">
+						<visible>[String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,episode)] + !String.IsEmpty(Container($PARAM[id]).ListItem.Duration)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.Duration(hh), ,h]$INFO[Container($PARAM[id]).ListItem.Duration(mm),,m  ]</label>
+					</control>
+					<control type="label" id="5302">
+						<visible>[String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,musicvideo) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,song)] + !String.IsEmpty(Container($PARAM[id]).ListItem.Duration)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.Duration(mm), ,m]$INFO[Container($PARAM[id]).ListItem.Duration(ss),,s  ]</label>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Rating) | !String.IsEmpty(Container($PARAM[id]).ListItem.UserRating)</visible>
+						<top>9</top>
+						<width>22</width>
+						<height>22</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[IconPathVar]star.png</texture>
+					</control>
+					<control type="label" id="5303">
+						<visible>!String.IsEmpty(Container($PARAM[id]).ListItem.UserRating)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.UserRating, ,.0  ]</label>
+					</control>
+					<control type="label" id="5303">
+						<visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Rating) + String.IsEmpty(Container($PARAM[id]).ListItem.UserRating)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.Rating, ,  ]</label>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Top250)</visible>
+						<top>3</top>
+						<width>50</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[IconPathVar]imdb.png</texture>
+					</control>
+					<control type="label">
+						<visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Top250)</visible>
+						<width>auto</width>
+						<font>Font26_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[Container($PARAM[id]).ListItem.Top250, #,]</label>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="3PageArrowIndicators">
+		<!-- Fixed 3 Page Indicator Max Limit 24 (Expandable) -->
+		<!-- Indicator for first page (right arrow only if there are more than 8 items) -->
+		<control type="image" id="firstPageRightIndicator">
+			<visible>
+					[Container(9000).HasFocus(112) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 8) + 
+					Integer.IsGreater(Container(9004).NumItems, 8)] |
+					[!Container(9002) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 8) + 
+					Integer.IsGreater(Container(9002).NumItems, 8)] |
+					[Container(9000).HasFocus(107) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 8) + 
+					Integer.IsGreater(Container(9010).NumItems, 8)]					
+			</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>			<!-- RIGHT ARROW  -->
+		</control>
+
+		<!-- Indicator for second page left arrow in 2-page mode -->
+		<control type="image" id="secondPageLeftIndicator2PageMode">
+			<visible>
+					[Integer.IsLessOrEqual(Container(9004).NumItems, 16) + 
+					Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
+					[Integer.IsLessOrEqual(Container(9002).NumItems, 16) + 
+					!Container(9002) + 
+					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
+					[Integer.IsLessOrEqual(Container(9010).NumItems, 16) + 
+					Container(9000).HasFocus(107) + 
+					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
+					
+			</visible>
+			<posx>1086</posx>			<!-- Match the position of the right arrow from page 1 -->
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
+		</control>
+
+		<!-- Indicator for second page right arrow in 3-page mode -->
+		<control type="image" id="secondPageRightIndicator3PageMode">
+			<visible>
+					[Integer.IsGreater(Container(9004).NumItems, 16) + 
+					Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9002).NumItems, 16) + 
+					!Container(9002) + 
+					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9010).NumItems, 16) + 
+					Container(9000).HasFocus(107) + 
+					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]			
+			</visible>
+			<posx>1086</posx>			<!-- Right arrow in 3-page mode -->
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>			<!-- RIGHT ARROW -->
+		</control>
+
+		<!-- Indicator for second page left arrow in 3-page mode -->
+		<control type="image" id="secondPageLeftIndicator3PageMode">
+			<visible>
+					[Integer.IsGreater(Container(9004).NumItems, 16) + 
+					Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9002).NumItems, 16) + 
+					!Container(9002) + 
+					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
+					[Integer.IsGreater(Container(9010).NumItems, 16) + 
+					Container(9000).HasFocus(107) + 
+					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
+					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
+			</visible>
+			<posx>1031</posx>			<!-- Adjusted position to avoid overlap -->
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
+		</control>
+
+		<!-- Indicator for third page (left arrow only if more than 16 items) -->
+		<control type="image" id="thirdPageLeftIndicator">
+			<visible>
+					[Container(9000).HasFocus(112) + 
+					Integer.IsGreater(Container(9004).CurrentItem, 16)] |
+					[!Container(9002) +
+					Integer.IsGreater(Container(9002).CurrentItem, 16)]	|
+					[Container(9000).HasFocus(107) +
+					Integer.IsGreater(Container(9010).CurrentItem, 16)]										
+			</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
+		</control>
+	</include>
+	<variable name="ColorSelectedPicker">
+		<value condition="Window.IsActive(Custom_1104_DialogOverlayColorPicker.xml) + Control.HasFocus(6)">$LOCALIZE[31044]: $INFO[ListItem.Label] - [UPPERCASE]$INFO[ListItem.Label2,#][/UPPERCASE]</value>
+		<value>$LOCALIZE[31044]: Select a color from palette</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Alpha">
+		<value condition="String.IsEqual(Control.GetLabel(3015),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3015),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Red">
+		<value condition="String.IsEqual(Control.GetLabel(3200),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3200),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Green">
+		<value condition="String.IsEqual(Control.GetLabel(3201),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3201),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Blue">
+		<value condition="String.IsEqual(Control.GetLabel(3202),100%)">FF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),99%)">FC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),98%)">FA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),97%)">F7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),96%)">F5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),95%)">F2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),94%)">F0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),93%)">ED</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),92%)">EB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),91%)">E8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),90%)">E6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),89%)">E3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),88%)">E0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),87%)">DE</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),86%)">DB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),85%)">D9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),84%)">D6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),83%)">D4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),82%)">D1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),81%)">CF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),80%)">CC</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),79%)">C9</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),78%)">C7</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),77%)">C4</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),76%)">C2</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),75%)">BF</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),74%)">BD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),73%)">BA</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),72%)">B8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),71%)">B5</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),70%)">B3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),69%)">B0</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),68%)">AD</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),67%)">AB</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),66%)">A8</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),65%)">A6</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),64%)">A3</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),63%)">A1</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),62%)">9E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),61%)">9C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),60%)">99</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),59%)">96</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),58%)">94</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),57%)">91</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),56%)">8F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),55%)">8C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),54%)">8A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),53%)">87</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),52%)">85</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),51%)">82</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),50%)">80</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),49%)">7D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),48%)">7A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),47%)">78</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),46%)">75</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),45%)">73</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),44%)">70</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),43%)">6E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),42%)">6B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),41%)">69</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),40%)">66</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),39%)">63</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),38%)">61</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),37%)">5E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),36%)">5C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),35%)">59</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),34%)">57</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),33%)">54</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),32%)">52</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),31%)">4F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),30%)">4D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),29%)">4A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),28%)">47</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),27%)">45</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),26%)">42</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),25%)">40</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),24%)">3D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),23%)">3B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),22%)">38</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),21%)">36</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),20%)">33</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),19%)">30</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),18%)">2E</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),17%)">2B</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),16%)">29</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),15%)">26</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),14%)">24</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),13%)">21</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),12%)">1F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),11%)">1C</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),10%)">1A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),9%)">17</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),8%)">14</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),7%)">12</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),6%)">0F</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),5%)">0D</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),4%)">0A</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),3%)">08</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),2%)">05</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),1%)">03</value>
+		<value condition="String.IsEqual(Control.GetLabel(3202),0%)">00</value>
+	</variable>
+
+	<variable name="Def_Percent_To_Hex_Color">
+		<value>$VAR[Def_Percent_To_Hex_Alpha]$VAR[Def_Percent_To_Hex_Red]$VAR[Def_Percent_To_Hex_Green]$VAR[Def_Percent_To_Hex_Blue]</value>
+	</variable>
+
+	<variable name="AppliedColorString">
+		<value condition="!String.IsEmpty(Window(Home).Property(ActiveControlPanelNameValue))">#$INFO[Window(Home).Property(ActiveControlPanelNameValue)]</value>
+		<value>Default</value>
+	</variable>
+
+	<!-- Invisible letter for spacing needs -->
+	<variable name="1BlankSpace">
+		<value>[COLOR=00ffffff]1[/COLOR]</value>
+	</variable>
+	<variable name="2BlankSpace">
+		<value>[COLOR=00ffffff]11[/COLOR]</value>
+	</variable>
+	<variable name="3BlankSpace">
+		<value>[COLOR=00ffffff]111[/COLOR]</value>
+	</variable>
+	<variable name="4BlankSpace">
+		<value>[COLOR=00ffffff]1111[/COLOR]</value>
+	</variable>
+	<variable name="5BlankSpace">
+		<value>[COLOR=00ffffff]11111[/COLOR]</value>
+	</variable>
+	<variable name="6BlankSpace">
+		<value>[COLOR=00ffffff]111111[/COLOR]</value>
+	</variable>
+	<variable name="7BlankSpace">
+		<value>[COLOR=00ffffff]1111111[/COLOR]</value>
+	</variable>
+	<variable name="8BlankSpace">
+		<value>[COLOR=00ffffff]11111111[/COLOR]</value>
+	</variable>
+	<variable name="9BlankSpace">
+		<value>[COLOR=00ffffff]111111111[/COLOR]</value>
+	</variable>
+	<variable name="10BlankSpace">
+		<value>[COLOR=00ffffff]1111111111[/COLOR]</value>
+	</variable>
+
+	<variable name="CountDownSelection1">
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),3)">$VAR[ItemListCountDownTimer3]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),4)">$VAR[ItemListCountDownTimer4]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),5)">$VAR[ItemListCountDownTimer5]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),6)">$VAR[ItemListCountDownTimer6]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),7)">$VAR[ItemListCountDownTimer7]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),8)">$VAR[ItemListCountDownTimer8]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),9)">$VAR[ItemListCountDownTimer9]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),10)">$VAR[ItemListCountDownTimer10]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),15)">$VAR[ItemListCountDownTimer15]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),30)">$VAR[ItemListCountDownTimer30]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),60)">$VAR[ItemListCountDownTimer60]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting1),90)">$VAR[ItemListCountDownTimer90]</value>
+	</variable>
+
+	<variable name="CountDownSelection2">
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),3)">$VAR[ItemListCountDownTimer3]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),4)">$VAR[ItemListCountDownTimer4]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),5)">$VAR[ItemListCountDownTimer5]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),6)">$VAR[ItemListCountDownTimer6]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),7)">$VAR[ItemListCountDownTimer7]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),8)">$VAR[ItemListCountDownTimer8]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),9)">$VAR[ItemListCountDownTimer9]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),10)">$VAR[ItemListCountDownTimer10]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),15)">$VAR[ItemListCountDownTimer15]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),30)">$VAR[ItemListCountDownTimer30]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),60)">$VAR[ItemListCountDownTimer60]</value>
+		<value condition="String.IsEqual(Skin.String(ItemsSliderMyTimerSetting2),90)">$VAR[ItemListCountDownTimer90]</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer3">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_3),2)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_3),1)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_3),0)">2</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer4">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),3)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),2)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),1)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_4),0)">3</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer5">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),4)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),3)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),2)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),1)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_5),0)">4</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer6">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),5)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),4)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),3)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),2)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),1)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_6),0)">5</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer7">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),6)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),5)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),4)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),3)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),2)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),1)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_7),0)">6</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer8">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),7)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),6)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),5)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),4)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),3)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),2)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),1)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_8),0)">7</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer9">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),8)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),7)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),6)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),5)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),4)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),3)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),2)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),1)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_9),0)">8</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer10">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),9)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),8)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),7)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),6)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),5)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),4)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),3)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),2)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),1)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_10),0)">9</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer15">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),14)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),13)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),12)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),11)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),10)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),9)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),8)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),7)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),6)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),5)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),4)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),3)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),2)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),1)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_15),0)">14</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer20">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),19)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),18)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),17)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),16)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),15)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),14)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),13)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),12)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),11)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),10)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),9)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),8)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),7)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),6)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),5)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),4)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),3)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),2)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),1)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_20),0)">19</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer30">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),29)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),28)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),27)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),26)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),25)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),24)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),23)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),22)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),21)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),20)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),19)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),18)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),17)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),16)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),15)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),14)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),13)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),12)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),11)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),10)">19</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),9)">20</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),8)">21</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),7)">22</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),6)">23</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),5)">24</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),4)">25</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),3)">26</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),2)">27</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),1)">28</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_30),0)">29</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer60">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),59)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),58)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),57)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),56)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),55)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),54)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),53)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),52)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),51)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),50)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),49)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),48)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),47)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),46)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),45)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),44)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),43)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),42)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),41)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),40)">19</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),39)">20</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),38)">21</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),37)">22</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),36)">23</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),35)">24</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),34)">25</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),33)">26</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),32)">27</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),31)">28</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),30)">29</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),29)">30</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),28)">31</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),27)">32</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),26)">33</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),25)">34</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),24)">35</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),23)">36</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),22)">37</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),21)">38</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),20)">39</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),19)">40</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),18)">41</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),17)">42</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),16)">43</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),15)">44</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),14)">45</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),13)">46</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),12)">47</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),11)">48</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),10)">49</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),9)">50</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),8)">51</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),7)">52</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),6)">53</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),5)">54</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),4)">55</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),3)">56</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),2)">57</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),1)">58</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_60),0)">59</value>
+		<value>0</value>
+	</variable>
+
+	<variable name="ItemListCountDownTimer90">
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),89)">0</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),88)">1</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),87)">2</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),86)">3</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),85)">4</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),84)">5</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),83)">6</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),82)">7</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),81)">8</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),80)">9</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),79)">10</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),78)">11</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),77)">12</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),76)">13</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),75)">14</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),74)">15</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),73)">16</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),72)">17</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),71)">18</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),70)">19</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),69)">20</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),68)">21</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),67)">22</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),66)">23</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),65)">24</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),64)">25</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),63)">26</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),62)">27</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),61)">28</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),60)">29</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),59)">30</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),58)">31</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),57)">32</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),56)">33</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),55)">34</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),54)">35</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),53)">36</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),52)">37</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),51)">38</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),50)">39</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),49)">40</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),48)">41</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),47)">42</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),46)">43</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),45)">44</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),44)">45</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),43)">46</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),42)">47</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),41)">48</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),40)">49</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),39)">50</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),38)">51</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),37)">52</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),36)">53</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),35)">54</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),34)">55</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),33)">56</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),32)">57</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),31)">58</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),30)">59</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),29)">60</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),28)">61</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),27)">62</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),26)">63</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),25)">64</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),24)">65</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),23)">66</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),22)">67</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),21)">68</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),20)">69</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),19)">70</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),18)">71</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),17)">72</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),16)">73</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),15)">74</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),14)">75</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),13)">76</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),12)">77</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),11)">78</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),10)">79</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),9)">80</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),8)">81</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),7)">82</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),6)">83</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),5)">84</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),4)">85</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),3)">86</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),2)">87</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),1)">88</value>
+		<value condition="Integer.IsGreater(Skin.TimerElapsedSecs(infoline_changer_90),0)">89</value>
+		<value>0</value>
+	</variable>
+
+	<!-- Large Startup Logo -->
+	<include name="StartUpLogoWidthLargeVar">
+		<width>1600</width>
+	</include>
+	<include name="StartUpLogoHeightLargeVar">
+		<height>520</height>
+	</include>
+	<!-- Small Startup Logo -->
+	<include name="StartUpLogoWidthSmallVar">
+		<width>800</width>
+	</include>
+	<include name="StartUpLogoHeightSmallVar">
+		<height>260</height>
+	</include>
+	<!-- Small/Large Logo Icon Selector-->
+	<variable name="StartUpLogoSizeVar">
+		<value condition="Skin.HasSetting(startuplogolargesizeonstart)">icons/logo-doubled.png</value>
+		<value>icons/logo.png</value>
+	</variable>
+
+	<variable name="ResolutionMediaColorFlagUserLabel2Var">
+		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
+		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
+		<value>Icon Error        </value>
+	</variable>
+
+    <!-- Aspect Ratio Media Color Flag User Label 2 Variable -->
+	<variable name="AspectRatioMediaColorFlagUserLabel2Var">
+		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
+		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
+						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
+		<value>Icon Error        </value>
+	</variable>
+
+    <!-- Hidden Control -->
+	<include name="HiddenControl">
+		<left>-20</left>
+		<top>-20</top>
+		<width>1</width>
+		<height>1</height>
+		<font/>
+		<texture/>
+		<texturefocus/>
+		<texturenofocus/>
+		<alttexturenofocus/>
+		<alttexturefocus/>
+		<textureradiofocus/>
+		<textureradionofocus/>
+	</include>	
+
+	<!-- Add any new include above this line -->
+</includes>
