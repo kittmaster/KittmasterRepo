@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<addon id="skin.madnox" version="21.02.05" name="Madnox" provider-name="Kittmaster">
+<addon id="skin.madnox" version="21.02.06" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 		<import addon="script.embuary.helper" version="2.0.8"/>
@@ -25,7 +25,7 @@
 		<import addon="resource.images.moviecountryicons.flags" version="0.0.1"/>
 		<import addon="script.skinvariables" version="2.1.14"/>
 		<!-- <import addon="plugin.video.themoviedb.helper" version="5.4.16"/> -->
-		<import addon="plugin.video.themoviedb.helper" minversion="6.11.5"/>		
+		<import addon="plugin.video.themoviedb.helper" version="6.11.5"/>		
 		<import addon="script.artwork.dump" version="0.4.1"/>
 		<import addon="service.tvtunes" version="2.1.2"/>
 	</requires>
@@ -55,7 +55,11 @@
 			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>		
-		<news>v.21.02.05
+		<news>
+            v.21.02.06
+            -Added ability to turn off Madnox startup logo inside admin furniture panel
+            -Turned off main menu forced icons settings (dev testing left active by mistake in script)
+            v.21.02.05
             -Fixed widgets on main screen to use custom color picker
             -Subtitle color parameters can now be adjusted within the skin using custom color picker
             -Remove experimental replacement dev flag until next iteration

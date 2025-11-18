@@ -9,6 +9,7 @@
 			<property name="labelID">1</property>
 			<property name="background">special://skin/extras/backgrounds/pictures.jpg</property>
 			<property name="widget.1">library</property>
+			<property name="widget.2">tmdb</property>
 			<onclick>ActivateWindow(pictures)</onclick>
 			<property name="path">ActivateWindow(pictures)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -53,6 +54,8 @@
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="background">special://skin/extras/backgrounds/movies.jpg</property>
+			<property name="widget.1">library</property>
+			<property name="widget.2">tmdb</property>
 			<onclick condition="Library.HasContent(Movies)">ActivateWindow(videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://movies/titles/,return)</property>
 			<onclick condition="![Library.HasContent(Movies)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -68,6 +71,7 @@
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<property name="background">special://skin/extras/backgrounds/tvshows.jpg</property>
+			<property name="widget.1">library</property>
 			<onclick condition="Library.HasContent(TVShows)">ActivateWindow(videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://tvshows/titles/,return)</property>
 			<onclick condition="![Library.HasContent(TVShows)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -2575,11 +2579,23 @@
 		</include>
 	<include name="skinshortcuts-template-widgetOnUpMainMenu-Master user">
 		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),1) + String.IsEmpty(Window(home).Property(WidgetFocus1))">SetFocus(160011)</onup>
-		<onup condition="false">SetFocus(160012)</onup>
+		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),1) + String.IsEqual(Window(home).Property(WidgetFocus1),2)">SetFocus(160012)</onup>
 		<onup condition="false">SetFocus(160013)</onup>
 		<onup condition="false">SetFocus(160014)</onup>
 		<onup condition="false">SetFocus(160015)</onup>
 		<onup condition="false">SetFocus(160016)</onup>
+		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),4) + String.IsEmpty(Window(home).Property(WidgetFocus4))">SetFocus(160041)</onup>
+		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),4) + String.IsEqual(Window(home).Property(WidgetFocus4),2)">SetFocus(160042)</onup>
+		<onup condition="false">SetFocus(160043)</onup>
+		<onup condition="false">SetFocus(160044)</onup>
+		<onup condition="false">SetFocus(160045)</onup>
+		<onup condition="false">SetFocus(160046)</onup>
+		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),5) + String.IsEmpty(Window(home).Property(WidgetFocus5))">SetFocus(160051)</onup>
+		<onup condition="false">SetFocus(160052)</onup>
+		<onup condition="false">SetFocus(160053)</onup>
+		<onup condition="false">SetFocus(160054)</onup>
+		<onup condition="false">SetFocus(160055)</onup>
+		<onup condition="false">SetFocus(160056)</onup>
 		</include>
 	<include name="skinshortcuts-template-widget1">
 		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget1-Master user</include>
@@ -2595,13 +2611,13 @@
 				</include>
 			<control type="button" id="1607">
 				<include>WidgetNextButton</include>
-				<onclick condition="false">SetProperty(WidgetFocus1,2,home)</onclick>
-				<onclick condition="false">SetFocus(160012)</onclick>
+				<onclick condition="true">SetProperty(WidgetFocus1,2,home)</onclick>
+				<onclick condition="true">SetFocus(160012)</onclick>
 				</control>
 			<control type="panel" id="160011">
 				<height>339</height>
-				<onup condition="false">SetProperty(WidgetFocus1,2,home)</onup>
-				<onup condition="false">SetFocus(160012)</onup>
+				<onup condition="true">SetProperty(WidgetFocus1,2,home)</onup>
+				<onup condition="true">SetFocus(160012)</onup>
 				<include content="WidgetContainer">
 					<param name="id">160011</param>
 					<param name="containerwidth">232.5</param>
@@ -2639,9 +2655,227 @@
 				<content limit="20" target="videos">special://skin/extras/playlists/01movies/recentlyadded.xsp</content>
 				</control>
 			</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<include content="WidgetInfo">
+				<param name="label">20382</param>
+				<param name="infoposition">339</param>
+				<param name="infovisible">true</param>
+				<param name="visible">String.IsEmpty(Window(home).Property(WidgetFocus4))</param>
+				</include>
+			<control type="button" id="1607">
+				<include>WidgetNextButton</include>
+				<onclick condition="true">SetProperty(WidgetFocus4,2,home)</onclick>
+				<onclick condition="true">SetFocus(160042)</onclick>
+				</control>
+			<control type="panel" id="160041">
+				<height>339</height>
+				<onup condition="true">SetProperty(WidgetFocus4,2,home)</onup>
+				<onup condition="true">SetFocus(160042)</onup>
+				<include content="WidgetContainer">
+					<param name="id">160041</param>
+					<param name="containerwidth">232.5</param>
+					<param name="diffuse">diffuse/rounded5-212x319.png</param>
+					<param name="artwork">$VAR[PosterVar]</param>
+					<param name="border">10</param>
+					<param name="artworkaspect">stretch</param>
+					<param name="labelvisible">false</param>
+					<param name="videocase">false</param>
+					<param name="musiccase">false</param>
+					<param name="font1">Font30_Bold</param>
+					<param name="font2">Font29_Cond</param>
+					<param name="font3">Font30_Reg</param>
+					<param name="icontop">62</param>
+					<param name="iconbottom">97</param>
+					<param name="label1position">83</param>
+					<param name="label2position">46</param>
+					<param name="label3position">12</param>
+					<param name="studioiconvisible">false</param>
+					<param name="iconstudioheight">24</param>
+					<param name="studioiconvisible">false</param>
+					<param name="iconstudioheight">24</param>
+					<param name="logofallback">false</param>
+					<param name="landscapefallback">false</param>
+					<param name="watchedstatus">true</param>
+					<param name="watchedstatustop">18</param>
+					</include>
+				<content>
+					<item>
+						<icon>DefaultAddonNone.png</icon>
+						<thumb>DefaultAddonNone.png</thumb>
+						<visible>String.IsEmpty(Container(160041).ListItem(1).Label)</visible>
+						</item>
+					</content>
+				<content limit="$NUMBER[15]" target="videos">special://skin/extras/playlists/01movies/recentlyadded.xsp</content>
+				</control>
+			</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
+			<include content="WidgetInfo">
+				<param name="label">20382</param>
+				<param name="infoposition">339</param>
+				<param name="infovisible">true</param>
+				<param name="visible">String.IsEmpty(Window(home).Property(WidgetFocus5))</param>
+				</include>
+			<control type="button" id="1607">
+				<include>WidgetNextButton</include>
+				<onclick condition="false">SetProperty(WidgetFocus5,2,home)</onclick>
+				<onclick condition="false">SetFocus(160052)</onclick>
+				</control>
+			<control type="panel" id="160051">
+				<height>339</height>
+				<onup condition="false">SetProperty(WidgetFocus5,2,home)</onup>
+				<onup condition="false">SetFocus(160052)</onup>
+				<include content="WidgetContainer">
+					<param name="id">160051</param>
+					<param name="containerwidth">232.5</param>
+					<param name="diffuse">diffuse/rounded5-212x319.png</param>
+					<param name="artwork">$VAR[PosterVar]</param>
+					<param name="border">10</param>
+					<param name="artworkaspect">stretch</param>
+					<param name="labelvisible">false</param>
+					<param name="videocase">false</param>
+					<param name="musiccase">false</param>
+					<param name="font1">Font30_Bold</param>
+					<param name="font2">Font29_Cond</param>
+					<param name="font3">Font30_Reg</param>
+					<param name="icontop">62</param>
+					<param name="iconbottom">97</param>
+					<param name="label1position">83</param>
+					<param name="label2position">46</param>
+					<param name="label3position">12</param>
+					<param name="studioiconvisible">true</param>
+					<param name="iconstudioheight">24</param>
+					<param name="studioiconvisible">true</param>
+					<param name="iconstudioheight">24</param>
+					<param name="logofallback">false</param>
+					<param name="landscapefallback">false</param>
+					<param name="watchedstatus">false</param>
+					<param name="watchedstatustop">18</param>
+					</include>
+				<content>
+					<item>
+						<icon>DefaultAddonNone.png</icon>
+						<thumb>DefaultAddonNone.png</thumb>
+						<visible>String.IsEmpty(Container(160051).ListItem(1).Label)</visible>
+						</item>
+					</content>
+				<content limit="20" target="videos">special://skin/extras/playlists/03tvshows/recentlyadded.xsp</content>
+				</control>
+			</control>
 		</include>
 	<include name="skinshortcuts-template-widget2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
+		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget2-Master user</include>
+		</include>
+	<include name="skinshortcuts-template-widget2-Master user">
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1)</visible>
+			<include content="WidgetInfo">
+				<param name="label">$ADDON[script.embuary.info 32031]</param>
+				<param name="infoposition">339</param>
+				<param name="infovisible">true</param>
+				<param name="visible">String.IsEqual(Window(home).Property(WidgetFocus1),2)</param>
+				</include>
+			<control type="button" id="1607">
+				<include>WidgetNextButton</include>
+				<onclick condition="false">SetProperty(WidgetFocus1,3,home)</onclick>
+				<onclick condition="!false">ClearProperty(WidgetFocus1,home)</onclick>
+				</control>
+			<control type="panel" id="160012">
+				<height>339</height>
+				<onup condition="false">SetProperty(WidgetFocus1,3,home)</onup>
+				<onup condition="false">SetFocus(160013)</onup>
+				<onup condition="!false">ClearProperty(WidgetFocus1,home)</onup>
+				<onup condition="!false">SetFocus(160011)</onup>
+				<include content="WidgetContainer">
+					<param name="id">160012</param>
+					<param name="containerwidth">232.5</param>
+					<param name="diffuse">diffuse/rounded5-212x319.png</param>
+					<param name="artwork">$VAR[PosterVar]</param>
+					<param name="border">10</param>
+					<param name="artworkaspect">stretch</param>
+					<param name="labelvisible">false</param>
+					<param name="videocase">false</param>
+					<param name="musiccase">false</param>
+					<param name="font1">Font30_Bold</param>
+					<param name="font2">Font29_Cond</param>
+					<param name="font3">Font30_Reg</param>
+					<param name="icontop">62</param>
+					<param name="iconbottom">97</param>
+					<param name="label1position">83</param>
+					<param name="label2position">46</param>
+					<param name="label3position">12</param>
+					<param name="studioiconvisible">false</param>
+					<param name="iconstudioheight">24</param>
+					<param name="logofallback">false</param>
+					<param name="landscapefallback">false</param>
+					<param name="watchedstatus">false</param>
+					<param name="watchedstatustop">18</param>
+					</include>
+				<content>
+					<item>
+						<icon>DefaultAddonNone.png</icon>
+						<thumb>DefaultAddonNone.png</thumb>
+						<visible>String.IsEmpty(Container(160012).ListItem(1).Label)</visible>
+						</item>
+					</content>
+				<content limit="20" target="videos">plugin://script.embuary.info/movie/upcoming?reload=$INFO[Window(Home).Property(widgetreload-movies)]</content>
+				</control>
+			</control>
+		<control type="group">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
+			<include content="WidgetInfo">
+				<param name="label">$ADDON[script.embuary.info 32031]</param>
+				<param name="infoposition">339</param>
+				<param name="infovisible">true</param>
+				<param name="visible">String.IsEqual(Window(home).Property(WidgetFocus4),2)</param>
+				</include>
+			<control type="button" id="1607">
+				<include>WidgetNextButton</include>
+				<onclick condition="false">SetProperty(WidgetFocus4,3,home)</onclick>
+				<onclick condition="!false">ClearProperty(WidgetFocus4,home)</onclick>
+				</control>
+			<control type="panel" id="160042">
+				<height>339</height>
+				<onup condition="false">SetProperty(WidgetFocus4,3,home)</onup>
+				<onup condition="false">SetFocus(160043)</onup>
+				<onup condition="!false">ClearProperty(WidgetFocus4,home)</onup>
+				<onup condition="!false">SetFocus(160041)</onup>
+				<include content="WidgetContainer">
+					<param name="id">160042</param>
+					<param name="containerwidth">232.5</param>
+					<param name="diffuse">diffuse/rounded5-212x319.png</param>
+					<param name="artwork">$VAR[PosterVar]</param>
+					<param name="border">10</param>
+					<param name="artworkaspect">stretch</param>
+					<param name="labelvisible">false</param>
+					<param name="videocase">false</param>
+					<param name="musiccase">false</param>
+					<param name="font1">Font30_Bold</param>
+					<param name="font2">Font29_Cond</param>
+					<param name="font3">Font30_Reg</param>
+					<param name="icontop">62</param>
+					<param name="iconbottom">97</param>
+					<param name="label1position">83</param>
+					<param name="label2position">46</param>
+					<param name="label3position">12</param>
+					<param name="studioiconvisible">false</param>
+					<param name="iconstudioheight">24</param>
+					<param name="logofallback">false</param>
+					<param name="landscapefallback">false</param>
+					<param name="watchedstatus">false</param>
+					<param name="watchedstatustop">18</param>
+					</include>
+				<content>
+					<item>
+						<icon>DefaultAddonNone.png</icon>
+						<thumb>DefaultAddonNone.png</thumb>
+						<visible>String.IsEmpty(Container(160042).ListItem(1).Label)</visible>
+						</item>
+					</content>
+				<content limit="20" target="videos">plugin://script.embuary.info/movie/upcoming?reload=$INFO[Window(Home).Property(widgetreload-movies)]</content>
+				</control>
+			</control>
 		</include>
 	<include name="skinshortcuts-template-widget3">
 		<description>This include was built automatically as the template didn't match any menu items</description>

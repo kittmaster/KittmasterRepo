@@ -21,16 +21,26 @@
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<animation effect="fade" start="100" end="0" time="6000">Focus</animation>
 		</control>		
-		<control type="image">
-			<centerleft>50%</centerleft>
-			<centertop>50%</centertop>
-			<include content="StartUpLogoWidthLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
-			<include content="StartUpLogoHeightLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
-			<include content="StartUpLogoWidthSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
-			<include content="StartUpLogoHeightSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
-			<aspectratio>keep</aspectratio>
-			<texture>$VAR[StartUpLogoSizeVar]</texture>
-		</control>		
+        <control type="image">
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <aspectratio>keep</aspectratio>
+            <texture>$VAR[StartUpLogoSizeVar]</texture>
+
+            <!-- RULE 1: MASTER VISIBILITY SWITCH -->
+            <!-- Only show this entire control if 'startuplogoshowonstart' is enabled. -->
+            <!-- If this is false, the skin engine ignores everything else inside. -->
+            <visible>Skin.HasSetting(startuplogoshowonstart)</visible>
+
+            <!-- RULE 2: CONDITIONAL SIZING (This part only runs if the control is visible) -->
+            <!-- IF 'startuplogolargesizeonstart' is enabled, use the LARGE dimensions. -->
+            <include content="StartUpLogoWidthLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
+            <include content="StartUpLogoHeightLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
+
+            <!-- ELSE (if 'startuplogolargesizeonstart' is NOT enabled), use the SMALL dimensions. -->
+            <include content="StartUpLogoWidthSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
+            <include content="StartUpLogoHeightSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
+        </control>		
 		<control type="image">
 			<centerleft>50%</centerleft>
 			<top>660</top>

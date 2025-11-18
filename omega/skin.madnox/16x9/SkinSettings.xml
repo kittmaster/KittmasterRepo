@@ -997,11 +997,22 @@
 							<label>$LOCALIZE[12999]</label>
 							<include>SettingsLabel</include>
 						</control>
-						<control type="radiobutton" id="537"> <!-- CMB -->
-							<label>$LOCALIZE[31404]</label>
+                        <!-- This is the MASTER control -->
+						<control type="radiobutton" id="537">
+							<label>$LOCALIZE[31184]</label> <!-- Show startup logo -->
+							<onclick>Skin.ToggleSetting(startuplogoshowonstart)</onclick>
+							<selected>Skin.HasSetting(startuplogoshowonstart)</selected>
+							<include>SettingsRadioButton</include>
+						</control>
+						<!-- This is the DEPENDENT control -->
+						<control type="radiobutton" id="538">
+							<label>$LOCALIZE[31404]</label> <!-- Use large logo -->
 							<onclick>Skin.ToggleSetting(startuplogolargesizeonstart)</onclick>
 							<selected>Skin.HasSetting(startuplogolargesizeonstart)</selected>
-							<include>SettingsRadioButton</include>
+							<include>SettingsRadioButton</include>							
+							<!-- This is the magic line: -->
+							<!-- This control is ONLY enabled if 'startuplogoshowonstart' is true. -->
+							<enable>Skin.HasSetting(startuplogoshowonstart)</enable>
 						</control>
 						<control type="label" id="520">
 							<label>$LOCALIZE[128]</label>
