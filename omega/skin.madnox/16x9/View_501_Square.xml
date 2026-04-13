@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View501Square">
-		<!-- Info panel -->
+		<!-- Info Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(501)</visible>
 			<include content="ViewCoverFlowInfoPanel">
@@ -20,7 +20,7 @@
 		<include content="View501Panel" condition="Skin.HasSetting(View501FixedList)">
 			<param name="listtype">fixedlist</param>
 		</include>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(501)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -32,7 +32,7 @@
 			<include condition="Window.IsVisible(MyMusicNav.xml)">MediaFlagsPanelAudio</include>
 		</control>
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View501Panel">
 		<param name="listtype">wraplist</param>
 		<definition>

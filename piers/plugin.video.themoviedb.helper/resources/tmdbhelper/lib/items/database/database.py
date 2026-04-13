@@ -14,7 +14,10 @@ from tmdbhelper.lib.items.database.tabledef import (
     CERTIFICATION_COLUMNS,
     VIDEO_COLUMNS,
     GENRE_COLUMNS,
+    LANGUAGE_COLUMNS,
+    LANGUAGES_COLUMNS,
     COUNTRY_COLUMNS,
+    COUNTRIES_COLUMNS,
     STUDIO_COLUMNS,
     NETWORK_COLUMNS,
     COMPANY_COLUMNS,
@@ -26,6 +29,7 @@ from tmdbhelper.lib.items.database.tabledef import (
     SERVICE_COLUMNS,
     ART_COLUMNS,
     FANART_TV_COLUMNS,
+    DEFAULT_ART_COLUMNS,
     USER_ART_COLUMNS,
     UNIQUE_ID_COLUMNS,
     TRANSLATION_COLUMNS,
@@ -41,67 +45,69 @@ class ItemDetailsDatabase(Database):
         super().__init__(filename=self.cache_filename)
 
     # DB version must be max of table_version
-    database_version = 35
+    database_version = 42
 
     database_changes = {
-        21: (
-            'ALTER TABLE tvshow ADD totalseasons INTEGER',
-            'ALTER TABLE tvshow ADD totalepisodes INTEGER',
-        ),
+        21: (),
         22: (),
-        23: (
-            'ALTER TABLE baseitem ADD datalevel INTEGER DEFAULT 0 NOT NULL',
-        ),
-        24: (
-            'ALTER TABLE tvshow ADD last_episode_to_air_id TEXT',
-        ),
+        23: (),
+        24: (),
         25: (),
         26: (),
         27: (),
-        28: (
-            'DROP TABLE IF EXISTS unique_id',
-            'DROP TABLE IF EXISTS fanart_tv',
-            'DROP TABLE IF EXISTS art',
-            'DROP TABLE IF EXISTS service',
-            'DROP TABLE IF EXISTS provider',
-            'DROP TABLE IF EXISTS custom',
-            'DROP TABLE IF EXISTS castmember',
-            'DROP TABLE IF EXISTS crewmember',
-            'DROP TABLE IF EXISTS broadcaster',
-            'DROP TABLE IF EXISTS company',
-            'DROP TABLE IF EXISTS network',
-            'DROP TABLE IF EXISTS studio',
-            'DROP TABLE IF EXISTS country',
-            'DROP TABLE IF EXISTS genre',
-            'DROP TABLE IF EXISTS video',
-            'DROP TABLE IF EXISTS certification',
-            'DROP TABLE IF EXISTS person',
-            'DROP TABLE IF EXISTS ratings',
-            'DROP TABLE IF EXISTS collection',
-            'DROP TABLE IF EXISTS belongs',
-            'DROP TABLE IF EXISTS episode',
-            'DROP TABLE IF EXISTS season',
-            'DROP TABLE IF EXISTS tvshow',
-            'DROP TABLE IF EXISTS movie',
-            'DROP TABLE IF EXISTS baseitem',
-        ),
+        28: (),
         29: (),
         30: (),
         31: (
             'DROP TABLE IF EXISTS simplecache',
             'DROP TABLE IF EXISTS lactivities',
         ),
-        32: (
-            'ALTER TABLE baseitem ADD fanart_tv INTEGER DEFAULT 0 NOT NULL',
+        32: (),
+        33: (),
+        34: (),
+        35: (),
+        36: (),
+        37: (),
+        38: (),
+        39: (
+            'DROP TABLE IF EXISTS baseitem',
+            'DROP TABLE IF EXISTS belongs',
+            'DROP TABLE IF EXISTS collection',
+            'DROP TABLE IF EXISTS movie',
+            'DROP TABLE IF EXISTS tvshow',
+            'DROP TABLE IF EXISTS season',
+            'DROP TABLE IF EXISTS episode',
+            'DROP TABLE IF EXISTS ratings',
+            'DROP TABLE IF EXISTS person',
+            'DROP TABLE IF EXISTS genre',
+            'DROP TABLE IF EXISTS language',
+            'DROP TABLE IF EXISTS languages',
+            'DROP TABLE IF EXISTS country',
+            'DROP TABLE IF EXISTS countries',
+            'DROP TABLE IF EXISTS studio',
+            'DROP TABLE IF EXISTS company',
+            'DROP TABLE IF EXISTS network',
+            'DROP TABLE IF EXISTS broadcaster',
+            'DROP TABLE IF EXISTS video',
+            'DROP TABLE IF EXISTS certification',
+            'DROP TABLE IF EXISTS crewmember',
+            'DROP TABLE IF EXISTS castmember',
+            'DROP TABLE IF EXISTS provider',
+            'DROP TABLE IF EXISTS service',
+            'DROP TABLE IF EXISTS custom',
+            'DROP TABLE IF EXISTS art',
+            'DROP TABLE IF EXISTS fanart_tv',
+            'DROP TABLE IF EXISTS user_art',
+            'DROP TABLE IF EXISTS unique_id',
+            'DROP TABLE IF EXISTS translation',
         ),
-        33: (
-            'ALTER TABLE baseitem ADD language TEXT',
+        40: (
+            'DROP TABLE IF EXISTS ratings',
         ),
-        34: (
-            'ALTER TABLE art ADD iso_country TEXT',
-        ),
-        35: (
-            'ALTER TABLE baseitem ADD translation INTEGER DEFAULT 0 NOT NULL',
+        41: (),
+        42: (
+            'ALTER TABLE castmember ADD guest INTEGER',
+            'CREATE INDEX IF NOT EXISTS castmember_guest_x ON castmember(guest)',
         ),
     }
 
@@ -117,7 +123,10 @@ class ItemDetailsDatabase(Database):
     certification_columns = CERTIFICATION_COLUMNS
     video_columns = VIDEO_COLUMNS
     genre_columns = GENRE_COLUMNS
+    language_columns = LANGUAGE_COLUMNS
+    languages_columns = LANGUAGES_COLUMNS
     country_columns = COUNTRY_COLUMNS
+    countries_columns = COUNTRIES_COLUMNS
     studio_columns = STUDIO_COLUMNS
     network_columns = NETWORK_COLUMNS
     company_columns = COMPANY_COLUMNS
@@ -130,6 +139,7 @@ class ItemDetailsDatabase(Database):
     art_columns = ART_COLUMNS
     fanart_tv_columns = FANART_TV_COLUMNS
     user_art_columns = USER_ART_COLUMNS
+    default_art_columns = DEFAULT_ART_COLUMNS
     unique_id_columns = UNIQUE_ID_COLUMNS
     translation_columns = TRANSLATION_COLUMNS
     simplecache_columns = SIMPLECACHE_COLUMNS
@@ -148,7 +158,10 @@ class ItemDetailsDatabase(Database):
             'ratings': self.ratings_columns,
             'person': self.person_columns,
             'genre': self.genre_columns,
+            'language': self.language_columns,
+            'languages': self.languages_columns,
             'country': self.country_columns,
+            'countries': self.countries_columns,
             'studio': self.studio_columns,
             'company': self.company_columns,
             'network': self.network_columns,
@@ -162,6 +175,7 @@ class ItemDetailsDatabase(Database):
             'custom': self.custom_columns,
             'art': self.art_columns,
             'fanart_tv': self.fanart_tv_columns,
+            'default_art': self.default_art_columns,
             'user_art': self.user_art_columns,
             'unique_id': self.unique_id_columns,
             'translation': self.translation_columns,

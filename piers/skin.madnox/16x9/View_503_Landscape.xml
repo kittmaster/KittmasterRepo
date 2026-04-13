@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View503Landscape">
-		<!-- Info panel -->
+		<!-- Info Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(503)</visible>
 			<include content="ViewCoverFlowInfoPanel">
@@ -20,7 +20,7 @@
 		<include content="View503Panel" condition="Skin.HasSetting(View503FixedList)">
 			<param name="listtype">fixedlist</param>
 		</include>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(503)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -33,7 +33,7 @@
 			<include condition="Window.IsVisible(MyMusicNav.xml)">MediaFlagsPanelAudio</include>
 		</control>
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View503Panel">
 		<param name="listtype">wraplist</param>
 		<definition>
@@ -46,13 +46,21 @@
 					<param name="slide">525</param>
 				</include>
 				<control type="$PARAM[listtype]" id="503">
+					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 					<top>656</top>
 					<left>-212</left>
 					<width>2132</width>
 					<height>469</height>
+					<!-- Standard Up (To Menu) -->
+					<onup condition="!Skin.String(View503InfoDelay,manual) | ListItem.IsParentFolder | String.Startswith(ListItem.Label,*)">PlayerControl(Stop)</onup>
 					<onup condition="!Skin.String(View503InfoDelay,manual) | ListItem.IsParentFolder | String.Startswith(ListItem.Label,*)">9050</onup>
+					<!-- Info Panel Up (To Hidden Button 9999) -->
+					<onup condition="Skin.String(View503InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">PlayerControl(Stop)</onup>
 					<onup condition="Skin.String(View503InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">9999</onup>
+					<!-- Down (To Scrollbar 60503) -->
+					<onunfocus>PlayerControl(Stop)</onunfocus>
 					<ondown>60503</ondown>
+					<!-- Fixed ID (Was 60502) -->
 					<pagecontrol>60503</pagecontrol>
 					<focusposition>2</focusposition>
 					<orientation>horizontal</orientation>
@@ -175,7 +183,7 @@
 								<param name="art">$VAR[ClearLogoVar]</param>
 								<param name="texturefadetime">0</param>
 								<param name="watchedstatusvisible">!Skin.HasSetting(View503DisableWatchedStatus)</param>
-								<param name="diffuse"/>
+								<param name="diffuse" />
 							</include>
 						</control>
 						<include content="ViewLogoFallback">
@@ -205,7 +213,7 @@
 									<param name="art">$VAR[ClearLogoVar]</param>
 									<param name="texturefadetime">0</param>
 									<param name="watchedstatusvisible">!Skin.HasSetting(View503DisableWatchedStatus)</param>
-									<param name="diffuse"/>
+									<param name="diffuse" />
 								</include>
 							</control>
 							<include content="ViewLogoFallback">
@@ -233,7 +241,7 @@
 								<param name="art">$VAR[ClearArtVar]</param>
 								<param name="texturefadetime">0</param>
 								<param name="watchedstatusvisible">!Skin.HasSetting(View503DisableWatchedStatus)</param>
-								<param name="diffuse"/>
+								<param name="diffuse" />
 							</include>
 						</control>
 						<include content="ViewLogoFallback">
@@ -254,7 +262,7 @@
 									<param name="aspect">keep</param>
 									<param name="art">$VAR[ClearArtVar]</param>
 									<param name="texturefadetime">0</param>
-									<param name="diffuse"/>
+									<param name="diffuse" />
 								</include>
 							</control>
 							<control type="group">
@@ -264,7 +272,7 @@
 									<param name="art">$VAR[ClearArtVar]</param>
 									<param name="texturefadetime">0</param>
 									<param name="watchedstatusvisible">!Skin.HasSetting(View503DisableWatchedStatus)</param>
-									<param name="diffuse"/>
+									<param name="diffuse" />
 								</include>
 							</control>
 							<include content="ViewLogoFallback">
@@ -315,6 +323,7 @@
 				</control>
 				<include content="ViewCoverFlowScrollBar">
 					<param name="id">503</param>
+					<param name="top">947</param>
 				</include>
 			</control>
 		</definition>

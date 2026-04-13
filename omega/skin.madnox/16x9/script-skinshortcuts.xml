@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">90001</defaultcontrol>
+	<!-- <onunload condition="Window.IsActive(home)">SetProperty(skinshortcuts-build,1,Home)</onunload> -->
+	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
+	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
 	<onload>ClearProperty(skinshortcuts-Widget,Home)</onload>
 	<onload>ClearProperty(skinshortcuts-CoverBackground,Home)</onload>
 	<onunload>ClearProperty(skinshortcuts-Widget,Home)</onunload>
 	<onunload>ClearProperty(skinshortcuts-CoverBackground,Home)</onunload>
-	<!-- <onunload>ClearProperty(skinshortcuts-management-widget,10000)</onunload> -->
-	<onunload condition="Window.IsActive(home)">SetProperty(skinshortcuts-build,1,Home)</onunload>
 	<onunload>ClearProperty(WidgetFocus1,Home)</onunload>
 	<onunload>ClearProperty(WidgetFocus2,Home)</onunload>
 	<onunload>ClearProperty(WidgetFocus3,Home)</onunload>
@@ -57,13 +58,38 @@
 				<left>100</left>
 				<width>324</width>
 				<height>612</height>
-				<onright condition="String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">90001</onright>
-				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),1)">8011</onright>
-				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),2)">8012</onright>
-				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),3)">8013</onright>
-				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),4)">8014</onright>
-				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),5)">8015</onright>
-				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),6)">8016</onright>
+
+				<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+				<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-CoverBackground))">ClearProperty(skinshortcuts-CoverBackground,Home)</onfocus>
+
+				<!-- Route 1: Normal Main Settings (When no widget or cover background is active) -->
+				<onright condition="String.IsEmpty(Window(Home).Property(skinshortcuts-Widget)) + String.IsEmpty(Window(Home).Property(skinshortcuts-CoverBackground))">90001</onright>
+
+				<!-- Route 2: Cover Background Settings -->
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-CoverBackground),1)">8091</onright>
+
+				<!-- Route 3: Widget 1-20 Settings -->
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),1)">8111</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),2)">8112</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),3)">8113</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),4)">8114</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),5)">8115</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),6)">8116</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),7)">8117</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),8)">8118</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),9)">8119</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),10)">81110</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),11)">81111</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),12)">81112</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),13)">81113</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),14)">81114</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),15)">81115</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),16)">81116</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),17)">81117</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),18)">81118</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),19)">81119</onright>
+				<onright condition="String.IsEqual(Window(Home).Property(skinshortcuts-Widget),20)">81120</onright>
+
 				<itemlayout height="67">
 					<control type="label">
 						<visible>!String.Contains(Skin.String(MainMenuLayout),icons) + !String.IsEqual(Window.Property(groupname),shortcuts)</visible>
@@ -154,8 +180,8 @@
 				<orientation>horizontal</orientation>
 				<control type="button" id="303">
 					<description>Move up</description>
-					<texturefocus/>
-					<texturenofocus/>
+					<texturefocus />
+					<texturenofocus />
 					<width>67</width>
 					<align>center</align>
 					<font>Font40_Icon</font>
@@ -163,8 +189,8 @@
 				</control>
 				<control type="button" id="304">
 					<description>Move down</description>
-					<texturefocus/>
-					<texturenofocus/>
+					<texturefocus />
+					<texturenofocus />
 					<width>67</width>
 					<align>center</align>
 					<font>Font40_Icon</font>
@@ -172,8 +198,8 @@
 				</control>
 				<control type="button" id="301">
 					<description>Add shortcut</description>
-					<texturefocus/>
-					<texturenofocus/>
+					<texturefocus />
+					<texturenofocus />
 					<width>67</width>
 					<align>center</align>
 					<font>Font40_Icon</font>
@@ -181,8 +207,8 @@
 				</control>
 				<control type="button" id="302">
 					<description>Delete shortcut</description>
-					<texturefocus/>
-					<texturenofocus/>
+					<texturefocus />
+					<texturenofocus />
 					<width>67</width>
 					<align>center</align>
 					<font>Font40_Icon</font>
@@ -190,8 +216,8 @@
 				</control>
 				<control type="button" id="308">
 					<description>Reset/Restore</description>
-					<texturefocus/>
-					<texturenofocus/>
+					<texturefocus />
+					<texturenofocus />
 					<width>67</width>
 					<align>center</align>
 					<font>Font40_Icon</font>
@@ -246,7 +272,7 @@
 					<visible>!String.IsEqual(Window.Property(groupname),shortcuts)</visible>
 					<include>SettingsButton</include>
 				</control>
-				<control type="button" id="511">
+				<control type="button" id="531">
 					<visible>!String.IsEqual(Window.Property(groupname),shortcuts) + String.IsEqual(Container(211).ListItem.Property(background),cover)</visible>
 					<description>Cover background settings</description>
 					<label>$LOCALIZE[31374]</label>
@@ -265,7 +291,7 @@
 					<onclick>SendClick(404)</onclick>
 					<include>SettingsButton</include>
 				</control>
-				<control type="button" id="512">
+				<control type="button" id="532">
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<description>Choose infoline</description>
 					<label>$LOCALIZE[31322]</label>
@@ -282,76 +308,275 @@
 					<label2>$INFO[Container(211).ListItem.Property(icon)]</label2>
 					<include>SettingsButton</include>
 				</control>
+				<!-- Button 1 (Always Visible In Admin) -->
 				<control type="button" id="501">
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<description>$LOCALIZE[31289] 1</description>
 					<label>$ADDON[script.skinshortcuts 32044] 1</label>
-					<label2>$INFO[Container(211).ListItem.Property(widgetName.1)]</label2>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.1)]</label2> -->
+					<label2>$VAR[Widget1LabelFallback]</label2>
 					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
 					<onclick>SetProperty(skinshortcuts-Widget,1,Home)</onclick>
-					<onclick>Control.SetFocus(8012)</onclick>
+					<onclick>Control.SetFocus(8111)</onclick>
 					<include>SettingsButton</include>
 				</control>
+
+				<!-- Button 2 (Always Visible In Admin) -->
 				<control type="button" id="502">
-					<visible>String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.1))</visible>
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<description>$LOCALIZE[31289] 2</description>
 					<label>$ADDON[script.skinshortcuts 32044] 2</label>
-					<label2>$INFO[Container(211).ListItem.Property(widgetName.2)]</label2>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.2)]</label2> -->
+					<label2>$VAR[Widget2LabelFallback]</label2>
 					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
 					<onclick>SetProperty(skinshortcuts-Widget,2,Home)</onclick>
-					<onclick>Control.SetFocus(8022)</onclick>
+					<onclick>Control.SetFocus(8112)</onclick>
 					<include>SettingsButton</include>
 				</control>
+
+				<!-- Button 3 (Always Visible In Admin) -->
 				<control type="button" id="503">
-					<visible>String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.1)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.2))</visible>
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<description>$LOCALIZE[31289] 3</description>
 					<label>$ADDON[script.skinshortcuts 32044] 3</label>
-					<label2>$INFO[Container(211).ListItem.Property(widgetName.3)]</label2>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.3)]</label2> -->
+					<label2>$VAR[Widget3LabelFallback]</label2>
 					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
 					<onclick>SetProperty(skinshortcuts-Widget,3,Home)</onclick>
-					<onclick>Control.SetFocus(8032)</onclick>
+					<onclick>Control.SetFocus(8113)</onclick>
 					<include>SettingsButton</include>
 				</control>
+
+				<!-- Button 4 (Always Visible In Admin) -->
 				<control type="button" id="504">
-					<visible>String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.1)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.2)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.3))</visible>
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<description>$LOCALIZE[31289] 4</description>
 					<label>$ADDON[script.skinshortcuts 32044] 4</label>
-					<label2>$INFO[Container(211).ListItem.Property(widgetName.4)]</label2>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.4)]</label2> -->
+					<label2>$VAR[Widget4LabelFallback]</label2>
 					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
 					<onclick>SetProperty(skinshortcuts-Widget,4,Home)</onclick>
-					<onclick>Control.SetFocus(8042)</onclick>
+					<onclick>Control.SetFocus(8114)</onclick>
 					<include>SettingsButton</include>
 				</control>
+
+				<!-- Button 5 (Always Visible In Admin) -->
 				<control type="button" id="505">
-					<visible>String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.1)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.2)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.3)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.4))</visible>
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<description>$LOCALIZE[31289] 5</description>
 					<label>$ADDON[script.skinshortcuts 32044] 5</label>
-					<label2>$INFO[Container(211).ListItem.Property(widgetName.5)]</label2>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.5)]</label2> -->
+					<label2>$VAR[Widget5LabelFallback]</label2>
 					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
 					<onclick>SetProperty(skinshortcuts-Widget,5,Home)</onclick>
-					<onclick>Control.SetFocus(8052)</onclick>
+					<onclick>Control.SetFocus(8115)</onclick>
 					<include>SettingsButton</include>
 				</control>
+
+				<!-- Button 6 (Always Visible In Admin) -->
 				<control type="button" id="506">
-					<visible>String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.1)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.2)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.3)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.4)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.5)) + !String.IsEmpty(Container(211).ListItem.Property(widgetPath.1))</visible>
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<description>$LOCALIZE[31289] 6</description>
 					<label>$ADDON[script.skinshortcuts 32044] 6</label>
-					<label2>$INFO[Container(211).ListItem.Property(widgetName.6)]</label2>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.6)]</label2> -->
+					<label2>$VAR[Widget6LabelFallback]</label2>
 					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
 					<onclick>SetProperty(skinshortcuts-Widget,6,Home)</onclick>
-					<onclick>Control.SetFocus(8062)</onclick>
+					<onclick>Control.SetFocus(8116)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 7 (Always Visible In Admin) -->
+				<control type="button" id="507">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 7</description>
+					<label>$ADDON[script.skinshortcuts 32044] 7</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.7)]</label2> -->
+					<label2>$VAR[Widget7LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,7,Home)</onclick>
+					<onclick>Control.SetFocus(8117)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 8 (Always Visible In Admin) -->
+				<control type="button" id="508">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 8</description>
+					<label>$ADDON[script.skinshortcuts 32044] 8</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.8)]</label2> -->
+					<label2>$VAR[Widget8LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,8,Home)</onclick>
+					<onclick>Control.SetFocus(8118)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 9 (Always Visible In Admin) -->
+				<control type="button" id="509">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 9</description>
+					<label>$ADDON[script.skinshortcuts 32044] 9</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.9)]</label2> -->
+					<label2>$VAR[Widget9LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,9,Home)</onclick>
+					<onclick>Control.SetFocus(8119)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 10 (Always Visible In Admin) -->
+				<control type="button" id="510">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 10</description>
+					<label>$ADDON[script.skinshortcuts 32044] 10</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.10)]</label2> -->
+					<label2>$VAR[Widget10LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,10,Home)</onclick>
+					<onclick>Control.SetFocus(81110)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 11 (Always Visible In Admin) -->
+				<control type="button" id="511">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 11</description>
+					<label>$ADDON[script.skinshortcuts 32044] 11</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.11)]</label2> -->
+					<label2>$VAR[Widget11LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,11,Home)</onclick>
+					<onclick>Control.SetFocus(81111)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 12 (Always Visible In Admin) -->
+				<control type="button" id="512">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 12</description>
+					<label>$ADDON[script.skinshortcuts 32044] 12</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.12)]</label2> -->
+					<label2>$VAR[Widget12LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,12,Home)</onclick>
+					<onclick>Control.SetFocus(81112)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 13 (Always Visible In Admin) -->
+				<control type="button" id="513">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 13</description>
+					<label>$ADDON[script.skinshortcuts 32044] 13</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.13)]</label2> -->
+					<label2>$VAR[Widget13LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,13,Home)</onclick>
+					<onclick>Control.SetFocus(81113)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 14 (Always Visible In Admin) -->
+				<control type="button" id="514">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 14</description>
+					<label>$ADDON[script.skinshortcuts 32044] 14</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.14)]</label2> -->
+					<label2>$VAR[Widget14LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,14,Home)</onclick>
+					<onclick>Control.SetFocus(81114)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 15 (Always Visible In Admin) -->
+				<control type="button" id="515">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 15</description>
+					<label>$ADDON[script.skinshortcuts 32044] 15</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.15)]</label2> -->
+					<label2>$VAR[Widget15LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,15,Home)</onclick>
+					<onclick>Control.SetFocus(81115)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 16 (Always Visible In Admin) -->
+				<control type="button" id="516">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 16</description>
+					<label>$ADDON[script.skinshortcuts 32044] 16</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.16)]</label2> -->
+					<label2>$VAR[Widget16LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,16,Home)</onclick>
+					<onclick>Control.SetFocus(81116)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 17 (Always Visible In Admin) -->
+				<control type="button" id="517">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 17</description>
+					<label>$ADDON[script.skinshortcuts 32044] 17</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.17)]</label2> -->
+					<label2>$VAR[Widget17LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,17,Home)</onclick>
+					<onclick>Control.SetFocus(81117)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 18 (Always Visible In Admin) -->
+				<control type="button" id="518">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 18</description>
+					<label>$ADDON[script.skinshortcuts 32044] 18</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.18)]</label2> -->
+					<label2>$VAR[Widget18LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,18,Home)</onclick>
+					<onclick>Control.SetFocus(81118)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 19 (Always Visible In Admin) -->
+				<control type="button" id="519">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 19</description>
+					<label>$ADDON[script.skinshortcuts 32044] 19</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.19)]</label2> -->
+					<label2>$VAR[Widget19LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,19,Home)</onclick>
+					<onclick>Control.SetFocus(81119)</onclick>
+					<include>SettingsButton</include>
+				</control>
+
+				<!-- Button 20 (Always Visible In Admin) -->
+				<control type="button" id="520">
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<description>$LOCALIZE[31289] 20</description>
+					<label>$ADDON[script.skinshortcuts 32044] 20</label>
+					<!-- <label2>$INFO[Container(211).ListItem.Property(widgetName.20)]</label2> -->
+					<label2>$VAR[Widget20LabelFallback]</label2>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))">ClearProperty(skinshortcuts-Widget,Home)</onfocus>
+					<onclick>SetProperty(skinshortcuts-Widget,20,Home)</onclick>
+					<onclick>Control.SetFocus(81120)</onclick>
 					<include>SettingsButton</include>
 				</control>
 			</control>
 		</control>
-		<!-- Cover background settings -->
+		<!-- Cover Background Settings -->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-CoverBackground),1) + String.IsEmpty(Window.Property(additionalDialog))</visible>
 			<control type="button" id="809">
 				<include>FullScreenDimensions</include>
 				<onclick>back</onclick>
-				<texturefocus/>
-				<texturenofocus/>
+				<texturefocus />
+				<texturenofocus />
 			</control>
 			<control type="grouplist" id="8091">
 				<top>200</top>
@@ -384,54 +609,165 @@
 				</control>
 			</control>
 		</control>
-		<!-- Widget 1 settings -->
+		<!-- Widget 1 Settings -->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),1)</visible>
 			<include content="WidgetSelect">
 				<param name="id">1</param>
 			</include>
 		</control>
-		<!-- Widget 2 settings -->
+		<!-- Widget 2 Settings -->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),2)</visible>
 			<include content="WidgetSelect">
 				<param name="id">2</param>
 			</include>
 		</control>
-		<!-- Widget 3 settings -->
+		<!-- Widget 3 Settings -->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),3)</visible>
 			<include content="WidgetSelect">
 				<param name="id">3</param>
 			</include>
 		</control>
-		<!-- Widget 4 settings -->
+		<!-- Widget 4 Settings -->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),4)</visible>
 			<include content="WidgetSelect">
 				<param name="id">4</param>
 			</include>
 		</control>
-		<!-- Widget 5 settings -->
+		<!-- Widget 5 Settings -->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),5)</visible>
 			<include content="WidgetSelect">
 				<param name="id">5</param>
 			</include>
 		</control>
-		<!-- Widget 6 settings -->
+		<!-- Widget 6 Settings -->
 		<control type="group">
 			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),6)</visible>
 			<include content="WidgetSelect">
 				<param name="id">6</param>
 			</include>
 		</control>
-		<!-- 312, for setting widget -->
+		<!-- Widget 7 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),7)</visible>
+			<include content="WidgetSelect">
+				<param name="id">7</param>
+			</include>
+		</control>
+		<!-- Widget 8 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),8)</visible>
+			<include content="WidgetSelect">
+				<param name="id">8</param>
+			</include>
+		</control>
+		<!-- Widget 9 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),9)</visible>
+			<include content="WidgetSelect">
+				<param name="id">9</param>
+			</include>
+		</control>
+		<!-- Widget 10 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),10)</visible>
+			<include content="WidgetSelect">
+				<param name="id">10</param>
+			</include>
+		</control>
+		<!-- Widget 11 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),11)</visible>
+			<include content="WidgetSelect">
+				<param name="id">11</param>
+			</include>
+		</control>
+		<!-- Widget 12 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),12)</visible>
+			<include content="WidgetSelect">
+				<param name="id">12</param>
+			</include>
+		</control>
+		<!-- Widget 13 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),13)</visible>
+			<include content="WidgetSelect">
+				<param name="id">13</param>
+			</include>
+		</control>
+		<!-- Widget 14 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),14)</visible>
+			<include content="WidgetSelect">
+				<param name="id">14</param>
+			</include>
+		</control>
+		<!-- Widget 15 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),15)</visible>
+			<include content="WidgetSelect">
+				<param name="id">15</param>
+			</include>
+		</control>
+		<!-- Widget 16 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),16)</visible>
+			<include content="WidgetSelect">
+				<param name="id">16</param>
+			</include>
+		</control>
+		<!-- Widget 17 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),17)</visible>
+			<include content="WidgetSelect">
+				<param name="id">17</param>
+			</include>
+		</control>
+		<!-- Widget 18 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),18)</visible>
+			<include content="WidgetSelect">
+				<param name="id">18</param>
+			</include>
+		</control>
+		<!-- Widget 19 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),19)</visible>
+			<include content="WidgetSelect">
+				<param name="id">19</param>
+			</include>
+		</control>
+		<!-- Widget 20 Settings -->
+		<control type="group">
+			<visible>String.IsEqual(Window(Home).Property(skinshortcuts-Widget),20)</visible>
+			<include content="WidgetSelect">
+				<param name="id">20</param>
+			</include>
+		</control>
+		<!-- TMDb Helper Limit Note (Visible strictly on Widget Settings views) -->
+		<control type="label">
+			<visible>!String.IsEmpty(Window(Home).Property(skinshortcuts-Widget))</visible>
+			<left>425</left>
+			<top>890</top>
+			<width>1395</width>
+			<height>40</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font34_Cond_Bold</font>
+			<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+			<label>* Note: TMDb Helper limits remote widgets to 20 items. Local libraries support up to 100. *</label>
+		</control>
+		<!-- 312, For Setting Widget -->
 		<control type="button" id="312">
 			<visible>False</visible>
 			<include>HiddenObject</include>
 		</control>
-		<!-- 404, for setting custom property -->
+		<!-- 404, For Setting Custom Property -->
 		<control type="button" id="404">
 			<visible>False</visible>
 			<include>HiddenObject</include>

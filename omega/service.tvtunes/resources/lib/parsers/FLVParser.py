@@ -6,7 +6,10 @@
 
 import os, struct
 
-from resources.lib.parsers.FileAccess import FileAccess
+try:
+    from resources.lib.parsers.FileAccess import FileAccess
+except ModuleNotFoundError:
+    from parsers.FileAccess import FileAccess
 
 
 

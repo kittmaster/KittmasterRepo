@@ -1,0 +1,74 @@
+{
+ "version": 2,
+ "name": "Default",
+ "active": false,
+ "items": [
+  {
+   "type": "video",
+   "enabled": true,
+   "name": "",
+   "settings": {
+    "vtype": "theater.intro",
+    "random": true,
+    "count": 1
+   }
+  },
+  {
+   "type": "video",
+   "enabled": true,
+   "name": "",
+   "settings": {
+    "vtype": "trailers.intro",
+    "random": true,
+    "count": 1
+   }
+  },
+  {
+   "type": "trailer",
+   "enabled": true,
+   "name": "",
+   "settings": {
+    "scrapers": "IMDB,TMDB",
+    "count": 2
+   }
+  },
+  {
+   "type": "video",
+   "enabled": true,
+   "name": "",
+   "settings": {
+    "vtype": "courtesy",
+    "random": true,
+    "count": 1
+   }
+  },
+  {
+   "type": "audioformat",
+   "enabled": true,
+   "name": "",
+   "settings": {}
+  },
+  {
+   "type": "feature",
+   "enabled": true,
+   "name": "",
+   "settings": {
+    "ratingBumper": "none"
+   }
+  }
+ ],
+ "attributes": {
+  "genres": [],
+  "directors": [],
+  "studios": [],
+  "actors": [],
+  "tags": [],
+  "dates": [],
+  "times": [],
+  "year": [],
+  "ratings": [],
+  "videoaspect": [],
+  "featuretitle": []
+ },
+ "settings": {}
+}

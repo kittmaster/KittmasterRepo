@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<window type="dialog" id="1106">
+	<defaultcontrol always="true">11</defaultcontrol>
+	<onunload>ClearProperty(IntroVideoPlaying,home)</onunload>
+	<controls>
+		<!-- Backgrounds And Static Text Elements -->
+		<control type="image">
+			<texture>colors/black.png</texture>
+		</control>
+		<control type="group">
+			<left>560</left>
+			<top>340</top>
+			<include content="DialogBackground">
+				<param name="width" value="800" />
+				<param name="height" value="400" />
+			</include>
+			<control type="image">
+				<right>40</right>
+				<top>30</top>
+				<width>120</width>
+				<height>60</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+			<control type="textbox" id="1">
+				<left>40</left>
+				<top>40</top>
+				<width>720</width>
+				<height>50</height>
+				<font>Font28_Bold</font>
+				<label>[COLOR red]$LOCALIZE[12999] [LOWERCASE]$LOCALIZE[409][/LOWERCASE]: $LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE]?[/COLOR]</label>
+			</control>
+			<control type="textbox" id="2">
+				<left>40</left>
+				<top>100</top>
+				<width>720</width>
+				<height>180</height>
+				<font>Font28_Reg</font>
+				<align>center</align>
+				<label>$LOCALIZE[31467]</label>
+			</control>
+
+			<!-- Buttons -->
+			<control type="grouplist" id="9106">
+				<left>40</left>
+				<top>300</top>
+				<width>720</width>
+				<height>80</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>20</itemgap>
+
+				<!-- Yes Button -->
+				<control type="button" id="10">
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[107]</label>
+					<align>center</align>
+					<!-- Show A Busy Spinner So The User Knows Something Is Happening -->
+					<onclick>ActivateWindow(busydialognocancel)</onclick>
+					<!-- Run The Script That Does All The Work -->
+					<!-- <onclick>RunScript(special://home/addons/resource.images.skin.madnox/resources/scripts/apply_template.py)</onclick> -->
+					<onclick>RunScript(script.skin.madnox, action=apply_template)</onclick>
+					<!-- The Script Will Close The Busy Dialog And Reload The Skin When It's Done -->
+				</control>
+
+				<!-- No Button -->
+				<control type="button" id="11">
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[106]</label>
+					<align>center</align>
+					<onclick>Skin.SetBool(Madnox.Settings.Initialized)</onclick>
+					<onclick>Close</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

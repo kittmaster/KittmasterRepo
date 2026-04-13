@@ -1,7 +1,6 @@
-# Kodi_Keyword_Translation_Values=Colour<|>Color,colour<|>color,Favourites<|>Favorites,favourites<|>favorites,Visualisation<|>Visualization,visualisation<|>visualization,Customise<|>Customize,customise<|>customize,coloured<|>colored,Coloured<|>Colored,tv shows<|>TV shows
 # Kodi Media Center language file
 # Addon Name: Madnox Redux
-# Addon id: skin.madnox
+# Addon id: skin.madnox.redux
 # Addon Provider: Team Madnox
 msgid ""
 msgstr ""
@@ -142,7 +141,7 @@ msgstr "Customize shortcut menu"
 
 #: /16x9/DialogColorPicker.xml
 msgctxt "#31025"
-msgid "palette"
+msgid "Palette"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
@@ -1157,7 +1156,7 @@ msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31228"
-msgid "Video preview window"
+msgid "Trailer preview window"
 msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
@@ -2122,7 +2121,7 @@ msgstr ""
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31421"
-msgid "Turn on saving to debug log"
+msgid "Turn on skin debugging to log"
 msgstr ""
 
 #: /16x9/Includes_Settings.xml
@@ -2137,7 +2136,7 @@ msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31424"
-msgid "Sets the size ratio of the fanart background. Scale/Keep/Center:	Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center: Aspect ratio is kept. Stretch: Aspect ratio is not kept."
 msgstr ""
 
 #: /16x9/Custom_1104_DialogOverlayColorPicker.xml
@@ -2148,52 +2147,262 @@ msgstr "Custom color"
 #: /16x9/Custom_1104_DialogOverlayColorPicker.xml
 msgctxt "#31426"
 msgid "Alpha"
-msgstr "Alpha"
+msgstr ""
 
 #: /16x9/Custom_1104_DialogOverlayColorPicker.xml
 msgctxt "#31427"
 msgid "Applied"
-msgstr "Applied"
+msgstr ""
 
 #: /16x9/Custom_1104_DialogOverlayColorPicker.xml
 msgctxt "#31428"
 msgid "Preview"
-msgstr "Preview"
+msgstr ""
 
 #: /16x9/DialogColorPicker.xml
 msgctxt "#31429"
 msgid "Feature"
-msgstr "Feature"
+msgstr ""
 
 #: /16x9/Custom_1104_DialogOverlayColorPicker.xml
 msgctxt "#31430"
 msgid "Sliders"
-msgstr "Sliders"
+msgstr ""
 
 #: /16x9/DialogColorPicker.xml
 msgctxt "#31431"
 msgid "Core mode (Palette locked)"
-msgstr "Core mode (Palette locked)"
+msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31432"
 msgid "Scale"
-msgstr "Scale"
+msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31433"
 msgid "Stretch"
-msgstr "Stretch"
+msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31434"
 msgid "Image"
-msgstr "Image"
+msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31435"
 msgid "Navigation"
-msgstr "Navigation"
+msgstr ""
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31436"
+msgid "Media flags data style"
+msgstr ""
+
+#: /16x9/Custom_1111_CustomSelectContainer.xml
+msgctxt "#31437"
+msgid "TMDB Info Settings"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31438"
+msgid "Displays icons in each row when the metadata is shown in Movies, TVShows, Biographies, & TMDb display modes."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31439"
+msgid "Wiki"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31440"
+msgid "Color selection"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31441"
+msgid "Flags"
+msgstr ""
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31442"
+msgid "Intro"
+msgstr ""
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31443"
+msgid "Outro"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31444"
+msgid "Colored"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31445"
+msgid "Addon"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31446"
+msgid "Image"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31447"
+msgid "Resource"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31448"
+msgid "Codec"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31449"
+msgid "Node"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31450"
+msgid "Artwork dump"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31451"
+msgid "PreShow Experience"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31452"
+msgid "Up"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31453"
+msgid "Current"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31454"
+msgid "Editing"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31455"
+msgid "Container"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31456"
+msgid "Legacy"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31457"
+msgid "Bumpers"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31458"
+msgid "Accent color"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31459"
+msgid "overlay dimming"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31460"
+msgid "Countdown"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31461"
+msgid "Courtesy"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31462"
+msgid "Show Error Notifications"
+msgstr ""
+
+#: /16x9/Custom_1106_DiaglogFirstRun.xml
+msgctxt "#31463"
+msgid "WARNING: Are you sure you want to reset all Madnox skin settings to defaults?\nThere is NO UNDO once executed.\nOnly affects skin settings, all addons/scripts are unaffected."
+msgstr ""
+
+#: /16x9/Custom_1106_DiaglogFirstRun.xml
+msgctxt "#31464"
+msgid "Are you sure you want to reset all Madnox skin settings...?[CR]This action cannot be undone!"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31465"
+msgid "Master reset"
+msgstr ""
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31466"
+msgid "Confirm factory reset"
+msgstr ""
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31467"
+msgid "Welcome to Madnox! For the best experience, we recommend applying the default settings. This will configure all visual options and features. Would you like to apply the Madnox recommended settings now?"
+msgstr ""
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31468"
+msgid "This will restore all skin settings to their original defaults.[CR][CR]Your current customizations will be lost.[CR]Are you sure you want to continue?"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31469"
+msgid "Initiate Madnox global skin reset"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31470"
+msgid "Restore Madnox skin settings to day 1 out of the box startup values. Only affects skin settings, does not alter or change anything else like scripts or plugins."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31471"
+msgid "Allows customization of default media flags without requiring outside hacks to the skin. This allows you to custom select which video container icons will be displayed for WebDL, 1080p, 720p etc. This can be reset at any time."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31472"
+msgid "Enables setting of the color of "In-Progress" bar feature."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31473"
+msgid "Sets of the color of "In-Progress" bar feature globally when enabled."
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31515"
+msgid "Blur with color"
+msgstr ""
+
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr ""
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr ""
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr ""
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
@@ -2333,7 +2542,7 @@ msgstr ""
 #: /16x9/Includes_Settings.xml
 msgctxt "#31928"
 msgid "Shows plot outline for tv shows and movies if available, otherwise will display the default plot."
-msgstr "Shows plot outline for TV shows and movies if available, otherwise will display the default plot."
+msgstr ""
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31929"
@@ -2453,7 +2662,7 @@ msgstr "Install colored movie genre icons for movies and TV shows."
 #: /16x9/Includes_Settings.xml
 msgctxt "#31953"
 msgid "Install black and white movie genre icons for movies and tv shows."
-msgstr "Install black and white movie genre icons for movies and TV shows."
+msgstr ""
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31954"

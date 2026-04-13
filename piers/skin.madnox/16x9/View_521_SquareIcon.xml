@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View521SquareIcon">
 		<!-- Floor -->
@@ -11,8 +11,10 @@
 			<visible>Control.IsVisible(521)</visible>
 			<include>AnimationZoomWindow</include>
 			<include>AnimationZoomVisible</include>
+			<!-- Large backing: in non-Favourites, toggles with setting.
+			     In Favourites, always shown (521 = large view only) -->
 			<include content="PanelDefault">
-				<param name="visible">!Skin.HasSetting(View521SmallIcons)</param>
+				<param name="visible">!Skin.HasSetting(View521SmallIcons) | Window.IsVisible(MyFavourites.xml)</param>
 				<param name="top">150</param>
 				<param name="height">820</param>
 				<param name="toptexture">170</param>
@@ -20,8 +22,9 @@
 				<param name="reflecttop">935</param>
 				<param name="reflect">!Skin.HasSetting(View521HideReflect)</param>
 			</include>
+			<!-- Small backing: only shown in non-Favourites when setting is on -->
 			<include content="PanelDefault">
-				<param name="visible">Skin.HasSetting(View521SmallIcons)</param>
+				<param name="visible">Skin.HasSetting(View521SmallIcons) + !Window.IsVisible(MyFavourites.xml)</param>
 				<param name="top">101</param>
 				<param name="height">869</param>
 				<param name="toptexture">121</param>
@@ -32,33 +35,34 @@
 			<control type="panel" id="521">
 				<left>110</left>
 				<width>1700</width>
-				<include condition="!Skin.HasSetting(View521SmallIcons)">View521Height1</include>
-				<include condition="Skin.HasSetting(View521SmallIcons)">View521Height2</include>
+				<!-- In Favourites always use large height; elsewhere use setting-driven includes -->
+				<include condition="!Window.IsVisible(MyFavourites.xml) + !Skin.HasSetting(View521SmallIcons)">View521Height1</include>
+				<include condition="!Window.IsVisible(MyFavourites.xml) + Skin.HasSetting(View521SmallIcons)">View521Height2</include>
+				<include condition="Window.IsVisible(MyFavourites.xml)">View521Height1</include>
 				<onleft>9050</onleft>
 				<onright>60512</onright>
 				<pagecontrol>60512</pagecontrol>
 				<include>ContainerScrollTime</include>
 				<viewtype label="$LOCALIZE[31260]">bigicon</viewtype>
-				<itemlayout height="340" width="340" condition="!Skin.HasSetting(View521SmallIcons)">
+				<!-- Large layout: in non-Favourites gated by setting; in Favourites always active -->
+				<itemlayout height="340" width="340" condition="!Skin.HasSetting(View521SmallIcons) | Window.IsVisible(MyFavourites.xml)">
 					<include content="ViewArtwork">
 						<param name="aspect">keep</param>
-						<!-- <param name="aspect">scale</param> -->
 						<param name="texturefadetime">0</param>
 						<param name="diffuse">diffuse/rounded5-320x320.png</param>
 						<param name="labelvisible">Container.Content(artists) + !Skin.HasSetting(View521DisableArtistLabel)</param>
 					</include>
 				</itemlayout>
-				<focusedlayout height="340" width="340" condition="!Skin.HasSetting(View521SmallIcons)">
+				<focusedlayout height="340" width="340" condition="!Skin.HasSetting(View521SmallIcons) | Window.IsVisible(MyFavourites.xml)">
 					<control type="image">
 						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<include content="ViewArtwork">
 							<param name="aspect">keep</param>
-							<!-- <param name="aspect">scale</param> -->
 							<param name="texturefadetime">0</param>
 							<param name="diffuse">diffuse/rounded5-320x320.png</param>
 							<param name="labeltextcolor">$VAR[PanelTextColorVar]</param>
@@ -66,10 +70,11 @@
 						</include>
 					</control>
 				</focusedlayout>
-				<itemlayout height="243" width="242.85" condition="Skin.HasSetting(View521SmallIcons)">
+				<!-- Small layout: only active in non-Favourites -->
+				<itemlayout height="243" width="242.85" condition="Skin.HasSetting(View521SmallIcons) + !Window.IsVisible(MyFavourites.xml)">
 					<control type="group">
 						<include content="ViewArtwork">
-							<param name="aspect">scale</param>
+							<param name="aspect">keep</param>
 							<param name="texturefadetime">0</param>
 							<param name="diffuse">diffuse/rounded5-223x207.png</param>
 							<param name="labelvisible">Container.Content(artists) + !Skin.HasSetting(View521DisableArtistLabel)</param>
@@ -77,7 +82,7 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="243" width="242.85" condition="Skin.HasSetting(View521SmallIcons)">
+				<focusedlayout height="243" width="242.85" condition="Skin.HasSetting(View521SmallIcons) + !Window.IsVisible(MyFavourites.xml)">
 					<control type="group">
 						<top>3.2</top>
 						<control type="image">
@@ -85,10 +90,10 @@
 						</control>
 						<control type="group">
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+								<effect type="zoom" start="95" end="100" time="240" center="auto" />
 							</animation>
 							<include content="ViewArtwork">
-								<param name="aspect">scale</param>
+								<param name="aspect">keep</param>
 								<param name="texturefadetime">0</param>
 								<param name="diffuse">diffuse/rounded5-223x207.png</param>
 								<param name="labeltextcolor">$VAR[PanelTextColorVar]</param>
@@ -101,16 +106,16 @@
 			</control>
 			<control type="scrollbar" id="60512">
 				<right>80</right>
-				<include condition="!Skin.HasSetting(View521SmallIcons)">View521Scroll1</include>
-				<include condition="Skin.HasSetting(View521SmallIcons)">View521Scroll2</include>
+				<include condition="!Skin.HasSetting(View521SmallIcons) | Window.IsVisible(MyFavourites.xml)">View521Scroll1</include>
+				<include condition="Skin.HasSetting(View521SmallIcons) + !Window.IsVisible(MyFavourites.xml)">View521Scroll2</include>
 				<bottom>170</bottom>
 				<onleft>521</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
 			</control>
 		</control>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom info/Media flags: suppressed in Favourites (has its own HUD) -->
 		<control type="group">
-			<visible>Control.IsVisible(521)</visible>
+			<visible>Control.IsVisible(521) + !Window.IsVisible(MyFavourites.xml)</visible>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>
 			</include>
@@ -120,7 +125,82 @@
 			<include condition="Window.IsVisible(MyMusicNav.xml)">MediaFlagsPanelAudio</include>
 			<include condition="Window.IsVisible(MyMusicNav.xml)">MediaFlagsPanelVideos</include>
 		</control>
+
+		<!-- ═══════════════════════════════════════════════════════════════ -->
+		<!-- FAVOURITES SMALL VIEW (5211)                                   -->
+		<!-- Panel 521 is locked to large in Favourites. This panel handles -->
+		<!-- small exclusively via Container.SetViewMode(5211).             -->
+		<!-- Outer group gates entire block to Favourites only.             -->
+		<!-- ═══════════════════════════════════════════════════════════════ -->
+		<control type="group">
+			<visible>Window.IsVisible(MyFavourites.xml)</visible>
+			<!-- Small backing -->
+			<control type="group">
+				<visible>Control.IsVisible(5211)</visible>
+				<include content="PanelDefault">
+					<param name="visible">true</param>
+					<param name="top">101</param>
+					<param name="height">869</param>
+					<param name="toptexture">121</param>
+					<param name="heighttexture">829</param>
+					<param name="reflecttop">935</param>
+					<param name="reflect">!Skin.HasSetting(View521HideReflect)</param>
+				</include>
+			</control>
+			<!-- Small panel -->
+			<control type="panel" id="5211">
+				<left>110</left>
+				<width>1700</width>
+				<top>171</top>
+				<height>729</height>
+				<onleft>9050</onleft>
+				<onright>65211</onright>
+				<pagecontrol>65211</pagecontrol>
+				<include>ContainerScrollTime</include>
+				<viewtype label="$LOCALIZE[31260]">bigicon</viewtype>
+				<itemlayout height="243" width="242.85">
+					<control type="group">
+						<include content="ViewArtwork">
+							<param name="aspect">keep</param>
+							<param name="texturefadetime">0</param>
+							<param name="diffuse">diffuse/rounded5-223x207.png</param>
+							<param name="labelvisible">Container.Content(artists) + !Skin.HasSetting(View521DisableArtistLabel)</param>
+							<param name="labelfont">Font26_Cond_07</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="243" width="242.85">
+					<control type="group">
+						<top>3.2</top>
+						<control type="image">
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+						</control>
+						<control type="group">
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="95" end="100" time="240" center="auto" />
+							</animation>
+							<include content="ViewArtwork">
+								<param name="aspect">keep</param>
+								<param name="texturefadetime">0</param>
+								<param name="diffuse">diffuse/rounded5-223x207.png</param>
+								<param name="labeltextcolor">$VAR[PanelTextColorVar]</param>
+								<param name="labelvisible">Container.Content(artists) + !Skin.HasSetting(View521DisableArtistLabel)</param>
+								<param name="labelfont">Font26_Cond_07</param>
+							</include>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="65211">
+				<right>80</right>
+				<top>161</top>
+				<bottom>170</bottom>
+				<onleft>5211</onleft>
+				<onright condition="Control.IsVisible(61300)">61300</onright>
+			</control>
+		</control>
 	</include>
+
 	<include name="View521Height1">
 		<top>220</top>
 		<height>680</height>

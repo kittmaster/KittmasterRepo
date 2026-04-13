@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol>8001</defaultcontrol>
 	<menucontrol>9050</menucontrol>
@@ -73,7 +73,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="image">
 							<bordersize>10</bordersize>
@@ -104,34 +104,34 @@
 					<item id="1">
 						<label>$LOCALIZE[10003]</label>
 						<onclick>ActivateWindow(filemanager)</onclick>
-						<icon>special://skin/extras/backgrounds/system/filemanager.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/filemanager.jpg</icon>
 					</item>
 					<item id="2">
 						<label>$LOCALIZE[24001]</label>
 						<onclick>ActivateWindow(addonbrowser)</onclick>
-						<icon>special://skin/extras/backgrounds/system/addons.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/addons.jpg</icon>
 					</item>
 					<item id="3">
 						<label>$LOCALIZE[138]</label>
 						<onclick>ActivateWindow(systeminfo)</onclick>
-						<icon>special://skin/extras/backgrounds/system/sysinfo.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/sysinfo.jpg</icon>
 					</item>
 					<item id="4">
 						<visible>![System.AddonIsEnabled(service.libreelec.settings) | System.AddonIsEnabled(service.coreelec.settings)]</visible>
 						<label>$LOCALIZE[14114]</label>
 						<onclick>ActivateWindow(eventlog)</onclick>
-						<icon>special://skin/extras/backgrounds/system/eventlog.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/eventlog.jpg</icon>
 					</item>
 					<item id="5">
 						<visible>System.AddonIsEnabled(service.libreelec.settings)</visible>
 						<label>LibreELEC $LOCALIZE[5]</label>
-						<icon>special://skin/extras/backgrounds/system/libreelec.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/libreelec.jpg</icon>
 						<onclick>RunScript(service.libreelec.settings)</onclick>
 					</item>
 					<item id="6">
 						<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 						<label>CoreELEC $LOCALIZE[5]</label>
-						<icon>special://skin/extras/backgrounds/system/libreelec.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/libreelec.jpg</icon>
 						<onclick>RunScript(service.coreelec.settings)</onclick>
 					</item>
 				</content>
@@ -186,7 +186,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="image">
 							<bordersize>10</bordersize>
@@ -217,48 +217,48 @@
 					<!-- <item id="1">
 						<label>$LOCALIZE[20077]</label>
 						<onclick>ActivateWindow(SkinSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/skinsettings.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/skinsettings.jpg</icon>
 					</item> -->
 					<item id="2">
 						<label>$LOCALIZE[14207]</label>
 						<onclick>ActivateWindow(InterfaceSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/interface.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/interface.jpg</icon>
 					</item>
 					<item id="3">
 						<label>$LOCALIZE[14212]</label>
 						<onclick>ActivateWindow(MediaSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/media.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/media.jpg</icon>
 					</item>
 					<item id="4">
 						<label>$LOCALIZE[14201]</label>
 						<onclick>ActivateWindow(PlayerSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/player.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/player.jpg</icon>
 					</item>
 					<item id="5">
 						<label>$LOCALIZE[14209]</label>
 						<onclick>ActivateWindow(SystemSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/system.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/system.jpg</icon>
 					</item>
 					<item id="6">
 						<label>$LOCALIZE[14208]</label>
 						<onclick>ActivateWindow(ServiceSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/network.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/network.jpg</icon>
 					</item>
 					<item id="7">
 						<label>$LOCALIZE[14205]</label>
 						<onclick>ActivateWindow(PVRSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/livetv.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/livetv.jpg</icon>
 					</item>
 					<item id="8">
 						<label>$LOCALIZE[14210]</label>
 						<onclick>ActivateWindow(Profiles)</onclick>
-						<icon>special://skin/extras/backgrounds/system/profiles.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/profiles.jpg</icon>
 					</item>
 					<item id="9">
 						<visible>System.GetBool(gamesgeneral.enable)</visible>
 						<label>$LOCALIZE[15016]</label>
 						<onclick>ActivateWindow(GameSettings)</onclick>
-						<icon>special://skin/extras/backgrounds/system/games.jpg</icon>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/games.jpg</icon>
 					</item>
 				</content>
 			</control>

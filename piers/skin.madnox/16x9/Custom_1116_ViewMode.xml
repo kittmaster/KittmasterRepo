@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window type="dialog" id="1116">
 	<defaultcontrol always="true">100</defaultcontrol>
 	<controls>
@@ -78,7 +78,7 @@
 					<onclick>Container.SetViewMode(58)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
-				<!-- Cover flow -->
+				<!-- Cover Flow -->
 				<control type="label" id="102">
 					<visible>Control.IsVisible(1500) | Control.IsVisible(1501) | Control.IsVisible(1502) | Control.IsVisible(1503) | Control.IsVisible(1504) | Control.IsVisible(1505) | Control.IsVisible(1506) | Control.IsVisible(1507) | Control.IsVisible(1508) | Control.IsVisible(1509) | Control.IsVisible(1510) | Control.IsVisible(1511) | Control.IsVisible(1512)</visible>
 					<label>$LOCALIZE[31269]</label>
@@ -216,7 +216,7 @@
 					<onclick>Container.SetViewMode(523)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
-				<!-- Icon info -->
+				<!-- Icon Info -->
 				<control type="label" id="104">
 					<visible>Control.IsVisible(1530) | Control.IsVisible(1531) | Control.IsVisible(1532) | Control.IsVisible(1533)</visible>
 					<label>$LOCALIZE[31271]</label>
@@ -301,7 +301,7 @@
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 					<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
 					<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
-					<texturenofocus/>
+					<texturenofocus />
 				</control>
 				<control type="button">
 					<left>140</left>
@@ -313,7 +313,7 @@
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 					<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
 					<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
-					<texturenofocus/>
+					<texturenofocus />
 				</control>
 			</control>
 		</control>

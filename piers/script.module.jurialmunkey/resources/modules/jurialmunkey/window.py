@@ -208,9 +208,26 @@ class WindowChecker():
                 return True
         return False
 
-    def get_window_property(self, key, is_type=None, is_home=False):
+    @property
+    def current_base_window(self):
         try:
-            window = xbmcgui.Window(10000) if is_home else xbmcgui.Window(self.current_window)
+            return self._current_base_window
+        except AttributeError:
+            return self.get_current_base_window()
+
+    def get_current_base_window(self):
+        self._current_base_window = get_current_window(get_dialog=False)
+        return self._current_base_window
+
+    def is_current_base_window_xml(self, values):
+        for i in values:
+            if self.current_base_window in self.window_xml(i):
+                return True
+        return False
+
+    def get_window_property(self, key, is_type=None, is_home=False, is_id=0):
+        try:
+            window = xbmcgui.Window(is_id or 10000) if is_home or is_id else xbmcgui.Window(self.current_window)
         except RuntimeError:
             return
         if not window:
@@ -382,14 +399,14 @@ class WindowProperty():
 class WindowPropertySetter():
     window_id = 10000
 
-    def get_window(self):
+    def get_window(self, use_current_window=False, get_dialog=False):
         try:
-            return xbmcgui.Window(self.window_id)
+            return xbmcgui.Window(get_current_window(get_dialog=get_dialog) if use_current_window else self.window_id)
         except RuntimeError:
             return
 
-    def get_property(self, name, set_property=None, clear_property=False, is_type=None, prefix='TMDbHelper'):
-        _win = self.get_window()
+    def get_property(self, name, set_property=None, clear_property=False, is_type=None, prefix='TMDbHelper', use_current_window=False):
+        _win = self.get_window(use_current_window)
         try:
             name = f'{prefix}.{name}'
             ret_property = set_property or _win.getProperty(name)

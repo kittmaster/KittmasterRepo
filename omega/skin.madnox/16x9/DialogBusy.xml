@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<animation effect="fade" delay="400" time="480">WindowOpen</animation>
 	<animation effect="fade" time="480">WindowClose</animation>
 	<controls>
 		<control type="group">
+			<visible>!String.IsEmpty(Window(Home).Property(Madnox.SkinReady))</visible>
 			<control type="image">
 				<include>FullScreenDimensions</include>
 				<texture colordiffuse="ff000000">colors/white50.png</texture>

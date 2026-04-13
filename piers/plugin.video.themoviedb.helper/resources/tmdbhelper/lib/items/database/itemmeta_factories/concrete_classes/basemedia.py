@@ -125,9 +125,21 @@ class MediaItemArtworkRoutes:
             'parents': (None, 'tvshow', 'season'),
             'art_api': 'user',
         },
+        'default_art_poster': {
+            'affixes': (None, ),
+            'outputs': 'poster',
+            'parents': (None, 'tvshow', 'season'),
+            'art_api': 'default',
+        },
+        'default_art_fanart': {
+            'affixes': (None, ),
+            'outputs': 'fanart',
+            'parents': (None, 'tvshow', 'season'),
+            'art_api': 'default',
+        },
     }
 
-    def get_art_list(self, affix=None, allow_ftv=False, allow_tmdb=False, allow_user=False, no_affix=False):
+    def get_art_list(self, affix=None, allow_ftv=False, allow_tmdb=False, allow_user=False, allow_default=False, no_affix=False):
 
         def get_art_tuple(route):
             definition = self.routes[route]
@@ -136,6 +148,8 @@ class MediaItemArtworkRoutes:
             if not allow_tmdb and definition['art_api'] == 'tmdb':
                 return
             if not allow_user and definition['art_api'] == 'user':
+                return
+            if not allow_default and definition['art_api'] == 'default':
                 return
             if no_affix and len(definition['affixes']) != 1:
                 return
@@ -216,10 +230,10 @@ class MediaItem(BaseItem):
         return MediaItemArtworkRoutes().configured_routes
 
     infolabels_dbclist_routes = (
-        (('genre', None), 'name', 'genre'),
-        (('country', None), 'name', 'country'),
-        (('director', None), 'name', 'director'),
-        (('writer', None), 'name', 'writer'),
+        MediaItemInfoLabelItemRoutes.genre,
+        MediaItemInfoLabelItemRoutes.country,
+        MediaItemInfoLabelItemRoutes.director,
+        MediaItemInfoLabelItemRoutes.writer,
     )
 
     infolabels_dbcitem_routes = (
@@ -240,6 +254,12 @@ class MediaItem(BaseItem):
             'mappings': {'name': 'name', 'tmdb_id': 'tmdb_id'},
             'propname': ('genre', ),
             'joinings': None
+        },
+        {
+            'instance': ('language', None),
+            'mappings': {'name': 'name', 'iso_language': 'iso_language', 'english_name': 'english_name'},
+            'propname': ('language', ),
+            'joinings': ('language', 'english_name')
         },
         {
             'instance': ('country', None),
@@ -333,21 +353,22 @@ class MediaItem(BaseItem):
         return infoproperties
 
     def get_infoproperties_translation(self, infoproperties, subtype=None):
+        if self.extendedinfo:
 
-        generator = (
-            (
-                f"{i['iso_language']}_{subtype or ''}{k}",
-                f"{i['iso_language']}-{i['iso_country']}_{subtype or ''}{k}",
-                i[k]
+            generator = (
+                (
+                    f"{i['iso_language']}_{subtype or ''}{k}",
+                    f"{i['iso_language']}-{i['iso_country']}_{subtype or ''}{k}",
+                    i[k]
+                )
+                for i in self.return_basemeta_db('translation', subtype).cached_data
+                for k in ('title', 'plot', 'tagline')
+                if i[k]
             )
-            for i in self.return_basemeta_db('translation', subtype).cached_data
-            for k in ('title', 'plot', 'tagline')
-            if i[k]
-        )
 
-        for key_language, key_combined, value in generator:
-            infoproperties[key_combined] = value
-            infoproperties[key_language] = infoproperties.get(key_language) or value
+            for key_language, key_combined, value in generator:
+                infoproperties[key_combined] = value
+                infoproperties[key_language] = infoproperties.get(key_language) or value
 
         return infoproperties
 

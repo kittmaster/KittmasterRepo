@@ -1,4 +1,4 @@
-from xbmc import Player
+from xbmc import Player, Monitor
 from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.monitor.images import ImageFunctions
 from tmdbhelper.lib.monitor.common import CommonMonitorFunctions
@@ -177,9 +177,20 @@ class PlayerItem():
     def get_ratings(self):
         if not self.details:
             return {}
+        if not get_setting('use_online_ratings'):
+            return {}
         if get_condvisibility("Skin.HasSetting(TMDbHelper.DisableRatings)"):
             return {}
         return self._parent.get_all_ratings(self.tmdb_type, self.tmdb_id, self.season, self.episode) or {}
+
+    def get_artwork(self):
+        if not self.details:
+            return {}
+        if not get_setting('use_online_artwork'):
+            return {}
+        if get_condvisibility("Skin.HasSetting(TMDbHelper.DisableArtwork)"):
+            return {}
+        return self.artwork
 
 
 class PlayerMonitor(Player, CommonMonitorFunctions):
@@ -209,6 +220,24 @@ class PlayerMonitor(Player, CommonMonitorFunctions):
     def onPlayBackResumed(self):
         self.scrobbler_start()
 
+    def onPlayBackSeek(self, *args, **kwargs):
+        self.wait_for_seek()
+        self.scrobbler_start()
+
+    def onPlayBackSeekChapter(self, *args, **kwargs):
+        self.wait_for_seek()
+        self.scrobbler_start()
+
+    def wait_for_seek(self, offset=1):
+        monitor = Monitor()
+        monitor.waitForAbort(offset)
+        while (
+            get_condvisibility("Player.Seeking")
+            and not monitor.abortRequested()
+        ):
+            monitor.waitForAbort(1)
+        del monitor
+
     def reset_player_item(self):
         self.player_item = PlayerItem(self)
 
@@ -223,20 +252,34 @@ class PlayerMonitor(Player, CommonMonitorFunctions):
     def scrobbler_start(self):
         if not self.scrobbler:
             return
+        self.scrobbler_update()
         self.scrobbler.start(self.tmdb_type, self.tmdb_id)
 
     def scrobbler_pause(self):
         if not self.scrobbler:
             return
+        self.scrobbler_update()
         self.scrobbler.pause(self.tmdb_type, self.tmdb_id)
 
     def scrobbler_stop(self):
         if not self.scrobbler:
             return
+        self.scrobbler_update()
         self.scrobbler.stop(self.tmdb_type, self.tmdb_id)
 
-    def update_time(self):
-        if not self.scrobbler:
+    def scrobbler_sync(self):
+        if not self.scrobbler or not self.isPlayingVideo():
+            return
+        try:
+            if (self.getTime() / self.getTotalTime()) < 0.8:
+                return
+        except ZeroDivisionError:
+            return
+        self.scrobbler_update()
+        self.scrobbler.sync(self.tmdb_type, self.tmdb_id)
+
+    def scrobbler_update(self):
+        if not self.scrobbler or not self.isPlayingVideo():
             return
         self.scrobbler.update_time(self.tmdb_type, self.tmdb_id, self.getTime())
 
@@ -289,7 +332,7 @@ class PlayerMonitor(Player, CommonMonitorFunctions):
         return self.player_item.tmdb_id
 
     def get_clearlogo(self):
-        art = self.details.get('art') or {}
+        art = self.player_item.get_artwork()
         return (
             (
                 art.get('clearlogo')
@@ -323,7 +366,7 @@ class PlayerMonitor(Player, CommonMonitorFunctions):
         if get_condvisibility("!Skin.HasSetting(TMDbHelper.EnableBlur)"):
             return
 
-        art = self.details.get('art') or {}
+        art = self.player_item.get_artwork()
 
         fanart = (
             get_infolabel('Player.Art(fanart)')
@@ -362,6 +405,9 @@ class PlayerMonitor(Player, CommonMonitorFunctions):
         self.previous_clearlogo = None
         self.previous_poster = None
         self.previous_fanart = None
+
+    def on_fullscreen(self):
+        self.scrobbler_sync()
 
     def get_playingitem(self):
         # Check that video other than dummy splash video is playing
@@ -407,5 +453,6 @@ class PlayerMonitor(Player, CommonMonitorFunctions):
         # Update our properties
         self.set_properties(self.details)
 
-        # Start Trakt trakt_scrobbling
+        # Start Trakt trakt_scrobbling. Wait for seek in case of resuming.
+        self.wait_for_seek(10)
         self.scrobbler_start()

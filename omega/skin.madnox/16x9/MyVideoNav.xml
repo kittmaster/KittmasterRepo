@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fanart)|Art(tvshow.fanart)|Art(landscape)|Art(thumb)|Icon,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.Fallback,special://home/addons/resource.images.skin.madnox/resources/backgrounds/default_livecases.jpg,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+	<!-- Start the ratings processing script in background monitor mode for the Library view -->
+	<onload>RunScript(script.skin.madnox, action=process_ratings, mode=monitor, window_id=videos)</onload>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<views>50,51,53,54,55,56,57,58,500,501,502,503,504,505,506,507,508,509,510,511,512,520,521,522,523,530,531,532,533,540,541,542,543</views>
 	<menucontrol>9050</menucontrol>
@@ -9,19 +14,19 @@
 			<param name="imagepath">$VAR[VideoBackgroundVar]</param>
 			<param name="animatedfanart">Skin.HasSetting(VideoAnimatedFanart)</param>
 		</include>
-		<!-- Movie set / TV show season cover background -->
+		<!-- Movie Set / Tv Show Season Cover Background -->
 		<control type="list" id="7001">
 			<visible>[Skin.HasSetting(VideoSetCover) + String.IsEqual(ListItem.DBTYPE,set)] | [Skin.HasSetting(VideoSeasonCover) + String.IsEqual(ListItem.DBTYPE,tvshow)]</visible>
 			<include>HiddenList</include>
 			<content limit="10" sortby="year">$INFO[ListItem.FolderPath]</content>
 		</control>
-		<!-- Genre cover background / Subfolder fanart / Item counts -->
+		<!-- Genre Cover Background / Subfolder Fanart / Item Counts -->
 		<control type="list" id="7002">
 			<visible>String.StartsWith(ListItem.FolderPath,videodb)</visible>
 			<include>HiddenList</include>
 			<content>$VAR[VideoFolderPathVar]</content>
 		</control>
-		<!-- Subfolder fanart -->
+		<!-- Subfolder Fanart -->
 		<control type="fadelabel" id="7003">
 			<visible>!ListItem.IsParentFolder + [Container.Content(genres) | Container.Content(years) | Container.Content(actors) | Container.Content(directors) | Container.Content(studios) | Container.Content(countries) | Container.Content(artists) | Container.Content(albums)]</visible>
 			<top>-1000</top>
@@ -43,7 +48,7 @@
 			<label>$INFO[Container(7002).ListItem(8).Art(fanart)]</label>
 			<label>$INFO[Container(7002).ListItem(9).Art(fanart)]</label>
 		</control>
-		<!-- Extra fanart -->
+		<!-- Extra Fanart -->
 		<control type="fadelabel" id="7004">
 			<visible>!Skin.HasSetting(DisableVideoExtraFanart)</visible>
 			<top>-1000</top>
@@ -77,6 +82,7 @@
 			<label>$INFO[ListItem.Art(tvshow.fanart9)]</label>
 			<label>$INFO[ListItem.Art(tvshow.fanart10)]</label>
 		</control>
+
 		<control type="group">
 			<visible>!Window.IsActive(movieinformation) + !Window.IsActive(script-embuary-person.xml) + !Window.IsActive(script-tmdbhelper-recommendations.xml) | !Window.IsActive(script-embuary-video.xml)</visible>
 			<include>AnimationVisibleFade</include>
@@ -89,7 +95,7 @@
 			<include condition="!Skin.HasSetting(DisableView3Panel)">View563Panel</include>
 			<include condition="!Skin.HasSetting(DisableView3PanelSquare)">View573PanelSquare</include>
 			<include condition="!Skin.HasSetting(DisableViewRightList)">View58RightList</include>
-			<!-- Cover flow -->
+			<!-- Cover Flow -->
 			<include condition="!Skin.HasSetting(DisableViewPortrait)">View500Portrait</include>
 			<include condition="!Skin.HasSetting(DisableViewSquare)">View501Square</include>
 			<include condition="!Skin.HasSetting(DisableViewBanner)">View502Banner</include>
@@ -108,7 +114,7 @@
 			<include condition="!Skin.HasSetting(DisableViewSquareIcon)">View521SquareIcon</include>
 			<include condition="!Skin.HasSetting(DisableViewBannerIcon)">View522BannerIcon</include>
 			<include condition="!Skin.HasSetting(DisableViewLandscapeIcon)">View523LandscapeIcon</include>
-			<!-- Icon info-->
+			<!-- Icon Info-->
 			<include condition="!Skin.HasSetting(DisableViewPortraitIconInfo)">View530PortraitIconInfo</include>
 			<include condition="!Skin.HasSetting(DisableViewSquareIconInfo)">View531SquareIconInfo</include>
 			<include condition="!Skin.HasSetting(DisableViewBannerIconInfo)">View532BannerIconInfo</include>
@@ -118,7 +124,7 @@
 			<include condition="!Skin.HasSetting(DisableViewSquareWall)">View541SquareWall</include>
 			<include condition="!Skin.HasSetting(DisableViewBannerWall)">View542BannerWall</include>
 			<include condition="!Skin.HasSetting(DisableViewLandscapeWall)">View543LandscapeWall</include>
-			<!-- Studio Logo check if image exists -->
+			<!-- Studio Logo Check If Image Exists -->
 			<control type="image" id="811112">
 				<include>HiddenObject</include>
 				<texture fallback="none">$VAR[StudioIconsVar]</texture>

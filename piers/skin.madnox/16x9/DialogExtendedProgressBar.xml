@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<controls>
 		<control type="group">
+			<!-- Only allow this dialog to show if the Home screen has finished loading.
+				This prevents it from flashing on top of the intro video or black screen. -->
+			<visible>!String.IsEmpty(Window(Home).Property(Madnox.SkinReady))</visible>
+
 			<animation effect="zoom" end="80" center="auto" time="480" tween="cubic" easing="inout" condition="Skin.HasSetting(SmallerNotifications)">Conditional</animation>
 			<include>AnimationDialogPopupNotification</include>
 			<top>49</top>

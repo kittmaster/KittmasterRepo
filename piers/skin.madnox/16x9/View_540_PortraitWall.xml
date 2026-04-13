@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View540PortraitWall">
-		<!-- Background fade -->
+		<!-- Background Fade -->
 		<control type="group">
 			<visible>Control.IsVisible(540)</visible>
 			<include>AnimationVisibleFade</include>
@@ -11,9 +11,13 @@
 				<texture>colors/black80.png</texture>
 			</control>
 		</control>
-		<!-- Panel -->
+
+		<!-- Main Panel Group (Animates) -->
 		<control type="group">
 			<visible>Control.IsVisible(540)</visible>
+			<animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))" reversible="true">
+				<effect type="slide" end="-800,0" time="400" tween="cubic" easing="out" />
+			</animation>
 			<animation effect="slide" end="0,-40" time="240" condition="Skin.HasSetting(VideosHideTopBar)">Conditional</animation>
 			<include>AnimationZoomWindow</include>
 			<include>AnimationZoomVisible</include>
@@ -22,11 +26,14 @@
 				<left>40</left>
 				<width>1840</width>
 				<height>1000</height>
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<onunfocus>PlayerControl(Stop)</onunfocus>
 				<onleft>9050</onleft>
 				<onright>60540</onright>
 				<pagecontrol>60540</pagecontrol>
 				<include>ContainerScrollTime</include>
 				<viewtype label="$LOCALIZE[31254]">bigicon</viewtype>
+				<!-- Portrait Large -->
 				<itemlayout height="384" width="262.8" condition="String.IsEmpty(Skin.String(View540IconSize))">
 					<control type="group">
 						<visible>!Skin.HasSetting(View540VideoCase)</visible>
@@ -46,7 +53,14 @@
 							<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
 						</include>
 					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
+				<!-- Portrait Large -->
 				<focusedlayout height="384" width="262.8" condition="String.IsEmpty(Skin.String(View540IconSize))">
 					<control type="group">
 						<animation effect="zoom" start="100" end="115" center="auto" time="240">focus</animation>
@@ -72,8 +86,15 @@
 								<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
 							</include>
 						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
+				<!-- Portrait Medium -->
 				<itemlayout height="335" width="230" condition="Skin.String(View540IconSize,1)">
 					<control type="group">
 						<visible>!Skin.HasSetting(View540VideoCase)</visible>
@@ -93,7 +114,14 @@
 							<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
 						</include>
 					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
+				<!-- Portrait Medium -->
 				<focusedlayout height="335" width="230" condition="Skin.String(View540IconSize,1)">
 					<control type="group">
 						<animation effect="zoom" start="100" end="115" center="auto" time="240">focus</animation>
@@ -119,8 +147,15 @@
 								<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
 							</include>
 						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
+				<!-- Portrait Small -->
 				<itemlayout height="266" width="184" condition="Skin.String(View540IconSize,2)">
 					<control type="group">
 						<visible>!Skin.HasSetting(View540VideoCase)</visible>
@@ -140,7 +175,14 @@
 							<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
 						</include>
 					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="20" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
+				<!-- Portrait Small -->
 				<focusedlayout height="266" width="184" condition="Skin.String(View540IconSize,2)">
 					<control type="group">
 						<animation effect="zoom" start="100" end="115" center="auto" time="240">focus</animation>
@@ -166,6 +208,12 @@
 								<param name="watchedstatusvisible">!Skin.HasSetting(View540DisableWatchedStatus)</param>
 							</include>
 						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="20" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
 			</control>
@@ -173,7 +221,7 @@
 				<param name="id">540</param>
 			</include>
 		</control>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(540)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -188,6 +236,73 @@
 				<param name="right">50</param>
 				<param name="bottom">28</param>
 			</include>
+		</control>
+
+		<!-- Pop-Up Video Player Group -->
+		<control type="group">
+			<visible>Control.IsVisible(540) + !String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+			<include>AnimationVideoPreviewPopup400</include>
+			<right>50</right>
+			<top>120</top>
+			<width>700</width>
+			<height>800</height>
+			<!-- Video Player -->
+			<control type="group">
+				<width>700</width>
+				<height>394</height>
+				<control type="image">
+					<texture>colors/black.png</texture>
+				</control>
+				<control type="videowindow">
+					<colordiffuse>FFA0A0A0</colordiffuse>
+				</control>
+				<!-- Theme-Aware Border To Prevent Covering The Video -->
+				<control type="image">
+					<bordersize>-15</bordersize>
+					<!-- <texture border="20">thumbs/overlay.png</texture> -->
+					<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+				</control>
+			</control>
+			<!-- Info Panel for Video -->
+			<control type="group">
+				<top>410</top>
+				<!-- Title -->
+				<control type="label">
+					<width>700</width>
+					<height>90</height>
+					<font>Font28_Bold</font>
+					<textcolor>ff00aaff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[ListItem.Title]</label>
+					<scroll>true</scroll>
+				</control>
+				<!-- Top Separator -->
+				<control type="image">
+					<top>90</top>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+				<!-- Plot Textbox -->
+				<control type="textbox">
+					<top>100</top>
+					<width>700</width>
+					<height>280</height>
+					<font>Font28_Reg</font>
+					<textcolor>ffcccccc</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>justify</align>
+					<label>$INFO[ListItem.Plot]</label>
+					<animation effect="scroll" time="20000" delay="5000" end="100%" condition="true" loop="true" reversible="false">Conditional</animation>
+				</control>
+				<!-- Bottom Separator -->
+				<control type="image">
+					<top>390</top>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+			</control>
 		</control>
 	</include>
 </includes>

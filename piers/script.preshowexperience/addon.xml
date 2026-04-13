@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.preshowexperience" name="PreShow Experience" version="0.3.2.1" provider-name="PreShowExperience">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.beautifulsoup4" version="4.9.3"/>
+        <import addon="script.module.requests" version="2.22.0.1"/>
+    </requires>
+    <extension point="xbmc.python.script" library="addon.py">
+        <provides>executable</provides>
+    </extension>
+	<extension point="kodi.context.item">
+	  <menu id="kodi.core.main">
+		<item library="context.py">
+		  <label>32000</label>
+		  <visible>true</visible>
+		</item>
+	  </menu>
+	</extension>
+  <extension point="xbmc.service" library="resources/lib/service.py" start="login" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Movie theater preshow experience</summary>
+        <description lang="en">Create a completely customizable movie preshow containing trailers, trivia, video bumpers or slideshows for your home theater.</description>
+        <platform>all</platform>
+        <forum>https://preshowexperience.com/forums/</forum>
+        <website>https://preshowexperience.com/</website>
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+            <screenshot>resources/media/screenshot1.jpg</screenshot>
+            <screenshot>resources/media/screenshot2.jpg</screenshot>
+            <screenshot>resources/media/screenshot3.jpg</screenshot>
+        </assets>
+        <news>Added TMDB language options</news>
+    </extension>
+</addon>

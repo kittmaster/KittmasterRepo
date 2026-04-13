@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View58RightList">
-		<!-- Background fade -->
+		<!-- Background Fade -->
 		<control type="image">
 			<visible>Control.IsVisible(58)</visible>
 			<right>0</right>
@@ -33,7 +33,10 @@
 					<left>475</left>
 					<right>20</right>
 					<height>838</height>
+					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<onleft>PlayerControl(Stop)</onleft>
 					<onleft>9050</onleft>
+					<onright>PlayerControl(Stop)</onright>
 					<onright>6058</onright>
 					<pagecontrol>6058</pagecontrol>
 					<movement>3</movement>
@@ -1087,7 +1090,7 @@
 				<texturesliderbackground border="2">buttons/scrollbar-nib-back-vertical.png</texturesliderbackground>
 			</control>
 		</control>
-		<!-- Art -->
+		<!-- Art Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(58)</visible>
 			<include content="AnimationSlideLeftWindow">
@@ -1097,41 +1100,86 @@
 				<param name="slide">510</param>
 			</include>
 			<control type="group">
-				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
+
+				<!-- Draw DiscArt First -->
+				<control type="image">
+					<visible>!Skin.HasSetting(View58HideDiscArt) + Container.Content(movies)</visible>
+					<include>AnimationDiscArtLibrary</include>
+					<bottom>434</bottom>
+					<left>30</left>
+					<width>395</width>
+					<height>395</height>
+					<fadetime>TextureFadeTime</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture diffuse="diffuse/disc.png" background="true">$VAR[LibraryVideoDiscArtVar]</texture>
+				</control>
+
+				<!-- Poster/Case and Video Player Container drawn SECOND -->
 				<control type="group">
 					<visible>!Skin.HasSetting(View58HideCover)</visible>
 					<left>10</left>
 					<width>435</width>
 					<bottom>10</bottom>
 					<height>642</height>
-					<control type="image">
-						<visible>!Skin.HasSetting(View58HideDiscArt) + Container.Content(movies)</visible>
-						<include>AnimationDiscArtLibrary</include>
-						<bottom>434</bottom>
-						<left>20</left>
-						<width>395</width>
-						<height>395</height>
-						<fadetime>TextureFadeTime</fadetime>
-						<aspectratio>keep</aspectratio>
-						<texture diffuse="diffuse/disc.png" background="true">$VAR[LibraryVideoDiscArtVar]</texture>
-					</control>
+					<!-- Static Poster Art (Visible when trailer is NOT playing) -->
 					<control type="group">
-						<visible>!Skin.HasSetting(View58VideoCase)</visible>
-						<include content="ViewArtwork">
-							<param name="diffuse">diffuse/rounded5-415x622.png</param>
+						<visible>String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+						<control type="group">
+							<visible>!Skin.HasSetting(View58VideoCase)</visible>
+							<include content="ViewArtwork">
+								<param name="diffuse">diffuse/rounded5-415x622.png</param>
+								<param name="aspect">keep</param>
+							</include>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(View58VideoCase)</visible>
+							<include content="ViewArtworkVideoCase">
+								<param name="logoheight">44</param>
+								<param name="bordersize">18,52,18,21</param>
+							</include>
+						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="30" />
+							<param name="height" value="12" />
 						</include>
 					</control>
+					<!-- Video Player (Visible WHEN trailer IS playing) -->
 					<control type="group">
-						<visible>Skin.HasSetting(View58VideoCase)</visible>
-						<include content="ViewArtworkVideoCase">
-							<param name="logoheight">44</param>
-							<param name="bordersize">18,52,18,21</param>
-						</include>
+						<visible>!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+						<control type="group">
+							<visible>Skin.HasSetting(View58AnimatedFanart)</visible>
+							<control type="image">
+								<texture fallback="colors/black.png">$VAR[FanartVar]</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="videowindow">
+								<visible>Player.HasVideo</visible>
+								<animation effect="fade" time="400" delay="200">Visible</animation>
+								<colordiffuse>FFA0A0A0</colordiffuse>
+							</control>
+						</control>
+						<control type="group">
+							<visible>!Skin.HasSetting(View58AnimatedFanart)</visible>
+							<control type="image">
+								<texture>colors/black.png</texture>
+							</control>
+							<control type="videowindow">
+								<colordiffuse>FFA0A0A0</colordiffuse>
+							</control>
+						</control>
+						<control type="image">
+							<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+						</control>
 					</control>
 				</control>
+
+				<!-- Clearlogo (Drawn Last To Be On Top) -->
 				<control type="group">
 					<visible>!Skin.HasSetting(View58HideLogo)</visible>
-					<left>10</left>
+					<left>20</left>
 					<width>415</width>
 					<control type="image">
 						<visible>!Skin.HasSetting(View58HideCover)</visible>
@@ -1152,7 +1200,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)</visible>
+				<visible>[Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)] + !Window.IsVisible(MyVideoNav.xml)</visible>
 				<control type="group">
 					<visible>!Skin.HasSetting(View58HideCover)</visible>
 					<left>10</left>
@@ -1259,55 +1307,43 @@
 			</include>
 			<control type="group">
 				<visible>Control.IsVisible(58) + String.Contains(ListItem.DBType, "movie")</visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>			
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(58) + !String.Contains(ListItem.DBType, "season") &amp; String.Contains(ListItem.DBType, "episode")</visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>				
-			</control>			
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
+			</control>
 			<control type="group">
 				<visible>Control.IsVisible(58) + String.Contains(ListItem.DBType, "season")</visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>				
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(58) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>				
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(58) + Container.Content(musicvideos)</visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
 			</control>
 			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudio">
 				<param name="right">30</param>
 				<param name="bottom">20</param>
 			</include>
 		</control>
-
-<!-- 		<control type="group">
-			<visible>Control.IsVisible(58)</visible>
-			<include content="AnimationSlideBottomWindow">
-				<param name="slide">220</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>
-			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudio">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>
-		</control> -->
 	</include>
 </includes>

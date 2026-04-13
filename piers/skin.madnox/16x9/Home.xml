@@ -1,49 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<!-- <onload>RunScript(special://home/addons/skin.madnox/extras/scripts/firstrun_init.py)</onload> -->	
 	<menucontrol>9050</menucontrol>
+	<!-- script.skin.madnox -->
+	<onload condition="!System.AddonIsEnabled(script.skin.madnox)">EnableAddon(script.skin.madnox)</onload>
+	<onload condition="!System.HasAddon(script.skin.madnox)">InstallAddon(script.skin.madnox)</onload>
 	<!-- script.skinshortcuts -->
 	<onload condition="!System.AddonIsEnabled(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onload>
 	<onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
 	<!-- script.image.resource.select -->
 	<onload condition="!System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onload>
 	<onload condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onload>
-	<!-- script.embuary.helper -->
-	<onload condition="!System.AddonIsEnabled(script.embuary.helper)">EnableAddon(script.embuary.helper)</onload>
-	<onload condition="!System.HasAddon(script.embuary.helper)">InstallAddon(script.embuary.helper)</onload>
-    <!-- script.embuary.info -->
-	<onload condition="!System.AddonIsEnabled(script.embuary.info)">EnableAddon(script.embuary.info)</onload>
-	<onload condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onload>
 	<!-- script.skinvariables -->
 	<onload condition="!System.AddonIsEnabled(script.skinvariables)">EnableAddon(script.skinvariables)</onload>
 	<onload condition="!System.HasAddon(script.skinvariables)">InstallAddon(script.skinvariables)</onload>
 	<!-- plugin.video.themoviedb.helper -->
 	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">EnableAddon(plugin.video.themoviedb.helper)</onload>
 	<onload condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onload>
-	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(special://home/addons/skin.madnox/extras/scripts/tmdb_installed_validation.py)</onload>
-    <!-- Start TMDbH service -->
-    <onload>Skin.SetBool(TMDbHelper.Service)</onload>
-	<onload>RunScript(special://skin/extras/scripts/firstrun_init.py)</onload>
+	<!-- <onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(special://home/addons/skin.madnox/extras/scripts/tmdb_installed_validation.py)</onload> -->
+	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(script.skin.madnox, action=validate_tmdb_helper)</onload>
+
+	<!-- Optional extras: Ask only after the skin has fully initialized via template -->
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>
+
+	<!-- Skin Shortcuts -->
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
-	
+	<!-- 1st Run Settings File Init And Populate Default Values -->
+	<!-- <onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ActivateWindow(1106)</onload> -->
+
+	<!-- Signal That Home Is Loaded And Notifications Are Now Allowed -->
+	<onload>SetProperty(Madnox.SkinReady,True,Home)</onload>
+
+	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
+	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
+
 	<controls>
 		<!-- Backdrop -->
 		<include content="BackgroundDefault">
 			<param name="imagepath">$VAR[HomeFanartVar]</param>
 			<param name="animatedfanart">Skin.HasSetting(HomeAnimatedFanart)</param>
 		</include>
-		<!-- Playlist fanart -->
+
+		<!-- Playlist Fanart -->
 		<control type="wraplist" id="7001">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(background),playlist) | String.IsEqual(Container(9000).ListItem.Property(coverBackground),fanart)</visible>
 			<include>HiddenList</include>
 			<content limit="10">$INFO[Container(9000).ListItem.Property(backgroundPlaylist)]</content>
 		</control>
+
 		<control type="wraplist" id="7003">
 			<visible>String.IsEqual(Container(9001).ListItem.Property(background),playlist) | String.IsEqual(Container(9001).ListItem.Property(coverBackground),fanart)</visible>
 			<include>HiddenList</include>
 			<content limit="10">$INFO[Container(9001).ListItem.Property(backgroundPlaylist)]</content>
 		</control>
+
 		<control type="fadelabel" id="7002">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(background),playlist) | String.IsEqual(Container(9000).ListItem.Property(coverBackground),fanart)</visible>
 			<top>-2000</top>
@@ -54,6 +64,8 @@
 			<scrollout>false</scrollout>
 			<include>FadeLabelTime</include>
 			<resetonlabelchange>true</resetonlabelchange>
+
+			<!--  -->
 			<label>$INFO[Container(7001).ListItem(0).Art(fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(1).Art(fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(2).Art(fanart)]</label>
@@ -64,6 +76,97 @@
 			<label>$INFO[Container(7001).ListItem(7).Art(fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(8).Art(fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(9).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(10).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(11).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(12).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(13).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(14).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(15).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(16).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(17).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(18).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(19).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(20).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(21).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(22).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(23).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(24).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(25).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(26).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(27).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(28).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(29).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(30).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(31).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(32).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(33).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(34).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(35).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(36).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(37).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(38).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(39).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(40).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(41).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(42).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(43).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(44).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(45).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(46).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(47).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(48).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(49).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(50).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(51).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(52).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(53).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(54).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(55).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(56).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(57).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(58).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(59).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(60).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(61).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(62).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(63).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(64).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(65).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(66).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(67).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(68).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(69).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(70).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(71).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(72).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(73).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(74).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(75).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(76).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(77).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(78).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(79).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(80).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(81).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(82).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(83).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(84).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(85).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(86).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(87).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(88).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(89).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(90).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(91).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(92).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(93).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(94).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(95).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(96).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(97).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(98).Art(fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(99).Art(fanart)]</label>
+			<!--  -->
 			<label>$INFO[Container(7001).ListItem(0).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(1).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(2).Art(tvshow.fanart)]</label>
@@ -74,6 +177,97 @@
 			<label>$INFO[Container(7001).ListItem(7).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(8).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(9).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(10).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(11).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(12).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(13).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(14).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(15).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(16).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(17).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(18).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(19).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(20).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(21).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(22).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(23).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(24).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(25).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(26).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(27).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(28).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(29).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(30).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(31).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(32).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(33).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(34).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(35).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(36).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(37).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(38).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(39).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(40).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(41).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(42).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(43).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(44).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(45).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(46).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(47).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(48).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(49).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(50).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(51).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(52).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(53).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(54).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(55).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(56).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(57).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(58).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(59).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(60).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(61).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(62).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(63).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(64).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(65).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(66).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(67).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(68).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(69).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(70).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(71).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(72).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(73).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(74).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(75).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(76).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(77).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(78).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(79).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(80).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(81).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(82).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(83).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(84).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(85).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(86).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(87).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(88).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(89).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(90).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(91).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(92).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(93).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(94).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(95).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(96).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(97).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(98).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(99).Art(tvshow.fanart)]</label>
+			<!--  -->
 			<label>$INFO[Container(7001).ListItem(0).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(1).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(2).Art(artist.fanart)]</label>
@@ -84,6 +278,97 @@
 			<label>$INFO[Container(7001).ListItem(7).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(8).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(9).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(10).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(11).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(12).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(13).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(14).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(15).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(16).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(17).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(18).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(19).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(20).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(21).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(22).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(23).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(24).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(25).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(26).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(27).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(28).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(29).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(30).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(31).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(32).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(33).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(34).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(35).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(36).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(37).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(38).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(39).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(40).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(41).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(42).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(43).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(44).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(45).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(46).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(47).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(48).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(49).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(50).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(51).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(52).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(53).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(54).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(55).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(56).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(57).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(58).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(59).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(60).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(61).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(62).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(63).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(64).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(65).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(66).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(67).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(68).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(69).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(70).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(71).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(72).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(73).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(74).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(75).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(76).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(77).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(78).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(79).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(80).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(81).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(82).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(83).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(84).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(85).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(86).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(87).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(88).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(89).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(90).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(91).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(92).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(93).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(94).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(95).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(96).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(97).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(98).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(99).Art(artist.fanart)]</label>
+			<!--  -->
 			<label>$INFO[Container(7001).ListItem(0).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(1).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(2).Art(albumartist.fanart)]</label>
@@ -94,7 +379,98 @@
 			<label>$INFO[Container(7001).ListItem(7).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(8).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7001).ListItem(9).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(10).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(11).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(12).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(13).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(14).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(15).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(16).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(17).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(18).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(19).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(20).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(21).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(22).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(23).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(24).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(25).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(26).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(27).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(28).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(29).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(30).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(31).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(32).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(33).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(34).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(35).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(36).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(37).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(38).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(39).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(40).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(41).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(42).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(43).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(44).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(45).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(46).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(47).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(48).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(49).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(50).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(51).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(52).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(53).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(54).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(55).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(56).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(57).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(58).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(59).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(60).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(61).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(62).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(63).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(64).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(65).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(66).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(67).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(68).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(69).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(70).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(71).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(72).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(73).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(74).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(75).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(76).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(77).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(78).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(79).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(80).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(81).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(82).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(83).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(84).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(85).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(86).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(87).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(88).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(89).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(90).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(91).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(92).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(93).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(94).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(95).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(96).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(97).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(98).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7001).ListItem(99).Art(albumartist.fanart)]</label>
 		</control>
+
 		<control type="fadelabel" id="7004">
 			<visible>String.IsEqual(Container(9001).ListItem.Property(background),playlist) | String.IsEqual(Container(9001).ListItem.Property(coverBackground),fanart)</visible>
 			<top>-2000</top>
@@ -105,6 +481,8 @@
 			<scrollout>false</scrollout>
 			<include>FadeLabelTime</include>
 			<resetonlabelchange>true</resetonlabelchange>
+
+			<!--  -->
 			<label>$INFO[Container(7003).ListItem(0).Art(fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(1).Art(fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(2).Art(fanart)]</label>
@@ -115,6 +493,97 @@
 			<label>$INFO[Container(7003).ListItem(7).Art(fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(8).Art(fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(9).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(10).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(11).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(12).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(13).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(14).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(15).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(16).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(17).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(18).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(19).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(20).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(21).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(22).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(23).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(24).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(25).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(26).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(27).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(28).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(29).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(30).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(31).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(32).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(33).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(34).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(35).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(36).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(37).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(38).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(39).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(40).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(41).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(42).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(43).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(44).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(45).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(46).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(47).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(48).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(49).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(50).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(51).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(52).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(53).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(54).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(55).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(56).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(57).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(58).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(59).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(60).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(61).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(62).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(63).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(64).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(65).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(66).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(67).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(68).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(69).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(70).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(71).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(72).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(73).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(74).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(75).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(76).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(77).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(78).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(79).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(80).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(81).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(82).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(83).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(84).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(85).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(86).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(87).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(88).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(89).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(90).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(91).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(92).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(93).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(94).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(95).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(96).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(97).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(98).Art(fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(99).Art(fanart)]</label>
+			<!--  -->
 			<label>$INFO[Container(7003).ListItem(0).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(1).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(2).Art(tvshow.fanart)]</label>
@@ -125,6 +594,97 @@
 			<label>$INFO[Container(7003).ListItem(7).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(8).Art(tvshow.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(9).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(10).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(11).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(12).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(13).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(14).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(15).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(16).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(17).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(18).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(19).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(20).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(21).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(22).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(23).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(24).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(25).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(26).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(27).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(28).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(29).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(30).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(31).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(32).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(33).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(34).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(35).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(36).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(37).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(38).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(39).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(40).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(41).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(42).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(43).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(44).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(45).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(46).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(47).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(48).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(49).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(50).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(51).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(52).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(53).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(54).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(55).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(56).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(57).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(58).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(59).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(60).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(61).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(62).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(63).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(64).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(65).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(66).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(67).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(68).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(69).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(70).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(71).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(72).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(73).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(74).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(75).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(76).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(77).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(78).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(79).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(80).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(81).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(82).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(83).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(84).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(85).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(86).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(87).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(88).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(89).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(90).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(91).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(92).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(93).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(94).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(95).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(96).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(97).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(98).Art(tvshow.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(99).Art(tvshow.fanart)]</label>
+			<!--  -->
 			<label>$INFO[Container(7003).ListItem(0).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(1).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(2).Art(artist.fanart)]</label>
@@ -135,6 +695,97 @@
 			<label>$INFO[Container(7003).ListItem(7).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(8).Art(artist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(9).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(10).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(11).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(12).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(13).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(14).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(15).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(16).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(17).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(18).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(19).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(20).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(21).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(22).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(23).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(24).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(25).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(26).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(27).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(28).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(29).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(30).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(31).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(32).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(33).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(34).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(35).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(36).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(37).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(38).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(39).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(40).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(41).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(42).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(43).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(44).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(45).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(46).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(47).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(48).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(49).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(50).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(51).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(52).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(53).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(54).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(55).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(56).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(57).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(58).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(59).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(60).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(61).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(62).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(63).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(64).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(65).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(66).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(67).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(68).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(69).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(70).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(71).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(72).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(73).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(74).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(75).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(76).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(77).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(78).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(79).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(80).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(81).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(82).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(83).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(84).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(85).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(86).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(87).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(88).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(89).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(90).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(91).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(92).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(93).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(94).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(95).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(96).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(97).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(98).Art(artist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(99).Art(artist.fanart)]</label>
+			<!--  -->
 			<label>$INFO[Container(7003).ListItem(0).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(1).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(2).Art(albumartist.fanart)]</label>
@@ -145,12 +796,104 @@
 			<label>$INFO[Container(7003).ListItem(7).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(8).Art(albumartist.fanart)]</label>
 			<label>$INFO[Container(7003).ListItem(9).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(10).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(11).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(12).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(13).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(14).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(15).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(16).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(17).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(18).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(19).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(20).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(21).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(22).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(23).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(24).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(25).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(26).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(27).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(28).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(29).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(30).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(31).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(32).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(33).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(34).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(35).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(36).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(37).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(38).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(39).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(40).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(41).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(42).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(43).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(44).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(45).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(46).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(47).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(48).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(49).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(50).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(51).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(52).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(53).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(54).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(55).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(56).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(57).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(58).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(59).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(60).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(61).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(62).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(63).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(64).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(65).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(66).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(67).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(68).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(69).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(70).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(71).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(72).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(73).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(74).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(75).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(76).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(77).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(78).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(79).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(80).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(81).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(82).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(83).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(84).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(85).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(86).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(87).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(88).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(89).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(90).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(91).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(92).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(93).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(94).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(95).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(96).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(97).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(98).Art(albumartist.fanart)]</label>
+			<label>$INFO[Container(7003).ListItem(99).Art(albumartist.fanart)]</label>
 		</control>
+
 		<!-- Home -->
 		<control type="group">
 			<visible>!Window.IsActive(movieinformation) + !Window.IsActive(musicinformation) + !Window.IsActive(songinformation)</visible>
 			<include>AnimationVisibleFade</include>
-			<!-- Now playing -->
+
+			<!-- Now Playing -->
 			<control type="group">
 				<visible>Player.HasMedia + ![Skin.HasSetting(NowplayingHomeDisable) | Window.Next(musicplaylist) | Window.Next(visualisation)] + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 				<include>AnimationVisibleFade</include>
@@ -162,8 +905,10 @@
 				</include>
 				<include>HomeNowPlaying</include>
 			</control>
-			<!-- Widgets -->
+
+			<!-- Standard Widgets (Carousel Mode) -->
 			<control type="group" id="90010">
+				<visible>!Skin.HasSetting(SystemWidget.GridMode) + !Skin.HasSetting(widgethide)</visible>
 				<include content="AnimationSlideBottomWindow">
 					<param name="slide">540</param>
 				</include>
@@ -174,19 +919,1341 @@
 				<include>skinshortcuts-template-widget4</include>
 				<include>skinshortcuts-template-widget5</include>
 				<include>skinshortcuts-template-widget6</include>
+				<include>skinshortcuts-template-widget7</include>
+				<include>skinshortcuts-template-widget8</include>
+				<include>skinshortcuts-template-widget9</include>
+				<include>skinshortcuts-template-widget10</include>
+				<include>skinshortcuts-template-widget11</include>
+				<include>skinshortcuts-template-widget12</include>
+				<include>skinshortcuts-template-widget13</include>
+				<include>skinshortcuts-template-widget14</include>
+				<include>skinshortcuts-template-widget15</include>
+				<include>skinshortcuts-template-widget16</include>
+				<include>skinshortcuts-template-widget17</include>
+				<include>skinshortcuts-template-widget18</include>
+				<include>skinshortcuts-template-widget19</include>
+				<include>skinshortcuts-template-widget20</include>
 			</control>
-			<!-- System/Time bar and Shortcuts -->
+
+			<!-- New Grid Widgets -->
+
+			<!-- Hidden Lists: one per slot, outside the grouplist so HiddenList offscreen -->
+			<!-- positioning is respected and these cannot intercept mouse wheel events    -->
+			<!-- These populate Container(98N) which GridSlotNIcon variables read from     -->
+			<control type="list" id="981">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.1)]">$VAR[GridHiddenListPath_1]</content>
+			</control>
+			<control type="list" id="982">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.2)]">$VAR[GridHiddenListPath_2]</content>
+			</control>
+			<control type="list" id="983">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.3)]">$VAR[GridHiddenListPath_3]</content>
+			</control>
+			<control type="list" id="984">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.4)]">$VAR[GridHiddenListPath_4]</content>
+			</control>
+			<control type="list" id="985">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.5)]">$VAR[GridHiddenListPath_5]</content>
+			</control>
+			<control type="list" id="986">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.6)]">$VAR[GridHiddenListPath_6]</content>
+			</control>
+			<control type="list" id="987">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.7)]">$VAR[GridHiddenListPath_7]</content>
+			</control>
+			<control type="list" id="988">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.8)]">$VAR[GridHiddenListPath_8]</content>
+			</control>
+			<control type="list" id="989">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.9)]">$VAR[GridHiddenListPath_9]</content>
+			</control>
+			<control type="list" id="9810">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.10)]">$VAR[GridHiddenListPath_10]</content>
+			</control>
+			<control type="list" id="9811">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.11)]">$VAR[GridHiddenListPath_11]</content>
+			</control>
+			<control type="list" id="9812">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.12)]">$VAR[GridHiddenListPath_12]</content>
+			</control>
+			<control type="list" id="9813">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.13)]">$VAR[GridHiddenListPath_13]</content>
+			</control>
+			<control type="list" id="9814">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.14)]">$VAR[GridHiddenListPath_14]</content>
+			</control>
+			<control type="list" id="9815">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.15)]">$VAR[GridHiddenListPath_15]</content>
+			</control>
+			<control type="list" id="9816">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.16)]">$VAR[GridHiddenListPath_16]</content>
+			</control>
+			<control type="list" id="9817">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.17)]">$VAR[GridHiddenListPath_17]</content>
+			</control>
+			<control type="list" id="9818">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.18)]">$VAR[GridHiddenListPath_18]</content>
+			</control>
+			<control type="list" id="9819">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.19)]">$VAR[GridHiddenListPath_19]</content>
+			</control>
+			<control type="list" id="9820">
+				<visible>true</visible>
+				<include>HiddenList</include>
+				<content limit="1" target="$INFO[Container(9000).ListItem.Property(widgetTarget.20)]">$VAR[GridHiddenListPath_20]</content>
+			</control>
+
+			<control type="grouplist" id="9900">
+				<visible>Skin.HasSetting(SystemWidget.GridMode) + !Skin.HasSetting(widgethide)</visible>
+				<include content="AnimationSlideBottomWindow">
+					<param name="slide">540</param>
+				</include>
+				<animation effect="fade" start="100" end="0" time="480" condition="[Skin.HasSetting(WidgetHide) + !ControlGroup(9900).HasFocus]">Conditional</animation>
+				<left>30</left>
+				<bottom>230</bottom>
+				<width>1900</width>
+				<height>400</height>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<aligny>bottom</aligny>
+				<scrolltime>200</scrolltime>
+
+				<!-- Slot 1 -->
+				<!-- Slot 1 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.1)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9901" />
+						<param name="slotnum" value="1" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.1)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),true)" />
+						<param name="labelvar" value="GridSlot1Label" />
+						<param name="iconvar" value="GridSlot1Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 1 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.1)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9901" />
+						<param name="slotnum" value="1" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.1)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),true)" />
+						<param name="labelvar" value="GridSlot1Label" />
+						<param name="iconvar" value="GridSlot1Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 1 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.1)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9901" />
+						<param name="slotnum" value="1" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.1)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),true)" />
+						<param name="labelvar" value="GridSlot1Label" />
+						<param name="iconvar" value="GridSlot1Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 2 -->
+				<!-- Slot 2 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.2)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9902" />
+						<param name="slotnum" value="2" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.2)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),true)" />
+						<param name="labelvar" value="GridSlot2Label" />
+						<param name="iconvar" value="GridSlot2Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 2 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.2)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9902" />
+						<param name="slotnum" value="2" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.2)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),true)" />
+						<param name="labelvar" value="GridSlot2Label" />
+						<param name="iconvar" value="GridSlot2Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 2 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.2)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9902" />
+						<param name="slotnum" value="2" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.2)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),true)" />
+						<param name="labelvar" value="GridSlot2Label" />
+						<param name="iconvar" value="GridSlot2Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 3 -->
+				<!-- Slot 3 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.3)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9903" />
+						<param name="slotnum" value="3" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.3)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),true)" />
+						<param name="labelvar" value="GridSlot3Label" />
+						<param name="iconvar" value="GridSlot3Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 3 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.3)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9903" />
+						<param name="slotnum" value="3" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.3)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),true)" />
+						<param name="labelvar" value="GridSlot3Label" />
+						<param name="iconvar" value="GridSlot3Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 3 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.3)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9903" />
+						<param name="slotnum" value="3" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.3)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),true)" />
+						<param name="labelvar" value="GridSlot3Label" />
+						<param name="iconvar" value="GridSlot3Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 4 -->
+				<!-- Slot 4 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.4)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9904" />
+						<param name="slotnum" value="4" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.4)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),true)" />
+						<param name="labelvar" value="GridSlot4Label" />
+						<param name="iconvar" value="GridSlot4Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 4 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.4)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9904" />
+						<param name="slotnum" value="4" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.4)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),true)" />
+						<param name="labelvar" value="GridSlot4Label" />
+						<param name="iconvar" value="GridSlot4Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 4 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.4)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9904" />
+						<param name="slotnum" value="4" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.4)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),true)" />
+						<param name="labelvar" value="GridSlot4Label" />
+						<param name="iconvar" value="GridSlot4Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 5 -->
+				<!-- Slot 5 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.5)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9905" />
+						<param name="slotnum" value="5" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.5)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),true)" />
+						<param name="labelvar" value="GridSlot5Label" />
+						<param name="iconvar" value="GridSlot5Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 5 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.5)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9905" />
+						<param name="slotnum" value="5" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.5)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),true)" />
+						<param name="labelvar" value="GridSlot5Label" />
+						<param name="iconvar" value="GridSlot5Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 5 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.5)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9905" />
+						<param name="slotnum" value="5" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.5)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),true)" />
+						<param name="labelvar" value="GridSlot5Label" />
+						<param name="iconvar" value="GridSlot5Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 6 -->
+				<!-- Slot 6 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.6)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9906" />
+						<param name="slotnum" value="6" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.6)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),true)" />
+						<param name="labelvar" value="GridSlot6Label" />
+						<param name="iconvar" value="GridSlot6Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 6 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.6)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9906" />
+						<param name="slotnum" value="6" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.6)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),true)" />
+						<param name="labelvar" value="GridSlot6Label" />
+						<param name="iconvar" value="GridSlot6Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 6 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.6)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9906" />
+						<param name="slotnum" value="6" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.6)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),true)" />
+						<param name="labelvar" value="GridSlot6Label" />
+						<param name="iconvar" value="GridSlot6Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 7 -->
+				<!-- Slot 7 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.7)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9907" />
+						<param name="slotnum" value="7" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.7)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),true)" />
+						<param name="labelvar" value="GridSlot7Label" />
+						<param name="iconvar" value="GridSlot7Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 7 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.7)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9907" />
+						<param name="slotnum" value="7" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.7)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),true)" />
+						<param name="labelvar" value="GridSlot7Label" />
+						<param name="iconvar" value="GridSlot7Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 7 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.7)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9907" />
+						<param name="slotnum" value="7" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.7)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),true)" />
+						<param name="labelvar" value="GridSlot7Label" />
+						<param name="iconvar" value="GridSlot7Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 8 -->
+				<!-- Slot 8 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.8)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9908" />
+						<param name="slotnum" value="8" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.8)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),true)" />
+						<param name="labelvar" value="GridSlot8Label" />
+						<param name="iconvar" value="GridSlot8Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 8 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.8)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9908" />
+						<param name="slotnum" value="8" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.8)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),true)" />
+						<param name="labelvar" value="GridSlot8Label" />
+						<param name="iconvar" value="GridSlot8Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 8 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.8)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9908" />
+						<param name="slotnum" value="8" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.8)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),true)" />
+						<param name="labelvar" value="GridSlot8Label" />
+						<param name="iconvar" value="GridSlot8Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 9 -->
+				<!-- Slot 9 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.9)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9909" />
+						<param name="slotnum" value="9" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.9)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),true)" />
+						<param name="labelvar" value="GridSlot9Label" />
+						<param name="iconvar" value="GridSlot9Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 9 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.9)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9909" />
+						<param name="slotnum" value="9" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.9)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),true)" />
+						<param name="labelvar" value="GridSlot9Label" />
+						<param name="iconvar" value="GridSlot9Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 9 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.9)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9909" />
+						<param name="slotnum" value="9" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.9)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),true)" />
+						<param name="labelvar" value="GridSlot9Label" />
+						<param name="iconvar" value="GridSlot9Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 10 -->
+				<!-- Slot 10 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.10)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9910" />
+						<param name="slotnum" value="10" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.10)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),true)" />
+						<param name="labelvar" value="GridSlot10Label" />
+						<param name="iconvar" value="GridSlot10Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 10 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.10)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9910" />
+						<param name="slotnum" value="10" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.10)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),true)" />
+						<param name="labelvar" value="GridSlot10Label" />
+						<param name="iconvar" value="GridSlot10Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 10 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.10)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9910" />
+						<param name="slotnum" value="10" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.10)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),true)" />
+						<param name="labelvar" value="GridSlot10Label" />
+						<param name="iconvar" value="GridSlot10Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 11 -->
+				<!-- Slot 11 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.11)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9911" />
+						<param name="slotnum" value="11" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.11)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),true)" />
+						<param name="labelvar" value="GridSlot11Label" />
+						<param name="iconvar" value="GridSlot11Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 11 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.11)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9911" />
+						<param name="slotnum" value="11" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.11)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),true)" />
+						<param name="labelvar" value="GridSlot11Label" />
+						<param name="iconvar" value="GridSlot11Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 11 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.11)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9911" />
+						<param name="slotnum" value="11" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.11)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),true)" />
+						<param name="labelvar" value="GridSlot11Label" />
+						<param name="iconvar" value="GridSlot11Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 12 -->
+				<!-- Slot 12 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.12)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9912" />
+						<param name="slotnum" value="12" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.12)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),true)" />
+						<param name="labelvar" value="GridSlot12Label" />
+						<param name="iconvar" value="GridSlot12Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 12 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.12)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9912" />
+						<param name="slotnum" value="12" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.12)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),true)" />
+						<param name="labelvar" value="GridSlot12Label" />
+						<param name="iconvar" value="GridSlot12Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 12 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.12)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9912" />
+						<param name="slotnum" value="12" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.12)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),true)" />
+						<param name="labelvar" value="GridSlot12Label" />
+						<param name="iconvar" value="GridSlot12Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 13 -->
+				<!-- Slot 13 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.13)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9913" />
+						<param name="slotnum" value="13" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.13)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),true)" />
+						<param name="labelvar" value="GridSlot13Label" />
+						<param name="iconvar" value="GridSlot13Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 13 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.13)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9913" />
+						<param name="slotnum" value="13" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.13)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),true)" />
+						<param name="labelvar" value="GridSlot13Label" />
+						<param name="iconvar" value="GridSlot13Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 13 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.13)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9913" />
+						<param name="slotnum" value="13" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.13)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),true)" />
+						<param name="labelvar" value="GridSlot13Label" />
+						<param name="iconvar" value="GridSlot13Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 14 -->
+				<!-- Slot 14 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.14)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9914" />
+						<param name="slotnum" value="14" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.14)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),true)" />
+						<param name="labelvar" value="GridSlot14Label" />
+						<param name="iconvar" value="GridSlot14Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 14 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.14)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9914" />
+						<param name="slotnum" value="14" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.14)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),true)" />
+						<param name="labelvar" value="GridSlot14Label" />
+						<param name="iconvar" value="GridSlot14Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 14 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.14)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9914" />
+						<param name="slotnum" value="14" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.14)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),true)" />
+						<param name="labelvar" value="GridSlot14Label" />
+						<param name="iconvar" value="GridSlot14Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 15 -->
+				<!-- Slot 15 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.15)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9915" />
+						<param name="slotnum" value="15" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.15)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),true)" />
+						<param name="labelvar" value="GridSlot15Label" />
+						<param name="iconvar" value="GridSlot15Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 15 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.15)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9915" />
+						<param name="slotnum" value="15" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.15)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),true)" />
+						<param name="labelvar" value="GridSlot15Label" />
+						<param name="iconvar" value="GridSlot15Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 15 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.15)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9915" />
+						<param name="slotnum" value="15" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.15)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),true)" />
+						<param name="labelvar" value="GridSlot15Label" />
+						<param name="iconvar" value="GridSlot15Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 16 -->
+				<!-- Slot 16 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.16)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9916" />
+						<param name="slotnum" value="16" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.16)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),true)" />
+						<param name="labelvar" value="GridSlot16Label" />
+						<param name="iconvar" value="GridSlot16Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 16 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.16)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9916" />
+						<param name="slotnum" value="16" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.16)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),true)" />
+						<param name="labelvar" value="GridSlot16Label" />
+						<param name="iconvar" value="GridSlot16Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 16 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.16)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9916" />
+						<param name="slotnum" value="16" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.16)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),true)" />
+						<param name="labelvar" value="GridSlot16Label" />
+						<param name="iconvar" value="GridSlot16Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 17 -->
+				<!-- Slot 17 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.17)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9917" />
+						<param name="slotnum" value="17" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.17)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),true)" />
+						<param name="labelvar" value="GridSlot17Label" />
+						<param name="iconvar" value="GridSlot17Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 17 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.17)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9917" />
+						<param name="slotnum" value="17" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.17)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),true)" />
+						<param name="labelvar" value="GridSlot17Label" />
+						<param name="iconvar" value="GridSlot17Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 17 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.17)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9917" />
+						<param name="slotnum" value="17" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.17)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),true)" />
+						<param name="labelvar" value="GridSlot17Label" />
+						<param name="iconvar" value="GridSlot17Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 18 -->
+				<!-- Slot 18 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.18)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9918" />
+						<param name="slotnum" value="18" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.18)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),true)" />
+						<param name="labelvar" value="GridSlot18Label" />
+						<param name="iconvar" value="GridSlot18Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 18 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.18)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9918" />
+						<param name="slotnum" value="18" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.18)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),true)" />
+						<param name="labelvar" value="GridSlot18Label" />
+						<param name="iconvar" value="GridSlot18Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 18 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.18)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9918" />
+						<param name="slotnum" value="18" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.18)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),true)" />
+						<param name="labelvar" value="GridSlot18Label" />
+						<param name="iconvar" value="GridSlot18Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 19 -->
+				<!-- Slot 19 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.19)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9919" />
+						<param name="slotnum" value="19" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.19)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),true)" />
+						<param name="labelvar" value="GridSlot19Label" />
+						<param name="iconvar" value="GridSlot19Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 19 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.19)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9919" />
+						<param name="slotnum" value="19" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.19)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),true)" />
+						<param name="labelvar" value="GridSlot19Label" />
+						<param name="iconvar" value="GridSlot19Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 19 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.19)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9919" />
+						<param name="slotnum" value="19" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.19)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),true)" />
+						<param name="labelvar" value="GridSlot19Label" />
+						<param name="iconvar" value="GridSlot19Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+
+				<!-- Slot 20 -->
+				<!-- Slot 20 — large -->
+				<control type="group">
+					<width>420</width>
+					<height>470</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.20)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),big)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9920" />
+						<param name="slotnum" value="20" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.20)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),true)" />
+						<param name="labelvar" value="GridSlot20Label" />
+						<param name="iconvar" value="GridSlot20Icon" />
+						<param name="btnwidth" value="420" />
+						<param name="btnheight" value="470" />
+						<param name="imgsize" value="420" />
+						<param name="titlewidth" value="400" />
+					</include>
+				</control>
+				<!-- Slot 20 — medium -->
+				<control type="group">
+					<width>310</width>
+					<height>360</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.20)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),small)]</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9920" />
+						<param name="slotnum" value="20" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.20)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),true)" />
+						<param name="labelvar" value="GridSlot20Label" />
+						<param name="iconvar" value="GridSlot20Icon" />
+						<param name="btnwidth" value="310" />
+						<param name="btnheight" value="360" />
+						<param name="imgsize" value="310" />
+						<param name="titlewidth" value="290" />
+					</include>
+				</control>
+				<!-- Slot 20 — small -->
+				<control type="group">
+					<width>220</width>
+					<height>270</height>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.20)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),small)</visible>
+					<include content="SystemGridButton">
+						<param name="id" value="9920" />
+						<param name="slotnum" value="20" />
+						<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.20)]" />
+						<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),false)" />
+						<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),true)" />
+						<param name="labelvar" value="GridSlot20Label" />
+						<param name="iconvar" value="GridSlot20Icon" />
+						<param name="btnwidth" value="220" />
+						<param name="btnheight" value="270" />
+						<param name="imgsize" value="220" />
+						<param name="titlewidth" value="200" />
+					</include>
+				</control>
+			</control>
+
+			<!-- System/Time Bar And Shortcuts -->
 			<include>InfoTimeBar</include>
+
 			<!-- Menu -->
 			<include condition="!Skin.HasSetting(MainMenuFixedList)">MainMenu</include>
 			<include condition="Skin.HasSetting(MainMenuFixedList)" content="MainMenu">
 				<param name="listtype">fixedlist</param>
 			</include>
+
 			<!-- RSS -->
 			<include>RSSShortcuts</include>
-			<!-- PVR widget -->
+
+			<!-- PVR Widget -->
 			<include>PVRWidget</include>
 		</control>
+
 		<!-- Media Menu -->
 		<include content="MediaMenu">
 			<param name="visible">!Skin.HasSetting(KioskDisableHomeSettings)</param>

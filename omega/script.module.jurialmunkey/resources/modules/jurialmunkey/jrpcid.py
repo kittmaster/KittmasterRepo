@@ -2,9 +2,12 @@
 # Module: default
 # Author: jurialmunkey
 # License: GPL v.3 https://www.gnu.org/copyleft/gpl.html
+import os
+import xbmcvfs
 from xbmcgui import ListItem
 from jurialmunkey.jsnrpc import get_jsonrpc
 from jurialmunkey.litems import ContainerDirectory, INFOLABEL_MAP
+from jurialmunkey.ftools import cached_property
 from infotagger.listitem import ListItemInfoTag
 
 
@@ -59,133 +62,44 @@ JSON_RPC_LOOKUPS = {
 }
 
 
-class ListItemMaker():
-    def __init__(self, meta, dbid, dbtype, library=None, sublookups=None):
-        self._meta = meta
-        self._dbid = dbid
-        self._dbtype = dbtype
-        self._library = library
-        self._sublookups = sublookups or []
+class ListItemMakerBase():
 
-    @property
-    def meta(self):
-        return self._meta
+    library = None
 
-    @property
-    def dbid(self):
-        return self._dbid
-
-    @property
-    def dbtype(self):
-        return self._dbtype
-
-    @property
-    def library(self):
-        return self._library
-
-    @property
+    @cached_property
     def sublookups(self):
-        return self._sublookups
+        return []
 
-    @property
+    @cached_property
     def listitem(self):
-        try:
-            return self._listitem
-        except AttributeError:
-            self._listitem = ListItem(label=self.label, label2=self.label2, path=self.path, offscreen=True)
-            return self._listitem
+        return ListItem(label=self.label, label2=self.label2, path=self.path, offscreen=True)
 
-    @property
+    @cached_property
     def info_tag(self):
-        try:
-            return self._info_tag
-        except AttributeError:
-            self._info_tag = ListItemInfoTag(self.listitem, self.library)
-            return self._info_tag
+        return ListItemInfoTag(self.listitem, self.library)
 
-    @property
+    @cached_property
     def base_collector(self):
-        try:
-            return self._base_collector
-        except AttributeError:
-            self._base_collector = {}
-            return self._base_collector
+        return {}
 
-    @property
-    def infolabels(self):
-        try:
-            return self._infolabels
-        except AttributeError:
-            self._infolabels = {}
-            return self._infolabels
+    label2 = ''
 
-    @property
-    def infoproperties(self):
-        try:
-            return self._infoproperties
-        except AttributeError:
-            self._infoproperties = {}
-            return self._infoproperties
-
-    @property
-    def artwork(self):
-        try:
-            return self._artwork
-        except AttributeError:
-            self._artwork = {}
-            return self._artwork
-
-    @artwork.setter
-    def artwork(self, value: dict):
-        self._artwork = value
-
-    @property
+    @cached_property
     def label(self):
-        try:
-            return self._label
-        except AttributeError:
-            self._label = ''
-            return self._label
+        return self.meta.get('label') or ''
 
-    @label.setter
-    def label(self, value: str):
-        self._label = value
+    @cached_property
+    def artwork(self):
+        artwork = self.meta.get('art') or {}
+        artwork.setdefault('fanart', self.meta.get('fanart', ''))
+        artwork.setdefault('thumb', self.meta.get('thumbnail', ''))
+        return artwork
 
-    @property
-    def label2(self):
-        try:
-            return self._label2
-        except AttributeError:
-            self._label2 = ''
-            return self._label2
-
-    @label2.setter
-    def label2(self, value: str):
-        self._label2 = value
-
-    @property
+    @cached_property
     def path(self):
-        try:
-            return self._path
-        except AttributeError:
-            self._path = self.get_path()
-            return self._path
-
-    @path.setter
-    def path(self, value: str):
-        self._path = value
+        return self.get_path()
 
     def get_path(self):
-        if self.dbtype == 'movie':
-            return f'videodb://movies/titles/{self.dbid}'
-        if self.dbtype == 'set':
-            return f'videodb://movies/sets/{self.dbid}/'
-        if self.dbtype == 'tvshow':
-            return f'videodb://tvshows/titles/{self.dbid}/'
-        if self.dbtype == 'season':
-            return f'videodb://tvshows/titles/{self.meta.get("tvshowid")}/{self.meta.get("season")}/'
-        if self.dbtype == 'episode':
-            return f'videodb://tvshows/titles/{self.meta.get("tvshowid")}/{self.meta.get("season")}/{self.dbid}'
         return ''
 
     @staticmethod
@@ -211,17 +125,21 @@ class ListItemMaker():
             if isinstance(v, list):
                 ip[f'{prefix}{k}.count'] = f'{len(v)}'
                 collector = {}
+
                 for x, j in enumerate(v):
                     if isinstance(j, dict):
                         ip.update(self.iter_dict(j, prefix=f'{prefix}{k}.{x}.', sub_lookups=sub_lookups))
                         continue
+
                     for key, value in self.format_key_value(k, j):
                         ip[f'{prefix}{key}.{x}'] = f'{value}'
                         collector.setdefault(f'{prefix}{key}', set()).add(f'{value}')
                         self.base_collector.setdefault(f'{key}', set()).add(f'{value}')
+
                 for key, value in collector.items():
                     ip[f'{key}.collection'] = ' / '.join(sorted(value))
                     ip[f'{key}.collection.count'] = f'{len(value)}'
+
                 continue
 
             for key, value in self.format_key_value(k, v):
@@ -243,42 +161,184 @@ class ListItemMaker():
 
         return ip
 
-    def make_item(self):
-        try:
-            self.label = self.meta.get('label') or ''
-        except AttributeError:
-            return  # NoneType
+    @cached_property
+    def infoproperties(self):
+        return self.get_infoproperties()
 
-        self.artwork = self.meta.get('art', {})
-        self.artwork.setdefault('fanart', self.meta.get('fanart', ''))
-        self.artwork.setdefault('thumb', self.meta.get('thumbnail', ''))
-
-        self.infoproperties.update(self.iter_dict(self.meta, sub_lookups=self.sublookups))
-        self.infoproperties['isfolder'] = 'true'
+    def get_infoproperties(self):
+        infoproperties = {}
+        infoproperties.update(self.iter_dict(self.meta, sub_lookups=self.sublookups))
+        infoproperties['isfolder'] = 'true'
 
         for key, value in self.base_collector.items():
-            self.infoproperties[f'{key}.collection'] = ' / '.join(sorted(value))
-            self.infoproperties[f'{key}.collection.count'] = f'{len(value)}'
+            infoproperties[f'{key}.collection'] = ' / '.join(sorted(value))
+            infoproperties[f'{key}.collection.count'] = f'{len(value)}'
 
-        if self.library == 'video':
-            self.infolabels.update({INFOLABEL_MAP[k]: v for k, v in self.meta.items() if v and k in INFOLABEL_MAP and v != -1})
-            self.infolabels['dbid'] = self.dbid
-            self.infolabels['mediatype'] = self.dbtype
-            self.info_tag.set_info(self.infolabels)
-            self.info_tag.set_unique_ids(self.meta.get('uniqueid') or {})
-            self.info_tag.set_stream_details(self.meta.get('streamdetails') or {})
+        return infoproperties
 
-        if self.dbtype in ('tvshow', 'season'):
-            self.infoproperties['totalepisodes'] = int(self.infolabels.get('episode') or 0)
-            self.infoproperties['unwatchedepisodes'] = int(self.infoproperties['totalepisodes']) - int(self.infoproperties.get('watchedepisodes') or 0)
+    @cached_property
+    def infolabels(self):
+        return self.get_infolabels()
 
-        if self.dbtype == 'tvshow':
-            self.infoproperties['totalseasons'] = int(self.infolabels.get('season') or 0)
+    def get_infolabels(self):
+        return {}
 
+    def make_item(self):
+        if not self.meta:
+            return
         self.listitem.setProperties(self.infoproperties)
         self.listitem.setArt(self.artwork)
-
         return self.listitem
+
+
+class ListItemMakerVideo(ListItemMakerBase):
+
+    @cached_property
+    def filenameandpath(self):
+        filenameandpath = self.meta.get('file') or ''
+        filenameandpath = xbmcvfs.translatePath(filenameandpath)
+        filenameandpath = xbmcvfs.validatePath(filenameandpath)
+        return filenameandpath
+
+    @cached_property
+    def filename(self):
+        if not self.filenameandpath:
+            return ''
+        return os.path.basename(self.filenameandpath)
+
+    @cached_property
+    def pathname(self):
+        if not self.filenameandpath:
+            return ''
+        return os.path.dirname(self.filenameandpath)
+
+    @cached_property
+    def fileextension(self):
+        if not self.filenameandpath:
+            return ''
+        return os.path.splitext(self.filenameandpath)[1]
+
+    def get_infoproperties(self):
+        infoproperties = super().get_infoproperties()
+        infoproperties['filenameandpath'] = self.filenameandpath
+        infoproperties['fileextension'] = self.fileextension
+        infoproperties['filename'] = self.filename
+        infoproperties['path'] = self.pathname
+        return infoproperties
+
+    def get_infolabels(self):
+        infolabels = {}
+        infolabels.update({INFOLABEL_MAP[k]: v for k, v in self.meta.items() if v and k in INFOLABEL_MAP and v != -1})
+        infolabels['dbid'] = self.dbid
+        infolabels['mediatype'] = self.dbtype
+        return infolabels
+
+    def make_item(self):
+        if not self.meta:
+            return
+        self.info_tag.set_info(self.infolabels)
+        self.info_tag.set_unique_ids(self.meta.get('uniqueid') or {})
+        self.info_tag.set_stream_details(self.meta.get('streamdetails') or {})
+        self.info_tag.set_cast(self.meta.get('cast') or [])
+        self.listitem.setProperties(self.infoproperties)
+        self.listitem.setArt(self.artwork)
+        return self.listitem
+
+
+class ListItemMakerMovie(ListItemMakerVideo):
+    dbtype = 'movie'
+
+    def get_path(self):
+        return f'videodb://movies/titles/{self.dbid}'
+
+
+class ListItemMakerSet(ListItemMakerVideo):
+    dbtype = 'set'
+
+    def get_path(self):
+        return f'videodb://movies/sets/{self.dbid}/'
+
+
+class ListItemMakerTvshow(ListItemMakerVideo):
+    dbtype = 'tvshow'
+
+    @cached_property
+    def totalepisodes(self):
+        return int(self.infolabels.get('episode') or 0)
+
+    @cached_property
+    def totalseasons(self):
+        return int(self.infolabels.get('season') or 0)
+
+    def get_path(self):
+        return f'videodb://tvshows/titles/{self.dbid}/'
+
+    def get_infoproperties(self):
+        infoproperties = super().get_infoproperties()
+        infoproperties['totalepisodes'] = self.totalepisodes
+        infoproperties['unwatchedepisodes'] = self.totalepisodes - int(infoproperties.get('watchedepisodes') or 0)
+        infoproperties['totalseasons'] = self.totalseasons
+        return infoproperties
+
+
+class ListItemMakerSeason(ListItemMakerVideo):
+    dbtype = 'season'
+
+    @cached_property
+    def totalepisodes(self):
+        return int(self.infolabels.get('episode') or 0)
+
+    @cached_property
+    def season(self):
+        return self.meta.get("season")
+
+    @cached_property
+    def tvshow_dbid(self):
+        return self.meta.get("tvshowid")
+
+    def get_path(self):
+        return f'videodb://tvshows/titles/{self.tvshow_dbid}/{self.season}/'
+
+    def get_infoproperties(self):
+        infoproperties = super().get_infoproperties()
+        infoproperties['totalepisodes'] = self.totalepisodes
+        infoproperties['unwatchedepisodes'] = self.totalepisodes - int(infoproperties.get('watchedepisodes') or 0)
+        return infoproperties
+
+
+class ListItemMakerEpisode(ListItemMakerVideo):
+    dbtype = 'episode'
+
+    @cached_property
+    def season(self):
+        return self.meta.get("season")
+
+    @cached_property
+    def tvshow_dbid(self):
+        return self.meta.get("tvshowid")
+
+    def get_path(self):
+        return f'videodb://tvshows/titles/{self.tvshow_dbid}/{self.season}/{self.dbid}'
+
+
+def ListItemMaker(meta, dbid, dbtype, library=None, sublookups=None):
+    routes = {
+        'movie': ListItemMakerMovie,
+        'set': ListItemMakerSet,
+        'tvshow': ListItemMakerTvshow,
+        'season': ListItemMakerSeason,
+        'episode': ListItemMakerEpisode,
+    }
+    try:
+        route = routes[dbtype]()
+    except KeyError:
+        route = ListItemMakerBase()
+    route.meta = meta
+    route.dbid = dbid
+    route.library = library
+    route.sublookups = sublookups
+    route.dbtype = dbtype
+    return route
 
 
 class ListGetItemDetails(ContainerDirectory):

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <window>
 	<defaultcontrol always="true">20</defaultcontrol>
 	<onload>Dialog.Close(fullscreeninfo,true)</onload>
@@ -44,11 +44,11 @@
 				</include>
 			</control>
 		</control>
-		<!-- Hidden button for sendclick -->
+		<!-- Hidden Button For SendClick -->
 		<control type="button" id="3012">
 			<include>HiddenObject</include>
 		</control>
-		<!-- Hidden progress otherwise time labels do not show -->
+		<!-- Hidden Progress Otherwise Time Labels Do Not Show -->
 		<control type="progress" id="3014">
 			<include>HiddenObject</include>
 		</control>

@@ -15,20 +15,14 @@ if sys.version_info < (2, 7):
 else:
     import json as simplejson
 
-#from settings import log
-from resources.lib.utils import log_msg
-
-# Import the common settings
-from resources.lib.settings import Settings
-#from resources.lib.settings import log
-from resources.lib.settings import os_path_join
-from resources.lib.settings import os_path_split
-from resources.lib.settings import list_dir
-from resources.lib.settings import dir_exists
-from resources.lib.settings import os_path_isfile
-from resources.lib.settings import normalize_string
-
-from resources.lib.VideoParser import VideoParser
+try:
+    from resources.lib.utils import log_msg
+    from resources.lib.settings import Settings, os_path_join, os_path_split, list_dir, dir_exists, os_path_isfile, normalize_string
+    from resources.lib.VideoParser import VideoParser
+except ModuleNotFoundError:
+    from utils import log_msg
+    from settings import Settings, os_path_join, os_path_split, list_dir, dir_exists, os_path_isfile, normalize_string
+    from VideoParser import VideoParser
 
 
 #############################################
@@ -232,7 +226,6 @@ class NfoReader():
             playlistFile = "special://musicplaylists/" + playlistFile
 
         json_query = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "Files.GetDirectory", "params": { "directory": "%s", "media": "music" },  "id": 1}' % playlistFile)
-        json_query = unicode(json_query, 'utf-8', errors='ignore')
         json_query = simplejson.loads(json_query)
 
         if ("result" in json_query) and ('files' in json_query['result']):
@@ -314,7 +307,7 @@ class ThemeFiles():
         return self.rawPath
 
     def clear(self):
-        self.rawPath == ""
+        self.rawPath = ""
         self.themeFiles = []
 
     # Get the list of themes with their full paths

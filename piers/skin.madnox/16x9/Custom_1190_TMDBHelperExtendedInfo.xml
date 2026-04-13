@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <window type="window" id="1190">
 	<defaultcontrol always="true">9999</defaultcontrol>
 	<controls>
@@ -14,7 +14,8 @@
 			<width>100</width>
 			<height>100</height>
 			<control type="image">
-				<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" condition="true">Conditional</animation>
+				<animation effect="AnimationDiscArtLibrary" end="-360" center="auto" time="2000" loop="true" condition="true">Conditional</animation>
+				<!-- <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" condition="true">Conditional</animation> -->
 				<texture colordiffuse="$VAR[PanelHighlightColorVar]">panels/spinner.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>

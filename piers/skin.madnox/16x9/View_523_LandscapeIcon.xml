@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View523LandscapeIcon">
 		<!-- Floor -->
@@ -9,6 +9,10 @@
 		<!-- Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(523)</visible>
+			<!-- Animation To Slide Wall Left When Trailer Plays -->
+			<animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))" reversible="true">
+				<effect type="slide" end="-680,0" time="400" tween="cubic" easing="out" />
+			</animation>
 			<include>AnimationZoomWindow</include>
 			<include>AnimationZoomVisible</include>
 			<include content="PanelDefault">
@@ -22,11 +26,16 @@
 				<left>110</left>
 				<width>1700</width>
 				<height>750</height>
+				<!-- Script Trigger and Navigation Cleanup -->
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<onleft>PlayerControl(Stop)</onleft>
 				<onleft>9050</onleft>
+				<onright>PlayerControl(Stop)</onright>
 				<onright>60513</onright>
 				<pagecontrol>60513</pagecontrol>
 				<include>ContainerScrollTime</include>
 				<viewtype label="$LOCALIZE[31250]">bigicon</viewtype>
+				<!-- Episodes Large -->
 				<itemlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + [Container.Content(images) | Container.Content(episodes)]">
 					<include content="ViewArtwork">
 						<param name="aspect">scale</param>
@@ -36,6 +45,12 @@
 						<param name="watchedstatusvisible">Container.Content(episodes) + !Skin.HasSetting(View523DisableWatchedStatus)</param>
 						<param name="labelvisible">Container.Content(episodes) + !Skin.HasSetting(View523DisableEpisodeLabel)</param>
 					</include>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + [Container.Content(images) | Container.Content(episodes)]">
 					<control type="image">
@@ -43,7 +58,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<include content="ViewArtwork">
 							<param name="aspect">scale</param>
@@ -54,8 +69,15 @@
 							<param name="labelvisible">Container.Content(episodes) + !Skin.HasSetting(View523DisableEpisodeLabel)</param>
 							<param name="labeltextcolor">$VAR[PanelTextColorVar]</param>
 						</include>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
+				<!-- Episodes Small -->
 				<itemlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + [Container.Content(images) | Container.Content(episodes)]">
 					<include content="ViewArtwork">
 						<param name="aspect">scale</param>
@@ -66,6 +88,12 @@
 						<param name="labelvisible">Container.Content(episodes) + !Skin.HasSetting(View523DisableEpisodeLabel)</param>
 						<param name="labelfont">Font26_Cond_07</param>
 					</include>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + [Container.Content(images) | Container.Content(episodes)]">
 					<control type="image">
@@ -73,7 +101,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<include content="ViewArtwork">
 							<param name="aspect">scale</param>
@@ -85,14 +113,21 @@
 							<param name="labeltextcolor">$VAR[PanelTextColorVar]</param>
 							<param name="labelfont">Font26_Cond_07</param>
 						</include>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
+				<!-- Art Large -->
 				<itemlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + String.IsEmpty(Skin.String(View523Art))">
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Art(landscape)) | !String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
 						<include content="ViewArtwork">
 							<param name="texturefadetime">0</param>
-							<param name="fallback"></param>
+							<param name="fallback" />
 							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 							<param name="art">$VAR[LandscapeVar]</param>
 							<param name="diffuse">diffuse/rounded5-405x230.png</param>
@@ -106,20 +141,27 @@
 							<param name="diffuse">diffuse/rounded5-405x230.png</param>
 						</include>
 					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
+				<!-- Art Large -->
 				<focusedlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + String.IsEmpty(Skin.String(View523Art))">
 					<control type="image">
 						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="group">
 							<visible>!String.IsEmpty(ListItem.Art(landscape)) | !String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
 							<include content="ViewArtwork">
 								<param name="texturefadetime">0</param>
-								<param name="fallback"></param>
+								<param name="fallback" />
 								<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 								<param name="art">$VAR[LandscapeVar]</param>
 								<param name="diffuse">diffuse/rounded5-405x230.png</param>
@@ -133,8 +175,75 @@
 								<param name="diffuse">diffuse/rounded5-405x230.png</param>
 							</include>
 						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
+				<!-- Art Small -->
+				<itemlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + String.IsEmpty(Skin.String(View523Art))">
+					<control type="group">
+						<visible>!String.IsEmpty(ListItem.Art(landscape)) | !String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
+						<include content="ViewArtwork">
+							<param name="texturefadetime">0</param>
+							<param name="fallback" />
+							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+							<param name="art">$VAR[LandscapeVar]</param>
+							<param name="diffuse">diffuse/rounded5-320x167.png</param>
+						</include>
+					</control>
+					<control type="group">
+						<visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
+						<include content="ViewBannerFallback">
+							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+							<param name="diffuse">diffuse/rounded5-320x167.png</param>
+						</include>
+					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
+				</itemlayout>
+				<!-- Art Small -->
+				<focusedlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + String.IsEmpty(Skin.String(View523Art))">
+					<control type="image">
+						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+					</control>
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
+						</animation>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Art(landscape)) | !String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
+							<include content="ViewArtwork">
+								<param name="texturefadetime">0</param>
+								<param name="fallback" />
+								<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+								<param name="art">$VAR[LandscapeVar]</param>
+								<param name="diffuse">diffuse/rounded5-320x167.png</param>
+							</include>
+						</control>
+						<control type="group">
+							<visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
+							<include content="ViewBannerFallback">
+								<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+								<param name="diffuse">diffuse/rounded5-320x167.png</param>
+							</include>
+						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
+					</control>
+				</focusedlayout>
+				<!-- ClearLogo Large -->
 				<itemlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearlogo)">
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -150,14 +259,21 @@
 						<param name="font">Font38_Bold</param>
 						<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 					</include>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
+				<!-- ClearLogo Large -->
 				<focusedlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearlogo)">
 					<control type="image">
 						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="group">
 							<visible>!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -173,94 +289,15 @@
 							<param name="font">Font38_Bold</param>
 							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 						</include>
-					</control>
-				</focusedlayout>
-				<itemlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearart)">
-					<control type="group">
-						<visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
-						<include content="ViewArtwork">
-							<param name="aspect">keep</param>
-							<param name="texturefadetime">0</param>
-							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
-							<param name="art">$VAR[ClearArtVar]</param>
-						</include>
-					</control>
-					<include content="ViewLogoFallback">
-						<param name="visible">String.IsEmpty(ListItem.Art(clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo))</param>
-						<param name="font">Font38_Bold</param>
-						<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
-					</include>
-				</itemlayout>
-				<focusedlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearart)">
-					<control type="image">
-						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
-					</control>
-					<control type="group">
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
-						</animation>
-						<control type="group">
-							<visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
-							<include content="ViewArtwork">
-								<param name="aspect">keep</param>
-								<param name="texturefadetime">0</param>
-								<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
-								<param name="art">$VAR[ClearArtVar]</param>
-							</include>
-						</control>
-						<include content="ViewLogoFallback">
-							<param name="visible">String.IsEmpty(ListItem.Art(clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo))</param>
-							<param name="font">Font38_Bold</param>
-							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
 						</include>
 					</control>
 				</focusedlayout>
-				<itemlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + String.IsEmpty(Skin.String(View523Art))">
-					<control type="group">
-						<visible>!String.IsEmpty(ListItem.Art(landscape)) | !String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
-						<include content="ViewArtwork">
-							<param name="texturefadetime">0</param>
-							<param name="fallback"></param>
-							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
-							<param name="art">$VAR[LandscapeVar]</param>
-							<param name="diffuse">diffuse/rounded5-320x167.png</param>
-						</include>
-					</control>
-					<control type="group">
-						<visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
-						<include content="ViewBannerFallback">
-							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
-							<param name="diffuse">diffuse/rounded5-320x167.png</param>
-						</include>
-					</control>
-				</itemlayout>
-				<focusedlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + String.IsEmpty(Skin.String(View523Art))">
-					<control type="image">
-						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
-					</control>
-					<control type="group">
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
-						</animation>
-						<control type="group">
-							<visible>!String.IsEmpty(ListItem.Art(landscape)) | !String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
-							<include content="ViewArtwork">
-								<param name="texturefadetime">0</param>
-								<param name="fallback"></param>
-								<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
-								<param name="art">$VAR[LandscapeVar]</param>
-								<param name="diffuse">diffuse/rounded5-320x167.png</param>
-							</include>
-						</control>
-						<control type="group">
-							<visible>String.IsEmpty(ListItem.Art(landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape))</visible>
-							<include content="ViewBannerFallback">
-								<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
-								<param name="diffuse">diffuse/rounded5-320x167.png</param>
-							</include>
-						</control>
-					</control>
-				</focusedlayout>
+				<!-- ClearLogo Small -->
 				<itemlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearlogo)">
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -276,6 +313,12 @@
 						<param name="font">Font33_Bold</param>
 						<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 					</include>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearlogo)">
 					<control type="image">
@@ -283,7 +326,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="group">
 							<visible>!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -299,8 +342,69 @@
 							<param name="font">Font33_Bold</param>
 							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 						</include>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
+				<!-- ClearArt Large -->
+				<itemlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearart)">
+					<control type="group">
+						<visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
+						<include content="ViewArtwork">
+							<param name="aspect">keep</param>
+							<param name="texturefadetime">0</param>
+							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+							<param name="art">$VAR[ClearArtVar]</param>
+						</include>
+					</control>
+					<include content="ViewLogoFallback">
+						<param name="visible">String.IsEmpty(ListItem.Art(clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo))</param>
+						<param name="font">Font38_Bold</param>
+						<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+					</include>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
+				</itemlayout>
+				<!-- ClearArt Large -->
+				<focusedlayout height="250" width="425" condition="!Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearart)">
+					<control type="image">
+						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+					</control>
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
+						</animation>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
+							<include content="ViewArtwork">
+								<param name="aspect">keep</param>
+								<param name="texturefadetime">0</param>
+								<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+								<param name="art">$VAR[ClearArtVar]</param>
+							</include>
+						</control>
+						<include content="ViewLogoFallback">
+							<param name="visible">String.IsEmpty(ListItem.Art(clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo))</param>
+							<param name="font">Font38_Bold</param>
+							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
+						</include>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
+					</control>
+				</focusedlayout>
+				<!-- ClearArt Small -->
 				<itemlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearart)">
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -316,6 +420,12 @@
 						<param name="font">Font33_Bold</param>
 						<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 					</include>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="24" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="187.5" width="340" condition="Skin.HasSetting(View523SmallIcons) + Skin.String(View523Art,clearart)">
 					<control type="image">
@@ -323,7 +433,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="group">
 							<visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
@@ -339,6 +449,12 @@
 							<param name="font">Font33_Bold</param>
 							<param name="watchedstatusvisible">!Skin.HasSetting(View523DisableWatchedStatus)</param>
 						</include>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="24" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
 			</control>
@@ -350,7 +466,7 @@
 				<onright condition="Control.IsVisible(61300)">61300</onright>
 			</control>
 		</control>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(523)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -361,6 +477,93 @@
 			</include>
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsPanelVideos</include>
 			<include condition="Window.IsVisible(MyMusicNav.xml)">MediaFlagsPanelAudio</include>
+		</control>
+
+		<!-- Pop-Up Video Player Group -->
+		<control type="group">
+			<visible>Control.IsVisible(523) + !String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+			<include>AnimationVideoPreviewPopup400</include>
+			<right>50</right>
+			<top>120</top>
+			<width>700</width>
+			<height>800</height>
+			<!-- Video Player -->
+			<control type="group">
+				<width>700</width>
+				<height>394</height>
+				<control type="group">
+					<visible>Skin.HasSetting(View523AnimatedFanart)</visible>
+					<control type="image">
+						<texture fallback="colors/black.png">$VAR[FanartVar]</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="videowindow">
+						<visible>Player.HasVideo</visible>
+						<animation effect="fade" time="400" delay="200">Visible</animation>
+						<colordiffuse>FFA0A0A0</colordiffuse>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!Skin.HasSetting(View523AnimatedFanart)</visible>
+					<control type="image">
+						<texture>colors/black.png</texture>
+					</control>
+					<control type="videowindow">
+						<colordiffuse>FFA0A0A0</colordiffuse>
+					</control>
+				</control>
+				<control type="image">
+					<bordersize>-15</bordersize>
+					<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+				</control>
+			</control>
+			<!-- Info Panel for Video -->
+			<control type="group">
+				<top>410</top>
+				<control type="image">
+					<width>700</width>
+					<height>400</height>
+					<texture colordiffuse="bb2a2a2a">colors/black.png</texture>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<width>660</width>
+					<height>90</height>
+					<font>Font28_Bold</font>
+					<textcolor>ff00aaff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[ListItem.Title]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="image">
+					<top>90</top>
+					<left>20</left>
+					<width>660</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+				<control type="textbox">
+					<top>100</top>
+					<left>20</left>
+					<width>660</width>
+					<height>280</height>
+					<font>Font28_Reg</font>
+					<textcolor>ffcccccc</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>justify</align>
+					<label>$INFO[ListItem.Plot]</label>
+					<animation effect="scroll" time="20000" delay="5000" end="100%" condition="true" loop="true" reversible="false">Conditional</animation>
+				</control>
+				<control type="image">
+					<top>390</top>
+					<left>20</left>
+					<width>660</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+			</control>
 		</control>
 	</include>
 </includes>

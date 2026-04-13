@@ -1,6 +1,11 @@
-from tmdbhelper.lib.addon.plugin import ADDON
+from tmdbhelper.lib.addon.plugin import ADDON, get_localized, executebuiltin
 from tmdbhelper.lib.items.container import ContainerDirectory
 from tmdbhelper.lib.items.directories.base.basedir_nodes import BaseDirNode
+from jurialmunkey.ftools import cached_property
+from collections import namedtuple
+
+
+BaseDirItem = namedtuple("BaseDirItem", "item type")
 
 
 class BaseDirList:
@@ -28,12 +33,46 @@ class BaseDirList:
         self.calendar = calendar
         self.details = details
 
-    def build_basedir(self, item_type=None):
+    def build_basedir(self, item_type=None, group=None, info=None):
+        basedir = self.get_basedir_grouped(item_type, info) if info and not group else None
+        basedir = basedir or self.get_basedir_ungrouped(item_type, group)
+        return basedir
+
+    @staticmethod
+    def set_grouped_item(i, info):
+        iobj = i['item']
+        item = iobj.item.get_item(iobj.type, mixed_dir=False)
+        if i['count'] > 1:  # Only subgroup items when more than one in group
+            item['params'] = {'info': info, 'group': f'{iobj.item.group}'}
+            item['label'] = get_localized(iobj.item.group)
+        return item
+
+    def get_basedir_grouped(self, item_type=None, info=None):
+        groups = {}
+        for i in self.get_basedir(item_type):
+            item_group = groups.setdefault(i.item.group, {'item': i, 'count': 0})
+            item_group['count'] += 1
         return [
-            basedir_item.get_item(basedir_item_type, mixed_dir=bool(not item_type))
-            for basedir_item in self.basedir for basedir_item_type in basedir_item.types
-            if not item_type or item_type == basedir_item_type
+            self.set_grouped_item(i, info)
+            for i in groups.values()
         ]
+
+    def get_basedir_ungrouped(self, item_type=None, group=None):
+        return [
+            i.item.get_item(i.type, mixed_dir=bool(not item_type))
+            for i in self.get_basedir(item_type)
+            if not group or int(group) == i.item.group  # Convert paramstring value to int for comparison
+        ]
+
+    def get_basedir(self, item_type=None):
+        basedir = [
+            BaseDirItem(basedir_item, basedir_item_type)
+            for basedir_item in self.basedir
+            if basedir_item.enabled
+            for basedir_item_type in basedir_item.types
+            if not item_type or basedir_item_type == item_type
+        ]
+        return basedir
 
     @property
     def basedir(self):
@@ -115,15 +154,42 @@ class ListBaseDir(ContainerDirectory):
     def get_library_calendar_item():
         return {'info': 'library_nextaired'}
 
-    def get_items(self, info=None, **kwargs):
-        route = {
-            'dir_movie': lambda: BaseDirList(tmdb=True, trakt=True).build_basedir('movie'),
-            'dir_tv': lambda: BaseDirList(tmdb=True, trakt=True).build_basedir('tv'),
-            'dir_person': lambda: BaseDirList(tmdb=True, trakt=True).build_basedir('person'),
-            'dir_tmdb': lambda: BaseDirList(tmdb=True).build_basedir(),
-            'dir_trakt': lambda: BaseDirList(trakt=True).build_basedir(),
-            'dir_mdblist': lambda: BaseDirList(mdblist=True).build_basedir(),
-            'dir_tvdb': lambda: BaseDirList(tvdb=True).build_basedir(),
+    @cached_property
+    def plugin_category(self):
+        routes = {
+            'dir_movie': lambda: get_localized(342),
+            'dir_tv': lambda: get_localized(20343),
+            'dir_person': lambda: get_localized(32172),
+            'dir_tmdb': 'TheMovieDb',
+            'dir_tmdb_v4': lambda: f'TheMovieDb {get_localized(32079)}',
+            'dir_trakt': 'Trakt',
+            'dir_mdblist': 'MDbList',
+            'dir_tvdb': 'TVDb',
+            'dir_random': lambda: get_localized(590),
+            'dir_custom_node': 'Nodes',
+        }
+        try:
+            func = routes[self.params['info']]
+        except KeyError:
+            return
+        try:
+            text = func()
+        except TypeError:
+            text = func
+        try:
+            return f'{text} {get_localized(int(self.params["group"]))}'
+        except KeyError:
+            return text
+
+    def get_items(self, info=None, group=None, **kwargs):
+        routes = {
+            'dir_movie': lambda: BaseDirList(tmdb=True, trakt=True).build_basedir('movie', group=group),
+            'dir_tv': lambda: BaseDirList(tmdb=True, trakt=True).build_basedir('tv', group=group),
+            'dir_person': lambda: BaseDirList(tmdb=True, trakt=True).build_basedir('person', group=group),
+            'dir_tmdb': lambda: BaseDirList(tmdb=True).build_basedir(group=group, info='dir_tmdb'),
+            'dir_trakt': lambda: BaseDirList(trakt=True).build_basedir(group=group, info='dir_trakt'),
+            'dir_mdblist': lambda: BaseDirList(mdblist=True).build_basedir(group=group),
+            'dir_tvdb': lambda: BaseDirList(tvdb=True).build_basedir(group=group),
             'dir_random': lambda: BaseDirList(random=True).build_basedir(),
             'dir_calendar_dvd': lambda: BaseDirList(calendar=ListBaseDir.get_trakt_calendar_item(info='trakt_dvdcalendar', **kwargs)).build_basedir('movie'),
             'dir_calendar_movie': lambda: BaseDirList(calendar=ListBaseDir.get_trakt_calendar_item(info='trakt_moviecalendar', **kwargs)).build_basedir('movie'),
@@ -131,11 +197,14 @@ class ListBaseDir(ContainerDirectory):
             'dir_calendar_library': lambda: BaseDirList(calendar=ListBaseDir.get_library_calendar_item()).build_basedir('tv'),
             'dir_custom_node': lambda: BaseDirNode(**kwargs).build_basedir(),
             'dir_trakt_genre': lambda: BaseDirList(trakt_genre=kwargs.get('genre')).build_basedir(kwargs.get('tmdb_type')),
+            'dir_trakt_authenticate': lambda: executebuiltin('RunScript(plugin.video.themoviedb.helper,authenticate_trakt)'),
             'dir_tmdb_v4': lambda: BaseDirList(tmdb_v4=True).build_basedir(),
-            'dir_settings': lambda: ADDON.openSettings()
+            'dir_settings': lambda: ADDON.openSettings(),
         }
-        func = route.get(info, lambda: BaseDirList(main=True).build_basedir())
-        return func()
+        try:
+            return routes[info]()
+        except KeyError:
+            return BaseDirList(main=True).build_basedir()
 
 
 class ListRelatedBaseDir(ContainerDirectory):

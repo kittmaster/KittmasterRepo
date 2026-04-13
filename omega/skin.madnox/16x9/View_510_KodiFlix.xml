@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View510KodiFlix">
-		<!-- Video preview -->
+		<!-- Video Preview -->
 		<control type="group">
 			<visible>Control.IsVisible(510) + Player.HasVideo + Skin.HasSetting(View510VideoPreviewWindow)</visible>
 			<include content="AnimationSlideRightWindow">
@@ -17,13 +17,13 @@
 			<control type="image">
 				<texture>colors/black.png</texture>
 			</control>
-			<control type="videowindow"/>
+			<control type="videowindow" />
 			<control type="image">
 				<bordersize>-10</bordersize>
 				<texture border="20">thumbs/overlay2.png</texture>
 			</control>
 		</control>
-		<!-- Background fade -->
+		<!-- Background Fade -->
 		<control type="image">
 			<visible>Control.IsVisible(510)</visible>
 			<width>1300</width>
@@ -41,7 +41,7 @@
 		<include content="View510Panel" condition="Skin.HasSetting(View510FixedList)">
 			<param name="listtype">fixedlist</param>
 		</include>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(510)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -59,7 +59,7 @@
 			</include>
 		</control>
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View510Panel">
 		<param name="listtype">wraplist</param>
 		<definition>
@@ -83,7 +83,9 @@
 					<left>-192</left>
 					<width>2112</width>
 					<height>764</height>
+					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 					<onup>9050</onup>
+					<onunfocus>PlayerControl(Stop)</onunfocus>
 					<ondown>60510</ondown>
 					<pagecontrol>60510</pagecontrol>
 					<focusposition>1</focusposition>

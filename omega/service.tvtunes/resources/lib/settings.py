@@ -6,8 +6,10 @@ import xbmcaddon
 import xbmcvfs
 import xbmcgui
 
-#from settings import log
-from resources.lib.utils import log_msg
+try:
+    from resources.lib.utils import log_msg
+except ModuleNotFoundError:
+    from utils import log_msg
 
 ADDON = xbmcaddon.Addon(id='service.tvtunes')
 ADDON_ID = ADDON.getAddonInfo('id')
@@ -19,7 +21,7 @@ def log(txt, debug_logging_enabled=True, loglevel=xbmc.LOGDEBUG):
         if isinstance(txt, str):
             txt = txt
         message = u'%s: %s' % (ADDON_ID, txt)
-        log(message, loglevel)
+        xbmc.log(message, loglevel)
 
 
 def normalize_string(text):
@@ -36,7 +38,7 @@ def normalize_string(text):
         # Remove dots from the last character as windows can not have directories
         # with dots at the end
         text = text.rstrip('.')
-        text = unicodedata.normalize('NFKD', unicode(text, 'utf-8')).encode('ascii', 'ignore')
+        text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
     except:
         pass
     return text
@@ -231,7 +233,7 @@ class WindowShowing():
                 return False
 
             # Only pay attention to the forced playing if there is actually media playing
-            if Player().isPlaying():
+            if xbmc.Player().isPlaying():
                 return True
         return False
 
@@ -382,8 +384,6 @@ class Settings():
                 fileTypes = fileTypes + "|flac"
             if(ADDON.getSetting("m4a") == 'true'):
                 fileTypes = fileTypes + "|m4a"
-            if(ADDON.getSetting("wav") == 'true'):
-                fileTypes = fileTypes + "|wav"
             if(ADDON.getSetting("wav") == 'true'):
                 fileTypes = fileTypes + "|wav"
         if not audioOnly:

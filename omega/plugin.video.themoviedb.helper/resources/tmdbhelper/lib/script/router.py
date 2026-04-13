@@ -33,7 +33,9 @@ class Script(object):
     routing_table = {
         # Node Maker
         'make_node':
-            lambda **kwargs: importmodule('tmdbhelper.lib.script.method.make_node', 'make_node')(**kwargs),
+            lambda **kwargs: importmodule('tmdbhelper.lib.script.method.nodes', 'make_node')(**kwargs),
+        'remove_node':
+            lambda **kwargs: importmodule('tmdbhelper.lib.script.method.nodes', 'remove_node')(**kwargs),
 
         # Kodi Utils
         'split_value':
@@ -52,6 +54,8 @@ class Script(object):
             lambda **kwargs: importmodule('tmdbhelper.lib.script.method.tmdb', 'refresh_item')(**kwargs),
         'delete_itemtype':
             lambda **kwargs: importmodule('tmdbhelper.lib.script.method.tmdb', 'delete_itemtype')(**kwargs),
+        'delete_listdata':
+            lambda **kwargs: importmodule('tmdbhelper.lib.script.method.tmdb', 'delete_listdata')(**kwargs),
 
         # Trakt Utils
         'like_list':
@@ -86,6 +90,8 @@ class Script(object):
             lambda **kwargs: importmodule('tmdbhelper.lib.script.method.image_functions', 'blur_image')(**kwargs),
         'image_colors':
             lambda **kwargs: importmodule('tmdbhelper.lib.script.method.image_functions', 'image_colors')(**kwargs),
+        'genre_fanart':
+            lambda **kwargs: importmodule('tmdbhelper.lib.script.method.image_functions', 'genre_fanart')(**kwargs),
 
         # User Configuration
         'provider_allowlist':
@@ -146,8 +152,8 @@ class Script(object):
             lambda **kwargs: importmodule('tmdbhelper.lib.script.method.logging', 'log_sync')(**kwargs),
         'recache_kodidb':
             lambda **kwargs: importmodule('tmdbhelper.lib.script.method.maintenance', 'recache_kodidb')(confirmation=True),
-        'build_awards':
-            lambda **kwargs: importmodule('tmdbhelper.lib.script.method.build_awards', 'build_awards')(**kwargs),
+        # 'build_awards':
+        #     lambda **kwargs: importmodule('tmdbhelper.lib.script.method.build_awards', 'build_awards')(**kwargs),
         'restart_service':
             lambda **kwargs: importmodule('tmdbhelper.lib.monitor.service', 'restart_service_monitor')(),
         'test_func':

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window id="1110" type="dialog">
 	<defaultcontrol always="true">100</defaultcontrol>
 	<include>AnimationDialogPopupWindow</include>
@@ -8,8 +8,8 @@
 			<visible>!Window.IsActive(DialogSelect.xml)</visible>
 			<include>AnimationDialogPopupVisible</include>
 			<include content="DialogBackground">
-				<param name="width" value="1220"/>
-				<param name="height" value="760"/>
+				<param name="width" value="1220" />
+				<param name="height" value="760" />
 				<param name="label">$INFO[Window(home).Property(CustomSelect)]</param>
 			</include>
 			<control type="list" id="100">
@@ -28,10 +28,10 @@
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31310])">SelectFanartRotationSpeed</include>
 					<!-- FanArt Background Size-->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31423])">MusicFanartBackgroundImageRatio</include>
-					<!-- Now playing -->
+					<!-- Now Playing -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31315])">SelectMusicOSDBackground</include>
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31030])">SelectNowPlayingMusicBackground</include>
-					<!-- Disc art -->
+					<!-- Disc Art -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31361])">SelectNowPlayingMusicDiscartFallback</include>
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31362])">SelectNowPlayingVideoDiscartFallback</include>
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31009])">SelectLibraryMusicDiscartFallback</include>
@@ -45,7 +45,7 @@
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31357])">SelectThemePanelTexture</include>
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31358])">SelectThemeBackgroundTexture</include>
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31359])">SelectThemeMainMenuTexture</include>
-					<!-- Dim background -->
+					<!-- Dim Background -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31380])">SelectDimMusicOSD</include>
 					<!-- Media Flag Custom Color Selection -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31395])">MediaFlagResolutionColorSettings</include>
@@ -53,6 +53,10 @@
 					<!-- Media Meta Data Scroller -->
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31410])">SelectMovieMetaScrollSpeed</include>
 					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31412])">SelectPersonMetaScrollSpeed</include>
+					<!-- Media Flag Data Style Selector -->
+					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31436])">SelectMediaFlagDataStyle</include>
+					<!-- Startup Intro Selection -->
+					<include condition="String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31474])">IntroVideoSelectStartup</include>
 				</content>
 			</control>
 			<control type="image">
@@ -74,8 +78,8 @@
 				<onleft>100</onleft>
 				<include content="DialogButtonAction">
 					<param name="id">8001</param>
-					<param name="label" value="$LOCALIZE[15067]"/>
-					<param name="onclick" value="Action(close)"/>
+					<param name="label" value="$LOCALIZE[15067]" />
+					<param name="onclick" value="Action(close)" />
 				</include>
 			</control>
 			<include content="DialogImage">
@@ -101,25 +105,28 @@
 				<param name="color">$VAR[MainMenuTextureColorVar]</param>
 			</include>
 			<include content="DialogImage">
-				<param name="visible">String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31412]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31145]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31310]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31410]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31401]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31395]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31009]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31299]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31361]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31362]) |
-														String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31423])
-														</param>
+				<param name="visible">
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31412]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31145]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31310]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31410]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31401]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31395]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31009]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31299]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31361]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31362]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31423]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31436]) |
+					String.IsEqual(Window(home).Property(CustomSelect),$LOCALIZE[31474])
+				</param>
 				<param name="height">280</param>
 				<param name="aspect">keep</param>
 				<param name="texture">$INFO[Container(100).ListItem.Icon]</param>
 			</include>
 			<control type="image">
 				<include>DialogHorizontalSeparator</include>
-			</control>		
+			</control>
 			<control type="label">
 				<include>DialogItemCountLabel</include>
 				<label>$INFO[Container(100).NumItems,, $LOCALIZE[31001]]$INFO[Container(100).CurrentPage, - ]$INFO[Container(100).NumPages,/]</label>

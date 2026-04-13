@@ -4,12 +4,110 @@
 			<property name="id">$NUMBER[1]</property>
 			<label>$LOCALIZE[1]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/pictures.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/pictures.png</icon>
 			<thumb />
 			<property name="labelID">1</property>
-			<property name="background">special://skin/extras/backgrounds/pictures.jpg</property>
-			<property name="widget.1">library</property>
-			<property name="widget.2">tmdb</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick>ActivateWindow(pictures)</onclick>
 			<property name="path">ActivateWindow(pictures)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -20,10 +118,110 @@
 			<property name="id">$NUMBER[2]</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/musicvideos.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/musicvideos.png</icon>
 			<thumb />
 			<property name="labelID">musicvideos</property>
-			<property name="background">special://skin/extras/backgrounds/musicvideos.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick condition="Library.HasContent(MusicVideos)">ActivateWindow(videos,videodb://musicvideos/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://musicvideos/titles/,return)</property>
 			<onclick condition="![Library.HasContent(MusicVideos)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -35,10 +233,110 @@
 			<property name="id">$NUMBER[3]</property>
 			<label>$LOCALIZE[2]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/music.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/music.png</icon>
 			<thumb />
 			<property name="labelID">music</property>
-			<property name="background">special://skin/extras/backgrounds/music.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick condition="Library.HasContent(Music)">ActivateWindow(music,musicdb://artists/,return)</onclick>
 			<property name="path">ActivateWindow(music,musicdb://artists/,return)</property>
 			<onclick condition="![Library.HasContent(Music)]">ActivateWindow(Music,sources://music/,return)</onclick>
@@ -50,12 +348,110 @@
 			<property name="id">$NUMBER[4]</property>
 			<label>$LOCALIZE[342]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/movies.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/movies.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
-			<property name="background">special://skin/extras/backgrounds/movies.jpg</property>
-			<property name="widget.1">library</property>
-			<property name="widget.2">tmdb</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/movies.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick condition="Library.HasContent(Movies)">ActivateWindow(videos,videodb://movies/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://movies/titles/,return)</property>
 			<onclick condition="![Library.HasContent(Movies)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -67,11 +463,110 @@
 			<property name="id">$NUMBER[5]</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tvshows.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tvshows.png</icon>
 			<thumb />
 			<property name="labelID">tvshows</property>
-			<property name="background">special://skin/extras/backgrounds/tvshows.jpg</property>
-			<property name="widget.1">library</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/tvshows.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick condition="Library.HasContent(TVShows)">ActivateWindow(videos,videodb://tvshows/titles/,return)</onclick>
 			<property name="path">ActivateWindow(videos,videodb://tvshows/titles/,return)</property>
 			<onclick condition="![Library.HasContent(TVShows)]">ActivateWindow(Videos,sources://video/,return)</onclick>
@@ -83,10 +578,110 @@
 			<property name="id">$NUMBER[6]</property>
 			<label>$LOCALIZE[31173]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tv.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tv.png</icon>
 			<thumb />
 			<property name="labelID">31173</property>
-			<property name="background">special://skin/extras/backgrounds/tv.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<visible>System.HasPVRAddon</visible>
 			<onclick>ActivateWindow(tvchannels)</onclick>
 			<property name="path">ActivateWindow(tvchannels)</property>
@@ -98,10 +693,110 @@
 			<property name="id">$NUMBER[7]</property>
 			<label>$LOCALIZE[19021]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/radio.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/radio.png</icon>
 			<thumb />
 			<property name="labelID">19021</property>
-			<property name="background">special://skin/extras/backgrounds/radio.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<visible>System.HasPVRAddon</visible>
 			<onclick>ActivateWindow(radiochannels)</onclick>
 			<property name="path">ActivateWindow(radiochannels)</property>
@@ -113,10 +808,110 @@
 			<property name="id">$NUMBER[8]</property>
 			<label>$LOCALIZE[3]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/videos.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/videos.png</icon>
 			<thumb />
 			<property name="labelID">videos</property>
-			<property name="background">special://skin/extras/backgrounds/videos.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick>ActivateWindow(videos,root)</onclick>
 			<property name="path">ActivateWindow(videos,root)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -127,10 +922,110 @@
 			<property name="id">$NUMBER[9]</property>
 			<label>$LOCALIZE[15016]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/games.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/games.png</icon>
 			<thumb />
 			<property name="labelID">15016</property>
-			<property name="background">special://skin/extras/backgrounds/games.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<visible>System.GetBool(gamesgeneral.enable)</visible>
 			<onclick>ActivateWindow(games)</onclick>
 			<property name="path">ActivateWindow(games)</property>
@@ -142,10 +1037,110 @@
 			<property name="id">$NUMBER[10]</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/addons.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/addons.png</icon>
 			<thumb />
 			<property name="labelID">24001</property>
-			<property name="background">special://skin/extras/backgrounds/addons.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick>ActivateWindow(1114)</onclick>
 			<property name="path">ActivateWindow(1114)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -156,10 +1151,110 @@
 			<property name="id">$NUMBER[11]</property>
 			<label>$LOCALIZE[13000]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/system.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/system.png</icon>
 			<thumb />
 			<property name="labelID">13000</property>
-			<property name="background">special://skin/extras/backgrounds/system.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick>ActivateWindow(settings)</onclick>
 			<property name="path">ActivateWindow(settings)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
@@ -170,10 +1265,110 @@
 			<property name="id">$NUMBER[12]</property>
 			<label>$LOCALIZE[8]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/weather.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/weather.png</icon>
 			<thumb />
 			<property name="labelID">8</property>
-			<property name="background">special://skin/extras/backgrounds/weather.jpg</property>
+			<property name="background">special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg</property>
+			<property name="widgetType.1">none</property>
+			<property name="widgetType.2">none</property>
+			<property name="widgetType.3">none</property>
+			<property name="widgetType.4">none</property>
+			<property name="widgetType.5">none</property>
+			<property name="widgetType.6">none</property>
+			<property name="widgetType.7">none</property>
+			<property name="widgetType.8">none</property>
+			<property name="widgetType.9">none</property>
+			<property name="widgetType.10">none</property>
+			<property name="widgetType.11">none</property>
+			<property name="widgetType.12">none</property>
+			<property name="widgetType.13">none</property>
+			<property name="widgetType.14">none</property>
+			<property name="widgetType.15">none</property>
+			<property name="widgetType.16">none</property>
+			<property name="widgetType.17">none</property>
+			<property name="widgetType.18">none</property>
+			<property name="widgetType.19">none</property>
+			<property name="widgetType.20">none</property>
+			<property name="widgetCaseMusic.1">false</property>
+			<property name="widgetCaseVideo.1">false</property>
+			<property name="widgetCaseMusic.2">false</property>
+			<property name="widgetCaseVideo.2">false</property>
+			<property name="widgetCaseMusic.3">false</property>
+			<property name="widgetCaseVideo.3">false</property>
+			<property name="widgetCaseMusic.4">false</property>
+			<property name="widgetCaseVideo.4">false</property>
+			<property name="widgetCaseMusic.5">false</property>
+			<property name="widgetCaseVideo.5">false</property>
+			<property name="widgetCaseMusic.6">false</property>
+			<property name="widgetCaseVideo.6">false</property>
+			<property name="widgetCaseMusic.7">false</property>
+			<property name="widgetCaseVideo.7">false</property>
+			<property name="widgetCaseMusic.8">false</property>
+			<property name="widgetCaseVideo.8">false</property>
+			<property name="widgetCaseMusic.9">false</property>
+			<property name="widgetCaseVideo.9">false</property>
+			<property name="widgetCaseMusic.10">false</property>
+			<property name="widgetCaseVideo.10">false</property>
+			<property name="widgetCaseMusic.11">false</property>
+			<property name="widgetCaseVideo.11">false</property>
+			<property name="widgetCaseMusic.12">false</property>
+			<property name="widgetCaseVideo.12">false</property>
+			<property name="widgetCaseMusic.13">false</property>
+			<property name="widgetCaseVideo.13">false</property>
+			<property name="widgetCaseMusic.14">false</property>
+			<property name="widgetCaseVideo.14">false</property>
+			<property name="widgetCaseMusic.15">false</property>
+			<property name="widgetCaseVideo.15">false</property>
+			<property name="widgetCaseMusic.16">false</property>
+			<property name="widgetCaseVideo.16">false</property>
+			<property name="widgetCaseMusic.17">false</property>
+			<property name="widgetCaseVideo.17">false</property>
+			<property name="widgetCaseMusic.18">false</property>
+			<property name="widgetCaseVideo.18">false</property>
+			<property name="widgetCaseMusic.19">false</property>
+			<property name="widgetCaseVideo.19">false</property>
+			<property name="widgetCaseMusic.20">false</property>
+			<property name="widgetCaseVideo.20">false</property>
+			<property name="widgetWatchedStatus.1">false</property>
+			<property name="widgetWatchedStatus.2">false</property>
+			<property name="widgetWatchedStatus.3">false</property>
+			<property name="widgetWatchedStatus.4">false</property>
+			<property name="widgetWatchedStatus.5">false</property>
+			<property name="widgetWatchedStatus.6">false</property>
+			<property name="widgetWatchedStatus.7">false</property>
+			<property name="widgetWatchedStatus.8">false</property>
+			<property name="widgetWatchedStatus.9">false</property>
+			<property name="widgetWatchedStatus.10">false</property>
+			<property name="widgetWatchedStatus.11">false</property>
+			<property name="widgetWatchedStatus.12">false</property>
+			<property name="widgetWatchedStatus.13">false</property>
+			<property name="widgetWatchedStatus.14">false</property>
+			<property name="widgetWatchedStatus.15">false</property>
+			<property name="widgetWatchedStatus.16">false</property>
+			<property name="widgetWatchedStatus.17">false</property>
+			<property name="widgetWatchedStatus.18">false</property>
+			<property name="widgetWatchedStatus.19">false</property>
+			<property name="widgetWatchedStatus.20">false</property>
+			<property name="widgetLimit.1">20</property>
+			<property name="widgetLimit.2">20</property>
+			<property name="widgetLimit.3">20</property>
+			<property name="widgetLimit.4">20</property>
+			<property name="widgetLimit.5">20</property>
+			<property name="widgetLimit.6">20</property>
+			<property name="widgetLimit.7">20</property>
+			<property name="widgetLimit.8">20</property>
+			<property name="widgetLimit.9">20</property>
+			<property name="widgetLimit.10">20</property>
+			<property name="widgetLimit.11">20</property>
+			<property name="widgetLimit.12">20</property>
+			<property name="widgetLimit.13">20</property>
+			<property name="widgetLimit.14">20</property>
+			<property name="widgetLimit.15">20</property>
+			<property name="widgetLimit.16">20</property>
+			<property name="widgetLimit.17">20</property>
+			<property name="widgetLimit.18">20</property>
+			<property name="widgetLimit.19">20</property>
+			<property name="widgetLimit.20">20</property>
 			<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
 			<property name="path">ActivateWindow(weather)</property>
 			<onclick condition="![!String.IsEmpty(Weather.Plugin)]">ReplaceWindow(servicesettings,weather)</onclick>
@@ -367,8 +1562,8 @@
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">575</property>
-			<onclick>ActivateWindow(videos,special://skin/extras/playlists/movies/inprogress.xsp,return)</onclick>
-			<property name="path">ActivateWindow(videos,special://skin/extras/playlists/movies/inprogress.xsp,return)</property>
+			<onclick>ActivateWindow(videos,special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp,return)</onclick>
+			<property name="path">ActivateWindow(videos,special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp,return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -448,9 +1643,9 @@
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">31280</property>
-			<onclick condition="System.HasAddon(script.embuary.info)">ActivateWindow(1102)</onclick>
+			<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">ActivateWindow(1102)</onclick>
 			<property name="path">ActivateWindow(1102)</property>
-			<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+			<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -835,7 +2030,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[342]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/movies.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/movies.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
 			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),shortcuts)</visible>
@@ -850,7 +2045,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tvshows.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tvshows.png</icon>
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),shortcuts)</visible>
@@ -865,7 +2060,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[2]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/music.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/music.png</icon>
 			<thumb />
 			<property name="labelID">music</property>
 			<visible>[Library.HasContent(Music)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),shortcuts)</visible>
@@ -880,7 +2075,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/musicvideos.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/musicvideos.png</icon>
 			<thumb />
 			<property name="labelID">musicvideos</property>
 			<visible>[Library.HasContent(MusicVideos)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),shortcuts)</visible>
@@ -895,7 +2090,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[19020]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tv.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tv.png</icon>
 			<thumb />
 			<property name="labelID">19020</property>
 			<visible>[System.HasPVRAddon] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),shortcuts)</visible>
@@ -910,7 +2105,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[15016]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/games.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/games.png</icon>
 			<thumb />
 			<property name="labelID">15016</property>
 			<onclick>Action(Close)</onclick>
@@ -924,7 +2119,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/addons.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/addons.png</icon>
 			<thumb />
 			<property name="labelID">24001</property>
 			<onclick>Action(Close)</onclick>
@@ -938,7 +2133,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[137]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/search.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/search.png</icon>
 			<thumb />
 			<property name="labelID">137</property>
 			<onclick condition="true">Skin.SetString(SearchTerm)</onclick>
@@ -954,7 +2149,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[1036]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/favourites.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/favourites.png</icon>
 			<thumb />
 			<property name="labelID">1036</property>
 			<onclick>Action(Close)</onclick>
@@ -1308,8 +2503,8 @@
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">575</property>
-			<onclick>ActivateWindow(videos,special://skin/extras/playlists/movies/inprogress.xsp,return)</onclick>
-			<property name="path">ActivateWindow(videos,special://skin/extras/playlists/movies/inprogress.xsp,return)</property>
+			<onclick>ActivateWindow(videos,special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp,return)</onclick>
+			<property name="path">ActivateWindow(videos,special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp,return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -1378,8 +2573,8 @@
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">575</property>
-			<onclick>ActivateWindow(videos,special://skin/extras/playlists/movies/inprogress.xsp,return)</onclick>
-			<property name="path">ActivateWindow(videos,special://skin/extras/playlists/movies/inprogress.xsp,return)</property>
+			<onclick>ActivateWindow(videos,special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp,return)</onclick>
+			<property name="path">ActivateWindow(videos,special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp,return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -1461,9 +2656,9 @@
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">31280</property>
-			<onclick condition="System.HasAddon(script.embuary.info)">ActivateWindow(1102)</onclick>
+			<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">ActivateWindow(1102)</onclick>
 			<property name="path">ActivateWindow(1102)</property>
-			<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+			<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -1531,9 +2726,9 @@
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">31280</property>
-			<onclick condition="System.HasAddon(script.embuary.info)">ActivateWindow(1102)</onclick>
+			<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">ActivateWindow(1102)</onclick>
 			<property name="path">ActivateWindow(1102)</property>
-			<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+			<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -2310,7 +3505,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[342]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/movies.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/movies.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
 			<visible>Library.HasContent(Movies)</visible>
@@ -2325,7 +3520,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tvshows.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tvshows.png</icon>
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<visible>Library.HasContent(TVShows)</visible>
@@ -2340,7 +3535,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[2]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/music.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/music.png</icon>
 			<thumb />
 			<property name="labelID">music</property>
 			<visible>Library.HasContent(Music)</visible>
@@ -2355,7 +3550,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/musicvideos.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/musicvideos.png</icon>
 			<thumb />
 			<property name="labelID">musicvideos</property>
 			<visible>Library.HasContent(MusicVideos)</visible>
@@ -2370,7 +3565,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[19020]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tv.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tv.png</icon>
 			<thumb />
 			<property name="labelID">19020</property>
 			<visible>System.HasPVRAddon</visible>
@@ -2385,7 +3580,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[15016]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/games.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/games.png</icon>
 			<thumb />
 			<property name="labelID">15016</property>
 			<onclick>Action(Close)</onclick>
@@ -2399,7 +3594,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/addons.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/addons.png</icon>
 			<thumb />
 			<property name="labelID">24001</property>
 			<onclick>Action(Close)</onclick>
@@ -2413,7 +3608,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[137]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/search.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/search.png</icon>
 			<thumb />
 			<property name="labelID">137</property>
 			<onclick condition="true">Skin.SetString(SearchTerm)</onclick>
@@ -2429,7 +3624,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[1036]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/favourites.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/favourites.png</icon>
 			<thumb />
 			<property name="labelID">1036</property>
 			<onclick>Action(Close)</onclick>
@@ -2445,7 +3640,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[342]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/movies.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/movies.png</icon>
 			<thumb />
 			<property name="labelID">movies</property>
 			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),shortcuts)</visible>
@@ -2460,7 +3655,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tvshows.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tvshows.png</icon>
 			<thumb />
 			<property name="labelID">tvshows</property>
 			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),shortcuts)</visible>
@@ -2475,7 +3670,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[2]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/music.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/music.png</icon>
 			<thumb />
 			<property name="labelID">music</property>
 			<visible>[Library.HasContent(Music)] + String.IsEqual(Window(10000).Property(submenuVisibility),shortcuts)</visible>
@@ -2490,7 +3685,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/musicvideos.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/musicvideos.png</icon>
 			<thumb />
 			<property name="labelID">musicvideos</property>
 			<visible>[Library.HasContent(MusicVideos)] + String.IsEqual(Window(10000).Property(submenuVisibility),shortcuts)</visible>
@@ -2505,7 +3700,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[19020]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/tv.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tv.png</icon>
 			<thumb />
 			<property name="labelID">19020</property>
 			<visible>[System.HasPVRAddon] + String.IsEqual(Window(10000).Property(submenuVisibility),shortcuts)</visible>
@@ -2520,7 +3715,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[15016]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/games.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/games.png</icon>
 			<thumb />
 			<property name="labelID">15016</property>
 			<onclick>Action(Close)</onclick>
@@ -2534,7 +3729,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[24001]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/addons.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/addons.png</icon>
 			<thumb />
 			<property name="labelID">24001</property>
 			<onclick>Action(Close)</onclick>
@@ -2548,7 +3743,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[137]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/search.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/search.png</icon>
 			<thumb />
 			<property name="labelID">137</property>
 			<onclick condition="true">Skin.SetString(SearchTerm)</onclick>
@@ -2564,7 +3759,7 @@
 			<property name="mainmenuid">13</property>
 			<label>$LOCALIZE[1036]</label>
 			<label2 />
-			<icon>special://skin/extras/icons/favourites.png</icon>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/favourites.png</icon>
 			<thumb />
 			<property name="labelID">1036</property>
 			<onclick>Action(Close)</onclick>
@@ -2573,374 +3768,5 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),shortcuts)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		</include>
-	<include name="skinshortcuts-template-widgetOnUpMainMenu">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widgetOnUpMainMenu-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widgetOnUpMainMenu-Master user">
-		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),1) + String.IsEmpty(Window(home).Property(WidgetFocus1))">SetFocus(160011)</onup>
-		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),1) + String.IsEqual(Window(home).Property(WidgetFocus1),2)">SetFocus(160012)</onup>
-		<onup condition="false">SetFocus(160013)</onup>
-		<onup condition="false">SetFocus(160014)</onup>
-		<onup condition="false">SetFocus(160015)</onup>
-		<onup condition="false">SetFocus(160016)</onup>
-		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),4) + String.IsEmpty(Window(home).Property(WidgetFocus4))">SetFocus(160041)</onup>
-		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),4) + String.IsEqual(Window(home).Property(WidgetFocus4),2)">SetFocus(160042)</onup>
-		<onup condition="false">SetFocus(160043)</onup>
-		<onup condition="false">SetFocus(160044)</onup>
-		<onup condition="false">SetFocus(160045)</onup>
-		<onup condition="false">SetFocus(160046)</onup>
-		<onup condition="String.IsEqual(Container(9000).ListItem.Property(id),5) + String.IsEmpty(Window(home).Property(WidgetFocus5))">SetFocus(160051)</onup>
-		<onup condition="false">SetFocus(160052)</onup>
-		<onup condition="false">SetFocus(160053)</onup>
-		<onup condition="false">SetFocus(160054)</onup>
-		<onup condition="false">SetFocus(160055)</onup>
-		<onup condition="false">SetFocus(160056)</onup>
-		</include>
-	<include name="skinshortcuts-template-widget1">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget1-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget1-Master user">
-		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1)</visible>
-			<include content="WidgetInfo">
-				<param name="label">20382</param>
-				<param name="infoposition">339</param>
-				<param name="infovisible">true</param>
-				<param name="visible">String.IsEmpty(Window(home).Property(WidgetFocus1))</param>
-				</include>
-			<control type="button" id="1607">
-				<include>WidgetNextButton</include>
-				<onclick condition="true">SetProperty(WidgetFocus1,2,home)</onclick>
-				<onclick condition="true">SetFocus(160012)</onclick>
-				</control>
-			<control type="panel" id="160011">
-				<height>339</height>
-				<onup condition="true">SetProperty(WidgetFocus1,2,home)</onup>
-				<onup condition="true">SetFocus(160012)</onup>
-				<include content="WidgetContainer">
-					<param name="id">160011</param>
-					<param name="containerwidth">232.5</param>
-					<param name="diffuse">diffuse/rounded5-212x319.png</param>
-					<param name="artwork">$VAR[PosterVar]</param>
-					<param name="border">10</param>
-					<param name="artworkaspect">stretch</param>
-					<param name="labelvisible">false</param>
-					<param name="videocase">false</param>
-					<param name="musiccase">false</param>
-					<param name="font1">Font30_Bold</param>
-					<param name="font2">Font29_Cond</param>
-					<param name="font3">Font30_Reg</param>
-					<param name="icontop">62</param>
-					<param name="iconbottom">97</param>
-					<param name="label1position">83</param>
-					<param name="label2position">46</param>
-					<param name="label3position">12</param>
-					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
-					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
-					<param name="logofallback">false</param>
-					<param name="landscapefallback">false</param>
-					<param name="watchedstatus">false</param>
-					<param name="watchedstatustop">18</param>
-					</include>
-				<content>
-					<item>
-						<icon>DefaultAddonNone.png</icon>
-						<thumb>DefaultAddonNone.png</thumb>
-						<visible>String.IsEmpty(Container(160011).ListItem(1).Label)</visible>
-						</item>
-					</content>
-				<content limit="20" target="videos">special://skin/extras/playlists/01movies/recentlyadded.xsp</content>
-				</control>
-			</control>
-		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
-			<include content="WidgetInfo">
-				<param name="label">20382</param>
-				<param name="infoposition">339</param>
-				<param name="infovisible">true</param>
-				<param name="visible">String.IsEmpty(Window(home).Property(WidgetFocus4))</param>
-				</include>
-			<control type="button" id="1607">
-				<include>WidgetNextButton</include>
-				<onclick condition="true">SetProperty(WidgetFocus4,2,home)</onclick>
-				<onclick condition="true">SetFocus(160042)</onclick>
-				</control>
-			<control type="panel" id="160041">
-				<height>339</height>
-				<onup condition="true">SetProperty(WidgetFocus4,2,home)</onup>
-				<onup condition="true">SetFocus(160042)</onup>
-				<include content="WidgetContainer">
-					<param name="id">160041</param>
-					<param name="containerwidth">232.5</param>
-					<param name="diffuse">diffuse/rounded5-212x319.png</param>
-					<param name="artwork">$VAR[PosterVar]</param>
-					<param name="border">10</param>
-					<param name="artworkaspect">stretch</param>
-					<param name="labelvisible">false</param>
-					<param name="videocase">false</param>
-					<param name="musiccase">false</param>
-					<param name="font1">Font30_Bold</param>
-					<param name="font2">Font29_Cond</param>
-					<param name="font3">Font30_Reg</param>
-					<param name="icontop">62</param>
-					<param name="iconbottom">97</param>
-					<param name="label1position">83</param>
-					<param name="label2position">46</param>
-					<param name="label3position">12</param>
-					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
-					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
-					<param name="logofallback">false</param>
-					<param name="landscapefallback">false</param>
-					<param name="watchedstatus">true</param>
-					<param name="watchedstatustop">18</param>
-					</include>
-				<content>
-					<item>
-						<icon>DefaultAddonNone.png</icon>
-						<thumb>DefaultAddonNone.png</thumb>
-						<visible>String.IsEmpty(Container(160041).ListItem(1).Label)</visible>
-						</item>
-					</content>
-				<content limit="$NUMBER[15]" target="videos">special://skin/extras/playlists/01movies/recentlyadded.xsp</content>
-				</control>
-			</control>
-		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
-			<include content="WidgetInfo">
-				<param name="label">20382</param>
-				<param name="infoposition">339</param>
-				<param name="infovisible">true</param>
-				<param name="visible">String.IsEmpty(Window(home).Property(WidgetFocus5))</param>
-				</include>
-			<control type="button" id="1607">
-				<include>WidgetNextButton</include>
-				<onclick condition="false">SetProperty(WidgetFocus5,2,home)</onclick>
-				<onclick condition="false">SetFocus(160052)</onclick>
-				</control>
-			<control type="panel" id="160051">
-				<height>339</height>
-				<onup condition="false">SetProperty(WidgetFocus5,2,home)</onup>
-				<onup condition="false">SetFocus(160052)</onup>
-				<include content="WidgetContainer">
-					<param name="id">160051</param>
-					<param name="containerwidth">232.5</param>
-					<param name="diffuse">diffuse/rounded5-212x319.png</param>
-					<param name="artwork">$VAR[PosterVar]</param>
-					<param name="border">10</param>
-					<param name="artworkaspect">stretch</param>
-					<param name="labelvisible">false</param>
-					<param name="videocase">false</param>
-					<param name="musiccase">false</param>
-					<param name="font1">Font30_Bold</param>
-					<param name="font2">Font29_Cond</param>
-					<param name="font3">Font30_Reg</param>
-					<param name="icontop">62</param>
-					<param name="iconbottom">97</param>
-					<param name="label1position">83</param>
-					<param name="label2position">46</param>
-					<param name="label3position">12</param>
-					<param name="studioiconvisible">true</param>
-					<param name="iconstudioheight">24</param>
-					<param name="studioiconvisible">true</param>
-					<param name="iconstudioheight">24</param>
-					<param name="logofallback">false</param>
-					<param name="landscapefallback">false</param>
-					<param name="watchedstatus">false</param>
-					<param name="watchedstatustop">18</param>
-					</include>
-				<content>
-					<item>
-						<icon>DefaultAddonNone.png</icon>
-						<thumb>DefaultAddonNone.png</thumb>
-						<visible>String.IsEmpty(Container(160051).ListItem(1).Label)</visible>
-						</item>
-					</content>
-				<content limit="20" target="videos">special://skin/extras/playlists/03tvshows/recentlyadded.xsp</content>
-				</control>
-			</control>
-		</include>
-	<include name="skinshortcuts-template-widget2">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget2-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget2-Master user">
-		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1)</visible>
-			<include content="WidgetInfo">
-				<param name="label">$ADDON[script.embuary.info 32031]</param>
-				<param name="infoposition">339</param>
-				<param name="infovisible">true</param>
-				<param name="visible">String.IsEqual(Window(home).Property(WidgetFocus1),2)</param>
-				</include>
-			<control type="button" id="1607">
-				<include>WidgetNextButton</include>
-				<onclick condition="false">SetProperty(WidgetFocus1,3,home)</onclick>
-				<onclick condition="!false">ClearProperty(WidgetFocus1,home)</onclick>
-				</control>
-			<control type="panel" id="160012">
-				<height>339</height>
-				<onup condition="false">SetProperty(WidgetFocus1,3,home)</onup>
-				<onup condition="false">SetFocus(160013)</onup>
-				<onup condition="!false">ClearProperty(WidgetFocus1,home)</onup>
-				<onup condition="!false">SetFocus(160011)</onup>
-				<include content="WidgetContainer">
-					<param name="id">160012</param>
-					<param name="containerwidth">232.5</param>
-					<param name="diffuse">diffuse/rounded5-212x319.png</param>
-					<param name="artwork">$VAR[PosterVar]</param>
-					<param name="border">10</param>
-					<param name="artworkaspect">stretch</param>
-					<param name="labelvisible">false</param>
-					<param name="videocase">false</param>
-					<param name="musiccase">false</param>
-					<param name="font1">Font30_Bold</param>
-					<param name="font2">Font29_Cond</param>
-					<param name="font3">Font30_Reg</param>
-					<param name="icontop">62</param>
-					<param name="iconbottom">97</param>
-					<param name="label1position">83</param>
-					<param name="label2position">46</param>
-					<param name="label3position">12</param>
-					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
-					<param name="logofallback">false</param>
-					<param name="landscapefallback">false</param>
-					<param name="watchedstatus">false</param>
-					<param name="watchedstatustop">18</param>
-					</include>
-				<content>
-					<item>
-						<icon>DefaultAddonNone.png</icon>
-						<thumb>DefaultAddonNone.png</thumb>
-						<visible>String.IsEmpty(Container(160012).ListItem(1).Label)</visible>
-						</item>
-					</content>
-				<content limit="20" target="videos">plugin://script.embuary.info/movie/upcoming?reload=$INFO[Window(Home).Property(widgetreload-movies)]</content>
-				</control>
-			</control>
-		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
-			<include content="WidgetInfo">
-				<param name="label">$ADDON[script.embuary.info 32031]</param>
-				<param name="infoposition">339</param>
-				<param name="infovisible">true</param>
-				<param name="visible">String.IsEqual(Window(home).Property(WidgetFocus4),2)</param>
-				</include>
-			<control type="button" id="1607">
-				<include>WidgetNextButton</include>
-				<onclick condition="false">SetProperty(WidgetFocus4,3,home)</onclick>
-				<onclick condition="!false">ClearProperty(WidgetFocus4,home)</onclick>
-				</control>
-			<control type="panel" id="160042">
-				<height>339</height>
-				<onup condition="false">SetProperty(WidgetFocus4,3,home)</onup>
-				<onup condition="false">SetFocus(160043)</onup>
-				<onup condition="!false">ClearProperty(WidgetFocus4,home)</onup>
-				<onup condition="!false">SetFocus(160041)</onup>
-				<include content="WidgetContainer">
-					<param name="id">160042</param>
-					<param name="containerwidth">232.5</param>
-					<param name="diffuse">diffuse/rounded5-212x319.png</param>
-					<param name="artwork">$VAR[PosterVar]</param>
-					<param name="border">10</param>
-					<param name="artworkaspect">stretch</param>
-					<param name="labelvisible">false</param>
-					<param name="videocase">false</param>
-					<param name="musiccase">false</param>
-					<param name="font1">Font30_Bold</param>
-					<param name="font2">Font29_Cond</param>
-					<param name="font3">Font30_Reg</param>
-					<param name="icontop">62</param>
-					<param name="iconbottom">97</param>
-					<param name="label1position">83</param>
-					<param name="label2position">46</param>
-					<param name="label3position">12</param>
-					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
-					<param name="logofallback">false</param>
-					<param name="landscapefallback">false</param>
-					<param name="watchedstatus">false</param>
-					<param name="watchedstatustop">18</param>
-					</include>
-				<content>
-					<item>
-						<icon>DefaultAddonNone.png</icon>
-						<thumb>DefaultAddonNone.png</thumb>
-						<visible>String.IsEmpty(Container(160042).ListItem(1).Label)</visible>
-						</item>
-					</content>
-				<content limit="20" target="videos">plugin://script.embuary.info/movie/upcoming?reload=$INFO[Window(Home).Property(widgetreload-movies)]</content>
-				</control>
-			</control>
-		</include>
-	<include name="skinshortcuts-template-widget3">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-widget4">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-widget5">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-widget6">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemContent">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemBattery">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemNetwork">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemVideo">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemCPU">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemMemory">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemStorage">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemPVR">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemVersion">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-SystemUptime">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WeatherContentDaily">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WeatherContentHourly">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WeatherContent36Hour">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-TVRecordings">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-RadioRecordings">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-CustomFavouriteContent">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-CustomFavouriteAddonContent">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-coverBackground">
-		<description>This include was built automatically as the template didn't match any menu items</description>
 		</include>
 	</includes>

@@ -1,30 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="MediaMenu">
 		<param name="contentvisible">false</param>
 		<param name="commontopvisible">false</param>
-		<param name="content"/>
+		<param name="content" />
 		<param name="navigationid">50</param>
 		<definition>
-			<!-- Mouse overlay -->
+			<!-- Mouse Overlay -->
 			<control type="button" id="6130">
-				<label/>
+				<label />
 				<height>100%</height>
 				<width>50</width>
 				<left>-50</left>
 				<top>0</top>
-				<texturefocus/>
-				<texturenofocus/>
+				<texturefocus />
+				<texturenofocus />
 				<visible>[!Skin.HasSetting(KioskDisableMediaMenu) + Integer.IsGreater(Container(9049).NumItems,0) + !Window.IsActive(home)] | [Window.IsActive(home) + !Skin.HasSetting(KioskDisableHomeSettings)]</visible>
 			</control>
 			<control type="button" id="6131">
-				<label/>
+				<label />
 				<height>100%</height>
 				<width>50</width>
 				<left>-50</left>
 				<top>0</top>
-				<texturefocus/>
-				<texturenofocus/>
+				<texturefocus />
+				<texturenofocus />
 				<visible>[Skin.HasSetting(KioskDisableMediaMenu) | !Integer.IsGreater(Container(9049).NumItems,0)] + !Skin.HasSetting(DisableShortcuts) + !Window.IsActive(home)</visible>
 			</control>
 			<!-- Menu -->
@@ -39,7 +39,7 @@
 			<control type="group">
 				<left>-420</left>
 				<animation type="Conditional" condition="[ControlGroup(9049).HasFocus | Control.HasFocus(6130) | Control.HasFocus(6132)] + [!System.HasActiveModalDialog | Window.IsVisible(busydialog)]" reversible="true">
-					<effect type="slide" start="0" end="420" time="480" tween="cubic" easing="out"/>
+					<effect type="slide" start="0" end="420" time="480" tween="cubic" easing="out" />
 				</animation>
 				<include content="AnimationSlideLeftWindow">
 					<param name="slide">420</param>
@@ -49,9 +49,9 @@
 					<top>0</top>
 					<width>400</width>
 					<height>100%</height>
-					<label/>
-					<texturefocus/>
-					<texturenofocus/>
+					<label />
+					<texturefocus />
+					<texturenofocus />
 				</control>
 				<control type="grouplist" id="9049">
 					<onright>$PARAM[navigationid]</onright>
@@ -63,12 +63,12 @@
 					<include>MediaMenuCommonBottom</include>
 				</control>
 			</control>
-			<!-- Shortcut menu -->
+			<!-- Shortcut Menu -->
 			<control type="group">
 				<visible>!Skin.HasSetting(DisableShortcuts) + !Window.IsActive(home)</visible>
 				<left>-240</left>
 				<animation type="Conditional" condition="Control.HasFocus(9048) | Control.HasFocus(6131)" reversible="true">
-					<effect type="slide" start="0" end="240" time="480" tween="cubic" easing="out"/>
+					<effect type="slide" start="0" end="240" time="480" tween="cubic" easing="out" />
 				</animation>
 				<include content="MediaMenuBackground">
 					<param name="width">240</param>
@@ -127,6 +127,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="MediaMenuBackground">
 		<param name="width">420</param>
 		<param name="left">400</param>
@@ -150,6 +151,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="MediaMenuIconButton">
 		<param name="iconon">icons/mediamenu/ok.png</param>
 		<param name="iconoff">icons/mediamenu/cancel.png</param>
@@ -171,6 +173,7 @@
 			<textoffsetx>90</textoffsetx>
 		</definition>
 	</include>
+
 	<include name="MediaMenuIconToggleButton">
 		<width>400</width>
 		<height>90</height>
@@ -184,18 +187,19 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="MediaMenuPVRButton">
-		<param name="id"/>
-		<param name="icon"/>
-		<param name="area"/>
+		<param name="id" />
+		<param name="icon" />
+		<param name="area" />
 		<definition>
 			<control type="radiobutton" id="$PARAM[id]">
 				<visible>!Window.IsActive(TV$PARAM[area]) + !Window.IsActive(Radio$PARAM[area])</visible>
 				<width>60</width>
 				<height>90</height>
-				<font/>
-				<texturefocus/>
-				<texturenofocus/>
+				<font />
+				<texturefocus />
+				<texturenofocus />
 				<radiowidth>50</radiowidth>
 				<radioheight>50</radioheight>
 				<textureradioonfocus colordiffuse="$VAR[PanelFocusTextColorVar]">$PARAM[icon]</textureradioonfocus>
@@ -207,20 +211,21 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="MediaMenuPlayerButton">
-		<param name="id"/>
-		<param name="iconon"/>
-		<param name="iconoff"/>
-		<param name="onclick"/>
+		<param name="id" />
+		<param name="iconon" />
+		<param name="iconoff" />
+		<param name="onclick" />
 		<param name="visible">true</param>
 		<definition>
 			<control type="radiobutton" id="$PARAM[id]">
 				<visible>$PARAM[visible]</visible>
 				<width>60</width>
 				<height>90</height>
-				<font/>
-				<texturefocus/>
-				<texturenofocus/>
+				<font />
+				<texturefocus />
+				<texturenofocus />
 				<radiowidth>50</radiowidth>
 				<radioheight>50</radioheight>
 				<textureradioonfocus colordiffuse="$VAR[PanelFocusTextColorVar]">$PARAM[iconon]</textureradioonfocus>
@@ -231,12 +236,14 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="MediaMenuLabel">
 		<height>60</height>
 		<textoffsetx>15</textoffsetx>
 		<font>Font26_Bold_Caps</font>
 		<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 	</include>
+
 	<include name="MediaMenuButton">
 		<height>60</height>
 		<textoffsetx>15</textoffsetx>
@@ -246,6 +253,7 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="MediaMenuRadioButton">
 		<height>60</height>
 		<radioposx>394</radioposx>
@@ -259,6 +267,7 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="MediaMenuButtonViewType">
 		<width>280</width>
 		<height>60</height>
@@ -269,6 +278,7 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="MediaMenuLabelViewType">
 		<width>280</width>
 		<height>60</height>
@@ -280,8 +290,8 @@
 	<include name="MediaMenuCommonTop">
 		<control type="radiobutton" id="9051">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/view.png"/>
-				<param name="iconoff" value="icons/mediamenu/view.png"/>
+				<param name="iconon" value="icons/mediamenu/view.png" />
+				<param name="iconoff" value="icons/mediamenu/view.png" />
 			</include>
 			<label>$INFO[Container.Viewmode]</label>
 			<onclick>ActivateWindow(1116)</onclick>
@@ -289,8 +299,8 @@
 		</control>
 		<control type="radiobutton" id="9052">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
-				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
+				<param name="iconon" value="icons/mediamenu/viewoptions.png" />
+				<param name="iconoff" value="icons/mediamenu/viewoptions.png" />
 			</include>
 			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
@@ -298,31 +308,31 @@
 		</control>
 		<control type="radiobutton" id="3">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/sort.png"/>
-				<param name="iconoff" value="icons/mediamenu/sort.png"/>
+				<param name="iconon" value="icons/mediamenu/sort.png" />
+				<param name="iconoff" value="icons/mediamenu/sort.png" />
 			</include>
 			<visible>Control.IsEnabled(3)</visible>
 		</control>
 		<control type="radiobutton" id="4">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/ascending.png"/>
-				<param name="iconoff" value="icons/mediamenu/descending.png"/>
+				<param name="iconon" value="icons/mediamenu/ascending.png" />
+				<param name="iconoff" value="icons/mediamenu/descending.png" />
 			</include>
 			<label>$INFO[Container.SortOrder]</label>
 			<visible>Control.IsEnabled(4)</visible>
 		</control>
 		<control type="radiobutton" id="19">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/search.png"/>
-				<param name="iconoff" value="icons/mediamenu/search.png"/>
+				<param name="iconon" value="icons/mediamenu/search.png" />
+				<param name="iconoff" value="icons/mediamenu/search.png" />
 			</include>
 			<label>$LOCALIZE[137]</label>
 			<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 		</control>
 		<control type="radiobutton" id="199">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/filter.png"/>
-				<param name="iconoff" value="icons/mediamenu/filter.png"/>
+				<param name="iconon" value="icons/mediamenu/filter.png" />
+				<param name="iconoff" value="icons/mediamenu/filter.png" />
 			</include>
 			<label>$LOCALIZE[587]</label>
 			<onclick>right</onclick>
@@ -330,11 +340,12 @@
 			<visible>Container.CanFilterAdvanced</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuCommonBottom">
 		<control type="radiobutton" id="9092">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/playlistvideo.png"/>
-				<param name="iconoff" value="icons/mediamenu/playlistvideo.png"/>
+				<param name="iconon" value="icons/mediamenu/playlistvideo.png" />
+				<param name="iconoff" value="icons/mediamenu/playlistvideo.png" />
 			</include>
 			<label>$LOCALIZE[31086]</label>
 			<onclick>ActivateWindow(videoplaylist)</onclick>
@@ -342,8 +353,8 @@
 		</control>
 		<control type="radiobutton" id="9093">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/playlistmusic.png"/>
-				<param name="iconoff" value="icons/mediamenu/playlistmusic.png"/>
+				<param name="iconon" value="icons/mediamenu/playlistmusic.png" />
+				<param name="iconoff" value="icons/mediamenu/playlistmusic.png" />
 			</include>
 			<label>$LOCALIZE[10500]</label>
 			<onclick>ActivateWindow(musicplaylist)</onclick>
@@ -351,8 +362,8 @@
 		</control>
 		<control type="radiobutton" id="9094">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/fullscreen.png"/>
-				<param name="iconoff" value="icons/mediamenu/fullscreen.png"/>
+				<param name="iconon" value="icons/mediamenu/fullscreen.png" />
+				<param name="iconoff" value="icons/mediamenu/fullscreen.png" />
 			</include>
 			<label>$LOCALIZE[35232]</label>
 			<onclick>Fullscreen</onclick>
@@ -360,8 +371,8 @@
 		</control>
 		<control type="radiobutton" id="9095">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/arrowleft.png"/>
-				<param name="iconoff" value="icons/mediamenu/arrowleft.png"/>
+				<param name="iconon" value="icons/mediamenu/arrowleft.png" />
+				<param name="iconoff" value="icons/mediamenu/arrowleft.png" />
 			</include>
 			<label>$LOCALIZE[13398]</label>
 			<onclick>SetFocus(9048)</onclick>
@@ -390,58 +401,60 @@
 				<itemgap>16</itemgap>
 				<orientation>horizontal</orientation>
 				<include content="MediaMenuPlayerButton">
-					<param name="visible" value="!VideoPlayer.Content(livetv) + !MusicPlayer.Content(livetv)"/>
-					<param name="id" value="9083"/>
-					<param name="onclick" value="PlayerControl(Previous)"/>
-					<param name="iconon" value="icons/mediamenu/previous.png"/>
-					<param name="iconoff" value="icons/mediamenu/previous.png"/>
+					<param name="visible" value="!VideoPlayer.Content(livetv) + !MusicPlayer.Content(livetv)" />
+					<param name="id" value="9083" />
+					<param name="onclick" value="PlayerControl(Previous)" />
+					<param name="iconon" value="icons/mediamenu/previous.png" />
+					<param name="iconoff" value="icons/mediamenu/previous.png" />
 				</include>
 				<include content="MediaMenuPlayerButton">
-					<param name="id" value="9084"/>
-					<param name="onclick" value="PlayerControl(Stop)"/>
-					<param name="iconon" value="icons/mediamenu/stop.png"/>
-					<param name="iconoff" value="icons/mediamenu/stop.png"/>
+					<param name="id" value="9084" />
+					<param name="onclick" value="PlayerControl(Stop)" />
+					<param name="iconon" value="icons/mediamenu/stop.png" />
+					<param name="iconoff" value="icons/mediamenu/stop.png" />
 				</include>
 				<include content="MediaMenuPlayerButton">
-					<param name="visible" value="Player.PauseEnabled"/>
-					<param name="id" value="9085"/>
-					<param name="onclick" value="PlayerControl(Play)"/>
-					<param name="iconon" value="icons/mediamenu/play.png"/>
-					<param name="iconoff" value="icons/mediamenu/pause.png"/>
+					<param name="visible" value="Player.PauseEnabled" />
+					<param name="id" value="9085" />
+					<param name="onclick" value="PlayerControl(Play)" />
+					<param name="iconon" value="icons/mediamenu/play.png" />
+					<param name="iconoff" value="icons/mediamenu/pause.png" />
 				</include>
 				<include content="MediaMenuPlayerButton">
-					<param name="visible" value="!VideoPlayer.Content(livetv) + !MusicPlayer.Content(livetv)"/>
-					<param name="id" value="9086"/>
-					<param name="onclick" value="PlayerControl(Next)"/>
-					<param name="iconon" value="icons/mediamenu/next.png"/>
-					<param name="iconoff" value="icons/mediamenu/next.png"/>
+					<param name="visible" value="!VideoPlayer.Content(livetv) + !MusicPlayer.Content(livetv)" />
+					<param name="id" value="9086" />
+					<param name="onclick" value="PlayerControl(Next)" />
+					<param name="iconon" value="icons/mediamenu/next.png" />
+					<param name="iconoff" value="icons/mediamenu/next.png" />
 				</include>
 				<include content="MediaMenuPlayerButton">
-					<param name="id" value="9087"/>
-					<param name="onclick" value="Fullscreen"/>
-					<param name="icon" value="icons/mediamenu/fullscreen.png"/>
-					<param name="iconon" value="icons/mediamenu/fullscreen.png"/>
-					<param name="iconoff" value="icons/mediamenu/fullscreen.png"/>
+					<param name="id" value="9087" />
+					<param name="onclick" value="Fullscreen" />
+					<param name="icon" value="icons/mediamenu/fullscreen.png" />
+					<param name="iconon" value="icons/mediamenu/fullscreen.png" />
+					<param name="iconoff" value="icons/mediamenu/fullscreen.png" />
 				</include>
 			</control>
 		</control>
 	</include>
+
 	<!-- Home -->
 	<include name="MediaMenuHome">
 		<control type="radiobutton" id="9051">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/menu.png"/>
-				<param name="iconoff" value="icons/mediamenu/menu.png"/>
+				<param name="iconon" value="icons/mediamenu/menu.png" />
+				<param name="iconoff" value="icons/mediamenu/menu.png" />
 			</include>
 			<label>$LOCALIZE[31017]</label>
+			<onfocus condition="Window.IsActive(home)">SetProperty(skinshortcuts-build,1,Home)</onfocus>
 			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 			<onunfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunfocus>
 			<onunfocus condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunfocus>
 		</control>
 		<control type="radiobutton" id="9052">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/settings.png"/>
-				<param name="iconoff" value="icons/mediamenu/settings.png"/>
+				<param name="iconon" value="icons/mediamenu/settings.png" />
+				<param name="iconoff" value="icons/mediamenu/settings.png" />
 			</include>
 			<label>$LOCALIZE[31286]</label>
 			<onclick>SetProperty(MediaMenuSelect,menu,home)</onclick>
@@ -449,8 +462,8 @@
 		</control>
 		<control type="radiobutton" id="9053">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/info.png"/>
-				<param name="iconoff" value="icons/mediamenu/info.png"/>
+				<param name="iconon" value="icons/mediamenu/info.png" />
+				<param name="iconoff" value="icons/mediamenu/info.png" />
 			</include>
 			<label>$LOCALIZE[29915]</label>
 			<onclick>SetProperty(MediaMenuSelect,info,home)</onclick>
@@ -459,8 +472,8 @@
 		<control type="radiobutton" id="9054">
 			<visible>Player.HasMedia</visible>
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/play.png"/>
-				<param name="iconoff" value="icons/mediamenu/play.png"/>
+				<param name="iconon" value="icons/mediamenu/play.png" />
+				<param name="iconoff" value="icons/mediamenu/play.png" />
 			</include>
 			<label>$LOCALIZE[31002]</label>
 			<onclick>SetProperty(MediaMenuSelect,nowplaying,home)</onclick>
@@ -468,8 +481,8 @@
 		</control>
 		<control type="radiobutton" id="9055">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/image.png"/>
-				<param name="iconoff" value="icons/mediamenu/image.png"/>
+				<param name="iconon" value="icons/mediamenu/image.png" />
+				<param name="iconoff" value="icons/mediamenu/image.png" />
 			</include>
 			<label>$LOCALIZE[33068]</label>
 			<onclick>SetProperty(MediaMenuSelect,background,home)</onclick>
@@ -477,14 +490,15 @@
 		</control>
 		<control type="radiobutton" id="9056">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/colors.png"/>
-				<param name="iconoff" value="icons/mediamenu/colors.png"/>
+				<param name="iconon" value="icons/mediamenu/colors.png" />
+				<param name="iconoff" value="icons/mediamenu/colors.png" />
 			</include>
 			<label>$LOCALIZE[31285]</label>
 			<onclick>SetProperty(MediaMenuSelect,colors,home)</onclick>
 			<onclick>ActivateWindow(1115)</onclick>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsMenuHome">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31041]</label>
@@ -500,6 +514,16 @@
 			<onclick condition="Skin.String(MainMenuLayout,bigicons)">Skin.SetString(MainMenuLayout,bigiconswide)</onclick>
 			<onclick condition="Skin.String(MainMenuLayout,bigiconswide)">Skin.Reset(MainMenuLayout)</onclick>
 			<include>MediaMenuButton</include>
+		</control>
+		<!-- System Widget Layout Toggle -->
+		<control type="button" id="218">
+			<description>Toggle System Widget Layout</description>
+			<include>MediaMenuButton</include>
+			<label>Widget Layout</label>
+			<label2>$VAR[SystemWidgetLayoutVar]</label2>
+			<onclick>Skin.ToggleSetting(SystemWidget.GridMode)</onclick>
+			<!-- Only Show This Option When Highlighting The System Menu Item -->
+			<!-- <visible>String.IsEqual(Container(9000).ListItem.Property(widgetType.1),system)</visible> -->
 		</control>
 		<control type="radiobutton" id="203">
 			<label>$LOCALIZE[31043]</label>
@@ -571,6 +595,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsInfoHome">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31141]</label>
@@ -599,9 +624,10 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="206">
-			<visible>System.AddonIsEnabled(script.embuary.helper)</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[24022]</label>
-			<onclick>RunScript(script.embuary.helper,action=togglekodisetting,setting=lookandfeel.enablerssfeeds)</onclick>
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/TMDb_Helper_SettingsWriter.py, mode=toggle, setting=lookandfeel.enablerssfeeds)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=write_setting, mode=toggle, setting=lookandfeel.enablerssfeeds)</onclick>
 			<selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
@@ -646,6 +672,7 @@
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsNowPlayingHome">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31002]</label>
@@ -745,18 +772,22 @@
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsBackgroundHome">
 		<control type="label" id="201">
 			<label>$LOCALIZE[33068]</label>
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="button" id="202">
-			<label>$LOCALIZE[39166]</label>
+			<label>$LOCALIZE[736]</label>
 			<label2>[COLOR $VAR[MainMenuShadowColorVar]]$VAR[MainMenuShadowColorLabelVar][/COLOR]</label2>
-			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuShadow.color,header=$LOCALIZE[39166])</onclick> -->
-			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<onclick>Skin.SetColor(MainMenuShadow.color,$LOCALIZE[39166])</onclick>
+			<onclick>SetProperty(Reset.Color,MainMenuShadow.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,MainMenuShadow.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuShadow.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[39166],Home)</onclick>
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="radiobutton" id="203">
@@ -799,6 +830,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsColorsHome">
 		<control type="label" id="201">
 			<label>$LOCALIZE[21895]</label>
@@ -854,64 +886,53 @@
 		<control type="button" id="211">
 			<label>$LOCALIZE[736]</label>
 			<label2>[COLOR $VAR[MainMenuStyleColorVar]]$VAR[MainMenuStyleColorLabelVar][/COLOR]</label2>
-			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuStyle.color,header=$LOCALIZE[736])</onclick> -->
-			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick>Skin.SetColor(MainMenuStyle.color,$LOCALIZE[736])</onclick> -->
 			<onclick>SetProperty(Reset.Color,MainMenuStyle.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelName,MainMenuStyle.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuStyle.color)],Home)</onclick>
-			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
 			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[736],Home)</onclick>
-			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="212">
 			<label>$LOCALIZE[31051]</label>
 			<label2>[COLOR $VAR[MainMenuTextureColorVar]]$VAR[MainMenuTextureColorLabelVar][/COLOR]</label2>
-			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuTexture.color,header=$LOCALIZE[31051])</onclick> -->
-			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick>Skin.SetColor(MainMenuTexture.color,$LOCALIZE[31051])</onclick> -->
 			<onclick>SetProperty(Reset.Color,MainMenuTexture.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelName,MainMenuTexture.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuTexture.color)],Home)</onclick>
-			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
 			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31051],Home)</onclick>
-			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>			
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="213">
 			<label>$LOCALIZE[31134]</label>
 			<label2>[COLOR $VAR[MainMenuGradientColorVar]]$VAR[MainMenuGradientColorLabelVar][/COLOR]</label2>
-			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuGradient.color,header=$LOCALIZE[31134])</onclick> -->
-			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick>Skin.SetColor(MainMenuGradient.color,$LOCALIZE[31134])</onclick> -->
 			<onclick>SetProperty(Reset.Color,MainMenuGradient.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelName,MainMenuGradient.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuGradient.color)],Home)</onclick>
-			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
 			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31134],Home)</onclick>
-			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>			
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 		<control type="button" id="214">
 			<label>$LOCALIZE[31039]</label>
 			<label2>[COLOR $VAR[MainMenuWidgetColorVar]]$VAR[MainMenuWidgetColorLabelVar][/COLOR]</label2>
-			<!-- <onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=MainMenuWidget.color,header=$LOCALIZE[31039])</onclick> -->
-			<!-- <onclick condition="!System.AddonIsEnabled(script.skin.helper.colorpicker)">EnableAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
-			<!-- <onclick>Skin.SetColor(MainMenuWidget.color,$LOCALIZE[31039])</onclick> -->
 			<onclick>SetProperty(Reset.Color,MainMenuWidget.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelName,MainMenuWidget.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(MainMenuWidget.color)],Home)</onclick>
-			<onclick>Skin.SetString(mycolorfile,"special://skin/extras/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
 			<onclick>SetProperty(DialogTitle,$LOCALIZE[14078]$VAR[1BlankSpace][LOWERCASE]$LOCALIZE[5][/LOWERCASE]:$VAR[1BlankSpace]$LOCALIZE[31039],Home)</onclick>
-			<onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick>			
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/color_loader.py)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
+
 	<!-- Videos -->
 	<include name="MediaMenuVideos">
 		<!-- Watched Toggle -->
@@ -971,7 +992,7 @@
 			<height>20</height>
 			<visible>!Container.Content(addons) + String.IsEmpty(Container.PluginName)</visible>
 		</control>
-		<!-- Get more -->
+		<!-- Get More -->
 		<control type="radiobutton" id="9065">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/add.png</param>
@@ -1002,6 +1023,7 @@
 			<visible>!String.IsEmpty(Container.PluginName)</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuCommonViewsettingsVideos">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31021]</label>
@@ -1070,6 +1092,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<!-- PVR -->
 	<include name="MediaMenuPVR">
 		<control type="image">
@@ -1095,41 +1118,41 @@
 				<itemgap>16</itemgap>
 				<orientation>horizontal</orientation>
 				<include content="MediaMenuPVRButton">
-					<param name="id" value="9063"/>
-					<param name="area" value="Channels"/>
-					<param name="icon" value="icons/mediamenu/channels.png"/>
+					<param name="id" value="9063" />
+					<param name="area" value="Channels" />
+					<param name="icon" value="icons/mediamenu/channels.png" />
 				</include>
 				<include content="MediaMenuPVRButton">
-					<param name="id" value="9064"/>
-					<param name="area" value="Guide"/>
-					<param name="icon" value="icons/mediamenu/calendar.png"/>
+					<param name="id" value="9064" />
+					<param name="area" value="Guide" />
+					<param name="icon" value="icons/mediamenu/calendar.png" />
 				</include>
 				<include content="MediaMenuPVRButton">
-					<param name="id" value="9065"/>
-					<param name="area" value="Recordings"/>
-					<param name="icon" value="icons/mediamenu/record.png"/>
+					<param name="id" value="9065" />
+					<param name="area" value="Recordings" />
+					<param name="icon" value="icons/mediamenu/record.png" />
 				</include>
 				<include content="MediaMenuPVRButton">
-					<param name="id" value="9066"/>
-					<param name="area" value="Timers"/>
-					<param name="icon" value="icons/mediamenu/timer.png"/>
+					<param name="id" value="9066" />
+					<param name="area" value="Timers" />
+					<param name="icon" value="icons/mediamenu/timer.png" />
 				</include>
 				<include content="MediaMenuPVRButton">
-					<param name="id" value="9067"/>
-					<param name="area" value="TimerRules"/>
-					<param name="icon" value="icons/mediamenu/timerrule.png"/>
+					<param name="id" value="9067" />
+					<param name="area" value="TimerRules" />
+					<param name="icon" value="icons/mediamenu/timerrule.png" />
 				</include>
 				<include content="MediaMenuPVRButton">
-					<param name="id" value="9068"/>
-					<param name="area" value="Search"/>
-					<param name="icon" value="icons/mediamenu/search.png"/>
+					<param name="id" value="9068" />
+					<param name="area" value="Search" />
+					<param name="icon" value="icons/mediamenu/search.png" />
 				</include>
 			</control>
 		</control>
 		<control type="radiobutton" id="9069">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/view.png"/>
-				<param name="iconoff" value="icons/mediamenu/view.png"/>
+				<param name="iconon" value="icons/mediamenu/view.png" />
+				<param name="iconoff" value="icons/mediamenu/view.png" />
 			</include>
 			<label>$INFO[Container.Viewmode]</label>
 			<onclick>ActivateWindow(1118)</onclick>
@@ -1137,8 +1160,8 @@
 		</control>
 		<control type="radiobutton" id="9070">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
-				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
+				<param name="iconon" value="icons/mediamenu/viewoptions.png" />
+				<param name="iconoff" value="icons/mediamenu/viewoptions.png" />
 			</include>
 			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1119)</onclick>
@@ -1146,37 +1169,37 @@
 		</control>
 		<control type="radiobutton" id="28">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/group.png"/>
-				<param name="iconoff" value="icons/mediamenu/group.png"/>
+				<param name="iconon" value="icons/mediamenu/group.png" />
+				<param name="iconoff" value="icons/mediamenu/group.png" />
 			</include>
 			<visible>Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml)</visible>
 		</control>
 		<control type="radiobutton" id="3">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/sort.png"/>
-				<param name="iconoff" value="icons/mediamenu/sort.png"/>
+				<param name="iconon" value="icons/mediamenu/sort.png" />
+				<param name="iconoff" value="icons/mediamenu/sort.png" />
 			</include>
 		</control>
 		<control type="radiobutton" id="4">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/ascending.png"/>
-				<param name="iconoff" value="icons/mediamenu/descending.png"/>
+				<param name="iconon" value="icons/mediamenu/ascending.png" />
+				<param name="iconoff" value="icons/mediamenu/descending.png" />
 			</include>
 			<label>$INFO[Container.SortOrder]</label>
 			<visible>!Window.IsActive(MyPVRGuide.xml)</visible>
 		</control>
 		<control type="radiobutton" id="10">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/watch.png"/>
-				<param name="iconoff" value="icons/mediamenu/watch.png"/>
+				<param name="iconon" value="icons/mediamenu/watch.png" />
+				<param name="iconoff" value="icons/mediamenu/watch.png" />
 			</include>
 			<label>$LOCALIZE[20367]</label>
 			<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
 		</control>
 		<control type="radiobutton" id="31">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/ok.png"/>
-				<param name="iconoff" value="icons/mediamenu/filter.png"/>
+				<param name="iconon" value="icons/mediamenu/ok.png" />
+				<param name="iconoff" value="icons/mediamenu/filter.png" />
 			</include>
 			<label>$LOCALIZE[587]</label>
 			<onclick>right</onclick>
@@ -1185,8 +1208,8 @@
 		</control>
 		<control type="radiobutton" id="5">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/cancel.png"/>
-				<param name="iconoff" value="icons/mediamenu/ok.png"/>
+				<param name="iconon" value="icons/mediamenu/cancel.png" />
+				<param name="iconoff" value="icons/mediamenu/ok.png" />
 			</include>
 			<label>$LOCALIZE[19270]</label>
 			<visible>Window.IsActive(MyPVRRecordings.xml)</visible>
@@ -1207,6 +1230,7 @@
 			<visible>Window.IsActive(MyPVRTimers.xml)</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsPVR">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31021]</label>
@@ -1237,6 +1261,7 @@
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
+
 	<!-- Music -->
 	<include name="MediaMenuMusic">
 		<!-- PartyMode -->
@@ -1276,7 +1301,7 @@
 			<height>20</height>
 			<visible>!Container.Content(addons) + String.IsEmpty(Container.PluginName)</visible>
 		</control>
-		<!-- Get more -->
+		<!-- Get More -->
 		<control type="radiobutton" id="9065">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/add.png</param>
@@ -1297,6 +1322,7 @@
 			<visible>!String.IsEmpty(Container.PluginName)</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuCommonViewsettingsMusic">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31021]</label>
@@ -1335,8 +1361,9 @@
 			<selected>Skin.HasSetting(MediaFlagsColored)</selected>
 		</control>
 	</include>
+
 	<include name="MediaMenuMusicPlayList">
-		<!-- Open playlist -->
+		<!-- Open Playlist -->
 		<control type="radiobutton" id="6">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/open.png</param>
@@ -1344,7 +1371,7 @@
 			</include>
 			<label>$LOCALIZE[502]</label>
 		</control>
-		<!-- Save playlist -->
+		<!-- Save Playlist -->
 		<control type="radiobutton" id="7">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/save.png</param>
@@ -1352,7 +1379,7 @@
 			</include>
 			<label>$LOCALIZE[190]</label>
 		</control>
-		<!-- Clear playlist -->
+		<!-- Clear Playlist -->
 		<control type="radiobutton" id="8">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/clear.png</param>
@@ -1361,6 +1388,7 @@
 			<label>$LOCALIZE[192]</label>
 		</control>
 	</include>
+
 	<!-- Playlist -->
 	<include name="MediaMenuPlayList">
 		<!-- Shuffle -->
@@ -1399,9 +1427,10 @@
 			<visible>Control.IsEnabled(22)</visible>
 		</control>
 	</include>
+
 	<!-- Games -->
 	<include name="MediaMenuGames">
-		<!-- Get more -->
+		<!-- Get More -->
 		<control type="radiobutton" id="9061">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/add.png</param>
@@ -1422,6 +1451,7 @@
 			<visible>!String.IsEmpty(Container.PluginName)</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsGames">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31021]</label>
@@ -1440,6 +1470,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<!-- Pictures -->
 	<include name="MediaMenuPictures">
 		<!-- Slideshow -->
@@ -1451,7 +1482,7 @@
 			<label>$LOCALIZE[13317]</label>
 			<visible>Container.Content(images) + Control.IsEnabled(6)</visible>
 		</control>
-		<!-- Recursive slideshow -->
+		<!-- Recursive Slideshow -->
 		<control type="radiobutton" id="7">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/repeat.png</param>
@@ -1460,7 +1491,7 @@
 			<label>$LOCALIZE[13318]</label>
 			<visible>Container.Content(images)</visible>
 		</control>
-		<!-- Randomise -->
+		<!-- Randomize -->
 		<control type="radiobutton" id="9">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/random.png</param>
@@ -1469,7 +1500,7 @@
 			<label>$LOCALIZE[13319]</label>
 			<visible>Container.Content(images)</visible>
 		</control>
-		<!-- Get more -->
+		<!-- Get More -->
 		<control type="radiobutton" id="9061">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/add.png</param>
@@ -1490,6 +1521,7 @@
 			<visible>!String.IsEmpty(Container.PluginName)</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsPictures">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31021]</label>
@@ -1508,13 +1540,14 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<!-- Addons -->
 	<include name="MediaMenuAddons">
 		<control type="radiobutton" id="9051">
 			<include content="MediaMenuIconButton">
 				<param name="id">9051</param>
-				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
-				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
+				<param name="iconon" value="icons/mediamenu/viewoptions.png" />
+				<param name="iconoff" value="icons/mediamenu/viewoptions.png" />
 			</include>
 			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
@@ -1523,15 +1556,16 @@
 		<!-- Addon Settings -->
 		<control type="radiobutton" id="5">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/settings.png"/>
-				<param name="iconoff" value="icons/mediamenu/settings.png"/>
+				<param name="iconon" value="icons/mediamenu/settings.png" />
+				<param name="iconoff" value="icons/mediamenu/settings.png" />
 			</include>
 			<label>$LOCALIZE[10004]</label>
 			<onclick>ActivateWindow(systemsettings,addons)</onclick>
 		</control>
 	</include>
+
 	<include name="MediaMenuAddonBrowser">
-		<!-- Hide foreign -->
+		<!-- Hide Foreign -->
 		<control type="radiobutton" id="7">
 			<include>MediaMenuIconButton</include>
 			<label>$LOCALIZE[25001]</label>
@@ -1543,7 +1577,7 @@
 			<label>$LOCALIZE[24999]</label>
 			<visible>Control.IsEnabled(8)</visible>
 		</control>
-		<!-- Check for repository updates -->
+		<!-- Check For Repository Updates -->
 		<control type="radiobutton" id="9">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/refresh.png</param>
@@ -1560,8 +1594,9 @@
 			<label>$LOCALIZE[10004]</label>
 		</control>
 	</include>
+
 	<include name="MediaMenuPrograms">
-		<!-- Get more -->
+		<!-- Get More -->
 		<control type="radiobutton" id="9061">
 			<include content="MediaMenuIconButton">
 				<param name="iconon">icons/mediamenu/add.png</param>
@@ -1582,6 +1617,7 @@
 			<visible>!String.IsEmpty(Container.PluginName)</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsAddons">
 		<control type="label" id="201">
 			<label>$LOCALIZE[31021]</label>
@@ -1600,24 +1636,26 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="MediaMenuNextAired">
 		<control type="radiobutton" id="9051">
 			<include content="MediaMenuIconButton">
 				<param name="id">9051</param>
-				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
-				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
+				<param name="iconon" value="icons/mediamenu/viewoptions.png" />
+				<param name="iconoff" value="icons/mediamenu/viewoptions.png" />
 			</include>
 			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
 			<visible>!Skin.HasSetting(KioskDisableViewOptions)</visible>
 		</control>
 	</include>
+
 	<!-- Weather -->
 	<include name="MediaMenuWeather">
 		<control type="radiobutton" id="9061">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
-				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
+				<param name="iconon" value="icons/mediamenu/viewoptions.png" />
+				<param name="iconoff" value="icons/mediamenu/viewoptions.png" />
 			</include>
 			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
@@ -1625,27 +1663,28 @@
 		</control>
 		<control type="radiobutton" id="3">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/pin.png"/>
-				<param name="iconoff" value="icons/mediamenu/pin.png"/>
+				<param name="iconon" value="icons/mediamenu/pin.png" />
+				<param name="iconoff" value="icons/mediamenu/pin.png" />
 			</include>
 			<label>$INFO[Window(weather).Property(Location)]</label>
 			<onclick>Weather.LocationNext</onclick>
 		</control>
 		<control type="radiobutton" id="2">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/refresh.png"/>
-				<param name="iconoff" value="icons/mediamenu/refresh.png"/>
+				<param name="iconon" value="icons/mediamenu/refresh.png" />
+				<param name="iconoff" value="icons/mediamenu/refresh.png" />
 			</include>
 		</control>
 		<control type="radiobutton" id="9062">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/settings.png"/>
-				<param name="iconoff" value="icons/mediamenu/settings.png"/>
+				<param name="iconon" value="icons/mediamenu/settings.png" />
+				<param name="iconoff" value="icons/mediamenu/settings.png" />
 			</include>
 			<label>$LOCALIZE[5]</label>
 			<onclick>ActivateWindow(servicesettings,weather)</onclick>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsWeather">
 		<control type="label" id="101">
 			<label>$LOCALIZE[14018]</label>
@@ -1684,13 +1723,14 @@
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
+
 	<!-- System -->
 	<include name="MediaMenuSystem">
 		<control type="radiobutton" id="9051">
 			<include content="MediaMenuIconButton">
 				<param name="id">9051</param>
-				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
-				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
+				<param name="iconon" value="icons/mediamenu/viewoptions.png" />
+				<param name="iconoff" value="icons/mediamenu/viewoptions.png" />
 			</include>
 			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
@@ -1706,6 +1746,7 @@
 			<visible>Window.IsVisible(SettingsCategory.xml)</visible>
 		</control>
 	</include>
+
 	<include name="MediaMenuEventLog">
 		<control type="radiobutton" id="4">
 			<include content="MediaMenuIconButton">
@@ -1741,6 +1782,7 @@
 			<onclick>ActivateWindow(systemsettings,logging)</onclick>
 		</control>
 	</include>
+
 	<include name="MediaMenuViewsettingsSystem">
 		<control type="label" id="101">
 			<label>$LOCALIZE[14018]</label>
@@ -1771,6 +1813,7 @@
 			<include>MediaMenuButton</include>
 		</control>
 	</include>
+
 	<!-- Views PVR -->
 	<include name="View50SettingsEPGList">
 		<control type="label" id="101">
@@ -1790,6 +1833,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View50SettingsPVRCoverList">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -1816,6 +1860,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View51SettingsPVRSimpleList">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -1842,6 +1887,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View52SettingsPVRInfoList">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -1874,6 +1920,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View53SettingsPVRWall">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -1887,13 +1934,14 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<!-- Search -->
 	<include name="MediaMenuSearch">
 		<control type="radiobutton" id="9051">
 			<include content="MediaMenuIconButton">
 				<param name="id">9051</param>
-				<param name="iconon" value="icons/mediamenu/viewoptions.png"/>
-				<param name="iconoff" value="icons/mediamenu/viewoptions.png"/>
+				<param name="iconon" value="icons/mediamenu/viewoptions.png" />
+				<param name="iconoff" value="icons/mediamenu/viewoptions.png" />
 			</include>
 			<label>$LOCALIZE[14018]</label>
 			<onclick>ActivateWindow(1115)</onclick>
@@ -1901,14 +1949,15 @@
 		</control>
 		<control type="radiobutton" id="9052">
 			<include content="MediaMenuIconButton">
-				<param name="iconon" value="icons/mediamenu/search.png"/>
-				<param name="iconoff" value="icons/mediamenu/search.png"/>
+				<param name="iconon" value="icons/mediamenu/search.png" />
+				<param name="iconoff" value="icons/mediamenu/search.png" />
 			</include>
 			<label>$LOCALIZE[137]</label>
 			<onclick>Skin.SetString(SearchTerm)</onclick>
 		</control>
 	</include>
-	<!-- Views library -->
+
+	<!-- Views Library -->
 	<include name="View50SettingsCoverList">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -1960,7 +2009,21 @@
 			<selected>!Skin.HasSetting(View50HideFloor)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="109">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View50VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View50VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
+		<control type="radiobutton" id="110">
+			<label>$LOCALIZE[131] [LOWERCASE]$LOCALIZE[16003] $LOCALIZE[20445][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(View50AnimatedFanart)</onclick>
+			<selected>Skin.HasSetting(View50AnimatedFanart)</selected>
+			<enable>Skin.HasSetting(View50VideoPreviewWindow)</enable>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View51SettingsSimpleList">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -1984,7 +2047,21 @@
 			<selected>!Skin.HasSetting(View51HideFloor)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="105">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View51VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View51VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
+		<control type="radiobutton" id="106">
+			<label>$LOCALIZE[131] [LOWERCASE]$LOCALIZE[16003] $LOCALIZE[20445][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(View51AnimatedFanart)</onclick>
+			<selected>Skin.HasSetting(View51AnimatedFanart)</selected>
+			<enable>Skin.HasSetting(View51VideoPreviewWindow)</enable>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View53SettingsInfoList1">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2022,6 +2099,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View54SettingsInfoList2">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2073,6 +2151,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View55SettingsLowList">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2119,6 +2198,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View56Settings3Panel">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2163,7 +2243,22 @@
 			<selected>!Skin.HasSetting(View56DisableWatchedStatus)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="107">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View56VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View56VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
+		<control type="radiobutton" id="108">
+			<label>$LOCALIZE[31038]</label>
+			<label>$LOCALIZE[131] [LOWERCASE]$LOCALIZE[16003] $LOCALIZE[20445][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(View56AnimatedFanart)</onclick>
+			<selected>Skin.HasSetting(View56AnimatedFanart)</selected>
+			<enable>Skin.HasSetting(View56VideoPreviewWindow)</enable>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View57Settings3PanelSquare">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2209,6 +2304,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View58SettingsRightList">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2253,7 +2349,21 @@
 			<selected>!Skin.HasSetting(View58HideFloor)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="109">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View58VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View58VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
+		<control type="radiobutton" id="110">
+			<enable>Skin.HasSetting(View58VideoPreviewWindow)</enable>
+			<label>$LOCALIZE[131] [LOWERCASE]$LOCALIZE[16003] $LOCALIZE[20445][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(View58AnimatedFanart)</onclick>
+			<selected>Skin.HasSetting(View58AnimatedFanart)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View500SettingsPortrait">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2338,6 +2448,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View501SettingsSquare">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2414,6 +2525,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View502SettingsBanner">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2480,6 +2592,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View503SettingsLandscape">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2565,6 +2678,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View504SettingsFocus">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2624,6 +2738,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View505SettingsFocusSquare">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2676,6 +2791,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View506SettingsCascade">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2721,6 +2837,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View507SettingsCascadeSquare">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2759,6 +2876,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View508SettingsShowcase">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2849,6 +2967,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View509SettingsShowcaseSquare">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2932,6 +3051,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View510SettingsKodiFlix">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -2981,6 +3101,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View511SettingsKodiFlixSquare">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3026,6 +3147,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View512SettingsKodiFlixLandscape">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3070,6 +3192,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View520SettingsPortraitIcon">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3113,7 +3236,14 @@
 			<selected>!Skin.HasSetting(View520DisableWatchedStatus)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="111">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View520VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View520VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View521SettingsSquareIcon">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3121,10 +3251,22 @@
 		</control>
 		<control type="radiobutton" id="102">
 			<label>$LOCALIZE[31235]</label>
+			<!-- Toggle setting first as single source of truth, then hot-swap panel based on new state -->
 			<onclick>Skin.ToggleSetting(View521SmallIcons)</onclick>
-			<selected>Skin.HasSetting(View521SmallIcons)</selected>
-			<include>MediaMenuButton</include>
-			<include>ReloadWindowOnClick</include>
+			<onclick condition="Window.IsVisible(MyFavourites.xml) + Skin.HasSetting(View521SmallIcons)">Container.SetViewMode(5211)</onclick>
+			<onclick condition="Window.IsVisible(MyFavourites.xml) + !Skin.HasSetting(View521SmallIcons)">Container.SetViewMode(521)</onclick>
+			<!-- All other windows: reload via 1117 (setting already toggled above) -->
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(addonbrowser)">SetProperty(ActiveWindow,addonbrowser,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(music)">SetProperty(ActiveWindow,music,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(musicplaylist)">SetProperty(ActiveWindow,musicplaylist,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(videoplaylist)">SetProperty(ActiveWindow,videoplaylist,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(videos)">SetProperty(ActiveWindow,videos,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(programs)">SetProperty(ActiveWindow,programs,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml)">SetProperty(ContainerPath,$ESCINFO[Container.FolderPath],home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml)">Dialog.Close(1115)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml)">ReplaceWindow(1117)</onclick>
+			<selected>!Skin.HasSetting(View521SmallIcons)</selected>
+			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="103">
 			<visible>Container.Content(artists)</visible>
@@ -3161,6 +3303,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View522SettingsBannerIcon">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3191,7 +3334,21 @@
 			<selected>!Skin.HasSetting(View522DisableWatchedStatus)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="107">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View522VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View522VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
+		<control type="radiobutton" id="108">
+			<label>$LOCALIZE[131] [LOWERCASE]$LOCALIZE[16003] $LOCALIZE[20445][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(View522AnimatedFanart)</onclick>
+			<selected>Skin.HasSetting(View522AnimatedFanart)</selected>
+			<enable>Skin.HasSetting(View522VideoPreviewWindow)</enable>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View523SettingsLandscapeIcon">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3245,7 +3402,21 @@
 			<selected>!Skin.HasSetting(View523DisableWatchedStatus)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="108">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View523VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View523VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
+		<control type="radiobutton" id="109">
+			<label>$LOCALIZE[131] [LOWERCASE]$LOCALIZE[16003] $LOCALIZE[20445][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(View523AnimatedFanart)</onclick>
+			<selected>Skin.HasSetting(View523AnimatedFanart)</selected>
+			<enable>Skin.HasSetting(View523VideoPreviewWindow)</enable>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View530SettingsPortraitIconInfo">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3294,6 +3465,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View531SettingsSquareIconInfo">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3339,6 +3511,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View532SettingsBannerIconInfo">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3376,6 +3549,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View533SettingsLandscapeIconInfo">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3435,6 +3609,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View540SettingsPortraitWall">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3468,7 +3643,14 @@
 			<selected>!Skin.HasSetting(View540DisableWatchedStatus)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="106">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View540VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View540VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View541SettingsSquareWall">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3476,9 +3658,22 @@
 		</control>
 		<control type="radiobutton" id="102">
 			<label>$LOCALIZE[31235]</label>
+			<!-- Toggle setting first as single source of truth, then hot-swap panel based on new state -->
 			<onclick>Skin.ToggleSetting(View541SmallIcons)</onclick>
-			<selected>Skin.HasSetting(View541SmallIcons)</selected>
-			<include>MediaMenuButton</include>
+			<onclick condition="Window.IsVisible(MyFavourites.xml) + Skin.HasSetting(View541SmallIcons)">Container.SetViewMode(5411)</onclick>
+			<onclick condition="Window.IsVisible(MyFavourites.xml) + !Skin.HasSetting(View541SmallIcons)">Container.SetViewMode(541)</onclick>
+			<!-- All other windows: reload via 1117 (setting already toggled above) -->
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(addonbrowser)">SetProperty(ActiveWindow,addonbrowser,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(music)">SetProperty(ActiveWindow,music,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(musicplaylist)">SetProperty(ActiveWindow,musicplaylist,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(videoplaylist)">SetProperty(ActiveWindow,videoplaylist,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(videos)">SetProperty(ActiveWindow,videos,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml) + Window.IsActive(programs)">SetProperty(ActiveWindow,programs,home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml)">SetProperty(ContainerPath,$ESCINFO[Container.FolderPath],home)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml)">Dialog.Close(1115)</onclick>
+			<onclick condition="!Window.IsVisible(MyFavourites.xml)">ReplaceWindow(1117)</onclick>
+			<selected>!Skin.HasSetting(View541SmallIcons)</selected>
+			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="103">
 			<visible>Container.Content(artists)</visible>
@@ -3502,6 +3697,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="View542SettingsBannerWall">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3526,7 +3722,14 @@
 			<selected>!Skin.HasSetting(View542DisableWatchedStatus)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="105">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View542VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View542VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="View543SettingsLandscapeWall">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3568,7 +3771,14 @@
 			<selected>!Skin.HasSetting(View543DisableWatchedStatus)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
+		<control type="radiobutton" id="107">
+			<label>$LOCALIZE[31228]</label>
+			<onclick>Skin.ToggleSetting(View543VideoPreviewWindow)</onclick>
+			<selected>Skin.HasSetting(View543VideoPreviewWindow)</selected>
+			<include>MediaMenuRadioButton</include>
+		</control>
 	</include>
+
 	<include name="ViewCustom1112Search">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3603,6 +3813,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="ViewCustom1114Addons">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3621,6 +3832,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="ViewCustom1102NextAired">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>
@@ -3651,6 +3863,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 	</include>
+
 	<include name="ViewMusicPlaylistEditor">
 		<control type="label" id="101">
 			<label>$LOCALIZE[21483]</label>

@@ -6,29 +6,6 @@ from tmdbhelper.lib.api.contains import CommonContainerAPIs
 from tmdbhelper.lib.addon.logger import TimerList
 
 
-""" Lazyimports
-from tmdbhelper.lib.items.kodi import KodiDb
-"""
-
-
-class ItemCache:
-    def __init__(self, filename, cache_days=0.25):  # 6 hours default cache
-        from tmdbhelper.lib.files.bcache import BasicCache
-        self.cache = BasicCache(filename=filename)
-        self.cache_days = cache_days
-
-    def __call__(self, function):
-        def wrapper(instance, *args, **kwargs):
-            kwargs['cache_days'] = self.cache_days
-            kwargs['cache_name'] = f'{instance.__class__.__name__}.{function.__name__}'
-            kwargs['cache_combine_name'] = True
-            return self.cache.use_cache(function, instance, *args, **kwargs)
-        return wrapper
-
-
-use_item_cache = ItemCache
-
-
 class ContainerDirectoryCommon(CommonContainerAPIs):
     default_cacheonly = False
     update_listing = False  # endOfDirectory(updateListing=) set True to replace current path
@@ -41,16 +18,31 @@ class ContainerDirectoryCommon(CommonContainerAPIs):
     thumb_override = 0
 
     def __init__(self, handle, paramstring, **kwargs):
-        # Log Settings
-        self.log_timers = get_setting('timer_reports')
-        self.timer_lists = {}
-
         # plugin:// params configuration
         self.handle = handle  # plugin:// handle
         self.paramstring = paramstring  # plugin://plugin.video.themoviedb.helper?paramstring
         self.params = kwargs  # paramstring dictionary
-        self.parent_params = self.params.copy()  # TODO: CLEANUP
-        self.filters = {
+        self.parent_params = kwargs.copy()  # TODO: CLEANUP
+
+    @cached_property
+    def log_timers(self):
+        return get_setting('timer_reports')
+
+    @cached_property
+    def timer_lists(self):
+        return {}
+
+    @cached_property
+    def sort_methods(self):
+        return []  # List of kwargs dictionaries [{'sortMethod': SORT_METHOD_UNSORTED}]
+
+    @cached_property
+    def property_params(self):
+        return {}
+
+    @cached_property
+    def filters(self):
+        return {
             'filter_key': self.params.get('filter_key', None),
             'filter_value': self.params.get('filter_value', None),
             'filter_operator': self.params.get('filter_operator', None),
@@ -59,9 +51,6 @@ class ContainerDirectoryCommon(CommonContainerAPIs):
             'exclude_operator': self.params.get('exclude_operator', None)
         }
 
-        self.sort_methods = []  # List of kwargs dictionaries [{'sortMethod': SORT_METHOD_UNSORTED}]
-        self.property_params = {}
-
     @cached_property
     def is_widget(self):
         return boolean(self.params.get('widget', False))
@@ -69,6 +58,10 @@ class ContainerDirectoryCommon(CommonContainerAPIs):
     @cached_property
     def is_cacheonly(self):
         return boolean(self.params.get('cacheonly', self.default_cacheonly))
+
+    @cached_property
+    def is_localonly(self):
+        return boolean(self.params.get('localonly', False))
 
     @cached_property
     def is_detailed(self):
@@ -272,13 +265,16 @@ class ContainerDirectoryCommon(CommonContainerAPIs):
         """
         return
 
+    def get_directory_items(self):
+        with TimerList(self.timer_lists, 'get_list', logging=self.log_timers):
+            return self.get_items(**self.params)
+
     def get_directory(self, items_only=False, build_items=True):
 
         with TimerList(self.timer_lists, 'total', logging=self.log_timers):
             self.trakt_playdata.pre_sync_start(**self.params)
 
-            with TimerList(self.timer_lists, 'get_list', logging=self.log_timers):
-                items = self.get_items(**self.params)
+            items = self.get_directory_items()
 
             if not items:
                 return
@@ -319,8 +315,6 @@ class ContainerDirectory(ContainerDirectoryCommon):
     def lidc_cache_refresh(self):
         if self.is_cacheonly:
             return 'never'
-        if self.is_translated:
-            return 'langs'
         if self.is_detailed:
             return None
         return 'basic'
@@ -332,7 +326,8 @@ class ContainerDirectory(ContainerDirectoryCommon):
         lidc.parent_params = self.parent_params
         lidc.pagination = self.pagination
         lidc.cache_refresh = self.lidc_cache_refresh
-        lidc.extendedinfo = self.is_detailed or self.is_translated
+        lidc.cache_translations = self.is_translated
+        lidc.extendedinfo = self.is_detailed
         lidc.timer_lists = self.timer_lists
         lidc.log_timers = self.log_timers
         return lidc
@@ -343,7 +338,7 @@ class ContainerDirectory(ContainerDirectoryCommon):
         if li.infoproperties.get('label_affix'):
             li.label = f"{li.infoproperties['label_affix']}. {li.label}"
         if li.infoproperties.get('plot_affix'):
-            li.infolabels['plot'] = f"{li.infoproperties['plot_affix']}. {li.infolabels.get('plot')}"
+            li.infolabels['plot'] = f"{li.infoproperties['plot_affix']}{li.infolabels.get('plot')}"
         return li
 
     def build_detailed_items(self, items):

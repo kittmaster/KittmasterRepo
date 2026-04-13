@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<menucontrol>9050</menucontrol>
@@ -24,7 +24,7 @@
 		<!-- Content -->
 		<control type="group">
 			<include>AnimationZoomWindow</include>
-			<!-- Left menu -->
+			<!-- Left Menu -->
 			<control type="label">
 				<label>$LOCALIZE[130]</label>
 				<include>SettingsLeftLabel</include>
@@ -72,14 +72,15 @@
 					<include>SettingsLeftButton</include>
 				</control>
 			</control>
-			<!-- Right menu -->
+			<!-- Right Menu -->
 			<control type="grouplist">
 				<top>132</top>
 				<left>460</left>
 				<width>1325</width>
 				<height>67</height>
 				<orientation>horizontal</orientation>
-				<control type="label" id="52"> 	 <!-- Kodi build label -->
+				<control type="label" id="52">
+					<!-- Kodi Build Label -->
 					<width>auto</width>
 					<font>Font33_Bold_Caps</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
@@ -87,32 +88,20 @@
 				<control type="label">
 					<width>auto</width>
 					<font>Font33_Bold_Caps</font>
-					<label> - </label> 	 <!-- Dash -->
+					<label> - </label>
+					<!-- Dash -->
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				</control>
-				<control type="label" id="53"> 	 <!-- Kodi build date label -->
+				<control type="label" id="53">
+					<!-- Kodi Build Date Label -->
 					<width>auto</width>
 					<font>Font33_Bold_Caps</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				</control>
 			</control>
-
-			<!-- This is not needed, not sure why it was added, leaving for now, delete pending -->
-			<!-- <control type="grouplist">
-				<top>195</top>
-				<left>459</left>
-				<width>1325</width>
-				<height>67</height>
-				<control type="label">
-					<width>auto</width>
-					<label>[COLOR $VAR[SettingsLabelSystemInfo]]Kodi $LOCALIZE[19114]:[/COLOR] $VAR[BuildVersionName]</label>
-					<include>VideoOSDProcessInfo</include>
-				</control>
-			</control> -->
-
 			<control type="grouplist" id="8000">
 				<top>243</top>
-				<left>425</left>				
+				<left>425</left>
 				<width>1395</width>
 				<height>615</height>
 				<control type="label" id="2">
@@ -150,7 +139,7 @@
 				</control>
 				<control type="label" id="13">
 					<include>SettingsLabelSystemInfo</include>
-				</control>				
+				</control>
 			</control>
 			<control type="textbox" id="30">
 				<top>218</top>

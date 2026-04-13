@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<include name="View531SquareIconInfo">
 		<!-- Floor -->
@@ -107,7 +107,7 @@
 						</control>
 						<control type="group">
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+								<effect type="zoom" start="95" end="100" time="240" center="auto" />
 							</animation>
 							<include content="ViewArtwork">
 								<param name="aspect">stretch</param>
@@ -132,7 +132,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<include content="ViewArtworkAudioCase">
 							<param name="texturefadetime">0</param>
@@ -149,7 +149,7 @@
 				<onright>605311</onright>
 			</control>
 		</control>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(531)</visible>
 			<include content="AnimationSlideBottomWindow">

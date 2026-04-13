@@ -1,0 +1,31 @@
+Changelog for PreShow Experience
+[- 0.3.2.1 -]
+- fix:     Trailer quality error
+
+[- 0.3.2 -]
+- change:  converted sequence editor sliders to list
+- add:  Feature module metadata settings for testing
+
+[- 0.3.1 -]
+- fix:     Error if no sequences match genre conditions
+- change:  converted setting sliders to list
+- change:  consolidated volume settings to playback category
+
+[- 0.3.0.2 -]
+- add:      TMDB language options (This operates during scanning, so the content database must be reset and rescanned if changed)
+
+[- 0.3.0.1 -]
+- fix:     Slideshow timing fix
+- fix:     Aspect ratio (2.2 separated from 2.35)
+- fix:     Genre Conditions (modified code to return genres after the 1st 3)
+- change:  Chapter tracking (increased time until checking for chapters)
+- change:  Additional debug code
+
+[- 0.3.0 -]
+- fix:      IMDB trailers
+- fix:      Slideshow timing issue
+- add:      YouTube default videos for content that doesn't exist in PreShow content folders
+- add:      New Action Locations (beginning of PreShow, before feature, middle & last chapter)
+- add:      Aspect Ratio conditional filter
+- change:   Updated significant amount of backend code
+- remove:   3D filters

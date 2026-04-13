@@ -1,6 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
-	<defaultcontrol>996</defaultcontrol>
+	<!-- Swappable Default Control Logic -->
+	<include condition="!Skin.HasSetting(force_context_996)">ContextMenuFocus_Standard</include>
+	<include condition="Skin.HasSetting(force_context_996)">ContextMenuFocus_Always</include>
+
+	<!-- Restore Focus: Set Focus To The Saved Position In The List -->
+	<onload condition="!String.IsEmpty(Window(Home).Property(ContextMenuLastPosition))">SetFocus(996, $INFO[Window(Home).Property(ContextMenuLastPosition)])</onload>
+
+	<!-- Save Focus: Save The Current List Position On Close -->
+	<onunload>SetProperty(ContextMenuLastPosition,$INFO[Container(996).Position],Home)</onunload>
 	<controls>
 		<control type="group">
 			<include>AnimationDialogPopupWindow</include>
@@ -45,7 +53,19 @@
 			</include>
 			<include content="DialogContextMenuShadow">
 				<param name="height">720</param>
-				<param name="visible">Integer.IsGreater(Container(996).NumItems,9)</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,10)</param>
+			</include>
+			<include content="DialogContextMenuShadow">
+				<param name="height">720</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,11)</param>
+			</include>
+			<include content="DialogContextMenuShadow">
+				<param name="height">720</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,12)</param>
+			</include>
+			<include content="DialogContextMenuShadow">
+				<param name="height">720</param>
+				<param name="visible">Integer.IsGreater(Container(996).NumItems,12)</param>
 			</include>
 			<control type="image" id="999">
 				<left>0</left>
@@ -102,7 +122,22 @@
 			<include content="DialogContextMenuTexture">
 				<param name="height">680</param>
 				<param name="diffuse">diffuse/rounded10-460x680.png</param>
-				<param name="visible">Integer.IsGreater(Container(996).NumItems,9)</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,10)</param>
+			</include>
+			<include content="DialogContextMenuTexture">
+				<param name="height">680</param>
+				<param name="diffuse">diffuse/rounded10-460x680.png</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,11)</param>
+			</include>
+			<include content="DialogContextMenuTexture">
+				<param name="height">680</param>
+				<param name="diffuse">diffuse/rounded10-460x680.png</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,12)</param>
+			</include>
+			<include content="DialogContextMenuTexture">
+				<param name="height">680</param>
+				<param name="diffuse">diffuse/rounded10-460x680.png</param>
+				<param name="visible">Integer.IsGreater(Container(996).NumItems,12)</param>
 			</include>
 			<include content="DialogContextMenuEmboss">
 				<param name="height">180</param>
@@ -142,7 +177,19 @@
 			</include>
 			<include content="DialogContextMenuEmboss">
 				<param name="height">720</param>
-				<param name="visible">Integer.IsGreater(Container(996).NumItems,9)</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,10)</param>
+			</include>
+			<include content="DialogContextMenuEmboss">
+				<param name="height">720</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,11)</param>
+			</include>
+			<include content="DialogContextMenuEmboss">
+				<param name="height">720</param>
+				<param name="visible">Integer.IsEqual(Container(996).NumItems,12)</param>
+			</include>
+			<include content="DialogContextMenuEmboss">
+				<param name="height">720</param>
+				<param name="visible">Integer.IsGreater(Container(996).NumItems,12)</param>
 			</include>
 			<control type="image">
 				<top>-10</top>

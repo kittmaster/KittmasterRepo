@@ -12,6 +12,9 @@ class MediaItem(BaseItem):
             self.return_basemeta_db('base'),
             self.return_basemeta_db('belongs'),
             self.return_basemeta_db('genre'),
+            self.return_basemeta_db('languages'),
+            self.return_basemeta_db('language'),
+            self.return_basemeta_db('countries'),
             self.return_basemeta_db('country'),
             self.return_basemeta_db('certification'),
             self.return_basemeta_db('translation'),
@@ -26,6 +29,7 @@ class MediaItem(BaseItem):
             self.return_basemeta_db('unique_id'),
             self.return_basemeta_db('custom'),
             self.return_basemeta_db('fanart_tv'),
+            self.return_basemeta_db('default_art'),
             self.return_basemeta_db('art'),
 
         )

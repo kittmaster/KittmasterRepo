@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">5</defaultcontrol>
 	<onload condition="String.IsEqual(Container(5).NumItems,0)">SetFocus(28)</onload>
@@ -8,10 +8,18 @@
 			<visible>!Window.IsVisible(DialogSlider.xml)</visible>
 			<include>AnimationDialogPopupVisible</include>
 			<include content="DialogBackground">
-				<param name="width" value="1220"/>
-				<param name="height" value="760"/>
-				<param name="id" value="2"/>
+				<param name="width" value="1220" />
+				<param name="height" value="760" />
+				<param name="id" value="2" />
 			</include>
+			<control type="image">
+				<left>951</left>
+				<top>14</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
 			<control type="grouplist" id="5">
 				<left>20</left>
 				<top>90</top>

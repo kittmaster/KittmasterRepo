@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View504Focus">
-		<!-- Video preview -->
+		<!-- Video Preview -->
 		<control type="group">
 			<visible>Control.IsVisible(504) + Player.HasVideo + Skin.HasSetting(View504VideoPreviewWindow)</visible>
 			<include content="AnimationSlideRightWindow">
@@ -17,7 +17,7 @@
 			<control type="image">
 				<texture>colors/black.png</texture>
 			</control>
-			<control type="videowindow"/>
+			<control type="videowindow" />
 			<control type="image">
 				<bordersize>-10</bordersize>
 				<texture border="20">thumbs/overlay2.png</texture>
@@ -35,7 +35,7 @@
 		<include content="View504Panel" condition="Skin.HasSetting(View504FixedList)">
 			<param name="listtype">fixedlist</param>
 		</include>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(504)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -69,9 +69,9 @@
 					<param name="right">100</param>
 					<param name="bottom">25</param>
 				</include>
-			</control>			
+			</control>
 
-<!-- 			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos6">
+			<!-- 			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos6">
 				<param name="right">100</param>
 				<param name="bottom">25</param>
 			</include>
@@ -81,24 +81,18 @@
 			</include> -->
 		</control>
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View504Panel">
 		<param name="listtype">wraplist</param>
 		<definition>
 			<control type="group">
-				<visible>Control.IsVisible(504)</visible>
-				<animation effect="slide" end="0,30" condition="Container.Content(genres) + [System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour) | System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)]">conditional</animation>
-				<include content="AnimationSlideBottomWindow">
-					<param name="slide">820</param>
-				</include>
-				<include content="AnimationSlideBottomVisible">
-					<param name="slide">820</param>
-				</include>
 				<control type="$PARAM[listtype]" id="504">
 					<top>290</top>
 					<left>-203</left>
 					<width>2123</width>
 					<height>1000</height>
+					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<onunfocus>PlayerControl(Stop)</onunfocus>
 					<onup>9050</onup>
 					<ondown>60504</ondown>
 					<pagecontrol>60504</pagecontrol>
@@ -204,6 +198,9 @@
 				</control>
 				<include content="ViewCoverFlowScrollBar">
 					<param name="id">504</param>
+					<param name="top">947</param>
+					<param name="left">450</param>
+					<param name="width">1370</param>
 				</include>
 			</control>
 		</definition>

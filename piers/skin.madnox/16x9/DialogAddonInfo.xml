@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<onload>AlarmClock(Focus,SetFocus(9000,0),00:00,silent)</onload>
 	<include>AnimationDialogPopupWindow</include>
@@ -12,14 +12,14 @@
 				<param name="infocontent">AddonInfoContent</param>
 			</include>
 			<control type="image">
-				<left>1110</left>
-				<top>30</top>
+				<left>1114</left>
+				<top>20</top>
 				<width>161.5</width>
 				<height>86</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icons/logo.png</texture>
 			</control>
-			<!-- Preview thumbs -->
+			<!-- Preview Thumbs -->
 			<control type="panel" id="50">
 				<visible>Container(9000).Hasfocus(105)</visible>
 				<include>AnimationVisibleFade</include>
@@ -32,7 +32,7 @@
 				<include>ContainerScrollTime</include>
 				<itemlayout height="246" width="422">
 					<include content="ViewArtwork">
-						<param name="texturefadetime"/>
+						<param name="texturefadetime" />
 						<param name="art">$INFO[ListItem.Icon]</param>
 						<param name="diffuse">diffuse/rounded5-480x270.png</param>
 					</include>
@@ -42,7 +42,7 @@
 						<texture border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/panel-select-focus.png</texture>
 					</control>
 					<include content="ViewArtwork">
-						<param name="texturefadetime"/>
+						<param name="texturefadetime" />
 						<param name="art">$INFO[ListItem.Icon]</param>
 						<param name="diffuse">diffuse/rounded5-480x270.png</param>
 					</include>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">205</defaultcontrol>
 	<controls>
@@ -29,7 +29,7 @@
 				<orientation>horizontal</orientation>
 				<control type="radiobutton" id="101">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/settings.png"/>
+						<param name="texture" value="buttons/player/settings.png" />
 					</include>
 					<onclick>SetProperty(CustomSelectGroup,$LOCALIZE[31337],home)</onclick>
 					<onclick>ActivateWindow(1111)</onclick>
@@ -37,21 +37,21 @@
 				</control>
 				<control type="radiobutton" id="102">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/visualisationpreset.png"/>
+						<param name="texture" value="buttons/player/visualisationpreset.png" />
 					</include>
 					<onclick>ActivateWindow(visualisationpresetlist)</onclick>
 					<visible>Visualisation.HasPresets + !Skin.HasSetting(MusicOSDDisableVizPresetsButton)</visible>
 				</control>
 				<control type="radiobutton" id="103">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/visualisationsettings.png"/>
+						<param name="texture" value="buttons/player/visualisationsettings.png" />
 					</include>
 					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					<visible>Visualisation.Enabled + !Skin.HasSetting(MusicOSDDisableVizOptionsButton)</visible>
 				</control>
 				<control type="radiobutton" id="500">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/visualisation.png"/>
+						<param name="texture" value="buttons/player/visualisation.png" />
 					</include>
 					<visible>!Skin.HasSetting(MusicOSDDisableVizButton)</visible>
 				</control>
@@ -68,35 +68,35 @@
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="radiobutton" id="201">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/up.png"/>
+						<param name="texture" value="buttons/player/up.png" />
 					</include>
 					<onclick>ChannelUp</onclick>
 					<visible>MusicPlayer.Content(LiveTV)</visible>
 				</control>
 				<control type="radiobutton" id="202">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/down.png"/>
+						<param name="texture" value="buttons/player/down.png" />
 					</include>
 					<onclick>ChannelDown</onclick>
 					<visible>MusicPlayer.Content(LiveTV)</visible>
 				</control>
 				<control type="radiobutton" id="203">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/previous.png"/>
+						<param name="texture" value="buttons/player/previous.png" />
 					</include>
 					<onclick>PlayerControl(Previous)</onclick>
 					<visible>!MusicPlayer.Content(LiveTV) + MusicPlayer.HasPrevious</visible>
 				</control>
 				<control type="radiobutton" id="204">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/rw.png"/>
+						<param name="texture" value="buttons/player/rw.png" />
 					</include>
 					<onclick>PlayerControl(Rewind)</onclick>
 					<visible>Player.SeekEnabled</visible>
 				</control>
 				<control type="radiobutton" id="205">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/stop.png"/>
+						<param name="texture" value="buttons/player/stop.png" />
 					</include>
 					<onclick>PlayerControl(Stop)</onclick>
 				</control>
@@ -114,14 +114,14 @@
 				</control>
 				<control type="radiobutton" id="208">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/ff.png"/>
+						<param name="texture" value="buttons/player/ff.png" />
 					</include>
 					<onclick>PlayerControl(Forward)</onclick>
 					<visible>Player.SeekEnabled</visible>
 				</control>
 				<control type="radiobutton" id="209">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/next.png"/>
+						<param name="texture" value="buttons/player/next.png" />
 					</include>
 					<onclick>PlayerControl(Next) + MusicPlayer.HasNext</onclick>
 					<visible>!VideoPlayer.Content(livetv)</visible>
@@ -152,7 +152,7 @@
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="radiobutton" id="301">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/list.png"/>
+						<param name="texture" value="buttons/player/list.png" />
 					</include>
 					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>ActivateWindow(MusicPlaylist)</onclick>
@@ -184,14 +184,14 @@
 				</control>
 				<control type="radiobutton" id="306">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/rating.png"/>
+						<param name="texture" value="buttons/player/rating.png" />
 					</include>
 					<onclick>SetRating</onclick>
 					<visible>!Pvr.IsPlayingRadio + !Player.IsInternetStream + !Skin.HasSetting(MusicOSDDisableRatingButton)</visible>
 				</control>
 				<control type="radiobutton" id="307">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/lyrics.png"/>
+						<param name="texture" value="buttons/player/lyrics.png" />
 					</include>
 					<onclick condition="!System.AddonIsEnabled(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
 					<onclick condition="System.AddonIsEnabled(script.cu.lrclyrics)">RunScript(script.cu.lrclyrics)</onclick>
@@ -200,7 +200,7 @@
 				</control>
 				<control type="radiobutton" id="308">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/channels.png"/>
+						<param name="texture" value="buttons/player/channels.png" />
 					</include>
 					<onclick>ActivateWindow(pvrosdChannels)</onclick>
 					<visible>VideoPlayer.HasEpg</visible>
@@ -208,7 +208,7 @@
 				</control>
 				<control type="radiobutton" id="309">
 					<include content="DialogButtonOSD">
-						<param name="texture" value="buttons/player/guide.png"/>
+						<param name="texture" value="buttons/player/guide.png" />
 					</include>
 					<onclick>ActivateWindow(pvrchannelguide)</onclick>
 					<visible>VideoPlayer.HasEpg</visible>
@@ -216,7 +216,7 @@
 				</control>
 			</control>
 		</control>
-		<!-- Button to prevent menu popup from mouse move unless at top of screen -->
+		<!-- Button To Prevent Menu Popup From Mouse Move Unless At Top Of Screen -->
 		<control type="button" id="1000">
 			<animation effect="slide" end="0,130" condition="Window.IsVisible(musicosd)">Conditional</animation>
 			<top>1</top>
@@ -227,8 +227,8 @@
 			<onup>close</onup>
 			<ondown>close</ondown>
 			<onclick>close</onclick>
-			<texturefocus/>
-			<texturenofocus/>
+			<texturefocus />
+			<texturenofocus />
 		</control>
 	</controls>
 </window>

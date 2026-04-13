@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<include name="View532BannerIconInfo">
 		<!-- Floor -->
@@ -45,7 +45,9 @@
 				<left>110</left>
 				<width>1068</width>
 				<height>780</height>
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 				<onleft>9050</onleft>
+				<onunfocus>PlayerControl(Stop)</onunfocus>
 				<onright>60532</onright>
 				<pagecontrol>60532</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -74,7 +76,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="group">
 							<visible>!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))</visible>
@@ -103,7 +105,7 @@
 				<onright>605321</onright>
 			</control>
 		</control>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(532)</visible>
 			<include content="AnimationSlideBottomWindow">

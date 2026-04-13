@@ -1,0 +1,110 @@
+{
+ "items": [
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "trivia.intro"
+   }
+  }, 
+  {
+   "enabled": true, 
+   "type": "trivia", 
+   "name": "", 
+   "settings": {}
+  }, 
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "trivia.outro" 
+   }
+  }, 
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "courtesy"
+   }
+  }, 
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "theater.intro"
+   }
+  }, 
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "trailers.intro"
+   }
+  }, 
+  {
+   "enabled": true, 
+   "type": "trailer", 
+   "name": "", 
+   "settings": {"scrapers": "IMDB,TMDB",
+    "count": 2}
+  }, 
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "trailers.outro"
+   }
+  }, 
+  {
+   "enabled": true, 
+   "type": "audioformat", 
+   "name": "", 
+   "settings": {}
+  }, 
+  {
+   "enabled": true, 
+   "type": "feature", 
+   "name": "", 
+   "settings": {}
+  }, 
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "feature.outro"
+   }
+  }, 
+  {
+   "enabled": true, 
+   "type": "video", 
+   "name": "", 
+   "settings": {
+    "random": true, 
+    "count": 1, 
+    "vtype": "theater.outro"
+   }
+  }
+ ], 
+ "version": 1
+}

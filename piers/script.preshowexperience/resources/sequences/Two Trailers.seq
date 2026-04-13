@@ -1,0 +1,38 @@
+{
+ "version": 2,
+ "name": "2 Trailers",
+ "active": true,
+ "items": [
+  {
+   "type": "trailer",
+   "enabled": true,
+   "name": "",
+   "settings": {
+    "scrapers": "IMDB,TMDB",
+    "count": 2
+   }
+  },
+  {
+   "type": "feature",
+   "enabled": true,
+   "name": "",
+   "settings": {
+    "ratingBumper": "none"
+   }
+  }
+ ],
+ "attributes": {
+  "genres": [],
+  "directors": [],
+  "studios": [],
+  "actors": [],
+  "tags": [],
+  "dates": [],
+  "times": [],
+  "year": [],
+  "ratings": [],
+  "videoaspect": [],
+  "featuretitle": []
+ },
+ "settings": {}
+}

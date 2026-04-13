@@ -1,58 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
-	<include file="Defaults.xml"/>
-	<include file="Includes_Themes.xml"/>
-	<include file="Includes_ThemeSelect.xml"/>
-	<include file="Includes_Dialogs.xml"/>
-	<include file="Includes_InfoDialogs.xml"/>
-	<include file="Includes_CustomSelect.xml"/>
-	<include file="Includes_Animations.xml"/>
-	<include file="Includes_Backgrounds.xml"/>
-	<include file="Includes_VideoLyrics.xml"/>
-	<include file="Includes_Home.xml"/>
-	<include file="Includes_NowPlaying.xml"/>
-	<include file="script-skinshortcuts-includes.xml"/>
-	<include file="Includes_MediaFlags.xml"/>
-	<include file="Includes_MediaMenu.xml"/>
-	<include file="Includes_Views.xml"/>
-	<include file="Includes_ViewsVariables.xml"/>
-	<include file="Includes_PVR.xml"/>
-	<include file="Includes_Settings.xml"/>
-	<include file="Includes_Topbar.xml"/>
-	<include file="View_050_CoverList.xml"/>
-	<include file="View_051_SimpleList.xml"/>
-	<include file="View_053_InfoList1.xml"/>
-	<include file="View_054_InfoList2.xml"/>
-	<include file="View_055_LowList.xml"/>
-	<include file="View_056_3Panel.xml"/>
-	<include file="View_057_3PanelSquare.xml"/>
-	<include file="View_058_RightList.xml"/>
-	<include file="View_500_Portrait.xml"/>
-	<include file="View_501_Square.xml"/>
-	<include file="View_502_Banner.xml"/>
-	<include file="View_503_Landscape.xml"/>
-	<include file="View_504_Focus.xml"/>
-	<include file="View_505_FocusSquare.xml"/>
-	<include file="View_506_Cascade.xml"/>
-	<include file="View_507_CascadeSquare.xml"/>
-	<include file="View_508_Showcase.xml"/>
-	<include file="View_509_ShowcaseSquare.xml"/>
-	<include file="View_510_KodiFlix.xml"/>
-	<include file="View_511_KodiFlixSquare.xml"/>
-	<include file="View_512_KodiFlixLandscape.xml"/>
-	<include file="View_520_PortraitIcon.xml"/>
-	<include file="View_521_SquareIcon.xml"/>
-	<include file="View_522_BannerIcon.xml"/>
-	<include file="View_523_LandscapeIcon.xml"/>
-	<include file="View_524_SquareIconAlbums.xml"/>
-	<include file="View_530_PortraitIconInfo.xml"/>
-	<include file="View_531_SquareIconInfo.xml"/>
-	<include file="View_532_BannerIconInfo.xml"/>
-	<include file="View_533_LandscapeIconInfo.xml"/>
-	<include file="View_540_PortraitWall.xml"/>
-	<include file="View_541_SquareWall.xml"/>
-	<include file="View_542_BannerWall.xml"/>
-	<include file="View_543_LandscapeWall.xml"/>
+	<include file="Defaults.xml" />
+	<include file="Includes_Themes.xml" />
+	<include file="Includes_ThemeSelect.xml" />
+	<include file="Includes_Dialogs.xml" />
+	<include file="Includes_InfoDialogs.xml" />
+	<include file="Includes_CustomSelect.xml" />
+	<include file="Includes_Animations.xml" />
+	<include file="Includes_Backgrounds.xml" />
+	<include file="Includes_VideoLyrics.xml" />
+	<include file="Includes_Home.xml" />
+	<include file="Includes_NowPlaying.xml" />
+	<include file="Includes_Home_Dashboards.xml" />
+	<include file="script-skinshortcuts-includes.xml" />
+	<include file="Includes_MediaFlags.xml" />
+	<include file="Includes_MediaMenu.xml" />
+	<include file="Includes_Views.xml" />
+	<include file="Includes_ViewsVariables.xml" />
+	<include file="Includes_PVR.xml" />
+	<include file="Includes_Settings.xml" />
+	<include file="Includes_Topbar.xml" />
+	<include file="View_050_CoverList.xml" />
+	<include file="View_051_SimpleList.xml" />
+	<include file="View_053_InfoList1.xml" />
+	<include file="View_054_InfoList2.xml" />
+	<include file="View_055_LowList.xml" />
+	<include file="View_056_3Panel.xml" />
+	<include file="View_057_3PanelSquare.xml" />
+	<include file="View_058_RightList.xml" />
+	<include file="View_500_Portrait.xml" />
+	<include file="View_501_Square.xml" />
+	<include file="View_502_Banner.xml" />
+	<include file="View_503_Landscape.xml" />
+	<include file="View_504_Focus.xml" />
+	<include file="View_505_FocusSquare.xml" />
+	<include file="View_506_Cascade.xml" />
+	<include file="View_507_CascadeSquare.xml" />
+	<include file="View_508_Showcase.xml" />
+	<include file="View_509_ShowcaseSquare.xml" />
+	<include file="View_510_KodiFlix.xml" />
+	<include file="View_511_KodiFlixSquare.xml" />
+	<include file="View_512_KodiFlixLandscape.xml" />
+	<include file="View_520_PortraitIcon.xml" />
+	<include file="View_521_SquareIcon.xml" />
+	<include file="View_522_BannerIcon.xml" />
+	<include file="View_523_LandscapeIcon.xml" />
+	<include file="View_524_SquareIconAlbums.xml" />
+	<include file="View_530_PortraitIconInfo.xml" />
+	<include file="View_531_SquareIconInfo.xml" />
+	<include file="View_532_BannerIconInfo.xml" />
+	<include file="View_533_LandscapeIconInfo.xml" />
+	<include file="View_540_PortraitWall.xml" />
+	<include file="View_541_SquareWall.xml" />
+	<include file="View_542_BannerWall.xml" />
+	<include file="View_543_LandscapeWall.xml" />
+
 	<constant name="TextureFadeTime">480</constant>
 	<expression name="AreaVisibleVideos">Window.IsVisible(videos) | Window.IsVisible(videoplaylist) | Window.IsVisible(1102)</expression>
 	<expression name="AreaVisibleMusic">Window.IsVisible(music) | Window.IsVisible(musicplaylist) | Window.IsVisible(musicplaylisteditor) | Window.IsVisible(visualisation)</expression>
@@ -61,72 +63,85 @@
 	<expression name="SystemAnimationCloseCondition">![Window.Next(settings) | Window.Next(SettingsCategory.xml) | Window.Next(skinsettings) | Window.Next(profiles) | Window.Next(systeminfo) | Window.Next(eventlog) | Window.Next(filemanager)]</expression>
 	<expression name="PVRAnimationOpenCondition">![Window.Previous(MyPVRChannels.xml) | Window.Previous(MyPVRGuide.xml) | Window.Previous(MyPVRRecordings.xml) | Window.Previous(MyPVRSearch.xml) | Window.Previous(MyPVRTimers.xml)]</expression>
 	<expression name="PVRAnimationCloseCondition">![Window.Next(MyPVRChannels.xml) | Window.Next(MyPVRGuide.xml) | Window.Next(MyPVRRecordings.xml) | Window.Next(MyPVRSearch.xml) | Window.Next(MyPVRTimers.xml)]</expression>
+
 	<include name="onunload_SkinSettings">
 		<onunload condition="!Skin.HasSetting(SmartShortcuts.playlists)">Skin.SetBool(SmartShortcuts.playlists)</onunload>
 		<onunload condition="!Skin.HasSetting(BlurEnabled)">Skin.ToggleSetting(BlurEnabled)</onunload>
 		<onunload condition="System.AddonIsEnabled(script.artistslideshow)">RunScript(script.artistslideshow,daemon=True)</onunload>
 	</include>
+
 	<include name="ContainerScrollTime">
 		<scrolltime tween="sine">480</scrolltime>
 	</include>
+
 	<include name="FullScreenDimensions">
 		<width>1920</width>
 		<height>1080</height>
 	</include>
+
 	<include name="HiddenObject">
 		<left>-2000</left>
 		<top>-1100</top>
 		<width>1</width>
 		<height>1</height>
-		<texturefocus/>
-		<texturenofocus/>
-		<font/>
+		<texturefocus />
+		<texturenofocus />
+		<font />
 	</include>
+
 	<include name="HiddenList">
 		<left>-2000</left>
 		<top>-1100</top>
 		<width>1</width>
 		<height>1</height>
-		<itemlayout/>
-		<focusedlayout/>
+		<itemlayout />
+		<focusedlayout />
 	</include>
-	<include name="Hidden_PlayAll_Container_Music_Videos">		<!-- Play All button content list for music videos -->
+
+	<include name="Hidden_PlayAll_Container_Music_Videos">
+		<!-- Play All Button Content List For Music Videos -->
 		<control type="panel" id="2090">
 			<visible>false</visible>
 			<content>$VAR[MusicInfoMusicVideoContent]</content>
 		</control>
 	</include>
-	<include name="Hidden_PlayAll_Container_Albums">		<!-- Play All button content list for music videos -->
+
+	<include name="Hidden_PlayAll_Container_Albums">
+		<!-- Play All Button Content List For Music Videos -->
 		<control type="panel" id="2091">
 			<visible>false</visible>
 			<content>$VAR[MusicInfoAlbumContentVar]</content>
 		</control>
 	</include>
+
 	<include name="AutoScrollPlot">
 		<autoscroll time="3000" delay="4000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 	</include>
+
 	<include name="ReloadWindowOnClick">
-		<onclick condition="Window.IsActive(addonbrowser)">SetProperty(ActiveWindow,addons,home)</onclick>
+		<onclick condition="Window.IsActive(addonbrowser)">SetProperty(ActiveWindow,addonbrowser,home)</onclick>
 		<onclick condition="Window.IsActive(music)">SetProperty(ActiveWindow,music,home)</onclick>
 		<onclick condition="Window.IsActive(musicplaylist)">SetProperty(ActiveWindow,musicplaylist,home)</onclick>
 		<onclick condition="Window.IsActive(videoplaylist)">SetProperty(ActiveWindow,videoplaylist,home)</onclick>
 		<onclick condition="Window.IsActive(videos)">SetProperty(ActiveWindow,videos,home)</onclick>
 		<onclick condition="Window.IsActive(programs)">SetProperty(ActiveWindow,programs,home)</onclick>
-		<onclick>SetProperty(ContainerPath,$ESCINFO[Container.FolderPath],home)</onclick>
-		<onclick>Dialog.Close(1115)</onclick>
-		<onclick>ReplaceWindow(1117)</onclick>
+
+		<!-- Set flag BEFORE close so the guard is active throughout the entire replace cycle -->
+		<onclick condition="Window.IsVisible(MyFavourites.xml)">SetProperty(FavsReloading,1,Home)</onclick>
+		<onclick condition="Window.IsVisible(MyFavourites.xml)">Dialog.Close(1115)</onclick>
+		<onclick condition="Window.IsVisible(MyFavourites.xml)">ReplaceWindow(favourites)</onclick>
+
+		<!-- All other windows: unchanged -->
+		<onclick condition="!Window.IsVisible(MyFavourites.xml)">SetProperty(ContainerPath,$ESCINFO[Container.FolderPath],home)</onclick>
+		<onclick condition="!Window.IsVisible(MyFavourites.xml)">Dialog.Close(1115)</onclick>
+		<onclick condition="!Window.IsVisible(MyFavourites.xml)">ReplaceWindow(1117)</onclick>
 	</include>
-	<variable name="VolumeIconVar">
-		<value condition="Player.Muted">[COLOR white]panels/volume/mute.png[/COLOR]</value>
-		<value condition="Integer.IsGreater(Player.Volume,66)">panels/volume/volume.png</value>
-		<value condition="Integer.IsGreater(Player.Volume,33)">panels/volume/volume2.png</value>
-		<value condition="player.passthrough">panels/volume/volume.png</value>
-		<value>panels/volume/volume1.png</value>
-	</variable>
+
 	<variable name="IconPathVar">
 		<value condition="Skin.HasSetting(IconsColored)">icons/colored/</value>
 		<value>icons/default/</value>
 	</variable>
+
 	<!-- Floor -->
 	<include name="Floor">
 		<param name="visible">Skin.HasSetting(SettingsHideFloor)</param>
@@ -177,6 +192,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="FloorHighlight">
 		<param name="top">880</param>
 		<definition>
@@ -188,6 +204,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="FloorHighlightLeft">
 		<param name="top">880</param>
 		<definition>
@@ -199,6 +216,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="FloorHighlightRight">
 		<param name="top">880</param>
 		<definition>
@@ -210,6 +228,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="FloorHighlightMiddle">
 		<param name="top">880</param>
 		<definition>
@@ -221,6 +240,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="FloorShadow">
 		<param name="visible">true</param>
 		<definition>
@@ -233,6 +253,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="FloorShadowWall">
 		<control type="image">
 			<top>900</top>
@@ -241,6 +262,7 @@
 			<texture border="1">panels/wall-gradient.png</texture>
 		</control>
 	</include>
+
 	<!-- Panels -->
 	<include name="PanelWide">
 		<param name="top">860</param>
@@ -271,6 +293,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="PanelDefault">
 		<param name="left">80</param>
 		<param name="right">80</param>
@@ -337,6 +360,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="PanelSideBlade">
 		<param name="left">80</param>
 		<param name="top">110</param>
@@ -400,6 +424,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="PanelSide">
 		<param name="left">80</param>
 		<param name="right">80</param>
@@ -474,15 +499,20 @@
 			</control>
 		</definition>
 	</include>
+
 	<!-- Weather -->
 	<include name="WeatherIconAnimation">
-		<fadetime>1</fadetime>
-		<pauseatend>1</pauseatend>
-		<timeperimage>080</timeperimage>
+		<!-- 1 Seconds -->
+		<fadetime>1000</fadetime>
+		<!-- 1 Seconds -->
+		<pauseatend>1000</pauseatend>
+		<!-- 10 Seconds -->
+		<timeperimage>10000</timeperimage>
 		<randomize>false</randomize>
 		<loop>true</loop>
 		<aspectratio align="center" aligny="center">keep</aspectratio>
 	</include>
+
 	<include name="WeatherVerticalList">
 		<include>AnimationVisibleFade</include>
 		<left>460</left>
@@ -561,6 +591,7 @@
 			</control>
 		</focusedlayout>
 	</include>
+
 	<include name="WeatherHorizontalList">
 		<param name="width">439</param>
 		<definition>
@@ -630,8 +661,9 @@
 			</focusedlayout>
 		</definition>
 	</include>
+
 	<include name="WeatherDayItem">
-		<param name="item"/>
+		<param name="item" />
 		<definition>
 			<item>
 				<label>$INFO[Window(weather).Property(Daily.$PARAM[item].LongDay)]</label>
@@ -642,8 +674,9 @@
 			</item>
 		</definition>
 	</include>
+
 	<include name="WeatherDailyItem">
-		<param name="item"/>
+		<param name="item" />
 		<definition>
 			<item>
 				<label>$INFO[Window.Property(Daily.$PARAM[item].LongDay)]$INFO[Window.Property(Daily.$PARAM[item].LongDate), ]</label>
@@ -654,8 +687,9 @@
 			</item>
 		</definition>
 	</include>
+
 	<include name="WeatherHourlyItem">
-		<param name="item"/>
+		<param name="item" />
 		<definition>
 			<item>
 				<label>$INFO[Window(weather).Property(Hourly.$PARAM[item].Time)]$INFO[Window(weather).Property(Hourly.$PARAM[item].LongDate), ]</label>
@@ -666,8 +700,9 @@
 			</item>
 		</definition>
 	</include>
+
 	<include name="Weather36HourItem">
-		<param name="item"/>
+		<param name="item" />
 		<definition>
 			<item>
 				<label>$INFO[Window.Property(36Hour.$PARAM[item].Heading)]</label>
@@ -677,8 +712,9 @@
 			</item>
 		</definition>
 	</include>
+
 	<include name="WeatherWeekendItem">
-		<param name="item"/>
+		<param name="item" />
 		<definition>
 			<item>
 				<label>$INFO[Window.Property(Weekend.$PARAM[item].LongDay)] $INFO[Window.Property(Weekend.$PARAM[item].LongDate)]</label>
@@ -688,8 +724,9 @@
 			</item>
 		</definition>
 	</include>
+
 	<include name="WeatherMapItem">
-		<param name="item"/>
+		<param name="item" />
 		<param name="visible">false</param>
 		<definition>
 			<control type="group">
@@ -718,11 +755,12 @@
 			</control>
 		</definition>
 	</include>
+
 	<!-- Search -->
 	<include name="Custom1112PortraitSearchContainer">
-		<param name="id"/>
+		<param name="id" />
 		<param name="case">false</param>
-		<param name="content"/>
+		<param name="content" />
 		<definition>
 			<control type="list" id="$PARAM[id]">
 				<visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
@@ -783,10 +821,11 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Custom1112SquareSearchContainer">
-		<param name="id"/>
+		<param name="id" />
 		<param name="case">false</param>
-		<param name="content"/>
+		<param name="content" />
 		<definition>
 			<control type="panel" id="$PARAM[id]">
 				<visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
@@ -846,10 +885,11 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Custom1112SearchInfoContainer">
-		<param name="id"/>
-		<param name="label"/>
-		<param name="content"/>
+		<param name="id" />
+		<param name="label" />
+		<param name="content" />
 		<definition>
 			<control type="grouplist" id="$PARAM[id]0">
 				<visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
@@ -1014,115 +1054,299 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="3PageArrowIndicators">
-		<!-- Fixed 3 Page Indicator Max Limit 24 (Expandable) -->
-		<!-- Indicator for first page (right arrow only if there are more than 8 items) -->
+		<!-- 3 Page Indicator Max Limit 24 (Expandable) -->
+		<!-- Indicator For First Page (Right Arrow Only If There Are More Than 8 Items) -->
 		<control type="image" id="firstPageRightIndicator">
 			<visible>
-					[Container(9000).HasFocus(112) + 
-					Integer.IsLessOrEqual(Container(9004).CurrentItem, 8) + 
-					Integer.IsGreater(Container(9004).NumItems, 8)] |
-					[!Container(9002) + 
-					Integer.IsLessOrEqual(Container(9002).CurrentItem, 8) + 
-					Integer.IsGreater(Container(9002).NumItems, 8)] |
-					[Container(9000).HasFocus(107) + 
-					Integer.IsLessOrEqual(Container(9010).CurrentItem, 8) + 
-					Integer.IsGreater(Container(9010).NumItems, 8)]					
+					[[Container(9000).HasFocus(110) | Container(9000).HasFocus(112) | Container(9000).HasFocus(100001)] + Integer.IsLessOrEqual(Container(9004).CurrentItem, 8) + Integer.IsGreater(Container(9004).NumItems, 8)] | [Control.IsVisible(9002) + Integer.IsLessOrEqual(Container(9002).CurrentItem, 8) + Integer.IsGreater(Container(9002).NumItems, 8)] |
+					[[Container(9000).HasFocus(107) | Container(9000).HasFocus(112)] + Integer.IsLessOrEqual(Container(9010).CurrentItem, 8) + Integer.IsGreater(Container(9010).NumItems, 8)]
 			</visible>
 			<posx>1086</posx>
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>			<!-- RIGHT ARROW  -->
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>
+			<!-- Right Arrow-->
 		</control>
 
-		<!-- Indicator for second page left arrow in 2-page mode -->
+		<!-- Indicator For Second Page Left Arrow In 2-Page Mode -->
 		<control type="image" id="secondPageLeftIndicator2PageMode">
-			<visible>
-					[Integer.IsLessOrEqual(Container(9004).NumItems, 16) + 
-					Container(9000).HasFocus(112) + 
-					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
-					[Integer.IsLessOrEqual(Container(9002).NumItems, 16) + 
-					!Container(9002) + 
-					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
-					[Integer.IsLessOrEqual(Container(9010).NumItems, 16) + 
-					Container(9000).HasFocus(107) + 
-					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
-					
+			<visible>[Integer.IsLessOrEqual(Container(9004).NumItems, 16) +[Container(9000).HasFocus(110) | Container(9000).HasFocus(112) | Container(9000).HasFocus(100001)] + Integer.IsGreater(Container(9004).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |[Integer.IsLessOrEqual(Container(9002).NumItems, 16) + Control.IsVisible(9002) + Integer.IsGreater(Container(9002).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |[Integer.IsLessOrEqual(Container(9010).NumItems, 16) +[Container(9000).HasFocus(107) | Container(9000).HasFocus(112)] + Integer.IsGreater(Container(9010).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]
 			</visible>
-			<posx>1086</posx>			<!-- Match the position of the right arrow from page 1 -->
+			<posx>1086</posx>
+			<!-- Match The Position Of The Right Arrow From Page 1 -->
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>
+			<!-- Left Arrow -->
 		</control>
 
-		<!-- Indicator for second page right arrow in 3-page mode -->
+		<!-- Indicator For Second Page Right Arrow In 3-Page Mode -->
 		<control type="image" id="secondPageRightIndicator3PageMode">
-			<visible>
-					[Integer.IsGreater(Container(9004).NumItems, 16) + 
-					Container(9000).HasFocus(112) + 
-					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
-					[Integer.IsGreater(Container(9002).NumItems, 16) + 
-					!Container(9002) + 
-					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
-					[Integer.IsGreater(Container(9010).NumItems, 16) + 
-					Container(9000).HasFocus(107) + 
-					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]			
+			<visible>[Integer.IsGreater(Container(9004).NumItems, 16) +[Container(9000).HasFocus(110) | Container(9000).HasFocus(112) | Container(9000).HasFocus(100001)] + Integer.IsGreater(Container(9004).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |[Integer.IsGreater(Container(9002).NumItems, 16) + Control.IsVisible(9002) + Integer.IsGreater(Container(9002).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |[Integer.IsGreater(Container(9010).NumItems, 16) +[Container(9000).HasFocus(107) | Container(9000).HasFocus(112)] + Integer.IsGreater(Container(9010).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]
 			</visible>
-			<posx>1086</posx>			<!-- Right arrow in 3-page mode -->
+			<posx>1086</posx>
+			<!-- Right Arrow In 3-Page Mode -->
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>			<!-- RIGHT ARROW -->
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>
+			<!-- Right Arrow -->
 		</control>
 
-		<!-- Indicator for second page left arrow in 3-page mode -->
+		<!-- Indicator For Second Page Left Arrow In 3-Page Mode -->
 		<control type="image" id="secondPageLeftIndicator3PageMode">
-			<visible>
-					[Integer.IsGreater(Container(9004).NumItems, 16) + 
-					Container(9000).HasFocus(112) + 
-					Integer.IsGreater(Container(9004).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |
-					[Integer.IsGreater(Container(9002).NumItems, 16) + 
-					!Container(9002) + 
-					Integer.IsGreater(Container(9002).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |
-					[Integer.IsGreater(Container(9010).NumItems, 16) + 
-					Container(9000).HasFocus(107) + 
-					Integer.IsGreater(Container(9010).CurrentItem, 8) + 
-					Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]					
+			<visible>[Integer.IsGreater(Container(9004).NumItems, 16) +[Container(9000).HasFocus(110) | Container(9000).HasFocus(112) | Container(9000).HasFocus(100001)] + Integer.IsGreater(Container(9004).CurrentItem, 8) + 	Integer.IsLessOrEqual(Container(9004).CurrentItem, 16)] |[Integer.IsGreater(Container(9002).NumItems, 16) + Control.IsVisible(9002) + Integer.IsGreater(Container(9002).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9002).CurrentItem, 16)] |[Integer.IsGreater(Container(9010).NumItems, 16) +[Container(9000).HasFocus(107) | Container(9000).HasFocus(112)] + Integer.IsGreater(Container(9010).CurrentItem, 8) + Integer.IsLessOrEqual(Container(9010).CurrentItem, 16)]
 			</visible>
-			<posx>1031</posx>			<!-- Adjusted position to avoid overlap -->
+			<posx>1031</posx>
+			<!-- Adjusted Position To Avoid Overlap -->
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>
+			<!-- Left Arrow -->
 		</control>
 
-		<!-- Indicator for third page (left arrow only if more than 16 items) -->
+		<!-- Indicator For Third Page (Left Arrow Only If More Than 16 Items) -->
 		<control type="image" id="thirdPageLeftIndicator">
 			<visible>
-					[Container(9000).HasFocus(112) + 
-					Integer.IsGreater(Container(9004).CurrentItem, 16)] |
-					[!Container(9002) +
-					Integer.IsGreater(Container(9002).CurrentItem, 16)]	|
-					[Container(9000).HasFocus(107) +
-					Integer.IsGreater(Container(9010).CurrentItem, 16)]										
+					[[Container(9000).HasFocus(110) | Container(9000).HasFocus(112) | Container(9000).HasFocus(100001)] + Integer.IsGreater(Container(9004).CurrentItem, 16)] |[Control.IsVisible(9002) + Integer.IsGreater(Container(9002).CurrentItem, 16)]	|
+					[[Container(9000).HasFocus(107) | Container(9000).HasFocus(112)] + Integer.IsGreater(Container(9010).CurrentItem, 16)]
 			</visible>
 			<posx>1086</posx>
 			<posy>48</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>			<!-- LEFT ARROW -->
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>
+			<!-- Left Arrow -->
 		</control>
 	</include>
+
+	<include name="3PageArrowIndicatorsMusic">
+		<!-- Indicator For First Page (Right Arrow Only If There Are More Than 7 Items) -->
+		<control type="image" id="firstPageRightIndicator">
+			<visible>[Container(9000).HasFocus(103) | Container(9000).HasFocus(112) | Control.HasFocus(9002)] + Integer.IsLessOrEqual(Container(9002).CurrentItem, 7) + Integer.IsGreater(Container(9002).NumItems, 7)</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>
+		</control>
+
+		<!-- Indicator For Second Page Left Arrow In 2-Page Mode -->
+		<control type="image" id="secondPageLeftIndicator2PageMode">
+			<visible>[Container(9000).HasFocus(103) | Container(9000).HasFocus(112) | Control.HasFocus(9002)] + Integer.IsLessOrEqual(Container(9002).NumItems, 14) + Integer.IsGreater(Container(9002).CurrentItem, 7) + Integer.IsLessOrEqual(Container(9002).CurrentItem, 14)</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>
+		</control>
+
+		<!-- Indicator For Second Page Right Arrow In 3-Page Mode -->
+		<control type="image" id="secondPageRightIndicator3PageMode">
+			<visible>[Container(9000).HasFocus(103) | Container(9000).HasFocus(112) | Control.HasFocus(9002)] + Integer.IsGreater(Container(9002).NumItems, 14) + Integer.IsGreater(Container(9002).CurrentItem, 7) + Integer.IsLessOrEqual(Container(9002).CurrentItem, 14)</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-right-focus-blue.png</texture>
+		</control>
+
+		<!-- Indicator For Second Page Left Arrow In 3-Page Mode -->
+		<control type="image" id="secondPageLeftIndicator3PageMode">
+			<visible>[Container(9000).HasFocus(103) | Container(9000).HasFocus(112) | Control.HasFocus(9002)] + Integer.IsGreater(Container(9002).NumItems, 14) + Integer.IsGreater(Container(9002).CurrentItem, 7) + Integer.IsLessOrEqual(Container(9002).CurrentItem, 14)</visible>
+			<posx>1031</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>
+		</control>
+
+		<!-- Indicator For Third Page (Left Arrow Only If More Than 14 Items) -->
+		<control type="image" id="thirdPageLeftIndicator">
+			<visible>[Container(9000).HasFocus(103) | Container(9000).HasFocus(112) | Control.HasFocus(9002)] + Integer.IsGreater(Container(9002).CurrentItem, 14)</visible>
+			<posx>1086</posx>
+			<posy>48</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>special://skin/media/buttons/arrow-left-focus-blue.png</texture>
+		</control>
+	</include>
+
+	<!-- Large Startup Logo -->
+	<include name="StartUpLogoWidthLargeVar">
+		<width>1600</width>
+	</include>
+
+	<include name="StartUpLogoHeightLargeVar">
+		<height>520</height>
+	</include>
+
+	<!-- Small Startup Logo -->
+	<include name="StartUpLogoWidthSmallVar">
+		<width>800</width>
+	</include>
+
+	<include name="StartUpLogoHeightSmallVar">
+		<height>260</height>
+	</include>
+
+	<!-- Hidden Control -->
+	<!-- Used for Actor Full Screen Image Navigation Start DialogVideoInfo.xml -->
+	<include name="HiddenControl">
+		<left>-20</left>
+		<top>-20</top>
+		<width>1</width>
+		<height>1</height>
+		<font />
+		<texture />
+		<texturefocus />
+		<texturenofocus />
+		<alttexturenofocus />
+		<alttexturefocus />
+		<textureradiofocus />
+		<textureradionofocus />
+	</include>
+
+	<!-- Add Any New Include Above This Line -->
+
+	<!-- =============================================================== -->
+	<!-- System                                                          -->
+	<!-- =============================================================== -->
+
+	<variable name="KodiBuildVersionNames">
+		<!-- Anything 18.X Or Lower Not Supported -->
+		<value condition="!String.StartsWith(System.BuildVersion,19.) + !String.StartsWith(System.BuildVersion,20.) + !String.StartsWith(System.BuildVersion,21.) + !String.StartsWith(System.BuildVersion,22.)">Unsupported</value>
+		<value condition="String.StartsWith(System.BuildVersion,22.)">Piers</value>
+		<value condition="String.StartsWith(System.BuildVersion,21.)">Omega</value>
+		<value condition="String.StartsWith(System.BuildVersion,20.)">Nexus</value>
+		<value condition="String.StartsWith(System.BuildVersion,19.)">Matrix</value>
+	</variable>
+
+	<variable name="PersonMoviesContentVar">
+		<value condition="!String.IsEmpty(ListItem.Property(tmdb_id))">plugin://plugin.video.themoviedb.helper?info=stars_in_movies&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;nextpage=false&amp;limit=100</value>
+	</variable>
+
+	<variable name="PersonTVShowsContentVar">
+		<value condition="!String.IsEmpty(ListItem.Property(tmdb_id))">plugin://plugin.video.themoviedb.helper?info=stars_in_tvshows&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;nextpage=false&amp;limit=100</value>
+	</variable>
+
+	<variable name="PersonImagesContentVar">
+		<value condition="!String.IsEmpty(ListItem.Property(tmdb_id))">plugin://plugin.video.themoviedb.helper?info=images&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</value>
+	</variable>
+
+	<include name="Object_ProgressBar">
+		<!-- Default Parameters (Fallbacks) -->
+		<param name="left" default="15" />
+		<param name="right" default="15" />
+		<param name="bottom" default="20" />
+		<param name="height" default="8" />
+		<param name="color" default="FF0099CC" />
+		<!-- Default Blue -->
+
+		<definition>
+			<control type="group">
+				<visible>ListItem.IsResumable + !String.IsEqual(ListItem.DBType,tvshow)</visible>
+				<left>$PARAM[left]</left>
+				<right>$PARAM[right]</right>
+				<bottom>$PARAM[bottom]</bottom>
+				<height>$PARAM[height]</height>
+
+				<!-- Option A: User Custom Color -->
+				<!-- Visible When Disable Setting Is True (Inverted Logic) -->
+				<control type="progress">
+					<visible>!Skin.HasSetting(DisableProgressBarUserColorSelect)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>100%</width>
+					<height>100%</height>
+					<info>ListItem.PercentPlayed</info>
+					<!-- Background -->
+					<texturebg colordiffuse="99000000">colors/white.png</texturebg>
+					<!-- Foreground: Uses The Skin String Set By The Color Picker -->
+					<!-- Accessed via $INFO[Skin.String(...)] -->
+					<midtexture colordiffuse="$INFO[Skin.String(DisableProgressBarUserColorSelectVar.color)]">colors/white.png</midtexture>
+					<lefttexture />
+					<righttexture />
+					<overlaytexture />
+				</control>
+
+				<!-- Option B: Default / Param Color -->
+				<!-- Visible When Disable Setting Is False (Inverted Logic) -->
+				<control type="progress">
+					<visible>Skin.HasSetting(DisableProgressBarUserColorSelect)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>100%</width>
+					<height>100%</height>
+					<info>ListItem.PercentPlayed</info>
+					<!-- Background -->
+					<texturebg colordiffuse="99000000">colors/white.png</texturebg>
+					<!-- Foreground: Uses the $PARAM passed by the specific View -->
+					<midtexture colordiffuse="$PARAM[color]">colors/white.png</midtexture>
+					<lefttexture />
+					<righttexture />
+					<overlaytexture />
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<variable name="Wikipedia_Title_Path">
+		<value condition="!String.IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+
+	<variable name="Wikipedia_Type_Path">
+		<value condition="String.IsEqual(ListItem.DBType,tvshow)">tv</value>
+		<value condition="String.IsEqual(ListItem.DBType,season)">tv</value>
+		<value condition="String.IsEqual(ListItem.DBType,episode)">tv</value>
+		<value condition="String.IsEqual(ListItem.DBType,movie)">movie</value>
+	</variable>
+
+	<variable name="PlayCountSuffixVar">
+		<value condition="Integer.IsLess(ListItem.PlayCount, 2)">$LOCALIZE[555]</value>
+		<value>$LOCALIZE[576]</value>
+	</variable>
+
+	<variable name="VolumeIconVar">
+		<value condition="Player.Muted">[COLOR white]panels/volume/mute.png[/COLOR]</value>
+		<value condition="Integer.IsGreater(Player.Volume,66)">panels/volume/volume.png</value>
+		<value condition="Integer.IsGreater(Player.Volume,33)">panels/volume/volume2.png</value>
+		<value condition="player.passthrough">panels/volume/volume.png</value>
+		<value>panels/volume/volume1.png</value>
+	</variable>
+
+	<variable name="ResolutionMediaColorFlagUserLabel2Var">
+		<!-- <value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value> -->
+		<!-- <value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]</value> -->
+		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
+		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
+		<value>Icon Error        </value>
+	</variable>
+
+	<!-- Aspect Ratio Media Color Flag User Label 2 Variable -->
+	<variable name="AspectRatioMediaColorFlagUserLabel2Var">
+		<!-- <value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value> -->
+		<!-- <value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]</value> -->
+
+		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
+		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
+
+		<value>Icon Error        </value>
+	</variable>
+
+	<!-- Small/Large Logo Icon Selector-->
+	<variable name="StartUpLogoSizeVar">
+		<value condition="Skin.HasSetting(startuplogolargesizeonstart)">icons/logo-doubled.png</value>
+		<value>icons/logo.png</value>
+	</variable>
+
 	<variable name="ColorSelectedPicker">
 		<value condition="Window.IsActive(Custom_1104_DialogOverlayColorPicker.xml) + Control.HasFocus(6)">$LOCALIZE[31044]: $INFO[ListItem.Label] - [UPPERCASE]$INFO[ListItem.Label2,#][/UPPERCASE]</value>
 		<value>$LOCALIZE[31044]: Select a color from palette</value>
@@ -1553,35 +1777,65 @@
 		<value>Default</value>
 	</variable>
 
-	<!-- Invisible letter for spacing needs -->
+	<!-- Invisible Letter For Spacing Needs -->
 	<variable name="1BlankSpace">
 		<value>[COLOR=00ffffff]1[/COLOR]</value>
 	</variable>
+
 	<variable name="2BlankSpace">
 		<value>[COLOR=00ffffff]11[/COLOR]</value>
 	</variable>
+
 	<variable name="3BlankSpace">
 		<value>[COLOR=00ffffff]111[/COLOR]</value>
 	</variable>
+
 	<variable name="4BlankSpace">
 		<value>[COLOR=00ffffff]1111[/COLOR]</value>
 	</variable>
+
 	<variable name="5BlankSpace">
 		<value>[COLOR=00ffffff]11111[/COLOR]</value>
 	</variable>
+
 	<variable name="6BlankSpace">
 		<value>[COLOR=00ffffff]111111[/COLOR]</value>
 	</variable>
+
 	<variable name="7BlankSpace">
 		<value>[COLOR=00ffffff]1111111[/COLOR]</value>
 	</variable>
+
 	<variable name="8BlankSpace">
 		<value>[COLOR=00ffffff]11111111[/COLOR]</value>
 	</variable>
+
 	<variable name="9BlankSpace">
 		<value>[COLOR=00ffffff]111111111[/COLOR]</value>
 	</variable>
+
 	<variable name="10BlankSpace">
+		<value>[COLOR=00ffffff]1111111111[/COLOR]</value>
+	</variable>
+
+	<variable name="BlurAccentPaddingVar">
+		<!-- Only show the spacer if Blur is ON AND Color is ON -->
+		<value condition="Skin.HasSetting(VideoBlurEnabled) + Skin.HasSetting(VideoBlurWithColor) | Skin.HasSetting(MusicBlurEnabled) + Skin.HasSetting(MusicBlurWithColor)">[COLOR=00ffffff]1111[/COLOR]</value>
+		<value />
+	</variable>
+
+	<variable name="InProgressBarPaddingVar">
+		<value condition="!Skin.HasSetting(DisableProgressBarUserColorSelect)">[COLOR=00ffffff]1111[/COLOR]</value>
+		<value />
+	</variable>
+
+	<variable name="StarCustomColorPaddingVar">
+		<value condition="String.IsEqual(Skin.String(StarRating.Style),custom)">[COLOR=00ffffff]111[/COLOR]</value>
+		<value />
+	</variable>
+
+	<variable name="StarCustomColorTextPaddingVar">
+		<!-- <value condition="String.IsEqual(Skin.String(StarRating.Style),custom)">[COLOR=00ffffff]111111111[/COLOR]</value> -->
 		<value>[COLOR=00ffffff]1111111111[/COLOR]</value>
 	</variable>
 
@@ -1934,58 +2188,221 @@
 		<value>0</value>
 	</variable>
 
-	<!-- Large Startup Logo -->
-	<include name="StartUpLogoWidthLargeVar">
-		<width>1600</width>
-	</include>
-	<include name="StartUpLogoHeightLargeVar">
-		<height>520</height>
-	</include>
-	<!-- Small Startup Logo -->
-	<include name="StartUpLogoWidthSmallVar">
-		<width>800</width>
-	</include>
-	<include name="StartUpLogoHeightSmallVar">
-		<height>260</height>
-	</include>
-	<!-- Small/Large Logo Icon Selector-->
-	<variable name="StartUpLogoSizeVar">
-		<value condition="Skin.HasSetting(startuplogolargesizeonstart)">icons/logo-doubled.png</value>
-		<value>icons/logo.png</value>
+	<variable name="IntroVideoStartUpTypeSelection">
+		<value condition="String.IsEqual(Skin.String(IntroVideoStartUpTypeSelectionValue),None)">None</value>
+		<value condition="String.IsEqual(Skin.String(IntroVideoStartUpTypeSelectionValue),Browse)">Browse</value>
+		<value>Default</value>
 	</variable>
 
-	<variable name="ResolutionMediaColorFlagUserLabel2Var">
-		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
-		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
-						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
-						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[ResolutionMediaColorFlagUserLabelVar]        </value>
-		<value>Icon Error        </value>
+	<!-- Helper Variable for the Fanart Alpha Button Label -->
+	<variable name="FanartBlackAlphaLabelVar">
+		<!-- If The Value Is 8, Show "(Default)" -->
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),8)">$INFO[Skin.String(FanartBlackAlpha)] (Default)</value>
+		<!-- If The String Is Empty, Also Show The Default -->
+		<value condition="String.IsEmpty(Skin.String(FanartBlackAlpha))">8 (Default)</value>
+		<!-- Otherwise, Just Show The Number -->
+		<value>$INFO[Skin.String(FanartBlackAlpha)]</value>
 	</variable>
 
-    <!-- Aspect Ratio Media Color Flag User Label 2 Variable -->
-	<variable name="AspectRatioMediaColorFlagUserLabel2Var">
-		<value condition="Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]$VAR[MediaColorFlagUserLabelForcedPadding]</value>
-		<value condition="Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored) | 
-						  !Skin.HasSetting(iconscolored) + Skin.HasSetting(mediaflagscolored) | 
-						  !Skin.HasSetting(iconscolored) + !Skin.HasSetting(mediaflagscolored)">$VAR[AspectRatioMediaColorFlagUserLabelVar]        </value>
-		<value>Icon Error        </value>
+	<!-- Main Variable To Convert The Number To A Hex Color -->
+	<variable name="FanartBlackAlphaVar">
+		<value condition="String.IsEmpty(Skin.String(FanartBlackAlpha))">CC000000</value>
+		<!-- Default to 8/80% -->
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),1)">1A000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),2)">33000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),3)">4D000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),4)">66000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),5)">80000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),6)">99000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),7)">B3000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),8)">CC000000</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),9)">E6000000</value>
+		<value>FF000000</value>
+		<!-- Fallback For Value 10 -->
 	</variable>
 
-    <!-- Hidden Control -->
-	<include name="HiddenControl">
-		<left>-20</left>
-		<top>-20</top>
-		<width>1</width>
-		<height>1</height>
-		<font/>
-		<texture/>
-		<texturefocus/>
-		<texturenofocus/>
-		<alttexturenofocus/>
-		<alttexturefocus/>
-		<textureradiofocus/>
-		<textureradionofocus/>
-	</include>	
+	<variable name="FanartBlurOffDimmingVar">
+		<value condition="String.IsEmpty(Skin.String(FanartBlackAlpha))">Skin.SetString(FanartBlackAlpha,9)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),1)">Skin.SetString(FanartBlackAlpha,2)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),2)">Skin.SetString(FanartBlackAlpha,3)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),3)">Skin.SetString(FanartBlackAlpha,4)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),4)">Skin.SetString(FanartBlackAlpha,5)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),5)">Skin.SetString(FanartBlackAlpha,6)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),6)">Skin.SetString(FanartBlackAlpha,7)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),7)">Skin.SetString(FanartBlackAlpha,8)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),8)">Skin.SetString(FanartBlackAlpha,9)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),9)">Skin.SetString(FanartBlackAlpha,10)</value>
+		<value condition="String.IsEqual(Skin.String(FanartBlackAlpha),10)">Skin.SetString(FanartBlackAlpha,1)</value>
+	</variable>
 
-	<!-- Add any new include above this line -->
+	<!-- Helper Variable for the Reset Button Label -->
+	<variable name="ResetDimmingLabelVar">
+		<!-- This Text Shows When The Button Is Disabled (I.E., Already At Default) -->
+		<value condition="String.IsEmpty(Skin.String(FanartBlackAlpha)) | String.IsEqual(Skin.String(FanartBlackAlpha),8)">>>  Reset overlay dimming (Default)</value>
+		<!-- This Text Shows When The Button Is Enabled -->
+		<value>>>  Reset overlay dimming (Click to Reset)</value>
+	</variable>
+
+	<!-- =============================================================== -->
+	<!--  1105 Dialog Variables                                          -->
+	<!-- =============================================================== -->
+	<!-- Specific Path Variable: Listens Only To The Dialog Toggle, Ignores Global Settings -->
+	<variable name="MediaFlagsVideoCodecPathVar">
+		<value condition="Skin.HasSetting(MediaFlagsVideoCodecColored)">flags/colored/</value>
+		<value>flags/default/</value>
+	</variable>
+
+	<!-- Target Setting -->
+	<variable name="Var_1105_TargetVar">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">UserSel_Flag_4K</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">UserSel_Flag_WebDL</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">UserSel_Flag_1080p</value>
+		<!-- Added 720p Logic -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">UserSel_Flag_720p</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">UserSel_Flag_DVD</value>
+		<value>UserSel_Flag_General</value>
+	</variable>
+
+	<!-- Display Label -->
+	<variable name="Var_1105_DisplayLabel">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">[COLOR dd00ff00]4K / UHD[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">[COLOR dd00ff00]WebDL[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">[COLOR dd00ff00]1080p[/COLOR]</value>
+		<!-- Added 720p Logic -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">[COLOR dd00ff00]720p[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">[COLOR dd00ff00]DVD / SD[/COLOR]</value>
+		<value>General</value>
+	</variable>
+
+	<!-- Preview Filename -->
+	<variable name="Var_1105_PreviewFile">
+		<value condition="Control.IsVisible(50)">$INFO[Container(50).ListItem.Label]</value>
+		<value condition="Control.IsVisible(51)">$INFO[Container(51).ListItem.Label]</value>
+		<value condition="Control.IsVisible(52)">$INFO[Container(52).ListItem.Label]</value>
+		<value condition="Control.IsVisible(53)">$INFO[Container(53).ListItem.Label]</value>
+		<value condition="Control.IsVisible(54)">$INFO[Container(54).ListItem.Label]</value>
+		<value condition="Control.IsVisible(55)">$INFO[Container(55).ListItem.Label]</value>
+		<value condition="Control.IsVisible(56)">$INFO[Container(56).ListItem.Label]</value>
+	</variable>
+
+	<!-- Preview Icon: Uses The New Specific Path Variable -->
+	<variable name="Var_1105_PreviewIcon">
+		<value>$VAR[MediaFlagsVideoCodecPathVar]videocodec/$VAR[Var_1105_PreviewFile]</value>
+	</variable>
+
+	<!-- White Icons Toggle Label -->
+	<variable name="Var_1105_ColorToggleLabel">
+		<value condition="Skin.HasSetting(MediaFlagsVideoCodecColored)">Icons: Color</value>
+		<value>Icons: White</value>
+	</variable>
+
+	<!-- Current Filename -->
+	<variable name="Var_1105_CurrentFile">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">$INFO[Skin.String(UserSel_Flag_4K)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">$INFO[Skin.String(UserSel_Flag_WebDL)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">$INFO[Skin.String(UserSel_Flag_1080p)]</value>
+		<!-- Added 720p Logic -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">$INFO[Skin.String(UserSel_Flag_720p)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+		<value>$INFO[Skin.String(UserSel_Flag_General)]</value>
+	</variable>
+
+	<!-- Current Icon Path: Uses The New Specific Path Variable -->
+	<variable name="Var_1105_CurrentIcon">
+		<value>$VAR[MediaFlagsVideoCodecPathVar]videocodec/$VAR[Var_1105_CurrentFile]</value>
+	</variable>
+
+	<!-- =============================================================== -->
+	<!--  Cinema Mode Variables                                          -->
+	<!-- =============================================================== -->
+
+	<variable name="CinemaAssetsStatusIcon">
+		<!-- Valid: Green "OK" -->
+		<value condition="String.IsEqual(Skin.String(CinemaAssetsStatus),Valid)">[COLOR FF66BB66]OK[/COLOR]</value>
+		<!-- Invalid: Red "REPAIR" -->
+		<value condition="String.IsEqual(Skin.String(CinemaAssetsStatus),Invalid)">[COLOR FFCC4444]REPAIR[/COLOR]</value>
+		<!-- Default: Empty -->
+		<value />
+	</variable>
+
+	<variable name="CinemaSourceLabel">
+		<value condition="String.IsEqual(Skin.String(TrailerSource),2)">$LOCALIZE[31478]</value>
+		<!-- Or Hardcode "Local Library" -->
+		<value condition="String.IsEqual(Skin.String(TrailerSource),1)">$LOCALIZE[31479]</value>
+		<!-- Or Hardcode "Upcoming (Tmdb)" -->
+		<value>In Theaters (TMDb)</value>
+		<!-- Default $ADDON[plugin.video.themoviedb.helper 32190] -->
+	</variable>
+
+	<!-- =============================================================== -->
+	<!--  Widgets Battery Fanart & Icon Levels                           -->
+	<!-- =============================================================== -->
+
+	<!-- 
+	Variable to dynamically select the battery fanart.
+	Images paths: 'icons/systeminfo/fanart/':
+	- battery-critical.jpg   (Not present OR 3% or less)
+	- battery10.jpg          (4% to 10%)
+	- battery50.jpg          (11% to 59%)
+	- battery100.jpg         (60% to 100%)
+	-->
+	<variable name="BatteryFanartVar">
+		<description>Battery monitor in popup panel</description>
+		<!-- Handle Case Where No Battery Is Detected Or Level Is Critical (3% Or Less) -->
+		<value condition="String.IsEqual(System.BatteryLevel, Not present) | Integer.IsLessOrEqual(System.BatteryLevel, 5)">icons/systeminfo/fanart/battery-critical.jpg</value>
+		<!-- 4% to 10% -->
+		<value condition="Integer.IsLessOrEqual(System.BatteryLevel, 10)">icons/systeminfo/fanart/battery10.jpg</value>
+		<!-- 11% to 59% -->
+		<value condition="Integer.IsLessOrEqual(System.BatteryLevel, 59)">icons/systeminfo/fanart/battery50.jpg</value>
+		<!-- 60% To 100% (Fallback) -->
+		<value>icons/systeminfo/fanart/battery100.jpg</value>
+	</variable>
+
+	<variable name="BatteryIconVar">
+		<description>Battery monitor in dashboard icons</description>
+		<!-- Handle Case Where No Battery Is Detected Or Level Is Critical (3% Or Less) -->
+		<value condition="String.IsEqual(System.BatteryLevel, Not present) | Integer.IsLessOrEqual(System.BatteryLevel, 5)">icons/systeminfo/icons/battery-critical.png</value>
+		<!-- 4% to 10% -->
+		<value condition="Integer.IsLessOrEqual(System.BatteryLevel, 10)">icons/systeminfo/icons/battery10.png</value>
+		<!-- 11% to 59% -->
+		<value condition="Integer.IsLessOrEqual(System.BatteryLevel, 59)">icons/systeminfo/icons/battery50.png</value>
+		<!-- 60% To 100% (Fallback) -->
+		<value>icons/systeminfo/icons/battery100.png</value>
+	</variable>
+
+	<!-- =============================================================== -->
+	<!--  Context Menu Memory                                            -->
+	<!-- =============================================================== -->
+
+	<include name="ContextMenuFocus_Standard">
+		<defaultcontrol>996</defaultcontrol>
+	</include>
+
+	<include name="ContextMenuFocus_Always">
+		<defaultcontrol always="true">996</defaultcontrol>
+	</include>
+
+	<!-- =============================================================== -->
+	<!--  Custom Overlay Debug Variable                                  -->
+	<!-- =============================================================== -->
+
+	<variable name="Smart_DBType_Var">
+		<!-- Check TMDbHelper specific Window Properties (Most reliable for TMDbH) -->
+		<value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Type),person)">person</value>
+		<!-- Check Item Properties (ExtendedInfo / other scripts) -->
+		<value condition="String.IsEqual(ListItem.Property(item.type),person)">person</value>
+		<value condition="String.IsEqual(ListItem.Property(type),person)">person</value>
+		<!-- Check for specific Actor InfoLabels (If a birthdate exists, it's definitely a person!) -->
+		<value condition="!String.IsEmpty(ListItem.Property(Actor_Born)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Birthday))">person</value>
+		<!-- Native Kodi DBType Check (If Kodi actually gets it right) -->
+		<value condition="String.IsEqual(ListItem.DBType,person) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,director)">person</value>
+		<!-- Fallback for TV Shows mistakenly tagged as "video" (If it has a season, it's TV) -->
+		<value condition="String.IsEqual(ListItem.DBType,video) + !String.IsEmpty(ListItem.Season)">tvshow</value>
+		<value>$INFO[ListItem.DBType]</value>
+	</variable>
+
+	<variable name="WikiSectionDiffuseColor">
+		<value condition="!String.IsEmpty(Skin.String(WikiSection.color))">$INFO[Skin.String(WikiSection.color)]</value>
+		<value>FF161515</value>
+	</variable>
 </includes>

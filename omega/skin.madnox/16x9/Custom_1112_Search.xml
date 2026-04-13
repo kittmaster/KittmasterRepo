@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window type="window" id="1112">
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<onload condition="String.IsEmpty(Skin.String(SearchTerm))">AlarmClock(Search,Action(Close),00:01,silent)</onload>
@@ -13,7 +13,7 @@
 				<param name="imagepath">$VAR[SearchBackgroundVar]</param>
 				<param name="animatedfanart">Skin.HasSetting(SearchAnimatedFanart)</param>
 			</include>
-			<!-- Background fade -->
+			<!-- Background Fade -->
 			<control type="image">
 				<width>1300</width>
 				<texture colordiffuse="ff000000">panels/kodiflix-gradient.png</texture>
@@ -186,7 +186,7 @@
 						<param name="id">8014</param>
 						<param name="content">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Skin.String(SearchTerm)]%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</param>
 					</include>
-					<!-- Music Video artists -->
+					<!-- Music Video Artists -->
 					<include content="Custom1112SearchInfoContainer">
 						<param name="id">8015</param>
 						<param name="label">$LOCALIZE[31371]</param>
@@ -249,13 +249,13 @@
 				<param name="content">MediaMenuSearch</param>
 				<param name="navigationid">8000</param>
 			</include>
-			<!-- Hidden - Album/Song count -->
+			<!-- Hidden - Album/Song Count -->
 			<control type="list" id="811111">
 				<visible>Control.HasFocus(8011) | Control.HasFocus(8012)</visible>
 				<include>HiddenList</include>
 				<content>$INFO[ListItem.FolderPath]</content>
 			</control>
-			<!-- Studio Logo check if image exists -->
+			<!-- Studio Logo Check If Image Exists -->
 			<control type="image" id="811112">
 				<include>HiddenObject</include>
 				<texture fallback="none">$VAR[StudioIconsVar]</texture>

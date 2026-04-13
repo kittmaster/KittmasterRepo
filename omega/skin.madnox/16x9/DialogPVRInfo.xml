@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include>AnimationDialogPopupWindow</include>
@@ -11,6 +11,14 @@
 				<param name="textbox">$INFO[ListItem.Plot]</param>
 				<param name="infocontent">PVRInfoContent</param>
 			</include>
+			<control type="image">
+				<left>1114</left>
+				<top>20</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
 			<!-- Buttons -->
 			<control type="list" id="9000">
 				<top>393</top>

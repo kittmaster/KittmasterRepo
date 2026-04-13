@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window type="window" id="1102">
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<menucontrol>9050</menucontrol>
@@ -8,7 +8,7 @@
 			<param name="imagepath">$VAR[VideoBackgroundVar]</param>
 			<param name="animatedfanart">Skin.HasSetting(VideoAnimatedFanart)</param>
 		</include>
-		<!-- Background fade -->
+		<!-- Background Fade -->
 		<control type="image">
 			<width>1300</width>
 			<texture colordiffuse="ff000000">panels/kodiflix-gradient.png</texture>
@@ -205,7 +205,7 @@
 				<param name="left">50</param>
 				<param name="width">1820</param>
 			</include>
-			<!-- Media flags -->
+			<!-- Media Flags -->
 			<control type="grouplist">
 				<visible>!Container(8000).IsUpdating</visible>
 				<bottom>20</bottom>
@@ -222,7 +222,7 @@
 				</control>
 				<control type="image">
 					<visible>!String.IsEqual(Control.GetLabel(811113),none)</visible>
-					<bordersize>0,10,0,10</bordersize>
+					<bordersize>0,5,0,10</bordersize>
 					<texture>$VAR[StudioIconNextAiredVar]</texture>
 					<include>MediaFlagImage</include>
 				</control>
@@ -241,7 +241,7 @@
 			<param name="content">MediaMenuNextAired</param>
 			<param name="navigationid">8000</param>
 		</include>
-		<!-- Studio Logo check if image exists -->
+		<!-- Studio Logo Check If Image Exists -->
 		<control type="image" id="811113">
 			<include>HiddenObject</include>
 			<texture fallback="none">$VAR[StudioIconNextAiredVar]</texture>

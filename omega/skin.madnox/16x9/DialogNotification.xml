@@ -1,9 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<controls>
 		<control type="group">
 			<animation effect="zoom" end="80" center="auto" time="480" tween="cubic" easing="inout" condition="Skin.HasSetting(SmallerNotifications)">Conditional</animation>
 			<include>AnimationDialogPopupNotification</include>
+			<!-- 
+				LOGIC UPDATE:
+				Check for the 'Madnox.SkinReady' property on Home.
+				- During Startup/Intro: This property is Empty -> !Empty is False -> Dialog Hidden.
+				- After Home Loads: Property is True -> !Empty is True -> Dialog Allowed.
+			-->
+			<visible>!String.IsEmpty(Window(Home).Property(Madnox.SkinReady)) + ![Window.IsActive(fullscreenvideo) + String.IsEqual(Player.Filenameandpath,Skin.String(IntroVideoSelectStartupValue))]</visible>
 			<top>49</top>
 			<left>595</left>
 			<height>134</height>

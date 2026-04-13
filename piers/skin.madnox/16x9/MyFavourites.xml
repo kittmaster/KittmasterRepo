@@ -1,30 +1,436 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
-	<views>50,51,521,541</views>
+	<views>50,51,521,5211,541,5411</views>
 	<menucontrol>9050</menucontrol>
+
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fanart)|Art(tvshow.fanart)|Art(landscape)|Art(thumb)|Icon,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper)">SetProperty(TMDbHelper.Blur.Fallback,$VAR[FavouritesBackgroundVar],Home)</onload>
+	<onload>SetProperty(ActiveWindow,favourites,Home)</onload>
+
 	<controls>
-		<!-- Background -->
+		<!-- ============================================== -->
+		<!-- HIDDEN LISTS FOR DEEP LIBRARY DATA  -->
+		<!-- ============================================== -->
+		<control type="list" id="9901">
+			<left>-9999</left>
+			<top>-9999</top>
+			<width>10</width>
+			<height>10</height>
+			<itemlayout height="10" width="10" />
+			<focusedlayout height="10" width="10" />
+			<content limit="1">videodb://movies/titles/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[ListItem.Label]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</content>
+		</control>
+		<control type="list" id="9902">
+			<left>-9999</left>
+			<top>-9999</top>
+			<width>10</width>
+			<height>10</height>
+			<itemlayout height="10" width="10" />
+			<focusedlayout height="10" width="10" />
+			<content limit="1">videodb://tvshows/titles/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[ListItem.Label]%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D</content>
+		</control>
+
+		<!-- BULLETPROOF HIDDEN LABEL FOR CLEARLOGO -->
+		<!-- Safely merges Movie, TV, and Addon logos into a single string to prevent overlaps -->
+		<control type="label" id="9910">
+			<left>-9999</left>
+			<label fallback="$INFO[ListItem.Art(clearlogo)]">$INFO[Container(9901).ListItem.Art(clearlogo)]$INFO[Container(9902).ListItem.Art(clearlogo)]</label>
+		</control>
+
+		<!-- Default Background -->
 		<include content="BackgroundDefault">
 			<param name="imagepath">$VAR[FavouritesBackgroundVar]</param>
 			<param name="animatedfanart">Skin.HasSetting(FavouritesAnimatedFanart)</param>
 		</include>
+
+		<!-- DYNAMIC FANART & BLUR LAYER -->
 		<control type="group">
 			<include>AnimationVisibleFade</include>
-			<!-- List -->
+			<control type="image">
+				<visible>Integer.IsGreater(Container(9901).NumItems,0) + !String.IsEmpty(Container(9901).ListItem.Art(fanart))</visible>
+				<fadetime>TextureFadeTime</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Container(9901).ListItem.Art(fanart)]</texture>
+			</control>
+			<control type="image">
+				<visible>Integer.IsGreater(Container(9902).NumItems,0) + Integer.IsEqual(Container(9901).NumItems,0) + !String.IsEmpty(Container(9902).ListItem.Art(fanart))</visible>
+				<fadetime>TextureFadeTime</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Container(9902).ListItem.Art(fanart)]</texture>
+			</control>
+			<control type="image">
+				<visible>Integer.IsEqual(Container(9901).NumItems,0) + Integer.IsEqual(Container(9902).NumItems,0)</visible>
+				<fadetime>TextureFadeTime</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$VAR[FanartDynamicVar]</texture>
+			</control>
+
+			<!-- Blur Overlay -->
+			<control type="group">
+				<visible>Skin.HasSetting(VideoBlurEnabled) | Skin.HasSetting(MusicBlurEnabled)</visible>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<fadetime>TextureFadeTime</fadetime>
+					<texture>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</texture>
+				</control>
+				<control type="image">
+					<colordiffuse>$INFO[Skin.String(blur_listitem_art_overlay.color)]</colordiffuse>
+					<texture>colors/white50.png</texture>
+				</control>
+				<control type="image">
+					<texture>colors/black50.png</texture>
+				</control>
+			</control>
+		</control>
+
+		<!-- DYNAMIC CLEARART LAYER -->
+		<control type="group">
+			<right>0</right>
+			<top>0</top>
+			<width>960</width>
+			<height>1080</height>
+			<!-- Movie Clearart -->
+			<control type="image">
+				<visible>Integer.IsGreater(Container(9901).NumItems,0) + !String.IsEmpty(Container(9901).ListItem.Art(clearart))</visible>
+				<include>AnimationVisibleFade</include>
+				<aspectratio>keep</aspectratio>
+				<align>right</align>
+				<fadetime>TextureFadeTime</fadetime>
+				<texture colordiffuse="aaffffff">$INFO[Container(9901).ListItem.Art(clearart)]</texture>
+			</control>
+			<!-- TV Show Clearart -->
+			<control type="image">
+				<visible>Integer.IsGreater(Container(9902).NumItems,0) + Integer.IsEqual(Container(9901).NumItems,0) + !String.IsEmpty(Container(9902).ListItem.Art(clearart))</visible>
+				<include>AnimationVisibleFade</include>
+				<aspectratio>keep</aspectratio>
+				<align>right</align>
+				<fadetime>TextureFadeTime</fadetime>
+				<texture colordiffuse="aaffffff">$INFO[Container(9902).ListItem.Art(clearart)]</texture>
+			</control>
+			<!-- Fallback Clearart -->
+			<control type="image">
+				<visible>Integer.IsEqual(Container(9901).NumItems,0) + Integer.IsEqual(Container(9902).NumItems,0) + !String.IsEmpty(ListItem.Art(clearart))</visible>
+				<include>AnimationVisibleFade</include>
+				<aspectratio>keep</aspectratio>
+				<align>right</align>
+				<fadetime>TextureFadeTime</fadetime>
+				<texture colordiffuse="aaffffff">$INFO[ListItem.Art(clearart)]</texture>
+			</control>
+		</control>
+
+		<!-- Standard Views -->
+		<control type="group">
+			<include>AnimationVisibleFade</include>
 			<include>View50CoverList</include>
 			<include>View51SimpleList</include>
-			<!-- Icon -->
 			<include condition="!Skin.HasSetting(DisableViewSquareIcon)">View521SquareIcon</include>
-			<!-- Wall -->
 			<include condition="!Skin.HasSetting(DisableViewSquareWall)">View541SquareWall</include>
-			<!-- Topbar -->
 			<include content="TopBar">
 				<param name="icon">star.png</param>
 				<param name="label">$LOCALIZE[1036]</param>
 			</include>
 		</control>
-		<!-- Media Menu -->
+
+		<!-- SLEEK BOTTOM METADATA HUD — View 50 (CoverList): stops at art panel -->
+		<control type="group">
+			<visible>!Control.HasFocus(9050) + Control.IsVisible(50)</visible>
+			<include>AnimationVisibleFade</include>
+			<bottom>0</bottom>
+			<left>0</left>
+			<right>681</right>
+			<height>170</height>
+			<control type="image">
+				<visible>Window.IsVisible(MyFavourites.xml)</visible>
+				<!-- Replaced FullScreenDimensions to ensure it obeys the parent boundaries -->
+				<left>0</left>
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture>colors/white50.png</texture>
+			</control>
+			<control type="image">
+				<visible>Window.IsVisible(MyFavourites.xml)</visible>
+				<!-- Replaced FullScreenDimensions to ensure it obeys the parent boundaries -->
+				<left>0</left>
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture>colors/black80.png</texture>
+			</control>
+			<control type="image">
+				<texture border="5" colordiffuse="$VAR[PanelShadowColorVar]">panels/art-overlay.png</texture>
+			</control>
+			<control type="image">
+				<top>0</top>
+				<height>4</height>
+				<texture border="0" colordiffuse="$VAR[PanelHighlightColorVar]">panels/separator.png</texture>
+			</control>
+			<control type="image">
+				<left>74</left>
+				<bottom>10</bottom>
+				<width>145</width>
+				<height>145</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture fallback="DefaultIcon.png" diffuse="diffuse/rounded5-220x220.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="group">
+				<left>230</left>
+				<top>20</top>
+				<right>50</right>
+				<!-- DYNAMIC CLEARLOGO TITLE -->
+				<control type="group">
+					<top>0</top>
+					<height>60</height>
+					<!-- The Clean Clearlogo (Uses Hidden Label Math) -->
+					<control type="image">
+						<visible>!String.IsEmpty(Control.GetLabel(9910))</visible>
+						<top>-10</top>
+						<height>67</height>
+						<width>400</width>
+						<aspectratio>keep</aspectratio>
+						<aligny>center</aligny>
+						<texture>$INFO[Control.GetLabel(9910)]</texture>
+					</control>
+					<!-- The Fallback Text Title -->
+					<control type="label">
+						<visible>String.IsEmpty(Control.GetLabel(9910))</visible>
+						<top>-4</top>
+						<height>55</height>
+						<font>Font36_Bold_Caps</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>true</scroll>
+					</control>
+				</control>
+				<!-- SUBTITLE LINE -->
+				<control type="grouplist">
+					<top>55</top>
+					<height>30</height>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="image">
+						<visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.DBType)) | Integer.IsGreater(Container(9901).NumItems,0) | Integer.IsGreater(Container(9902).NumItems,0)</visible>
+						<top>3</top>
+						<width>25</width>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[IconPathVar]genre.png</texture>
+						<colordiffuse>$VAR[PanelHighlightColorVar]</colordiffuse>
+					</control>
+					<!-- Movie Text -->
+					<control type="label">
+						<visible>Integer.IsGreater(Container(9901).NumItems,0)</visible>
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label> Movie • $INFO[Container(9901).ListItem.Year,, • ]$INFO[Container(9901).ListItem.Genre]</label>
+					</control>
+					<!-- TV Show Text -->
+					<control type="label">
+						<visible>Integer.IsGreater(Container(9902).NumItems,0) + Integer.IsEqual(Container(9901).NumItems,0)</visible>
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label>TV Show • $INFO[Container(9902).ListItem.Year,, • ]$INFO[Container(9902).ListItem.Genre]</label>
+					</control>
+					<!-- Addons / Shallow Fallback Text -->
+					<control type="label">
+						<visible>Integer.IsEqual(Container(9901).NumItems,0) + Integer.IsEqual(Container(9902).NumItems,0) + [!String.IsEmpty(ListItem.DBType) | !String.IsEmpty(ListItem.Year)]</visible>
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label>$INFO[ListItem.DBType,[CAPITALIZE],[/CAPITALIZE] • ]$INFO[ListItem.Year,, • ]$INFO[ListItem.Genre]</label>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label>Add-on • $INFO[ListItem.Property(Addon.Creator)] $INFO[ListItem.Property(Addon.Version), (v,)]</label>
+						<visible>!String.IsEmpty(ListItem.Property(Addon.Creator))</visible>
+					</control>
+				</control>
+				<!-- PLOT / DESCRIPTION TEXTBOX -->
+				<control type="group">
+					<top>88</top>
+					<height>60</height>
+					<!-- Movie Plot -->
+					<control type="textbox">
+						<visible>Integer.IsGreater(Container(9901).NumItems,0) + !String.IsEmpty(Container(9901).ListItem.Plot)</visible>
+						<font>Font22_Reg</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<label>$INFO[Container(9901).ListItem.Plot]</label>
+						<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+					</control>
+					<!-- TV Show Plot -->
+					<control type="textbox">
+						<visible>Integer.IsGreater(Container(9902).NumItems,0) + Integer.IsEqual(Container(9901).NumItems,0) + !String.IsEmpty(Container(9902).ListItem.Plot)</visible>
+						<font>Font22_Reg</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<label>$INFO[Container(9902).ListItem.Plot]</label>
+						<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+					</control>
+					<!-- Shallow Fallback / Addons -->
+					<control type="textbox">
+						<visible>Integer.IsEqual(Container(9901).NumItems,0) + Integer.IsEqual(Container(9902).NumItems,0)</visible>
+						<font>Font22_Reg</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<label fallback="$INFO[ListItem.Plot]">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</label>
+						<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<!-- SLEEK BOTTOM METADATA HUD — All other views: full width -->
+		<control type="group">
+			<visible>!Control.HasFocus(9050) + !Control.IsVisible(50)</visible>
+			<include>AnimationVisibleFade</include>
+			<bottom>0</bottom>
+			<left>0</left>
+			<right>0</right>
+			<height>170</height>
+			<control type="image">
+				<visible>Window.IsVisible(MyFavourites.xml)</visible>
+				<!-- Replaced FullScreenDimensions to ensure it obeys the parent boundaries -->
+				<left>0</left>
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture>colors/white50.png</texture>
+			</control>
+			<control type="image">
+				<visible>Window.IsVisible(MyFavourites.xml)</visible>
+				<!-- Replaced FullScreenDimensions to ensure it obeys the parent boundaries -->
+				<left>0</left>
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture>colors/black80.png</texture>
+			</control>
+			<control type="image">
+				<texture border="5" colordiffuse="$VAR[PanelShadowColorVar]">panels/art-overlay.png</texture>
+			</control>
+			<control type="image">
+				<top>0</top>
+				<height>4</height>
+				<texture border="0" colordiffuse="$VAR[PanelHighlightColorVar]">panels/separator.png</texture>
+			</control>
+			<control type="image">
+				<left>74</left>
+				<bottom>10</bottom>
+				<width>145</width>
+				<height>145</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture fallback="DefaultIcon.png" diffuse="diffuse/rounded5-220x220.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="group">
+				<left>230</left>
+				<top>20</top>
+				<right>50</right>
+				<!-- DYNAMIC CLEARLOGO TITLE -->
+				<control type="group">
+					<top>0</top>
+					<height>60</height>
+					<!-- The Clean Clearlogo (Uses Hidden Label Math) -->
+					<control type="image">
+						<visible>!String.IsEmpty(Control.GetLabel(9910))</visible>
+						<top>-10</top>
+						<height>67</height>
+						<width>400</width>
+						<aspectratio>keep</aspectratio>
+						<aligny>center</aligny>
+						<texture>$INFO[Control.GetLabel(9910)]</texture>
+					</control>
+					<!-- The Fallback Text Title -->
+					<control type="label">
+						<visible>String.IsEmpty(Control.GetLabel(9910))</visible>
+						<top>-4</top>
+						<height>55</height>
+						<font>Font36_Bold_Caps</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>true</scroll>
+					</control>
+				</control>
+				<!-- SUBTITLE LINE -->
+				<control type="grouplist">
+					<top>55</top>
+					<height>30</height>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="image">
+						<visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.DBType)) | Integer.IsGreater(Container(9901).NumItems,0) | Integer.IsGreater(Container(9902).NumItems,0)</visible>
+						<top>3</top>
+						<width>25</width>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[IconPathVar]genre.png</texture>
+						<colordiffuse>$VAR[PanelHighlightColorVar]</colordiffuse>
+					</control>
+					<!-- Movie Text -->
+					<control type="label">
+						<visible>Integer.IsGreater(Container(9901).NumItems,0)</visible>
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label> Movie • $INFO[Container(9901).ListItem.Year,, • ]$INFO[Container(9901).ListItem.Genre]</label>
+					</control>
+					<!-- TV Show Text -->
+					<control type="label">
+						<visible>Integer.IsGreater(Container(9902).NumItems,0) + Integer.IsEqual(Container(9901).NumItems,0)</visible>
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label>TV Show • $INFO[Container(9902).ListItem.Year,, • ]$INFO[Container(9902).ListItem.Genre]</label>
+					</control>
+					<!-- Addons / Shallow Fallback Text -->
+					<control type="label">
+						<visible>Integer.IsEqual(Container(9901).NumItems,0) + Integer.IsEqual(Container(9902).NumItems,0) + [!String.IsEmpty(ListItem.DBType) | !String.IsEmpty(ListItem.Year)]</visible>
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label>$INFO[ListItem.DBType,[CAPITALIZE],[/CAPITALIZE] • ]$INFO[ListItem.Year,, • ]$INFO[ListItem.Genre]</label>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<font>Font25_Reg</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<label>Add-on • $INFO[ListItem.Property(Addon.Creator)] $INFO[ListItem.Property(Addon.Version), (v,)]</label>
+						<visible>!String.IsEmpty(ListItem.Property(Addon.Creator))</visible>
+					</control>
+				</control>
+				<!-- PLOT / DESCRIPTION TEXTBOX -->
+				<control type="group">
+					<top>88</top>
+					<height>60</height>
+					<!-- Movie Plot -->
+					<control type="textbox">
+						<visible>Integer.IsGreater(Container(9901).NumItems,0) + !String.IsEmpty(Container(9901).ListItem.Plot)</visible>
+						<font>Font22_Reg</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<label>$INFO[Container(9901).ListItem.Plot]</label>
+						<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+					</control>
+					<!-- TV Show Plot -->
+					<control type="textbox">
+						<visible>Integer.IsGreater(Container(9902).NumItems,0) + Integer.IsEqual(Container(9901).NumItems,0) + !String.IsEmpty(Container(9902).ListItem.Plot)</visible>
+						<font>Font22_Reg</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<label>$INFO[Container(9902).ListItem.Plot]</label>
+						<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+					</control>
+					<!-- Shallow Fallback / Addons -->
+					<control type="textbox">
+						<visible>Integer.IsEqual(Container(9901).NumItems,0) + Integer.IsEqual(Container(9902).NumItems,0)</visible>
+						<font>Font22_Reg</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<label fallback="$INFO[ListItem.Plot]">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</label>
+						<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<!-- Media Menu (Side Blade) -->
 		<include content="MediaMenu">
 			<param name="contentvisible">true</param>
 			<param name="commontopvisible">true</param>

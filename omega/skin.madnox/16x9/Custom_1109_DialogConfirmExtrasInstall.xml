@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<window type="dialog" id="1109">
+	<defaultcontrol always="true">9501</defaultcontrol>
+	<!-- Default To No Button -->
+	<controls>
+		<control type="image">
+			<texture>colors/black.png</texture>
+		</control>
+		<control type="group">
+			<!-- Centered Dialog Box -->
+			<left>510</left>
+			<top>320</top>
+
+			<include content="DialogBackground">
+				<param name="width" value="900" />
+				<param name="height" value="440" />
+			</include>
+
+			<control type="image">
+				<right>40</right>
+				<top>30</top>
+				<width>120</width>
+				<height>60</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+
+			<control type="textbox" id="1">
+				<left>40</left>
+				<top>40</top>
+				<width>820</width>
+				<height>50</height>
+				<font>Font28_Bold</font>
+				<label>[COLOR FFEEEE9B]$LOCALIZE[31519][/COLOR]</label>
+			</control>
+
+			<control type="textbox" id="2">
+				<left>40</left>
+				<top>120</top>
+				<width>820</width>
+				<height>180</height>
+				<font>Font28_Reg</font>
+				<align>center</align>
+				<label>$LOCALIZE[31520]</label>
+			</control>
+
+			<control type="grouplist" id="9000">
+				<left>40</left>
+				<top>340</top>
+				<width>820</width>
+				<height>80</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>20</itemgap>
+
+				<!-- Yes Button -->
+				<control type="button" id="9500">
+					<onright>9501</onright>
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[107], [LOWERCASE]$LOCALIZE[24038] $LOCALIZE[40211][/LOWERCASE]</label>
+					<align>center</align>
+					<onclick>Close</onclick>
+					<onclick>Skin.SetBoolSetting(Madnox.ExtrasInstalled)</onclick>
+					<onclick>Skin.ToggleSetting(Madnox.ExtrasInstalled)</onclick>
+					<onclick>RunScript(script.skin.madnox,action=install_extras)</onclick>
+				</control>
+
+				<!-- No Button -->
+				<control type="button" id="9501">
+					<onleft>9500</onleft>
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[106], $LOCALIZE[222]</label>
+					<align>center</align>
+					<onclick>Close</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

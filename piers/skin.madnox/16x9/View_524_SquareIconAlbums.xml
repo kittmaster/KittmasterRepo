@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View524SquareIconAlbums">
 		<!-- Floor -->
@@ -71,7 +71,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<include content="ViewArtwork">
 							<param name="texturefadetime">0</param>
@@ -91,7 +91,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<include content="ViewArtworkAudioCase">
 							<param name="texturefadetime">0</param>
@@ -115,7 +115,7 @@
 						</control>
 						<control type="group">
 							<animation type="Focus" reversible="false">
-								<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+								<effect type="zoom" start="95" end="100" time="240" center="auto" />
 							</animation>
 							<include content="ViewArtwork">
 								<param name="texturefadetime">0</param>
@@ -135,7 +135,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<include content="ViewArtworkAudioCase">
 							<param name="texturefadetime">0</param>
@@ -155,7 +155,7 @@
 				<onright condition="Control.IsVisible(61300)">61300</onright>
 			</control>
 		</control>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(524)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -167,31 +167,39 @@
 			<include condition="Window.IsVisible(MyMusicNav.xml)">MediaFlagsPanelAudio</include>
 		</control>
 	</include>
+
 	<include name="View524Height1">
 		<top>220</top>
 		<height>680</height>
 	</include>
+
 	<include name="View524Height2">
 		<top>268</top>
 		<height>632</height>
 	</include>
+
 	<include name="View524Height3">
 		<top>171</top>
 		<height>729</height>
 	</include>
+
 	<include name="View524Height4">
 		<top>219</top>
 		<height>681</height>
 	</include>
+
 	<include name="View524Scroll1">
 		<top>210</top>
 	</include>
+
 	<include name="View524Scroll2">
 		<top>258</top>
 	</include>
+
 	<include name="View524Scroll3">
 		<top>161</top>
 	</include>
+
 	<include name="View524Scroll4">
 		<top>209</top>
 	</include>

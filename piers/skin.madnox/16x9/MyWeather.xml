@@ -1,7 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol>8000</defaultcontrol>
 	<menucontrol>9050</menucontrol>
+
+	<!-- ADDED FOR GRID WIDGET: Navigate to specific weather tabs based on Home property -->
+	<onload condition="!String.IsEmpty(Window(Home).Property(MadnoxWeatherTab))">SetFocus(8000)</onload>
+	<onload condition="!String.IsEmpty(Window(Home).Property(MadnoxWeatherTab))">Action(FirstPage)</onload>
+
+	<!-- Navigate to Daily (1 down from Overview) -->
+	<onload condition="String.IsEqual(Window(Home).Property(MadnoxWeatherTab),Daily)">Action(Down)</onload>
+
+	<!-- Navigate to Hourly (2 down from Overview) -->
+	<onload condition="String.IsEqual(Window(Home).Property(MadnoxWeatherTab),Hourly)">Action(Down)</onload>
+	<onload condition="String.IsEqual(Window(Home).Property(MadnoxWeatherTab),Hourly)">Action(Down)</onload>
+
+	<!-- Clear the memory so standard navigation behaves normally afterwards -->
+	<onload>ClearProperty(MadnoxWeatherTab,Home)</onload>
+
 	<controls>
 		<!-- Backdrop -->
 		<include content="BackgroundDefault">
@@ -501,7 +516,7 @@
 				<control type="multiimage">
 					<aspectratio>scale</aspectratio>
 					<imagepath>special://profile/addon_data/weather.ozweather/currentloop/$INFO[Window(weather).Property(Radar)]/</imagepath>
-					<timeperimage>500</timeperimage>
+					<timeperimage>10000</timeperimage>
 					<pauseatend>1000</pauseatend>
 					<randomize>false</randomize>
 				</control>

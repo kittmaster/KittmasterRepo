@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<include name="View530PortraitIconInfo">
 		<!-- Floor -->
@@ -47,7 +47,9 @@
 				<left>110</left>
 				<width>1080</width>
 				<height>780</height>
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 				<onleft>9050</onleft>
+				<onunfocus>PlayerControl(Stop)</onunfocus>
 				<onright>60530</onright>
 				<pagecontrol>60530</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -78,7 +80,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="group">
 							<visible>!Skin.HasSetting(View530VideoCase)</visible>
@@ -126,7 +128,7 @@
 					</control>
 					<control type="group">
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto"/>
+							<effect type="zoom" start="95" end="100" time="240" center="auto" />
 						</animation>
 						<control type="group">
 							<visible>!Skin.HasSetting(View530VideoCase)</visible>
@@ -157,7 +159,7 @@
 				<onright>605301</onright>
 			</control>
 		</control>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(530)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -174,10 +176,10 @@
 			<control type="group">
 				<visible>Control.IsVisible(530) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
 				<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-			</control>			
+			</control>
 		</control>
 
-<!-- 		<control type="group">
+		<!-- 		<control type="group">
 			<visible>Control.IsVisible(530)</visible>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>

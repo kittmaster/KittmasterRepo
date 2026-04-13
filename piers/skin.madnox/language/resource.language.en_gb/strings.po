@@ -141,7 +141,7 @@ msgstr ""
 
 #: /16x9/DialogColorPicker.xml
 msgctxt "#31025"
-msgid "palette"
+msgid "Palette"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
@@ -1156,7 +1156,7 @@ msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31228"
-msgid "Video preview window"
+msgid "Trailer preview window"
 msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
@@ -2121,12 +2121,12 @@ msgstr ""
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31421"
-msgid "Turn on saving to debug log"
+msgid "Turn on skin debugging to log"
 msgstr ""
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31422"
-msgid "Off by default, leave this setting off unless troubleshooting instructed to turn on. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
+msgid "Off by default, leave this setting off unless troubleshooting is needed. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
 msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml
@@ -2136,7 +2136,7 @@ msgstr ""
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31424"
-msgid "Sets the size ratio of the fanart background. Scale/Keep/Center:	Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center: Aspect ratio is kept. Stretch: Aspect ratio is not kept."
 msgstr ""
 
 #: /16x9/Custom_1104_DialogOverlayColorPicker.xml
@@ -2192,6 +2192,441 @@ msgstr ""
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31435"
 msgid "Navigation"
+msgstr ""
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31436"
+msgid "Media flags data style"
+msgstr ""
+
+#: /16x9/Custom_1111_CustomSelectContainer.xml
+msgctxt "#31437"
+msgid "TMDB Info Settings"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31438"
+msgid "Displays icons in each row when the metadata is shown in Movies, TVShows, Biographies, & TMDb display modes."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31439"
+msgid "Wiki"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31440"
+msgid "Color selection"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31441"
+msgid "Flags"
+msgstr ""
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31442"
+msgid "Intro"
+msgstr ""
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31443"
+msgid "Outro"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31444"
+msgid "Colored"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31445"
+msgid "Addon"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31446"
+msgid "Image"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31447"
+msgid "Resource"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31448"
+msgid "Codec"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31449"
+msgid "Node"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31450"
+msgid "Artwork dump"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31451"
+msgid "PreShow Experience"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31452"
+msgid "Up"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31453"
+msgid "Current"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31454"
+msgid "Editing"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31455"
+msgid "Container"
+msgstr ""
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31456"
+msgid "Legacy"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31457"
+msgid "Bumpers"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31458"
+msgid "Accent color"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31459"
+msgid "overlay dimming"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31460"
+msgid "Countdown"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31461"
+msgid "Courtesy"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31462"
+msgid "Show Error Notifications"
+msgstr ""
+
+#: /16x9/Custom_1106_DiaglogFirstRun.xml
+msgctxt "#31463"
+msgid "WARNING: Are you sure you want to reset all Madnox skin settings to defaults?\nThere is NO UNDO once executed.\nOnly affects skin settings, all addons/scripts are unaffected."
+msgstr ""
+
+#: /16x9/Custom_1106_DiaglogFirstRun.xml
+msgctxt "#31464"
+msgid "Are you sure you want to reset all Madnox skin settings...?[CR]This action cannot be undone!"
+msgstr ""
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31465"
+msgid "Master reset"
+msgstr ""
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31466"
+msgid "Confirm factory reset"
+msgstr ""
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31467"
+msgid "Welcome to Madnox! For the best experience, we recommend applying the default settings. This will configure all visual options and features. Would you like to apply the Madnox recommended settings now?"
+msgstr ""
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31468"
+msgid "This will restore all skin settings to their original defaults.[CR][CR]Your current customizations will be lost.[CR]Are you sure you want to continue?"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31469"
+msgid "Initiate Madnox global skin reset"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31470"
+msgid "Restore Madnox skin settings to day 1 out of the box startup values. Only affects skin settings, does not alter or change anything else like scripts or plugins."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31471"
+msgid "Allows customization of default media flags without requiring outside hacks to the skin. This allows you to custom select which video container icons will be displayed for WebDL, 1080p, 720p etc. This can be reset at any time."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31472"
+msgid "Enables setting of the color of \"In-Progress\" bar feature."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31473"
+msgid "Sets of the color of \"In-Progress\" bar feature globally when enabled."
+msgstr ""
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31474"
+msgid "Startup intro video"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31475"
+msgid "Turn on trailer debugging to log"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31476"
+msgid "Off by default, leave this setting off unless troubleshooting auto preview trailer rolling is needed."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31477"
+msgid "When enabled, Kodi will remember the last context menu position. Example: TV Shows seasons || \"Marked as watched\": Will remain highlighted as each season is marked as watched."
+msgstr ""
+
+#: /16x9/Includes.xml
+msgctxt "#31478"
+msgid "Local"
+msgstr ""
+
+#: /16x9/Includes.xml
+msgctxt "#31479"
+msgid "Upcoming"
+msgstr ""
+
+#: /16x9/Includes.xml
+msgctxt "#31480"
+msgid "Modify"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31481"
+msgid "Madnox skin helper service"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31482"
+msgid "Only"
+msgstr ""
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31483"
+msgid "Battery"
+msgstr ""
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31484"
+msgid "Build"
+msgstr ""
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31485"
+msgid "PVR"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31486"
+msgid "CPU"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31487"
+msgid "GPU"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31488"
+msgid "Frequency"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31489"
+msgid "Bytes"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31490"
+msgid "Uptime"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31491"
+msgid "Screen"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31492"
+msgid "Build"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31493"
+msgid "Locale"
+msgstr ""
+
+#: /16x9/Custom_1120_Dashboard.xml /16x9/Custom_1129_Version.xml
+msgctxt "#31494"
+msgid "Kodi"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31495"
+msgid "Cores"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31496"
+msgid "Frames per second"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31497"
+msgid "Memory"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31498"
+msgid "Freeable"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31499"
+msgid "Full"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31500"
+msgid "Code"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31501"
+msgid "Host"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31502"
+msgid "Remaining"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31503"
+msgid "Dashboard"
+msgstr ""
+
+#: /16x9/.xml
+msgctxt "#31504"
+msgid "Slot Available"
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31505"
+msgid "Enables widgets \"In-Progress\" bar feature in the popup dialog."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31506"
+msgid "Current built-in revision level of the default Madnox values to reset / initialize the skin."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31507"
+msgid "Select if an intro video will play when Kodi is first started. None: No video, Built-In: Kodi's release level intro video, Custom: Pick video of your choice to display."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31508"
+msgid "This setting forces the media flag to resolution flag as 4K or 2160p providing user icon control without skin modifcations."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31509"
+msgid "Change the stars color displayed in the video info line. Click to cycle through fixed colors or select a custom color."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31510"
+msgid "Allows star ratings style to use a custom color when it is set to \"Custom\"."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31511"
+msgid "Dedicated addon for Madnox required for Piers+. Moves all free running scripts to a dedicated addon for security purposes."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31512"
+msgid "TMDbHelper provides several tools to assist skinners with retrieving information from TMDb, OMDb and Trakt APIs."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31513"
+msgid "Wikipedia addon for Kodi."
+msgstr ""
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31514"
+msgid "Advanced CinemaVision replacement that can be enabled to replace Madnox's built in simpler CinemaMode. Allows the ultimate CinemaMode experience and customisation."
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31515"
+msgid "Blur with color"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31516"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard)."
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31517"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard). NOTE: This menu item is visible ONLY on the home screen only regardless of this setting."
+msgstr ""
+
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr ""
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr ""
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31521"
+msgid "Madnox image resource addon"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31522"
+msgid "Images"
 msgstr ""
 
 #: /16x9/Includes_Settings.xml
@@ -2326,7 +2761,7 @@ msgstr ""
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31927"
-msgid "Shows the alphabet to jump to a position of the container. Will only work for default sorting methods."
+msgid "Shows the alphabet to jump to a position of the container. Will only work for default sorting methods (A-Z)."
 msgstr ""
 
 #: /16x9/Includes_Settings.xml

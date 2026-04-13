@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
-	<!-- Now playing Home/Video OSD -->
+	<!-- Now Playing Home/Video OSD -->
 	<include name="NowPlayingHomePortraitContent">
 		<param name="right">10</param>
 		<param name="logo">false</param>
@@ -120,6 +120,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="NowPlayingHomeSquareContent">
 		<param name="right">10</param>
 		<param name="logo">false</param>
@@ -251,6 +252,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="HomeNowPlayingVideoInfo">
 		<include>AnimationSlideRightVisible</include>
 		<top>50</top>
@@ -300,6 +302,7 @@
 			<info>Player.Progress</info>
 		</control>
 	</include>
+
 	<include name="HomeNowPlayingVideoCast">
 		<include>AnimationSlideRightVisible</include>
 		<right>10</right>
@@ -332,6 +335,7 @@
 			<label>$INFO[VideoPlayer.CastAndRole]</label>
 		</control>
 	</include>
+
 	<include name="HomeNowPlayingPortraitPlot">
 		<include>AnimationSlideRightVisible</include>
 		<right>10</right>
@@ -367,6 +371,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="HomeNowPlayingSquarePlot">
 		<include>AnimationSlideRightVisible</include>
 		<top>41</top>
@@ -403,6 +408,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="HomeNowPlayingVideoPreview">
 		<control type="group">
 			<top>97</top>
@@ -424,6 +430,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="NowPlayingHomeAudioInfo">
 		<include>AnimationSlideRightVisible</include>
 		<top>50</top>
@@ -461,6 +468,7 @@
 			<midtexture colordiffuse="$VAR[PanelHighlightColorVar]" border="8">panels/progress-control/progress-mid.png</midtexture>
 		</control>
 	</include>
+
 	<include name="NowPlayingHomeAudioNext">
 		<include>AnimationSlideRightVisible</include>
 		<top>41</top>
@@ -516,6 +524,7 @@
 			<label>[COLOR $VAR[PanelHighlightColorVar]]$INFO[MusicPlayer.offset(1).TrackNumber,,. ][/COLOR]$INFO[MusicPlayer.offset(1).Title]</label>
 		</control>
 	</include>
+
 	<include name="NowPlayingHomeAudioTrackList">
 		<include>AnimationSlideRightVisible</include>
 		<top>41</top>
@@ -551,6 +560,7 @@
 			</include>
 		</control>
 	</include>
+
 	<include name="NowPlayingHomeAudioTracksContent">
 		<control type="label">
 			<height>38</height>
@@ -570,7 +580,8 @@
 			<height>18</height>
 		</control>
 	</include>
-	<!-- Now playing music OSD -->
+
+	<!-- Now Playing Music OSD -->
 	<include name="NowPlayingMusicOSDContent">
 		<param name="right">15</param>
 		<param name="logo">false</param>
@@ -703,6 +714,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="NowPlayingMusicOSDInfo">
 		<include>AnimationSlideRightVisible</include>
 		<bottom>50</bottom>
@@ -739,6 +751,7 @@
 			<info>Player.Progress</info>
 		</control>
 	</include>
+
 	<include name="HomeNowPlayingMusicOSDPlot">
 		<include>AnimationSlideRightVisible</include>
 		<right>25</right>
@@ -776,6 +789,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="NowPlayingMusicOSDNext">
 		<include>AnimationSlideRightVisible</include>
 		<right>25</right>
@@ -831,6 +845,7 @@
 			<label>[COLOR $VAR[PanelHighlightColorVar]]$INFO[MusicPlayer.offset(1).TrackNumber,,. ][/COLOR]$INFO[MusicPlayer.offset(1).Title]</label>
 		</control>
 	</include>
+
 	<include name="NowPlayingMusicOSDTrackList">
 		<include>AnimationSlideRightVisible</include>
 		<right>25</right>
@@ -870,6 +885,7 @@
 			</include>
 		</control>
 	</include>
+
 	<include name="NowPlayingMusicOSDTracksContent">
 		<control type="label">
 			<height>32</height>
@@ -889,21 +905,25 @@
 			<height>15</height>
 		</control>
 	</include>
+
 	<include name="NowPlayingMusicOSDFanart">
 		<animation type="Conditional" pulse="true" condition="Skin.HasSetting(MusicOSDAnimatedBackground)">
-			<effect type="zoom" start="110" end="120" center="auto" time="12000" tween="sine" easing="inout"/>
-			<effect type="slide" start="-20,-20" end="20,20" time="6000" tween="sine" easing="inout"/>
+			<effect type="zoom" start="110" end="120" center="auto" time="12000" tween="sine" easing="inout" />
+			<effect type="slide" start="-20,-20" end="20,20" time="6000" tween="sine" easing="inout" />
 		</animation>
 		<include>FullScreenDimensions</include>
 		<randomize>true</randomize>
-		<aspectratio>scale</aspectratio>
+		<!-- Was Scale -->
+		<aspectratio>keep</aspectratio>
 		<fadetime>TextureFadeTime</fadetime>
 	</include>
+
 	<include name="VideoOSDProcessInfo">
 		<height>39</height>
 		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
 	</include>
+
 	<!-- Variables -->
 	<variable name="NowPlayingCaseVar">
 		<value condition="VideoPlayer.IsStereoscopic | String.Contains(Player.Filename,3D)">thumbs/case/portrait/3d.png</value>
@@ -911,6 +931,7 @@
 		<value condition="String.Contains(Player.Filename,4K)">thumbs/case/portrait/4Kp.png</value>
 		<value>thumbs/case/portrait/$INFO[VideoPlayer.VideoResolution]p.png</value>
 	</variable>
+
 	<variable name="NowPlayingInfo1Var">
 		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle]</value>
 		<value condition="!String.IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist]</value>
@@ -919,18 +940,20 @@
 		<value condition="Player.IsInternetStream">$LOCALIZE[31200]</value>
 		<value condition="Pvr.IsPlayingRadio | VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelName]</value>
 	</variable>
+
 	<variable name="NowPlayingInfo2Var">
 		<value condition="VideoPlayer.Content(episodes) + String.StartsWith(VideoPlayer.Episode,s)">$INFO[VideoPlayer.Episode,$LOCALIZE[31327] ]</value>
-		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,$LOCALIZE[20373] , ]$INFO[VideoPlayer.Episode,$LOCALIZE[36906] ]</value>		
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,$LOCALIZE[20373] , ]$INFO[VideoPlayer.Episode,$LOCALIZE[36906] ]</value>
 		<value condition="!String.IsEmpty(MusicPlayer.Album) + !String.IsEmpty(MusicPlayer.Year)">$INFO[MusicPlayer.Album]$VAR[1BlankSpace]($INFO[MusicPlayer.Year])</value>
-		<value condition="!String.IsEmpty(MusicPlayer.Album)">$INFO[MusicPlayer.Album]</value>		
+		<value condition="!String.IsEmpty(MusicPlayer.Album)">$INFO[MusicPlayer.Album]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Album) + !String.IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Album]$VAR[1BlankSpace]($INFO[VideoPlayer.Year])</value>
-		<value condition="!String.IsEmpty(VideoPlayer.Album)">$INFO[VideoPlayer.Album]</value>		
+		<value condition="!String.IsEmpty(VideoPlayer.Album)">$INFO[VideoPlayer.Album]</value>
 		<value condition="Player.IsInternetStream + Player.HasAudio + !String.IsEmpty(MusicPlayer.BitRate)">$INFO[MusicPlayer.BitRate,,[LOWERCASE]kbps[/LOWERCASE]]</value>
 		<value condition="Player.IsInternetStream + Player.HasVideo + !String.IsEmpty(Player.Process(VideoHeight))">$INFO[Player.Process(VideoHeight),,[LOWERCASE]p[/LOWERCASE]]</value>
 		<value condition="Pvr.IsPlayingRadio">$LOCALIZE[19021]</value>
 		<value condition="VideoPlayer.Content(livetv)">$LOCALIZE[19020]</value>
 	</variable>
+
 	<variable name="NowPlayingStatusVar">
 		<value condition="Window.IsActive(fullscreenvideo)">$LOCALIZE[31002]</value>
 		<value condition="Player.Playing">$LOCALIZE[31002]</value>
@@ -946,11 +969,13 @@
 		<value condition="Player.Rewinding16x">$LOCALIZE[31199] 16x</value>
 		<value condition="Player.Rewinding32x">$LOCALIZE[31199] 32x</value>
 	</variable>
+
 	<variable name="NowPlayingLogoVar">
 		<value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value condition="!String.IsEmpty(Player.Art(artist.clearlogo))">$INFO[Player.Art(artist.clearlogo)]</value>
 	</variable>
+
 	<variable name="NowPlayingClearArtVar">
 		<value condition="!String.IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
 		<value condition="!String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
@@ -959,6 +984,7 @@
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value condition="!String.IsEmpty(Player.Art(artist.clearlogo))">$INFO[Player.Art(artist.clearlogo)]</value>
 	</variable>
+
 	<variable name="NowPlayingThumbVar">
 		<value condition="!String.IsEmpty(Player.Art(season.poster))">$INFO[Player.Art(season.poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
@@ -967,6 +993,7 @@
 		<value condition="Player.HasAudio">DefaultAudio.png</value>
 		<value condition="Player.HasVideo">DefaultVideo.png</value>
 	</variable>
+
 	<variable name="NowPlayingPlotLabelVar">
 		<value condition="Pvr.IsPlayingTv">$INFO[VideoPlayer.StartTime,, - ]$INFO[VideoPlayer.EndTime]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Tagline)">$INFO[VideoPlayer.Tagline]</value>
@@ -974,15 +1001,17 @@
 		<value condition="!String.IsEmpty(MusicPlayer.Genre)">$INFO[MusicPlayer.Genre]</value>
 		<value>$INFO[Player.FinishTime,$LOCALIZE[19127] ]</value>
 	</variable>
+
 	<variable name="NowPlayingPlotVar">
 		<value condition="!String.IsEmpty(MusicPlayer.Property(Album_Description))">$INFO[MusicPlayer.Property(Album_Description)]</value>
 		<value condition="!String.IsEmpty(MusicPlayer.Property(Artist_Description))">$INFO[MusicPlayer.Property(Artist_Description)]</value>
 		<value condition="!Skin.HasSetting(DisablePlotOutline) + !String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Plot)">$INFO[VideoPlayer.Plot]</value>
 	</variable>
+
 	<variable name="NowPlayingVideoDiscArtVar">
 		<value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
-		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,none)"/>
+		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,none)" />
 		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,cd)">thumbs/disc/cd.png</value>
 		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,vinyl)">thumbs/disc/vinyl.png</value>
 		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,white)">thumbs/disc/white.png</value>
@@ -995,6 +1024,7 @@
 		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,red)">thumbs/disc/red.png</value>
 		<value>thumbs/disc/bd.png</value>
 	</variable>
+
 	<variable name="NowPlayingVideoDiscArtLabelVar">
 		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,none)">$LOCALIZE[231]</value>
 		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,vinyl)">$LOCALIZE[31182]</value>
@@ -1009,10 +1039,11 @@
 		<value condition="Skin.String(NowPlayingVideoDiscArtFallback,red)">$LOCALIZE[13343]</value>
 		<value>$LOCALIZE[14234]</value>
 	</variable>
+
 	<variable name="NowPlayingMusicDiscArtVar">
 		<value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
 		<value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
-		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,none)"/>
+		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,none)" />
 		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,vinyl)">thumbs/disc/vinyl.png</value>
 		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,bd)">thumbs/disc/bd.png</value>
 		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,white)">thumbs/disc/white.png</value>
@@ -1025,6 +1056,7 @@
 		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,red)">thumbs/disc/red.png</value>
 		<value>thumbs/disc/cd.png</value>
 	</variable>
+
 	<variable name="NowPlayingMusicDiscArtLabelVar">
 		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,none)">$LOCALIZE[231]</value>
 		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,vinyl)">$LOCALIZE[31182]</value>
@@ -1039,6 +1071,7 @@
 		<value condition="Skin.String(NowPlayingMusicDiscArtFallback,red)">$LOCALIZE[13343]</value>
 		<value>CD</value>
 	</variable>
+
 	<variable name="NowPlayingDimBackgroundLabelVar">
 		<value condition="Skin.String(MusicOSD.dim,80FFFFFF)">50%</value>
 		<value condition="Skin.String(MusicOSD.dim,8CFFFFFF)">55%</value>
@@ -1051,11 +1084,13 @@
 		<value condition="Skin.String(MusicOSD.dim,E6FFFFFF)">90%</value>
 		<value>$LOCALIZE[351]</value>
 	</variable>
+
 	<variable name="MusicOSDInfoLabelVar">
 		<value condition="Skin.String(MusicOSDInfo,off)">$LOCALIZE[16039]</value>
 		<value condition="Skin.String(MusicOSDInfo,persistant)">$LOCALIZE[31194]</value>
 		<value>$LOCALIZE[31193]</value>
 	</variable>
+
 	<variable name="MusicOSDAudioInfoLabelVar">
 		<value condition="Skin.String(MusicOSDAudioInfo,next)">$LOCALIZE[209]</value>
 		<value condition="Skin.String(MusicOSDAudioInfo,tracks)">$LOCALIZE[182]</value>
@@ -1063,6 +1098,7 @@
 		<value condition="Skin.String(MusicOSDAudioInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[29915]</value>
 	</variable>
+
 	<variable name="MusicOSDMusicInfoLabelVar">
 		<value condition="Skin.String(MusicOSDMusicInfo,next)">$LOCALIZE[209]</value>
 		<value condition="Skin.String(MusicOSDMusicInfo,tracks)">$LOCALIZE[182]</value>
@@ -1070,14 +1106,16 @@
 		<value condition="Skin.String(MusicOSDMusicInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[29915]</value>
 	</variable>
+
 	<variable name="MusicOSDFanArtVar">
-		<value condition="Skin.String(MusicOSDBackground,none)"/>
+		<value condition="Skin.String(MusicOSDBackground,none)" />
 		<value condition="Skin.String(MusicOSDBackground,artistsslideshow) + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</value>
 		<value condition="[Skin.String(MusicOSDBackground,extra) | [Skin.String(MusicOSDBackground,artistsslideshow) + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))]] + !String.IsEmpty(Control.GetLabel(71111))">$INFO[Control.GetLabel(71111)]</value>
 		<value condition="!String.IsEmpty(Skin.String(MusicOSDBackground)) + !Skin.String(MusicOSDBackground,extra) + !Skin.String(MusicOSDBackground,artistsslideshow)">$INFO[Skin.String(MusicOSDBackground)]</value>
 		<value condition="!String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
-		<value>special://skin/extras/backgrounds/music.jpg</value>
+		<value>special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg</value>
 	</variable>
+
 	<variable name="MusicOSDFanArtLabelVar">
 		<value condition="Skin.String(MusicOSDBackground,none)">$LOCALIZE[231]</value>
 		<value condition="Skin.String(MusicOSDBackground,extra)">$LOCALIZE[31035]</value>
@@ -1085,18 +1123,22 @@
 		<value condition="!String.IsEmpty(Skin.String(MusicOSDBackground))">$INFO[Skin.String(MusicOSDBackground)]</value>
 		<value>$LOCALIZE[20445]</value>
 	</variable>
+
 	<variable name="LyricTextColorVar">
 		<value condition="!Skin.HasSetting(MusicOSDDisableAnimatedLyrics)">00FFFFFF</value>
 		<value>$VAR[PanelSubTextColorVar]</value>
 	</variable>
+
 	<variable name="LyricHighlightColorVar">
 		<value condition="!Skin.HasSetting(MusicOSDDisableAnimatedLyrics)">00FFFFFF</value>
 		<value>$VAR[PanelHighlightColorVar]</value>
 	</variable>
+
 	<variable name="LyricShadowColorVar">
 		<value condition="!Skin.HasSetting(MusicOSDDisableAnimatedLyrics)">00FFFFFF</value>
 		<value>$VAR[PanelShadowColorVar]</value>
 	</variable>
+
 	<variable name="NowPlayingHomeMovieInfoLabelVar">
 		<value condition="Skin.String(NowPlayingHomeMovieInfo,cast)">$LOCALIZE[206]</value>
 		<value condition="Skin.String(NowPlayingHomeMovieInfo,plot)">$LOCALIZE[21821]</value>
@@ -1104,12 +1146,14 @@
 		<value condition="Skin.String(NowPlayingHomeMovieInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[29915]</value>
 	</variable>
+
 	<variable name="NowPlayingHomeVideoInfoLabelVar">
 		<value condition="Skin.String(NowPlayingHomeVideoInfo,plot)">$LOCALIZE[21821]</value>
 		<value condition="Skin.String(NowPlayingHomeVideoInfo,preview)">$LOCALIZE[1000]</value>
 		<value condition="Skin.String(NowPlayingHomeVideoInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[29915]</value>
 	</variable>
+
 	<variable name="NowPlayingHomeMusicInfoLabelVar">
 		<value condition="Skin.String(NowPlayingHomeMusicInfo,tracks)">$LOCALIZE[182]</value>
 		<value condition="Skin.String(NowPlayingHomeMusicInfo,next)">$LOCALIZE[209]</value>
@@ -1117,6 +1161,7 @@
 		<value condition="Skin.String(NowPlayingHomeMusicInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[29915]</value>
 	</variable>
+
 	<variable name="NowPlayingHomeAudioInfoLabelVar">
 		<value condition="Skin.String(NowPlayingHomeAudioInfo,tracks)">$LOCALIZE[182]</value>
 		<value condition="Skin.String(NowPlayingHomeAudioInfo,next)">$LOCALIZE[209]</value>
@@ -1124,29 +1169,35 @@
 		<value condition="Skin.String(NowPlayingHomeAudioInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[29915]</value>
 	</variable>
+
 	<variable name="VideoOSDInfoLabelVar">
 		<value condition="Skin.String(VideoOSDInfo,off)">$LOCALIZE[16039]</value>
 		<value condition="Skin.String(VideoOSDInfo,persistant)">$LOCALIZE[31194]</value>
 		<value>$LOCALIZE[31193]</value>
 	</variable>
+
 	<variable name="VideoOSDMediaFlagsLabelVar">
 		<value condition="Skin.String(VideoOSDMediaFlags,off)">$LOCALIZE[16039]</value>
 		<value condition="Skin.String(VideoOSDMediaFlags,persistant)">$LOCALIZE[31194]</value>
 		<value>$LOCALIZE[31193]</value>
 	</variable>
+
 	<variable name="VideoOSDMovieInfoLabelVar">
 		<value condition="Skin.String(VideoOSDMovieInfo,cast)">$LOCALIZE[206]</value>
 		<value condition="Skin.String(VideoOSDMovieInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[21821]</value>
 	</variable>
+
 	<variable name="VideoOSDVideoInfoLabelVar">
 		<value condition="Skin.String(VideoOSDVideoInfo,none)">$LOCALIZE[231]</value>
 		<value>$LOCALIZE[21821]</value>
 	</variable>
+
 	<variable name="VideoOSDSeasonNumberVar">
 		<value condition="String.StartsWith(VideoPlayer.Episode,S)">$INFO[VideoPlayer.Episode]</value>
 		<value>$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode]</value>
 	</variable>
+
 	<variable name="VideoOSDLabelVar">
 		<value condition="!String.IsEmpty(Player.SeekStepSize)">$LOCALIZE[773] $INFO[Player.SeekStepSize]</value>
 		<value condition="Player.Paused + Skin.HasSetting(VideoOSDDisableSeekIcon)">$LOCALIZE[112]</value>
@@ -1159,18 +1210,21 @@
 		<value condition="Player.ChapterCount + [Player.ShowInfo | Skin.String(VideoOSDInfo,persistant)]">$INFO[Player.Chapter,$LOCALIZE[21396] ]$INFO[Player.ChapterCount,/]</value>
 		<value condition="!Player.ChapterCount + !Player.ShowInfo + !Skin.String(VideoOSDInfo,persistant)">$INFO[Player.Title]</value>
 	</variable>
+
 	<variable name="VideoOSDTimeVar">
 		<value condition="!VideoPlayer.Content(livetv) + !Skin.HasSetting(VideoOSDTimeRemaining)">$INFO[Player.Time(hh:mm:ss)]$INFO[Player.Duration(hh:mm:ss), / ]</value>
 		<value condition="!VideoPlayer.Content(livetv) + Skin.HasSetting(VideoOSDTimeRemaining)">$INFO[Player.TimeRemaining(hh:mm:ss)]$INFO[Player.Duration(hh:mm:ss), / ]</value>
 		<value condition="VideoPlayer.Content(livetv) + !Skin.HasSetting(VideoOSDTimeRemaining)">$INFO[PVR.EpgEventElapsedTime(hh:mm:ss)]$INFO[PVR.EpgEventDuration(hh:mm:ss), / ]</value>
 		<value condition="VideoPlayer.Content(livetv) + Skin.HasSetting(VideoOSDTimeRemaining)">$INFO[PVR.EpgEventRemainingTime(hh:mm:ss)]$INFO[PVR.EpgEventDuration(hh:mm:ss), / ]</value>
 	</variable>
+
 	<variable name="VideoOSDSeekIconVar">
 		<value condition="Player.Paused"></value>
 		<value condition="Player.Rewinding"></value>
 		<value condition="Player.Forwarding"></value>
 		<value condition="!Player.Paused"></value>
 	</variable>
+
 	<variable name="VideoOSDSeekLabelVar">
 		<value condition="Player.Forwarding2x | Player.Rewinding2x">2x</value>
 		<value condition="Player.Forwarding4x | Player.Rewinding4x">4x</value>
@@ -1178,20 +1232,24 @@
 		<value condition="Player.Forwarding16x | Player.Rewinding16x">16x</value>
 		<value condition="Player.Forwarding32x | Player.Rewinding32x">32x</value>
 	</variable>
+
 	<!--  OSD Buttons -->
 	<variable name="OSDPlayButtonVar">
 		<value condition="Player.Paused | Player.Forwarding | Player.Rewinding">buttons/player/play.png</value>
 		<value>buttons/player/pause.png</value>
 	</variable>
+
 	<variable name="OSDRecordButtonVar">
 		<value condition="PVR.IsRecordingPlayingChannel">buttons/player/recording.png</value>
 		<value>buttons/player/record.png</value>
 	</variable>
+
 	<variable name="OSDRepeatButtonVar">
 		<value condition="Playlist.IsRepeatOne">buttons/player/repeatone.png</value>
 		<value condition="Playlist.IsRepeat">buttons/player/repeat.png</value>
 		<value>buttons/player/repeatoff.png</value>
 	</variable>
+
 	<variable name="OSDRandomButtonVar">
 		<value condition="Playlist.IsRandom">buttons/player/randomon.png</value>
 		<value>buttons/player/randomoff.png</value>

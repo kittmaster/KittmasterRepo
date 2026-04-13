@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from jurialmunkey.ftools import cached_property
 from tmdbhelper.lib.api.mapping import _ItemMapper
 from collections import namedtuple
 
@@ -111,7 +112,6 @@ class ItemMapperMethods:
                 for provider in datalist:
                     if service:
                         item = {
-                            'iso_country': iso,
                             'display_priority': get_blanks_none(provider.get('display_priority')),
                             'name': get_blanks_none(provider.get('provider_name')),
                             'logo': get_blanks_none(provider.get('logo_path')),
@@ -119,6 +119,7 @@ class ItemMapperMethods:
                         }
                     else:
                         item = {
+                            'iso_country': iso,
                             'availability': get_blanks_none(availability),
                             'tmdb_id': get_blanks_none(provider.get('provider_id')),
                         }
@@ -177,20 +178,7 @@ class ItemMapperMethods:
         collection_item['id'] = collection_id
         data.append(ExtendedMap('collection', collection_id, False, collection_item))
 
-        for image_path, image_type, ratio_type in (
-            ('poster_path', 'posters', 'poster'),
-            ('backdrop_path', 'backdrops', 'landscape')
-        ):
-            image_path = i.get(image_path)
-            if not image_path:
-                continue
-
-            data.append(ExtendedMap('art', image_path, False, ItemMapperMethods.add_art_type(
-                item_id=item_id,
-                image_path=image_path,
-                image_type=image_type,
-                ratio_type=ratio_type
-            )))
+        ItemMapperMethods.set_default_art(data, i, parent_id=item_id)
 
         data.append(ExtendedMap('belongs', item_id, False, {
             'id': item_id,
@@ -261,13 +249,7 @@ class ItemMapperMethods:
             person_item['tmdb_id'] = tmdb_id
             data.append(ExtendedMap('person', item_id, False, person_item))
 
-            if i.get('profile_path'):
-                artwork = ItemMapperMethods.add_art_type(
-                    item_id=item_id,
-                    image_path=i['profile_path'],
-                    image_type='profiles',
-                    ratio_type='poster')
-                data.append(ExtendedMap('art', artwork['icon'], False, artwork))
+            ItemMapperMethods.set_default_art(data, i, parent_id=item_id)
 
             data.append(ExtendedMap('baseitem', item_id, False, {
                 'id': item_id,
@@ -341,7 +323,7 @@ class ItemMapperMethods:
     credits_mappings = (
         ('cast', 'castmember', {'ordering': 'order', 'role': 'character', 'appearances': 'total_episode_count'}, 'roles'),
         ('crew', 'crewmember', {'department': 'department', 'role': 'job', 'appearances': 'total_episode_count'}, 'jobs'),
-        ('guest_stars', 'castmember', {'ordering': 'order', 'role': 'character', 'appearances': 'total_episode_count'}, 'roles'),
+        ('guest_stars', 'castmember', {'ordering': 'order', 'role': 'character', 'appearances': 'total_episode_count', 'guest': lambda i: 1}, 'roles'),
     )
 
     def get_credits(self, items, **kwargs):
@@ -382,13 +364,7 @@ class ItemMapperMethods:
                 person_item['tmdb_id'] = tmdb_id
                 data.append(ExtendedMap('person', item_id, False, person_item))
 
-                if i.get('profile_path'):
-                    artwork = ItemMapperMethods.add_art_type(
-                        item_id=item_id,
-                        image_path=i['profile_path'],
-                        image_type='profiles',
-                        ratio_type='poster')
-                    data.append(ExtendedMap('art', artwork['icon'], False, artwork))
+                ItemMapperMethods.set_default_art(data, i, parent_id=item_id)
 
         return data
 
@@ -402,8 +378,8 @@ class ItemMapperMethods:
         data = []
 
         mappings = (
-            ('cast', 'castmember', {'ordering': 'order', 'role': 'character'}),
-            ('crew', 'crewmember', {'department': 'department', 'role': 'job'}),
+            ('cast', 'castmember', {'ordering': 'order', 'role': 'character', 'appearances': 'episode_count'}),
+            ('crew', 'crewmember', {'department': 'department', 'role': 'job', 'appearances': 'episode_count'}),
         )
 
         for subkey, mapkey, config in mappings:
@@ -450,19 +426,13 @@ class ItemMapperMethods:
             'language': self.language,
         }))
 
-        for image_path, image_type, ratio_type in (
-            ('poster_path', 'posters', 'poster'),
-            ('backdrop_path', 'backdrops', 'landscape')
-        ):
-            image_path = i.get(image_path)
-            if not image_path:
-                continue
-            data.append(ExtendedMap('art', image_path, False, ItemMapperMethods.add_art_type(
-                item_id=item_id,
-                image_path=image_path,
-                image_type=image_type,
-                ratio_type=ratio_type
-            )))
+        for genre in self.get_genre_items(i.get('genre_ids') or []):
+            genre = ItemMapperMethods.get_configured_item(genre, name='name', tmdb_id='tmdb_id')
+            genre['parent_id'] = item_id
+            data.append(ExtendedMap('genre', f"{item_id}.genre.{genre['tmdb_id']}", True, genre))
+
+        ItemMapperMethods.set_default_art(data, i, parent_id=item_id)
+
         return data
 
     def get_episodes(self, items, **kwargs):
@@ -527,13 +497,7 @@ class ItemMapperMethods:
 
             data.append(ExtendedMap('season', item_id, True, season_item))
 
-            if i.get('poster_path'):
-                artwork = ItemMapperMethods.add_art_type(
-                    item_id=item_id,
-                    image_path=i['poster_path'],
-                    image_type='posters',
-                    ratio_type='poster')
-                data.append(ExtendedMap('art', artwork['icon'], False, artwork))
+            ItemMapperMethods.set_default_art(data, i, parent_id=item_id)
 
             data.append(ExtendedMap('baseitem', item_id, False, {
                 'id': item_id,
@@ -752,12 +716,65 @@ class ItemMapperMethods:
         return [ExtendedMap('custom', key, False, {'key': key, 'value': value})]
 
     @staticmethod
-    def get_art_property(path, art_type):
-        return [ExtendedMap('art', path, False, {
+    def set_default_art(data, item, parent_id=None):
+        for path, art_type in (
+            ('poster_path', 'posters',),
+            ('backdrop_path', 'backdrops',),
+            ('profile_path', 'profiles',),
+        ):
+            path = item.get(path)
+            if not path:
+                continue
+            data.extend(ItemMapperMethods.get_default_art(path, art_type, parent_id=parent_id))
+        return data
+
+    @staticmethod
+    def get_default_art(path, art_type, parent_id=None):
+        item = {
             'icon': path,
             'type': art_type,
-            'extension': path.split('.')[-1] if path else None
-        })]
+        }
+        if parent_id:
+            item['parent_id'] = parent_id
+        data = [ExtendedMap('default_art', path, False, item)]
+        item = item.copy()
+        item['extension'] = get_blanks_none(path.split('.')[-1] if path else None)
+        data.append(ExtendedMap('art', path, False, item))
+        return data
+
+    @property
+    def tmdb_database(self):
+        from tmdbhelper.lib.query.database.database import FindQueriesDatabase
+        return FindQueriesDatabase()
+
+    @cached_property
+    def genres_map(self):
+        genres_map = {}
+        genres_map.update(self.tmdb_database.get_genres('movie'))
+        genres_map.update(self.tmdb_database.get_genres('tv'))
+        genres_map = {v: k for k, v in genres_map.items()}
+        return genres_map
+
+    def get_genre_items(self, genre_ids):
+
+        def get_genre_item(tmdb_id):
+            try:
+                return {'name': self.genres_map[tmdb_id], 'tmdb_id': tmdb_id}
+            except (KeyError, TypeError):
+                return
+
+        return [j for j in (get_genre_item(i) for i in genre_ids if i) if j]
+
+    def get_genres(self, items, **kwargs):
+
+        def get_genre_id(i):
+            try:
+                return i['id']
+            except (KeyError, TypeError):
+                return
+
+        genre_items = self.get_genre_items([j for j in (get_genre_id(i) for i in items if i) if j])
+        return ItemMapperMethods.split_array(genre_items, name='name', tmdb_id='tmdb_id')
 
 
 class BlankNoneDict(dict):
@@ -812,8 +829,7 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
             }],
             'genres': [{
                 'keys': [('genre', None)],
-                'func': self.split_array,
-                'kwargs': {'name': 'name', 'tmdb_id': 'id'}
+                'func': self.get_genres
             }],
             'content_ratings': [{
                 'keys': [('certification', None)],
@@ -830,10 +846,23 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
                 'keys': [('translation', None)],
                 'func': self.get_translations,
             }],
+            'spoken_languages': [{
+                'keys': [('language', None)],
+                'func': self.split_array,
+                'kwargs': {'iso_language': 'iso_639_1'}}, {
+                # ---
+                'keys': [('languages', None)],
+                'func': self.split_array,
+                'kwargs': {'iso_language': 'iso_639_1', 'name': 'name', 'english_name': 'english_name'}
+            }],
             'production_countries': [{
                 'keys': [('country', None)],
                 'func': self.split_array,
-                'kwargs': {'name': 'name', 'iso_country': 'iso_3166_1'}
+                'kwargs': {'iso_country': 'iso_3166_1'}}, {
+                # ---
+                'keys': [('countries', None)],
+                'func': self.split_array,
+                'kwargs': {'iso_country': 'iso_3166_1', 'name': 'name'}
             }],
             'production_companies': [{
                 'keys': [('studio', None)],
@@ -884,9 +913,9 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
             'revenue': lambda v: self.get_custom_property('revenue', f'${float(v):0,.0f}'),
             'original_language': lambda v: self.get_custom_property('original_language', v),
             'homepage': lambda v: self.get_custom_property('homepage', v),
-            'poster_path': lambda v: self.get_art_property(v, 'posters'),
-            'backdrop_path': lambda v: self.get_art_property(v, 'backdrops'),
-            'profile_path': lambda v: self.get_art_property(v, 'profiles'),
+            'poster_path': lambda v: self.get_default_art(v, 'posters'),
+            'backdrop_path': lambda v: self.get_default_art(v, 'backdrops'),
+            'profile_path': lambda v: self.get_default_art(v, 'profiles'),
             'images': self.get_art,
             'fanart_tv': self.get_fanart_tv,
             'belongs_to_collection': self.get_belongs_to_collection,
@@ -984,6 +1013,9 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
             # Default mappings
             'item': BlankNoneDict(),
             'genre': (),
+            'languages': (),
+            'language': (),
+            'countries': (),
             'country': (),
             'company': (),
             'studio': (),
@@ -999,6 +1031,7 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
             # Dictionary mappings
             'custom': (),
             'art': (),
+            'default_art': (),
             'baseitem': (),
             'fanart_tv': (),
             'collection': (),
@@ -1021,6 +1054,6 @@ class ItemMapper(_ItemMapper, ItemMapperMethods):
         # from tmdbhelper.lib.files.futils import dumps_to_file
         # dumps_to_file(
         #     {'data': self.data, 'item': self.item},
-        #     'log_data', f'mappings_{self.tmdb_id}_{data["name"]}.json', join_addon_data=True)
+        #     'log_data', f'mappings_{self.tmdb_id}.json', join_addon_data=True)
 
         return self.item

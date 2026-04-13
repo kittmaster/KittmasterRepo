@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View505FocusSquare">
-		<!-- Video preview -->
+		<!-- Video Preview -->
 		<control type="group">
 			<visible>Control.IsVisible(505) + Player.HasVideo + Skin.HasSetting(View505VideoPreviewWindow)</visible>
 			<include content="AnimationSlideRightWindow">
@@ -17,7 +17,7 @@
 			<control type="image">
 				<texture>colors/black.png</texture>
 			</control>
-			<control type="videowindow"/>
+			<control type="videowindow" />
 			<control type="image">
 				<bordersize>-10</bordersize>
 				<texture border="20">thumbs/overlay2.png</texture>
@@ -35,7 +35,7 @@
 		<include content="View505Panel" condition="Skin.HasSetting(View505FixedList)">
 			<param name="listtype">fixedlist</param>
 		</include>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(505)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -58,7 +58,7 @@
 			</include>
 		</control>
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View505Panel">
 		<param name="listtype">wraplist</param>
 		<definition>
@@ -76,6 +76,8 @@
 					<left>-304</left>
 					<width>2224</width>
 					<height>1000</height>
+					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<onunfocus>PlayerControl(Stop)</onunfocus>
 					<onup>9050</onup>
 					<ondown>60505</ondown>
 					<pagecontrol>60505</pagecontrol>

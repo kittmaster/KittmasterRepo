@@ -660,7 +660,7 @@ msgstr ""
 
 #: /resources/lib/container.py
 msgctxt "#32113"
-msgid "Also accepts X days relative from today in the format T-X or T+X (e.g. T-10 is ten days ago)"
+msgid "Also accepts days from today as T-X or T+X (e.g. T-10 is ten days ago)"
 msgstr ""
 
 #: /resources/lib/container.py
@@ -728,14 +728,74 @@ msgctxt "#32145"
 msgid "Retrieving library"
 msgstr ""
 
+#: /resources/tmdbhelper/lib/api/trakt/sync/invalidator.py
+msgctxt "#32146"
+msgid "Successfully refreshed {} sync data"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#32147"
+msgid "Gemini API"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#32148"
+msgid "Gemini API key"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/base/basedir_main.py
+msgctxt "#32149"
+msgid "Gemini AI"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/tmdb/lists_gemini.py
+msgctxt "#32150"
+msgid "Google Gemini AI requires a developer API key to use."
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/tmdb/lists_gemini.py
+msgctxt "#32151"
+msgid "Visit [B]{}[/B] to generate your key and then input into TMDbHelper settings under the API keys section."
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/base/basedir_nodes.py
+msgctxt "#32152"
+msgid "Remove node"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/script/discover/trakt.py
+msgctxt "#32153"
+msgid "Query"
+msgstr ""
+
 #: /resources/lib/container.py
 msgctxt "#32119"
 msgid "Select Release Types"
 msgstr ""
 
+#: /resources/tmdbhelper/lib/items/directories/base/basedir_trakt.py
+msgctxt "#32155"
+msgid "Airing"
+msgstr ""
+
 #: /resources/lib/container.py
 msgctxt "#32120"
 msgid "Select Region for Release"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/base/basedir_trakt.py
+msgctxt "#32157"
+msgid "Decades"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/base/basedir_trakt.py
+msgctxt "#32158"
+msgid "Certifications"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/base/basedir_trakt.py
+msgctxt "#32159"
+msgid "Lists"
 msgstr ""
 
 #: /resources/lib/container.py
@@ -761,6 +821,11 @@ msgstr ""
 #: /resources/lib/context.py
 msgctxt "#32126"
 msgid "Are you sure you want to add this Trakt list to your Kodi library?"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/script/discover/tmdb.py
+msgctxt "#32165"
+msgid "Add another item?"
 msgstr ""
 
 #: /resources/lib/context.py
@@ -1020,6 +1085,31 @@ msgctxt "#32204"
 msgid "Trending"
 msgstr ""
 
+#: /resources/tmdbhelper/lib/script/discover/tmdb.py
+msgctxt "#32217"
+msgid "With Provider Region"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/script/discover/tmdb.py
+msgctxt "#32218"
+msgid "With Watch Monetization Types"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/script/discover/tmdb.py
+msgctxt "#32219"
+msgid "Certification Country"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/script/discover/tmdb/routes.py
+msgctxt "#32220"
+msgid "With Origin Country"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32221"
+msgid "Miniseries"
+msgstr ""
+
 #: /resources/lib/plugin.py
 msgctxt "#32205"
 msgid "Most Played"
@@ -1080,6 +1170,11 @@ msgctxt "#32216"
 msgid "Successfully logged out of Trakt user account"
 msgstr ""
 
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32234"
+msgid "Reality"
+msgstr ""
+
 #: /resources/lib/script.py
 msgctxt "#32222"
 msgid "Manage artwork"
@@ -1093,6 +1188,11 @@ msgstr ""
 #: /resources/lib/plugin.py
 msgctxt "#32224"
 msgid "Similar"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32238"
+msgid "Scripted"
 msgstr ""
 
 #: /resources/lib/plugin.py
@@ -1365,6 +1465,16 @@ msgctxt "#32280"
 msgid "Last Fortnight"
 msgstr ""
 
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32293"
+msgid "Returning Series"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32294"
+msgid "Planned"
+msgstr ""
+
 #: /resources/lib/basedir.py
 msgctxt "#32281"
 msgid "Last Week"
@@ -1423,6 +1533,16 @@ msgstr ""
 #: /resources/lib/script.py
 msgctxt "#32292"
 msgid "Remove from watchlist"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32307"
+msgid "In Production"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32308"
+msgid "Ended"
 msgstr ""
 
 #: /resources/lib/script.py
@@ -1497,6 +1617,21 @@ msgstr ""
 #: /resources/lib/window/manager.py
 msgctxt "#32310"
 msgid "TMDb ID for {} not found!"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32323"
+msgid "Cancelled"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/addon/consts.py
+msgctxt "#32324"
+msgid "Pilot"
+msgstr ""
+
+#: /resources/tmdbhelper/lib/items/directories/tmdb/lists_discodir.py
+msgctxt "#32325"
+msgid "Edit Filters"
 msgstr ""
 
 #: /resources/lib/player/players.py
@@ -1601,6 +1736,11 @@ msgctxt "#32333"
 msgid "User Choice"
 msgstr ""
 
+#: /resources/tmdbhelper/lib/script/discover/tmdb/routes.py
+msgctxt "#32346"
+msgid "Timezone"
+msgstr ""
+
 #: /resources/lib/player/configure.py
 msgctxt "#32334"
 msgid "Reset player to defaults?"
@@ -1681,6 +1821,16 @@ msgctxt "#32348"
 msgid "Log output of TMDb request"
 msgstr ""
 
+#: /resources/settings.xml
+msgctxt "#32349"
+msgid "Use fallback English plot translations (slower)"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#32350"
+msgid "Retrieve English language plot translations to use as a fallback when primrary language translation is missing. Note that this setting will considerably increase detailed information lookup times and database disk usage."
+msgstr ""
+
 #: /resources/lib/kodi/library.py
 msgctxt "#32351"
 msgid "Dummy ResolvedURL"
@@ -1757,6 +1907,11 @@ msgctxt "#32364"
 msgid "Reroute PlayMedia to xbmc.Player()"
 msgstr ""
 
+#: /resources/settings.xml
+msgctxt "#32377"
+msgid "Use online artwork in image monitor"
+msgstr ""
+
 #: /resources/lib/addon/plugin.py
 msgctxt "#32365"
 msgid "Combined"
@@ -1798,8 +1953,23 @@ msgid "fanart"
 msgstr ""
 
 #: /resources/settings.xml
+msgctxt "#32386"
+msgid "Use online ratings in details monitor"
+msgstr ""
+
+#: /resources/settings.xml
 msgctxt "#32373"
 msgid "Restrict to library strm"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#32388"
+msgid "Retrieve genre fanart"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#32389"
+msgid "Retrieve provider fanart"
 msgstr ""
 
 #: /resources/lib/player/players.py
@@ -1830,6 +2000,11 @@ msgstr ""
 #: /resources/settings.xml
 msgctxt "#32380"
 msgid "Hide Up Next"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#32396"
+msgid "Delete TMDb cached list details"
 msgstr ""
 
 #: /resources/settings.xml
@@ -2317,7 +2492,7 @@ msgstr ""
 
 #: /resources/tmdbhelper/lib/script/method.py
 msgctxt "#32492"
-msgid "{} already exists in {}!\\nDo you wish to remove this item from the list?"
+msgid "{} already exists in {}!"
 msgstr ""
 
 #: /resources/tmdbhelper/lib/script/method.py
@@ -2337,7 +2512,7 @@ msgstr ""
 
 #: /resources/tmdbhelper/lib/items/container.py
 msgctxt "#32496"
-msgid "Add/Remove as Custom Node"
+msgid "Add node"
 msgstr ""
 
 #: /resources/settings.xml

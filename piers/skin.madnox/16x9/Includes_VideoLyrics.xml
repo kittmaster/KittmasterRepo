@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<include name="Line1">
-		<param name="slide"/>
-		<param name="zoom"/>
+		<param name="slide" />
+		<param name="zoom" />
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious + !String.IsEqual(Container(110).ListItem.Property(part4),instrumental)</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" end="100" time="200"/>
-					<effect type="zoom" start="25" end="100" time="$PARAM[zoom]"/>
+					<effect type="fade" end="100" time="200" />
+					<effect type="zoom" start="25" end="100" time="$PARAM[zoom]" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -22,16 +22,17 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line2">
 		<param name="start">0</param>
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" end="100" time="200"/>
-					<effect type="zoom" center="auto" start="$PARAM[start]" end="100" time="500"/>
+					<effect type="fade" end="100" time="200" />
+					<effect type="zoom" center="auto" start="$PARAM[start]" end="100" time="500" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -43,17 +44,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line3">
 		<param name="rotate">15</param>
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" end="100" time="200"/>
-					<effect type="slide" start="100,-300" end="0" time="250"/>
-					<effect type="rotate" delay="300" center="auto" start="$PARAM[rotate]" end="0" time="200"/>
+					<effect type="fade" end="100" time="200" />
+					<effect type="slide" start="100,-300" end="0" time="250" />
+					<effect type="rotate" delay="300" center="auto" start="$PARAM[rotate]" end="0" time="200" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -65,18 +67,19 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line4">
-		<param name="slide"/>
-		<param name="time"/>
+		<param name="slide" />
+		<param name="time" />
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" end="100" time="200"/>
-					<effect type="slide" start="$PARAM[slide]" end="0" time="$PARAM[time]"/>
-					<effect type="slide" end="-5"/>
+					<effect type="fade" end="100" time="200" />
+					<effect type="slide" start="$PARAM[slide]" end="0" time="$PARAM[time]" />
+					<effect type="slide" end="-5" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -88,18 +91,19 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line5">
 		<param name="delay">0</param>
 		<param name="slide">-1950</param>
 		<param name="align">left</param>
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" delay="$PARAM[delay]" end="100" time="200"/>
-					<effect type="slide" delay="$PARAM[delay]" start="$PARAM[slide],0" time="300"/>
+					<effect type="fade" delay="$PARAM[delay]" end="100" time="200" />
+					<effect type="slide" delay="$PARAM[delay]" start="$PARAM[slide],0" time="300" />
 				</animation>
 				<width>945</width>
 				<height>100</height>
@@ -111,17 +115,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line6">
 		<param name="delay">0</param>
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" delay="$PARAM[delay]" end="100" time="200"/>
-					<effect type="slide" delay="$PARAM[delay]" start="0,-400" time="600" tween="bounce" easing="out"/>
-					<effect type="rotate" delay="$PARAM[delay]" start="440" center="auto" end="360" time="600"/>
+					<effect type="fade" delay="$PARAM[delay]" end="100" time="200" />
+					<effect type="slide" delay="$PARAM[delay]" start="0,-400" time="600" tween="bounce" easing="out" />
+					<effect type="rotate" delay="$PARAM[delay]" start="440" center="auto" end="360" time="600" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -133,17 +138,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line7">
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<param name="delay">0</param>
-		<param name="font"/>
+		<param name="font" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="slide" delay="$PARAM[delay]" start="0,200" time="200" tween="cubic" easing="out"/>
-					<effect type="fade" delay="$PARAM[delay]" start="0" time="200"/>
+					<effect type="slide" delay="$PARAM[delay]" start="0,200" time="200" tween="cubic" easing="out" />
+					<effect type="fade" delay="$PARAM[delay]" start="0" time="200" />
 				</animation>
 				<width>945</width>
 				<height>100</height>
@@ -155,17 +161,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line8">
-		<param name="rotate"/>
-		<param name="time"/>
+		<param name="rotate" />
+		<param name="time" />
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" time="$PARAM[time]"/>
-					<effect type="$PARAM[rotate]" center="0,0" start="90" end="0" time="$PARAM[time]"/>
+					<effect type="fade" start="0" time="$PARAM[time]" />
+					<effect type="$PARAM[rotate]" center="0,0" start="90" end="0" time="$PARAM[time]" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -177,17 +184,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line9">
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<param name="delay">0</param>
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" delay="$PARAM[delay]" time="$PARAM[time]"/>
-					<effect type="slide" delay="$PARAM[delay]" start="0,-400" end="0,0" time="300"/>
-					<effect type="rotate" center="auto" delay="300" start="35" end="0" time="200"/>
+					<effect type="fade" start="0" delay="$PARAM[delay]" time="$PARAM[time]" />
+					<effect type="slide" delay="$PARAM[delay]" start="0,-400" end="0,0" time="300" />
+					<effect type="rotate" center="auto" delay="300" start="35" end="0" time="200" />
 				</animation>
 				<width>945</width>
 				<height>100</height>
@@ -199,17 +207,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line10">
-		<param name="delay"/>
+		<param name="delay" />
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" time="200"/>
-					<effect type="zoom" center="auto" delay="$PARAM[delay]" start="200" time="300"/>
-					<effect type="slide" delay="300" start="0,100" end="0,0" time="200"/>
+					<effect type="fade" start="0" time="200" />
+					<effect type="zoom" center="auto" delay="$PARAM[delay]" start="200" time="300" />
+					<effect type="slide" delay="300" start="0,100" end="0,0" time="200" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -221,17 +230,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line11">
-		<param name="slide"/>
-		<param name="delay"/>
+		<param name="slide" />
+		<param name="delay" />
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" delay="$PARAM[delay]" time="200"/>
-					<effect type="slide" delay="$PARAM[delay]" start="$PARAM[slide]" end="0" time="300"/>
+					<effect type="fade" start="0" delay="$PARAM[delay]" time="200" />
+					<effect type="slide" delay="$PARAM[delay]" start="$PARAM[slide]" end="0" time="300" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -243,18 +253,19 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line12">
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<param name="delay">0</param>
-		<param name="font"/>
+		<param name="font" />
 		<param name="top">0</param>
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" delay="$PARAM[delay]" time="200"/>
-					<effect type="zoom" delay="$PARAM[delay]" center="auto" start="0" end="100" time="200"/>
+					<effect type="fade" start="0" delay="$PARAM[delay]" time="200" />
+					<effect type="zoom" delay="$PARAM[delay]" center="auto" start="0" end="100" time="200" />
 				</animation>
 				<top>$PARAM[top]</top>
 				<width>auto</width>
@@ -267,17 +278,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line13">
 		<param name="time">0</param>
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" time="200"/>
-					<effect type="zoom" center="auto" start="25" end="100" time="$PARAM[time]"/>
-					<effect type="rotate" center="auto" start="360" end="0" time="$PARAM[time]"/>
+					<effect type="fade" start="0" time="200" />
+					<effect type="zoom" center="auto" start="25" end="100" time="$PARAM[time]" />
+					<effect type="rotate" center="auto" start="360" end="0" time="$PARAM[time]" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -289,20 +301,21 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line14">
 		<param name="slide">0</param>
 		<param name="rotate">4</param>
-		<param name="delay"/>
+		<param name="delay" />
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation effect="rotate" center="auto" start="$PARAM[rotate]" end="$PARAM[rotate]" condition="true">Conditional</animation>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" time="200"/>
-					<effect type="slide" end="0,$PARAM[slide]"/>
-					<effect type="zoom" delay="$PARAM[delay]" start="0" end="100" time="200"/>
+					<effect type="fade" start="0" time="200" />
+					<effect type="slide" end="0,$PARAM[slide]" />
+					<effect type="zoom" delay="$PARAM[delay]" start="0" end="100" time="200" />
 				</animation>
 				<width>auto</width>
 				<height>100</height>
@@ -314,17 +327,18 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="Line15">
 		<param name="color">black</param>
-		<param name="label"/>
+		<param name="label" />
 		<param name="delay">0</param>
 		<definition>
 			<control type="label">
 				<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="fade" start="0" time="200"/>
-					<effect type="slide" delay="$PARAM[delay]" start="1000" end="0" time="200"/>
-					<effect type="slide" delay="300" start="200" end="0" time="200"/>
+					<effect type="fade" start="0" time="200" />
+					<effect type="slide" delay="$PARAM[delay]" start="1000" end="0" time="200" />
+					<effect type="slide" delay="300" start="200" end="0" time="200" />
 				</animation>
 				<width>945</width>
 				<height>100</height>

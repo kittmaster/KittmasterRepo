@@ -10,7 +10,10 @@ from tmdbhelper.lib.items.database.tabledef import (
     CERTIFICATION_COLUMNS,
     VIDEO_COLUMNS,
     GENRE_COLUMNS,
+    LANGUAGE_COLUMNS,
+    LANGUAGES_COLUMNS,
     COUNTRY_COLUMNS,
+    COUNTRIES_COLUMNS,
     STUDIO_COLUMNS,
     NETWORK_COLUMNS,
     COMPANY_COLUMNS,
@@ -66,7 +69,7 @@ class Certification(ItemDetailsList):
 class Video(ItemDetailsList):
     table = 'video'
     keys = tuple(VIDEO_COLUMNS.keys())
-    conditions = 'parent_id=? AND content=? ORDER BY iso_language=?, release_date DESC LIMIT 1'  # WHERE conditions
+    conditions = 'parent_id=? AND content=? ORDER BY iso_language=? DESC, release_date DESC LIMIT 1'  # WHERE conditions
     conflict_constraint = 'path, parent_id'
 
     @property
@@ -84,10 +87,60 @@ class Translation(ItemDetailsList):
         return (self.item_id, )
 
 
+class EnglishTranslation(Translation):
+    conditions = 'parent_id=? AND iso_language="en" LIMIT 1'  # WHERE conditions
+
+
 class Country(ItemDetailsList):
     table = 'country'
+    cached_data_parent_table = 'countries'
     keys = tuple(COUNTRY_COLUMNS.keys())
     conflict_constraint = 'iso_country, parent_id'
+
+    @property
+    def cached_data_keys(self):
+        cached_data_keys = ('name', 'iso_country')
+        return tuple((f'{self.cached_data_parent_table}.{k}' for k in cached_data_keys))
+
+    @property
+    def cached_data_table(self):
+        return (
+            f'{self.table} INNER JOIN {self.cached_data_parent_table} '
+            f'ON {self.cached_data_parent_table}.iso_country = {self.table}.iso_country'
+        )
+
+
+class Countries(ItemDetailsList):
+    table = 'countries'
+    keys = tuple(COUNTRIES_COLUMNS.keys())
+    conditions = 'iso_country=?'
+    conflict_constraint = 'iso_country'
+
+
+class Language(ItemDetailsList):
+    table = 'language'
+    cached_data_parent_table = 'languages'
+    keys = tuple(LANGUAGE_COLUMNS.keys())
+    conflict_constraint = 'iso_language, parent_id'
+
+    @property
+    def cached_data_keys(self):
+        cached_data_keys = ('name', 'iso_language', 'english_name')
+        return tuple((f'{self.cached_data_parent_table}.{k}' for k in cached_data_keys))
+
+    @property
+    def cached_data_table(self):
+        return (
+            f'{self.table} INNER JOIN {self.cached_data_parent_table} '
+            f'ON {self.cached_data_parent_table}.iso_language = {self.table}.iso_language'
+        )
+
+
+class Languages(ItemDetailsList):
+    table = 'languages'
+    keys = tuple(LANGUAGES_COLUMNS.keys())
+    conditions = 'iso_language=?'
+    conflict_constraint = 'iso_language'
 
 
 class Genre(ItemDetailsList):
@@ -129,7 +182,7 @@ class Service(ItemDetailsList):
 class Provider(ItemDetailsList):
     table = 'provider'
     keys = tuple(PROVIDER_COLUMNS.keys())
-    conflict_constraint = 'tmdb_id, parent_id'
+    conflict_constraint = 'iso_country, tmdb_id, parent_id'
 
     cached_data_keys = ('provider.tmdb_id', 'availability', 'name', 'display_priority', 'iso_country', 'logo')
     cached_data_table = 'provider INNER JOIN service ON service.tmdb_id = provider.tmdb_id'

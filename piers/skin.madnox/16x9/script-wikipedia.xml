@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<window type="dialog">
+	<defaultcontrol always="true">9902</defaultcontrol>
+
+	<controls>
+		<!-- Background and Dimming -->
+		<include content="DialogInfoCommon">
+			<param name="blur">Skin.HasSetting(VideoBlurEnabled)</param>
+			<param name="art">$INFO[Window.Property(Backdrop)]</param>
+		</include>
+
+		<!-- Main Dialog Panel Group -->
+		<control type="group">
+			<left>100</left>
+			<right>100</right>
+			<top>80</top>
+			<bottom>80</bottom>
+			<include>AnimationZoomWindow</include>
+			<!-- <control type="image"> -->
+			<!-- <texture colordiffuse="ff161515">panels/kodiflix-gradient.png</texture> -->
+			<!-- </control> -->
+			<control type="image">
+				<texture colordiffuse="$VAR[WikiSectionDiffuseColor]">panels/kodiflix-gradient.png</texture>
+			</control>
+
+			<!-- Darkening Overlay -->
+			<control type="image">
+				<texture>colors/black80.png</texture>
+			</control>
+
+			<!-- Column 1 (Left): Title And Table Of Contents (TOC) -->
+			<control type="group">
+				<left>20</left>
+				<top>20</top>
+				<bottom>20</bottom>
+				<width>500</width>
+				<control type="label" id="9901">
+					<top>10</top>
+					<left>15</left>
+					<right>15</right>
+					<height>120</height>
+					<font>Font49_Bold_Caps</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="image">
+					<top>140</top>
+					<left>15</left>
+					<right>15</right>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+				<control type="list" id="9902">
+					<top>160</top>
+					<left>15</left>
+					<right>15</right>
+					<bottom>15</bottom>
+					<onup>9000</onup>
+					<onright>61</onright>
+					<onleft>9902</onleft>
+					<include content="DialogListDefault">
+						<param name="id">10</param>
+					</include>
+					<itemlayout height="70">
+						<control type="label">
+							<left>10</left>
+							<right>10</right>
+							<aligny>center</aligny>
+							<font>Font30_Reg</font>
+							<textcolor>$VAR[PanelTextColorVar]</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="70">
+						<control type="image">
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="5">colors/white.png</texture>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<right>10</right>
+							<aligny>center</aligny>
+							<font>Font30_Reg</font>
+							<textcolor>white</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+
+			<!-- Column 2 (Middle): Main Article Text And Attribution -->
+			<control type="group">
+				<left>530</left>
+				<right>570</right>
+				<top>20</top>
+				<bottom>20</bottom>
+				<control type="textbox" id="9903">
+					<top>10</top>
+					<bottom>80</bottom>
+					<right>35</right>
+					<font>Font30_Reg</font>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<autoscroll>true</autoscroll>
+					<pagecontrol>61</pagecontrol>
+					<!-- Removed all navigation tags from the textbox to prevent focus trapping.
+					The scrollbar is now the sole navigation control for this column. -->
+				</control>
+				<control type="scrollbar" id="61">
+					<right>10</right>
+					<top>10</top>
+					<bottom>80</bottom>
+					<width>12</width>
+					<onup>9000</onup>
+					<onleft>9902</onleft>
+					<onright>9000</onright>
+				</control>
+				<control type="group">
+					<bottom>10</bottom>
+					<height>60</height>
+					<control type="textbox" id="9904">
+						<visible>false</visible>
+					</control>
+					<control type="label">
+						<right>100</right>
+						<height>60</height>
+						<aligny>center</aligny>
+						<textcolor>grey</textcolor>
+						<font>Font25_Reg</font>
+						<label>$INFO[Control.GetLabel(9904)]</label>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+					<control type="image" id="9905">
+						<right>10</right>
+						<width>80</width>
+						<height>60</height>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</control>
+			</control>
+
+			<!-- Column 3 (Right): Main Article Image -->
+			<control type="group">
+				<right>20</right>
+				<top>20</top>
+				<bottom>20</bottom>
+				<width>550</width>
+				<control type="image">
+					<top>10</top>
+					<bottom>80</bottom>
+					<texture>$INFO[Window.Property(Image)]</texture>
+					<aspectratio>keep</aspectratio>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="label">
+					<bottom>10</bottom>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font25_Reg</font>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<label>$INFO[Window.Property(ImageText)]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+
+			<!-- Close Button -->
+			<control type="button" id="9000">
+				<!-- <top>-20</top> -->
+				<!-- <right>-20</right> -->
+				<top>50</top>
+				<right>-85</right>
+				<width>80</width>
+				<height>80</height>
+				<font>Font28_Reg</font>
+				<label>✕</label>
+				<align>center</align>
+				<onclick>Close</onclick>
+				<onleft>61</onleft>
+				<ondown>9902</ondown>
+			</control>
+		</control>
+	</controls>
+</window>

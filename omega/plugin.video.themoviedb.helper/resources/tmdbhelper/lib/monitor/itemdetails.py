@@ -113,9 +113,10 @@ class MonitorItemDetails(ImageManipulations):
         return get_condvisibility((
             'Window.IsVisible(DialogPVRInfo.xml) | '
             'Window.IsVisible(MyPVRChannels.xml) | '
+            'Window.IsVisible(MyPVRGuide.xml) | '
             'Window.IsVisible(MyPVRRecordings.xml) | '
             'Window.IsVisible(MyPVRSearch.xml) | '
-            'Window.IsVisible(MyPVRGuide.xml)'
+            'Window.IsVisible(MyPVRTimers.xml)'
         ))
 
     @cached_property
@@ -330,7 +331,8 @@ class MonitorItemDetails(ImageManipulations):
 
     def get_lidc_item(self):
         self.parent.lidc.extendedinfo = self.is_extended
-        self.parent.lidc.cache_refresh = 'langs' if self.is_translation else None
+        self.parent.lidc.cache_refresh = None
+        self.parent.lidc.cache_translations = bool(self.is_translation)
         return self.parent.lidc.get_item(self.tmdb_type, self.tmdb_id, self.season, self.episode)
 
     def update_lidc_item(self):

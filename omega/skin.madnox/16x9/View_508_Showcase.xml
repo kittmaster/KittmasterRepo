@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View508Showcase">
-		<!-- Info panel -->
+		<!-- Info Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(508)</visible>
 			<include content="ViewCoverFlowInfoPanel">
@@ -26,8 +26,8 @@
 			<top>565</top>
 			<left>32</left>
 			<width>1920</width>
-			<camera x="960" y="793"/>
-			<!-- Portrait - On next -->
+			<camera x="960" y="793" />
+			<!-- Portrait - On Next -->
 			<control type="group" id="5801">
 				<visible>Container(508).OnNext</visible>
 				<animation effect="slide" end="-140,0" time="300" reversible="false">Hidden</animation>
@@ -141,7 +141,7 @@
 					</include>
 				</control>
 			</control>
-			<!-- Portrait - On previous -->
+			<!-- Portrait - On Previous -->
 			<control type="group" id="5802">
 				<visible>Container(508).OnPrevious</visible>
 				<animation effect="slide" end="140,0" time="300" reversible="false">Hidden</animation>
@@ -255,7 +255,7 @@
 					</include>
 				</control>
 			</control>
-			<!-- Portrait - Static content -->
+			<!-- Portrait - Static Content -->
 			<control type="group" id="5803">
 				<visible>!Control.IsVisible(5801) + !Control.IsVisible(5802)</visible>
 				<control type="group">
@@ -353,8 +353,8 @@
 					<control type="image">
 						<visible>!Skin.HasSetting(View508HideReflect) + Control.IsVisible(1970)</visible>
 						<animation type="Conditional" condition="Control.IsVisible(1970)" reversible="false">
-							<effect type="fade" end="100" delay="0" time="1000"/>
-							<effect type="fade" start="100" end="0" delay="4000" time="1000"/>
+							<effect type="fade" end="100" delay="0" time="1000" />
+							<effect type="fade" start="100" end="0" delay="4000" time="1000" />
 						</animation>
 						<top>381</top>
 						<height>396</height>
@@ -362,8 +362,8 @@
 					</control>
 					<control type="image">
 						<animation type="Conditional" condition="Control.IsVisible(1970)" reversible="false">
-							<effect type="slide" start="1200" end="0" delay="0" time="1500" tween="quadratic" easing="out"/>
-							<effect type="rotate" start="-600" center="auto" end="0" delay="0" time="1500" tween="quadratic" easing="out"/>
+							<effect type="slide" start="1200" end="0" delay="0" time="1500" tween="quadratic" easing="out" />
+							<effect type="rotate" start="-600" center="auto" end="0" delay="0" time="1500" tween="quadratic" easing="out" />
 						</animation>
 						<top>82</top>
 						<left>18</left>
@@ -374,8 +374,8 @@
 				</control>
 				<control type="group">
 					<animation type="Conditional" reversible="false" condition="Control.IsVisible(1970)">
-						<effect type="rotatey" center="793" start="0" end="70" time="1500" tween="quadratic" easing="out"/>
-						<effect type="rotatey" delay="3500" center="793" start="0" end="-70" time="1500" tween="quadratic" easing="out"/>
+						<effect type="rotatey" center="793" start="0" end="70" time="1500" tween="quadratic" easing="out" />
+						<effect type="rotatey" delay="3500" center="793" start="0" end="-70" time="1500" tween="quadratic" easing="out" />
 					</animation>
 					<animation effect="rotatey" center="793" end="0.1" condition="true">Conditional</animation>
 					<include content="ShowCaseItemPortrait">
@@ -384,7 +384,7 @@
 					</include>
 				</control>
 			</control>
-			<!-- Hidden object for open case -->
+			<!-- Hidden Object For Open Case -->
 			<control type="label" id="1970">
 				<visible>Skin.HasSetting(View508VideoCase) + Skin.HasSetting(View508OpenCase) + String.IsEqual(ListItem.DBTYPE,movie) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]</visible>
 				<include>HiddenObject</include>
@@ -398,19 +398,21 @@
 				<left>100</left>
 				<width>1820</width>
 				<height>396</height>
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 				<onup condition="!Skin.String(View508InfoDelay,manual) | ListItem.IsParentFolder | String.Startswith(ListItem.Label,*)">9050</onup>
 				<onup condition="Skin.String(View508InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">9999</onup>
+				<onunfocus>PlayerControl(Stop)</onunfocus>
 				<ondown>60508</ondown>
 				<pagecontrol>60508</pagecontrol>
 				<orientation>horizontal</orientation>
 				<viewtype label="$LOCALIZE[31230]">icon</viewtype>
 				<focusposition>6</focusposition>
 				<preloaditems>2</preloaditems>
-				<itemlayout width="140" height="396"/>
-				<focusedlayout width="140" height="396"/>
+				<itemlayout width="140" height="396" />
+				<focusedlayout width="140" height="396" />
 			</control>
 		</control>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(508)</visible>
 			<include content="AnimationSlideBottomWindow">

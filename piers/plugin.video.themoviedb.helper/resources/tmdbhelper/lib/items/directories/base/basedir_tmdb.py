@@ -1,6 +1,4 @@
 from tmdbhelper.lib.items.directories.base.basedir_item import BaseDirItem
-from tmdbhelper.lib.addon.plugin import get_localized
-from jurialmunkey.ftools import cached_property
 
 
 class BaseDirItemTMDbSearch(BaseDirItem):
@@ -9,6 +7,7 @@ class BaseDirItemTMDbSearch(BaseDirItem):
     params = {'info': 'dir_search'}
     art_icon = 'resources/icons/themoviedb/search.png'
     types = ('movie', 'tv', 'person')
+    group = 137
 
 
 class BaseDirItemTMDbPopular(BaseDirItem):
@@ -17,6 +16,7 @@ class BaseDirItemTMDbPopular(BaseDirItem):
     params = {'info': 'popular'}
     art_icon = 'resources/icons/themoviedb/popular.png'
     types = ('movie', 'tv', 'person')
+    group = 32175
 
 
 class BaseDirItemTMDbTopRated(BaseDirItem):
@@ -25,6 +25,7 @@ class BaseDirItemTMDbTopRated(BaseDirItem):
     params = {'info': 'top_rated'}
     art_icon = 'resources/icons/themoviedb/toprated.png'
     types = ('movie', 'tv')
+    group = 32176
 
 
 class BaseDirItemTMDbUpcoming(BaseDirItem):
@@ -33,13 +34,16 @@ class BaseDirItemTMDbUpcoming(BaseDirItem):
     params = {'info': 'upcoming'}
     art_icon = 'resources/icons/themoviedb/upcoming.png'
     types = ('movie', )
-    
+    group = 32177
+
+
 class BaseDirItemTMDbTrendingDay(BaseDirItem):
     priority = 140
     label_localized = 32178
     params = {'info': 'trending_day'}
     art_icon = 'resources/icons/themoviedb/upcoming.png'
     types = ('movie', 'tv', 'person')
+    group = 32204
 
 
 class BaseDirItemTMDbTrendingWeek(BaseDirItem):
@@ -48,6 +52,7 @@ class BaseDirItemTMDbTrendingWeek(BaseDirItem):
     params = {'info': 'trending_week'}
     art_icon = 'resources/icons/themoviedb/upcoming.png'
     types = ('movie', 'tv', 'person')
+    group = 32204
 
 
 class BaseDirItemTMDbNowPlaying(BaseDirItem):
@@ -56,6 +61,7 @@ class BaseDirItemTMDbNowPlaying(BaseDirItem):
     params = {'info': 'now_playing'}
     art_icon = 'resources/icons/themoviedb/intheatres.png'
     types = ('movie', )
+    group = 32177
 
 
 class BaseDirItemTMDbAiringToday(BaseDirItem):
@@ -65,6 +71,7 @@ class BaseDirItemTMDbAiringToday(BaseDirItem):
     types = ('tv',)
     params = {'info': 'airing_today'}
     art_icon = 'resources/icons/themoviedb/airing.png'
+    group = 32177
 
 
 class BaseDirItemTMDbOnTheAir(BaseDirItem):
@@ -74,6 +81,7 @@ class BaseDirItemTMDbOnTheAir(BaseDirItem):
     types = ('tv',)
     params = {'info': 'on_the_air'}
     art_icon = 'resources/icons/themoviedb/airing.png'
+    group = 32177
 
 
 class BaseDirItemTMDbCalendarLibraryDir(BaseDirItem):
@@ -83,6 +91,7 @@ class BaseDirItemTMDbCalendarLibraryDir(BaseDirItem):
     types = ('tv',)
     params = {'info': 'dir_calendar_library'}
     art_icon = 'resources/icons/themoviedb/airing.png'
+    group = 14022
 
 
 class BaseDirItemTMDbLibraryAiringNext(BaseDirItem):
@@ -92,6 +101,7 @@ class BaseDirItemTMDbLibraryAiringNext(BaseDirItem):
     types = ('tv',)
     params = {'info': 'library_airingnext'}
     art_icon = 'resources/icons/themoviedb/airing.png'
+    group = 14022
 
 
 class BaseDirItemTMDbGenres(BaseDirItem):
@@ -101,6 +111,7 @@ class BaseDirItemTMDbGenres(BaseDirItem):
     types = ('movie', 'tv',)
     params = {'info': 'genres'}
     art_icon = 'resources/icons/themoviedb/genre.png'
+    group = 135
 
 
 class BaseDirItemTMDbWatchProviders(BaseDirItem):
@@ -110,6 +121,7 @@ class BaseDirItemTMDbWatchProviders(BaseDirItem):
     types = ('movie', 'tv',)
     params = {'info': 'watch_providers'}
     art_icon = 'resources/icons/themoviedb/airing.png'
+    group = 32411
 
 
 class BaseDirItemTMDbRevenueMovies(BaseDirItem):
@@ -118,6 +130,7 @@ class BaseDirItemTMDbRevenueMovies(BaseDirItem):
     types = ('movie',)
     params = {'info': 'revenue_movies'}
     art_icon = 'resources/icons/themoviedb/default.png'
+    group = 32184
 
 
 class BaseDirItemTMDbMostVoted(BaseDirItem):
@@ -126,19 +139,17 @@ class BaseDirItemTMDbMostVoted(BaseDirItem):
     types = ('movie', 'tv',)
     params = {'info': 'most_voted'}
     art_icon = 'resources/icons/themoviedb/default.png'
+    group = 32185
 
 
 class BaseDirItemTMDbAllStudios(BaseDirItem):
     priority = 250
-    label_type = 'prefixed'
+    label_type = 'reversed'
     label_localized = 20388
     types = ('movie',)
     params = {'info': 'all_studios'}
     art_icon = 'resources/icons/themoviedb/default.png'
-
-    @cached_property
-    def label_prefixed(self):
-        return get_localized(593)
+    group = 20388
 
 
 class BaseDirItemTMDbAllNetworks(BaseDirItemTMDbAllStudios):
@@ -146,6 +157,7 @@ class BaseDirItemTMDbAllNetworks(BaseDirItemTMDbAllStudios):
     label_localized = 32062
     types = ('tv',)
     params = {'info': 'all_networks'}
+    group = 20388
 
 
 class BaseDirItemTMDbAllCollections(BaseDirItemTMDbAllStudios):
@@ -153,6 +165,7 @@ class BaseDirItemTMDbAllCollections(BaseDirItemTMDbAllStudios):
     label_localized = 32187
     types = ('movie',)
     params = {'info': 'all_collections'}
+    group = 32187
 
 
 class BaseDirItemTMDbAllKeywords(BaseDirItemTMDbAllStudios):
@@ -160,6 +173,7 @@ class BaseDirItemTMDbAllKeywords(BaseDirItemTMDbAllStudios):
     label_localized = 21861
     types = ('movie',)
     params = {'info': 'all_keywords'}
+    group = 21861
 
 
 def get_all_tmdb_class_instances():

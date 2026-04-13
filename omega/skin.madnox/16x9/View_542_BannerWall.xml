@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View542BannerWall">
 		<!-- Background fade -->
@@ -11,9 +11,14 @@
 				<texture>colors/black80.png</texture>
 			</control>
 		</control>
-		<!-- Panel -->
+
+		<!-- Main Panel Group (Animates) -->
 		<control type="group">
 			<visible>Control.IsVisible(542)</visible>
+			<!-- Animation To Slide Wall Left When Trailer Plays -->
+			<animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))" reversible="true">
+				<effect type="slide" end="-800,0" time="400" tween="cubic" easing="out" />
+			</animation>
 			<animation effect="slide" end="0,-40" time="240" condition="Skin.HasSetting(VideosHideTopBar) + [$EXP[AreaVisibleVideos]]">Conditional</animation>
 			<animation effect="slide" end="0,-40" time="240" condition="Skin.HasSetting(MusicHideTopBar) + [$EXP[AreaVisibleMusic]]">Conditional</animation>
 			<include>AnimationZoomWindow</include>
@@ -23,6 +28,9 @@
 				<left>40</left>
 				<width>1840</width>
 				<height>999</height>
+				<!-- Script Trigger and Navigation Cleanup -->
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<onunfocus>PlayerControl(Stop)</onunfocus>
 				<onleft>9050</onleft>
 				<onright>60542</onright>
 				<pagecontrol>60542</pagecontrol>
@@ -45,6 +53,12 @@
 							<param name="diffuse">diffuse/rounded5-593x110.png</param>
 						</include>
 					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="12" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="130" width="613.3" condition="!Skin.HasSetting(View542SmallIcons)">
 					<control type="group">
@@ -69,6 +83,12 @@
 								<param name="diffuse">diffuse/rounded5-593x110.png</param>
 							</include>
 						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="12" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
 				<itemlayout height="100" width="460" condition="Skin.HasSetting(View542SmallIcons)">
@@ -89,6 +109,12 @@
 							<param name="diffuse">diffuse/rounded5-440x81.png</param>
 						</include>
 					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="12" />
+						<param name="height" value="8" />
+					</include>
 				</itemlayout>
 				<focusedlayout height="100" width="460" condition="Skin.HasSetting(View542SmallIcons)">
 					<control type="group">
@@ -114,6 +140,12 @@
 								<param name="diffuse">diffuse/rounded5-440x81.png</param>
 							</include>
 						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="12" />
+							<param name="height" value="8" />
+						</include>
 					</control>
 				</focusedlayout>
 			</control>
@@ -121,7 +153,7 @@
 				<param name="id">542</param>
 			</include>
 		</control>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(542)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -141,6 +173,71 @@
 				<param name="right">50</param>
 				<param name="bottom">28</param>
 			</include>
+		</control>
+
+		<!-- Pop-Up Video Player Group (Copied from View 540) -->
+		<control type="group">
+			<visible>Control.IsVisible(542) + !String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+			<include>AnimationVideoPreviewPopup400</include>
+			<right>50</right>
+			<top>120</top>
+			<width>700</width>
+			<height>800</height>
+			<!-- Video Player -->
+			<control type="group">
+				<width>700</width>
+				<height>394</height>
+				<control type="image">
+					<texture>colors/black.png</texture>
+				</control>
+				<control type="videowindow">
+					<colordiffuse>FFA0A0A0</colordiffuse>
+				</control>
+				<control type="image">
+					<bordersize>-15</bordersize>
+					<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+				</control>
+			</control>
+			<!-- Info Panel for Video -->
+			<control type="group">
+				<top>410</top>
+				<!-- Title -->
+				<control type="label">
+					<width>700</width>
+					<height>90</height>
+					<font>Font28_Bold</font>
+					<textcolor>ff00aaff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[ListItem.Title]</label>
+					<scroll>true</scroll>
+				</control>
+				<!-- Top Separator -->
+				<control type="image">
+					<top>90</top>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+				<!-- Plot Textbox -->
+				<control type="textbox">
+					<top>100</top>
+					<width>700</width>
+					<height>280</height>
+					<font>Font28_Reg</font>
+					<textcolor>ffcccccc</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>justify</align>
+					<label>$INFO[ListItem.Plot]</label>
+					<animation effect="scroll" time="20000" delay="5000" end="100%" condition="true" loop="true" reversible="false">Conditional</animation>
+				</control>
+				<!-- Bottom Separator -->
+				<control type="image">
+					<top>390</top>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+			</control>
 		</control>
 	</include>
 </includes>

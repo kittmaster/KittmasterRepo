@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<window type="dialog" id="1128">
+	<defaultcontrol always="true">9009</defaultcontrol>
+	<controls>
+		<control type="image">
+			<texture colordiffuse="A0000000">colors/black.png</texture>
+			<animation effect="fade" time="400">WindowOpen</animation>
+		</control>
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="400" />
+				<effect type="slide" start="0,200" end="0,0" time="500" tween="cubic" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+			<width>1400</width>
+			<height>800</height>
+			<include content="DialogBackground">
+				<param name="width" value="1400" />
+				<param name="height" value="800" />
+			</include>
+			<control type="image">
+				<right>40</right>
+				<top>30</top>
+				<width>120</width>
+				<height>60</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+			<control type="label">
+				<top>40</top>
+				<left>40</left>
+				<right>40</right>
+				<height>50</height>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$LOCALIZE[19166]...</label>
+				<align>left</align>
+				<include>SettingsLeftLabelWidgetsShortcut</include>
+			</control>
+			<control type="image">
+				<left>40</left>
+				<top>120</top>
+				<width>600</width>
+				<height>540</height>
+				<aspectratio>scale</aspectratio>
+				<texture border="5">icons/systeminfo/fanart/pvr.jpg</texture>
+				<bordertexture colordiffuse="22FFFFFF" border="5">colors/white.png</bordertexture>
+				<bordersize>5</bordersize>
+			</control>
+			<control type="grouplist" id="9001">
+				<left>680</left>
+				<top>120</top>
+				<width>680</width>
+				<height>540</height>
+				<itemgap>15</itemgap>
+				<orientation>vertical</orientation>
+				<onright>60</onright>
+				<!-- Header -->
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5][B]$LOCALIZE[31317]:[/B][/COLOR]</label>
+					<include>SettingsLabelNoOffset</include>
+				</control>
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[551][/LOWERCASE]:[/COLOR] [B]$INFO[PVR.BackendName][/B]</label>
+				</control>
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[19114][/LOWERCASE]:[/COLOR] [B]v$INFO[PVR.BackendVersion][/B]</label>
+				</control>
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5]$LOCALIZE[19012]:[/COLOR] [B]v$INFO[PVR.BackendHost][/B]</label>
+				</control>
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[20161] $LOCALIZE[427] $LOCALIZE[20182][/LOWERCASE]:[/COLOR] [B]$INFO[PVR.TotalDiscSpace][/B]</label>
+				</control>
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31153]:[/COLOR] [B]$INFO[PVR.BackendChannels][/B]</label>
+				</control>
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[19040][/LOWERCASE]:[/COLOR] [B]$INFO[PVR.BackendTimers][/B]</label>
+				</control>
+				<control type="label">
+					<height>40</height>
+					<font>Font30_Reg</font>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31485] #:[/COLOR] [B]$INFO[PVR.BackendNumber][/B]</label>
+				</control>
+			</control>
+			<!-- Scrollbar for the Stats Group -->
+			<control type="scrollbar" id="60">
+				<right>40</right>
+				<top>120</top>
+				<height>540</height>
+				<width>12</width>
+				<onleft>9001</onleft>
+				<orientation>vertical</orientation>
+				<visible>Control.IsVisible(9001) + Container(9001).HasScrollbar</visible>
+				<include>DialogScrollBar</include>
+			</control>
+			<control type="button" id="9009">
+				<width>200</width>
+				<height>60</height>
+				<centerleft>50%</centerleft>
+				<bottom>40</bottom>
+				<label>$LOCALIZE[186]</label>
+				<font>Font30_Bold</font>
+				<align>center</align>
+				<onclick>Action(Close)</onclick>
+				<include>DialogButtonAlwaysFocused</include>
+			</control>
+		</control>
+	</controls>
+</window>

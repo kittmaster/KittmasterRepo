@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<include name="InfoTimeBarContent">
 		<param name="top">0</param>
@@ -114,6 +114,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="InfoTimeBar">
 		<control type="group">
 			<top>760</top>
@@ -321,6 +322,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="RSSShortcuts">
 		<control type="group">
 			<top>1040</top>
@@ -435,6 +437,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="RSSShortcutsIcon">
 		<width>70</width>
 		<height>70</height>
@@ -445,6 +448,7 @@
 		<texturefocus border="20" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/button.png</texturefocus>
 		<texturenofocus border="20" colordiffuse="$VAR[PanelSubTextColorVar]">buttons/button.png</texturenofocus>
 	</include>
+
 	<include name="MainMenu">
 		<param name="listtype">wraplist</param>
 		<definition>
@@ -452,7 +456,7 @@
 				<width>1920</width>
 				<top>848</top>
 				<include>AnimationSlideBottomWindow</include>
-				<!-- Sub menu -->
+				<!-- Sub Menu -->
 				<control type="group">
 					<top>100</top>
 					<visible>!Skin.HasSetting(SubmenuHide)</visible>
@@ -511,12 +515,12 @@
 				<control type="group" id="9002">
 					<top>100</top>
 					<animation type="Conditional" condition="Skin.HasSetting(SubmenuHide) + ControlGroup(9002).HasFocus" reversible="false">
-						<effect type="fade" start="0" end="100" time="200" tween="quadratic" easing="out"/>
-						<effect type="slide" start="0,-40" end="0" time="200" tween="quadratic" easing="out"/>
+						<effect type="fade" start="0" end="100" time="200" tween="quadratic" easing="out" />
+						<effect type="slide" start="0,-40" end="0" time="200" tween="quadratic" easing="out" />
 					</animation>
 					<animation type="Conditional" condition="Skin.HasSetting(SubmenuHide) + !ControlGroup(9002).HasFocus" reversible="false">
-						<effect type="fade" start="100" end="0" time="200" tween="quadratic" easing="out"/>
-						<effect type="slide" start="0" end="0,-40" time="450" tween="quadratic" easing="out"/>
+						<effect type="fade" start="100" end="0" time="200" tween="quadratic" easing="out" />
+						<effect type="slide" start="0" end="0,-40" time="450" tween="quadratic" easing="out" />
 					</animation>
 					<control type="fixedlist" id="9001">
 						<centerleft>50%</centerleft>
@@ -572,7 +576,7 @@
 						</content>
 					</control>
 				</control>
-				<!-- Main menu -->
+				<!-- Main Menu -->
 				<control type="image">
 					<top>-20</top>
 					<width>1920</width>
@@ -596,8 +600,9 @@
 					<width>3200</width>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
+					<onup condition="Skin.HasSetting(SystemWidget.GridMode) + !String.IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9900</onup>
 					<include>skinshortcuts-template-widgetOnUpMainMenu</include>
-					<onup condition="String.IsEmpty(Container(9000).ListItem.Property(widget.1))">9050</onup>
+					<onup condition="!Skin.HasSetting(SystemWidget.GridMode) + String.IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9050</onup>
 					<ondown condition="String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True)">SetFocus(9001,2)</ondown>
 					<ondown condition="String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),False) + Control.IsVisible(9003)">9003</ondown>
 					<ondown condition="String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),False) + !Control.IsVisible(9003)">9050</ondown>
@@ -759,6 +764,7 @@
 			</control>
 		</definition>
 	</include>
+
 	<!-- Widgets -->
 	<include name="WidgetContainerCommon">
 		<left>30</left>
@@ -771,6 +777,7 @@
 		<orientation>horizontal</orientation>
 		<include>ContainerScrollTime</include>
 	</include>
+
 	<include name="WidgetContainer">
 		<include>WidgetContainerCommon</include>
 		<itemlayout width="$PARAM[containerwidth]">
@@ -836,7 +843,7 @@
 					<width>45</width>
 					<height>45</height>
 					<aspectratio>keep</aspectratio>
-					<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedSatusIndicatorVar]</texture>
+					<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedStatusIndicatorVar]</texture>
 				</control>
 				<control type="label">
 					<visible>Skin.HasSetting(EnableWidgetEpisodeCountStatus) + Integer.IsGreater(Container.ListItem.Property(unwatchedepisodes),0)</visible>
@@ -868,6 +875,9 @@
 				<aspectratio>keep</aspectratio>
 				<texture colordiffuse="$VAR[MainMenuWidgetColorVar]">$VAR[StudioIconsVar]</texture>
 			</control>
+			<!-- Progress Bar (Active Scaling) -->
+			<include>Object_ProgressBar</include>
+			<!-- In Progress Widget -->
 		</itemlayout>
 		<focusedlayout width="$PARAM[containerwidth]">
 			<control type="image">
@@ -875,7 +885,7 @@
 			</control>
 			<control type="group">
 				<animation type="Focus" reversible="false">
-					<effect type="zoom" start="95" end="100" time="300" center="auto"/>
+					<effect type="zoom" start="95" end="100" time="300" center="auto" />
 				</animation>
 				<control type="image">
 					<bordersize>$PARAM[border]</bordersize>
@@ -938,7 +948,7 @@
 						<width>45</width>
 						<height>45</height>
 						<aspectratio>keep</aspectratio>
-						<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedSatusIndicatorVar]</texture>
+						<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedStatusIndicatorVar]</texture>
 					</control>
 					<control type="label">
 						<visible>Skin.HasSetting(EnableWidgetEpisodeCountStatus) + Integer.IsGreater(Container.ListItem.Property(unwatchedepisodes),0)</visible>
@@ -973,6 +983,7 @@
 			</control>
 		</focusedlayout>
 	</include>
+
 	<include name="WidgetPosterInfoContainer">
 		<include>WidgetContainerCommon</include>
 		<itemlayout width="$PARAM[containerwidth]">
@@ -1016,6 +1027,28 @@
 			<control type="image">
 				<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
 			</control>
+			<!-- Progress Bar Injection -->
+			<control type="group">
+				<visible>ListItem.IsResumable</visible>
+				<left>10</left>
+				<bottom>100</bottom>
+				<!-- Aligned with bottom of poster (iconbottom is approx 97) -->
+				<right>10</right>
+				<height>6</height>
+				<!-- Dark Background -->
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="99000000">colors/white.png</texture>
+				</control>
+				<!-- Blue Progress Fill -->
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="FF0099CC">colors/white.png</texture>
+					<info>ListItem.PercentPlayed</info>
+				</control>
+			</control>
 		</itemlayout>
 		<focusedlayout width="$PARAM[containerwidth]">
 			<control type="image">
@@ -1023,7 +1056,7 @@
 			</control>
 			<control type="group">
 				<animation type="Focus" reversible="false">
-					<effect type="zoom" start="95" end="100" time="300" center="auto"/>
+					<effect type="zoom" start="95" end="100" time="300" center="auto" />
 				</animation>
 				<control type="image">
 					<bordersize>10</bordersize>
@@ -1066,8 +1099,31 @@
 					<texture border="20">thumbs/overlay.png</texture>
 				</control>
 			</control>
+			<!-- Progress Bar Injection -->
+			<control type="group">
+				<visible>ListItem.IsResumable</visible>
+				<left>10</left>
+				<bottom>100</bottom>
+				<!-- Aligned With Bottom Of Poster (Iconbottom Is Approx 97) -->
+				<right>10</right>
+				<height>6</height>
+				<!-- Dark Background -->
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="99000000">colors/white.png</texture>
+				</control>
+				<!-- Blue Progress Fill -->
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="FF0099CC">colors/white.png</texture>
+					<info>ListItem.PercentPlayed</info>
+				</control>
+			</control>
 		</focusedlayout>
 	</include>
+
 	<include name="WidgetFanartInfoContainer">
 		<include>WidgetContainerCommon</include>
 		<itemlayout width="$PARAM[containerwidth]">
@@ -1123,7 +1179,7 @@
 			</control>
 			<control type="group">
 				<animation type="Focus" reversible="false">
-					<effect type="zoom" start="95" end="100" time="300" center="auto"/>
+					<effect type="zoom" start="95" end="100" time="300" center="auto" />
 				</animation>
 				<control type="multiimage">
 					<top>10</top>
@@ -1173,6 +1229,7 @@
 			</control>
 		</focusedlayout>
 	</include>
+
 	<include name="WidgetInfo">
 		<visible>$PARAM[visible]</visible>
 		<animation effect="fade" end="100" time="300">Visible</animation>
@@ -1187,7 +1244,10 @@
 		</control>
 		<control type="group">
 			<visible>$PARAM[infovisible]</visible>
-			<bottom>280</bottom>
+			<bottom>310</bottom>
+			<!-- Shifts the group DOWN 30 pixels (to 280) instantly when InfoBarTop is true -->
+			<animation effect="slide" end="0,40" time="0" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
+			<!-- cmb -->
 			<left>40</left>
 			<right>40</right>
 			<control type="grouplist">
@@ -1315,6 +1375,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="WidgetNextButton">
 		<visible>Skin.HasSetting(WidgetNextButton) + !String.IsEmpty(Container(9000).ListItem.Property(widget.2))</visible>
 		<animation effect="fade" end="100" delay="480" time="240">WindowOpen</animation>
@@ -1324,13 +1385,15 @@
 		<label></label>
 		<include>RSSShortcutsIcon</include>
 	</include>
-	<variable name="WidgetWatchedSatusIndicatorVar">
+
+	<variable name="WidgetWatchedStatusIndicatorVar">
 		<value condition="!Skin.HasSetting(DisableWidgetResumeStatus) + ListItem.IsResumable">overlays/list/OverlayResume.png</value>
 		<value condition="!Skin.HasSetting(DisableWidgetWatchedStatus) + Integer.IsGreater(ListItem.PlayCount,0)">overlays/list/OverlayWatched.png</value>
 		<value condition="Skin.HasSetting(EnableWidgetUnwatchedStatus) + Integer.IsEqual(ListItem.PlayCount,0)">overlays/list/OverlayUnWatched.png</value>
 		<value condition="Skin.HasSetting(EnableWidgetEpisodeCountStatus) + Integer.IsGreater(ListItem.Property(unwatchedepisodes),0)">overlays/list/OverlayUnWatched.png</value>
 		<value condition="Skin.HasSetting(EnableWidgetEpisodeCountStatus) + String.IsEqual(ListItem.DBTYPE,tvshow) + !Integer.IsGreater(ListItem.Property(unwatchedepisodes),0)">overlays/list/OverlayWatched.png</value>
 	</variable>
+
 	<include name="PVRWidget">
 		<control type="group">
 			<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
@@ -1396,11 +1459,12 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="PVRWidgetContent">
-		<param name="label"/>
-		<param name="time"/>
-		<param name="title"/>
-		<param name="icon"/>
+		<param name="label" />
+		<param name="time" />
+		<param name="title" />
+		<param name="icon" />
 		<definition>
 			<top>30</top>
 			<right>30</right>
@@ -1473,7 +1537,8 @@
 			</control>
 		</definition>
 	</include>
-	<!-- Now playing -->
+
+	<!-- Now Playing -->
 	<include name="HomeNowPlaying">
 		<control type="image">
 			<visible>!ControlGroup(90010).HasFocus</visible>
@@ -1699,6 +1764,7 @@
 			</control>
 		</control>
 	</include>
+
 	<!-- Variables -->
 	<variable name="MainMenuLayoutLabelVar">
 		<value condition="Skin.String(MainMenuLayout,wide)">$LOCALIZE[539]</value>
@@ -1708,6 +1774,7 @@
 		<value condition="Skin.String(MainMenuLayout,bigiconswide)">$LOCALIZE[31122]</value>
 		<value>$LOCALIZE[571]</value>
 	</variable>
+
 	<variable name="InfoLineVar">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),movies)">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[20342]: [/COLOR]$INFO[Window(Home).Property(Movies.Count)]  [COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[16102]: [/COLOR]$INFO[Window(Home).Property(Movies.Watched)]  [COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(Home).Property(Movies.UnWatched)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),tvshows)">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[20343]: [/COLOR]$INFO[Window(Home).Property(TVShows.Count)]  [COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[20360]: [/COLOR]$INFO[Window(Home).Property(Episodes.Count)]  [COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(Home).Property(Episodes.UnWatched)]</value>
@@ -1730,6 +1797,7 @@
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),disc) + !System.HasMediadvd">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[427]: [/COLOR]$LOCALIZE[504]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),systeminfo)">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31023]: [/COLOR]$INFO[System.memory(used.percent)]  [COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31022]: [/COLOR]$INFO[System.CPUUsage]</value>
 	</variable>
+
 	<variable name="InfoLineLabelVar">
 		<value condition="String.IsEqual(Container(211).ListItem.Property(InfoLine),movies)">$LOCALIZE[20342]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(InfoLine),tvshows)">$LOCALIZE[20343]</value>
@@ -1746,10 +1814,19 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(InfoLine),systeminfo)">$LOCALIZE[130]</value>
 		<value>$LOCALIZE[231]</value>
 	</variable>
+
+	<variable name="PVRWidgetLabelVar">
+		<value condition="String.IsEqual(Container(211).ListItem.Property(pvrWidget),pvr)">PVR</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(pvrWidget),tv)">$LOCALIZE[19020]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(pvrWidget),radio)">$LOCALIZE[19021]</value>
+		<value>$LOCALIZE[231]</value>
+	</variable>
+
 	<variable name="WidgetTitleVar">
 		<value condition="!String.IsEmpty(Container.ListItem.Episode) + !String.IsEqual(Container.ListItem.Label,Container.ListItem.TVShowTitle)">$INFO[Container.ListItem.Season,,x]$INFO[Container.ListItem.Episode,,. ]$INFO[Container.ListItem.Title]</value>
 		<value>$INFO[Container.ListItem.Label]</value>
 	</variable>
+
 	<variable name="WidgetSubTitleVar">
 		<value condition="!String.IsEmpty(ListItem.Property(subtitle))">$INFO[ListItem.Property(subtitle)]</value>
 		<value condition="!String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
@@ -1761,6 +1838,7 @@
 		<value condition="!String.IsEmpty(Listitem.Property(Artist_Disambiguation))">$INFO[Listitem.Property(Artist_Disambiguation)]</value>
 		<value>$INFO[ListItem.Genre]</value>
 	</variable>
+
 	<variable name="WidgetInfo1Var">
 		<value condition="!String.IsEmpty(Container.ListItem.AddonCreator)">$INFO[Container.ListItem.AddonCreator, ,  ]</value>
 		<value condition="String.Contains(ListItem.Path,pvr)">$INFO[ListItem.StartTime, , - ]$INFO[ListItem.EndTime,,  ]</value>
@@ -1769,15 +1847,12 @@
 		<value condition="!String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[Container.ListItem.Property(Artist_YearsActive), ,  ]</value>
 		<value condition="!String.IsEmpty(ListItem.Year)">$INFO[Container.ListItem.Year, ,  ]</value>
 	</variable>
+
 	<variable name="WidgetInfo2Var">
 		<value condition="!String.IsEmpty(ListItem.Property(duration))">$INFO[ListItem.Property(duration), ,  ]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.AddonVersion)">$INFO[Container.ListItem.AddonVersion, v,  ]</value>
 		<value condition="!Integer.IsGreater(Container.ListItem.Duration(h),0)">$INFO[Container.ListItem.Duration(mm), ,m]$INFO[Container.ListItem.Duration(ss),,s  ]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Duration)">$INFO[Container.ListItem.Duration(hh), ,h]$INFO[Container.ListItem.Duration(mm),,m  ]</value>
-	</variable>
-	<variable name="WidgetInfo3Var">
-		<value condition="!String.IsEmpty(Container.ListItem.UserRating)">$INFO[Container.ListItem.UserRating, ,.0  ]</value>
-		<value condition="!String.IsEmpty(Container.ListItem.Rating)">$INFO[Container.ListItem.Rating, ,  ]</value>
 	</variable>
 
 	<variable name="WidgetInfo3Var">

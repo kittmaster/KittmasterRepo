@@ -54,7 +54,7 @@ class BaseDirItemMainTMDb(BaseDirItemMainMovie):
 
 class BaseDirItemMainTMDbv4(BaseDirItemMainMovie):
     priority = 170
-    label = 'TMDb User'
+    label_localized = 32079
     params = {'info': 'dir_tmdb_v4'}
     art_icon = 'resources/icons/themoviedb/default.png'
 
@@ -63,6 +63,13 @@ class BaseDirItemMainTrakt(BaseDirItemMainMovie):
     priority = 180
     label = 'Trakt'
     params = {'info': 'dir_trakt'}
+    art_icon = 'resources/trakt.png'
+
+
+class BaseDirItemMainTraktDiscover(BaseDirItemMainMovie):
+    priority = 185
+    label = 'Trakt Discover'
+    params = {'info': 'dir_trakt_discover'}
     art_icon = 'resources/trakt.png'
 
 
@@ -78,6 +85,29 @@ class BaseDirItemMainMDbList(BaseDirItemMainMovie):
     label = 'MDbList'
     params = {'info': 'dir_mdblist'}
     art_icon = 'resources/icons/mdblist/mdblist.png'
+
+    @property
+    def enabled(self):
+        from tmdbhelper.lib.addon.plugin import get_setting
+        return bool(get_setting('mdblist_apikey', 'str'))
+
+
+class BaseDirItemMainGemini(BaseDirItemMainMovie):
+    priority = 205
+    label_localized = 32149
+    label_type = 'suffixed'
+    params = {'info': 'gemini'}
+    art_icon = 'resources/icons/gemini/gemini.png'
+
+    @property
+    def label_suffix(self):
+        from tmdbhelper.lib.addon.plugin import get_localized
+        return get_localized(32223)
+
+    @property
+    def enabled(self):
+        from tmdbhelper.lib.api.gemini.api import Gemini
+        return bool(Gemini.api_key)
 
 
 class BaseDirItemMain(BaseDirItemMainMovie):

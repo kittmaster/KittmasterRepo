@@ -6,6 +6,7 @@ class Tvshow(MediaItem):
     table = 'tvshow'
     tmdb_type = 'tv'
     ftv_type = 'tv'
+    append_to_response_tmdbtype = 'tv'
 
     @property
     def cached_data_table(self):
@@ -47,14 +48,6 @@ class Tvshow(MediaItem):
         cached_data_keys.extend(Tvshow.cached_data_keys_episode_to_air('next_aired'))
         cached_data_keys.extend(Tvshow.cached_data_keys_episode_to_air('last_aired'))
         return tuple(cached_data_keys)
-
-    @property
-    def online_data_kwgs(self):
-        if self.cache_refresh == 'basic':
-            return {'append_to_response': self.common_apis.tmdb_api.append_to_response_tvshow_simple}
-        if self.cache_refresh == 'langs':
-            return {'append_to_response': self.common_apis.tmdb_api.append_to_response_tvshow_translation}
-        return {'append_to_response': self.common_apis.tmdb_api.append_to_response_tvshow}
 
     def config_basemeta_db_tvshow(self, database_obj):
         database_obj = self.config_basemeta_db(database_obj)
@@ -134,6 +127,11 @@ class Tvshow(MediaItem):
             'basemeta_db_user_art_clearlogo_season': self.config_basemeta_db_season,
             'basemeta_db_user_art_thumb_season': self.config_basemeta_db_season,
 
+            'basemeta_db_default_art_poster_tvshow': self.config_basemeta_db_tvshow,
+            'basemeta_db_default_art_fanart_tvshow': self.config_basemeta_db_tvshow,
+            'basemeta_db_default_art_poster_season': self.config_basemeta_db_season,
+            'basemeta_db_default_art_fanart_season': self.config_basemeta_db_season,
+
             'basemeta_db_unique_id_tvshow': self.config_basemeta_db_tvshow,
             'basemeta_db_unique_id_season': self.config_basemeta_db_season,
             'basemeta_db_custom_tvshow': self.config_basemeta_db_tvshow,
@@ -151,6 +149,9 @@ class Tvshow(MediaItem):
             self.return_basemeta_db('season'),
             self.return_basemeta_db('episode'),
             self.return_basemeta_db('genre'),
+            self.return_basemeta_db('languages'),
+            self.return_basemeta_db('language'),
+            self.return_basemeta_db('countries'),
             self.return_basemeta_db('country'),
             self.return_basemeta_db('certification'),
             self.return_basemeta_db('translation'),
@@ -167,6 +168,7 @@ class Tvshow(MediaItem):
             self.return_basemeta_db('unique_id'),
             self.return_basemeta_db('custom'),
             self.return_basemeta_db('fanart_tv'),
+            self.return_basemeta_db('default_art'),
             self.return_basemeta_db('art'),
 
         )

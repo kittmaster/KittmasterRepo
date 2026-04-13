@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View507CascadeSquare">
-		<!-- Video preview -->
+		<!-- Video Preview -->
 		<control type="group">
 			<visible>Control.IsVisible(507) + Player.HasVideo + Skin.HasSetting(View507VideoPreviewWindow)</visible>
 			<include content="AnimationSlideRightWindow">
@@ -17,7 +17,7 @@
 			<control type="image">
 				<texture>colors/black.png</texture>
 			</control>
-			<control type="videowindow"/>
+			<control type="videowindow" />
 			<control type="image">
 				<bordersize>-10</bordersize>
 				<texture border="20">thumbs/overlay2.png</texture>
@@ -48,7 +48,7 @@
 				<param name="slide">820</param>
 			</include>
 			<top>520</top>
-			<!-- Portrait - On previous -->
+			<!-- Portrait - On Previous -->
 			<control type="group" id="5802">
 				<visible>Container(507).OnPrevious</visible>
 				<animation effect="slide" end="0,0" time="300" reversible="false">Hidden</animation>
@@ -178,12 +178,12 @@
 						<param name="diffuse">diffuse/rounded5-500x500.png</param>
 					</include>
 				</control>
-				<!-- Fade in focus thumb -->
+				<!-- Fade In Focus Thumb -->
 				<control type="group">
 					<visible>Container(507).OnPrevious</visible>
 					<animation type="Hidden" reversible="false">
-						<effect type="fade" end="100" time="300"/>
-						<effect type="slide" start="-510" time="300"/>
+						<effect type="fade" end="100" time="300" />
+						<effect type="slide" start="-510" time="300" />
 					</animation>
 					<animation effect="fade" end="0" time="0" reversible="false">Visible</animation>
 					<left>40</left>
@@ -197,7 +197,7 @@
 					</include>
 				</control>
 			</control>
-			<!-- Portrait - On next -->
+			<!-- Portrait - On Next -->
 			<control type="group" id="5801">
 				<visible>Container(507).OnNext</visible>
 				<animation effect="slide" end="0,0" time="300" reversible="false">Hidden</animation>
@@ -327,12 +327,12 @@
 						<param name="diffuse">diffuse/rounded5-460x460.png</param>
 					</include>
 				</control>
-				<!-- Fade out focus thumb -->
+				<!-- Fade Out Focus Thumb -->
 				<control type="group">
 					<visible>Container(507).OnNext</visible>
 					<animation type="Hidden" reversible="false">
-						<effect type="fade" end="100" time="300"/>
-						<effect type="slide" end="-560" time="300"/>
+						<effect type="fade" end="100" time="300" />
+						<effect type="slide" end="-560" time="300" />
 					</animation>
 					<left>40</left>
 					<top>0</top>
@@ -345,7 +345,7 @@
 					</include>
 				</control>
 			</control>
-			<!-- Portrait - Static content -->
+			<!-- Portrait - Static Content -->
 			<control type="group">
 				<visible>!Control.IsVisible(5801) + !Control.IsVisible(5802)</visible>
 				<control type="group">
@@ -460,11 +460,11 @@
 				<viewtype label="$LOCALIZE[31263]">icon</viewtype>
 				<focusposition>4</focusposition>
 				<preloaditems>2</preloaditems>
-				<itemlayout width="214" height="520"/>
-				<focusedlayout width="214" height="520"/>
+				<itemlayout width="214" height="520" />
+				<focusedlayout width="214" height="520" />
 			</control>
 		</control>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(507)</visible>
 			<include content="AnimationSlideBottomWindow">

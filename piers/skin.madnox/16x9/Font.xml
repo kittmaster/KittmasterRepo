@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <fonts>
 	<fontset id="Default" idloc="15109">
 		<!-- Regular Fonts (OpenSans-Regular.ttf) -->
@@ -130,23 +130,52 @@
 			<name>Font48_Reg</name>
 			<filename>OpenSans-Regular.ttf</filename>
 			<size>48</size>
-		</font>                        
-		<!-- Kodi required fonts (OpenSans-Regular.ttf) -->
+		</font>
+		<!-- Kodi Required Fonts (OpenSans-Regular.ttf) -->
 		<font>
-			<name>font13</name>
+			<name>font13_Reg</name>
 			<filename>OpenSans-Regular.ttf</filename>
-			<size>30</size>
+			<size>13</size>
+		</font>
+		<font>
+			<name>font13_bold</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<style>bold</style>
+			<size>13</size>
 		</font>
 		<!-- Caps Fonts (OpenSans-Regular.ttf) -->
 		<font>
 			<name>Font30_Caps</name>
 			<filename>OpenSans-Regular.ttf</filename>
 			<style>uppercase</style>
-			<size>28</size>
+			<size>30</size>
 		</font>
 		<!-- Condensed Bold Fonts (OpenSansCond.ttf) -->
 		<font>
-			<name>Font25_Cond_Bold</name>
+			<name>Font34_Cond_Bold</name>
+			<filename>OpenSansCond.ttf</filename>
+			<style>bold</style>
+			<size>34</size>
+		</font>
+		<font>
+			<name>Font30_Cond_Bold</name>
+			<filename>OpenSansCond.ttf</filename>
+			<style>bold</style>
+			<size>30</size>
+		</font>
+		<font>
+			<name>Font30_Cond</name>
+			<filename>OpenSansCond.ttf</filename>
+			<size>30</size>
+		</font>
+		<font>
+			<name>Font28_Cond_Bold</name>
+			<filename>OpenSansCond.ttf</filename>
+			<style>bold</style>
+			<size>28</size>
+		</font>
+		<font>
+			<name>Font23_Cond_Bold</name>
 			<filename>OpenSansCond.ttf</filename>
 			<style>bold</style>
 			<size>23</size>
@@ -218,6 +247,11 @@
 			<size>26</size>
 		</font>
 		<font>
+			<name>Font28_Cond</name>
+			<filename>OpenSansCond.ttf</filename>
+			<size>28</size>
+		</font>
+		<font>
 			<name>Font29_Cond</name>
 			<filename>OpenSansCond.ttf</filename>
 			<size>29</size>
@@ -234,101 +268,120 @@
 			<linespacing>0.8</linespacing>
 			<size>29</size>
 		</font>
+		<font>
+			<name>Font34_Cond</name>
+			<filename>OpenSansCond.ttf</filename>
+			<size>34</size>
+		</font>
 		<!-- Bold Fonts (OpenSans-Bold.ttf) -->
 		<font>
 			<name>Font25_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
 			<size>25</size>
 		</font>
 		<font>
 			<name>Font28_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
 			<size>28</size>
 		</font>
 		<font>
 			<name>Font30_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
 			<size>30</size>
+		</font>
+		<font>
+			<name>Font31_Bold</name>
+			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
+			<size>31</size>
 		</font>
 		<font>
 			<name>Font32_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
 			<size>32</size>
 		</font>
 		<font>
 			<name>Font33_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
 			<size>33</size>
 		</font>
 		<font>
 			<name>Font38_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<size>40</size>
+			<style>bold</style>
+			<size>38</size>
 		</font>
 		<font>
 			<name>Font44_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
 			<size>44</size>
 		</font>
 		<font>
 			<name>Font80_Bold</name>
 			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
 			<size>80</size>
 		</font>
 		<!-- Bold Caps Fonts (OpenSans-Bold.ttf) -->
 		<font>
 			<name>Font26_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>26</size>
 		</font>
 		<font>
 			<name>Font28_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
-			<size>30</size>
+			<style>uppercase bold</style>
+			<size>28</size>
 		</font>
 		<font>
 			<name>Font33_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>33</size>
 		</font>
 		<font>
 			<name>Font36_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>36</size>
 		</font>
 		<font>
 			<name>Font42_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>42</size>
 		</font>
 		<font>
 			<name>Font49_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>49</size>
 		</font>
 		<font>
 			<name>Font80_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>80</size>
 		</font>
 		<font>
 			<name>Font120_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>120</size>
 		</font>
 		<font>
 			<name>Font600_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
-			<size>300</size>
+			<style>uppercase bold</style>
+			<size>600</size>
 		</font>
 		<!-- Special Fonts -->
 		<font>
@@ -349,7 +402,7 @@
 			<filename>BebasNeue.ttf</filename>
 			<size>25</size>
 		</font>
-        <!-- MaterialDesignIcons Font -->
+		<!-- MaterialDesignIcons Font -->
 		<font>
 			<name>Font28_Icon</name>
 			<filename>MaterialDesignIcons.ttf</filename>
@@ -383,79 +436,79 @@
 		<font>
 			<name>Font120_Icon</name>
 			<filename>MaterialDesignIcons.ttf</filename>
-			<size>180</size>
+			<size>120</size>
 		</font>
-        <!-- MaterialDesignIcons RegularFont -->
+		<!-- MaterialDesignIcons RegularFont -->
 		<font>
-			<name>Font42_Icon</name>
+			<name>Font42_Icon_Reg</name>
 			<filename>MaterialIcons-Regular.ttf</filename>
 			<size>42</size>
-		</font>        
-		<!-- Lyrics fonts -->
+		</font>
+		<!-- Lyrics Fonts -->
 		<font>
 			<name>Font120_Caps_Lyrics</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>120</size>
 		</font>
 		<font>
 			<name>Font110_Caps_Lyrics</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>110</size>
 		</font>
 		<font>
 			<name>Font100_Caps_Lyrics</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>100</size>
 		</font>
 		<font>
 			<name>Font90_Caps_Lyrics</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
+			<style>uppercase bold</style>
 			<size>90</size>
 		</font>
 		<font>
 			<name>Font80_Caps_Lyrics</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>uppercase</style>
-			<size>70</size>
+			<style>uppercase bold</style>
+			<size>80</size>
 		</font>
 		<font>
 			<name>Font60_Lowercase_Lyrics</name>
 			<filename>OpenSans-Bold.ttf</filename>
 			<linespacing>0.95</linespacing>
-			<style>lowercase</style>
+			<style>lowercase bold</style>
 			<size>60</size>
 		</font>
 		<font>
 			<name>Font55_Lowercase_Lyrics</name>
 			<filename>OpenSans-Bold.ttf</filename>
-			<style>lowercase</style>
+			<style>lowercase bold</style>
 			<size>55</size>
 		</font>
 
-        <!-- Additional Unicode Fonts -->
-        <font>
-            <name>DejaVuSans</name>
-            <filename>DejaVuSans.ttf</filename>
-            <size>22</size>
-        </font>
-        <font>
-            <name>NotoMono</name>
-            <filename>NotoMono-Regular.ttf</filename>
-            <size>22</size>
-        </font>		
-        <font>
-            <name>NotoSans-Regular</name>
-            <filename>NotoSans-Regular.ttf</filename>
-            <size>22</size>
-        </font>
-        <font>
-            <name>Roboto</name>
-            <filename>Roboto-Thin.ttf</filename>
-            <size>22</size>
-        </font>		
+		<!-- Additional Unicode Fonts -->
+		<font>
+			<name>DejaVuSans</name>
+			<filename>DejaVuSans.ttf</filename>
+			<size>22</size>
+		</font>
+		<font>
+			<name>NotoMono</name>
+			<filename>NotoMono-Regular.ttf</filename>
+			<size>22</size>
+		</font>
+		<font>
+			<name>NotoSans-Regular</name>
+			<filename>NotoSans-Regular.ttf</filename>
+			<size>22</size>
+		</font>
+		<font>
+			<name>Roboto</name>
+			<filename>Roboto-Thin.ttf</filename>
+			<size>22</size>
+		</font>
 	</fontset>
 </fonts>

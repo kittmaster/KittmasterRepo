@@ -1,5 +1,5 @@
 import xbmcgui
-from tmdbhelper.lib.addon.plugin import get_infolabel, get_condvisibility, get_localized
+from tmdbhelper.lib.addon.plugin import get_condvisibility, get_localized
 from tmdbhelper.lib.addon.logger import kodi_try_except
 from tmdbhelper.lib.monitor.common import CommonMonitorFunctions
 from tmdbhelper.lib.monitor.listitemgetter import ListItemInfoGetter
@@ -10,18 +10,24 @@ from tmdbhelper.lib.items.listitem import ListItem
 class ListItemMonitorFunctions(CommonMonitorFunctions, ListItemInfoGetter):
     def __init__(self, service_monitor=None):
         super(ListItemMonitorFunctions, self).__init__()
-        self.cur_item = 0
-        self.pre_item = 1
-        self.cur_window = 0
-        self.pre_window = 1
+        self.reset_current_item()
         self._ignored_labels = ('..', get_localized(33078).lower(), get_localized(209).lower())
         self._listcontainer = None
         self._last_listitem = None
         self.property_prefix = 'ListItem'
-        self._pre_artwork_thread = None
         self.service_monitor = service_monitor  # ServiceMonitor
-        self.process_thread = []
-        self.process_mutex = False
+        self.ratings_queued = []
+        self.ratings_thread = None
+        self.artwork_queued = []
+        self.artwork_thread = None
+
+    def reset_current_item(self):
+        self.cur_item = 0
+        self.pre_item = 1
+        self.cur_window = 0
+        self.pre_window = 1
+        self.cur_base_window = 0
+        self.pre_base_window = 1
 
     # ==========
     # PROPERTIES
@@ -90,6 +96,14 @@ class ListItemMonitorFunctions(CommonMonitorFunctions, ListItemInfoGetter):
 
         # We want to set a special container but it doesn't exist so exit
         if self._listcontainer == -1:
+            return
+
+        # Check not on a modal or context
+        # if self.service_monitor.is_on_modal or self.service_monitor.is_on_context:
+        #     return
+
+        # Check we can actually get something from underlying item
+        if self.is_same_base_window(update=True) and not self.get_cur_info():
             return
 
         # Check if the item has changed before retrieving details again

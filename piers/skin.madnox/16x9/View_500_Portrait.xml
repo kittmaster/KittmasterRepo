@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View500Portrait">
-		<!-- Info panel -->
+		<!-- Info Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(500)</visible>
 			<include content="ViewCoverFlowInfoPanel">
@@ -20,7 +20,7 @@
 		<include content="View500Panel" condition="Skin.HasSetting(View500FixedList)">
 			<param name="listtype">fixedlist</param>
 		</include>
-		<!-- Bottom info/Media flags -->
+		<!-- Bottom Info/Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(500)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -32,7 +32,7 @@
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsPanelVideos</include>
 		</control>
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View500Panel">
 		<param name="listtype">wraplist</param>
 		<definition>
@@ -53,6 +53,10 @@
 					<onup condition="!Skin.String(View500InfoDelay,manual) | ListItem.IsParentFolder">9050</onup>
 					<onup condition="Skin.String(View500InfoDelay,manual) + !ListItem.IsParentFolder">9999</onup>
 					<ondown>60500</ondown>
+					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<onunfocus>PlayerControl(Stop)</onunfocus>
+					<onleft>9050</onleft>
+					<onright>6055</onright>
 					<pagecontrol>60500</pagecontrol>
 					<focusposition>4</focusposition>
 					<orientation>horizontal</orientation>

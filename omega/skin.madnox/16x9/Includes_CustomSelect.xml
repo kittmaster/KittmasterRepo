@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="SelectMusicOSDBackground">
 		<item>
@@ -33,6 +33,7 @@
 			<onclick>Skin.SetString(MusicOSDBackground,none)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectNowPlayingMusicBackground">
 		<item>
 			<label>$LOCALIZE[20445]</label>
@@ -66,13 +67,14 @@
 			<onclick>Skin.Reset(NowPlayingMusicBackground)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectFanartRotationSpeed">
 		<item>
 			<label>$LOCALIZE[571] (5 $LOCALIZE[31311])</label>
 			<icon>$VAR[IconPathVar]\timers\05.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(FanartTimePerImage,5)</onclick>
-		</item>		
+		</item>
 		<item>
 			<label>5 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\05.png</icon>
@@ -140,9 +142,9 @@
 			<onclick>Skin.SetString(FanartTimePerImage,90)</onclick>
 		</item>
 	</include>
-<!-- CMB ***************************************************************** -->
+
 	<!-- Movie Time Selection -->
-	<include name="SelectMovieMetaScrollSpeed"> <!-- CMB -->
+	<include name="SelectMovieMetaScrollSpeed">
 		<!-- <item>
 			<label>$LOCALIZE[571] (5 $LOCALIZE[31311])</label>
 			<onclick>Dialog.Close(1110)</onclick>
@@ -152,96 +154,123 @@
 			<label>3 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\03.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,3)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,3)</onclick> <!-- Sets Alarmclock timer seed value -->
-		</item>	
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,3)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,3)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
+		</item>
 		<item>
 			<label>4 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\04.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,4)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,4)</onclick> <!-- Sets Alarmclock timer seed value -->
-		</item>			
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,4)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,4)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
+		</item>
 		<item>
 			<label>5 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\05.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,5)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,5)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,5)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,5)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>6 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\06.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,6)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,6)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,6)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,6)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>7 $LOCALIZE[31311] (Default)</label>
 			<icon>$VAR[IconPathVar]\timers\07.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,7)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,7)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,7)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,7)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>8 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\08.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,8)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,8)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,8)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,8)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>9 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\09.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,9)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,9)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,9)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,9)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>10 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\10.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,10)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,10)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,10)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,10)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>15 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\15.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,15)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,15)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,15)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,15)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>20 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\20.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,20)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,20)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,20)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,20)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>30 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\30.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,30)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,30)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,30)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,30)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>60 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\60.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,60)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,60)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,60)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,60)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>90 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\90.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,90)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,90)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevara,90)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(moviemetascrollingdelayvaluevarb,90)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 	</include>
+
 	<!-- Person Time Selection -->
-	<include name="SelectPersonMetaScrollSpeed"> <!-- CMB -->
+	<include name="SelectPersonMetaScrollSpeed">
 		<!-- <item>
 			<label>$LOCALIZE[571] (5 $LOCALIZE[31311])</label>
 			<onclick>Dialog.Close(1110)</onclick>
@@ -251,95 +280,121 @@
 			<label>3 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\03.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,3)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,3)</onclick> <!-- Sets Alarmclock timer seed value -->
-		</item>	
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,3)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,3)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
+		</item>
 		<item>
 			<label>4 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\04.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,4)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,4)</onclick> <!-- Sets Alarmclock timer seed value -->
-		</item>			
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,4)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,4)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
+		</item>
 		<item>
 			<label>5 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\05.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,5)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,5)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,5)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,5)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>6 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\06.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,6)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,6)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,6)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,6)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>7 $LOCALIZE[31311] ($LOCALIZE[571])</label>
 			<icon>$VAR[IconPathVar]\timers\07.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,7)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,7)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,7)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,7)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>8 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\08.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,8)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,8)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,8)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,8)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>9 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\09.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,9)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,9)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,9)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,9)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>10 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\10.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,10)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,10)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,10)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,10)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>15 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\15.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,15)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,15)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,15)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,15)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>20 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\20.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,20)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,20)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,20)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,20)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>30 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\30.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,30)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,30)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,30)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,30)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>60 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\60.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,60)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,60)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,60)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,60)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
 		<item>
 			<label>90 $LOCALIZE[31311]</label>
 			<icon>$VAR[IconPathVar]\timers\90.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,90)</onclick> <!-- Sets Visual Feedback in Control Panel -->
-			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,90)</onclick> <!-- Sets Alarmclock timer seed value -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevara,90)</onclick>
+			<!-- Sets Visual Feedback in Control Panel -->
+			<onclick>Skin.SetString(personmetascrollingdelayvaluevarb,90)</onclick>
+			<!-- Sets Alarmclock Timer Seed Value -->
 		</item>
-	</include>	
-<!-- CMB ***************************************************************** -->
+	</include>
+
 	<include name="SelectNowPlayingBackground">
 		<control type="label" id="301">
 			<visible>Player.HasMedia</visible>
@@ -375,6 +430,7 @@
 			<include>DialogRadioButton</include>
 		</control>
 	</include>
+
 	<include name="SelectVideoBackground">
 		<control type="radiobutton" id="101">
 			<visible>!Window.IsVisible(1102)</visible>
@@ -498,6 +554,7 @@
 			<selected>Skin.HasSetting(VideoGenreCoverFanart)</selected>
 		</control>
 	</include>
+
 	<include name="SelectMusicBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31314]</label>
@@ -587,6 +644,7 @@
 			<selected>Skin.HasSetting(MusicGenreCoverFanart)</selected>
 		</control>
 	</include>
+
 	<include name="SelectAddonBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31314]</label>
@@ -620,6 +678,7 @@
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
+
 	<include name="SelectFavouritesBackground">
 		<!-- <control type="radiobutton" id="101" TODO>
 			<label>$LOCALIZE[31314]</label>
@@ -653,6 +712,7 @@
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
+
 	<include name="SelectSearchBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31038]</label>
@@ -679,6 +739,7 @@
 			<onclick>Skin.SetPath(SearchBackground)</onclick>
 		</control>
 	</include>
+
 	<include name="SelectPVRBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31038]</label>
@@ -706,6 +767,7 @@
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
+
 	<include name="SelectGamesBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31038]</label>
@@ -733,6 +795,7 @@
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
+
 	<include name="SelectPicturesBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31038]</label>
@@ -759,6 +822,7 @@
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
+
 	<include name="SelectWeatherBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31038]</label>
@@ -793,6 +857,7 @@
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
+
 	<include name="SelectSystemBackground">
 		<control type="radiobutton" id="101">
 			<label>$LOCALIZE[31038]</label>
@@ -820,7 +885,8 @@
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
 	</include>
-	<!-- Kiosk mode -->
+
+	<!-- Kiosk Mode -->
 	<include name="KioskModeSettings">
 		<control type="label" id="101">
 			<label>$LOCALIZE[31151]</label>
@@ -889,7 +955,8 @@
 			<include>DialogRadioButton</include>
 		</control>
 	</include>
-	<!-- Enable/Disable views -->
+
+	<!-- Enable/Disable Views -->
 	<include name="DisableViewsSettings">
 		<control type="label" id="101">
 			<width>990</width>
@@ -1103,7 +1170,8 @@
 			<selected>!Skin.HasSetting(DisableViewLandscapeWall)</selected>
 		</control>
 	</include>
-	<!-- Enable/Disable watched status indicators -->
+
+	<!-- Enable/Disable Watched Status Indicators -->
 	<include name="WatchedStatusSettings">
 		<control type="radiobutton" id="102">
 			<label>$LOCALIZE[16102]</label>
@@ -1130,6 +1198,7 @@
 			<selected>Skin.HasSetting(EnableEpisodeCountStatus)</selected>
 		</control>
 	</include>
+
 	<include name="WidgetWatchedStatusSettings">
 		<control type="radiobutton" id="102">
 			<label>$LOCALIZE[16102]</label>
@@ -1156,15 +1225,16 @@
 			<selected>Skin.HasSetting(EnableWidgetEpisodeCountStatus)</selected>
 		</control>
 	</include>
-	<!-- Media flags -->
+
+	<!-- Media Flags -->
 	<include name="MediaFlagSettings">
 		<control type="radiobutton" id="102">
 			<label>$LOCALIZE[31052]</label>
 			<include>DialogRadioButton</include>
 			<onclick condition="!System.AddonIsEnabled(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>
 			<onclick condition="System.AddonIsEnabled(resource.images.studios.coloured)">Skin.ToggleSetting(MediaFlagsColored)</onclick>
-			<onclick condition="System.AddonIsEnabled(resource.images.studios.coloured)">Dialog.Close(all,true)</onclick>
-			<include>ReloadWindowOnClick</include>
+			<!-- <onclick condition="System.AddonIsEnabled(resource.images.studios.coloured)">Dialog.Close(all,true)</onclick> -->
+			<!-- <include>ReloadWindowOnClick</include> -->
 			<selected>Skin.HasSetting(MediaFlagsColored)</selected>
 		</control>
 		<control type="radiobutton" id="103">
@@ -1193,7 +1263,8 @@
 			<selected>Skin.HasSetting(SourceFlags)</selected>
 		</control>
 	</include>
-	<!-- Media flags resolution color  --> <!-- CMB -->
+
+	<!-- Media Flags Resolution Color  -->
 	<include name="MediaFlagResolutionColorSettings">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -1205,7 +1276,7 @@
 			<icon>flags/colored/videoresolution/1-Red/preview/1080.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,red)</onclick>
-		</item>		
+		</item>
 		<item>
 			<label>$LOCALIZE[13342]</label>
 			<icon>flags/colored/videoresolution/2-Orange/preview/1080.png</icon>
@@ -1223,7 +1294,7 @@
 			<icon>flags/colored/videoresolution/4-Blue/preview/1080.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,blue)</onclick>
-		</item>		
+		</item>
 		<item>
 			<label>$LOCALIZE[765]</label>
 			<icon>flags/colored/videoresolution/5-Cyan/preview/1080.png</icon>
@@ -1261,7 +1332,8 @@
 			<onclick>Skin.SetString(MediaFlagResolutionColorSettingsValue,brown)</onclick>
 		</item>
 	</include>
-		<!-- Media flags aspect ratio color --> <!-- CMB -->
+
+	<!-- Media Flags Aspect Ratio Color -->
 	<include name="MediaFlagAspectRatioColorSettings">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -1273,7 +1345,7 @@
 			<icon>flags/colored/videoaspect/1-Red/preview/1.00.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,red)</onclick>
-		</item>		
+		</item>
 		<item>
 			<label>$LOCALIZE[13342]</label>
 			<icon>flags/colored/videoaspect/2-Orange/preview/1.00.png</icon>
@@ -1291,7 +1363,7 @@
 			<icon>flags/colored/videoaspect/4-Blue/preview/1.00.png</icon>
 			<onclick>Dialog.Close(1110)</onclick>
 			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,blue)</onclick>
-		</item>		
+		</item>
 		<item>
 			<label>$LOCALIZE[765]</label>
 			<icon>flags/colored/videoaspect/5-Cyan/preview/1.00.png</icon>
@@ -1329,7 +1401,8 @@
 			<onclick>Skin.SetString(MediaFlagAspectRatioColorSettingsValue,brown)</onclick>
 		</item>
 	</include>
-	<!-- Top bar -->
+
+	<!-- Top Bar -->
 	<include name="TopbarSettings">
 		<control type="radiobutton" id="102">
 			<label>$LOCALIZE[31159]</label>
@@ -1368,6 +1441,7 @@
 			<selected>!Skin.HasSetting(DisableTopbarTime)</selected>
 		</control>
 	</include>
+
 	<!-- Music OSD -->
 	<include name="MusicOSDInfoSettings">
 		<control type="label" id="101">
@@ -1575,13 +1649,15 @@
 			<include>DialogLabel</include>
 		</control>
 		<control type="radiobutton" id="152">
-			<visible>System.AddonIsEnabled(script.embuary.helper)</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[12381]</label>
-			<onclick>RunScript(script.embuary.helper,action=togglekodisetting,setting=musicfiles.selectaction)</onclick>
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/TMDb_Helper_SettingsWriter.py, mode=toggle, setting=musicfiles.selectaction)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=write_setting, mode=toggle, setting=musicfiles.selectaction)</onclick>
 			<selected>system.getbool(musicfiles.selectaction)</selected>
-			<include>MediaMenuRadioButton</include>
+			<include>DialogRadioButton</include>
 		</control>
 	</include>
+
 	<!-- Video OSD -->
 	<include name="VideoOSDSettings">
 		<control type="button" id="101">
@@ -1628,6 +1704,7 @@
 			<include>DialogButton</include>
 		</control>
 	</include>
+
 	<include name="VideoOSDInfoSettings">
 		<control type="label" id="111">
 			<label>$LOCALIZE[29915]</label>
@@ -1788,20 +1865,21 @@
 			<include>DialogRadioButton</include>
 		</control>
 	</include>
+
 	<include name="VideoInfoDialogSettings">
 		<control type="label" id="101">
 			<label>$LOCALIZE[128]</label>
 			<include>DialogLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
-			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)</visible>
+			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(Custom_1111_CustomSelectGrouplist.xml)</visible>
 			<label>$LOCALIZE[203]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoPlotOutline)</onclick>
 			<selected>Skin.HasSetting(VideoInfoPlotOutline)</selected>
 		</control>
 		<control type="radiobutton" id="103">
-			<visible>System.AddonIsEnabled(script.embuary.info)</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[31352]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoTMDbActor)</onclick>
@@ -1811,13 +1889,63 @@
 			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
+		<!-- MASTER GATE: ENABLE BLUR -->
 		<control type="radiobutton" id="112">
-			<visible>System.AddonIsEnabled(script.embuary.helper)</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[31164]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoBlurEnabled)</onclick>
-			<onclick condition="Skin.HasSetting(VideoBlurEnabled)">RunScript(script.embuary.helper,action=blurimg,file=$ESCINFO[ListItem.Art(thumb)],prop=blurthumb,radius=2)</onclick>
 			<selected>Skin.HasSetting(VideoBlurEnabled)</selected>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Size,1080)</onclick>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Radius,90)</onclick>
+			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
+		</control>
+		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
+		<control type="radiobutton" id="144">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
+			<!-- Only allow interaction if Master Blur (112) is ON -->
+			<enable>Skin.HasSetting(VideoBlurEnabled)</enable>
+			<label>$LOCALIZE[31515]</label>
+			<include>DialogRadioButton</include>
+			<!-- IF ON: Backup current color before resetting -->
+			<onclick condition="Skin.HasSetting(VideoBlurWithColor) + !String.IsEmpty(Skin.String(blur_listitem_art_overlay.color))">Skin.SetString(PreviousBlurColorBackup, $INFO[Skin.String(blur_listitem_art_overlay.color)])</onclick>
+			<!-- IF ON: Reset active color to transparent/NULL -->
+			<onclick condition="Skin.HasSetting(VideoBlurWithColor)">Skin.Reset(blur_listitem_art_overlay.color)</onclick>
+			<!-- IF OFF: Restore color from backup -->
+			<onclick condition="!Skin.HasSetting(VideoBlurWithColor) + !String.IsEmpty(Skin.String(PreviousBlurColorBackup))">Skin.SetString(blur_listitem_art_overlay.color, $INFO[Skin.String(PreviousBlurColorBackup)])</onclick>
+			<onclick>Skin.ToggleSetting(VideoBlurWithColor)</onclick>
+			<selected>Skin.HasSetting(VideoBlurWithColor)</selected>
+		</control>
+		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
+		<control type="radiobutton" id="143">
+			<enable>Skin.HasSetting(VideoBlurEnabled) + Skin.HasSetting(VideoBlurWithColor)</enable>
+			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
+			<!-- <label2>[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2> -->
+			<label2 condition="Skin.HasSetting(VideoBlurWithColor)">[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2>
+			<onclick>SetProperty(Reset.Color,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(blur_listitem_art_overlay.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[39173]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
+			<include content="CustomColorRadioButtonBlurSettings">
+				<param name="ColorStringVar">$VAR[BlurColorVar]</param>
+			</include>
+			<include>SettingsButton</include>
+		</control>
+		<control type="button" id="144">
+			<enable>!Skin.HasSetting(VideoBlurEnabled)</enable>
+			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
+			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
+			<include>DialogRadioButton</include>
+			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
+		</control>
+		<!-- Reset to Default Button with Dynamic Label -->
+		<control type="button" id="145">
+			<enable>!Skin.HasSetting(VideoBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
+			<label>$VAR[ResetDimmingLabelVar]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.SetString(FanartBlackAlpha,8)</onclick>
 		</control>
 		<control type="radiobutton" id="113">
 			<label>$LOCALIZE[31084]</label>
@@ -1840,37 +1968,121 @@
 			<selected>!Skin.HasSetting(VideoInfoDisableCharacterArt)</selected>
 		</control>
 		<control type="label" id="121">
-			<visible>System.AddonIsEnabled(script.embuary.helper) + [Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)]</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + [Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)]</visible>
 			<label>$LOCALIZE[31295]</label>
 			<include>DialogLabel</include>
 		</control>
 		<control type="radiobutton" id="122">
-			<visible>System.AddonIsEnabled(script.embuary.helper) + [Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)]</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + [Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)]</visible>
 			<label>$LOCALIZE[24022]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaMode)</onclick>
 			<selected>Skin.HasSetting(CinemaMode)</selected>
 		</control>
 		<control type="button" id="123">
-			<visible>System.AddonIsEnabled(script.embuary.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31296]</label>
 			<label2>$INFO[Skin.String(TrailerCount)]</label2>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.SetNumeric(TrailerCount)</onclick>
 		</control>
+		<!-- Trailer Source Selector -->
+		<control type="button" id="126">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
+			<label>$LOCALIZE[20410] [LOWERCASE]$LOCALIZE[21870] [/LOWERCASE]($LOCALIZE[31480])</label>
+			<label2>$VAR[CinemaSourceLabel]</label2>
+			<include>DialogRadioButton</include>
+			<!-- Cycle Logic: 0->1, 1->2, 2->0 -->
+			<onclick condition="String.IsEmpty(Skin.String(TrailerSource)) | String.IsEqual(Skin.String(TrailerSource),0)">Skin.SetString(TrailerSource,1)</onclick>
+			<onclick condition="String.IsEqual(Skin.String(TrailerSource),1)">Skin.SetString(TrailerSource,2)</onclick>
+			<onclick condition="String.IsEqual(Skin.String(TrailerSource),2)">Skin.SetString(TrailerSource,0)</onclick>
+		</control>
 		<control type="button" id="124">
-			<visible>System.AddonIsEnabled(script.embuary.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31297]</label>
 			<label2>$INFO[Skin.String(IntroPath)]</label2>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.SetPath(IntroPath)</onclick>
 		</control>
+		<control type="button" id="401">
+			<description>Folder Assets Check</description>
+			<label>>> $LOCALIZE[24058]</label>
+			<label2>$VAR[CinemaAssetsStatusIcon]</label2>
+			<visible>!String.IsEmpty(Skin.String(IntroPath))</visible>
+			<include>DialogRadioButton</include>
+			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/madnox_cinema.py, mode=setup)</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=madnox_cinema, mode=setup)</onclick>
+		</control>
 		<control type="radiobutton" id="125">
-			<visible>System.AddonIsEnabled(script.embuary.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31166]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaModePlay)</onclick>
 			<selected>Skin.HasSetting(CinemaModePlay)</selected>
+		</control>
+		<!-- Feature Intro -->
+		<control type="radiobutton" id="301">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31429] $LOCALIZE[31442][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableFeatureIntro)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableFeatureIntro)</selected>
+		</control>
+		<!-- Trailer Intro -->
+		<control type="radiobutton" id="302">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[20410] $LOCALIZE[31442][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableTrailerIntro)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableTrailerIntro)</selected>
+		</control>
+		<!-- Trailer Outro -->
+		<control type="radiobutton" id="303">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[20410] $LOCALIZE[31443][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableTrailerOutro)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableTrailerOutro)</selected>
+		</control>
+		<!-- Audio Format -->
+		<control type="radiobutton" id="304">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[292] $LOCALIZE[31457][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableAudio)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableAudio)</selected>
+		</control>
+		<!-- Courtesy -->
+		<control type="radiobutton" id="305">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31461] $LOCALIZE[31457][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableCourtesy)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableCourtesy)</selected>
+		</control>
+		<!-- Ratings -->
+		<control type="radiobutton" id="306">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[563] $LOCALIZE[31457][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableRatings)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableRatings)</selected>
+		</control>
+		<!-- Countdown -->
+		<control type="radiobutton" id="307">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31460][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableCountdown)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableCountdown)</selected>
+		</control>
+		<!-- Feature Outro -->
+		<control type="radiobutton" id="308">
+			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31429] $LOCALIZE[31443][/LOWERCASE]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaDisableFeatureOutro)</onclick>
+			<selected>!Skin.HasSetting(CinemaDisableFeatureOutro)</selected>
+		</control>
+		<control type="radiobutton" id="127">
+			<description>Show Cinema Errors/Debug Notifications</description>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
+			<label>$LOCALIZE[31462]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(CinemaNotifications)</onclick>
+			<selected>Skin.HasSetting(CinemaNotifications)</selected>
 		</control>
 		<control type="label" id="131">
 			<label>$LOCALIZE[35059]</label>
@@ -1884,7 +2096,7 @@
 			<selected>!Skin.HasSetting(VideoInfoDisableTrailer)</selected>
 		</control>
 		<control type="radiobutton" id="133">
-			<visible>System.AddonIsEnabled(script.embuary.info)</visible>
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[31351]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoTMDb)</onclick>
@@ -1932,6 +2144,13 @@
 			<onclick>Skin.ToggleSetting(VideoInfoDisableSimilar)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableSimilar)</selected>
 		</control>
+		<control type="radiobutton" id="153">
+			<visible>System.AddonIsEnabled(script.wikipedia)</visible>
+			<label>$LOCALIZE[31439]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(WikipediaIsInstalled)</onclick>
+			<selected>Skin.HasSetting(WikipediaIsInstalled)</selected>
+		</control>
 		<control type="radiobutton" id="140">
 			<label>$LOCALIZE[563]</label>
 			<include>DialogRadioButton</include>
@@ -1951,18 +2170,206 @@
 			<selected>!Skin.HasSetting(VideoInfoDisableArtwork)</selected>
 		</control>
 	</include>
+
+	<include name="TMDBInfoDialogSettings">
+		<control type="label" id="111">
+			<label>$LOCALIZE[39123]</label>
+			<include>DialogLabel</include>
+		</control>
+		<!-- MASTER GATE: ENABLE BLUR -->
+		<control type="radiobutton" id="112">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
+			<label>$LOCALIZE[31164]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(VideoBlurEnabled)</onclick>
+			<selected>Skin.HasSetting(VideoBlurEnabled)</selected>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Size,1080)</onclick>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Radius,90)</onclick>
+			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
+		</control>
+		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
+		<control type="radiobutton" id="144">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
+			<!-- Only allow interaction if Master Blur (112) is ON -->
+			<enable>Skin.HasSetting(VideoBlurEnabled)</enable>
+			<label>$LOCALIZE[31515]</label>
+			<include>DialogRadioButton</include>
+			<!-- IF ON: Backup current color before resetting -->
+			<onclick condition="Skin.HasSetting(VideoBlurWithColor) + !String.IsEmpty(Skin.String(blur_listitem_art_overlay.color))">Skin.SetString(PreviousBlurColorBackup, $INFO[Skin.String(blur_listitem_art_overlay.color)])</onclick>
+			<!-- IF ON: Reset active color to transparent/NULL -->
+			<onclick condition="Skin.HasSetting(VideoBlurWithColor)">Skin.Reset(blur_listitem_art_overlay.color)</onclick>
+			<!-- IF OFF: Restore color from backup -->
+			<onclick condition="!Skin.HasSetting(VideoBlurWithColor) + !String.IsEmpty(Skin.String(PreviousBlurColorBackup))">Skin.SetString(blur_listitem_art_overlay.color, $INFO[Skin.String(PreviousBlurColorBackup)])</onclick>
+			<onclick>Skin.ToggleSetting(VideoBlurWithColor)</onclick>
+			<selected>Skin.HasSetting(VideoBlurWithColor)</selected>
+		</control>
+		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
+		<control type="radiobutton" id="143">
+			<enable>Skin.HasSetting(VideoBlurEnabled) + Skin.HasSetting(VideoBlurWithColor)</enable>
+			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
+			<!-- <label2>[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2> -->
+			<label2 condition="Skin.HasSetting(VideoBlurWithColor)">[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2>
+			<onclick>SetProperty(Reset.Color,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(blur_listitem_art_overlay.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[39173]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
+			<include content="CustomColorRadioButtonBlurSettings">
+				<param name="ColorStringVar">$VAR[BlurColorVar]</param>
+			</include>
+			<include>SettingsButton</include>
+		</control>
+		<control type="button" id="144">
+			<enable>!Skin.HasSetting(VideoBlurEnabled)</enable>
+			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
+			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
+			<include>DialogRadioButton</include>
+			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
+		</control>
+		<!-- Reset to Default Button with Dynamic Label -->
+		<control type="button" id="145">
+			<enable>!Skin.HasSetting(VideoBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
+			<label>$VAR[ResetDimmingLabelVar]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.SetString(FanartBlackAlpha,8)</onclick>
+		</control>
+	</include>
+
+	<include name="PersonInfoDialogSettings">
+		<control type="label" id="111">
+			<label>$LOCALIZE[39123]</label>
+			<include>DialogLabel</include>
+		</control>
+		<!-- MASTER GATE: ENABLE BLUR -->
+		<control type="radiobutton" id="112">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
+			<label>$LOCALIZE[31164]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(VideoBlurEnabled)</onclick>
+			<selected>Skin.HasSetting(VideoBlurEnabled)</selected>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Size,1080)</onclick>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Radius,90)</onclick>
+			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
+		</control>
+		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
+		<control type="radiobutton" id="144">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
+			<!-- Only allow interaction if Master Blur (112) is ON -->
+			<enable>Skin.HasSetting(VideoBlurEnabled)</enable>
+			<label>$LOCALIZE[31515]</label>
+			<include>DialogRadioButton</include>
+			<!-- IF ON: Backup current color before resetting -->
+			<onclick condition="Skin.HasSetting(VideoBlurWithColor) + !String.IsEmpty(Skin.String(blur_listitem_art_overlay.color))">Skin.SetString(PreviousBlurColorBackup, $INFO[Skin.String(blur_listitem_art_overlay.color)])</onclick>
+			<!-- IF ON: Reset active color to transparent/NULL -->
+			<onclick condition="Skin.HasSetting(VideoBlurWithColor)">Skin.Reset(blur_listitem_art_overlay.color)</onclick>
+			<!-- IF OFF: Restore color from backup -->
+			<onclick condition="!Skin.HasSetting(VideoBlurWithColor) + !String.IsEmpty(Skin.String(PreviousBlurColorBackup))">Skin.SetString(blur_listitem_art_overlay.color, $INFO[Skin.String(PreviousBlurColorBackup)])</onclick>
+			<onclick>Skin.ToggleSetting(VideoBlurWithColor)</onclick>
+			<selected>Skin.HasSetting(VideoBlurWithColor)</selected>
+		</control>
+		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
+		<control type="radiobutton" id="143">
+			<enable>Skin.HasSetting(VideoBlurEnabled) + Skin.HasSetting(VideoBlurWithColor)</enable>
+			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
+			<!-- <label2>[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2> -->
+			<label2 condition="Skin.HasSetting(VideoBlurWithColor)">[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2>
+			<onclick>SetProperty(Reset.Color,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(blur_listitem_art_overlay.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[39173]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
+			<include content="CustomColorRadioButtonBlurSettings">
+				<param name="ColorStringVar">$VAR[BlurColorVar]</param>
+			</include>
+			<include>SettingsButton</include>
+		</control>
+		<control type="button" id="144">
+			<enable>!Skin.HasSetting(VideoBlurEnabled)</enable>
+			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
+			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
+			<include>DialogRadioButton</include>
+			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
+		</control>
+		<!-- Reset to Default Button with Dynamic Label -->
+		<control type="button" id="145">
+			<enable>!Skin.HasSetting(VideoBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
+			<label>$VAR[ResetDimmingLabelVar]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.SetString(FanartBlackAlpha,8)</onclick>
+		</control>
+	</include>
+
 	<include name="MusicInfoDialogSettings">
 		<control type="label" id="111">
 			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
+
+		<!-- MASTER GATE: ENABLE BLUR -->
 		<control type="radiobutton" id="112">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[31164]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicBlurEnabled)</onclick>
-			<onclick condition="Skin.HasSetting(MusicBlurEnabled)">RunScript(script.embuary.helper,action=blurimg,file=$ESCINFO[ListItem.Art(thumb)],prop=blurthumb,radius=2)</onclick>
 			<selected>Skin.HasSetting(MusicBlurEnabled)</selected>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Size,1080)</onclick>
+			<onclick>Skin.SetString(TMDbHelper.Blur.Radius,90)</onclick>
+			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
 		</control>
+		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
+		<control type="radiobutton" id="144">
+			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
+			<enable>Skin.HasSetting(MusicBlurEnabled)</enable>
+			<label>$LOCALIZE[31515]</label>
+			<include>DialogRadioButton</include>
+			<!-- IF ON: Backup current color before resetting -->
+			<onclick condition="Skin.HasSetting(MusicBlurWithColor) + !String.IsEmpty(Skin.String(blur_listitem_art_overlay.color))">Skin.SetString(PreviousBlurColorBackup, $INFO[Skin.String(blur_listitem_art_overlay.color)])</onclick>
+			<!-- IF ON: Reset active color to transparent/NULL -->
+			<onclick condition="Skin.HasSetting(MusicBlurWithColor)">Skin.Reset(blur_listitem_art_overlay.color)</onclick>
+			<!-- IF OFF: Restore color from backup -->
+			<onclick condition="!Skin.HasSetting(MusicBlurWithColor) + !String.IsEmpty(Skin.String(PreviousBlurColorBackup))">Skin.SetString(blur_listitem_art_overlay.color, $INFO[Skin.String(PreviousBlurColorBackup)])</onclick>
+
+			<!-- FIX: Toggle the correct setting -->
+			<onclick>Skin.ToggleSetting(MusicBlurWithColor)</onclick>
+			<!-- FIX: Select based on the correct setting -->
+			<selected>Skin.HasSetting(MusicBlurWithColor)</selected>
+		</control>
+		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
+		<control type="radiobutton" id="143">
+			<!-- FIX: Enable based on the two different settings -->
+			<enable>Skin.HasSetting(MusicBlurEnabled) + Skin.HasSetting(MusicBlurWithColor)</enable>
+			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
+			<!-- FIX: Show label2 based on the correct setting -->
+			<label2 condition="Skin.HasSetting(MusicBlurWithColor)">[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2>
+			<onclick>SetProperty(Reset.Color,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelName,blur_listitem_art_overlay.color,Home)</onclick>
+			<onclick>SetProperty(ActiveControlPanelNameValue,$INFO[Skin.String(blur_listitem_art_overlay.color)],Home)</onclick>
+			<onclick>Skin.SetString(mycolorfile,"special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml")</onclick>
+			<onclick>SetProperty(DialogTitle,$LOCALIZE[39173]:$VAR[1BlankSpace]$LOCALIZE[31136],Home)</onclick>
+			<onclick>RunScript(script.skin.madnox, action=show_color_loader)</onclick>
+			<include content="CustomColorRadioButtonBlurSettings">
+				<param name="ColorStringVar">$VAR[BlurColorVar]</param>
+			</include>
+			<include>SettingsButton</include>
+		</control>
+
+		<control type="button" id="144">
+			<enable>!Skin.HasSetting(MusicBlurEnabled)</enable>
+			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
+			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
+			<include>DialogRadioButton</include>
+			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
+		</control>
+		<!-- Reset to Default Button with Dynamic Label -->
+		<control type="button" id="145">
+			<enable>!Skin.HasSetting(MusicBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
+			<label>$VAR[ResetDimmingLabelVar]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.SetString(FanartBlackAlpha,8)</onclick>
+		</control>
+
 		<control type="radiobutton" id="113">
 			<label>$LOCALIZE[31291]</label>
 			<include>DialogRadioButton</include>
@@ -2021,7 +2428,8 @@
 			<selected>!Skin.HasSetting(MusicInfoDisableArtwork)</selected>
 		</control>
 	</include>
-	<!-- Disc art fallback -->
+
+	<!-- Disc Art Fallback -->
 	<include name="SelectNowPlayingMusicDiscartFallback">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2095,6 +2503,7 @@
 			<onclick>Skin.SetString(NowPlayingMusicDiscArtFallback,red)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectNowPlayingVideoDiscartFallback">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2168,6 +2577,7 @@
 			<onclick>Skin.SetString(NowPlayingVideoDiscArtFallback,red)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectLibraryMusicDiscartFallback">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2241,6 +2651,7 @@
 			<onclick>Skin.SetString(LibraryMusicDiscArtFallback,red)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectLibraryVideoDiscartFallback">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2314,7 +2725,8 @@
 			<onclick>Skin.SetString(LibraryVideoDiscArtFallback,red)</onclick>
 		</item>
 	</include>
-	<!-- Favourites select -->
+
+	<!-- Favourites Select -->
 	<include name="SelectCustomFavourites">
 		<item>
 			<label>$LOCALIZE[31293] 1</label>
@@ -2417,6 +2829,7 @@
 			<onclick>RunScript(script.favourites,property=CustomFavourite.20)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectCustomFavouriteAddons">
 		<item>
 			<label>$LOCALIZE[24000] 1</label>
@@ -2519,6 +2932,7 @@
 			<onclick>Skin.SetAddon(CustomFavouriteAddon.20.Label,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.game,xbmc.addon.executable)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectCustomTheme">
 		<item>
 			<label>Aeon Nox 4</label>
@@ -2541,6 +2955,7 @@
 			<include>ThemeBlueWood</include>
 		</item>
 	</include>
+
 	<include name="SelectBackgroundEffect">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2572,7 +2987,8 @@
 			<onclick>Skin.SetString(BackgroundEffect.texture,easter)</onclick>
 		</item>
 	</include>
-		<include name="SelectColoredResolutionMediaFlag">
+
+	<include name="SelectColoredResolutionMediaFlag">
 		<item>
 			<label>$LOCALIZE[231]</label>
 			<onclick>Skin.Reset(BackgroundEffect.texture)</onclick>
@@ -2597,27 +3013,28 @@
 			<label>$LOCALIZE[765]</label>
 			<onclick>Skin.SetString(ResolutionFlagUser.color,cyan)</onclick>
 		</item>
-				<item>
+		<item>
 			<label>$LOCALIZE[31396]</label>
 			<onclick>Skin.SetString(ResolutionFlagUser.color,violet)</onclick>
 		</item>
-				<item>
+		<item>
 			<label>$LOCALIZE[31397]</label>
 			<onclick>Skin.SetString(ResolutionFlagUser.color,magenta)</onclick>
 		</item>
-				<item>
+		<item>
 			<label>$LOCALIZE[743]</label>
 			<onclick>Skin.SetString(ResolutionFlagUser.color,yellow)</onclick>
 		</item>
-				<item>
+		<item>
 			<label>$LOCALIZE[31398]</label>
 			<onclick>Skin.SetString(ResolutionFlagUser.color,turquoise)</onclick>
 		</item>
-				<item>
+		<item>
 			<label>$LOCALIZE[31399]</label>
 			<onclick>Skin.SetString(ResolutionFlagUser.color,brown)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectThemePanelTexture">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2685,6 +3102,7 @@
 			<onclick>Skin.SetString(PanelTexture.texture,panels/patterns/wrinkles.png)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectThemeBackgroundTexture">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2752,6 +3170,7 @@
 			<onclick>Skin.SetString(BackgroundTexture.texture,panels/patterns/wrinkles.png)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectThemeMainMenuTexture">
 		<item>
 			<label>$LOCALIZE[231]</label>
@@ -2819,6 +3238,7 @@
 			<onclick>Skin.SetString(MainMenuTexture.texture,panels/mainmenu/wrinkles.png)</onclick>
 		</item>
 	</include>
+
 	<include name="SelectDimMusicOSD">
 		<item>
 			<label>$LOCALIZE[351]</label>
@@ -2863,77 +3283,134 @@
 		</item>
 	</include>
 
+	<!-- Variable For Forced Padding -->
+	<variable name="MediaColorFlagUserLabelForcedPadding">
+		<!-- <value>$LOCALIZE[31400]</value> Forced Padding for Right Align for resolution icons in admin panel, DO NOT change -->
+		<value>$VAR[4BlankSpace]</value>
+		<!-- Forced Padding For Right Align For Resolution Icons In Admin Panel, Do Not Change -->
+	</variable>
 
+	<!-- Variable For The Image Path -->
+	<variable name="ResolutionStyleColorVar">
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),red)">flags/colored/videoresolution/1-Red/preview/preview_red.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),orange)">flags/colored/videoresolution/2-Orange/preview/preview_orange.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),green)">flags/colored/videoresolution/3-Green/preview/preview_green.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),blue)">flags/colored/videoresolution/4-Blue/preview/preview_blue.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),cyan)">flags/colored/videoresolution/5-Cyan/preview/preview_cyan.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),violet)">flags/colored/videoresolution/6-Violet/preview/preview_violet.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),magenta)">flags/colored/videoresolution/7-Magenta/preview/preview_magenta.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),yellow)">flags/colored/videoresolution/8-Yellow/preview/preview_yellow.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),turquoise)">flags/colored/videoresolution/9-Turquoise/preview/preview_turquoise.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),brown)">flags/colored/videoresolution/10-Brown/preview/preview_brown.png</value>
+		<value condition="String.IsEmpty(Skin.String(MediaFlagResolutionColorSettingsValue))">flags/colored/videoresolution/2-Orange/preview/preview_orange.png</value>
+		<!-- Default Image -->
+		<value>(No Match)</value>
+	</variable>
 
-		<!-- Variable for forced padding -->
-		<variable name="MediaColorFlagUserLabelForcedPadding">
-			<!-- <value>$LOCALIZE[31400]</value> Forced Padding for Right Align for resolution icons in admin panel, DO NOT change -->
-			<value>$VAR[4BlankSpace]</value> <!-- Forced Padding for Right Align for resolution icons in admin panel, DO NOT change -->
-		</variable>
+	<!-- Variable For The Image Path -->
+	<variable name="AspectRatioStyleColorVar">
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),red)">flags/colored/videoaspect/1-Red/preview/preview_red.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),orange)">flags/colored/videoaspect/2-Orange/preview/preview_orange.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),green)">flags/colored/videoaspect/3-Green/preview/preview_green.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),blue)">flags/colored/videoaspect/4-Blue/preview/preview_blue.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),cyan)">flags/colored/videoaspect/5-Cyan/preview/preview_cyan.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),violet)">flags/colored/videoaspect/6-Violet/preview/preview_violet.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),magenta)">flags/colored/videoaspect/7-Magenta/preview/preview_magenta.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),yellow)">flags/colored/videoaspect/8-Yellow/preview/preview_yellow.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),turquoise)">flags/colored/videoaspect/9-Turquoise/preview/preview_turquoise.png</value>
+		<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),brown)">flags/colored/videoaspect/10-Brown/preview/preview_brown.png</value>
+		<value condition="String.IsEmpty(Skin.String(MediaFlagAspectRatioColorSettingsValue))">flags/colored/videoaspect/2-Orange/preview/preview_orange.png</value>
+		<!-- Default Image -->
+		<value>(No Match)</value>
+	</variable>
 
-		<!-- Variable for the image path -->
-		<variable name="ResolutionStyleColorVar">
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),red)">flags/colored/videoresolution/1-Red/preview/preview_red.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),orange)">flags/colored/videoresolution/2-Orange/preview/preview_orange.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),green)">flags/colored/videoresolution/3-Green/preview/preview_green.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),blue)">flags/colored/videoresolution/4-Blue/preview/preview_blue.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),cyan)">flags/colored/videoresolution/5-Cyan/preview/preview_cyan.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),violet)">flags/colored/videoresolution/6-Violet/preview/preview_violet.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),magenta)">flags/colored/videoresolution/7-Magenta/preview/preview_magenta.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),yellow)">flags/colored/videoresolution/8-Yellow/preview/preview_yellow.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),turquoise)">flags/colored/videoresolution/9-Turquoise/preview/preview_turquoise.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagResolutionColorSettingsValue),brown)">flags/colored/videoresolution/10-Brown/preview/preview_brown.png</value>
-			<value condition="String.IsEmpty(Skin.String(MediaFlagResolutionColorSettingsValue))">flags/colored/videoresolution/2-Orange/preview/preview_orange.png</value> <!-- Default image -->
-			<value>(No Match)</value>
-		</variable>
+	<include name="MusicFanartBackgroundImageRatio">
+		<item>
+			<label>$LOCALIZE[31432] ($LOCALIZE[571])</label>
+			<icon>$VAR[IconPathVar]\fanartaspectratio\scale.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,scale)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[15014]</label>
+			<icon>$VAR[IconPathVar]\fanartaspectratio\keep.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,keep)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[31433]</label>
+			<icon>$VAR[IconPathVar]\fanartaspectratio\stretch.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,stretch)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[39163]</label>
+			<icon>$VAR[IconPathVar]\fanartaspectratio\center.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,center)</onclick>
+		</item>
+	</include>
 
-		<!-- Variable for the image path -->
-		<variable name="AspectRatioStyleColorVar">
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),red)">flags/colored/videoaspect/1-Red/preview/preview_red.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),orange)">flags/colored/videoaspect/2-Orange/preview/preview_orange.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),green)">flags/colored/videoaspect/3-Green/preview/preview_green.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),blue)">flags/colored/videoaspect/4-Blue/preview/preview_blue.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),cyan)">flags/colored/videoaspect/5-Cyan/preview/preview_cyan.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),violet)">flags/colored/videoaspect/6-Violet/preview/preview_violet.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),magenta)">flags/colored/videoaspect/7-Magenta/preview/preview_magenta.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),yellow)">flags/colored/videoaspect/8-Yellow/preview/preview_yellow.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),turquoise)">flags/colored/videoaspect/9-Turquoise/preview/preview_turquoise.png</value>
-			<value condition="String.Contains(Skin.String(MediaFlagAspectRatioColorSettingsValue),brown)">flags/colored/videoaspect/10-Brown/preview/preview_brown.png</value>
-			<value condition="String.IsEmpty(Skin.String(MediaFlagAspectRatioColorSettingsValue))">flags/colored/videoaspect/2-Orange/preview/preview_orange.png</value> <!-- Default image -->
-			<value>(No Match)</value>
-		</variable>
+	<variable name="FanartDescriptionVar">
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,scale)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,keep)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,stretch)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
+		<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,center)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
+		<value>Not Found</value>
+	</variable>
 
-		<include name="MusicFanartBackgroundImageRatio">
-			<item>
-				<label>$LOCALIZE[31432] ($LOCALIZE[571])</label>
-				<icon>$VAR[IconPathVar]\fanartaspectratio\scale.png</icon>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,scale)</onclick>
-			</item>
-			<item>
-				<label>$LOCALIZE[15014]</label>
-				<icon>$VAR[IconPathVar]\fanartaspectratio\keep.png</icon>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,keep)</onclick>
-			</item>	
-			<item>
-				<label>$LOCALIZE[31433]</label>
-				<icon>$VAR[IconPathVar]\fanartaspectratio\stretch.png</icon>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,stretch)</onclick>
-			</item>
-			<item>
-				<label>$LOCALIZE[39163]</label>
-				<icon>$VAR[IconPathVar]\fanartaspectratio\center.png</icon>
-				<onclick>Dialog.Close(1110)</onclick>
-				<onclick>Skin.SetString(MusicFanartBackgroundGroupVarValue,center)</onclick>
-			</item>
-		</include>
-		<variable name="FanartDescriptionVar">	
-			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,scale)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
-			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,keep)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
-			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,stretch)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>		
-			<value condition="Skin.String(MusicFanartBackgroundGroupVarValue,center)">$INFO[Skin.String(MusicFanartBackgroundGroupVarValue)]</value>
-			<value>Not Found</value>
-		</variable>	
+	<include name="SelectMediaFlagDataStyle">
+		<item>
+			<label>4K</label>
+			<icon>$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]4K.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagDataStyleValue,4K)</onclick>
+		</item>
+		<item>
+			<label>2160p</label>
+			<icon>$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]2160.png</icon>
+			<onclick>Dialog.Close(1110)</onclick>
+			<onclick>Skin.SetString(MediaFlagDataStyleValue,2160p)</onclick>
+		</item>
+	</include>
+
+	<!-- Startup Video Options -->
+	<include name="IntroVideoSelectStartup">
+		<item>
+			<label>$LOCALIZE[231]</label>
+			<!-- "None" -->
+			<onclick>Skin.Reset(IntroVideoSelectStartupValue)</onclick>
+			<!-- <onclick>RunScript(special://home/addons/resource.images.skin.madnox/resources/scripts/set_intro_label.py,$INFO[Skin.String(IntroVideoSelectStartupValue)])</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=set_intro_label, path="$INFO[Skin.String(IntroVideoSelectStartupValue)]")</onclick>
+			<onclick>Dialog.Close(1110)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[15106]</label>
+			<!-- "Default" -->
+			<onclick>Skin.SetString(IntroVideoSelectStartupValue,special://home/addons/resource.images.skin.madnox/resources/intro-omega.mp4)</onclick>
+			<!-- <onclick>RunScript(special://home/addons/resource.images.skin.madnox/resources/scripts/set_intro_label.py,$INFO[Skin.String(IntroVideoSelectStartupValue)])</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=set_intro_label, path="$INFO[Skin.String(IntroVideoSelectStartupValue)]")</onclick>
+			<onclick>Dialog.Close(1110)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[40028]</label>
+			<!-- "Browse" -->
+			<onclick>Skin.SetFile(IntroVideoSelectStartupValue,.mp4|.mkv|.avi,/)</onclick>
+			<!-- <onclick>RunScript(special://home/addons/resource.images.skin.madnox/resources/scripts/set_intro_label.py,$INFO[Skin.String(IntroVideoSelectStartupValue)])</onclick> -->
+			<onclick>RunScript(script.skin.madnox, action=set_intro_label, path="$INFO[Skin.String(IntroVideoSelectStartupValue)]")</onclick>
+			<onclick>Dialog.Close(1110)</onclick>
+		</item>
+	</include>
+
+	<variable name="IntroVideoFilenameVar">
+		<!-- Check For The Specific "Skin Built-In" Path. -->
+		<value condition="String.IsEqual(Skin.String(IntroVideoSelectStartupValue), 'special://home/addons/resource.images.skin.madnox/resources/intro-omega.mp4')">intro-omega.mp4 - Skin built-in</value>
+
+		<!-- Now, Check If A Path Exists But It Is Not The Built-In Path. Isolates "Custom". -->
+		<value condition="!String.IsEmpty(Skin.String(IntroVideoSelectStartupValue)) + !String.IsEqual(Skin.String(IntroVideoSelectStartupValue), 'special://home/addons/resource.images.skin.madnox/resources/intro-omega.mp4')">$INFO[Window(Home).Property(IntroVideo.FileName)] - Custom</value>
+
+		<!-- Fallback for "None". -->
+		<value>$LOCALIZE[231]</value>
+		<!-- "None" -->
+	</variable>
 </includes>

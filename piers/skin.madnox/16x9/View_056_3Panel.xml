@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View563Panel">
 		<!-- Floor -->
@@ -85,7 +85,7 @@
 				<onright condition="Control.IsVisible(61300)">61300</onright>
 			</control>
 		</control>
-		<!-- Art -->
+		<!-- Art Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(56)</visible>
 			<include>AnimationSlidePanel</include>
@@ -94,27 +94,70 @@
 				<left>821</left>
 				<bottom>120</bottom>
 				<width>567</width>
+				<!-- Static Poster Art (Visible only when trailer is NOT playing) -->
 				<control type="group">
-					<visible>!Skin.HasSetting(View56VideoCase)</visible>
+					<visible>String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
 					<control type="group">
-						<visible>!Skin.HasSetting(View56HideReflect)</visible>
-						<top>805</top>
-						<height>820</height>
-						<include>ViewArtworkReflect</include>
+						<visible>!Skin.HasSetting(View56VideoCase)</visible>
+						<control type="group">
+							<visible>!Skin.HasSetting(View56HideReflect)</visible>
+							<top>805</top>
+							<height>820</height>
+							<include>ViewArtworkReflect</include>
+						</control>
+						<include content="ViewArtwork">
+							<param name="diffuse">diffuse/rounded5-547x820.png</param>
+						</include>
 					</control>
-					<include content="ViewArtwork">
-						<param name="diffuse">diffuse/rounded5-547x820.png</param>
+					<control type="group">
+						<visible>Skin.HasSetting(View56VideoCase)</visible>
+						<control type="group">
+							<visible>!Skin.HasSetting(View56HideReflect)</visible>
+							<top>825</top>
+							<height>820</height>
+							<include>ViewArtworkVideoCaseReflect</include>
+						</control>
+						<include>ViewArtworkVideoCase</include>
+					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="25" />
+						<param name="right" value="25" />
+						<param name="bottom" value="30" />
+						<param name="height" value="12" />
 					</include>
 				</control>
+				<!-- Video Player Container (Visible only WHEN trailer IS playing) -->
 				<control type="group">
-					<visible>Skin.HasSetting(View56VideoCase)</visible>
+					<visible>!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+					<!-- Animated Fanart Transition -->
 					<control type="group">
-						<visible>!Skin.HasSetting(View56HideReflect)</visible>
-						<top>825</top>
-						<height>820</height>
-						<include>ViewArtworkVideoCaseReflect</include>
+						<visible>Skin.HasSetting(View56AnimatedFanart)</visible>
+						<control type="image">
+							<texture fallback="colors/black.png">$VAR[FanartVar]</texture>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="videowindow">
+							<visible>Player.HasVideo</visible>
+							<animation effect="fade" time="400" delay="200">Visible</animation>
+							<colordiffuse>FFA0A0A0</colordiffuse>
+						</control>
 					</control>
-					<include>ViewArtworkVideoCase</include>
+					<!-- Standard Black Background (if Animated Fanart is off) -->
+					<control type="group">
+						<visible>!Skin.HasSetting(View56AnimatedFanart)</visible>
+						<control type="image">
+							<texture>colors/black.png</texture>
+						</control>
+						<control type="videowindow">
+							<colordiffuse>FFA0A0A0</colordiffuse>
+						</control>
+					</control>
+					<!-- Styled Border (For Both Options) -->
+					<control type="image">
+						<bordersize>-15</bordersize>
+						<!-- <texture border="20">thumbs/overlay.png</texture> -->
+						<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -126,12 +169,12 @@
 			<param name="height">780</param>
 			<param name="content">ViewContainerBannerList</param>
 		</include>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(56)</visible>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>
-			</include>			
+			</include>
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(56) + String.Contains(ListItem.DBType, "movie")</visible>
@@ -141,16 +184,8 @@
 			<visible>Control.IsVisible(56) + String.Contains(ListItem.DBType, "season")</visible>
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
 		</control>
-<!-- 		<control type="group">
-			<visible>Control.IsVisible(56)</visible>
-			<include content="AnimationSlideBottomWindow">
-				<param name="slide">220</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos7</include>
-		</control> -->
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View56List">
 		<param name="left">100</param>
 		<param name="top">140</param>
@@ -176,7 +211,10 @@
 					<top>$PARAM[top]</top>
 					<width>732</width>
 					<height>$PARAM[height]</height>
+					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<onleft>PlayerControl(Stop)</onleft>
 					<onleft>9050</onleft>
+					<onright>PlayerControl(Stop)</onright>
 					<onright>6056</onright>
 					<pagecontrol>6056</pagecontrol>
 					<include>ContainerScrollTime</include>

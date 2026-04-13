@@ -5,8 +5,9 @@ class Series(BaseItem):
     table = 'collection'
     tmdb_type = 'collection'
     ftv_id = None
-
-    # online_data_kwgs = {}
+    append_to_response_tmdbtype = 'collection'
+    append_to_response_extended = False
+    append_to_response_language = False
 
     @property
     def cached_data_keys(self):
@@ -27,5 +28,6 @@ class Series(BaseItem):
             self.return_basemeta_db('movie'),
             self.return_basemeta_db('unique_id'),
             self.return_basemeta_db('custom'),
+            self.return_basemeta_db('default_art'),
             self.return_basemeta_db('art'),
         )

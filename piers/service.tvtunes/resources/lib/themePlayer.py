@@ -11,13 +11,12 @@ if sys.version_info < (2, 7):
 else:
     import json as simplejson
 
-#from settings import log
-from resources.lib.utils import log_msg
-
-# Import the common settings
-from resources.lib.settings import Settings
-#from resources.lib.settings import log
-from resources.lib.settings import WindowShowing
+try:
+    from resources.lib.utils import log_msg
+    from resources.lib.settings import Settings, WindowShowing
+except ModuleNotFoundError:
+    from utils import log_msg
+    from settings import Settings, WindowShowing
 
 
 ###################################
@@ -166,7 +165,7 @@ class ThemePlayer(xbmc.Player):
 
                 # Wait until playing has started
                 maxLoop = 100
-                while (not self.isPlaying()) and (not xbmc.Monitor().abortRequested) and (maxLoop > 0):
+                while (not self.isPlaying()) and (not xbmc.Monitor().abortRequested()) and (maxLoop > 0):
                     maxLoop = maxLoop - 1
                     xbmc.sleep(30)
 
@@ -260,7 +259,7 @@ class ThemePlayer(xbmc.Player):
             else:
                 log_msg("ThemePlayer: No reduced volume option set")
         except:
-            log_msg("ThemePlayer: %s" % traceback.format_exc(), True, LOGERROR)
+            log_msg("ThemePlayer: %s" % traceback.format_exc(), xbmc.LOGERROR)
 
     # Graceful end of the playing, will fade if set to do so
     def endPlaying(self, fastFade=False, slowFade=False):
@@ -312,7 +311,7 @@ class ThemePlayer(xbmc.Player):
                         # So we know that we did play a video, now we are
                         # playing an audio file, so set repeat on the current item
                         log_msg("ThemePlayer: Setting single track to repeat %s" % self.playListItems[1])
-                        executebuiltin("PlayerControl(RepeatOne)")
+                        xbmc.executebuiltin("PlayerControl(RepeatOne)")
                         self.repeatOneSet = True
         except:
             log_msg("ThemePlayer: Failed to check audio repeat after video")

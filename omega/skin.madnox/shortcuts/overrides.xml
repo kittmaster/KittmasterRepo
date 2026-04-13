@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <overrides>
 	<!-- Override actions -->
 	<override action="ActivateWindow(Favourites)">
 		<action>ActivateWindow(favouritesbrowser)</action>
 	</override>
 	<!-- Do not share menu, other skins custom language strings and icons are not the same -->
-	<doNotShareMenu/>
+	<doNotShareMenu />
 	<!-- Main menu/Shortcut icon default directory -->
-	<thumbnailBrowseDefault>special://skin/extras/icons/</thumbnailBrowseDefault>
+	<thumbnailBrowseDefault>special://home/addons/resource.images.skin.madnox/resources/icons/</thumbnailBrowseDefault>
 	<!-- Main menu overides actions for when libray has no content -->
 	<visibleoverride group="mainmenu" condition="Library.HasContent(Movies)">ActivateWindow(Videos,sources://video/,return)</visibleoverride>
 	<visibleoverride group="mainmenu" condition="Library.HasContent(TVShows)">ActivateWindow(Videos,sources://video/,return)</visibleoverride>
@@ -20,19 +20,19 @@
 	<visibleoverride group="2" condition="Library.HasContent(Music)">ActivateWindow(MusicLibrary,sources://music/,return)</visibleoverride>
 	<visibleoverride group="musicvideos" condition="Library.HasContent(MusicVideos)">ActivateWindow(Videos,sources://video/,return)</visibleoverride>
 	<!-- Home background defaults -->
-	<backgrounddefault labelID="pictures">special://skin/extras/backgrounds/pictures.jpg</backgrounddefault>
-	<backgrounddefault labelID="musicvideos">special://skin/extras/backgrounds/musicvideos.jpg</backgrounddefault>
-	<backgrounddefault labelID="music">special://skin/extras/backgrounds/music.jpg</backgrounddefault>
-	<backgrounddefault labelID="movies">special://skin/extras/backgrounds/movies.jpg</backgrounddefault>
-	<backgrounddefault labelID="tvshows">special://skin/extras/backgrounds/tvshows.jpg</backgrounddefault>
-	<backgrounddefault labelID="tv">special://skin/extras/backgrounds/tv.jpg</backgrounddefault>
-	<backgrounddefault labelID="radio">special://skin/extras/backgrounds/radio.jpg</backgrounddefault>
-	<backgrounddefault labelID="videos">special://skin/extras/backgrounds/videos.jpg</backgrounddefault>
-	<backgrounddefault labelID="games">special://skin/extras/backgrounds/games.jpg</backgrounddefault>
-	<backgrounddefault labelID="addons">special://skin/extras/backgrounds/addons.jpg</backgrounddefault>
-	<backgrounddefault labelID="system">special://skin/extras/backgrounds/system.jpg</backgrounddefault>
-	<backgrounddefault labelID="weather">special://skin/extras/backgrounds/weather.jpg</backgrounddefault>
-	<backgrounddefault labelID="disc">special://skin/extras/backgrounds/disc.jpg</backgrounddefault>
+	<backgrounddefault labelID="pictures">special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg</backgrounddefault>
+	<backgrounddefault labelID="musicvideos">special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg</backgrounddefault>
+	<backgrounddefault labelID="music">special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg</backgrounddefault>
+	<backgrounddefault labelID="movies">special://home/addons/resource.images.skin.madnox/resources/backgrounds/movies.jpg</backgrounddefault>
+	<backgrounddefault labelID="tvshows">special://home/addons/resource.images.skin.madnox/resources/backgrounds/tvshows.jpg</backgrounddefault>
+	<backgrounddefault labelID="tv">special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg</backgrounddefault>
+	<backgrounddefault labelID="radio">special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg</backgrounddefault>
+	<backgrounddefault labelID="videos">special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg</backgrounddefault>
+	<backgrounddefault labelID="games">special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg</backgrounddefault>
+	<backgrounddefault labelID="addons">special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg</backgrounddefault>
+	<backgrounddefault labelID="system">special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg</backgrounddefault>
+	<backgrounddefault labelID="weather">special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg</backgrounddefault>
+	<backgrounddefault labelID="disc">special://home/addons/resource.images.skin.madnox/resources/backgrounds/disc.jpg</backgrounddefault>
 	<!-- Shortcut search menu -->
 	<override action="ActivateWindow(1112)" group="shortcuts">
 		<condition>true</condition>
@@ -55,64 +55,95 @@
 	<propertydefault labelID="disc" property="InfoLine">disc</propertydefault> -->
 	<!-- Background selection-->
 	<backgroundBrowse>True</backgroundBrowse>
+	<!-- Dynamic Library Backgrounds -->
 	<background label="::PLAYLIST::">playlist</background>
 	<background label="Cover ::PLAYLIST::">cover</background>
 	<background label="31055">$INFO[Skin.String(WeatherFanart.path)]$INFO[Weather.fanartcode]$INFO[Skin.String(WeatherFanart.ext)]</background>
-	<background label="24001" icon="special://skin/extras/backgrounds/addons.jpg">special://skin/extras/backgrounds/addons.jpg</background>
-	<background label="427" icon="special://skin/extras/backgrounds/disc.jpg">special://skin/extras/backgrounds/disc.jpg</background>
-	<background label="1036" icon="special://skin/extras/backgrounds/favourites.jpg">special://skin/extras/backgrounds/favourites.jpg</background>
-	<background label="15016" icon="special://skin/extras/backgrounds/games.jpg">special://skin/extras/backgrounds/games.jpg</background>
-	<background label="342" icon="special://skin/extras/backgrounds/movies.jpg">special://skin/extras/backgrounds/movies.jpg</background>
-	<background label="2" icon="special://skin/extras/backgrounds/music.jpg">special://skin/extras/backgrounds/music.jpg</background>
-	<background label="20389" icon="special://skin/extras/backgrounds/musicvideos.jpg">special://skin/extras/backgrounds/musicvideos.jpg</background>
-	<background label="1" icon="special://skin/extras/backgrounds/pictures.jpg">special://skin/extras/backgrounds/pictures.jpg</background>
-	<background label="33060" icon="special://skin/extras/backgrounds/power.jpg">special://skin/extras/backgrounds/power.jpg</background>
-	<background label="19021" icon="special://skin/extras/backgrounds/radio.jpg">special://skin/extras/backgrounds/radio.jpg</background>
-	<background label="13000" icon="special://skin/extras/backgrounds/system.jpg">special://skin/extras/backgrounds/system.jpg</background>
-	<background label="19020" icon="special://skin/extras/backgrounds/tv.jpg">special://skin/extras/backgrounds/tv.jpg</background>
-	<background label="20343" icon="special://skin/extras/backgrounds/tvshows.jpg">special://skin/extras/backgrounds/tvshows.jpg</background>
-	<background label="3" icon="special://skin/extras/backgrounds/videos.jpg">special://skin/extras/backgrounds/videos.jpg</background>
-	<background label="8" icon="special://skin/extras/backgrounds/weather.jpg">special://skin/extras/backgrounds/weather.jpg</background>
+	<background label="24001" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg</background>
+	<background label="427" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/disc.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/disc.jpg</background>
+	<background label="1036" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/favourites.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/favourites.jpg</background>
+	<background label="15016" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg</background>
+	<background label="342" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/movies.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/movies.jpg</background>
+	<background label="2" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg</background>
+	<background label="20389" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg</background>
+	<background label="1" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg</background>
+	<background label="33060" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/power.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/power.jpg</background>
+	<background label="19021" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg</background>
+	<background label="13000" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg</background>
+	<background label="19020" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg</background>
+	<background label="20343" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/tvshows.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/tvshows.jpg</background>
+	<background label="3" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg</background>
+	<background label="8" icon="special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg">special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg</background>
 	<!-- Widget groupings -->
 	<widget-groupings>
+		<!-- Streaming Studios -->
+		<node label="$ADDON[plugin.video.themoviedb.helper 32174]">
+			<!-- Movie Studios (Disney, WB, etc) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32190]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=all_studios&amp;type=movie&amp;widget=True</shortcut>
+			<!-- TV Networks (HBO, Netflix, etc) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32189]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=all_networks&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- Movie Genres -->
+			<shortcut label="$LOCALIZE[135]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=genres&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Watch Providers (Netflix, Hulu, etc) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32411]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;type=movie&amp;widget=True</shortcut>
+		</node>
 		<!-- Movies -->
 		<node label="342">
-			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://skin/extras/playlists/01movies/recentlyadded.xsp</shortcut>
-			<shortcut label="31386" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://skin/extras/playlists/01movies/recentlyadded(includewatched).xsp</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 31391]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">plugin://script.embuary.helper/?info=getinprogress&amp;type=movie&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 32007]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">plugin://script.embuary.helper/?info=getsimilar&amp;type=movie&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 31393]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">plugin://script.embuary.helper/?info=getsimilar&amp;type=movie&amp;pos=0&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 32009]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">plugin://script.embuary.helper/?info=getbygenre&amp;unwatched=True&amp;type=movie&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="13409" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://skin/extras/playlists/01movies/top250.xsp</shortcut>
+			<shortcut label="575" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp</shortcut>
+			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/recentlyadded.xsp</shortcut>
+			<shortcut label="31386" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/recentlyadded(includewatched).xsp</shortcut>
+			<!-- Trending Movies (Day) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32178]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Trending Movies (Week) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32179]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=trending_week&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Popular Movies -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32175]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=popular&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Top Rated Movies -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32176]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=top_rated&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Upcoming Movies -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32177]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=upcoming&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Now Playing (In Theatres) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32180]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=now_playing&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Highest Revenue -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32184]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=revenue_movies&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Most Voted Movies -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32185]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=most_voted&amp;type=movie&amp;widget=True</shortcut>
+			<!-- Movie Collections (Displays folders of sets) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32187]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=all_collections&amp;type=movie&amp;widget=True</shortcut>
+			<shortcut label="13409" icon="icons/addons/kodi-pl.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/top250.xsp</shortcut>
 			<shortcut label="20434" icon="icons/addons/kodi.png" widget="library" widgetType="movies" widgetTarget="videos" condition="Library.HasContent(movies)">library://video/01movies/sets.xml/</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32042]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/movie/trending</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32031]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/movie/upcoming</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32030]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/movie/now_playing</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32029]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/movie/top_rated</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32032]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="movies" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/movie/popular</shortcut>
 		</node>
 		<!-- Episodes -->
 		<node label="20360">
-			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyadded.xsp</shortcut>
-			<shortcut label="31386" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyadded(includewatched).xsp</shortcut>
-			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyreleased.xsp</shortcut>
-			<shortcut label="31387" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/02episodes/recentlyreleased(includewatched).xsp</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 31391]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://script.embuary.helper/?info=getinprogress&amp;type=tvshow&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 32008]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://script.embuary.helper/?info=getnextup&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="31280" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper) + System.HasAddon(script.embuary.info)">plugin://plugin.video.themoviedb.helper/?info=library_nextaired&amp;startdate=0&amp;widget=True&amp;type=episode&amp;days=365&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</shortcut>
+			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyadded.xsp</shortcut>
+			<shortcut label="31386" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyadded(includewatched).xsp</shortcut>
+			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyreleased.xsp</shortcut>
+			<shortcut label="31387" icon="icons/addons/kodi-pl.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyreleased(includewatched).xsp</shortcut>
+			<!-- In Progress Episodes (Your In-Progress) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32196]" icon="icons/addons/tmdb.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://plugin.video.themoviedb.helper/?info=inprogress&amp;type=episode&amp;widget=True</shortcut>
+			<!-- Next Up (Your Next Episodes) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32197]" icon="icons/addons/tmdb.png" widget="library" widgetType="episodes" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://plugin.video.themoviedb.helper/?info=library_nextup&amp;widget=True</shortcut>
 		</node>
 		<!-- TV Shows -->
 		<node label="20343">
-			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="tvshows" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://skin/extras/playlists/03tvshows/recentlyadded.xsp</shortcut>
+			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="tvshows" widgetTarget="videos" condition="Library.HasContent(tvshows)">special://home/addons/resource.images.skin.madnox/resources/playlists/03tvshows/recentlyadded.xsp</shortcut>
 			<shortcut label="575" icon="icons/addons/kodi.png" widget="library" widgetType="tvshows" widgetTarget="videos" condition="Library.HasContent(tvshows)">videodb://inprogresstvshows/</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 32007]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="tvshows" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://script.embuary.helper/?info=getsimilar&amp;type=tvshow&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 31393]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="tvshows" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://script.embuary.helper/?info=getsimilar&amp;type=tvshow&amp;pos=0&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="$ADDON[script.embuary.helper 32009]" icon="icons/addons/embuaryhelper.png" widget="library" widgetType="tvshows" widgetTarget="videos" condition="Library.HasContent(tvshows)">plugin://script.embuary.helper/?info=getbygenre&amp;type=tvshow&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32043]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/tv/trending</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32033]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/tv/top_rated</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32034]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/tv/popular</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32035]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/tv/airing_today</shortcut>
-			<shortcut label="$ADDON[script.embuary.info 32036]" icon="icons/addons/embuaryinfo.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(script.embuary.info)">plugin://script.embuary.info/tv/on_the_air</shortcut>
+			<!-- Trending TV (Day) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32178]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- Trending TV (Week) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32179]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=trending_week&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- Popular TV -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32175]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=popular&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- Top Rated TV -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32176]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=top_rated&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- Airing Today -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32181]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=airing_today&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- On The Air (Currently Airing) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32182]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=on_the_air&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- Most Voted TV -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32185]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=most_voted&amp;type=tvshow&amp;widget=True</shortcut>
+			<!-- Airing Next (Based on your library) -->
+			<shortcut label="$ADDON[plugin.video.themoviedb.helper 32458]" icon="icons/addons/tmdb.png" widget="tmdb" widgetType="tvshows" widgetTarget="videos" condition="System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=library_airingnext&amp;type=tvshow&amp;widget=True</shortcut>
 		</node>
 		<!-- Live TV -->
 		<node label="31173">
@@ -132,30 +163,30 @@
 		</node>
 		<!-- Albums -->
 		<node label="132">
-			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/recentlyadded.xsp</shortcut>
-			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/recentlyreleased.xsp</shortcut>
-			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/mostplayed.xsp</shortcut>
-			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/05albums/random.xsp</shortcut>
+			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/recentlyadded.xsp</shortcut>
+			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/recentlyreleased.xsp</shortcut>
+			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/mostplayed.xsp</shortcut>
+			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="albums" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/random.xsp</shortcut>
 		</node>
 		<!-- Artists -->
 		<node label="133">
-			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="artists" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/06artists/recentlyadded.xsp</shortcut>
-			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="artists" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/06artists/random.xsp</shortcut>
+			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="artists" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/06artists/recentlyadded.xsp</shortcut>
+			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="artists" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/06artists/random.xsp</shortcut>
 		</node>
 		<!-- Songs -->
 		<node label="134">
-			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/recentlyadded.xsp</shortcut>
-			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/recentlyreleased.xsp</shortcut>
-			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/mostplayed.xsp</shortcut>
-			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://skin/extras/playlists/07songs/random.xsp</shortcut>
+			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/recentlyadded.xsp</shortcut>
+			<shortcut label="31204" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/recentlyreleased.xsp</shortcut>
+			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/mostplayed.xsp</shortcut>
+			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="songs" widgetTarget="music" condition="Library.HasContent(music)">special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/random.xsp</shortcut>
 		</node>
-		<!-- Music videos -->
+		<!-- Music Videos -->
 		<node label="20389">
-			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://skin/extras/playlists/04musicvideos/recentlyadded.xsp</shortcut>
-			<shortcut label="575" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://skin/extras/playlists/04musicvideos/inprogress.xsp</shortcut>
-			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://skin/extras/playlists/04musicvideos/mostplayed.xsp</shortcut>
-			<shortcut label="31205" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://skin/extras/playlists/04musicvideos/recommended.xsp</shortcut>
-			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://skin/extras/playlists/04musicvideos/random.xsp</shortcut>
+			<shortcut label="20382" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/recentlyadded.xsp</shortcut>
+			<shortcut label="575" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/inprogress.xsp</shortcut>
+			<shortcut label="31206" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/mostplayed.xsp</shortcut>
+			<shortcut label="31205" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/recommended.xsp</shortcut>
+			<shortcut label="590" icon="icons/addons/kodi-pl.png" widget="library" widgetType="musicvideos" widgetTarget="videos" condition="Library.HasContent(musicvideos)">special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/random.xsp</shortcut>
 		</node>
 		<!-- Pictures -->
 		<node label="31418">
@@ -184,7 +215,7 @@
 			<shortcut label="14221" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio</shortcut>
 			<shortcut label="14217" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
 		</node>
-		<!-- Video library -->
+		<!-- Video Library -->
 		<node label="32030">
 			<content>video</content>
 			<node label="559">
@@ -194,7 +225,7 @@
 				<content>videosources</content>
 			</node>
 		</node>
-		<!-- Music library -->
+		<!-- Music Library -->
 		<node label="14237">
 			<content>music</content>
 			<node label="559">
@@ -212,20 +243,21 @@
 		<node label="8">
 			<shortcut label="31090" icon="icons/addons/weathericons.png" widget="info" widgetType="weatherinfodaily" condition="!String.IsEmpty(Weather.Plugin)">$INCLUDE[skinshortcuts-template-WeatherContentDaily]</shortcut>
 			<shortcut label="33036" icon="icons/addons/weathericons.png" widget="info" widgetType="weatherinfohourly" condition="!String.IsEmpty(Weather.Plugin)">$INCLUDE[skinshortcuts-template-WeatherContentHourly]</shortcut>
-			<shortcut label="33034" icon="icons/addons/weathericons.png" widget="info" widgetType="weatherinfo36hour" condition="!String.IsEmpty(Weather.Plugin)">$INCLUDE[skinshortcuts-template-WeatherContent36Hour]</shortcut>
+			<!-- <shortcut label="33034" icon="icons/addons/weathericons.png" widget="info" widgetType="weatherinfo36hour" condition="!String.IsEmpty(Weather.Plugin)">$INCLUDE[skinshortcuts-template-WeatherContent36Hour]</shortcut> -->
 		</node>
-		<!-- System info -->
+		<!-- System Info -->
+		<!-- In overrides.xml -->
 		<node label="130">
-			<shortcut label="130" icon="icons/systeminfo/icons/system.png" widget="info" widgetType="sysinfo">$INCLUDE[skinshortcuts-template-SystemContent]</shortcut>
-			<shortcut label="12395" icon="icons/systeminfo/icons/battery100.png" widget="info" widgetType="sysinfobattery">$INCLUDE[skinshortcuts-template-SystemBattery]</shortcut>
-			<shortcut label="705" icon="icons/systeminfo/icons/connected.png" widget="info" widgetType="sysinfonetwork">$INCLUDE[skinshortcuts-template-SystemNetwork]</shortcut>
-			<shortcut label="13280" icon="icons/systeminfo/icons/video.png" widget="info" widgetType="sysinfovideo">$INCLUDE[skinshortcuts-template-SystemVideo]</shortcut>
-			<shortcut label="CPU" icon="icons/systeminfo/icons/cpu.png" widget="info" widgetType="sysinfocpu">$INCLUDE[skinshortcuts-template-SystemCPU]</shortcut>
-			<shortcut label="158" icon="icons/systeminfo/icons/memory.png" widget="info" widgetType="sysinfomemory">$INCLUDE[skinshortcuts-template-SystemMemory]</shortcut>
-			<shortcut label="154" icon="icons/systeminfo/icons/storage.png" widget="info" widgetType="sysinfostorage">$INCLUDE[skinshortcuts-template-SystemStorage]</shortcut>
-			<shortcut label="19020" icon="icons/systeminfo/icons/pvr.png" widget="info" widgetType="sysinfopvr">$INCLUDE[skinshortcuts-template-SystemPVR]</shortcut>
-			<shortcut label="19114" icon="icons/systeminfo/icons/system.png" widget="info" widgetType="sysinfoversion">$INCLUDE[skinshortcuts-template-SystemVersion]</shortcut>
-			<shortcut label="12390" icon="icons/systeminfo/icons/uptime.png" widget="info" widgetType="sysinfouptime">$INCLUDE[skinshortcuts-template-SystemUptime]</shortcut>
+			<shortcut label="System General" icon="icons/systeminfo/icons/system.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemContent]</shortcut>
+			<shortcut label="CPU" icon="icons/systeminfo/icons/cpu.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemCPU]</shortcut>
+			<shortcut label="Memory" icon="icons/systeminfo/icons/memory.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemMemory]</shortcut>
+			<shortcut label="Storage" icon="icons/systeminfo/icons/storage.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemStorage]</shortcut>
+			<shortcut label="Network" icon="icons/systeminfo/icons/connected.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemNetwork]</shortcut>
+			<shortcut label="Uptime" icon="icons/systeminfo/icons/uptime.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemUptime]</shortcut>
+			<shortcut label="Battery" icon="icons/systeminfo/icons/battery100.png" widget="addon" widgetType="system" condition="!String.IsEqual(System.BatteryLevel,Not present)">$INCLUDE[skinshortcuts-template-SystemBattery]</shortcut>
+			<shortcut label="Video" icon="icons/systeminfo/icons/video.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemVideo]</shortcut>
+			<shortcut label="PVR" icon="icons/systeminfo/icons/pvr.png" widget="addon" widgetType="system" condition="System.HasPVRAddon">$INCLUDE[skinshortcuts-template-SystemPVR]</shortcut>
+			<shortcut label="Version" icon="icons/systeminfo/icons/system.png" widget="addon" widgetType="system">$INCLUDE[skinshortcuts-template-SystemVersion]</shortcut>
 		</node>
 		<!-- Favourites -->
 		<node label="1036">
@@ -234,33 +266,102 @@
 			<shortcut label="31294" icon="icons/addons/favourites.png" widget="favourites" widgetType="favourites">$INCLUDE[skinshortcuts-template-CustomFavouriteAddonContent]</shortcut>
 		</node>
 	</widget-groupings>
-	<!-- Widget style -->
-	<propertySettings property="widgetStyle.1" buttonID="8013" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.1" templateonly="true"/>
+	<!-- Widget Style -->
+	<propertySettings property="widgetStyle.1" buttonID="8131" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.1" />
 	<property property="widgetStyle.1" label="$LOCALIZE[31210]">big</property>
 	<property property="widgetStyle.1" label="$LOCALIZE[601]">medium</property>
 	<property property="widgetStyle.1" label="$LOCALIZE[1438]">small</property>
-	<propertySettings property="widgetStyle.2" buttonID="8023" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.2" templateonly="true"/>
+	<propertySettings property="widgetStyle.2" buttonID="8132" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.2" />
 	<property property="widgetStyle.2" label="$LOCALIZE[31210]">big</property>
 	<property property="widgetStyle.2" label="$LOCALIZE[601]">medium</property>
 	<property property="widgetStyle.2" label="$LOCALIZE[1438]">small</property>
-	<propertySettings property="widgetStyle.3" buttonID="8033" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.3" templateonly="true"/>
+	<propertySettings property="widgetStyle.3" buttonID="8133" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.3" />
 	<property property="widgetStyle.3" label="$LOCALIZE[31210]">big</property>
 	<property property="widgetStyle.3" label="$LOCALIZE[601]">medium</property>
 	<property property="widgetStyle.3" label="$LOCALIZE[1438]">small</property>
-	<propertySettings property="widgetStyle.4" buttonID="8043" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.4" templateonly="true"/>
+	<propertySettings property="widgetStyle.4" buttonID="8134" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.4" />
 	<property property="widgetStyle.4" label="$LOCALIZE[31210]">big</property>
 	<property property="widgetStyle.4" label="$LOCALIZE[601]">medium</property>
 	<property property="widgetStyle.4" label="$LOCALIZE[1438]">small</property>
-	<propertySettings property="widgetStyle.5" buttonID="8053" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.5" templateonly="true"/>
+	<propertySettings property="widgetStyle.5" buttonID="8135" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.5" />
 	<property property="widgetStyle.5" label="$LOCALIZE[31210]">big</property>
 	<property property="widgetStyle.5" label="$LOCALIZE[601]">medium</property>
 	<property property="widgetStyle.5" label="$LOCALIZE[1438]">small</property>
-	<propertySettings property="widgetStyle.6" buttonID="8063" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.6" templateonly="true"/>
+	<propertySettings property="widgetStyle.6" buttonID="8136" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.6" />
 	<property property="widgetStyle.6" label="$LOCALIZE[31210]">big</property>
 	<property property="widgetStyle.6" label="$LOCALIZE[601]">medium</property>
 	<property property="widgetStyle.6" label="$LOCALIZE[1438]">small</property>
+	<propertySettings property="widgetStyle.7" buttonID="8137" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.7" />
+	<property property="widgetStyle.7" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.7" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.7" label="$LOCALIZE[1438]">small</property>
+	<propertySettings property="widgetStyle.8" buttonID="8138" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.8" />
+	<property property="widgetStyle.8" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.8" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.8" label="$LOCALIZE[1438]">small</property>
+	<propertySettings property="widgetStyle.9" buttonID="8139" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.9" />
+	<property property="widgetStyle.9" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.9" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.9" label="$LOCALIZE[1438]">small</property>
+
+	<!-- Widget 10 Style -->
+	<propertySettings property="widgetStyle.10" buttonID="81310" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.10" />
+	<property property="widgetStyle.10" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.10" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.10" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 11 Style -->
+	<propertySettings property="widgetStyle.11" buttonID="81311" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.11" />
+	<property property="widgetStyle.11" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.11" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.11" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 12 Style -->
+	<propertySettings property="widgetStyle.12" buttonID="81312" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.12" />
+	<property property="widgetStyle.12" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.12" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.12" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 13 Style -->
+	<propertySettings property="widgetStyle.13" buttonID="81313" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.13" />
+	<property property="widgetStyle.13" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.13" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.13" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 14 Style -->
+	<propertySettings property="widgetStyle.14" buttonID="81314" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.14" />
+	<property property="widgetStyle.14" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.14" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.14" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 15 Style -->
+	<propertySettings property="widgetStyle.15" buttonID="81315" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.15" />
+	<property property="widgetStyle.15" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.15" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.15" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 16 Style -->
+	<propertySettings property="widgetStyle.16" buttonID="81316" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.16" />
+	<property property="widgetStyle.16" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.16" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.16" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 17 Style -->
+	<propertySettings property="widgetStyle.17" buttonID="81317" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.17" />
+	<property property="widgetStyle.17" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.17" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.17" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 18 Style -->
+	<propertySettings property="widgetStyle.18" buttonID="81318" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.18" />
+	<property property="widgetStyle.18" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.18" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.18" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 19 Style -->
+	<propertySettings property="widgetStyle.19" buttonID="81319" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.19" />
+	<property property="widgetStyle.19" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.19" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.19" label="$LOCALIZE[1438]">small</property>
+	<!-- Widget 20 Style -->
+	<propertySettings property="widgetStyle.20" buttonID="81320" showNone="false" title="$LOCALIZE[29902]" requires="widgetPath.20" />
+	<property property="widgetStyle.20" label="$LOCALIZE[31210]">big</property>
+	<property property="widgetStyle.20" label="$LOCALIZE[601]">medium</property>
+	<property property="widgetStyle.20" label="$LOCALIZE[1438]">small</property>
+
 	<!-- Widget 1 Artwork -->
-	<propertySettings property="widgetArtwork.1" buttonID="8014" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.1" templateonly="true"/>
+	<propertySettings property="widgetArtwork.1" buttonID="8141" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.1" />
 	<property property="widgetArtwork.1" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.1),info)">portraiticon</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[31250]">landscapeicon</property>
@@ -270,7 +371,7 @@
 	<property property="widgetArtwork.1" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.1),library) | String.IsEqual(Container(211).ListItem.Property(widget.1),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.1),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),artists)]">clearart</property>
 	<property property="widgetArtwork.1" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.1),library) | String.IsEqual(Container(211).ListItem.Property(widget.1),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.1),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.1),artists)]">clearlogo</property>
 	<!-- Widget 2 Artwork -->
-	<propertySettings property="widgetArtwork.2" buttonID="8024" showNone="false" title="Artwork" requires="widgetStyle.2" templateonly="true"/>
+	<propertySettings property="widgetArtwork.2" buttonID="8142" showNone="false" title="Artwork" requires="widgetStyle.2" />
 	<property property="widgetArtwork.2" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.2),info)">portraiticon</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[31250]">landscapeicon</property>
@@ -280,7 +381,7 @@
 	<property property="widgetArtwork.2" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.2),library) | String.IsEqual(Container(211).ListItem.Property(widget.2),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.2),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),artists)]">clearart</property>
 	<property property="widgetArtwork.2" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.2),library) | String.IsEqual(Container(211).ListItem.Property(widget.2),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.2),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.2),artists)]">clearlogo</property>
 	<!-- Widget 3 Artwork -->
-	<propertySettings property="widgetArtwork.3" buttonID="8034" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.3" templateonly="true"/>
+	<propertySettings property="widgetArtwork.3" buttonID="8143" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.3" />
 	<property property="widgetArtwork.3" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.3),info)">portraiticon</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[31250]">landscapeicon</property>
@@ -290,7 +391,7 @@
 	<property property="widgetArtwork.3" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.3),library) | String.IsEqual(Container(211).ListItem.Property(widget.3),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.3),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),artists)]">clearart</property>
 	<property property="widgetArtwork.3" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.3),library) | String.IsEqual(Container(211).ListItem.Property(widget.3),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.3),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.3),artists)]">clearlogo</property>
 	<!-- Widget 4 Artwork -->
-	<propertySettings property="widgetArtwork.4" buttonID="8044" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.4" templateonly="true"/>
+	<propertySettings property="widgetArtwork.4" buttonID="8144" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.4" />
 	<property property="widgetArtwork.4" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.4),info)">portraiticon</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[31250]">landscapeicon</property>
@@ -300,7 +401,7 @@
 	<property property="widgetArtwork.4" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.4),library) | String.IsEqual(Container(211).ListItem.Property(widget.4),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.4),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),artists)]">clearart</property>
 	<property property="widgetArtwork.4" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.4),library) | String.IsEqual(Container(211).ListItem.Property(widget.4),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.4),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.4),artists)]">clearlogo</property>
 	<!-- Widget 5 Artwork -->
-	<propertySettings property="widgetArtwork.5" buttonID="8054" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.5" templateonly="true"/>
+	<propertySettings property="widgetArtwork.5" buttonID="8145" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.5" />
 	<property property="widgetArtwork.5" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.5),info)">portraiticon</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[31250]">landscapeicon</property>
@@ -310,7 +411,7 @@
 	<property property="widgetArtwork.5" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.5),library) | String.IsEqual(Container(211).ListItem.Property(widget.5),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.5),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),artists)]">clearart</property>
 	<property property="widgetArtwork.5" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.5),library) | String.IsEqual(Container(211).ListItem.Property(widget.5),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.5),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.5),artists)]">clearlogo</property>
 	<!-- Widget 6 Artwork -->
-	<propertySettings property="widgetArtwork.6" buttonID="8064" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.6" templateonly="true"/>
+	<propertySettings property="widgetArtwork.6" buttonID="8146" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.6" />
 	<property property="widgetArtwork.6" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.6),info)">portraiticon</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31260]">squareicon</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31250]">landscapeicon</property>
@@ -319,8 +420,150 @@
 	<property property="widgetArtwork.6" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.6),library) | String.IsEqual(Container(211).ListItem.Property(widget.6),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.6),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),artists)]">landscape</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.6),library) | String.IsEqual(Container(211).ListItem.Property(widget.6),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.6),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),artists)]">clearart</property>
 	<property property="widgetArtwork.6" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.6),library) | String.IsEqual(Container(211).ListItem.Property(widget.6),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.6),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.6),artists)]">clearlogo</property>
+	<!-- Widget 7 Artwork -->
+	<propertySettings property="widgetArtwork.7" buttonID="8147" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.7" />
+	<property property="widgetArtwork.7" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.7),info)">portraiticon</property>
+	<property property="widgetArtwork.7" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.7" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.7" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.7),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.7),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.7),pvr)">fanart</property>
+	<property property="widgetArtwork.7" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.7),library) | String.IsEqual(Container(211).ListItem.Property(widget.7),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.7),episodes)">thumb</property>
+	<property property="widgetArtwork.7" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.7),library) | String.IsEqual(Container(211).ListItem.Property(widget.7),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.7),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),artists)]">landscape</property>
+	<property property="widgetArtwork.7" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.7),library) | String.IsEqual(Container(211).ListItem.Property(widget.7),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.7),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),artists)]">clearart</property>
+	<property property="widgetArtwork.7" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.7),library) | String.IsEqual(Container(211).ListItem.Property(widget.7),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.7),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.7),artists)]">clearlogo</property>
+	<!-- Widget 8 Artwork -->
+	<propertySettings property="widgetArtwork.8" buttonID="8148" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.8" />
+	<property property="widgetArtwork.8" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.8),info)">portraiticon</property>
+	<property property="widgetArtwork.8" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.8" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.8" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.8),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.8),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.8),pvr)">fanart</property>
+	<property property="widgetArtwork.8" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.8),library) | String.IsEqual(Container(211).ListItem.Property(widget.8),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.8),episodes)">thumb</property>
+	<property property="widgetArtwork.8" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.8),library) | String.IsEqual(Container(211).ListItem.Property(widget.8),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.8),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),artists)]">landscape</property>
+	<property property="widgetArtwork.8" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.8),library) | String.IsEqual(Container(211).ListItem.Property(widget.8),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.8),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),artists)]">clearart</property>
+	<property property="widgetArtwork.8" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.8),library) | String.IsEqual(Container(211).ListItem.Property(widget.8),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.8),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.8),artists)]">clearlogo</property>
+	<!-- Widget 9 Artwork -->
+	<propertySettings property="widgetArtwork.9" buttonID="8149" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.9" />
+	<property property="widgetArtwork.9" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.9),info)">portraiticon</property>
+	<property property="widgetArtwork.9" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.9" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.9" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.9),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.9),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.9),pvr)">fanart</property>
+	<property property="widgetArtwork.9" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.9),library) | String.IsEqual(Container(211).ListItem.Property(widget.9),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.9),episodes)">thumb</property>
+	<property property="widgetArtwork.9" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.9),library) | String.IsEqual(Container(211).ListItem.Property(widget.9),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.9),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),artists)]">landscape</property>
+	<property property="widgetArtwork.9" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.9),library) | String.IsEqual(Container(211).ListItem.Property(widget.9),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.9),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),artists)]">clearart</property>
+	<property property="widgetArtwork.9" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.9),library) | String.IsEqual(Container(211).ListItem.Property(widget.9),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.9),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.9),artists)]">clearlogo</property>
+
+	<!-- Widget 10 Artwork -->
+	<propertySettings property="widgetArtwork.10" buttonID="81410" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.10" />
+	<property property="widgetArtwork.10" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.10),info)">portraiticon</property>
+	<property property="widgetArtwork.10" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.10" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.10" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.10),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.10),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.10),pvr)">fanart</property>
+	<property property="widgetArtwork.10" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.10),library) | String.IsEqual(Container(211).ListItem.Property(widget.10),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.10),episodes)">thumb</property>
+	<property property="widgetArtwork.10" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.10),library) | String.IsEqual(Container(211).ListItem.Property(widget.10),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.10),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),artists)]">landscape</property>
+	<property property="widgetArtwork.10" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.10),library) | String.IsEqual(Container(211).ListItem.Property(widget.10),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.10),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),artists)]">clearart</property>
+	<property property="widgetArtwork.10" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.10),library) | String.IsEqual(Container(211).ListItem.Property(widget.10),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.10),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.10),artists)]">clearlogo</property>
+	<!-- Widget 11 Artwork -->
+	<propertySettings property="widgetArtwork.11" buttonID="81411" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.11" />
+	<property property="widgetArtwork.11" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.11),info)">portraiticon</property>
+	<property property="widgetArtwork.11" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.11" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.11" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.11),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.11),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.11),pvr)">fanart</property>
+	<property property="widgetArtwork.11" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.11),library) | String.IsEqual(Container(211).ListItem.Property(widget.11),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.11),episodes)">thumb</property>
+	<property property="widgetArtwork.11" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.11),library) | String.IsEqual(Container(211).ListItem.Property(widget.11),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.11),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),artists)]">landscape</property>
+	<property property="widgetArtwork.11" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.11),library) | String.IsEqual(Container(211).ListItem.Property(widget.11),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.11),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),artists)]">clearart</property>
+	<property property="widgetArtwork.11" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.11),library) | String.IsEqual(Container(211).ListItem.Property(widget.11),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.11),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.11),artists)]">clearlogo</property>
+	<!-- Widget 12 Artwork -->
+	<propertySettings property="widgetArtwork.12" buttonID="81412" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.12" />
+	<property property="widgetArtwork.12" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.12),info)">portraiticon</property>
+	<property property="widgetArtwork.12" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.12" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.12" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.12),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.12),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.12),pvr)">fanart</property>
+	<property property="widgetArtwork.12" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.12),library) | String.IsEqual(Container(211).ListItem.Property(widget.12),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.12),episodes)">thumb</property>
+	<property property="widgetArtwork.12" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.12),library) | String.IsEqual(Container(211).ListItem.Property(widget.12),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.12),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),artists)]">landscape</property>
+	<property property="widgetArtwork.12" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.12),library) | String.IsEqual(Container(211).ListItem.Property(widget.12),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.12),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),artists)]">clearart</property>
+	<property property="widgetArtwork.12" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.12),library) | String.IsEqual(Container(211).ListItem.Property(widget.12),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.12),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.12),artists)]">clearlogo</property>
+	<!-- Widget 13 Artwork -->
+	<propertySettings property="widgetArtwork.13" buttonID="81413" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.13" />
+	<property property="widgetArtwork.13" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.13),info)">portraiticon</property>
+	<property property="widgetArtwork.13" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.13" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.13" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.13),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.13),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.13),pvr)">fanart</property>
+	<property property="widgetArtwork.13" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.13),library) | String.IsEqual(Container(211).ListItem.Property(widget.13),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.13),episodes)">thumb</property>
+	<property property="widgetArtwork.13" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.13),library) | String.IsEqual(Container(211).ListItem.Property(widget.13),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.13),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),artists)]">landscape</property>
+	<property property="widgetArtwork.13" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.13),library) | String.IsEqual(Container(211).ListItem.Property(widget.13),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.13),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),artists)]">clearart</property>
+	<property property="widgetArtwork.13" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.13),library) | String.IsEqual(Container(211).ListItem.Property(widget.13),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.13),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.13),artists)]">clearlogo</property>
+	<!-- Widget 14 Artwork -->
+	<propertySettings property="widgetArtwork.14" buttonID="81414" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.14" />
+	<property property="widgetArtwork.14" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.14),info)">portraiticon</property>
+	<property property="widgetArtwork.14" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.14" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.14" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.14),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.14),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.14),pvr)">fanart</property>
+	<property property="widgetArtwork.14" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.14),library) | String.IsEqual(Container(211).ListItem.Property(widget.14),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.14),episodes)">thumb</property>
+	<property property="widgetArtwork.14" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.14),library) | String.IsEqual(Container(211).ListItem.Property(widget.14),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.14),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),artists)]">landscape</property>
+	<property property="widgetArtwork.14" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.14),library) | String.IsEqual(Container(211).ListItem.Property(widget.14),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.14),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),artists)]">clearart</property>
+	<property property="widgetArtwork.14" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.14),library) | String.IsEqual(Container(211).ListItem.Property(widget.14),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.14),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.14),artists)]">clearlogo</property>
+	<!-- Widget 15 Artwork -->
+	<propertySettings property="widgetArtwork.15" buttonID="81415" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.15" />
+	<property property="widgetArtwork.15" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.15),info)">portraiticon</property>
+	<property property="widgetArtwork.15" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.15" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.15" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.15),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.15),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.15),pvr)">fanart</property>
+	<property property="widgetArtwork.15" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.15),library) | String.IsEqual(Container(211).ListItem.Property(widget.15),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.15),episodes)">thumb</property>
+	<property property="widgetArtwork.15" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.15),library) | String.IsEqual(Container(211).ListItem.Property(widget.15),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.15),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),artists)]">landscape</property>
+	<property property="widgetArtwork.15" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.15),library) | String.IsEqual(Container(211).ListItem.Property(widget.15),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.15),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),artists)]">clearart</property>
+	<property property="widgetArtwork.15" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.15),library) | String.IsEqual(Container(211).ListItem.Property(widget.15),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.15),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.15),artists)]">clearlogo</property>
+	<!-- Widget 16 Artwork -->
+	<propertySettings property="widgetArtwork.16" buttonID="81416" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.16" />
+	<property property="widgetArtwork.16" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.16),info)">portraiticon</property>
+	<property property="widgetArtwork.16" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.16" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.16" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.16),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.16),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.16),pvr)">fanart</property>
+	<property property="widgetArtwork.16" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.16),library) | String.IsEqual(Container(211).ListItem.Property(widget.16),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.16),episodes)">thumb</property>
+	<property property="widgetArtwork.16" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.16),library) | String.IsEqual(Container(211).ListItem.Property(widget.16),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.16),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),artists)]">landscape</property>
+	<property property="widgetArtwork.16" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.16),library) | String.IsEqual(Container(211).ListItem.Property(widget.16),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.16),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),artists)]">clearart</property>
+	<property property="widgetArtwork.16" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.16),library) | String.IsEqual(Container(211).ListItem.Property(widget.16),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.16),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.16),artists)]">clearlogo</property>
+	<!-- Widget 17 Artwork -->
+	<propertySettings property="widgetArtwork.17" buttonID="81417" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.17" />
+	<property property="widgetArtwork.17" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.17),info)">portraiticon</property>
+	<property property="widgetArtwork.17" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.17" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.17" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.17),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.17),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.17),pvr)">fanart</property>
+	<property property="widgetArtwork.17" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.17),library) | String.IsEqual(Container(211).ListItem.Property(widget.17),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.17),episodes)">thumb</property>
+	<property property="widgetArtwork.17" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.17),library) | String.IsEqual(Container(211).ListItem.Property(widget.17),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.17),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),artists)]">landscape</property>
+	<property property="widgetArtwork.17" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.17),library) | String.IsEqual(Container(211).ListItem.Property(widget.17),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.17),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),artists)]">clearart</property>
+	<property property="widgetArtwork.17" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.17),library) | String.IsEqual(Container(211).ListItem.Property(widget.17),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.17),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.17),artists)]">clearlogo</property>
+	<!-- Widget 18 Artwork -->
+	<propertySettings property="widgetArtwork.18" buttonID="81418" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.18" />
+	<property property="widgetArtwork.18" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.18),info)">portraiticon</property>
+	<property property="widgetArtwork.18" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.18" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.18" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.18),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.18),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.18),pvr)">fanart</property>
+	<property property="widgetArtwork.18" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.18),library) | String.IsEqual(Container(211).ListItem.Property(widget.18),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.18),episodes)">thumb</property>
+	<property property="widgetArtwork.18" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.18),library) | String.IsEqual(Container(211).ListItem.Property(widget.18),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.18),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),artists)]">landscape</property>
+	<property property="widgetArtwork.18" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.18),library) | String.IsEqual(Container(211).ListItem.Property(widget.18),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.18),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),artists)]">clearart</property>
+	<property property="widgetArtwork.18" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.18),library) | String.IsEqual(Container(211).ListItem.Property(widget.18),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.18),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.18),artists)]">clearlogo</property>
+	<!-- Widget 19 Artwork -->
+	<propertySettings property="widgetArtwork.19" buttonID="81419" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.19" />
+	<property property="widgetArtwork.19" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.19),info)">portraiticon</property>
+	<property property="widgetArtwork.19" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.19" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.19" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.19),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.19),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.19),pvr)">fanart</property>
+	<property property="widgetArtwork.19" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.19),library) | String.IsEqual(Container(211).ListItem.Property(widget.19),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.19),episodes)">thumb</property>
+	<property property="widgetArtwork.19" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.19),library) | String.IsEqual(Container(211).ListItem.Property(widget.19),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.19),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),artists)]">landscape</property>
+	<property property="widgetArtwork.19" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.19),library) | String.IsEqual(Container(211).ListItem.Property(widget.19),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.19),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),artists)]">clearart</property>
+	<property property="widgetArtwork.19" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.19),library) | String.IsEqual(Container(211).ListItem.Property(widget.19),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.19),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.19),artists)]">clearlogo</property>
+	<!-- Widget 20 Artwork -->
+	<propertySettings property="widgetArtwork.20" buttonID="81420" showNone="false" title="$LOCALIZE[39123]" requires="widgetStyle.20" />
+	<property property="widgetArtwork.20" label="$LOCALIZE[31248]" condition="!String.IsEqual(Container(211).ListItem.Property(widget.20),info)">portraiticon</property>
+	<property property="widgetArtwork.20" label="$LOCALIZE[31260]">squareicon</property>
+	<property property="widgetArtwork.20" label="$LOCALIZE[31250]">landscapeicon</property>
+	<property property="widgetArtwork.20" label="$LOCALIZE[20445]" condition="!String.IsEqual(Container(211).ListItem.Property(widgetType.20),favourites) + !String.IsEqual(Container(211).ListItem.Property(widgetType.20),picture) + !String.IsEqual(Container(211).ListItem.Property(widgetTarget.20),pvr)">fanart</property>
+	<property property="widgetArtwork.20" label="$LOCALIZE[39114]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.20),library) | String.IsEqual(Container(211).ListItem.Property(widget.20),playlist)] + String.IsEqual(Container(211).ListItem.Property(widgetType.20),episodes)">thumb</property>
+	<property property="widgetArtwork.20" label="$LOCALIZE[31201]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.20),library) | String.IsEqual(Container(211).ListItem.Property(widget.20),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.20),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),artists)]">landscape</property>
+	<property property="widgetArtwork.20" label="$LOCALIZE[31165]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.20),library) | String.IsEqual(Container(211).ListItem.Property(widget.20),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.20),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),artists)]">clearart</property>
+	<property property="widgetArtwork.20" label="$LOCALIZE[31202]" condition="[String.IsEqual(Container(211).ListItem.Property(widget.20),library) | String.IsEqual(Container(211).ListItem.Property(widget.20),playlist)] + [String.IsEqual(Container(211).ListItem.Property(widgetType.20),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),musicvideos) | String.IsEqual(Container(211).ListItem.Property(widgetType.20),artists)]">clearlogo</property>
+
 	<!-- Widget 1 Limit -->
-	<propertySettings property="widgetLimit.1" buttonID="80110" title="$LOCALIZE[31385]" showNone="false" templateonly="true"/>
+	<propertySettings property="widgetLimit.1" buttonID="8151" title="$LOCALIZE[31385]" showNone="false" />
 	<property property="widgetLimit.1" label="1 ">$NUMBER[1]</property>
 	<property property="widgetLimit.1" label="2 ">$NUMBER[2]</property>
 	<property property="widgetLimit.1" label="3 ">$NUMBER[3]</property>
@@ -337,7 +580,7 @@
 	<property property="widgetLimit.1" label="50 ">$NUMBER[50]</property>
 	<property property="widgetLimit.1" label="100 ">$NUMBER[100]</property>
 	<!-- Widget 2 Limit -->
-	<propertySettings property="widgetLimit.2" buttonID="80210" title="$LOCALIZE[31385]" showNone="false" templateonly="true"/>
+	<propertySettings property="widgetLimit.2" buttonID="8152" title="$LOCALIZE[31385]" showNone="false" />
 	<property property="widgetLimit.2" label="1 ">$NUMBER[1]</property>
 	<property property="widgetLimit.2" label="2 ">$NUMBER[2]</property>
 	<property property="widgetLimit.2" label="3 ">$NUMBER[3]</property>
@@ -354,7 +597,7 @@
 	<property property="widgetLimit.2" label="50 ">$NUMBER[50]</property>
 	<property property="widgetLimit.2" label="100 ">$NUMBER[100]</property>
 	<!-- Widget 3 Limit -->
-	<propertySettings property="widgetLimit.3" buttonID="80310" title="$LOCALIZE[31385]" showNone="false" templateonly="true"/>
+	<propertySettings property="widgetLimit.3" buttonID="8153" title="$LOCALIZE[31385]" showNone="false" />
 	<property property="widgetLimit.3" label="1 ">$NUMBER[1]</property>
 	<property property="widgetLimit.3" label="2 ">$NUMBER[2]</property>
 	<property property="widgetLimit.3" label="3 ">$NUMBER[3]</property>
@@ -371,7 +614,7 @@
 	<property property="widgetLimit.3" label="50 ">$NUMBER[50]</property>
 	<property property="widgetLimit.3" label="100 ">$NUMBER[100]</property>
 	<!-- Widget 4 Limit -->
-	<propertySettings property="widgetLimit.4" buttonID="80410" title="$LOCALIZE[31385]" showNone="false" templateonly="true"/>
+	<propertySettings property="widgetLimit.4" buttonID="8154" title="$LOCALIZE[31385]" showNone="false" />
 	<property property="widgetLimit.4" label="1 ">$NUMBER[1]</property>
 	<property property="widgetLimit.4" label="2 ">$NUMBER[2]</property>
 	<property property="widgetLimit.4" label="3 ">$NUMBER[3]</property>
@@ -388,7 +631,7 @@
 	<property property="widgetLimit.4" label="50 ">$NUMBER[50]</property>
 	<property property="widgetLimit.4" label="100 ">$NUMBER[100]</property>
 	<!-- Widget 5 Limit -->
-	<propertySettings property="widgetLimit.5" buttonID="80510" title="$LOCALIZE[31385]" showNone="false" templateonly="true"/>
+	<propertySettings property="widgetLimit.5" buttonID="8155" title="$LOCALIZE[31385]" showNone="false" />
 	<property property="widgetLimit.5" label="1 ">$NUMBER[1]</property>
 	<property property="widgetLimit.5" label="2 ">$NUMBER[2]</property>
 	<property property="widgetLimit.5" label="3 ">$NUMBER[3]</property>
@@ -405,7 +648,7 @@
 	<property property="widgetLimit.5" label="50 ">$NUMBER[50]</property>
 	<property property="widgetLimit.5" label="100 ">$NUMBER[100]</property>
 	<!-- Widget 6 Limit -->
-	<propertySettings property="widgetLimit.6" buttonID="80610" title="$LOCALIZE[31385]" showNone="false" templateonly="true"/>
+	<propertySettings property="widgetLimit.6" buttonID="8156" title="$LOCALIZE[31385]" showNone="false" />
 	<property property="widgetLimit.6" label="1 ">$NUMBER[1]</property>
 	<property property="widgetLimit.6" label="2 ">$NUMBER[2]</property>
 	<property property="widgetLimit.6" label="3 ">$NUMBER[3]</property>
@@ -421,6 +664,245 @@
 	<property property="widgetLimit.6" label="25 ">$NUMBER[25]</property>
 	<property property="widgetLimit.6" label="50 ">$NUMBER[50]</property>
 	<property property="widgetLimit.6" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 7 Limit -->
+	<propertySettings property="widgetLimit.7" buttonID="8157" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.7" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.7" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.7" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.7" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.7" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.7" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.7" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.7" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.7" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.7" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.7" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.7" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.7" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.7" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.7" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 8 Limit -->
+	<propertySettings property="widgetLimit.8" buttonID="8158" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.8" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.8" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.8" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.8" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.8" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.8" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.8" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.8" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.8" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.8" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.8" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.8" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.8" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.8" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.8" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 9 Limit -->
+	<propertySettings property="widgetLimit.9" buttonID="8159" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.9" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.9" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.9" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.9" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.9" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.9" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.9" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.9" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.9" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.9" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.9" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.9" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.9" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.9" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.9" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 10 Limit -->
+	<propertySettings property="widgetLimit.10" buttonID="81510" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.10" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.10" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.10" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.10" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.10" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.10" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.10" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.10" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.10" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.10" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.10" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.10" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.10" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.10" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.10" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 11 Limit -->
+	<propertySettings property="widgetLimit.11" buttonID="81511" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.11" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.11" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.11" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.11" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.11" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.11" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.11" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.11" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.11" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.11" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.11" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.11" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.11" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.11" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.11" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 12 Limit -->
+	<propertySettings property="widgetLimit.12" buttonID="81512" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.12" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.12" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.12" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.12" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.12" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.12" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.12" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.12" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.12" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.12" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.12" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.12" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.12" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.12" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.12" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 13 Limit -->
+	<propertySettings property="widgetLimit.13" buttonID="81513" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.13" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.13" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.13" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.13" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.13" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.13" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.13" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.13" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.13" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.13" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.13" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.13" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.13" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.13" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.13" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 14 Limit -->
+	<propertySettings property="widgetLimit.14" buttonID="81514" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.14" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.14" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.14" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.14" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.14" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.14" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.14" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.14" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.14" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.14" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.14" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.14" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.14" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.14" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.14" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 15 Limit -->
+	<propertySettings property="widgetLimit.15" buttonID="81515" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.15" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.15" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.15" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.15" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.15" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.15" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.15" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.15" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.15" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.15" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.15" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.15" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.15" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.15" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.15" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 16 Limit -->
+	<propertySettings property="widgetLimit.16" buttonID="81516" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.16" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.16" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.16" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.16" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.16" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.16" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.16" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.16" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.16" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.16" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.16" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.16" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.16" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.16" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.16" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 17 Limit -->
+	<propertySettings property="widgetLimit.17" buttonID="81517" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.17" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.17" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.17" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.17" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.17" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.17" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.17" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.17" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.17" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.17" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.17" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.17" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.17" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.17" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.17" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 18 Limit -->
+	<propertySettings property="widgetLimit.18" buttonID="81518" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.18" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.18" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.18" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.18" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.18" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.18" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.18" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.18" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.18" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.18" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.18" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.18" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.18" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.18" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.18" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 19 Limit -->
+	<propertySettings property="widgetLimit.19" buttonID="81519" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.19" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.19" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.19" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.19" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.19" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.19" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.19" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.19" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.19" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.19" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.19" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.19" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.19" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.19" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.19" label="100 ">$NUMBER[100]</property>
+	<!-- Widget 20 Limit -->
+	<propertySettings property="widgetLimit.20" buttonID="81520" title="$LOCALIZE[31385]" showNone="false" />
+	<property property="widgetLimit.20" label="1 ">$NUMBER[1]</property>
+	<property property="widgetLimit.20" label="2 ">$NUMBER[2]</property>
+	<property property="widgetLimit.20" label="3 ">$NUMBER[3]</property>
+	<property property="widgetLimit.20" label="4 ">$NUMBER[4]</property>
+	<property property="widgetLimit.20" label="5 ">$NUMBER[5]</property>
+	<property property="widgetLimit.20" label="6 ">$NUMBER[6]</property>
+	<property property="widgetLimit.20" label="7 ">$NUMBER[7]</property>
+	<property property="widgetLimit.20" label="8 ">$NUMBER[8]</property>
+	<property property="widgetLimit.20" label="9 ">$NUMBER[9]</property>
+	<property property="widgetLimit.20" label="10 ">$NUMBER[10]</property>
+	<property property="widgetLimit.20" label="15 ">$NUMBER[15]</property>
+	<property property="widgetLimit.20" label="20 ">$NUMBER[20]</property>
+	<property property="widgetLimit.20" label="25 ">$NUMBER[25]</property>
+	<property property="widgetLimit.20" label="50 ">$NUMBER[50]</property>
+	<property property="widgetLimit.20" label="100 ">$NUMBER[100]</property>
+
 	<!-- Widget fallback if empty -->
 	<!-- NOTE: values cannot be empty when using python in the template.xml or template will not build -->
 	<propertyfallback property="widgetType.1">none</propertyfallback>
@@ -429,6 +911,20 @@
 	<propertyfallback property="widgetType.4">none</propertyfallback>
 	<propertyfallback property="widgetType.5">none</propertyfallback>
 	<propertyfallback property="widgetType.6">none</propertyfallback>
+	<propertyfallback property="widgetType.7">none</propertyfallback>
+	<propertyfallback property="widgetType.8">none</propertyfallback>
+	<propertyfallback property="widgetType.9">none</propertyfallback>
+	<propertyfallback property="widgetType.10">none</propertyfallback>
+	<propertyfallback property="widgetType.11">none</propertyfallback>
+	<propertyfallback property="widgetType.12">none</propertyfallback>
+	<propertyfallback property="widgetType.13">none</propertyfallback>
+	<propertyfallback property="widgetType.14">none</propertyfallback>
+	<propertyfallback property="widgetType.15">none</propertyfallback>
+	<propertyfallback property="widgetType.16">none</propertyfallback>
+	<propertyfallback property="widgetType.17">none</propertyfallback>
+	<propertyfallback property="widgetType.18">none</propertyfallback>
+	<propertyfallback property="widgetType.19">none</propertyfallback>
+	<propertyfallback property="widgetType.20">none</propertyfallback>
 	<propertyfallback property="widgetCaseMusic.1">false</propertyfallback>
 	<propertyfallback property="widgetCaseVideo.1">false</propertyfallback>
 	<propertyfallback property="widgetCaseMusic.2">false</propertyfallback>
@@ -441,12 +937,54 @@
 	<propertyfallback property="widgetCaseVideo.5">false</propertyfallback>
 	<propertyfallback property="widgetCaseMusic.6">false</propertyfallback>
 	<propertyfallback property="widgetCaseVideo.6">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.7">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.7">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.8">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.8">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.9">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.9">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.10">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.10">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.11">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.11">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.12">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.12">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.13">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.13">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.14">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.14">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.15">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.15">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.16">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.16">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.17">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.17">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.18">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.18">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.19">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.19">false</propertyfallback>
+	<propertyfallback property="widgetCaseMusic.20">false</propertyfallback>
+	<propertyfallback property="widgetCaseVideo.20">false</propertyfallback>
 	<propertyfallback property="widgetWatchedStatus.1">false</propertyfallback>
 	<propertyfallback property="widgetWatchedStatus.2">false</propertyfallback>
 	<propertyfallback property="widgetWatchedStatus.3">false</propertyfallback>
 	<propertyfallback property="widgetWatchedStatus.4">false</propertyfallback>
 	<propertyfallback property="widgetWatchedStatus.5">false</propertyfallback>
 	<propertyfallback property="widgetWatchedStatus.6">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.7">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.8">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.9">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.10">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.11">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.12">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.13">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.14">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.15">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.16">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.17">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.18">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.19">false</propertyfallback>
+	<propertyfallback property="widgetWatchedStatus.20">false</propertyfallback>
 	<propertyfallback property="widgetArtwork.1" attribute="widgetType.1" value="movies">portraiticon</propertyfallback>
 	<propertyfallback property="widgetArtwork.1" attribute="widgetType.1" value="tvshows">portraiticon</propertyfallback>
 	<propertyfallback property="widgetArtwork.1" attribute="widgetType.1" value="episodes">portraiticon</propertyfallback>
@@ -477,32 +1015,130 @@
 	<propertyfallback property="widgetArtwork.6" attribute="widgetType.6" value="episodes">portraiticon</propertyfallback>
 	<propertyfallback property="widgetArtwork.6" attribute="widgetType.6" value="picture">landscapeicon</propertyfallback>
 	<propertyfallback property="widgetArtwork.6">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.7" attribute="widgetType.7" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.7" attribute="widgetType.7" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.7" attribute="widgetType.7" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.7" attribute="widgetType.7" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.7">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.8" attribute="widgetType.8" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.8" attribute="widgetType.8" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.8" attribute="widgetType.8" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.8" attribute="widgetType.8" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.8">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.9" attribute="widgetType.9" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.9" attribute="widgetType.9" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.9" attribute="widgetType.9" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.9" attribute="widgetType.9" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.9">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.10" attribute="widgetType.10" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.10" attribute="widgetType.10" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.10" attribute="widgetType.10" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.10" attribute="widgetType.10" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.10">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.11" attribute="widgetType.11" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.11" attribute="widgetType.11" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.11" attribute="widgetType.11" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.11" attribute="widgetType.11" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.11">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.12" attribute="widgetType.12" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.12" attribute="widgetType.12" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.12" attribute="widgetType.12" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.12" attribute="widgetType.12" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.12">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.13" attribute="widgetType.13" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.13" attribute="widgetType.13" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.13" attribute="widgetType.13" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.13" attribute="widgetType.13" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.13">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.14" attribute="widgetType.14" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.14" attribute="widgetType.14" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.14" attribute="widgetType.14" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.14" attribute="widgetType.14" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.14">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.15" attribute="widgetType.15" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.15" attribute="widgetType.15" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.15" attribute="widgetType.15" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.15" attribute="widgetType.15" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.15">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.16" attribute="widgetType.16" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.16" attribute="widgetType.16" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.16" attribute="widgetType.16" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.16" attribute="widgetType.16" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.16">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.17" attribute="widgetType.17" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.17" attribute="widgetType.17" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.17" attribute="widgetType.17" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.17" attribute="widgetType.17" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.17">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.18" attribute="widgetType.18" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.18" attribute="widgetType.18" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.18" attribute="widgetType.18" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.18" attribute="widgetType.18" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.18">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.19" attribute="widgetType.19" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.19" attribute="widgetType.19" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.19" attribute="widgetType.19" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.19" attribute="widgetType.19" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.19">squareicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.20" attribute="widgetType.20" value="movies">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.20" attribute="widgetType.20" value="tvshows">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.20" attribute="widgetType.20" value="episodes">portraiticon</propertyfallback>
+	<propertyfallback property="widgetArtwork.20" attribute="widgetType.20" value="picture">landscapeicon</propertyfallback>
+	<propertyfallback property="widgetArtwork.20">squareicon</propertyfallback>
 	<propertyfallback property="widgetStyle.1">medium</propertyfallback>
 	<propertyfallback property="widgetStyle.2">medium</propertyfallback>
 	<propertyfallback property="widgetStyle.3">medium</propertyfallback>
 	<propertyfallback property="widgetStyle.4">medium</propertyfallback>
 	<propertyfallback property="widgetStyle.5">medium</propertyfallback>
 	<propertyfallback property="widgetStyle.6">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.7">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.8">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.9">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.10">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.11">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.12">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.13">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.14">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.15">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.16">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.17">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.18">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.19">medium</propertyfallback>
+	<propertyfallback property="widgetStyle.20">medium</propertyfallback>
 	<propertyfallback property="widgetLimit.1">20</propertyfallback>
 	<propertyfallback property="widgetLimit.2">20</propertyfallback>
 	<propertyfallback property="widgetLimit.3">20</propertyfallback>
 	<propertyfallback property="widgetLimit.4">20</propertyfallback>
 	<propertyfallback property="widgetLimit.5">20</propertyfallback>
 	<propertyfallback property="widgetLimit.6">20</propertyfallback>
-	<!-- Cover background -->
-	<propertySettings property="coverBackground" buttonID="8093" title="$LOCALIZE[33068]" showNone="false" imageBrowse="true"/>
-	<property property="coverBackground" label="$LOCALIZE[571]"/>
+	<propertyfallback property="widgetLimit.7">20</propertyfallback>
+	<propertyfallback property="widgetLimit.8">20</propertyfallback>
+	<propertyfallback property="widgetLimit.9">20</propertyfallback>
+	<propertyfallback property="widgetLimit.10">20</propertyfallback>
+	<propertyfallback property="widgetLimit.11">20</propertyfallback>
+	<propertyfallback property="widgetLimit.12">20</propertyfallback>
+	<propertyfallback property="widgetLimit.13">20</propertyfallback>
+	<propertyfallback property="widgetLimit.14">20</propertyfallback>
+	<propertyfallback property="widgetLimit.15">20</propertyfallback>
+	<propertyfallback property="widgetLimit.16">20</propertyfallback>
+	<propertyfallback property="widgetLimit.17">20</propertyfallback>
+	<propertyfallback property="widgetLimit.18">20</propertyfallback>
+	<propertyfallback property="widgetLimit.19">20</propertyfallback>
+	<propertyfallback property="widgetLimit.20">20</propertyfallback>
+	<!-- Cover background (MOVED TO 899 TO AVOID WIDGET 9 CONFLICT) -->
+	<propertySettings property="coverBackground" buttonID="8993" title="$LOCALIZE[33068]" showNone="false" imageBrowse="true" />
+	<property property="coverBackground" label="$LOCALIZE[571]" />
 	<property property="coverBackground" label="$LOCALIZE[20445]">fanart</property>
-	<!-- Cover sort by -->
-	<propertySettings property="coverSortBy" buttonID="8094" title="$LOCALIZE[580]" showNone="false" templateonly="true"/>
-	<property property="coverSortBy" label="$LOCALIZE[571]"/>
+	<!-- Cover Sort By -->
+	<propertySettings property="coverSortBy" buttonID="8994" title="$LOCALIZE[580]" showNone="false" templateonly="true" />
+	<property property="coverSortBy" label="$LOCALIZE[571]" />
 	<property property="coverSortBy" label="$LOCALIZE[369]">title</property>
 	<property property="coverSortBy" label="$LOCALIZE[552]">date</property>
 	<property property="coverSortBy" label="$LOCALIZE[345]">year</property>
 	<property property="coverSortBy" label="$LOCALIZE[590]">random</property>
-	<!-- Cover sort order -->
-	<propertySettings property="coverSortOrder" buttonID="8095" title="$LOCALIZE[581]" showNone="false" templateonly="true"/>
-	<property property="coverSortOrder" label="$LOCALIZE[571]"/>
+	<!-- Cover Sort Order -->
+	<propertySettings property="coverSortOrder" buttonID="8995" title="$LOCALIZE[581]" showNone="false" templateonly="true" />
+	<property property="coverSortOrder" label="$LOCALIZE[571]" />
 	<property property="coverSortOrder" label="$LOCALIZE[584]">ascending</property>
 	<property property="coverSortOrder" label="$LOCALIZE[585]">descending</property>
 	<!-- Infolines -->
@@ -525,141 +1161,459 @@
 		<action>::ACTION::</action>
 	</override>
 	<!-- Onback - prevents the shortcut dialog closing for widgets -->
-	<onback to="501">801</onback>
-	<onback to="501">8011</onback>
-	<onback to="501">8012</onback>
-	<onback to="501">8013</onback>
-	<onback to="501">8014</onback>
-	<onback to="501">8015</onback>
-	<onback to="501">8016</onback>
-	<onback to="501">8017</onback>
-	<onback to="501">8018</onback>
-	<onback to="501">8019</onback>
-	<onback to="501">80110</onback>
-	<onback to="502">802</onback>
-	<onback to="502">8021</onback>
-	<onback to="502">8022</onback>
-	<onback to="502">8023</onback>
-	<onback to="502">8024</onback>
-	<onback to="502">8025</onback>
-	<onback to="502">8026</onback>
-	<onback to="502">8027</onback>
-	<onback to="502">8028</onback>
-	<onback to="502">8029</onback>
-	<onback to="502">80210</onback>
-	<onback to="503">803</onback>
-	<onback to="503">8031</onback>
-	<onback to="503">8032</onback>
-	<onback to="503">8033</onback>
-	<onback to="503">8034</onback>
-	<onback to="503">8035</onback>
-	<onback to="503">8036</onback>
-	<onback to="503">8037</onback>
-	<onback to="503">8038</onback>
-	<onback to="503">8039</onback>
-	<onback to="503">80310</onback>
-	<onback to="504">804</onback>
-	<onback to="504">8041</onback>
-	<onback to="504">8042</onback>
-	<onback to="504">8043</onback>
-	<onback to="504">8044</onback>
-	<onback to="504">8045</onback>
-	<onback to="504">8046</onback>
-	<onback to="504">8047</onback>
-	<onback to="504">8048</onback>
-	<onback to="504">8049</onback>
-	<onback to="504">80410</onback>
-	<onback to="505">805</onback>
-	<onback to="505">8051</onback>
-	<onback to="505">8052</onback>
-	<onback to="505">8053</onback>
-	<onback to="505">8054</onback>
-	<onback to="505">8055</onback>
-	<onback to="505">8056</onback>
-	<onback to="505">8057</onback>
-	<onback to="505">8058</onback>
-	<onback to="505">8059</onback>
-	<onback to="505">80510</onback>
-	<onback to="506">806</onback>
-	<onback to="506">8061</onback>
-	<onback to="506">8062</onback>
-	<onback to="506">8063</onback>
-	<onback to="506">8064</onback>
-	<onback to="506">8065</onback>
-	<onback to="506">8066</onback>
-	<onback to="506">8067</onback>
-	<onback to="506">8068</onback>
-	<onback to="506">8069</onback>
-	<onback to="506">80610</onback>
-	<onback to="511">809</onback>
-	<onback to="511">8091</onback>
-	<onback to="511">8092</onback>
-	<onback to="511">8093</onback>
-	<onback to="511">8094</onback>
-	<onback to="511">8095</onback>
+	<onback to="501">8101</onback>
+	<onback to="501">8111</onback>
+	<onback to="501">8121</onback>
+	<onback to="501">8131</onback>
+	<onback to="501">8141</onback>
+	<onback to="501">8151</onback>
+	<onback to="501">8161</onback>
+	<onback to="501">8171</onback>
+	<onback to="501">8181</onback>
+	<onback to="501">8191</onback>
+	<onback to="502">8102</onback>
+	<onback to="502">8112</onback>
+	<onback to="502">8122</onback>
+	<onback to="502">8132</onback>
+	<onback to="502">8142</onback>
+	<onback to="502">8152</onback>
+	<onback to="502">8162</onback>
+	<onback to="502">8172</onback>
+	<onback to="502">8182</onback>
+	<onback to="502">8192</onback>
+	<onback to="503">8103</onback>
+	<onback to="503">8113</onback>
+	<onback to="503">8123</onback>
+	<onback to="503">8133</onback>
+	<onback to="503">8143</onback>
+	<onback to="503">8153</onback>
+	<onback to="503">8163</onback>
+	<onback to="503">8173</onback>
+	<onback to="503">8183</onback>
+	<onback to="503">8193</onback>
+	<onback to="504">8104</onback>
+	<onback to="504">8114</onback>
+	<onback to="504">8124</onback>
+	<onback to="504">8134</onback>
+	<onback to="504">8144</onback>
+	<onback to="504">8154</onback>
+	<onback to="504">8164</onback>
+	<onback to="504">8174</onback>
+	<onback to="504">8184</onback>
+	<onback to="504">8194</onback>
+	<onback to="505">8105</onback>
+	<onback to="505">8115</onback>
+	<onback to="505">8125</onback>
+	<onback to="505">8135</onback>
+	<onback to="505">8145</onback>
+	<onback to="505">8155</onback>
+	<onback to="505">8165</onback>
+	<onback to="505">8175</onback>
+	<onback to="505">8185</onback>
+	<onback to="505">8195</onback>
+	<onback to="506">8106</onback>
+	<onback to="506">8116</onback>
+	<onback to="506">8126</onback>
+	<onback to="506">8136</onback>
+	<onback to="506">8146</onback>
+	<onback to="506">8156</onback>
+	<onback to="506">8166</onback>
+	<onback to="506">8176</onback>
+	<onback to="506">8186</onback>
+	<onback to="506">8196</onback>
+	<onback to="507">8107</onback>
+	<onback to="507">8117</onback>
+	<onback to="507">8127</onback>
+	<onback to="507">8137</onback>
+	<onback to="507">8147</onback>
+	<onback to="507">8157</onback>
+	<onback to="507">8167</onback>
+	<onback to="507">8177</onback>
+	<onback to="507">8187</onback>
+	<onback to="507">8197</onback>
+	<onback to="508">8108</onback>
+	<onback to="508">8118</onback>
+	<onback to="508">8128</onback>
+	<onback to="508">8138</onback>
+	<onback to="508">8148</onback>
+	<onback to="508">8158</onback>
+	<onback to="508">8168</onback>
+	<onback to="508">8178</onback>
+	<onback to="508">8188</onback>
+	<onback to="508">8198</onback>
+	<onback to="509">8109</onback>
+	<onback to="509">8119</onback>
+	<onback to="509">8129</onback>
+	<onback to="509">8139</onback>
+	<onback to="509">8149</onback>
+	<onback to="509">8159</onback>
+	<onback to="509">8169</onback>
+	<onback to="509">8179</onback>
+	<onback to="509">8189</onback>
+	<onback to="509">8199</onback>
+	<onback to="510">81010</onback>
+	<onback to="510">81110</onback>
+	<onback to="510">81210</onback>
+	<onback to="510">81310</onback>
+	<onback to="510">81410</onback>
+	<onback to="510">81510</onback>
+	<onback to="510">81610</onback>
+	<onback to="510">81710</onback>
+	<onback to="510">81810</onback>
+	<onback to="510">81910</onback>
+	<onback to="511">81011</onback>
+	<onback to="511">81111</onback>
+	<onback to="511">81211</onback>
+	<onback to="511">81311</onback>
+	<onback to="511">81411</onback>
+	<onback to="511">81511</onback>
+	<onback to="511">81611</onback>
+	<onback to="511">81711</onback>
+	<onback to="511">81811</onback>
+	<onback to="511">81911</onback>
+	<onback to="512">81012</onback>
+	<onback to="512">81112</onback>
+	<onback to="512">81212</onback>
+	<onback to="512">81312</onback>
+	<onback to="512">81412</onback>
+	<onback to="512">81512</onback>
+	<onback to="512">81612</onback>
+	<onback to="512">81712</onback>
+	<onback to="512">81812</onback>
+	<onback to="512">81912</onback>
+	<onback to="513">81013</onback>
+	<onback to="513">81113</onback>
+	<onback to="513">81213</onback>
+	<onback to="513">81313</onback>
+	<onback to="513">81413</onback>
+	<onback to="513">81513</onback>
+	<onback to="513">81613</onback>
+	<onback to="513">81713</onback>
+	<onback to="513">81813</onback>
+	<onback to="513">81913</onback>
+	<onback to="514">81014</onback>
+	<onback to="514">81114</onback>
+	<onback to="514">81214</onback>
+	<onback to="514">81314</onback>
+	<onback to="514">81414</onback>
+	<onback to="514">81514</onback>
+	<onback to="514">81614</onback>
+	<onback to="514">81714</onback>
+	<onback to="514">81814</onback>
+	<onback to="514">81914</onback>
+	<onback to="515">81015</onback>
+	<onback to="515">81115</onback>
+	<onback to="515">81215</onback>
+	<onback to="515">81315</onback>
+	<onback to="515">81415</onback>
+	<onback to="515">81515</onback>
+	<onback to="515">81615</onback>
+	<onback to="515">81715</onback>
+	<onback to="515">81815</onback>
+	<onback to="515">81915</onback>
+	<onback to="516">81016</onback>
+	<onback to="516">81116</onback>
+	<onback to="516">81216</onback>
+	<onback to="516">81316</onback>
+	<onback to="516">81416</onback>
+	<onback to="516">81516</onback>
+	<onback to="516">81616</onback>
+	<onback to="516">81716</onback>
+	<onback to="516">81816</onback>
+	<onback to="516">81916</onback>
+	<onback to="517">81017</onback>
+	<onback to="517">81117</onback>
+	<onback to="517">81217</onback>
+	<onback to="517">81317</onback>
+	<onback to="517">81417</onback>
+	<onback to="517">81517</onback>
+	<onback to="517">81617</onback>
+	<onback to="517">81717</onback>
+	<onback to="517">81817</onback>
+	<onback to="517">81917</onback>
+	<onback to="518">81018</onback>
+	<onback to="518">81118</onback>
+	<onback to="518">81218</onback>
+	<onback to="518">81318</onback>
+	<onback to="518">81418</onback>
+	<onback to="518">81518</onback>
+	<onback to="518">81618</onback>
+	<onback to="518">81718</onback>
+	<onback to="518">81818</onback>
+	<onback to="518">81918</onback>
+	<onback to="519">81019</onback>
+	<onback to="519">81119</onback>
+	<onback to="519">81219</onback>
+	<onback to="519">81319</onback>
+	<onback to="519">81419</onback>
+	<onback to="519">81519</onback>
+	<onback to="519">81619</onback>
+	<onback to="519">81719</onback>
+	<onback to="519">81819</onback>
+	<onback to="519">81919</onback>
+	<onback to="520">81020</onback>
+	<onback to="520">81120</onback>
+	<onback to="520">81220</onback>
+	<onback to="520">81320</onback>
+	<onback to="520">81420</onback>
+	<onback to="520">81520</onback>
+	<onback to="520">81620</onback>
+	<onback to="520">81720</onback>
+	<onback to="520">81820</onback>
+	<onback to="520">81920</onback>
+
 	<!-- Remove any default menu item properties that we don't need -->
 	<!-- widget.1 ect. must be built as it is required for onup condition for main menu -->
-	<propertySettings property="backgroundName" templateonly="true"/>
-	<propertySettings property="backgroundPlaylistName" templateonly="true"/>
-	<propertySettings property="covercase" templateonly="true"/>
-	<propertySettings property="coverSortBy" templateonly="true"/>
-	<propertySettings property="coverSortOrder" templateonly="true"/>
-	<propertySettings property="defaultID" templateonly="true"/>
-	<propertySettings property="list" templateonly="true"/>
-	<propertySettings property="group" templateonly="true"/>
-	<propertySettings property="hasSubmenu" templateonly="true"/>
-	<propertySettings property="widgetName.1" templateonly="true"/>
-	<propertySettings property="widgetLimit.1" templateonly="true"/>
-	<propertySettings property="widgetPath.1" templateonly="true"/>
-	<propertySettings property="widgetType.1" templateonly="true"/>
-	<propertySettings property="widgetLabel.1" templateonly="true"/>
-	<propertySettings property="widgetTarget.1" templateonly="true"/>
-	<propertySettings property="widgetCaseMusic.1" templateonly="true"/>
-	<propertySettings property="widgetCaseVideo.1" templateonly="true"/>
-	<propertySettings property="widgetWatchedStatus.1" templateonly="true"/>
-	<propertySettings property="widgetName.2" templateonly="true"/>
-	<propertySettings property="widgetLimit.2" templateonly="true"/>
-	<propertySettings property="widgetPath.2" templateonly="true"/>
-	<propertySettings property="widgetType.2" templateonly="true"/>
-	<propertySettings property="widgetLabel.2" templateonly="true"/>
-	<propertySettings property="widgetTarget.2" templateonly="true"/>
-	<propertySettings property="widgetCaseMusic.2" templateonly="true"/>
-	<propertySettings property="widgetCaseVideo.2" templateonly="true"/>
-	<propertySettings property="widgetWatchedStatus.2" templateonly="true"/>
-	<propertySettings property="widgetName.3" templateonly="true"/>
-	<propertySettings property="widgetLimit.3" templateonly="true"/>
-	<propertySettings property="widgetPath.3" templateonly="true"/>
-	<propertySettings property="widgetType.3" templateonly="true"/>
-	<propertySettings property="widgetLabel.3" templateonly="true"/>
-	<propertySettings property="widgetTarget.3" templateonly="true"/>
-	<propertySettings property="widgetCaseMusic.3" templateonly="true"/>
-	<propertySettings property="widgetCaseVideo.3" templateonly="true"/>
-	<propertySettings property="widgetWatchedStatus.3" templateonly="true"/>
-	<propertySettings property="widgetName.4" templateonly="true"/>
-	<propertySettings property="widgetLimit.4" templateonly="true"/>
-	<propertySettings property="widgetPath.4" templateonly="true"/>
-	<propertySettings property="widgetType.4" templateonly="true"/>
-	<propertySettings property="widgetLabel.4" templateonly="true"/>
-	<propertySettings property="widgetTarget.4" templateonly="true"/>
-	<propertySettings property="widgetCaseMusic.4" templateonly="true"/>
-	<propertySettings property="widgetCaseVideo.4" templateonly="true"/>
-	<propertySettings property="widgetWatchedStatus.4" templateonly="true"/>
-	<propertySettings property="widgetName.5" templateonly="true"/>
-	<propertySettings property="widgetLimit.5" templateonly="true"/>
-	<propertySettings property="widgetPath.5" templateonly="true"/>
-	<propertySettings property="widgetType.5" templateonly="true"/>
-	<propertySettings property="widgetLabel.5" templateonly="true"/>
-	<propertySettings property="widgetTarget.5" templateonly="true"/>
-	<propertySettings property="widgetCaseMusic.5" templateonly="true"/>
-	<propertySettings property="widgetCaseVideo.5" templateonly="true"/>
-	<propertySettings property="widgetWatchedStatus.5" templateonly="true"/>
-	<propertySettings property="widgetName.6" templateonly="true"/>
-	<propertySettings property="widgetLimit.6" templateonly="true"/>
-	<propertySettings property="widgetPath.6" templateonly="true"/>
-	<propertySettings property="widgetType.6" templateonly="true"/>
-	<propertySettings property="widgetLabel.6" templateonly="true"/>
-	<propertySettings property="widgetTarget.6" templateonly="true"/>
-	<propertySettings property="widgetCaseMusic.6" templateonly="true"/>
-	<propertySettings property="widgetCaseVideo.6" templateonly="true"/>
-	<propertySettings property="widgetWatchedStatus.6" templateonly="true"/>
+	<propertySettings property="backgroundName" templateonly="true" />
+	<propertySettings property="backgroundPlaylistName" templateonly="true" />
+	<propertySettings property="covercase" templateonly="true" />
+	<propertySettings property="coverSortBy" templateonly="true" />
+	<propertySettings property="coverSortOrder" templateonly="true" />
+	<propertySettings property="defaultID" templateonly="true" />
+	<propertySettings property="list" templateonly="true" />
+	<propertySettings property="group" templateonly="true" />
+	<propertySettings property="hasSubmenu" templateonly="true" />
+
+	<!-- Widget properties - TEMPLATEONLY REMOVED FOR GRID ACCESS -->
+	<!-- Widget 1 -->
+	<propertySettings property="widgetName.1" buttonID="8121" />
+	<propertySettings property="widgetLimit.1" buttonID="8151" />
+	<propertySettings property="widgetPath.1" />
+	<propertySettings property="widgetType.1" />
+	<propertySettings property="widgetLabel.1" buttonID="8161" />
+	<propertySettings property="widgetTarget.1" />
+	<propertySettings property="widgetCaseMusic.1" buttonID="8181" />
+	<propertySettings property="widgetCaseVideo.1" buttonID="8171" />
+	<propertySettings property="widgetWatchedStatus.1" buttonID="8191" />
+	<propertySettings property="widgetIcon.1" />
+
+	<!-- Widget 2 -->
+	<propertySettings property="widgetName.2" buttonID="8122" />
+	<propertySettings property="widgetLimit.2" buttonID="8152" />
+	<propertySettings property="widgetPath.2" />
+	<propertySettings property="widgetType.2" />
+	<propertySettings property="widgetLabel.2" buttonID="8162" />
+	<propertySettings property="widgetTarget.2" />
+	<propertySettings property="widgetCaseMusic.2" buttonID="8182" />
+	<propertySettings property="widgetCaseVideo.2" buttonID="8172" />
+	<propertySettings property="widgetWatchedStatus.2" buttonID="8192" />
+	<propertySettings property="widgetIcon.2" />
+
+	<!-- Widget 3 -->
+	<propertySettings property="widgetName.3" buttonID="8123" />
+	<propertySettings property="widgetLimit.3" buttonID="8153" />
+	<propertySettings property="widgetPath.3" />
+	<propertySettings property="widgetType.3" />
+	<propertySettings property="widgetLabel.3" buttonID="8163" />
+	<propertySettings property="widgetTarget.3" />
+	<propertySettings property="widgetCaseMusic.3" buttonID="8183" />
+	<propertySettings property="widgetCaseVideo.3" buttonID="8173" />
+	<propertySettings property="widgetWatchedStatus.3" buttonID="8193" />
+	<propertySettings property="widgetIcon.3" />
+
+	<!-- Widget 4 -->
+	<propertySettings property="widgetName.4" buttonID="8124" />
+	<propertySettings property="widgetLimit.4" buttonID="8154" />
+	<propertySettings property="widgetPath.4" />
+	<propertySettings property="widgetType.4" />
+	<propertySettings property="widgetLabel.4" buttonID="8164" />
+	<propertySettings property="widgetTarget.4" />
+	<propertySettings property="widgetCaseMusic.4" buttonID="8184" />
+	<propertySettings property="widgetCaseVideo.4" buttonID="8174" />
+	<propertySettings property="widgetWatchedStatus.4" buttonID="8194" />
+	<propertySettings property="widgetIcon.4" />
+
+	<!-- Widget 5 -->
+	<propertySettings property="widgetName.5" buttonID="8125" />
+	<propertySettings property="widgetLimit.5" buttonID="8155" />
+	<propertySettings property="widgetPath.5" />
+	<propertySettings property="widgetType.5" />
+	<propertySettings property="widgetLabel.5" buttonID="8165" />
+	<propertySettings property="widgetTarget.5" />
+	<propertySettings property="widgetCaseMusic.5" buttonID="8185" />
+	<propertySettings property="widgetCaseVideo.5" buttonID="8175" />
+	<propertySettings property="widgetWatchedStatus.5" buttonID="8195" />
+	<propertySettings property="widgetIcon.5" />
+
+	<!-- Widget 6 -->
+	<propertySettings property="widgetName.6" buttonID="8126" />
+	<propertySettings property="widgetLimit.6" buttonID="8156" />
+	<propertySettings property="widgetPath.6" />
+	<propertySettings property="widgetType.6" />
+	<propertySettings property="widgetLabel.6" buttonID="8166" />
+	<propertySettings property="widgetTarget.6" />
+	<propertySettings property="widgetCaseMusic.6" buttonID="8186" />
+	<propertySettings property="widgetCaseVideo.6" buttonID="8176" />
+	<propertySettings property="widgetWatchedStatus.6" buttonID="8196" />
+	<propertySettings property="widgetIcon.6" />
+
+	<!-- WIDGET PROPERTIES 7-20 (Extended Grid Support) -->
+
+	<!-- Widget 7 -->
+	<propertySettings property="widgetName.7" buttonID="8127" />
+	<propertySettings property="widgetLimit.7" buttonID="8157" />
+	<propertySettings property="widgetPath.7" />
+	<propertySettings property="widgetType.7" />
+	<propertySettings property="widgetLabel.7" buttonID="8167" />
+	<propertySettings property="widgetTarget.7" />
+	<propertySettings property="widgetCaseMusic.7" buttonID="8187" />
+	<propertySettings property="widgetCaseVideo.7" buttonID="8177" />
+	<propertySettings property="widgetWatchedStatus.7" buttonID="8197" />
+	<propertySettings property="widgetIcon.7" />
+
+	<!-- Widget 8 -->
+	<propertySettings property="widgetName.8" buttonID="8128" />
+	<propertySettings property="widgetLimit.8" buttonID="8158" />
+	<propertySettings property="widgetPath.8" />
+	<propertySettings property="widgetType.8" />
+	<propertySettings property="widgetLabel.8" buttonID="8168" />
+	<propertySettings property="widgetTarget.8" />
+	<propertySettings property="widgetCaseMusic.8" buttonID="8188" />
+	<propertySettings property="widgetCaseVideo.8" buttonID="8178" />
+	<propertySettings property="widgetWatchedStatus.8" buttonID="8198" />
+	<propertySettings property="widgetIcon.8" />
+
+	<!-- Widget 9 -->
+	<propertySettings property="widgetName.9" buttonID="8129" />
+	<propertySettings property="widgetLimit.9" buttonID="8159" />
+	<propertySettings property="widgetPath.9" />
+	<propertySettings property="widgetType.9" />
+	<propertySettings property="widgetLabel.9" buttonID="8169" />
+	<propertySettings property="widgetTarget.9" />
+	<propertySettings property="widgetCaseMusic.9" buttonID="8189" />
+	<propertySettings property="widgetCaseVideo.9" buttonID="8179" />
+	<propertySettings property="widgetWatchedStatus.9" buttonID="8199" />
+	<propertySettings property="widgetIcon.9" />
+
+	<!-- Widget 10 -->
+	<propertySettings property="widgetName.10" buttonID="81210" />
+	<propertySettings property="widgetLimit.10" buttonID="81510" />
+	<propertySettings property="widgetPath.10" />
+	<propertySettings property="widgetType.10" />
+	<propertySettings property="widgetLabel.10" buttonID="81610" />
+	<propertySettings property="widgetTarget.10" />
+	<propertySettings property="widgetCaseMusic.10" buttonID="81810" />
+	<propertySettings property="widgetCaseVideo.10" buttonID="81710" />
+	<propertySettings property="widgetWatchedStatus.10" buttonID="81910" />
+	<propertySettings property="widgetIcon.10" />
+
+	<!-- Widget 11 -->
+	<propertySettings property="widgetName.11" buttonID="81211" />
+	<propertySettings property="widgetLimit.11" buttonID="81511" />
+	<propertySettings property="widgetPath.11" />
+	<propertySettings property="widgetType.11" />
+	<propertySettings property="widgetLabel.11" buttonID="81611" />
+	<propertySettings property="widgetTarget.11" />
+	<propertySettings property="widgetCaseMusic.11" buttonID="81811" />
+	<propertySettings property="widgetCaseVideo.11" buttonID="81711" />
+	<propertySettings property="widgetWatchedStatus.11" buttonID="81911" />
+	<propertySettings property="widgetIcon.11" />
+
+	<!-- Widget 12 -->
+	<propertySettings property="widgetName.12" buttonID="81212" />
+	<propertySettings property="widgetLimit.12" buttonID="81512" />
+	<propertySettings property="widgetPath.12" />
+	<propertySettings property="widgetType.12" />
+	<propertySettings property="widgetLabel.12" buttonID="81612" />
+	<propertySettings property="widgetTarget.12" />
+	<propertySettings property="widgetCaseMusic.12" buttonID="81812" />
+	<propertySettings property="widgetCaseVideo.12" buttonID="81712" />
+	<propertySettings property="widgetWatchedStatus.12" buttonID="81912" />
+	<propertySettings property="widgetIcon.12" />
+
+	<!-- Widget 13 -->
+	<propertySettings property="widgetName.13" buttonID="81213" />
+	<propertySettings property="widgetLimit.13" buttonID="81513" />
+	<propertySettings property="widgetPath.13" />
+	<propertySettings property="widgetType.13" />
+	<propertySettings property="widgetLabel.13" buttonID="81613" />
+	<propertySettings property="widgetTarget.13" />
+	<propertySettings property="widgetCaseMusic.13" buttonID="81813" />
+	<propertySettings property="widgetCaseVideo.13" buttonID="81713" />
+	<propertySettings property="widgetWatchedStatus.13" buttonID="81913" />
+	<propertySettings property="widgetIcon.13" />
+
+	<!-- Widget 14 -->
+	<propertySettings property="widgetName.14" buttonID="81214" />
+	<propertySettings property="widgetLimit.14" buttonID="81514" />
+	<propertySettings property="widgetPath.14" />
+	<propertySettings property="widgetType.14" />
+	<propertySettings property="widgetLabel.14" buttonID="81614" />
+	<propertySettings property="widgetTarget.14" />
+	<propertySettings property="widgetCaseMusic.14" buttonID="81814" />
+	<propertySettings property="widgetCaseVideo.14" buttonID="81714" />
+	<propertySettings property="widgetWatchedStatus.14" buttonID="81914" />
+	<propertySettings property="widgetIcon.14" />
+
+	<!-- Widget 15 -->
+	<propertySettings property="widgetName.15" buttonID="81215" />
+	<propertySettings property="widgetLimit.15" buttonID="81515" />
+	<propertySettings property="widgetPath.15" />
+	<propertySettings property="widgetType.15" />
+	<propertySettings property="widgetLabel.15" buttonID="81615" />
+	<propertySettings property="widgetTarget.15" />
+	<propertySettings property="widgetCaseMusic.15" buttonID="81815" />
+	<propertySettings property="widgetCaseVideo.15" buttonID="81715" />
+	<propertySettings property="widgetWatchedStatus.15" buttonID="81915" />
+	<propertySettings property="widgetIcon.15" />
+
+	<!-- Widget 16 -->
+	<propertySettings property="widgetName.16" buttonID="81216" />
+	<propertySettings property="widgetLimit.16" buttonID="81516" />
+	<propertySettings property="widgetPath.16" />
+	<propertySettings property="widgetType.16" />
+	<propertySettings property="widgetLabel.16" buttonID="81616" />
+	<propertySettings property="widgetTarget.16" />
+	<propertySettings property="widgetCaseMusic.16" buttonID="81816" />
+	<propertySettings property="widgetCaseVideo.16" buttonID="81716" />
+	<propertySettings property="widgetWatchedStatus.16" buttonID="81916" />
+	<propertySettings property="widgetIcon.16" />
+
+	<!-- Widget 17 -->
+	<propertySettings property="widgetName.17" buttonID="81217" />
+	<propertySettings property="widgetLimit.17" buttonID="81517" />
+	<propertySettings property="widgetPath.17" />
+	<propertySettings property="widgetType.17" />
+	<propertySettings property="widgetLabel.17" buttonID="81617" />
+	<propertySettings property="widgetTarget.17" />
+	<propertySettings property="widgetCaseMusic.17" buttonID="81817" />
+	<propertySettings property="widgetCaseVideo.17" buttonID="81717" />
+	<propertySettings property="widgetWatchedStatus.17" buttonID="81917" />
+	<propertySettings property="widgetIcon.17" />
+
+	<!-- Widget 18 -->
+	<propertySettings property="widgetName.18" buttonID="81218" />
+	<propertySettings property="widgetLimit.18" buttonID="81518" />
+	<propertySettings property="widgetPath.18" />
+	<propertySettings property="widgetType.18" />
+	<propertySettings property="widgetLabel.18" buttonID="81618" />
+	<propertySettings property="widgetTarget.18" />
+	<propertySettings property="widgetCaseMusic.18" buttonID="81818" />
+	<propertySettings property="widgetCaseVideo.18" buttonID="81718" />
+	<propertySettings property="widgetWatchedStatus.18" buttonID="81918" />
+	<propertySettings property="widgetIcon.18" />
+
+	<!-- Widget 19 -->
+	<propertySettings property="widgetName.19" buttonID="81219" />
+	<propertySettings property="widgetLimit.19" buttonID="81519" />
+	<propertySettings property="widgetPath.19" />
+	<propertySettings property="widgetType.19" />
+	<propertySettings property="widgetLabel.19" buttonID="81619" />
+	<propertySettings property="widgetTarget.19" />
+	<propertySettings property="widgetCaseMusic.19" buttonID="81819" />
+	<propertySettings property="widgetCaseVideo.19" buttonID="81719" />
+	<propertySettings property="widgetWatchedStatus.19" buttonID="81919" />
+	<propertySettings property="widgetIcon.19" />
+
+	<!-- Widget 20 -->
+	<propertySettings property="widgetName.20" buttonID="81220" />
+	<propertySettings property="widgetLimit.20" buttonID="81520" />
+	<propertySettings property="widgetPath.20" />
+	<propertySettings property="widgetType.20" />
+	<propertySettings property="widgetLabel.20" buttonID="81620" />
+	<propertySettings property="widgetTarget.20" />
+	<propertySettings property="widgetCaseMusic.20" buttonID="81820" />
+	<propertySettings property="widgetCaseVideo.20" buttonID="81720" />
+	<propertySettings property="widgetWatchedStatus.20" buttonID="81920" />
+	<propertySettings property="widgetIcon.20" />
 </overrides>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.skin.madnox"
+       name="Madnox Skin Helper"
+       version="1.0.1"
+       provider-name="Kittmaster">
+
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.addon.metadata">
+
+        <!-- English (Primary) -->
+        <summary lang="en_gb">Helper script for the Madnox skin providing extended logic and features.</summary>
+        <description lang="en_gb">Provides background logic, script routing, and enhanced functionality required by the Madnox skin.</description>
+
+        <!-- English (US) -->
+        <summary lang="en_us">Helper script for the Madnox skin providing extended logic and features.</summary>
+        <description lang="en_us">Provides background logic, script routing, and enhanced functionality required by the Madnox skin.</description>
+
+        <!-- Arabic -->
+        <summary lang="ar_sa">برنامج مساعد لواجهة Madnox يوفر وظائف إضافية للجلد.</summary>
+        <description lang="ar_sa">يوفر منطقًا ووظائف خلفية ضرورية لعمل واجهة Madnox بشكل كامل.</description>
+
+        <!-- German -->
+        <summary lang="de_de">Hilfsskript für den Madnox‑Skin, das zusätzliche Logik und Funktionen bereitstellt.</summary>
+        <description lang="de_de">Stellt Hintergrundlogik, Skriptrouting und erweiterte Funktionen für den Madnox‑Skin bereit.</description>
+
+        <!-- Spanish -->
+        <summary lang="es_es">Script auxiliar para el skin Madnox que ofrece funciones y lógica adicionales.</summary>
+        <description lang="es_es">Proporciona lógica interna, enrutamiento de scripts y funciones avanzadas necesarias para el skin Madnox.</description>
+
+        <!-- French -->
+        <summary lang="fr_fr">Script d’assistance pour le skin Madnox, ajoutant des fonctions et une logique étendue.</summary>
+        <description lang="fr_fr">Fournit la logique interne, le routage des scripts et les fonctionnalités avancées nécessaires au skin Madnox.</description>
+
+        <!-- Norwegian -->
+        <summary lang="no_no">Hjelpeskript for Madnox‑skallet som gir ekstra funksjoner og logikk.</summary>
+        <description lang="no_no">Gir bakgrunnslogikk, skriptruting og utvidede funksjoner som Madnox‑skallet krever.</description>
+
+        <!-- Portuguese (Brazil) -->
+        <summary lang="pt_br">Script auxiliar para o tema Madnox, oferecendo lógica e recursos adicionais.</summary>
+        <description lang="pt_br">Fornece lógica interna, roteamento de scripts e funcionalidades avançadas necessárias para o tema Madnox.</description>
+
+        <!-- Swedish -->
+        <summary lang="sv_se">Hjälpskript för Madnox‑skalet som tillhandahåller extra funktioner och logik.</summary>
+        <description lang="sv_se">Ger bakgrundslogik, skriptrouting och avancerade funktioner som behövs för Madnox‑skalet.</description>
+
+        <!-- Ukrainian -->
+        <summary lang="uk_ua">Допоміжний скрипт для оформлення Madnox, що забезпечує додаткову логіку та функції.</summary>
+        <description lang="uk_ua">Надає внутрішню логіку, маршрутизацію скриптів та розширені можливості, необхідні для оформлення Madnox.</description>
+
+        <!-- Metadata -->
+        <license>GPL-2.0-or-later</license>
+        <source>https://github.com/kittmaster/KittmasterRepo/madnox-helper</source>
+        <website>https://github.com/kittmaster/KittmasterRepo</website>
+
+        <platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+    </extension>
+</addon>

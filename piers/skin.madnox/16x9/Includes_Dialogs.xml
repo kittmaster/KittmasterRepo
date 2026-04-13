@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<!-- General -->
 	<include name="DialogBackgroundFade">
@@ -12,12 +12,14 @@
 			<texture colordiffuse="FF000000">colors/white50.png</texture>
 		</control>
 	</include>
+
 	<include name="DialogVerticalSeparator">
 		<top>90</top>
 		<bottom>71</bottom>
 		<width>4</width>
 		<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
 	</include>
+
 	<include name="DialogHorizontalSeparator">
 		<bottom>70</bottom>
 		<left>20</left>
@@ -25,6 +27,7 @@
 		<height>70</height>
 		<texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
 	</include>
+
 	<include name="DialogItemCountLabel">
 		<bottom>21</bottom>
 		<right>60</right>
@@ -34,6 +37,7 @@
 		<font>Font25_Cond</font>
 		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 	</include>
+
 	<include name="DialogCountLineLabelLeft">
 		<bottom>21</bottom>
 		<left>60</left>
@@ -42,14 +46,15 @@
 		<align>left</align>
 		<font>Font25_Cond</font>
 		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-	</include>	
+	</include>
+
 	<include name="DialogImage">
-		<param name="id"/>
+		<param name="id" />
 		<param name="visible">true</param>
 		<param name="height">358</param>
 		<param name="bottom">82</param>
 		<param name="aspect">keep</param>
-		<param name="texture"/>
+		<param name="texture" />
 		<param name="color">ffffffff</param>
 		<definition>
 			<control type="image" id="$PARAM[id]">
@@ -62,11 +67,12 @@
 				<fadetime>TextureFadeTime</fadetime>
 				<colordiffuse>$PARAM[color]</colordiffuse>
 				<texture diffuse="diffuse/rounded5-280x280.png">$PARAM[texture]</texture>
-				<!-- <bordertexture border="10">thumbs/frame-rounded5.png</bordertexture> CMB -->
+				<!-- <bordertexture border="10">thumbs/frame-rounded5.png</bordertexture> -->
 				<aspectratio align="center" aligny="bottom" scalediffuse="true">$PARAM[aspect]</aspectratio>
 			</control>
 		</definition>
 	</include>
+
 	<!-- Buttons -->
 	<include name="DialogScrollBar">
 		<top>90</top>
@@ -74,6 +80,7 @@
 		<textureslidernib>buttons/scrollbar-nib-nofocus.png</textureslidernib>
 		<textureslidernibfocus colordiffuse="$VAR[PanelHighlightColorVar]">buttons/scrollbar-nib-focus.png</textureslidernibfocus>
 	</include>
+
 	<include name="DialogLabel">
 		<width>858</width>
 		<height>75</height>
@@ -82,6 +89,7 @@
 		<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
 	</include>
+
 	<include name="DialogButton">
 		<width>858</width>
 		<height>75</height>
@@ -92,16 +100,30 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
+	<include name="DialogButtonAlwaysFocused">
+		<width>858</width>
+		<height>75</height>
+		<!-- <textoffsetx>40</textoffsetx> -->
+		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+		<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
+		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
+		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
+		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-focus.png</texturenofocus>
+	</include>
+
 	<include name="DialogInlineButton45">
 		<width>858</width>
-		<height>45</height> <!-- 75 -->
+		<height>45</height>
+		<!-- 75 -->
 		<!-- <textoffsetx>40</textoffsetx> -->
 		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 		<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
 		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
 		<texturefocus border="2" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="2" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
-	</include>	
+	</include>
+
 	<include name="DialogSpinControl">
 		<width>858</width>
 		<height>75</height>
@@ -116,6 +138,7 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="DialogSlider">
 		<width>858</width>
 		<height>75</height>
@@ -128,6 +151,7 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="DialogRadioButton">
 		<width>858</width>
 		<height>75</height>
@@ -142,6 +166,7 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="DialogKeyboardButton">
 		<width>80</width>
 		<height>80</height>
@@ -153,6 +178,7 @@
 		<texturefocus colordiffuse="$VAR[PanelHighlightColorVar]" border="20">buttons/button.png</texturefocus>
 		<texturenofocus colordiffuse="$VAR[PanelSubTextColorVar]" border="20">buttons/button.png</texturenofocus>
 	</include>
+
 	<include name="DialogKeyboardToggleButton">
 		<width>210</width>
 		<height>80</height>
@@ -166,6 +192,7 @@
 		<alttexturefocus colordiffuse="$VAR[PanelHighlightColorVar]" border="20">buttons/button.png</alttexturefocus>
 		<alttexturenofocus colordiffuse="$VAR[PanelSubTextColorVar]" border="20">buttons/button.png</alttexturenofocus>
 	</include>
+
 	<include name="DialogButtonContextMenu">
 		<width>460</width>
 		<height>60</height>
@@ -177,11 +204,12 @@
 		<texturefocus border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texturefocus>
 		<texturenofocus border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texturenofocus>
 	</include>
+
 	<include name="DialogButtonAction">
-		<param name="id"/>
-		<param name="label"/>
-		<param name="onclick"/>
-		<param name="onclick2"/>
+		<param name="id" />
+		<param name="label" />
+		<param name="onclick" />
+		<param name="onclick2" />
 		<param name="width">280</param>
 		<param name="visible">true</param>
 		<definition>
@@ -204,12 +232,13 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="DialogToggleButtonAction">
-		<param name="id"/>
-		<param name="label"/>
-		<param name="altlabel"/>
-		<param name="usealt"/>
-		<param name="onclick"/>
+		<param name="id" />
+		<param name="label" />
+		<param name="altlabel" />
+		<param name="usealt" />
+		<param name="onclick" />
 		<param name="width">280</param>
 		<param name="visible">true</param>
 		<definition>
@@ -235,10 +264,11 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="DialogRadioButtonAction">
-		<param name="id"/>
-		<param name="label"/>
-		<param name="onclick"/>
+		<param name="id" />
+		<param name="label" />
+		<param name="onclick" />
 		<param name="width">280</param>
 		<param name="visible">true</param>
 		<definition>
@@ -262,8 +292,9 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="DialogButtonOSD">
-		<param name="texture"/>
+		<param name="texture" />
 		<definition>
 			<width>120</width>
 			<height>120</height>
@@ -274,17 +305,18 @@
 			<texturefocus>$PARAM[texture]</texturefocus>
 			<texturenofocus>$PARAM[texture]</texturenofocus>
 			<textureradioonfocus colordiffuse="$VAR[PanelHighlightColorVar]">buttons/player/osd-focus.png</textureradioonfocus>
-			<textureradioonnofocus/>
+			<textureradioonnofocus />
 			<textureradioofffocus colordiffuse="$VAR[PanelHighlightColorVar]">buttons/player/osd-focus.png</textureradioofffocus>
-			<textureradiooffnofocus/>
+			<textureradiooffnofocus />
 		</definition>
 	</include>
+
 	<!-- Background -->
 	<include name="DialogBackground">
-		<param name="width"/>
-		<param name="height"/>
-		<param name="id"/>
-		<param name="label"/>
+		<param name="width" />
+		<param name="height" />
+		<param name="id" />
+		<param name="label" />
 		<param name="align">left</param>
 		<param name="diffusetexture">diffuse/rounded10-1180x750.png</param>
 		<definition>
@@ -338,8 +370,9 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="DialogContextMenuShadow">
-		<param name="height"/>
+		<param name="height" />
 		<param name="visible">true</param>
 		<definition>
 			<control type="image">
@@ -350,8 +383,9 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="DialogContextMenuStyle">
-		<param name="height"/>
+		<param name="height" />
 		<param name="visible">true</param>
 		<definition>
 			<control type="image">
@@ -362,9 +396,10 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="DialogContextMenuTexture">
-		<param name="height"/>
-		<param name="diffuse"/>
+		<param name="height" />
+		<param name="diffuse" />
 		<param name="visible">true</param>
 		<definition>
 			<control type="image">
@@ -387,8 +422,9 @@
 			</control>
 		</definition>
 	</include>
+
 	<include name="DialogContextMenuEmboss">
-		<param name="height"/>
+		<param name="height" />
 		<param name="visible">true</param>
 		<definition>
 			<control type="image">
@@ -399,9 +435,10 @@
 			</control>
 		</definition>
 	</include>
-	<!-- Default lists -->
+
+	<!-- Default Lists -->
 	<include name="DialogListDefault">
-		<param name="id"/>
+		<param name="id" />
 		<definition>
 			<include>ContainerScrollTime</include>
 			<itemlayout height="75">
@@ -427,8 +464,9 @@
 			</focusedlayout>
 		</definition>
 	</include>
+
 	<include name="DialogList2Default">
-		<param name="id"/>
+		<param name="id" />
 		<definition>
 			<include>ContainerScrollTime</include>
 			<itemlayout height="75">
@@ -466,8 +504,9 @@
 			</focusedlayout>
 		</definition>
 	</include>
+
 	<include name="DialogListImage">
-		<param name="id"/>
+		<param name="id" />
 		<definition>
 			<include>ContainerScrollTime</include>
 			<itemlayout height="100">
@@ -550,13 +589,14 @@
 			</focusedlayout>
 		</definition>
 	</include>
-	<!-- Dialog select layouts -->
+
+	<!-- Dialog Select Layouts -->
 	<include name="DialogSelect">
 		<control type="group">
 			<include content="DialogBackground">
-				<param name="width" value="1220"/>
-				<param name="height" value="760"/>
-				<param name="id" value="1"/>
+				<param name="width" value="1220" />
+				<param name="height" value="760" />
+				<param name="id" value="1" />
 			</include>
 			<control type="list" id="3">
 				<left>20</left>
@@ -567,7 +607,7 @@
 				<onright>8000</onright>
 				<pagecontrol>60</pagecontrol>
 				<include content="DialogList2Default">
-					<param name="id" value="3"/>
+					<param name="id" value="3" />
 				</include>
 			</control>
 			<control type="list" id="6">
@@ -579,7 +619,7 @@
 				<onright>8000</onright>
 				<pagecontrol>60</pagecontrol>
 				<include content="DialogListImage">
-					<param name="id" value="6"/>
+					<param name="id" value="6" />
 				</include>
 			</control>
 			<control type="image">
@@ -596,11 +636,11 @@
 				<ondown condition="Control.IsVisible(6)">6</ondown>
 				<include content="DialogButtonAction">
 					<param name="id">5</param>
-					<param name="label" value=""/>
+					<param name="label" value="" />
 				</include>
 				<include content="DialogButtonAction">
 					<param name="id">7</param>
-					<param name="label" value="$LOCALIZE[222]"/>
+					<param name="label" value="$LOCALIZE[222]" />
 				</include>
 			</control>
 			<include content="DialogImage">
@@ -627,6 +667,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="DialogSelectGameFilter">
 		<control type="group">
 			<top>820</top>
@@ -734,6 +775,7 @@
 			</control>
 		</control>
 	</include>
+
 	<include name="DialogSelectGameView">
 		<control type="group">
 			<top>820</top>

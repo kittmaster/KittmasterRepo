@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<include name="View55LowList">
-		<!-- Video preview -->
+		<!-- Video Preview -->
 		<control type="group">
 			<visible>Control.IsVisible(55) + Player.HasVideo + Skin.HasSetting(View55VideoPreviewWindow)</visible>
 			<include content="AnimationSlideRightWindow">
@@ -17,7 +17,7 @@
 			<control type="image">
 				<texture>colors/black.png</texture>
 			</control>
-			<control type="videowindow"/>
+			<control type="videowindow" />
 			<control type="image">
 				<bordersize>-10</bordersize>
 				<texture border="20">thumbs/overlay2.png</texture>
@@ -28,23 +28,23 @@
 			<visible>Control.IsVisible(55)</visible>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">1000</param>
-				<param name="opencondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</param>
-				<param name="closecondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</param>
+				<param name="opencondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]</param>
+				<param name="closecondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]</param>
 			</include>
 			<include content="AnimationSlideBottomVisible">
 				<param name="slide">1000</param>
-				<param name="opencondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</param>
-				<param name="closecondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</param>
+				<param name="opencondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]</param>
+				<param name="closecondition">Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]</param>
 			</include>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">765</param>
-				<param name="opencondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</param>
-				<param name="closecondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</param>
+				<param name="opencondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]]</param>
+				<param name="closecondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]]</param>
 			</include>
 			<include content="AnimationSlideBottomVisible">
 				<param name="slide">765</param>
-				<param name="opencondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</param>
-				<param name="closecondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</param>
+				<param name="opencondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]]</param>
+				<param name="closecondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]]</param>
 			</include>
 			<include content="PanelWide">
 				<param name="top">550</param>
@@ -59,8 +59,11 @@
 				<bottom>10</bottom>
 				<width>802</width>
 				<height>500</height>
+				<!-- Script Trigger: Runs Once When Entering The List -->
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<onunfocus>PlayerControl(Stop)</onunfocus>
 				<onleft>9050</onleft>
-				<onright>6055</onright>71.43
+				<onright>6055</onright>
 				<pagecontrol>6055</pagecontrol>
 				<include>ContainerScrollTime</include>
 				<viewtype label="$LOCALIZE[31223]">list</viewtype>
@@ -93,7 +96,7 @@
 			</control>
 			<!-- Art -->
 			<control type="group">
-				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]</visible>
 				<bottom>0</bottom>
 				<width>555</width>
 				<height>822</height>
@@ -111,6 +114,7 @@
 					<visible>!Skin.HasSetting(View55VideoCase)</visible>
 					<include content="ViewArtwork">
 						<param name="diffuse">diffuse/rounded5-535x802.png</param>
+						<param name="aspect">keep</param>
 					</include>
 				</control>
 				<control type="group">
@@ -121,7 +125,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)</visible>
+				<visible>[Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)] + !Window.IsVisible(MyVideoNav.xml)</visible>
 				<bottom>0</bottom>
 				<width>555</width>
 				<height>555</height>
@@ -204,7 +208,7 @@
 				<onright condition="Control.IsVisible(61300)">61300</onright>
 			</control>
 		</control>
-		<!-- Media flags Fix overlapping icons when Movie & TV Show is linked -->	
+		<!-- Media flags Fix overlapping icons when Movie & TV Show is linked -->
 		<control type="group">
 			<visible>Control.IsVisible(55)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -212,55 +216,43 @@
 			</include>
 			<control type="group">
 				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "movie")</visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
-				<param name="right">20</param>
-				<param name="bottom">15</param>
-			</include>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
+					<param name="right">20</param>
+					<param name="bottom">15</param>
+				</include>
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(55) + !String.Contains(ListItem.DBType, "season") &amp; String.Contains(ListItem.DBType, "episode")</visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
-				<param name="right">20</param>
-				<param name="bottom">15</param>
-			</include>			
-			</control>			
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
+					<param name="right">20</param>
+					<param name="bottom">15</param>
+				</include>
+			</control>
 			<control type="group">
 				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "season")</visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="right">20</param>
-				<param name="bottom">15</param>
-			</include>				
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+					<param name="right">20</param>
+					<param name="bottom">15</param>
+				</include>
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="right">20</param>
-				<param name="bottom">15</param>
-			</include>				
-			</control>			
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+					<param name="right">20</param>
+					<param name="bottom">15</param>
+				</include>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(55) + Container.Content(musicvideos)</visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
+					<param name="right">20</param>
+					<param name="bottom">15</param>
+				</include>
+			</control>
 			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudio">
 				<param name="right">20</param>
 				<param name="bottom">15</param>
 			</include>
-		</control>		
-		
-<!-- 	<control type="group">
-			<visible>Control.IsVisible(55)</visible>
-			<include content="AnimationSlideBottomWindow">
-				<param name="slide">220</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="right">20</param>
-				<param name="bottom">15</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
-				<param name="right">20</param>
-				<param name="bottom">15</param>
-			</include>
-			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudio">
-				<param name="right">20</param>
-				<param name="bottom">15</param>
-			</include>
-		</control> -->
+		</control>
 	</include>
 </includes>

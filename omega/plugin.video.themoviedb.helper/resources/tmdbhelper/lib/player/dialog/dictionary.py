@@ -87,6 +87,8 @@ class PlayerDictionaryDict(dict):
             'premiered': lambda **kwargs: self.details.infolabels.get('premiered'),
             'firstaired': lambda **kwargs: self.details.infolabels.get('premiered'),
             'released': lambda **kwargs: self.details.infolabels.get('premiered'),
+            'month': self.get_month,
+            'day': self.get_day,
             'plot': self.get_plot,
             'cast': self.get_cast,
             'actors': self.get_cast,
@@ -95,6 +97,14 @@ class PlayerDictionaryDict(dict):
             'fanart': lambda **kwargs: self.details.art.get('fanart'),
             'now': self.get_now,
         }
+
+    def get_month(self, **kwargs):
+        premiered = self['premiered']
+        return premiered[5:7] if premiered else None
+
+    def get_day(self, **kwargs):
+        premiered = self['premiered']
+        return premiered[8:10] if premiered else None
 
     def get_name(self, language=None, **kwargs):
         name = self[f'{language}_title' if language else 'title']
@@ -106,7 +116,7 @@ class PlayerDictionaryDict(dict):
 
     def get_plot(self, language=None, **kwargs):
         plot = self.details.infoproperties.get(f'{language}_plot') if language else self.details.infolabels.get('plot')
-        return (plot or self['plot']) if language else None
+        return (plot or self['plot']) if language else plot
 
     def get_cast(self, **kwargs):
         return " / ".join([i.get('name') for i in self.details.cast if i.get('name')])

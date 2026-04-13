@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol>50</defaultcontrol>
 	<menucontrol>9050</menucontrol>
@@ -17,7 +17,7 @@
 		<include condition="!Skin.HasSetting(DisableViewInfo2)">View54InfoList2</include>
 		<include condition="!Skin.HasSetting(DisableViewLow)">View55LowList</include>
 		<include condition="!Skin.HasSetting(DisableView3PanelSquare)">View573PanelSquare</include>
-		<!-- Cover flow -->
+		<!-- Cover Flow -->
 		<include condition="!Skin.HasSetting(DisableViewSquare)">View501Square</include>
 		<include condition="!Skin.HasSetting(DisableViewFocusSquare)">View505FocusSquare</include>
 		<include condition="!Skin.HasSetting(DisableViewCascadeSquare)">View507CascadeSquare</include>
@@ -25,7 +25,7 @@
 		<include condition="!Skin.HasSetting(DisableViewKodiflixSquare)">View511KodiFlixSquare</include>
 		<!-- Icon -->
 		<include condition="!Skin.HasSetting(DisableViewSquareIcon)">View521SquareIcon</include>
-		<!-- Icon info-->
+		<!-- Icon Info-->
 		<include condition="!Skin.HasSetting(DisableViewSquareIconInfo)">View531SquareIconInfo</include>
 		<!-- Wall -->
 		<include condition="!Skin.HasSetting(DisableViewSquareWall)">View541SquareWall</include>
@@ -35,7 +35,7 @@
 			<param name="icon">addons.png</param>
 			<param name="label">$LOCALIZE[24001]</param>
 		</include>
-		<!-- Jump to Letter -->
+		<!-- Jump To Letter -->
 		<include>JumptoLetter</include>
 		<!-- Media Menu -->
 		<include content="MediaMenu">

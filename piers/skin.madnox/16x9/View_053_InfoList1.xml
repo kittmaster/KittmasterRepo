@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<include name="View53InfoList1">
 		<!-- Floor -->
@@ -47,7 +47,9 @@
 				<left>100</left>
 				<width>992</width>
 				<height>800</height>
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 				<onleft>9050</onleft>
+				<onunfocus>PlayerControl(Stop)</onunfocus>
 				<onright>6053</onright>
 				<pagecontrol>6053</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -88,23 +90,16 @@
 			<control type="group">
 				<visible>Control.IsVisible(53) + String.Contains(ListItem.DBType, "season")</visible>
 				<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-			</control>			
+			</control>
 			<control type="group">
 				<visible>Control.IsVisible(53) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
 				<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-			</control>			
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(53) + Container.Content(musicvideos)</visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos5</include>
+			</control>
 		</control>
-
-<!-- 		<control type="group">
-			<visible>Control.IsVisible(53)</visible>
-			<include content="AnimationSlideBottomWindow">
-				<param name="slide">220</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(videoplaylist)">MediaFlagsVideos5</include>
-			<include condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)">MediaFlagsAudio</include>
-		</control> -->
-
 
 	</include>
 </includes>

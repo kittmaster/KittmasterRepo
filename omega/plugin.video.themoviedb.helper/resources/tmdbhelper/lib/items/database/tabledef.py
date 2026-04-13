@@ -317,6 +317,9 @@ RATINGS_COLUMNS = {
     'rottentomatoes_consensus': {
         'data': 'TEXT',
     },
+    'rottentomatoes_image': {
+        'data': 'TEXT',
+    },
     'metacritic_rating': {
         'data': 'INTEGER',
     },
@@ -496,17 +499,52 @@ GENRE_COLUMNS = {
 }
 
 COUNTRY_COLUMNS = {
-    'name': {
-        'data': 'TEXT',
-    },
     'iso_country': {
         'data': 'TEXT',
-        'unique': True
+        'unique': True,
+        'foreign_key': 'countries(iso_country)',
     },
     'parent_id': {
         'data': 'TEXT',
         'foreign_key': 'baseitem(id)',
         'indexed': True,
+        'unique': True
+    },
+}
+
+COUNTRIES_COLUMNS = {
+    'name': {
+        'data': 'TEXT',
+    },
+    'iso_country': {
+        'data': 'TEXT PRIMARY KEY',
+        'unique': True
+    },
+}
+
+LANGUAGE_COLUMNS = {
+    'iso_language': {
+        'data': 'TEXT',
+        'unique': True,
+        'foreign_key': 'languages(iso_language)',
+    },
+    'parent_id': {
+        'data': 'TEXT',
+        'foreign_key': 'baseitem(id)',
+        'indexed': True,
+        'unique': True
+    },
+}
+
+LANGUAGES_COLUMNS = {
+    'name': {
+        'data': 'TEXT',
+    },
+    'english_name': {
+        'data': 'TEXT',
+    },
+    'iso_language': {
+        'data': 'TEXT PRIMARY KEY',
         'unique': True
     },
 }
@@ -615,6 +653,10 @@ CASTMEMBER_COLUMNS = {
         'data': 'INTEGER',
         'indexed': True
     },
+    'guest': {
+        'data': 'INTEGER',
+        'indexed': True
+    },
     'parent_id': {
         'data': 'TEXT',
         'foreign_key': 'baseitem(id)',
@@ -649,6 +691,11 @@ PROVIDER_COLUMNS = {
         'data': 'TEXT',
         'indexed': True
     },
+    'iso_country': {
+        'data': 'TEXT',
+        'indexed': True,
+        'unique': True
+    },
     'parent_id': {
         'data': 'TEXT',
         'foreign_key': 'baseitem(id)',
@@ -668,10 +715,6 @@ SERVICE_COLUMNS = {
     },
     'name': {
         'data': 'TEXT',
-    },
-    'iso_country': {
-        'data': 'TEXT',
-        'indexed': True
     },
     'logo': {
         'data': 'TEXT',
@@ -751,6 +794,23 @@ FANART_TV_COLUMNS = {
 }
 
 USER_ART_COLUMNS = {
+    'type': {
+        'data': 'TEXT',
+        'unique': True,
+    },
+    'icon': {
+        'data': 'TEXT',
+    },
+    'parent_id': {
+        'data': 'TEXT',
+        'foreign_key': 'baseitem(id)',
+        'indexed': True,
+        'unique': True,
+    },
+}
+
+
+DEFAULT_ART_COLUMNS = {
     'type': {
         'data': 'TEXT',
         'unique': True,

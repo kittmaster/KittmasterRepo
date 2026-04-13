@@ -8,10 +8,8 @@ from tmdbhelper.lib.items.directories.trakt.mapper_calendar import (
     FactoryCalendarEpisodeItemMapper,
     FactoryCalendarMovieItemMapper,
 )
-from tmdbhelper.lib.items.directories.mdblist.lists_local import (
-    UncachedMDbListItemsPage,
-    UncachedMDbListLocalData,
-)
+from tmdbhelper.lib.items.directories.mdblist.lists_local import UncachedMDbListItemsPage
+from tmdbhelper.lib.items.directories.lists_local import UncachedListLocalData
 from tmdbhelper.lib.items.directories.lists_default import ItemCache
 
 
@@ -229,12 +227,20 @@ class ListTraktCalendarProperties(ListTraktStandardProperties):
         return plugin_category
 
     @cached_property
+    def calendar_flatten(self):
+        from tmdbhelper.lib.addon.plugin import get_setting
+        if self.tmdb_type != 'tv':
+            return False
+        if not get_setting('calendar_flatten'):
+            return False
+        return True
+
+    @cached_property
     def sorted_items(self):
         """
         Reverse items if starting in the past so that most recent are first
         """
-        from tmdbhelper.lib.addon.plugin import get_setting
-        return self.get_stacked_items() if get_setting('calendar_flatten') else self.get_unstacked_items()
+        return self.get_stacked_items() if self.calendar_flatten else self.get_unstacked_items()
 
     def get_unstacked_items(self):
         return self.filtered_items[::-1] if self.trakt_date < -1 else self.filtered_items
@@ -242,6 +248,12 @@ class ListTraktCalendarProperties(ListTraktStandardProperties):
     def get_stacked_items(self):
         sorted_items = CalendarItemStacker(self.filtered_items).items
         return sorted_items[::-1] if self.trakt_date < -1 else sorted_items
+
+    @cached_property
+    def dropped_shows(self):
+        sd = self.trakt_api.trakt_syncdata
+        sd = sd.get_all_dropped_shows_getter('show')
+        return [i['tmdb_id'] for i in sd.items if i]
 
     @cached_property
     def api_response_json(self):
@@ -255,24 +267,37 @@ class ListTraktCalendarProperties(ListTraktStandardProperties):
     def get_api_response(self, page=1):
         if not self.api_response_json:
             return
-        return UncachedMDbListLocalData(self.api_response_json, self.page, self.limit).data
+        return UncachedListLocalData(self.api_response_json, self.page, self.limit).data
 
-    def get_mapped_item_air_date_check(self, item_mapper):
+    def get_mapped_item_air_date_is_in_range(self, item_mapper):
         if not item_mapper.air_date:
-            return
+            return False
         if not datetime_in_range(item_mapper.air_date, days=self.trakt_days, start_date=self.trakt_date):
-            return
-        return item_mapper.item
+            return False
+        return True
+
+    def get_mapped_item_is_dropped(self, item_mapper):
+        if not self.dropped_shows:
+            return False
+        if item_mapper.tmdb_id not in self.dropped_shows:
+            return False
+        return True
 
     def get_mapped_item(self, item, add_infoproperties=None):
         item_mapper = FactoryCalendarEpisodeItemMapper(item, add_infoproperties)
-        return self.get_mapped_item_air_date_check(item_mapper)
+        if self.get_mapped_item_is_dropped(item_mapper):
+            return
+        if not self.get_mapped_item_air_date_is_in_range(item_mapper):
+            return
+        return item_mapper.item
 
 
 class ListTraktCalendarMovieProperties(ListTraktCalendarProperties):
     def get_mapped_item(self, item, add_infoproperties=None):
         item_mapper = FactoryCalendarMovieItemMapper(item, add_infoproperties)
-        return self.get_mapped_item_air_date_check(item_mapper)
+        if not self.get_mapped_item_air_date_is_in_range(item_mapper):
+            return
+        return item_mapper.item
 
 
 class ListLocalCalendarProperties(ListTraktCalendarProperties):
@@ -310,7 +335,7 @@ class ListLocalCalendarProperties(ListTraktCalendarProperties):
     def get_api_response(self, page=1):
         if not self.api_response_json:
             return
-        return UncachedMDbListLocalData(self.api_response_json, self.page, self.limit).data
+        return UncachedListLocalData(self.api_response_json, self.page, self.limit).data
 
 
 class ListTraktCalendar(ListTraktFiltered):

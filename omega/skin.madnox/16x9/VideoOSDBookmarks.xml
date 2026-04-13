@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">2</defaultcontrol>
 	<controls>
@@ -18,7 +18,7 @@
 					<param name="flipy">false</param>
 				</include>
 			</control>
-			<!-- Left menu -->
+			<!-- Left Menu -->
 			<control type="grouplist" id="9000">
 				<top>604</top>
 				<width>278</width>

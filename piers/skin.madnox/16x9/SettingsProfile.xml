@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<menucontrol>9050</menucontrol>
@@ -24,7 +24,7 @@
 		<!-- Content -->
 		<control type="group">
 			<include>AnimationZoomWindow</include>
-			<!-- Left menu -->
+			<!-- Left Menu -->
 			<control type="label">
 				<label>$LOCALIZE[13200]</label>
 				<include>SettingsLeftLabel</include>
@@ -63,7 +63,7 @@
 					</item>
 				</content>
 			</control>
-			<!-- Right menu -->
+			<!-- Right Menu -->
 			<control type="label">
 				<label>$LOCALIZE[33063]</label>
 				<include>SettingsRightLabel</include>

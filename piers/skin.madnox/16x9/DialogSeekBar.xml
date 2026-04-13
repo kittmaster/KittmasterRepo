@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<visible>Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Player.Caching] | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(videoosd) | !String.IsEmpty(PVR.ChannelNumberInput)</visible>
 	<visible>Window.IsActive(fullscreenvideo)</visible>
+	<visible>!String.IsEmpty(Window(Home).Property(Madnox.SkinReady))</visible>
 	<zorder>0</zorder>
 	<controls>
 		<control type="group">
@@ -163,7 +164,7 @@
 			<include>AnimationVisibleFade</include>
 			<animation effect="fade" end="100" time="480">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="0">WindowClose</animation>
-			<!-- Info left-->
+			<!-- Info Left-->
 			<control type="group">
 				<visible>!Skin.String(VideoOSDInfo,off) + [Player.ShowInfo | Skin.String(VideoOSDInfo,persistant)]</visible>
 				<include>AnimationVisibleFade</include>
@@ -257,7 +258,7 @@
 					</control>
 				</control>
 			</control>
-			<!-- Info right-->
+			<!-- Info Right-->
 			<control type="group">
 				<visible>!Skin.String(VideoOSDInfo,off) + [Player.ShowInfo | Skin.String(VideoOSDInfo,persistant)]</visible>
 				<include>AnimationVisibleFade</include>
@@ -291,7 +292,7 @@
 			<include content="AnimationSlideTopVisible">
 				<param name="slide">120</param>
 			</include>
-			<!-- Media flag info -->
+			<!-- Media Flag Info -->
 			<control type="group">
 				<visible>!Skin.String(VideoOSDMediaFlags,off) + [Player.ShowInfo | Skin.String(VideoOSDMediaFlags,persistant)]</visible>
 				<include content="AnimationSlideTopWindow">
@@ -308,10 +309,11 @@
 					<param name="heighttexture">100</param>
 					<param name="flipy">true</param>
 				</include>
-				<include>MediaFlagsVideoFullscreen</include> <!-- VideoOSD CMB -->
+				<include>MediaFlagsVideoFullscreen</include>
+				<!-- VideoOSD -->
 			</control>
 		</control>
-		<!-- Studio Logo check if image exists -->
+		<!-- Studio Logo Check If Image Exists -->
 		<control type="image" id="811112">
 			<include>HiddenObject</include>
 			<texture fallback="none">$VAR[StudioIconsVar]</texture>

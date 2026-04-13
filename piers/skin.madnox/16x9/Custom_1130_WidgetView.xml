@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<window type="dialog" id="1130">
+	<defaultcontrol always="true">9900</defaultcontrol>
+	<!-- Onload/Unload Logic To Manage Properties -->
+	<onload>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onload>
+	<onunload>ClearProperty(MadnoxFocusControlId,Home)</onunload>
+	<controls>
+		<!-- Semi-Transparent Background -->
+		<control type="image">
+			<texture colordiffuse="A0000000">colors/black.png</texture>
+			<animation effect="fade" time="400">WindowOpen</animation>
+		</control>
+
+		<!-- Main Dialog Group - Panoramic Layout -->
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="400" />
+				<effect type="slide" start="0,-200" end="0,0" time="500" tween="cubic" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>
+
+			<!-- Positioned in the upper "Red Square" area -->
+			<left>20</left>
+			<top>30</top>
+			<width>1880</width>
+			<height>450</height>
+
+			<!-- Dialog Background Include -->
+			<include content="DialogBackground">
+				<param name="width" value="1880" />
+				<param name="height" value="450" />
+			</include>
+
+			<!-- Header Title (Dynamic Widget Name) -->
+			<control type="label">
+				<top>30</top>
+				<left>40</left>
+				<right>260</right>
+				<height>50</height>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$INFO[Window(Home).Property(MadnoxWidgetName)]</label>
+				<align>left</align>
+				<include>SettingsLeftLabelWidgetsShortcut</include>
+			</control>
+
+			<control type="image">
+				<right>40</right>
+				<top>14</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+
+			<!-- Widget Content Group -->
+			<control type="group">
+				<left>40</left>
+				<top>100</top>
+				<width>1600</width>
+				<height>270</height>
+
+				<!-- Videos List (Horizontal) - Portrait -->
+				<control type="list" id="50">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
+					<onclick condition="ListItem.IsFolder">ActivateWindow(Videos,$INFO[ListItem.FolderPath],return)</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),videos) + !String.Contains(Window(Home).Property(MadnoxWidgetPath),info=watch_providers) + ![String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),squareicon) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),landscapeicon) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),landscape) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),clearart) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),clearlogo) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),fanart) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),thumb)]</visible>
+					<itemlayout height="260" width="178">
+						<control type="group">
+							<!-- Special Handler For Genre Icons -->
+							<control type="image">
+								<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+								<texture>$VAR[GenreIconVar]</texture>
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)</visible>
+							</control>
+
+							<!-- Fallback For All Other Widgets -->
+							<control type="group">
+								<visible>![String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)]</visible>
+								<control type="group">
+									<visible>!String.IsEqual(Window(Home).Property(MadnoxWidgetCaseVideo),true)</visible>
+									<include content="ViewArtwork">
+										<param name="art" value="$VAR[DialogWidgetArtVar]" />
+										<param name="texturefadetime" value="0" />
+										<param name="watchedstatusvisible" value="String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)" />
+										<param name="diffuse" value="$VAR[DialogWidgetDiffuseVar]" />
+										<param name="aspect" value="$VAR[DialogWidgetAspectVar]" />
+									</include>
+								</control>
+								<control type="group">
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetCaseVideo),true)</visible>
+									<include content="ViewArtworkVideoCase">
+										<param name="art" value="$VAR[DialogWidgetArtVar]" />
+										<param name="logoheight" value="19" />
+										<param name="texturefadetime" value="0" />
+										<param name="bordersize" value="15,28,15,16" />
+										<param name="watchedstatustop" value="32" />
+										<param name="watchedstatusvisible" value="String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)" />
+									</include>
+								</control>
+							</control>
+
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>10</bottom>
+								<left>20</left>
+								<right>20</right>
+								<height>40</height>
+								<font>Font25_Cond</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+							<control type="label">
+								<!-- Fallback label: only when no poster art, label is OFF, AND not a genre widget (genres have art etched into the image) -->
+								<visible>[String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster))] + !String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true) + ![String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)]</visible>
+								<bottom>10</bottom>
+								<left>10</left>
+								<right>10</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="178">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+
+							<!-- Special Handler For Genre Icons -->
+							<control type="image">
+								<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+								<texture>$VAR[GenreIconVar]</texture>
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)</visible>
+							</control>
+
+							<!-- Fallback For All Other Widgets -->
+							<control type="group">
+								<visible>![String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)]</visible>
+								<control type="group">
+									<visible>!String.IsEqual(Window(Home).Property(MadnoxWidgetCaseVideo),true)</visible>
+									<include content="ViewArtwork">
+										<param name="art" value="$VAR[DialogWidgetArtVar]" />
+										<param name="texturefadetime" value="0" />
+										<param name="watchedstatusvisible" value="String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)" />
+										<param name="diffuse" value="$VAR[DialogWidgetDiffuseVar]" />
+										<param name="aspect" value="$VAR[DialogWidgetAspectVar]" />
+									</include>
+								</control>
+								<control type="group">
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetCaseVideo),true)</visible>
+									<include content="ViewArtworkVideoCase">
+										<param name="art" value="$VAR[DialogWidgetArtVar]" />
+										<param name="logoheight" value="19" />
+										<param name="texturefadetime" value="0" />
+										<param name="bordersize" value="15,28,15,16" />
+										<param name="watchedstatustop" value="32" />
+										<param name="watchedstatusvisible" value="String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)" />
+									</include>
+								</control>
+							</control>
+
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>10</bottom>
+								<left>20</left>
+								<right>20</right>
+								<height>40</height>
+								<font>Font25_Cond</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+							<control type="label">
+								<!-- Fallback label: only when no poster art, label is OFF, AND not a genre widget -->
+								<visible>[String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster))] + !String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true) + ![String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)]</visible>
+								<bottom>10</bottom>
+								<left>10</left>
+								<right>10</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+							<control type="group">
+								<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+								<include content="Object_ProgressBar">
+									<param name="left" value="25" />
+									<param name="right" value="25" />
+									<param name="bottom" value="12" />
+									<param name="height" value="4" />
+								</include>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="videos">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+
+				<!-- WIDE Videos List (Horizontal) -->
+				<control type="list" id="501">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>501</onleft>
+					<onright>501</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
+					<onclick condition="ListItem.IsFolder">ActivateWindow(Videos,$INFO[ListItem.FolderPath],return)</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),videos) + [[String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),squareicon) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),landscapeicon) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),landscape) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),clearart) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),clearlogo) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),fanart) | String.IsEqual(Window(Home).Property(MadnoxWidgetArtwork),thumb)] | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=watch_providers)]</visible>
+					<itemlayout height="260" width="450">
+						<control type="group">
+							<!-- Special Handler For Studio/Network Icons -->
+							<control type="image">
+								<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+								<texture>$VAR[StudioIconVar]</texture>
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_studios) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_networks)</visible>
+							</control>
+
+							<!-- Special Handler For Genre Icons -->
+							<control type="image">
+								<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+								<texture>$VAR[GenreIconVar]</texture>
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)</visible>
+							</control>
+
+							<!-- Special Handler For Provider Icons -->
+							<control type="group">
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),info=watch_providers)</visible>
+								<include content="ViewArtwork">
+									<param name="art" value="$INFO[ListItem.Icon]" />
+									<param name="texturefadetime" value="0" />
+									<param name="watchedstatusvisible" value="false" />
+									<param name="diffuse" value="diffuse/rounded5-290x290.png" />
+									<param name="aspect" value="keep" />
+								</include>
+							</control>
+
+							<!-- Fallback For All Other Widgets -->
+							<control type="group">
+								<visible>![[String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_studios) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_networks)] | [String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)] | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=watch_providers)]</visible>
+								<include content="ViewArtwork">
+									<param name="art" value="$VAR[DialogWidgetArtVar]" />
+									<param name="texturefadetime" value="0" />
+									<param name="watchedstatusvisible" value="String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)" />
+									<param name="diffuse" value="$VAR[DialogWidgetDiffuseVar]" />
+									<param name="aspect" value="$VAR[DialogWidgetAspectVar]" />
+								</include>
+							</control>
+
+							<!-- Common (On Top) -->
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>10</bottom>
+								<left>20</left>
+								<right>20</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="450">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+
+							<!-- Special Handler For Studio/Network Icons -->
+							<control type="image">
+								<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+								<texture>$VAR[StudioIconVar]</texture>
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_studios) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_networks)</visible>
+							</control>
+
+							<!-- Special Handler For Genre Icons -->
+							<control type="image">
+								<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
+								<texture>$VAR[GenreIconVar]</texture>
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)</visible>
+							</control>
+
+							<!-- Special Handler For Provider Icons -->
+							<control type="group">
+								<visible>String.Contains(Window(Home).Property(MadnoxWidgetPath),info=watch_providers)</visible>
+								<include content="ViewArtwork">
+									<param name="art" value="$INFO[ListItem.Icon]" />
+									<param name="texturefadetime" value="0" />
+									<param name="watchedstatusvisible" value="false" />
+									<param name="diffuse" value="diffuse/rounded5-290x290.png" />
+									<param name="aspect" value="keep" />
+								</include>
+							</control>
+
+							<!-- Fallback For All Other Widgets -->
+							<control type="group">
+								<visible>![[String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_studios) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=all_networks)] | [String.Contains(Window(Home).Property(MadnoxWidgetPath),query=genres) | String.EndsWith(Window(Home).Property(MadnoxWidgetPath),/genres/) | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=genres)] | String.Contains(Window(Home).Property(MadnoxWidgetPath),info=watch_providers)]</visible>
+								<include content="ViewArtwork">
+									<param name="art" value="$VAR[DialogWidgetArtVar]" />
+									<param name="texturefadetime" value="0" />
+									<param name="watchedstatusvisible" value="String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)" />
+									<param name="diffuse" value="$VAR[DialogWidgetDiffuseVar]" />
+									<param name="aspect" value="$VAR[DialogWidgetAspectVar]" />
+								</include>
+							</control>
+
+							<!-- Common (On Top) -->
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>10</bottom>
+								<left>20</left>
+								<right>20</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+							<control type="group">
+								<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+								<include content="Object_ProgressBar">
+									<param name="left" value="25" />
+									<param name="right" value="25" />
+									<param name="bottom" value="12" />
+									<param name="height" value="4" />
+								</include>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="videos">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+
+				<!-- Music List (Horizontal) -->
+				<control type="list" id="51">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>51</onleft>
+					<onright>51</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
+					<onclick condition="ListItem.IsFolder">ActivateWindow(Music,$INFO[ListItem.FolderPath],return)</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),music)</visible>
+					<itemlayout height="260" width="270">
+						<control type="group">
+							<control type="group">
+								<left>10</left>
+								<right>10</right>
+								<top>5</top>
+								<bottom>5</bottom>
+								<visible>!String.IsEqual(Window(Home).Property(MadnoxWidgetCaseMusic),true)</visible>
+								<control type="image">
+									<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+								</control>
+								<control type="image">
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
+								</control>
+							</control>
+							<control type="group">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetCaseMusic),true)</visible>
+								<control type="image">
+									<left>10</left>
+									<right>10</right>
+									<top>5</top>
+									<bottom>5</bottom>
+									<bordersize>35,14,14,14</bordersize>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="15">thumbs/case/cd.png</texture>
+								</control>
+							</control>
+							<control type="image">
+								<top>10</top>
+								<right>20</right>
+								<width>35</width>
+								<height>35</height>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedStatusIndicatorVar]</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)</visible>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>10</bottom>
+								<left>10</left>
+								<right>10</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="270">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="group">
+								<left>10</left>
+								<right>10</right>
+								<top>5</top>
+								<bottom>5</bottom>
+								<visible>!String.IsEqual(Window(Home).Property(MadnoxWidgetCaseMusic),true)</visible>
+								<control type="image">
+									<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+								</control>
+								<control type="image">
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="20">thumbs/overlay.png</texture>
+								</control>
+							</control>
+							<control type="group">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetCaseMusic),true)</visible>
+								<control type="image">
+									<left>10</left>
+									<right>10</right>
+									<top>5</top>
+									<bottom>5</bottom>
+									<bordersize>35,14,14,14</bordersize>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="15">thumbs/case/cd.png</texture>
+								</control>
+							</control>
+							<control type="image">
+								<top>10</top>
+								<right>20</right>
+								<width>35</width>
+								<height>35</height>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedStatusIndicatorVar]</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)</visible>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>10</bottom>
+								<left>10</left>
+								<right>10</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+							<control type="group">
+								<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+								<include content="Object_ProgressBar">
+									<param name="left" value="25" />
+									<param name="right" value="25" />
+									<param name="bottom" value="12" />
+									<param name="height" value="4" />
+								</include>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="music">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+
+				<!-- Pictures List (Horizontal) -->
+				<control type="list" id="52">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>52</onleft>
+					<onright>52</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
+					<onclick condition="ListItem.IsFolder">ActivateWindow(Pictures,$INFO[ListItem.FolderPath],return)</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),pictures)</visible>
+					<itemlayout height="260" width="270">
+						<control type="group">
+							<left>10</left>
+							<right>10</right>
+							<top>5</top>
+							<bottom>5</bottom>
+							<control type="image">
+								<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="image">
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>5</bottom>
+								<left>0</left>
+								<right>0</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="270">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="group">
+								<left>10</left>
+								<right>10</right>
+								<top>5</top>
+								<bottom>5</bottom>
+								<control type="image">
+									<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+								</control>
+								<control type="image">
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="20">thumbs/overlay.png</texture>
+								</control>
+								<control type="image">
+									<left>10</left>
+									<right>10</right>
+									<bottom>5</bottom>
+									<height>100</height>
+									<texture>panels/background-gradient.png</texture>
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								</control>
+								<control type="label">
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+									<bottom>5</bottom>
+									<left>0</left>
+									<right>0</right>
+									<height>40</height>
+									<font>Font26_Reg</font>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+									<shadowcolor>FF000000</shadowcolor>
+								</control>
+								<control type="group">
+									<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+									<include content="Object_ProgressBar">
+										<param name="left" value="25" />
+										<param name="right" value="25" />
+										<param name="bottom" value="12" />
+										<param name="height" value="4" />
+									</include>
+								</control>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="pictures">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+
+				<!-- Games List (Horizontal) -->
+				<control type="list" id="53">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>53</onleft>
+					<onright>53</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
+					<onclick condition="ListItem.IsFolder">ActivateWindow(Games,$INFO[ListItem.FolderPath],return)</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),games)</visible>
+					<itemlayout height="260" width="270">
+						<control type="group">
+							<left>10</left>
+							<right>10</right>
+							<top>5</top>
+							<bottom>5</bottom>
+							<control type="image">
+								<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="image">
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultGame.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>5</bottom>
+								<left>0</left>
+								<right>0</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="270">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="group">
+								<left>10</left>
+								<right>10</right>
+								<top>5</top>
+								<bottom>5</bottom>
+								<control type="image">
+									<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+								</control>
+								<control type="image">
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultGame.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="20">thumbs/overlay.png</texture>
+								</control>
+								<control type="image">
+									<left>10</left>
+									<right>10</right>
+									<bottom>5</bottom>
+									<height>100</height>
+									<texture>panels/background-gradient.png</texture>
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								</control>
+								<control type="label">
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+									<bottom>5</bottom>
+									<left>0</left>
+									<right>0</right>
+									<height>40</height>
+									<font>Font26_Reg</font>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+									<shadowcolor>FF000000</shadowcolor>
+								</control>
+								<control type="group">
+									<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+									<include content="Object_ProgressBar">
+										<param name="left" value="25" />
+										<param name="right" value="25" />
+										<param name="bottom" value="12" />
+										<param name="height" value="4" />
+									</include>
+								</control>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="games">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+
+				<!-- PVR List (Horizontal) -->
+				<control type="list" id="54">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>54</onleft>
+					<onright>54</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick>Dialog.Close(1130)</onclick>
+					<onclick>Select</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),pvr)</visible>
+					<itemlayout height="260" width="270">
+						<control type="group">
+							<left>10</left>
+							<right>10</right>
+							<top>5</top>
+							<bottom>5</bottom>
+							<control type="image">
+								<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="image">
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPVRChannel.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
+							</control>
+							<control type="image">
+								<top>10</top>
+								<right>10</right>
+								<width>35</width>
+								<height>35</height>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedStatusIndicatorVar]</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)</visible>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>5</bottom>
+								<left>0</left>
+								<right>0</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="270">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="group">
+								<left>10</left>
+								<right>10</right>
+								<top>5</top>
+								<bottom>5</bottom>
+								<control type="image">
+									<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+								</control>
+								<control type="image">
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPVRChannel.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="20">thumbs/overlay.png</texture>
+								</control>
+								<control type="image">
+									<top>10</top>
+									<right>10</right>
+									<width>35</width>
+									<height>35</height>
+									<aspectratio>keep</aspectratio>
+									<texture colordiffuse="$VAR[PanelHighlightColorVar]">$VAR[WidgetWatchedStatusIndicatorVar]</texture>
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetWatchedStatus),true)</visible>
+								</control>
+								<control type="image">
+									<left>10</left>
+									<right>10</right>
+									<bottom>5</bottom>
+									<height>100</height>
+									<texture>panels/background-gradient.png</texture>
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								</control>
+								<control type="label">
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+									<bottom>5</bottom>
+									<left>0</left>
+									<right>0</right>
+									<height>40</height>
+									<font>Font26_Reg</font>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+									<shadowcolor>FF000000</shadowcolor>
+								</control>
+								<control type="group">
+									<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+									<include content="Object_ProgressBar">
+										<param name="left" value="25" />
+										<param name="right" value="25" />
+										<param name="bottom" value="12" />
+										<param name="height" value="4" />
+									</include>
+								</control>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="pvr">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+
+				<!-- Programs List (Horizontal) -->
+				<control type="list" id="55">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>55</onleft>
+					<onright>55</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
+					<onclick condition="ListItem.IsFolder">ActivateWindow(Programs,$INFO[ListItem.FolderPath],return)</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),program)</visible>
+					<itemlayout height="260" width="270">
+						<control type="group">
+							<left>10</left>
+							<right>10</right>
+							<top>5</top>
+							<bottom>5</bottom>
+							<control type="image">
+								<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="image">
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultProgram.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>5</bottom>
+								<left>0</left>
+								<right>0</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="270">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="group">
+								<left>10</left>
+								<right>10</right>
+								<top>5</top>
+								<bottom>5</bottom>
+								<control type="image">
+									<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+								</control>
+								<control type="image">
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultProgram.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="20">thumbs/overlay.png</texture>
+								</control>
+								<control type="image">
+									<left>10</left>
+									<right>10</right>
+									<bottom>5</bottom>
+									<height>100</height>
+									<texture>panels/background-gradient.png</texture>
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								</control>
+								<control type="label">
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+									<bottom>5</bottom>
+									<left>0</left>
+									<right>0</right>
+									<height>40</height>
+									<font>Font26_Reg</font>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+									<shadowcolor>FF000000</shadowcolor>
+								</control>
+								<control type="group">
+									<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+									<include content="Object_ProgressBar">
+										<param name="left" value="25" />
+										<param name="right" value="25" />
+										<param name="bottom" value="12" />
+										<param name="height" value="4" />
+									</include>
+								</control>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="programs">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+
+				<!-- Favourites List (Horizontal) -->
+				<control type="list" id="56">
+					<width>100%</width>
+					<height>100%</height>
+					<onleft>56</onleft>
+					<onright>56</onright>
+					<onup>9009</onup>
+					<ondown>9009</ondown>
+					<onclick>Dialog.Close(1130)</onclick>
+					<onclick>Select</onclick>
+					<viewtype label="536">icon</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="inout">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetTarget),favourites)</visible>
+					<itemlayout height="260" width="270">
+						<control type="group">
+							<left>10</left>
+							<right>10</right>
+							<top>5</top>
+							<bottom>5</bottom>
+							<control type="image">
+								<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="image">
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultFavourite.png">$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="image">
+								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
+							</control>
+							<control type="image">
+								<left>10</left>
+								<right>10</right>
+								<bottom>5</bottom>
+								<height>100</height>
+								<texture>panels/background-gradient.png</texture>
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+							</control>
+							<control type="label">
+								<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								<bottom>5</bottom>
+								<left>0</left>
+								<right>0</right>
+								<height>40</height>
+								<font>Font26_Reg</font>
+								<align>center</align>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>FF000000</shadowcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+							<include content="Object_ProgressBar">
+								<param name="left" value="25" />
+								<param name="right" value="25" />
+								<param name="bottom" value="12" />
+								<param name="height" value="4" />
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="260" width="270">
+						<control type="group">
+							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<control type="image">
+								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+							</control>
+							<control type="group">
+								<left>10</left>
+								<right>10</right>
+								<top>5</top>
+								<bottom>5</bottom>
+								<control type="image">
+									<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+								</control>
+								<control type="image">
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultFavourite.png">$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="image">
+									<texture border="20">thumbs/overlay.png</texture>
+								</control>
+								<control type="image">
+									<left>10</left>
+									<right>10</right>
+									<bottom>5</bottom>
+									<height>100</height>
+									<texture>panels/background-gradient.png</texture>
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+								</control>
+								<control type="label">
+									<visible>String.IsEqual(Window(Home).Property(MadnoxWidgetLabel),true)</visible>
+									<bottom>5</bottom>
+									<left>0</left>
+									<right>0</right>
+									<height>40</height>
+									<font>Font26_Reg</font>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+									<shadowcolor>FF000000</shadowcolor>
+								</control>
+								<control type="group">
+									<visible>Skin.HasSetting(WidgetShowProgress)</visible>
+									<include content="Object_ProgressBar">
+										<param name="left" value="25" />
+										<param name="right" value="25" />
+										<param name="bottom" value="12" />
+										<param name="height" value="4" />
+									</include>
+								</control>
+							</control>
+						</control>
+					</focusedlayout>
+					<content limit="$INFO[Window(Home).Property(MadnoxWidgetLimit)]" target="favourites">$INFO[Window(Home).Property(MadnoxWidgetPath)]</content>
+				</control>
+			</control>
+
+			<!-- Vertical Separator -->
+			<control type="image">
+				<top>90</top>
+				<bottom>79</bottom>
+				<right>215</right>
+				<width>4</width>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+			</control>
+
+			<!-- Item Counter Label -->
+			<control type="group">
+				<description>Widget item position and counter</description>
+				<left>1672</left>
+				<top>100</top>
+				<width>150</width>
+				<height>50</height>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(50).CurrentItem,, / ]$INFO[Container(50).NumItems]</label>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(501).CurrentItem,, / ]$INFO[Container(501).NumItems]</label>
+					<visible>Control.IsVisible(501)</visible>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(51).CurrentItem,, / ]$INFO[Container(51).NumItems]</label>
+					<visible>Control.IsVisible(51)</visible>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(52).CurrentItem,, / ]$INFO[Container(52).NumItems]</label>
+					<visible>Control.IsVisible(52)</visible>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(53).CurrentItem,, / ]$INFO[Container(53).NumItems]</label>
+					<visible>Control.IsVisible(53)</visible>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(54).CurrentItem,, / ]$INFO[Container(54).NumItems]</label>
+					<visible>Control.IsVisible(54)</visible>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(55).CurrentItem,, / ]$INFO[Container(55).NumItems]</label>
+					<visible>Control.IsVisible(55)</visible>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>left</align>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(56).CurrentItem,, / ]$INFO[Container(56).NumItems]</label>
+					<visible>Control.IsVisible(56)</visible>
+				</control>
+			</control>
+
+			<!-- Artwork View Label -->
+			<control type="label">
+				<description>Artwork View Label</description>
+				<left>1672</left>
+				<top>140</top>
+				<width>190</width>
+				<height>50</height>
+				<align>left</align>
+				<font>Font25_Cond</font>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>[COLOR FF6db9e5]$LOCALIZE[21483]:[/COLOR] [CAPITALIZE]$INFO[Window(Home).Property(MadnoxWidgetArtwork)][/CAPITALIZE]</label>
+			</control>
+
+			<!-- Style Notice -->
+			<control type="label">
+				<top>180</top>
+				<left>1672</left>
+				<width>200</width>
+				<height>50</height>
+				<font>Font25_Cond</font>
+				<align>left</align>
+				<label>[COLOR FF6db9e5]$LOCALIZE[736]:[/COLOR] [COLOR ffd44424][B]$LOCALIZE[1438] [LOWERCASE]$LOCALIZE[31482][/LOWERCASE][/B][/COLOR]</label>
+			</control>
+
+			<!-- Close Button -->
+			<control type="button" id="9009">
+				<width>150</width>
+				<height>60</height>
+				<right>44</right>
+				<top>260</top>
+				<label>$LOCALIZE[13012]</label>
+				<font>Font33_Bold_Caps</font>
+				<align>center</align>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<shadowcolor>ff254b60</shadowcolor>
+				<!-- Go Back To Objects In Viewer -->
+				<onup>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onup>
+				<onleft>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onleft>
+				<onright>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onright>
+				<include>DialogButtonAlwaysFocused</include>
+				<onclick>Action(Close)</onclick>
+				<ondown>Action(Close)</ondown>
+			</control>
+
+			<control type="image">
+				<bottom>76</bottom>
+				<left>20</left>
+				<right>20</right>
+				<height>4</height>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-horizontal.png</texture>
+			</control>
+
+			<!-- Horizontal Scrollbar -->
+			<control type="scrollbar" id="60">
+				<left>0</left>
+				<top>390</top>
+				<height>24</height>
+				<width>1800</width>
+				<showonepage>true</showonepage>
+				<onup>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onup>
+				<ondown>9009</ondown>
+				<orientation>horizontal</orientation>
+				<textureslidernib colordiffuse="$VAR[PanelHighlightColorVar]">buttons/scrollbar-nib-focus.png</textureslidernib>
+				<texturesliderbackground border="2">buttons/scrollbar-nib-back.png</texturesliderbackground>
+				<visible>Control.IsVisible(50) | Control.IsVisible(501) | Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56)</visible>
+				<include>DialogScrollBar</include>
+			</control>
+		</control>
+	</controls>
+</window>

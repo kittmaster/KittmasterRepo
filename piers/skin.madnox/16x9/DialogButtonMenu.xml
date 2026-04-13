@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol>100</defaultcontrol>
+	<!-- Trigger shortcuts to update when context menu closes -->
+	<onunload condition="Window.IsActive(home)">SetProperty(skinshortcuts-build,1,Home)</onunload>
 	<include>AnimationDialogPopupWindow</include>
 	<controls>
 		<control type="group">
 			<include>DialogBackgroundFade</include>
 			<centerleft>50%</centerleft>
-			<centertop>50%</centertop>
+			<centertop>45%</centertop>
 			<width>500</width>
 			<height>720</height>
 			<animation effect="slide" end="0,270" condition="Integer.IsEqual(Container(100).NumItems,1)">Conditional</animation>
@@ -182,20 +184,37 @@
 				<height max="540">auto</height>
 				<usecontrolcoords>true</usecontrolcoords>
 				<include>ContainerScrollTime</include>
+				<control type="button" id="102">
+					<visible>System.ShowExitButton</visible>
+					<visible>!Skin.HasSetting(DisableExitButton)</visible>
+					<label>$LOCALIZE[13012]</label>
+					<onclick>Quit()</onclick>
+					<include>DialogButtonContextMenu</include>
+				</control>
+				<control type="button" id="113">
+					<visible>!Skin.HasSetting(DisableFavoritesButton)</visible>
+					<label>$LOCALIZE[1036]</label>
+					<include>DialogButtonContextMenu</include>
+					<onclick>ActivateWindow(favouritesbrowser)</onclick>
+					<include>DialogButtonContextMenu</include>
+				</control>
+				<control type="button" id="114">
+					<visible>!Skin.HasSetting(DisableSkinFavoritesButton)</visible>
+					<label>$LOCALIZE[166] [LOWERCASE]$LOCALIZE[5][/LOWERCASE]</label>
+					<include>DialogButtonContextMenu</include>
+					<onclick>ActivateWindow(skinsettings)</onclick>
+					<include>DialogButtonContextMenu</include>
+				</control>
 				<control type="button" id="101">
+					<visible>!Skin.HasSetting(DisableSettingsButton)</visible>
 					<label>$LOCALIZE[5]</label>
 					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick>ActivateWindow(Settings,return)</onclick>
 					<include>DialogButtonContextMenu</include>
 				</control>
-				<control type="button" id="102">
-					<visible>System.ShowExitButton</visible>
-					<label>$LOCALIZE[13012]</label>
-					<onclick>Quit()</onclick>
-					<include>DialogButtonContextMenu</include>
-				</control>
 				<control type="button" id="103">
 					<visible>System.CanPowerDown</visible>
+					<visible>!Skin.HasSetting(DisablePowerDownButton)</visible>
 					<label>$LOCALIZE[13016]</label>
 					<onclick>Powerdown()</onclick>
 					<include>DialogButtonContextMenu</include>
@@ -203,30 +222,35 @@
 				<control type="button" id="104">
 					<visible>!System.HasAlarm(shutdowntimer)</visible>
 					<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+					<visible>!Skin.HasSetting(DisableShutdownTimerButton)</visible>
 					<label>$LOCALIZE[20150]</label>
 					<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
 					<include>DialogButtonContextMenu</include>
 				</control>
 				<control type="button" id="105">
 					<visible>System.HasAlarm(shutdowntimer)</visible>
+					<visible>!Skin.HasSetting(DisableShutdownTimerButton)</visible>
 					<label>$LOCALIZE[20151] $INFO[System.AlarmPos,(,)]</label>
 					<onclick>CancelAlarm(shutdowntimer)</onclick>
 					<include>DialogButtonContextMenu</include>
 				</control>
 				<control type="button" id="106">
 					<visible>System.CanSuspend</visible>
+					<visible>!Skin.HasSetting(DisableSuspendButton)</visible>
 					<label>$LOCALIZE[13011]</label>
 					<onclick>Suspend()</onclick>
 					<include>DialogButtonContextMenu</include>
 				</control>
 				<control type="button" id="107">
 					<visible>System.CanHibernate</visible>
+					<visible>!Skin.HasSetting(DisableHibernateButton)</visible>
 					<label>$LOCALIZE[13010]</label>
 					<onclick>Hibernate()</onclick>
 					<include>DialogButtonContextMenu</include>
 				</control>
 				<control type="button" id="108">
 					<visible>System.CanReboot</visible>
+					<visible>!Skin.HasSetting(DisableRebootButton)</visible>
 					<label>$LOCALIZE[13013]</label>
 					<onclick>Reset()</onclick>
 					<include>DialogButtonContextMenu</include>
@@ -259,6 +283,12 @@
 					<visible>System.HasShutdown + System.IsInhibit</visible>
 					<label>$LOCALIZE[13018]</label>
 					<onclick>InhibitIdleShutdown(false)</onclick>
+					<include>DialogButtonContextMenu</include>
+				</control>
+				<control type="button" id="115">
+					<visible>!Skin.HasSetting(DisableEditMainMenuButton) + Window.IsActive(Home)</visible>
+					<label>$LOCALIZE[31017]</label>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<include>DialogButtonContextMenu</include>
 				</control>
 			</control>

@@ -1,0 +1,1373 @@
+<?xml version="1.0" ?>
+<settings version="1">
+	<section id="script.preshowexperience">
+		<category id="content" label="32001">
+			<group id="1" >
+				<setting id="content.path" type="path" label="32008">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="path">
+						<heading>32008</heading>
+					</control>
+				</setting>
+				  <setting label="32008" type="lsep"/>
+				<setting id="update.allcontent" type="boolean" label="32715">
+					<level>3</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="update.loadTrivia" type="boolean" label="32716" parent="update.allcontent">
+					<level>3</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="update.allcontent">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
+                <setting id="update.loadSlideshow" type="boolean" label="32734" parent="update.allcontent">
+					<level>3</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="update.allcontent">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>				
+				<setting id="update.loadVideoBumpers" type="boolean" label="32717" parent="update.allcontent">
+					<level>3</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="update.allcontent">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>	
+				<setting id="update.loadRatingsBumpers" type="boolean" label="32718" parent="update.allcontent">
+					<level>3</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="update.allcontent">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>				
+				<setting id="update.scrapeContent" type="boolean" label="32719" parent="update.allcontent">
+					<level>3</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="update.allcontent">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>				
+				<setting id="update.loadAudioFormatBumpers" type="boolean" label="32720" parent="update.allcontent">
+					<level>3</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="update.allcontent">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>				
+				<setting id="update.loadMusic" type="boolean" label="32721" parent="update.allcontent">
+					<level>3</level>
+					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="update.allcontent">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+							</setting>
+				<setting id="database.update" type="action" label="32009">
+					<level>0</level>
+					<data>RunScript(script.preshowexperience,update.database,from.settings)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action">
+						<close>true</close>
+					</control>
+				</setting>		
+			</group>
+			<group id="2" label="32111">
+				<setting id="database.autoUpdate" type="boolean" label="32010">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="service.database.update.kodiStartup" type="boolean" label="32105">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="service.database.update.scanFinished" type="boolean" label="32106">
+					<level>0</level>
+					<default>0</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="service.database.update.interval" type="string" label="32107">
+					<level>3</level>
+					<default>Disabled</default>
+					<constraints>
+						<options>
+							<option label="32623">Disabled</option>
+							<option label="32624">1</option>
+							<option label="32625">6</option>
+							<option label="32626">12</option>
+							<option label="32627">24</option>
+							<option label="32628">48</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+			</group>
+			<group id="3" label="32093">
+				<setting id="debug.log" type="boolean" label="32094">
+					<level>3</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="pastebin.paste.log" type="action" label="32095">
+					<level>0</level>
+					<data>RunScript(script.preshowexperience,pastebin.paste.log)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action">
+						<close>true</close>
+					</control>
+				</setting>
+				<setting id="reset.database" type="action" label="32099">
+					<level>0</level>
+					<data>RunScript(script.preshowexperience,reset.database)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action"/>
+				</setting>
+				<setting id="trailer.CLEAR" type="action" label="32051">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,trailer.clearWatched)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action"/>
+				</setting>				
+				<setting id="trailer.CLEARBROKEN" type="action" label="32100">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,trailer.clearBroken)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="action"/>
+				</setting>
+			</group>
+		</category>
+		<category id="playback" label="32018">
+			<group id="1">
+<!-- 				<setting id="blockedGenres" type="string" label="32788">
+					<level>1</level>
+						<default>TV Movie</default>
+						<constraints>
+							<allowempty>true</allowempty>
+						</constraints>
+					<control type="button" format="action">
+						<data>RunScript(script.preshowexperience,setBlockedGenres)</data>
+					</control>
+				</setting>	 -->			
+				<setting id="hide.queue.dialog" type="boolean" label="32019">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="hide.queue.dialog.single" type="boolean" label="32020" parent="hide.queue.dialog">
+					<level>0</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="hide.queue.dialog">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
+				<setting id="allow.video.skip" type="boolean" label="32021">
+					<level>3</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="video.preDelay" type="integer" label="32022">
+					<level>3</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32824">0</option>
+							<option label="32815">100</option>
+							<option label="32816">250</option>
+							<option label="32817">500</option>
+							<option label="32818">750</option>
+							<option label="32819">1000</option>
+							<option label="32820">1500</option>
+							<option label="32821">2000</option>
+							<option label="32822">2500</option>
+							<option label="32823">3000</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+				<setting id="shieldskip.button" type="string" label="32743" help="Add a skip button to a shield remove.">
+					<level>0</level>
+					<default>None</default>
+					<constraints>
+						<options>
+							<option label="32037">None</option>
+							<option label="32744">Select</option>
+							<option label="32745">Fast Forward</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+			</group>
+			<group id="2" label="32118">	
+				<setting id="volume.passthrough" type="boolean" label="32850">
+					<level>1</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+			
+				<setting id="video.volume" type="integer" label="32119" parent="volume.passthrough">
+					<level>1</level>
+					<default>100</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="volume.passthrough">true</condition>
+						</dependency>
+					</dependencies>					
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32792">10</option>
+							<option label="32793">25</option>
+							<option label="32794">50</option>
+							<option label="32795">75</option>
+							<option label="32796">90</option>
+							<option label="32797">100</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>	
+				<setting id="audioformat.volume" type="integer" label="32324" parent="volume.passthrough">
+					<level>1</level>
+					<default>100</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="volume.passthrough">true</condition>
+						</dependency>
+					</dependencies>						
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32792">10</option>
+							<option label="32793">25</option>
+							<option label="32794">50</option>
+							<option label="32795">75</option>
+							<option label="32796">90</option>
+							<option label="32797">100</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+				<setting id="trailer.volume" type="integer" label="32328" parent="volume.passthrough">
+					<level>1</level>
+					<default>100</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="volume.passthrough">true</condition>
+						</dependency>
+					</dependencies>						
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32792">10</option>
+							<option label="32793">25</option>
+							<option label="32794">50</option>
+							<option label="32795">75</option>
+							<option label="32796">90</option>
+							<option label="32797">100</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>				
+				<setting id="trivia.musicVolume" type="integer" label="32600" parent="volume.passthrough">
+					<level>1</level>
+					<default>100</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="volume.passthrough">true</condition>
+						</dependency>
+					</dependencies>						
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32792">10</option>
+							<option label="32793">25</option>
+							<option label="32794">50</option>
+							<option label="32795">75</option>
+							<option label="32796">90</option>
+							<option label="32797">100</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>	
+				<setting id="feature.volume" type="integer" label="32711" parent="volume.passthrough">
+					<level>1</level>
+					<default>100</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="volume.passthrough">true</condition>
+						</dependency>
+					</dependencies>						
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32792">10</option>
+							<option label="32793">25</option>
+							<option label="32794">50</option>
+							<option label="32795">75</option>
+							<option label="32796">90</option>
+							<option label="32797">100</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+			</group>		
+			<group id="3" label="32113">
+				<setting id="scope" type="string" label="32092">
+					<level>3</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32617">16:9</option>
+							<option label="32618">2.35:1</option>
+							<option label="32619">2.40:1</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="aspect.condition" type="boolean" label="32749">
+					<level>3</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="aspect.source" type="string" label="32756" >
+            <level>3</level>
+			<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="aspect.condition">true</condition>
+						</dependency>
+					</dependencies>
+            <default>1</default>
+					<constraints>
+						<options>
+							<option label="32754">0</option>
+							<option label="32755">1</option>
+						</options>
+					</constraints>
+					<control type="spinner" format="string"/>
+        </setting>
+			</group>			
+		</category>
+		<category id="trivia" label="32026">
+			<group id="1" label="32026">
+				<setting id="trivia.duration" type="integer" label="32031">
+					<level>0</level>
+					<default>5</default>
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+							<option label="32802">6</option>
+							<option label="32803">7</option>
+							<option label="32804">8</option>
+							<option label="32805">9</option>
+							<option label="32806">10</option>
+							<option label="32807">15</option>
+							<option label="32808">20</option>
+							<option label="32809">30</option>
+							<option label="32810">45</option>
+							<option label="32811">60</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+				<setting id="trivia.qDuration" type="integer" label="32032">
+					<level>0</level>
+					<default>6</default>
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+							<option label="32802">6</option>
+							<option label="32803">7</option>
+							<option label="32804">8</option>
+							<option label="32805">9</option>
+							<option label="32806">10</option>
+							<option label="32807">15</option>
+							<option label="32808">20</option>
+							<option label="32809">30</option>
+							<option label="32810">45</option>
+							<option label="32811">60</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+				<setting id="trivia.cDuration" type="integer" label="32033">
+					<level>0</level>
+					<default>4</default>
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+							<option label="32802">6</option>
+							<option label="32803">7</option>
+							<option label="32804">8</option>
+							<option label="32805">9</option>
+							<option label="32806">10</option>
+							<option label="32807">15</option>
+							<option label="32808">20</option>
+							<option label="32809">30</option>
+							<option label="32810">45</option>
+							<option label="32811">60</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+				<setting id="trivia.aDuration" type="integer" label="32034">
+					<level>0</level>
+					<default>6</default>
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+							<option label="32802">6</option>
+							<option label="32803">7</option>
+							<option label="32804">8</option>
+							<option label="32805">9</option>
+							<option label="32806">10</option>
+							<option label="32807">15</option>
+							<option label="32808">20</option>
+							<option label="32809">30</option>
+							<option label="32810">45</option>
+							<option label="32811">60</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+				<setting id="trivia.sDuration" type="integer" label="32035">
+					<level>0</level>
+					<default>s</default>
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+							<option label="32802">6</option>
+							<option label="32803">7</option>
+							<option label="32804">8</option>
+							<option label="32805">9</option>
+							<option label="32806">10</option>
+							<option label="32807">15</option>
+							<option label="32808">20</option>
+							<option label="32809">30</option>
+							<option label="32810">45</option>
+							<option label="32811">60</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>
+				<setting id="trivia.transition" type="integer" label="32036">
+					<level>3</level>
+					<default>1</default>
+					<constraints>
+						<options>
+							<option label="32037">0</option>
+							<option label="32038">1</option>
+							<option label="32039">2</option>
+							<option label="32040">3</option>
+							<option label="32041">4</option>
+							<option label="32042">5</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="trivia.transitionDuration" type="integer" label="32043">
+					<level>3</level>
+					<default>500</default>
+					<constraints>
+						<options>
+							<option label="32816">250</option>
+							<option label="32817">500</option>
+							<option label="32818">750</option>
+							<option label="32819">1000</option>
+							<option label="32820">1500</option>
+							<option label="32821">2000</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>	
+			</group>
+			<group id="2" label="32027">
+			<setting id="trivia.music" type="integer" label="32027">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<options>
+							<option label="32037">0</option>
+							<option label="32007">1</option>
+							<option label="32047">2</option>
+							<option label="32048">3</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="trivia.musicDir" type="path" label="32044" parent="trivia.music">
+					<level>0</level>
+					<default/>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="trivia.music">2</condition>
+						</dependency>
+					</dependencies>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="path">
+						<heading>32044</heading>
+					</control>
+				</setting>
+				<setting id="trivia.musicFile" type="path" label="32045" parent="trivia.music">
+					<level>0</level>
+					<default/>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="trivia.music">3</condition>
+						</dependency>
+					</dependencies>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="file">
+						<heading>32045</heading>
+					</control>
+				</setting>
+				<setting id="trivia.musicFadeIn" type="integer" label="32028">
+					<level>3</level>
+					<default>3</default>
+					<constraints>
+						<options>
+							<option label="32824">0</option>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>						
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>	
+				<setting id="trivia.musicFadeOut" type="integer" label="32029">
+					<level>3</level>
+					<default>3</default>
+					<constraints>
+						<options>
+							<option label="32824">0</option>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>	
+			</group>
+		</category>
+		<category id="trailers" label="32049">
+			<group id="1" label="32011">
+				<setting id="scraper.trailers.Content" type="boolean" label="32012">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+<!-- 				<setting id="trailers.autoDeleteWatched" type="boolean" label="32115" parent="scraper.trailers.Content">
+					<level>3</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="scraper.trailers.Content">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>		 -->
+				<setting id="scraper.trailers.IMDB" type="boolean" label="32016">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>	
+				<setting id="trailer.quality" type="string" label="32067" parent="scraper.trailers.IMDB">
+					<level>0</level>
+					<default>720p</default>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="scraper.trailers.IMDB">true</condition>
+						</dependency>
+					</dependencies>
+					<constraints>
+						<options>
+							<option label="32620">480p</option>
+							<option label="32621">720p</option>
+							<option label="32622">1080p</option>
+						</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>32016</heading>
+					</control>
+				</setting>				
+				<setting id="scraper.trailers.TMDB" type="boolean" label="32017">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="trailer.language" type="string" label="32758" parent="scraper.trailers.TMDB">
+				    <level>0</level>
+				    <default>en-US</default>
+  				    <dependencies>
+					  <dependency type="visible" setting="true">
+					    <condition operator="is" setting="scraper.trailers.TMDB">true</condition>
+					  </dependency>
+				    </dependencies>
+				    <constraints>
+					<options>
+					    <option label="32759">en-US</option>
+					    <option label="32760">da-DK</option>
+					    <option label="32761">de-DE</option>
+					    <option label="32762">el-GR</option>
+					    <option label="32763">es-ES</option>
+					    <option label="32764">fi-FI</option>
+					    <option label="32765">fr-FR</option>
+					    <option label="32766">it-IT</option>
+					    <option label="32767">no-NO</option>
+					    <option label="32768">sv-SE</option>
+					</options>
+				  </constraints>
+				  <control type="list" format="string"/>
+				</setting>
+				<setting id="scraper.trailers.KodiDB" label="32013" type="boolean">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="scraper.trailers.KodiDB.markWatched" type="boolean" label="32015" parent="scraper.trailers.KodiDB">
+					<level>0</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="scraper.trailers.KodiDB">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle">
+						<heading>32013</heading>
+					</control>
+				</setting>				
+			</group>
+			<group id="2" label="32024">
+				<setting id="trailer.source" type="integer" label="32052">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32007">0</option>
+							<option label="32047">1</option>
+							<option label="32053">2</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="trailer.scrapers" type="string" label="32054">
+					<level>0</level>
+					<default>Content,KodiDB,IMDB</default>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="trailer.source">0</condition>
+						</dependency>
+					</dependencies>							
+					<control type="button" format="action">
+						<data>RunScript(script.preshowexperience,trailer.scrapers)</data>
+					</control>
+				</setting>
+				<setting id="trailer.dir" type="path" label="32058">
+					<level>0</level>
+					<default/>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="trailer.source">1</condition>
+						</dependency>
+					</dependencies>					
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="button" format="path">
+						<heading>32058</heading>
+					</control>
+				</setting>
+				<setting id="trailer.file" type="path" label="32059">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="trailer.source">2</condition>
+						</dependency>
+					</dependencies>							
+					<control type="button" format="file">
+						<heading>32059</heading>
+					</control>
+				</setting>
+				<setting id="trailer.count" type="integer" label="32060">
+					<level>0</level>
+					<default>2</default>
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+							<option label="32802">6</option>
+							<option label="32803">7</option>
+							<option label="32804">8</option>
+							<option label="32805">9</option>
+							<option label="32806">10</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>			
+				<setting id="settings.ratings.initialized2" type="boolean" label="">
+					<level>0</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
+				<setting id="trailer.ratingLimit" type="integer" label="32061">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32037">0</option>
+							<option label="32062">1</option>
+							<option label="32063">2</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="trailer.ratingMax" type="string" label="32062" parent="trailer.ratingLimit">
+					<level>0</level>
+					<default>MPAA.PG</default>
+					<constraints>
+						<options>
+							<option label="32642">MPAA.G</option>
+							<option label="32643">MPAA.PG</option>
+							<option label="32644">MPAA.PG_13</option>
+							<option label="32645">MPAA.R</option>
+							<option label="32646">MPAA.NC_17</option>
+							<option label="32647">MPAA.NR</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="trailer.ratingLimit">1</condition>
+						</dependency>
+					</dependencies>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="trailer.ratingMax.dummy" type="string" label="32064" parent="trailer.ratingLimit">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="enable">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+						<dependency type="visible">
+							<condition operator="!is" setting="settings.ratings.initialized2">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="edit" format="string">
+						<heading>32064</heading>
+					</control>
+				</setting>
+				<setting id="trailer.limitGenre" type="boolean" label="32065">
+					<level>0</level>
+					<dependencies>
+						<dependency type="visible">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+					</dependencies>					
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+		</category>
+		<category id="features" label="32073">
+			<group id="1">
+                <setting id="feature.settings" type="string" label="32828">
+                    <level>3</level>
+                    <default/>					
+                    <constraints>
+                        <allowempty>true</allowempty>
+                    </constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+					</dependencies>					
+                    <control type="button" format="action">
+                        <data>RunScript(script.preshowexperience,setFeatureSettings)</data>
+                    </control>
+                </setting>				
+				<setting id="feature.count" type="integer" label="32060">
+					<level>3</level>
+					<default>1</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+					</dependencies>					
+					<constraints>
+						<options>
+							<option label="32791">1</option>
+							<option label="32798">2</option>
+							<option label="32799">3</option>
+							<option label="32800">4</option>
+							<option label="32801">5</option>
+							<option label="32802">6</option>
+							<option label="32803">7</option>
+							<option label="32804">8</option>
+							<option label="32805">9</option>
+							<option label="32806">10</option>
+						</options>
+					</constraints>
+					<control type="list" format="integer"/>
+				</setting>	
+			</group>
+			<group id="2" label="32700">
+				<setting id="settings.ratings.initialized"  type="boolean" label="">
+					<level>0</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
+				<setting id="rating.system.default" type="string" label="32075">
+					<level>0</level>
+					<default>MPAA</default>
+					<constraints>
+						<options>
+							<option label="32701">BBFC</option>
+							<option label="32702">DEJUS</option>
+							<option label="32703">FSK</option>
+							<option label="32704">MPAA</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="settings.ratings.initialized">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="rating.system.default.dummy" type="integer" label="32076">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32037">0</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="enable">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+						<dependency type="visible">
+							<condition operator="!is" setting="settings.ratings.initialized">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="spinner" format="string"/>
+				</setting>
+				<setting id="feature.ratingBumper" type="integer" label="32077">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+						<options>
+							<option label="32037">0</option>
+							<option label="32023">1</option>
+							<option label="32078">2</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="feature.ratingStyleSelection" type="integer" label="32080">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32057">0</option>
+							<option label="32079">1</option>
+						</options>
+					</constraints>
+					<control type="spinner" format="string"/>
+				</setting>
+				<setting id="feature.ratingStyle" type="string" label="32081" parent="feature.ratingStyleSelection">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="feature.ratingStyleSelection">1</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action">
+						<data>RunScript(script.preshowexperience,feature.setRatingBumperStyle)</data>
+					</control>
+				</setting>
+				<setting id="feature.ratingStyle.dummy" type="integer" label="32082" parent="feature.ratingStyleSelection">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32037">0</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="enable">
+							<condition on="property" name="InfoBool">false</condition>
+						</dependency>
+						<dependency type="visible">
+							<condition operator="!is" setting="settings.ratings.initialized">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="spinner" format="string"/>
+				</setting>
+			</group>
+			<group id="3" label="32074">
+				<setting id="audioformat.method" type="integer" label="32068">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32069">0</option>
+							<option label="32070">1</option>
+							<option label="32071">2</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="audioformat.fallback" type="integer" label="32072" parent="audioformat.method">
+					<level>0</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32070">0</option>
+							<option label="32071">1</option>
+						</options>					
+					</constraints>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<condition operator="is" setting="audioformat.method">0</condition>
+						</dependency>
+					</dependencies>				
+					<control type="spinner" format="string"/>
+				</setting>
+				<setting id="audioformat.format" type="integer" label="32030" parent="audioformat.method">
+					<level>0</level>
+					<default>10</default>
+					<constraints>
+						<options>
+							<option label="32629">0</option>
+							<option label="32630">1</option>
+							<option label="32631">2</option>
+							<option label="32632">3</option>
+							<option label="32633">4</option>
+							<option label="32634">5</option>
+							<option label="32635">6</option>
+							<option label="32636">7</option>
+							<option label="32637">8</option>
+							<option label="32638">9</option>
+							<option label="32639">10</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="audioformat.method">1</condition>
+								<condition operator="is" setting="audioformat.fallback">0</condition>
+							</or>
+						</dependency>
+					</dependencies>						
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="audioformat.file" type="path" label="32048" parent="audioformat.method">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible" setting="true">
+							<or>
+								<condition operator="is" setting="audioformat.method">2</condition>
+								<condition operator="is" setting="audioformat.fallback">1</condition>
+							</or>
+						</dependency>
+					</dependencies>						
+					<control type="button" format="file">
+						<heading>32048</heading>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="actions" label="32083">
+			<group id="1">
+				<setting id="action.onPause" type="boolean" label="32084">
+					<level>3</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="action.onPause.file" type="path" label="32085" parent="action.onPause">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="action.onPause">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="file">
+						<heading>32085</heading>
+					</control>
+				</setting>
+				<setting id="action.test.PAUSE" type="action" label="32089" parent="action.onPause">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,test.actions,PAUSE)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<and>
+								<condition operator="is" setting="action.onPause">true</condition>
+								<condition operator="!is" setting="action.onPause.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action"/>
+				</setting>
+				<setting id="action.onResume" type="integer" label="32086">
+					<level>3</level>
+					<default>0</default>
+					<constraints>
+						<options>
+							<option label="32037">0</option>
+							<option label="32087">1</option>
+							<option label="32048">2</option>
+						</options>
+					</constraints>
+					<control type="list" format="string"/>
+				</setting>
+				<setting id="action.onResume.file" type="path" label="32085" parent="action.onResume">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="action.onResume">2</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="file">
+						<heading>32085</heading>
+					</control>
+				</setting>
+				<setting id="action.test.RESUME" type="action" label="32089" parent="action.onResume">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,test.actions,RESUME)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<and>
+								<condition operator="is" setting="action.onResume">2</condition>
+								<condition operator="!is" setting="action.onResume.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action"/>
+				</setting>
+				<setting id="action.onAbort" type="boolean" label="32088">
+					<level>3</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="action.onAbort.file" type="path" label="32085" parent="action.onAbort">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="action.onAbort">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="file">
+						<heading>32085</heading>
+					</control>
+				</setting>
+				<setting id="action.test.ABORT" type="action" label="32089" parent="action.onAbort">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,test.actions,ABORT)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<and>
+								<condition operator="is" setting="action.onAbort">true</condition>
+								<condition operator="!is" setting="action.onAbort.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action"/>
+				</setting>
+				<setting id="action.PreshowBeginning" type="boolean" label="32751">
+					<level>3</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="action.PreshowBeginning.file" type="path" label="32085" parent="action.PreshowBeginning">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="action.PreshowBeginning">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="file">
+						<heading>32085</heading>
+					</control>
+				</setting>
+				<setting id="action.test.PreshowBeginning" type="action" label="32089" parent="action.PreshowBeginning">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,test.actions,PreshowBeginning)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<and>
+								<condition operator="is" setting="action.PreshowBeginning">true</condition>
+								<condition operator="!is" setting="action.PreshowBeginning.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action"/>
+				</setting>	
+				<setting id="action.BeforeFeature" type="boolean" label="32752">
+					<level>3</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="action.BeforeFeature.file" type="path" label="32085" parent="action.BeforeFeature">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="action.BeforeFeature">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="file">
+						<heading>32085</heading>
+					</control>
+				</setting>
+				<setting id="action.test.BeforeFeature" type="action" label="32089" parent="action.BeforeFeature">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,test.actions,BeforeFeature)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<and>
+								<condition operator="is" setting="action.BeforeFeature">true</condition>
+								<condition operator="!is" setting="action.BeforeFeature.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action"/>
+				</setting>					
+				<setting id="action.middleChapter" type="boolean" label="32753">
+					<level>3</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="action.middleChapter.file" type="path" label="32085" parent="action.middleChapter">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="action.middleChapter">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="file">
+						<heading>32085</heading>
+					</control>
+				</setting>
+				<setting id="action.test.middleChapter" type="action" label="32089" parent="action.middleChapter">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,test.actions,middleChapter)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<and>
+								<condition operator="is" setting="action.middleChapter">true</condition>
+								<condition operator="!is" setting="action.middleChapter.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action"/>
+				</setting>	
+								
+				<setting id="action.lastChapter" type="boolean" label="32750">
+					<level>3</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>		
+<setting id="action.lastChapter.file" type="path" label="32085" parent="action.lastChapter">
+					<level>3</level>
+					<default/>
+					<constraints>
+						<writable>false</writable>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="action.lastChapter">true</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="file">
+						<heading>32085</heading>
+					</control>
+				</setting>				
+				<setting id="action.test.lastChapter" type="action" label="32089" parent="action.lastChapter">
+					<level>3</level>
+					<data>RunScript(script.preshowexperience,test.actions,lastChapter)</data>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<and>
+								<condition operator="is" setting="action.lastChapter">true</condition>
+								<condition operator="!is" setting="action.lastChapter.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action"/>
+				</setting>		
+				<setting id="action.test.runAbort" type="integer" label="32593">
+					<level>3</level>
+					<default>2</default>
+					<constraints>
+						<options>
+							<option label="32594">0</option>
+							<option label="32595">1</option>
+							<option label="32596">2</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="enable">
+							<and>
+								<condition operator="is" setting="action.onAbort">true</condition>
+								<condition operator="!is" setting="action.onAbort.file"/>
+							</and>
+						</dependency>
+					</dependencies>
+					<control type="list" format="string"/>
+				</setting>
+			</group>
+		</category>
+	</section>
+</settings>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View51SimpleList">
 		<!-- Floor -->
 		<include content="Floor">
-			<param name="visible">Skin.HasSetting(View50HideFloor) + Control.IsVisible(51)</param>
+			<param name="visible">Skin.HasSetting(View51HideFloor) + Control.IsVisible(51)</param>
 			<param name="highlight">FloorHighlightRight</param>
 		</include>
 		<!-- List -->
@@ -19,7 +19,13 @@
 				<left>100</left>
 				<width>1720</width>
 				<height>800</height>
+				<animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))" reversible="true">
+					<effect type="width" end="970" time="400" tween="cubic" easing="out" />
+				</animation>
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<onleft>PlayerControl(Stop)</onleft>
 				<onleft>9050</onleft>
+				<onright>PlayerControl(Stop)</onright>
 				<onright>6051</onright>
 				<pagecontrol>6051</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -41,8 +47,7 @@
 				<onright condition="Control.IsVisible(61300)">61300</onright>
 			</control>
 		</control>
-		<!-- Media flags Fix overlapping icons when Movie & TV Show is linked -->
-
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(51)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -59,7 +64,7 @@
 				<include condition="Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(videoplaylist)" content="MediaFlagsVideos8">
 					<param name="bottom">10</param>
 				</include>
-			</control>			
+			</control>
 			<control type="group">
 				<visible>Control.IsVisible(51) + String.Contains(ListItem.DBType, "season")</visible>
 				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
@@ -72,22 +77,90 @@
 					<param name="bottom">10</param>
 				</include>
 			</control>
+			<control type="group">
+				<visible>Control.IsVisible(51) + Container.Content(musicvideos)</visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+					<param name="bottom">10</param>
+				</include>
+			</control>
 		</control>
 
-<!-- 		<control type="group">
-			<visible>Control.IsVisible(51)</visible>
-			<include content="AnimationSlideBottomWindow">
-				<param name="slide">220</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="bottom">10</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(videoplaylist)" content="MediaFlagsVideos8">
-				<param name="bottom">10</param>
-			</include>
-			<include condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)" content="MediaFlagsAudio">
-				<param name="bottom">10</param>
-			</include>
-		</control> -->
+		<!-- Pop-Up Video Player Group -->
+		<control type="group">
+			<visible>Control.IsVisible(51) + !String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+			<include>AnimationVideoPreviewPopup400</include>
+			<!-- Position Moved Further Left -->
+			<right>190</right>
+			<top>135</top>
+			<width>700</width>
+			<height>800</height>
+			<!-- Video Player -->
+			<control type="group">
+				<width>700</width>
+				<height>394</height>
+				<control type="image">
+					<texture>colors/black.png</texture>
+				</control>
+				<control type="videowindow">
+					<colordiffuse>FFA0A0A0</colordiffuse>
+				</control>
+				<control type="image">
+					<bordersize>-15</bordersize>
+					<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+				</control>
+			</control>
+			<!-- Info Panel for Video -->
+			<control type="group">
+				<top>410</top>
+				<!-- Added Background Texture For Text Legibility -->
+				<control type="image">
+					<width>700</width>
+					<height>400</height>
+					<texture colordiffuse="bb2a2a2a">colors/black.png</texture>
+				</control>
+				<!-- Title -->
+				<control type="label">
+					<left>20</left>
+					<width>660</width>
+					<height>90</height>
+					<font>Font28_Bold</font>
+					<textcolor>ff00aaff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[ListItem.Title]</label>
+					<scroll>true</scroll>
+				</control>
+				<!-- Top Separator -->
+				<control type="image">
+					<top>90</top>
+					<left>20</left>
+					<width>660</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+				<!-- Plot Textbox -->
+				<control type="textbox">
+					<top>100</top>
+					<left>20</left>
+					<width>660</width>
+					<height>280</height>
+					<font>Font28_Reg</font>
+					<textcolor>ffcccccc</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>justify</align>
+					<label>$INFO[ListItem.Plot]</label>
+					<animation effect="scroll" time="20000" delay="5000" end="100%" condition="true" loop="true" reversible="false">Conditional</animation>
+				</control>
+				<!-- Bottom Separator -->
+				<control type="image">
+					<top>390</top>
+					<left>20</left>
+					<width>660</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+			</control>
+		</control>
 	</include>
 </includes>

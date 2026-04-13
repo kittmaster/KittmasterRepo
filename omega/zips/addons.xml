@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.video.themoviedb.helper" version="6.11.5" name="TMDb Helper" provider-name="jurialmunkey">
+<addons><addon id="plugin.video.themoviedb.helper" version="6.15.2" name="TMDb Helper" provider-name="jurialmunkey">
 <requires>
   <import addon="xbmc.python" version="3.0.1" />
   <import addon="script.module.requests" version="2.9.1" />
   <import addon="script.module.pil" version="1.1.7" />
   <import addon="script.module.addon.signals" version="0.0.6" />
-  <import addon="script.module.jurialmunkey" version="0.2.29" />
+  <import addon="script.module.jurialmunkey" version="0.2.31" />
   <import addon="script.module.infotagger" version="0.0.5" />
   <import addon="script.module.qrcode" version="6.1.0" />
 </requires>
@@ -22,10 +22,12 @@
   <summary lang="zh_CN">TMDb 助手</summary>
   <description lang="de_DE">TMDb Helper liefert Details über Filme, Fernsehsendungen und Schauspieler aus TMDb. Benutzer können auf eine Vielzahl von Listen aus TMDb TVDb MDbList und Trakt zugreifen.</description>
   <description lang="en_GB">TMDb Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb TVDb MDbList and Trakt.</description>
+  <description lang="pl_PL">TMDb Helper dostarcza szczegółowych informacji o filmach, serialach i aktorach z serwisu TMDb. Użytkownicy mają dostęp do szeregu list z serwisów TMDb, TVDb, MDbList i Trakt.</description>
   <description lang="sv_SE">TMDb Helper tillhandahåller information om filmer, tv-serier och skådespelare från TMDb. Användare kan få tillgång till en mängd olika listor från TMDb, TVDb, MDbList och Trakt.</description>
   <description lang="zh_CN">TMDb 助手从 TMDb（影视数据库） 获取电影、电视剧及演员的详细信息。用户可访问来自 TMDb、TVDb、MDbList 和 Trakt 的各类影视列表。</description>
   <disclaimer lang="de_DE">Daten bereitgestellt von TMDb TVDb MDbList OMDb FanartTV und Trakt. Einige der Informationen werden von TheTVDB.com bereitgestellt. Bitte erwäge sie zu unterstützen. https://thetvdb.com/subscribe</disclaimer>
   <disclaimer lang="en_GB">Data provided by TMDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com. Please consider supporting them. https://thetvdb.com/subscribe</disclaimer>
+  <disclaimer lang="pl_PL">Dane dostarczane przez TMDb TVDb MDbList OMDb FanartTV i Trakt. Niektóre informacje pochodzą z serwisu TheTVDB.com. Prosimy o rozważenie wsparcia tych serwisów. https://thetvdb.com/subscribe</disclaimer>
   <disclaimer lang="sv_SE">Data tillhandahållen av TMDb TVDb MDbList OMDb FanartTV och Trakt. En del av informationen tillhandahålls av TheTVDB.com. Stöd dem gärna. https://thetvdb.com/subscribe</disclaimer>
   <disclaimer lang="zh_CN">数据由 TMDb、TVDb、MDbList、OMDb、FanartTV 和 Trakt 提供。部分信息由 TheTVDB.com 提供，建议您支持他们。订阅链接：https://thetvdb.com/subscribe</disclaimer>
   <license>GPL-3.0-or-later</license>
@@ -34,6 +36,7 @@
   <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>
+    <clearlogo>clearlogo.png</clearlogo>
     <screenshot>resources/screenshot-01.jpg</screenshot>
     <screenshot>resources/screenshot-02.jpg</screenshot>
   </assets>
@@ -63,6 +66,48 @@
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="resource.images.moviegenreicons.filmstrip-hd.bw" name="Movie Genre Icons - Filmstrip HD - BW" version="1.0.1" provider-name="bsoriano, Mr. V, Kittmaster">
+	<extension point="kodi.resource.images" compile="true" type="moviegenreicons" />
+	<requires>
+		<import addon="kodi.resource" version="1.0.0" />
+	</requires>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Filmstrip black and white movie genre icons in high resolution</summary>
+		<description lang="en">Filmstrip black and white movie genre icons created by bsoriano. Template by Mr. V, based on the original concept by frodo18.</description>
+		<platform>all</platform>
+		<license>Creative Commons Attribution 3.0</license>
+	</extension>
+</addon><addon id="resource.images.moviegenreicons.filmstrip-hd.colour" name="Movie Genre Icons - Filmstrip HD - coloured" version="1.0.1" provider-name="bsoriano, Mr. V, Kittmaster">
+	<extension point="kodi.resource.images" compile="true" type="moviegenreicons" />
+	<requires>
+		<import addon="kodi.resource" version="1.0.0" />
+	</requires>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Filmstrip coloured movie genre icons in high resolution</summary>
+		<description lang="en">Filmstrip colored movie genre icons created by bsoriano. Template by Mr. V, based on the original concept by frodo18.</description>
+		<platform>all</platform>
+		<license>Creative Commons Attribution 3.0</license>
+	</extension>
+</addon><addon id="resource.images.skin.madnox" version="1.0.0" name="Madnox Image Resources" provider-name="Kittmaster">
+    <requires>
+        
+        <import addon="kodi.resource" version="1.0.0" />
+    </requires>
+    
+    <extension point="kodi.resource.images" compile="false" />
+    
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_gb">Image resources and extras for the Madnox skin</summary>
+        <description lang="en_gb">This addon contains the extra backgrounds, cdart, icons, and genres required by the Madnox skin. It has been separated to optimize the main skin installation size.</description>
+        <platform>all</platform>
+        <license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+        <forum>https://forum.kodi.tv/forumdisplay.php?fid=314</forum>
+        <source>https://github.com/kittmaster/KittmasterRepo</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon><addon id="script.artwork.dump" name="Artwork Dump" version="0.4.1" provider-name="rmrector">
@@ -108,7 +153,24 @@ v0.4.0 (2025-03-23)
 			<icon>icon.png</icon>
 		</assets>
 	</extension>
-</addon><addon id="script.module.jurialmunkey" name="jurialmunkey common" provider-name="jurialmunkey" version="0.2.29">
+</addon><addon id="script.module.infotagger" name="InfoTagger" provider-name="jurialmunkey" version="0.0.8">
+  <requires>
+    <import addon="xbmc.python" version="3.0.1" />
+  </requires>
+  <extension point="xbmc.python.module" library="resources/modules" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Python wrapper for setInfo on Nexus InfoTags</summary>
+    <description lang="en_GB">Python wrapper for setInfo on Nexus InfoTags</description>
+    <license>GPL-3.0-or-later</license>
+    <website>https://github.com/jurialmunkey/script.module.infotagger</website>
+    <source>https://github.com/jurialmunkey/script.module.infotagger</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+
+</addon><addon id="script.module.jurialmunkey" name="jurialmunkey common" provider-name="jurialmunkey" version="0.2.33">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.9.1" />
@@ -117,6 +179,7 @@ v0.4.0 (2025-03-23)
   <extension point="xbmc.python.module" library="resources/modules" />
   <extension point="xbmc.addon.metadata">
     <description lang="en_GB">Common code required by TMDbHelper and other related jurialmunkey add-ons</description>
+    <description lang="zh_CN">TMDb 助手及其他相关 jurialmunkey 插件所需的通用代码</description>
     <license>GPL-3.0-or-later</license>
     <website>https://github.com/jurialmunkey/script.module.jurialmunkey</website>
     <assets>
@@ -134,7 +197,115 @@ v0.4.0 (2025-03-23)
       <icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="service.tvtunes" name="TVTunes" version="2.1.2" provider-name="latts">
+</addon><addon id="script.preshowexperience" name="PreShow Experience" version="0.3.2.1" provider-name="PreShowExperience">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.beautifulsoup4" version="4.9.3" />
+        <import addon="script.module.requests" version="2.22.0.1" />
+    </requires>
+    <extension point="xbmc.python.script" library="addon.py">
+        <provides>executable</provides>
+    </extension>
+	<extension point="kodi.context.item">
+	  <menu id="kodi.core.main">
+		<item library="context.py">
+		  <label>32000</label>
+		  <visible>true</visible>
+		</item>
+	  </menu>
+	</extension>
+  <extension point="xbmc.service" library="resources/lib/service.py" start="login" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Movie theater preshow experience</summary>
+        <description lang="en">Create a completely customizable movie preshow containing trailers, trivia, video bumpers or slideshows for your home theater.</description>
+        <platform>all</platform>
+        <forum>https://preshowexperience.com/forums/</forum>
+        <website>https://preshowexperience.com/</website>
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+            <screenshot>resources/media/screenshot1.jpg</screenshot>
+            <screenshot>resources/media/screenshot2.jpg</screenshot>
+            <screenshot>resources/media/screenshot3.jpg</screenshot>
+        </assets>
+        <news>Added TMDB language options</news>
+    </extension>
+</addon><addon id="script.skin.madnox" name="Madnox Skin Helper" version="1.0.1" provider-name="Kittmaster">
+
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.addon.metadata">
+
+        
+        <summary lang="en_gb">Helper script for the Madnox skin providing extended logic and features.</summary>
+        <description lang="en_gb">Provides background logic, script routing, and enhanced functionality required by the Madnox skin.</description>
+
+        
+        <summary lang="en_us">Helper script for the Madnox skin providing extended logic and features.</summary>
+        <description lang="en_us">Provides background logic, script routing, and enhanced functionality required by the Madnox skin.</description>
+
+        
+        <summary lang="ar_sa">برنامج مساعد لواجهة Madnox يوفر وظائف إضافية للجلد.</summary>
+        <description lang="ar_sa">يوفر منطقًا ووظائف خلفية ضرورية لعمل واجهة Madnox بشكل كامل.</description>
+
+        
+        <summary lang="de_de">Hilfsskript für den Madnox‑Skin, das zusätzliche Logik und Funktionen bereitstellt.</summary>
+        <description lang="de_de">Stellt Hintergrundlogik, Skriptrouting und erweiterte Funktionen für den Madnox‑Skin bereit.</description>
+
+        
+        <summary lang="es_es">Script auxiliar para el skin Madnox que ofrece funciones y lógica adicionales.</summary>
+        <description lang="es_es">Proporciona lógica interna, enrutamiento de scripts y funciones avanzadas necesarias para el skin Madnox.</description>
+
+        
+        <summary lang="fr_fr">Script d’assistance pour le skin Madnox, ajoutant des fonctions et une logique étendue.</summary>
+        <description lang="fr_fr">Fournit la logique interne, le routage des scripts et les fonctionnalités avancées nécessaires au skin Madnox.</description>
+
+        
+        <summary lang="no_no">Hjelpeskript for Madnox‑skallet som gir ekstra funksjoner og logikk.</summary>
+        <description lang="no_no">Gir bakgrunnslogikk, skriptruting og utvidede funksjoner som Madnox‑skallet krever.</description>
+
+        
+        <summary lang="pt_br">Script auxiliar para o tema Madnox, oferecendo lógica e recursos adicionais.</summary>
+        <description lang="pt_br">Fornece lógica interna, roteamento de scripts e funcionalidades avançadas necessárias para o tema Madnox.</description>
+
+        
+        <summary lang="sv_se">Hjälpskript för Madnox‑skalet som tillhandahåller extra funktioner och logik.</summary>
+        <description lang="sv_se">Ger bakgrundslogik, skriptrouting och avancerade funktioner som behövs för Madnox‑skalet.</description>
+
+        
+        <summary lang="uk_ua">Допоміжний скрипт для оформлення Madnox, що забезпечує додаткову логіку та функції.</summary>
+        <description lang="uk_ua">Надає внутрішню логіку, маршрутизацію скриптів та розширені можливості, необхідні для оформлення Madnox.</description>
+
+        
+        <license>GPL-2.0-or-later</license>
+        <source>https://github.com/kittmaster/KittmasterRepo/madnox-helper</source>
+        <website>https://github.com/kittmaster/KittmasterRepo</website>
+
+        <platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+    </extension>
+</addon><addon id="script.wikipedia" version="0.0.8" name="Wikipedia" provider-name="jurialmunkey">
+<requires>
+  <import addon="xbmc.python" version="3.0.0" />
+  <import addon="script.module.beautifulsoup4" version="4.9.3" />
+  <import addon="script.module.jurialmunkey" version="0.1.1" />
+</requires>
+<extension point="xbmc.python.script" library="resources/script.py" />
+<extension point="xbmc.addon.metadata">
+  <summary lang="en_GB">Access Wikipedia via Kodi</summary>
+  <description lang="en_GB">Access Wikipedia via Kodi</description>
+  <license>GPL-3.0-or-later</license>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+  </assets>
+</extension>
+</addon><addon id="service.tvtunes" name="TVTunes" version="2.1.4" provider-name="latts, mikeSiLVO">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="3.17.0+matrix.2" />
@@ -188,9 +359,9 @@ v0.4.0 (2025-03-23)
 		<description lang="sv">Detta skript hjälper dig att hitta teman till ditt tv-seriebibliotek från www.televisiontunes.com som sparas i theme.mp3 filer i varje tv-seriemapp som sedan spelas när du öppnar tv-seriemappen (ditt skal måste vara kompatibelt för detta)</description>
 		<language />
 		<platform>all</platform>
-		<news>[B][COLOR=FF2CD13B]v2.1.2[/COLOR][/B] - Release date October 31, 2025[CR]
+		<news>[B][COLOR=FF2CD13B]v2.1.4[/COLOR][/B] - Release date March 1, 2026[CR]
 [B][COLOR=FFFFA500]FIX[/COLOR][/B]
-• I fixed a problem with the random song not playing for the artist while browsing music.
+• Video theme bug fixed by mikeSiLVO.
 		</news>
 		<license>See LICENSE.txt</license>
 		<forum>https://forum.kodi.tv/showthread.php?tid=347428</forum>
@@ -204,43 +375,51 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.02.06" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.10.01" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.embuary.helper" version="2.0.8" />
-		<import addon="script.embuary.info" version="2.0.8" />
+		<import addon="script.skin.madnox" version="1.0.1" />
+		<import addon="resource.images.skin.madnox" version="1.0.0" />		
 		<import addon="script.skinshortcuts" version="1.0.17" />
-		<import addon="script.image.resource.select" version="2.0.4" />		
-		<import addon="script.cu.lrclyrics" version="6.6.9" />
-		<import addon="script.trakt" version="3.6.1" />
-		<import addon="service.upnext" version="1.1.9+matrix.1" />
-		<import addon="script.favourites" version="8.1.2" />
-		<import addon="script.artistslideshow" version="3.3.8" />
-		<import addon="script.rss.editor" version="4.0.2" />
-		<import addon="plugin.library.node.editor" version="2.0.5" />
-		<import addon="resource.images.weathericons.3d-coloured" version="0.0.6" />
-		<import addon="resource.images.weatherfanart.multi" version="0.0.6" />
-		<import addon="resource.images.studios.white" version="0.0.30" />
-		<import addon="resource.images.studios.coloured" version="0.0.23" />	
-		<import addon="resource.images.recordlabels.white" version="0.0.7" />
-		<import addon="resource.images.languageflags.rounded" version="0.0.2" />
-		<import addon="resource.images.musicgenreicons.text" version="0.1.0" />
-		<import addon="resource.images.moviegenreicons.filmstrip-hd.colour" version="0.0.2" />
-		<import addon="resource.images.moviegenreicons.filmstrip-hd.bw" version="0.0.2" />
-		<import addon="resource.images.moviecountryicons.flags" version="0.0.1" />
+		<import addon="plugin.video.themoviedb.helper" version="6.11.5" />
+		<import addon="script.image.resource.select" version="2.0.4" />
 		<import addon="script.skinvariables" version="2.1.14" />
-		
-		<import addon="plugin.video.themoviedb.helper" version="6.11.5" />		
-		<import addon="script.artwork.dump" version="0.4.1" />
-		<import addon="service.tvtunes" version="2.1.2" />
+		<import addon="script.favourites" version="8.1.2" />
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">A feature rich and fully customizable skin</summary>
-		<description lang="en_GB">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
-		<disclaimer lang="en_GB">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
+		<summary lang="ar_sa">مظهر غني بالميزات وقابل للتخصيص بالكامل</summary>
+		<summary lang="de_de">Ein funktionsreiches und vollständig anpassbares Skin</summary>
+		<summary lang="en_gb">A feature rich and fully customizable skin</summary>
+		<summary lang="en_us">A feature rich and fully customizable skin</summary>
+		<summary lang="es_es">Una piel rica en funciones y totalmente personalizable</summary>
+		<summary lang="fr_fr">Un thème riche en fonctionnalités et entièrement personnalisable</summary>
+		<summary lang="no_no">Et funksjonsrikt og fullt tilpassbart skall</summary>
+		<summary lang="pt_br">Um tema rico em recursos e totalmente personalizável</summary>
+		<summary lang="sv_se">Ett funktionsrikt och helt anpassningsbart skal</summary>
+		<summary lang="uk_ua">Шкіра з багатими функціями та повним налаштуванням</summary>
+		<description lang="ar_sa">Madnox يتميز بجمال بصري وخيارات تخصيص متعددة. هناك العديد من طرق العرض والخيارات لعرض الوسائط بالطريقة التي تريدها. جميع طرق العرض قابلة للتخصيص بالكامل. يمكنك تغيير المظهر باستخدام أنماط وسمات وخيارات مختلفة.</description>
+		<description lang="de_de">Madnox steht für visuelle Attraktivität und Anpassbarkeit. Es gibt viele Ansichten und Optionen, um Ihre Medien ganz nach Wunsch zu präsentieren. Alle Ansichten sind vollständig anpassbar. Sie können das Erscheinungsbild mit verschiedenen Stilen, Themen und Optionen verändern.</description>
+		<description lang="en_gb">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
+		<description lang="en_us">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
+		<description lang="es_es">Madnox destaca por su atractivo visual y personalización. Hay muchas vistas y opciones para mostrar tu contenido como prefieras. Todas las vistas son completamente personalizables. Puedes cambiar el aspecto con diferentes estilos, temas y opciones.</description>
+		<description lang="fr_fr">Madnox se distingue par son esthétique et sa personnalisation. De nombreuses vues et options permettent de présenter vos médias comme vous le souhaitez. Toutes les vues sont entièrement personnalisables. Vous pouvez modifier l’apparence avec différents styles, thèmes et options.</description>
+		<description lang="no_no">Madnox står for visuell appell og tilpasning. Det finnes mange visninger og alternativer for å presentere mediene dine slik du ønsker. Alle visninger kan tilpasses fullt ut. Du kan endre utseendet med ulike stiler, temaer og alternativer.</description>
+		<description lang="pt_br">Madnox é sinônimo de visual atrativo e personalização. Há muitas visualizações e opções para apresentar sua mídia como quiser. Todas as visualizações são totalmente personalizáveis. Você pode alterar o visual com diferentes estilos, temas e opções.</description>
+		<description lang="sv_se">Madnox står för ögongodis och anpassning. Det finns många olika vyer och alternativ för att visa ditt innehåll på det sätt du vill. Alla vyer är helt anpassningsbara. Du kan ändra utseendet med olika stilar, teman och alternativ.</description>
+		<description lang="uk_ua">Madnox — це візуальна привабливість і налаштування. Існує багато варіантів перегляду та опцій для представлення медіа так, як вам подобається. Усі перегляди повністю налаштовуються. Ви можете змінити вигляд за допомогою стилів, тем і параметрів.</description>
+		<disclaimer lang="ar_sa">Madnox هو خليفة Aeon Madnox من Mike_Doc وschimi2k وMeowMoo. إنه مظهر يعتمد على تصميم Aeon من djh_ وAeon Nox 4 من BigNoid وphil65. شكر خاص لـ Mr. V. جميع الحقوق محفوظة لمصممي هذه المظاهر والتعديلات.</disclaimer>
+		<disclaimer lang="de_de">Madnox ist der Nachfolger von Aeon Madnox von Mike_Doc, schimi2k und MeowMoo. Es basiert auf dem Design von Aeon von djh_ und Aeon Nox 4 von BigNoid und phil65. Besonderer Dank an Mr. V. Alle Credits gehen an die Entwickler dieser Skins und Mods.</disclaimer>
+		<disclaimer lang="en_gb">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
+		<disclaimer lang="en_us">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
+		<disclaimer lang="es_es">Madnox es el sucesor de Aeon Madnox creado por Mike_Doc, schimi2k y MeowMoo. Es un skin basado en el diseño de Aeon de djh_ y Aeon Nox 4 de BigNoid y phil65. Agradecimientos especiales a Mr. V. Todos los créditos a los creadores de estos skins y modificaciones.</disclaimer>
+		<disclaimer lang="fr_fr">Madnox est le successeur d’Aeon Madnox par Mike_Doc, schimi2k et MeowMoo. Il s’inspire du design d’Aeon par djh_ et d’Aeon Nox 4 par BigNoid et phil65. Remerciements spéciaux à Mr. V. Tous les crédits vont aux créateurs de ces skins et mods.</disclaimer>
+		<disclaimer lang="no_no">Madnox er etterfølgeren til Aeon Madnox av Mike_Doc, schimi2k og MeowMoo. Skallet er basert på designet til Aeon av djh_ og Aeon Nox 4 av BigNoid og phil65. Spesiell takk til Mr. V. All ære til skaperne av disse skallene og modifikasjonene.</disclaimer>
+		<disclaimer lang="pt_br">Madnox é o sucessor do Aeon Madnox criado por Mike_Doc, schimi2k e MeowMoo. É um tema baseado no design do Aeon de djh_ e Aeon Nox 4 de BigNoid e phil65. Agradecimentos especiais ao Mr. V. Todos os créditos aos criadores desses temas e modificações.</disclaimer>
+		<disclaimer lang="sv_se">Madnox är efterföljaren till Aeon Madnox av Mike_Doc, schimi2k och MeowMoo. Det är ett skal baserat på designen av Aeon av djh_ och Aeon Nox 4 av BigNoid och phil65. Särskilt tack till Mr. V. All ära till skaparna av dessa skal och moddar.</disclaimer>
+		<disclaimer lang="uk_ua">Madnox — це наступник Aeon Madnox від Mike_Doc, schimi2k та MeowMoo. Це шкіра, заснована на дизайні Aeon від djh_ та Aeon Nox 4 від BigNoid і phil65. Особлива подяка Mr. V. Всі заслуги — авторам цих оформлень і модифікацій.</disclaimer>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>https://forum.kodi.tv/forumdisplay.php?fid=314</forum>
@@ -259,17 +438,79 @@ v0.4.0 (2025-03-23)
 			<screenshot>resources/screenshots/screenshot-08.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
-		</assets>		
+		</assets>
 		<news>
-            v.21.02.06
-            -Added ability to turn off Madnox startup logo inside admin furniture panel
-            -Turned off main menu forced icons settings (dev testing left active by mistake in script)
-            v.21.02.05
-            -Fixed widgets on main screen to use custom color picker
-            -Subtitle color parameters can now be adjusted within the skin using custom color picker
-            -Remove experimental replacement dev flag until next iteration
-            -Minor code cleanup and refactoring
-            v.21.02.04
+			v.21.10.01
+			** Front end **
+			-Display/Hide main context menu options
+			-1st run startup will set all the default skin values if not present, ensures all controls are initialized
+			-Widget QOL updates, left navigations updates main page as one would expect
+			-Music section completely rebuilt and refactored, better artwork rendering, layout, matches video/movie/tv layouts
+			-Refactored infodialogs to be compartmentalized for faster loading, expansion, future growth
+			-Added star ratings with color selection to the movie info videoinfo line
+			-Revamped Media Flags to cover all the user cases, should be a major improvement
+			-Wikipedia user color control to the backing overlay
+			-Favorites overhauled with new HUD and active resizing
+			-Increased widgets on home screen from 6 to 20
+			-Widgets now have two modes, Carousel (original operation) &amp; Grid mode (new)
+			-Multiple "mini" system widgets to select from include CPU, GPU, Memory and others.
+			-Music: Converted scaling for fanart from scale to keep (User feedback: elve)			
+			-Built new fallback process when blur is turned off with adjustable dimming
+			-Blur can be fanart driven with gaussian, mixed with color, or custom color picker with alpha selected
+			-Complete refactor of Movie/TV show sub dialog pages
+			-Added custom accent color control to VideoOSD (User feedback: crazyturk)			 
+			-Repaired skin shortcuts for "In-Progress" movies in widgets and ALL views
+			-Added "In-Progress" bar overlay to all views when viewed
+			-Custom color selection of "In-Progress" bar globally in all views			
+			-New native "jump to letter" built into Kodi decoupled from Embuary Helper
+			-Added icons to info metadata fields for movie/TV shows rows with disable
+			-Added Wikipedia addon feature in detailed views
+			-New skin initializer for missing startup settings installer on 1st run
+			-Added factory restore feature resetting to 1st run out of the box values
+			-Added auto trailer viewer on library hover Automatic trailer video preview with fanart fill selectable			
+			-Video codec format type selection for media flags selection as 4K or 2160p (User feedback: lynxstrike)
+			-Rebuilt cinema mode and enhanced usability to include user full features (bumpers, ratings, mpaa)
+			-Cinema mode diagnostics with verification of path and reconstruction capability to ensure smooth user experience
+			-Integrating PreShow Experience for advanced Cinema Mode, allows for simple and advanced cinema experience (WIP)			
+			-Reformatted and updated color media flags
+			-Synced/Updated/Created default greyscale flags assets to match color media flags
+			-Moved startup logo spinner down and off large logo
+			-Updated missing filmstrip genre image files for completeness
+			-Fixed views with broken 2 and 4 thumbs to use selected fanart, fully repaired
+			-Jump to letter: When in "numbers", # is replaced by actual number of movie. Example 300 &gt; 3 is showin in bar instead of #
+			-Poster is no longer the domanent image in views, if slider panel is selected like similar, it will display active hovered item until released
+
+			** Admin (Back end) **
+			-Conversion to TMDb Helper from Embuary helper completed
+			-Built missing code for blurring fanart images in all areas via TMDb helper
+			-Refactored Skin Shortcuts to remove Embuary Helper to TMDb helper link template constructors
+			-Custom Video Codec media flags override selector, removes skin hacking, resettable (WIP)
+			-Restructuring of media flags detection (WIP)
+			-Startup video intro controls: None, Skin built-in, Custom selectable with preview on hover
+			-Fixed media flags admin selector to use colored flags where screen would reset and blank out, fully repaired
+			-Fixed shifting color swatches shifting and showing placeholder text when disable is active
+			-Created "in-process" control color selection and enable control
+			-Controls for metadata in movies and tv shows to enable in-row icons
+			-Reset all skin options to default control
+
+			** General All **
+			-2/16/2026 Madnox now has its own dedicated skin helper to consolidate all scripts and satisfy Kodi's requirements of free running scripts
+            		-2/16/2026 1st run will write all required settings (version controlled) for added dev work without prompting preventing odd behavior until restart &amp; continued use to initialize missing settings
+			-Multiple issues resolved (syntax, spelling, missing calls)
+			-Removed startup script causing forced icon view overriding all user selection (Dev leftover)
+			-Comprehensive removal of as many hardcoded strings into localization and all files fully translated
+			-Startup bugs and errors resolved
+			-Intro startup videos added on Kodi start.
+
+			v.21.02.06
+			-Added ability to turn off Madnox startup logo inside admin furniture panel
+			-Turned off main menu forced icons settings (dev testing left active by mistake in script)
+			v.21.02.05
+			-Fixed widgets on main screen to use custom color picker
+			-Subtitle color parameters can now be adjusted within the skin using custom color picker
+			-Remove experimental replacement dev flag until next iteration
+			-Minor code cleanup and refactoring
+			v.21.02.04
 			-Fixed navigation corrections to TMDb Helper page and Movie/TV Show buttons/panels.
 			v.21.02.03
 			-Removed duplicate language strings

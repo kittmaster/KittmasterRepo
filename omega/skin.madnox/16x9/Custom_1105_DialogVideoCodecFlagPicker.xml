@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<window type="dialog" id="1105">
+	<defaultcontrol always="true">900</defaultcontrol>
+	<onload>SetProperty(BinCategory,UHD)</onload>
+	<onload>SetProperty(FlagEditMode,4K,Home)</onload>
+	<controls>
+		<control type="group">
+			<include content="DialogBackground">
+				<description>Window Header Label</description>
+				<param name="width" value="1253" />
+				<param name="height" value="940" />
+				<param name="id">1</param>
+				<param name="diffusetexture">diffuse/rounded10-877x470.png</param>
+			</include>
+			<control type="label">
+				<top>30</top>
+				<left>25</left>
+				<width>1200</width>
+				<height>50</height>
+				<align>left</align>
+				<label>$LOCALIZE[636] [LOWERCASE]$LOCALIZE[157] $LOCALIZE[31448] $LOCALIZE[31441][/LOWERCASE]</label>
+				<include>SettingsLabel</include>
+			</control>
+			<control type="image">
+				<left>1052</left>
+				<top>14</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+			<control type="label">
+				<top>86</top>
+				<left>85</left>
+				<width>100</width>
+				<height>60</height>
+				<aligny>center</aligny>
+				<label>[COLOR dd00ff00]$LOCALIZE[424]:[/COLOR]</label>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+			</control>
+			<control type="label">
+				<top>92</top>
+				<left>1050</left>
+				<width>550</width>
+				<height>50</height>
+				<align>left</align>
+				<label>$LOCALIZE[31454]: $VAR[Var_1105_DisplayLabel]</label>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<font>Font25_Cond</font>
+			</control>
+			<!-- Top Bar -->
+			<control type="grouplist" id="900">
+				<left>190</left>
+				<top>88</top>
+				<width>1200</width>
+				<height>60</height>
+				<orientation>horizontal</orientation>
+				<itemgap>1</itemgap>
+				<onleft>900</onleft>
+				<onright>900</onright>
+				<ondown>9</ondown>
+				<control type="togglebutton" id="901">
+					<width>170</width>
+					<height>60</height>
+					<include>DialogKeyboardToggleButton</include>
+					<label>4K / UHD</label>
+					<onclick>SetProperty(FlagEditMode,4K,Home)</onclick>
+					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),4K)</selected>
+				</control>
+				<control type="togglebutton" id="902">
+					<width>170</width>
+					<height>60</height>
+					<include>DialogKeyboardToggleButton</include>
+					<label>WebDL</label>
+					<onclick>SetProperty(FlagEditMode,WebDL,Home)</onclick>
+					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)</selected>
+				</control>
+				<control type="togglebutton" id="903">
+					<width>170</width>
+					<height>60</height>
+					<include>DialogKeyboardToggleButton</include>
+					<label>1080p</label>
+					<onclick>SetProperty(FlagEditMode,1080p,Home)</onclick>
+					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),1080p)</selected>
+				</control>
+				<control type="togglebutton" id="905">
+					<width>170</width>
+					<height>60</height>
+					<include>DialogKeyboardToggleButton</include>
+					<label>720p</label>
+					<onclick>SetProperty(FlagEditMode,720p,Home)</onclick>
+					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),720p)</selected>
+				</control>
+				<control type="togglebutton" id="904">
+					<width>170</width>
+					<height>60</height>
+					<include>DialogKeyboardToggleButton</include>
+					<label>DVD / SD</label>
+					<onclick>SetProperty(FlagEditMode,DVD,Home)</onclick>
+					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),DVD)</selected>
+				</control>
+			</control>
+			<control type="image">
+				<top>145</top>
+				<left>20</left>
+				<right>20</right>
+				<height>4</height>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-horizontal.png</texture>
+			</control>
+			<!-- Left Categories -->
+			<control type="group" id="9">
+				<control type="label">
+					<left>20</left>
+					<top>155</top>
+					<width>350</width>
+					<height>40</height>
+					<label>$LOCALIZE[31025]</label>
+					<align>center</align>
+					<font>Font30_Cond_Bold</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				</control>
+				<control type="button" id="91">
+					<left>20</left>
+					<top>215</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>UHD / 4K</label>
+					<onfocus>SetProperty(BinCategory,UHD)</onfocus>
+					<selected>String.IsEqual(Window.Property(BinCategory),UHD)</selected>
+					<onup>900</onup>
+					<ondown>92</ondown>
+					<onright>50</onright>
+				</control>
+				<control type="button" id="92">
+					<left>20</left>
+					<top>290</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>HEVC / H.265</label>
+					<onfocus>SetProperty(BinCategory,HEVC)</onfocus>
+					<selected>String.IsEqual(Window.Property(BinCategory),HEVC)</selected>
+					<onup>91</onup>
+					<ondown>93</ondown>
+					<onright>51</onright>
+				</control>
+				<control type="button" id="93">
+					<left>20</left>
+					<top>365</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>AVC / H.264</label>
+					<onfocus>SetProperty(BinCategory,AVC)</onfocus>
+					<selected>String.IsEqual(Window.Property(BinCategory),AVC)</selected>
+					<onup>92</onup>
+					<ondown>94</ondown>
+					<onright>52</onright>
+				</control>
+				<control type="button" id="94">
+					<left>20</left>
+					<top>440</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>DivX / XviD</label>
+					<onfocus>SetProperty(BinCategory,DIVX)</onfocus>
+					<selected>String.IsEqual(Window.Property(BinCategory),DIVX)</selected>
+					<onup>93</onup>
+					<ondown>95</ondown>
+					<onright>53</onright>
+				</control>
+				<control type="button" id="95">
+					<left>20</left>
+					<top>515</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>MPEG / $LOCALIZE[31456]</label>
+					<onfocus>SetProperty(BinCategory,MPEG)</onfocus>
+					<selected>String.IsEqual(Window.Property(BinCategory),MPEG)</selected>
+					<onup>94</onup>
+					<ondown>96</ondown>
+					<onright>54</onright>
+				</control>
+				<control type="button" id="96">
+					<left>20</left>
+					<top>590</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>WMV / VC-1</label>
+					<onfocus>SetProperty(BinCategory,WMV)</onfocus>
+					<selected>String.IsEqual(Window.Property(BinCategory),WMV)</selected>
+					<onup>95</onup>
+					<ondown>97</ondown>
+					<onright>55</onright>
+				</control>
+				<control type="button" id="97">
+					<left>20</left>
+					<top>665</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[31455] / $LOCALIZE[29921]</label>
+					<onfocus>SetProperty(BinCategory,OTHER)</onfocus>
+					<selected>String.IsEqual(Window.Property(BinCategory),OTHER)</selected>31455
+					<onup>96</onup>
+					<ondown>99</ondown>
+					<onright>56</onright>
+				</control>
+				<control type="button" id="99">
+					<left>20</left>
+					<top>740</top>
+					<width>350</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[222]</label>
+					<onclick>close</onclick>
+					<onup>97</onup>
+					<ondown>91</ondown>
+					<!-- Manual Wraparound -->
+					<onright>801</onright>
+				</control>
+			</control>
+			<control type="image">
+				<top>160</top>
+				<left>370</left>
+				<bottom>50</bottom>
+				<width>4</width>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+			</control>
+			<!-- Center Panels -->
+			<control type="group" id="250">
+				<left>391</left>
+				<top>160</top>
+				<width>550</width>
+				<height>640</height>
+				<!-- Bin: UHD / 4K -->
+				<control type="panel" id="50">
+					<visible>String.IsEqual(Window.Property(BinCategory),UHD)</visible>
+					<width>550</width>
+					<height>640</height>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9</onleft>
+					<onright>801</onright>
+					<onup>900</onup>
+					<include>ContainerScrollTime</include>
+					<itemlayout height="80" width="100">
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="100">
+						<control type="group">
+							<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="115" center="auto">Focus</animation>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>4k.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],4k.png)</onclick>
+						</item>
+						<item>
+							<label>4k2.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],4k2.png)</onclick>
+						</item>
+						<item>
+							<label>4kuhd.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],4kuhd.png)</onclick>
+						</item>
+						<item>
+							<label>bluray_webdl.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],bluray_webdl.png)</onclick>
+						</item>
+					</content>
+				</control>
+				<!-- Bin: HEVC -->
+				<control type="panel" id="51">
+					<visible>String.IsEqual(Window.Property(BinCategory),HEVC)</visible>
+					<width>550</width>
+					<height>640</height>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9</onleft>
+					<onright>801</onright>
+					<onup>900</onup>
+					<include>ContainerScrollTime</include>
+					<itemlayout height="80" width="100">
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="100">
+						<control type="group">
+							<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="115" center="auto">Focus</animation>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>hevc.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],hevc.png)</onclick>
+						</item>
+						<item>
+							<label>h265.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],h265.png)</onclick>
+						</item>
+						<item>
+							<label>hev1.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],hev1.png)</onclick>
+						</item>
+					</content>
+				</control>
+				<!-- Bin: AVC / H264 -->
+				<control type="panel" id="52">
+					<visible>String.IsEqual(Window.Property(BinCategory),AVC)</visible>
+					<width>550</width>
+					<height>640</height>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9</onleft>
+					<onright>801</onright>
+					<onup>900</onup>
+					<include>ContainerScrollTime</include>
+					<itemlayout height="80" width="100">
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="100">
+						<control type="group">
+							<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="115" center="auto">Focus</animation>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>avc.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],avc.png)</onclick>
+						</item>
+						<item>
+							<label>avc1.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],avc1.png)</onclick>
+						</item>
+						<item>
+							<label>avchd.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],avchd.png)</onclick>
+						</item>
+						<item>
+							<label>h264.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],h264.png)</onclick>
+						</item>
+						<item>
+							<label>x264.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],x264.png)</onclick>
+						</item>
+					</content>
+				</control>
+				<!-- Bin: DivX / XviD -->
+				<control type="panel" id="53">
+					<visible>String.IsEqual(Window.Property(BinCategory),DIVX)</visible>
+					<width>550</width>
+					<height>640</height>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9</onleft>
+					<onright>801</onright>
+					<onup>900</onup>
+					<include>ContainerScrollTime</include>
+					<itemlayout height="80" width="100">
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="100">
+						<control type="group">
+							<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="115" center="auto">Focus</animation>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>divx.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],divx.png)</onclick>
+						</item>
+						<item>
+							<label>divx 4.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],divx 4.png)</onclick>
+						</item>
+						<item>
+							<label>div2.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],div2.png)</onclick>
+						</item>
+						<item>
+							<label>div3.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],div3.png)</onclick>
+						</item>
+						<item>
+							<label>div4.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],div4.png)</onclick>
+						</item>
+						<item>
+							<label>dx50.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],dx50.png)</onclick>
+						</item>
+						<item>
+							<label>xvid.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],xvid.png)</onclick>
+						</item>
+						<item>
+							<label>xvid2.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],xvid2.png)</onclick>
+						</item>
+					</content>
+				</control>
+				<!-- Bin: MPEG / Legacy -->
+				<control type="panel" id="54">
+					<visible>String.IsEqual(Window.Property(BinCategory),MPEG)</visible>
+					<width>550</width>
+					<height>640</height>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9</onleft>
+					<onright>801</onright>
+					<onup>900</onup>
+					<include>ContainerScrollTime</include>
+					<itemlayout height="80" width="100">
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="100">
+						<control type="group">
+							<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="115" center="auto">Focus</animation>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>mpeg1video.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mpeg1video.png)</onclick>
+						</item>
+						<item>
+							<label>mpeg2.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mpeg2.png)</onclick>
+						</item>
+						<item>
+							<label>mpeg2video.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mpeg2video.png)</onclick>
+						</item>
+						<item>
+							<label>mpeg4.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mpeg4.png)</onclick>
+						</item>
+						<item>
+							<label>mpg4.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mpg4.png)</onclick>
+						</item>
+						<item>
+							<label>mpeg-4 visual.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mpeg-4 visual.png)</onclick>
+						</item>
+						<item>
+							<label>msmpeg4v1.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],msmpeg4v1.png)</onclick>
+						</item>
+						<item>
+							<label>msmpeg4v2.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],msmpeg4v2.png)</onclick>
+						</item>
+						<item>
+							<label>mp4v.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mp4v.png)</onclick>
+						</item>
+						<item>
+							<label>mp42.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mp42.png)</onclick>
+						</item>
+						<item>
+							<label>mp43.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mp43.png)</onclick>
+						</item>
+						<item>
+							<label>dvd.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],dvd.png)</onclick>
+						</item>
+						<item>
+							<label>sdtv.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],sdtv.png)</onclick>
+						</item>
+						<item>
+							<label>hdtv.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],hdtv.png)</onclick>
+						</item>
+					</content>
+				</control>
+				<control type="panel" id="55">
+					<visible>String.IsEqual(Window.Property(BinCategory),WMV)</visible>
+					<width>550</width>
+					<height>640</height>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9</onleft>
+					<onright>801</onright>
+					<onup>900</onup>
+					<include>ContainerScrollTime</include>
+					<itemlayout height="80" width="100">
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="100">
+						<control type="group">
+							<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="115" center="auto">Focus</animation>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>wmv.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wmv.png)</onclick>
+						</item>
+						<item>
+							<label>wmv2.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wmv2.png)</onclick>
+						</item>
+						<item>
+							<label>wmv3.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wmv3.png)</onclick>
+						</item>
+						<item>
+							<label>wmvhd.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wmvhd.png)</onclick>
+						</item>
+						<item>
+							<label>vc1.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],vc1.png)</onclick>
+						</item>
+						<item>
+							<label>vc-1.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],vc-1.png)</onclick>
+						</item>
+						<item>
+							<label>wvc1.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wvc1.png)</onclick>
+						</item>
+						<!-- <item>
+                            <label>wma.png</label>
+                            <onclick>Skin.SetString($VAR[Var_1105_TargetVar],wma.png)</onclick>
+                        </item> -->
+						<item>
+							<label>wmahd.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wmahd.png)</onclick>
+						</item>
+						<item>
+							<label>wmapro.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wmapro.png)</onclick>
+						</item>
+						<item>
+							<label>wmav2.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],wmav2.png)</onclick>
+						</item>
+						<item>
+							<label>asf.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],asf.png)</onclick>
+						</item>
+					</content>
+				</control>
+				<control type="panel" id="56">
+					<visible>String.IsEqual(Window.Property(BinCategory),OTHER)</visible>
+					<width>550</width>
+					<height>640</height>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9</onleft>
+					<onright>801</onright>
+					<onup>900</onup>
+					<include>ContainerScrollTime</include>
+					<itemlayout height="80" width="100">
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+						<control type="image">
+							<width>90</width>
+							<height>70</height>
+							<aspectratio>keep</aspectratio>
+							<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+							<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="100">
+						<control type="group">
+							<animation effect="zoom" time="200" tween="sine" easing="inout" start="100" end="115" center="auto">Focus</animation>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/colored/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+							<control type="image">
+								<width>90</width>
+								<height>70</height>
+								<aspectratio>keep</aspectratio>
+								<texture>flags/default/videocodec/$INFO[ListItem.Label]</texture>
+								<bordertexture border="5">colors/white33.png</bordertexture>
+								<bordersize>5</bordersize>
+								<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>avi.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],avi.png)</onclick>
+						</item>
+						<item>
+							<label>mkv.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mkv.png)</onclick>
+						</item>
+						<item>
+							<label>iso.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],iso.png)</onclick>
+						</item>
+						<item>
+							<label>mov.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mov.png)</onclick>
+						</item>
+						<item>
+							<label>mp4.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],mp4.png)</onclick>
+						</item>
+						<item>
+							<label>m2ts.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],m2ts.png)</onclick>
+						</item>
+						<item>
+							<label>fmp4.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],fmp4.png)</onclick>
+						</item>
+						<item>
+							<label>flv.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],flv.png)</onclick>
+						</item>
+						<item>
+							<label>bluray.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],bluray.png)</onclick>
+						</item>
+						<item>
+							<label>bluray3d.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],bluray3d.png)</onclick>
+						</item>
+						<item>
+							<label>quicktime.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],quicktime.png)</onclick>
+						</item>
+						<item>
+							<label>rv30.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],rv30.png)</onclick>
+						</item>
+						<item>
+							<label>rv40.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],rv40.png)</onclick>
+						</item>
+						<item>
+							<label>theora.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],theora.png)</onclick>
+						</item>
+						<item>
+							<label>vp6f.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],vp6f.png)</onclick>
+						</item>
+						<item>
+							<label>webdl.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],webdl.png)</onclick>
+						</item>
+						<item>
+							<label>set.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],set.png)</onclick>
+						</item>
+						<item>
+							<label>hdmv.png</label>
+							<onclick>Skin.SetString($VAR[Var_1105_TargetVar],hdmv.png)</onclick>
+						</item>
+					</content>
+				</control>
+			</control>
+			<!-- <control type="scrollbar" id="60">
+                <left>930</left>
+                <top>160</top>
+                <height>640</height>
+                <onleft>50</onleft>
+                <onright>800</onright>
+                <include>DialogScrollBar</include>
+            </control> -->
+			<control type="image">
+				<top>160</top>
+				<left>930</left>
+				<bottom>50</bottom>
+				<width>4</width>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+			</control>
+			<!-- Right Panel: Preview -->
+			<control type="group" id="800">
+				<!-- ============================================= -->
+				<!-- Preview Section (Updates On Hover)            -->
+				<!-- ============================================= -->
+				<control type="label">
+					<left>940</left>
+					<top>160</top>
+					<width>280</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>[UPPERCASE]$LOCALIZE[1000][/UPPERCASE]</label>
+					<font>Font26_Bold_Caps</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				</control>
+				<control type="group">
+					<left>940</left>
+					<top>190</top>
+					<width>280</width>
+					<height>150</height>
+					<control type="image">
+						<width>280</width>
+						<height>150</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>flags/colored/videocodec/$VAR[Var_1105_PreviewFile]</texture>
+						<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+					</control>
+					<control type="image">
+						<width>280</width>
+						<height>150</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>flags/default/videocodec/$VAR[Var_1105_PreviewFile]</texture>
+						<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+					</control>
+				</control>
+				<control type="label">
+					<left>940</left>
+					<top>340</top>
+					<width>280</width>
+					<height>30</height>
+					<align>center</align>
+					<label>[UPPERCASE][COLOR dd00ff00]$VAR[Var_1105_PreviewFile][/COLOR][/UPPERCASE]</label>
+					<font>Font25_Cond</font>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="image">
+					<left>940</left>
+					<top>380</top>
+					<width>280</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">
+                        panels/line-horizontal.png</texture>
+				</control>
+				<!-- ============================================= -->
+				<!-- Current Section (Reads Saved Setting)         -->
+				<!-- ============================================= -->
+				<control type="label">
+					<left>940</left>
+					<top>400</top>
+					<width>280</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>[UPPERCASE]$LOCALIZE[31453][/UPPERCASE]</label>
+					<font>Font26_Bold_Caps</font>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				</control>
+				<control type="group">
+					<left>940</left>
+					<top>430</top>
+					<width>280</width>
+					<height>150</height>
+					<control type="image">
+						<width>280</width>
+						<height>150</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>flags/colored/videocodec/$VAR[Var_1105_CurrentFile]</texture>
+						<visible>Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+					</control>
+					<control type="image">
+						<width>280</width>
+						<height>150</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>flags/default/videocodec/$VAR[Var_1105_CurrentFile]</texture>
+						<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
+					</control>
+				</control>
+				<control type="label">
+					<left>940</left>
+					<top>580</top>
+					<width>280</width>
+					<height>30</height>
+					<align>center</align>
+					<label>[UPPERCASE][COLOR dd00ff00]$VAR[Var_1105_CurrentFile][/COLOR][/UPPERCASE]</label>
+					<font>Font25_Cond</font>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="image">
+					<left>940</left>
+					<top>620</top>
+					<width>280</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">
+                        panels/line-horizontal.png</texture>
+				</control>
+				<!-- ============================================= -->
+				<!-- Interactive Buttons With Manual Navigation    -->
+				<!-- ============================================= -->
+				<control type="togglebutton" id="801">
+					<left>940</left>
+					<top>640</top>
+					<width>280</width>
+					<height>60</height>
+					<include>DialogKeyboardToggleButton</include>
+					<label>$LOCALIZE[31094]</label>
+					<onup>900</onup>
+					<!-- Manual Nav Up -->
+					<ondown>98</ondown>
+					<!-- Manual Nav Down -->
+					<onleft>250</onleft>
+					<onclick condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">
+                        Skin.SetString(UserSel_Flag_4K,)</onclick>
+					<onclick condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">
+                        Skin.SetString(UserSel_Flag_WebDL,)</onclick>
+					<onclick condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">
+                        Skin.SetString(UserSel_Flag_1080p,)</onclick>
+					<onclick condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">
+                        Skin.SetString(UserSel_Flag_720p,)</onclick>
+					<onclick condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">
+                        Skin.SetString(UserSel_Flag_DVD,)</onclick>
+				</control>
+				<control type="radiobutton" id="98">
+					<left>940</left>
+					<top>700</top>
+					<width>280</width>
+					<height>75</height>
+					<label>$VAR[Var_1105_ColorToggleLabel]</label>
+					<onup>801</onup>
+					<!-- Manual Nav Up -->
+					<ondown>801</ondown>
+					<!-- Manual Wraparound -->
+					<onleft>250</onleft>
+					<onclick>Skin.ToggleSetting(MediaFlagsVideoCodecColored)</onclick>
+					<selected>Skin.HasSetting(MediaFlagsVideoCodecColored)</selected>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

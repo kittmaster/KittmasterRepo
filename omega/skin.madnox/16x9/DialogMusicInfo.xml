@@ -1,17 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- [PHASE 4: MUSIC MODULE - COMPLETED] -->
 <window>
-	<defaultcontrol>9000</defaultcontrol>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(MusicBlurEnabled)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fanart)|Art(tvshow.fanart)|Art(landscape)|Art(thumb)|Icon,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(MusicBlurEnabled)">SetProperty(TMDbHelper.Blur.Fallback,special://home/addons/resource.images.skin.madnox/resources/backgrounds/default_livecases.jpg,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(MusicBlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 	<onload>SetFocus(9000,0)</onload>
-	<onload condition="System.AddonIsEnabled(script.embuary.info) + Skin.HasSetting(BlurEnabled) + Skin.HasSetting(MusicBlurEnabled)">RunScript(script.embuary.helper,action=blurimg,file=$ESCINFO[ListItem.Art(thumb)],prop=blurthumb,radius=2)</onload>
 	<controls>
-		<include content="DialogInfoCommon">
-			<param name="blur">Skin.HasSetting(MusicBlurEnabled)</param>
-			<param name="art">$INFO[ListItem.Icon]</param>
-		</include>
+		<!-- BASE TEMPLATE: Backgrounds and Blur -->
+		<control type="group">
+			<include content="DialogInfo_Base">
+				<param name="blur">Skin.HasSetting(MusicBlurEnabled)</param>
+			</include>
+		</control>
+
 		<!-- Content -->
 		<control type="group">
 			<include>AnimationInfoDialog</include>
-			<include>DialogMusicInfo</include>
+			<include>DialogInfo_Music</include>
 		</control>
 	</controls>
 </window>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<window id="1108">
+	<defaultcontrol always="true">10</defaultcontrol>
+
+	<!-- Safety Delay -->
+	<onload>AlarmClock(WaitStart,SetProperty(IntroDelayDone,1,Home),00:02,silent)</onload>
+
+	<!-- Watchdog Loop -->
+	<onload>AlarmClock(IntroWatchdog,SetFocus(10),00:01,silent,loop)</onload>
+
+	<!-- Clean Up When Leaving This Window -->
+	<onunload>CancelAlarm(IntroWatchdog,silent)</onunload>
+	<onunload>CancelAlarm(WaitStart,silent)</onunload>
+	<onunload>ClearProperty(IntroDelayDone,Home)</onunload>
+	<!-- Clear The "Playing" Flag So Notifications Work Again After This -->
+	<onunload>ClearProperty(IntroVideoPlaying,Home)</onunload>
+	<!-- Turn Off The Global Intro Active Flag When We Leave This Screen -->
+	<onunload>Skin.Reset(Madnox.IntroActive)</onunload>
+
+	<controls>
+		<control type="image">
+			<texture>colors/black.png</texture>
+		</control>
+
+		<!-- Trigger Button -->
+		<control type="button" id="10">
+			<include>HiddenObject</include>
+			<visible>!String.IsEmpty(Window(Home).Property(IntroDelayDone)) + !Player.HasMedia</visible>
+
+			<onfocus>ReplaceWindow(Home)</onfocus>
+			<!-- <onfocus condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ActivateWindow(1106)</onfocus> -->
+		</control>
+	</controls>
+</window>

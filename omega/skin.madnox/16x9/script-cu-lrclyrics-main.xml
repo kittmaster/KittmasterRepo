@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <window>
 	<defaultcontrol always="true">110</defaultcontrol>
 	<zorder>0</zorder>
 	<controls>
-		<!-- Default lyrics -->
+		<!-- Default Lyrics -->
 		<control type="group">
 			<visible>Player.HasAudio</visible>
 			<animation effect="slide" end="0,202" time="480" tween="cubic" easing="out" condition="!Player.ShowInfo + !Skin.String(MusicOSDInfo,persistant)">conditional</animation>
@@ -51,7 +51,7 @@
 				</focusedlayout>
 			</control>
 		</control>
-		<!-- Animated lyrics -->
+		<!-- Animated Lyrics -->
 		<control type="group">
 			<visible>Player.HasAudio + !Skin.HasSetting(MusicOSDDisableAnimatedLyrics)</visible>
 			<include>AnimationVisibleFade</include>
@@ -111,8 +111,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" end="100" delay="200" time="200"/>
-							<effect type="zoom" center="auto" delay="200" start="25" end="100" time="600"/>
+							<effect type="fade" end="100" delay="200" time="200" />
+							<effect type="zoom" center="auto" delay="200" start="25" end="100" time="600" />
 						</animation>
 						<top>5</top>
 						<left>365</left>
@@ -128,8 +128,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" end="100" delay="200" time="200"/>
-							<effect type="zoom" center="auto" delay="200" start="25" end="100" time="600"/>
+							<effect type="fade" end="100" delay="200" time="200" />
+							<effect type="zoom" center="auto" delay="200" start="25" end="100" time="600" />
 						</animation>
 						<left>360</left>
 						<width>1200</width>
@@ -191,8 +191,8 @@
 						<control type="label">
 							<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 							<animation type="Visible" reversible="false">
-								<effect type="fade" end="100" time="200"/>
-								<effect type="zoom" center="480,200" start="0" end="100" time="800"/>
+								<effect type="fade" end="100" time="200" />
+								<effect type="zoom" center="480,200" start="0" end="100" time="800" />
 							</animation>
 							<animation effect="slide" end="0,12" condition="true">Conditional</animation>
 							<width max="700">auto</width>
@@ -217,8 +217,8 @@
 						<control type="label">
 							<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 							<animation type="Visible" reversible="false">
-								<effect type="fade" end="100" time="200"/>
-								<effect type="zoom" center="480,200" start="0" end="100" time="800"/>
+								<effect type="fade" end="100" time="200" />
+								<effect type="zoom" center="480,200" start="0" end="100" time="800" />
 							</animation>
 							<animation effect="slide" end="0,12" condition="true">Conditional</animation>
 							<width max="700">auto</width>
@@ -278,9 +278,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" end="100" delay="300" time="200"/>
-							<effect type="slide" delay="300" start="0,250" end="0" time="250"/>
-							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out"/>
+							<effect type="fade" end="100" delay="300" time="200" />
+							<effect type="slide" delay="300" start="0,250" end="0" time="250" />
+							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out" />
 						</animation>
 						<top>5</top>
 						<left>365</left>
@@ -296,9 +296,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" end="100" delay="300" time="200"/>
-							<effect type="slide" delay="300" start="0,250" end="0" time="250"/>
-							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out"/>
+							<effect type="fade" end="100" delay="300" time="200" />
+							<effect type="slide" delay="300" start="0,250" end="0" time="250" />
+							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out" />
 						</animation>
 						<left>360</left>
 						<width>1200</width>
@@ -353,8 +353,8 @@
 					<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 					<animation effect="rotate" center="auto" start="5" end="5" condition="true">Conditional</animation>
 					<animation type="Visible" reversible="false">
-						<effect type="fade" end="100" delay="500" time="200"/>
-						<effect type="slide" delay="500" start="0,160" time="300"/>
+						<effect type="fade" end="100" delay="500" time="200" />
+						<effect type="slide" delay="500" start="0,160" time="300" />
 					</animation>
 					<top>241</top>
 					<left>360</left>
@@ -371,9 +371,9 @@
 					<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 					<animation effect="rotate" center="auto" start="5" end="5" condition="true">Conditional</animation>
 					<animation type="Visible" reversible="false">
-						<effect type="fade" end="100" delay="500" time="200"/>
-						<effect type="slide" delay="500" start="0,160" time="300"/>
-						<effect type="slide" end="-5"/>
+						<effect type="fade" end="100" delay="500" time="200" />
+						<effect type="slide" delay="500" start="0,160" time="300" />
+						<effect type="slide" end="-5" />
 					</animation>
 					<top>236</top>
 					<left>360</left>
@@ -435,8 +435,8 @@
 						<control type="label">
 							<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 							<animation type="Visible" reversible="false">
-								<effect type="fade" delay="500" end="100" time="200"/>
-								<effect type="slide" delay="500" start="1950,0" time="300"/>
+								<effect type="fade" delay="500" end="100" time="200" />
+								<effect type="slide" delay="500" start="1950,0" time="300" />
 							</animation>
 							<width>700</width>
 							<height>250</height>
@@ -459,8 +459,8 @@
 						<control type="label">
 							<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 							<animation type="Visible" reversible="false">
-								<effect type="fade" delay="500" end="100" time="200"/>
-								<effect type="slide" delay="500" start="1950,0" time="300"/>
+								<effect type="fade" delay="500" end="100" time="200" />
+								<effect type="slide" delay="500" start="1950,0" time="300" />
 							</animation>
 							<width>700</width>
 							<height>250</height>
@@ -521,8 +521,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" delay="300" end="100" time="200"/>
-							<effect type="slide" delay="300" start="0,200" end="0,0" time="500"/>
+							<effect type="fade" delay="300" end="100" time="200" />
+							<effect type="slide" delay="300" start="0,200" end="0,0" time="500" />
 						</animation>
 						<top>5</top>
 						<left>365</left>
@@ -538,8 +538,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" delay="300" end="100" time="200"/>
-							<effect type="slide" delay="300" start="0,200" end="0,0" time="500"/>
+							<effect type="fade" delay="300" end="100" time="200" />
+							<effect type="slide" delay="300" start="0,200" end="0,0" time="500" />
 						</animation>
 						<left>360</left>
 						<width>1200</width>
@@ -608,9 +608,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" delay="300" start="0" time="200"/>
-							<effect type="zoom" delay="300" center="auto" start="0" end="100" time="300"/>
-							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out"/>
+							<effect type="fade" delay="300" start="0" time="200" />
+							<effect type="zoom" delay="300" center="auto" start="0" end="100" time="300" />
+							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out" />
 						</animation>
 						<top>5</top>
 						<left>975</left>
@@ -625,9 +625,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" delay="300" start="0" time="200"/>
-							<effect type="zoom" delay="300" center="auto" start="0" end="100" time="300"/>
-							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out"/>
+							<effect type="fade" delay="300" start="0" time="200" />
+							<effect type="zoom" delay="300" center="auto" start="0" end="100" time="300" />
+							<effect type="rotate" delay="300" center="auto" start="4" end="0" time="500" tween="bounce" easing="out" />
 						</animation>
 						<left>975</left>
 						<width>700</width>
@@ -695,9 +695,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="400" time="200"/>
-							<effect type="slide" delay="400" start="-800,0" end="0,0" time="400"/>
-							<effect type="rotate" delay="400" center="auto" start="3" end="0" time="400" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="400" time="200" />
+							<effect type="slide" delay="400" start="-800,0" end="0,0" time="400" />
+							<effect type="rotate" delay="400" center="auto" start="3" end="0" time="400" tween="bounce" easing="out" />
 						</animation>
 						<top>5</top>
 						<left>365</left>
@@ -713,9 +713,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="400" time="200"/>
-							<effect type="slide" delay="400" start="-800,0" end="0,0" time="400"/>
-							<effect type="rotate" delay="400" center="auto" start="3" end="0" time="400" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="400" time="200" />
+							<effect type="slide" delay="400" start="-800,0" end="0,0" time="400" />
+							<effect type="rotate" delay="400" center="auto" start="3" end="0" time="400" tween="bounce" easing="out" />
 						</animation>
 						<left>365</left>
 						<width>1200</width>
@@ -774,9 +774,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="400" time="200"/>
-							<effect type="slide" delay="400" start="600,0" end="0,0" time="300"/>
-							<effect type="rotate" delay="400" center="auto" start="4" end="0" time="400" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="400" time="200" />
+							<effect type="slide" delay="400" start="600,0" end="0,0" time="300" />
+							<effect type="rotate" delay="400" center="auto" start="4" end="0" time="400" tween="bounce" easing="out" />
 						</animation>
 						<top>5</top>
 						<left>975</left>
@@ -791,9 +791,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="400" time="200"/>
-							<effect type="slide" delay="400" start="600,0" end="0,0" time="300"/>
-							<effect type="rotate" delay="400" center="auto" start="4" end="0" time="400" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="400" time="200" />
+							<effect type="slide" delay="400" start="600,0" end="0,0" time="300" />
+							<effect type="rotate" delay="400" center="auto" start="4" end="0" time="400" tween="bounce" easing="out" />
 						</animation>
 						<left>975</left>
 						<width>700</width>
@@ -860,9 +860,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="slide" delay="500" start="400,0" end="0,0" time="200" tween="cubic" easing="out"/>
-							<effect type="rotate" delay="500" center="auto" start="4" end="0" time="300" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="slide" delay="500" start="400,0" end="0,0" time="200" tween="cubic" easing="out" />
+							<effect type="rotate" delay="500" center="auto" start="4" end="0" time="300" tween="bounce" easing="out" />
 						</animation>
 						<top>5</top>
 						<left>360</left>
@@ -878,9 +878,9 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="slide" delay="500" start="400,0" end="0,0" time="200" tween="cubic" easing="out"/>
-							<effect type="rotate" delay="500" center="auto" start="4" end="0" time="300" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="slide" delay="500" start="400,0" end="0,0" time="200" tween="cubic" easing="out" />
+							<effect type="rotate" delay="500" center="auto" start="4" end="0" time="300" tween="bounce" easing="out" />
 						</animation>
 						<left>360</left>
 						<width>1200</width>
@@ -945,8 +945,8 @@
 						<control type="label">
 							<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 							<animation type="Visible" reversible="false">
-								<effect type="fade" delay="500" start="0" time="300"/>
-								<effect type="slide" delay="500" start="0,300" end="0" time="300"/>
+								<effect type="fade" delay="500" start="0" time="300" />
+								<effect type="slide" delay="500" start="0,300" end="0" time="300" />
 							</animation>
 							<animation effect="slide" end="0,10" condition="true">Conditional</animation>
 							<width max="700">auto</width>
@@ -972,8 +972,8 @@
 						<control type="label">
 							<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 							<animation type="Visible" reversible="false">
-								<effect type="fade" delay="500" start="0" time="300"/>
-								<effect type="slide" delay="500" start="0,300" end="0" time="300"/>
+								<effect type="fade" delay="500" start="0" time="300" />
+								<effect type="slide" delay="500" start="0,300" end="0" time="300" />
 							</animation>
 							<animation effect="slide" end="0,10" condition="true">Conditional</animation>
 							<width max="700">auto</width>
@@ -1052,8 +1052,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="zoom" delay="500" center="960,400" start="0" end="100" time="300"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="zoom" delay="500" center="960,400" start="0" end="100" time="300" />
 						</animation>
 						<left>365</left>
 						<top>5</top>
@@ -1069,8 +1069,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="zoom" delay="500" center="960,400" start="0" end="100" time="300"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="zoom" delay="500" center="960,400" start="0" end="100" time="300" />
 						</animation>
 						<left>360</left>
 						<width>1200</width>
@@ -1133,8 +1133,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="zoom" center="450,370" delay="500" start="25" time="300"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="zoom" center="450,370" delay="500" start="25" time="300" />
 						</animation>
 						<top>5</top>
 						<left>365</left>
@@ -1150,8 +1150,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="zoom" center="450,370" delay="500" start="25" time="300"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="zoom" center="450,370" delay="500" start="25" time="300" />
 						</animation>
 						<left>360</left>
 						<width>1200</width>
@@ -1220,8 +1220,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="zoom" center="auto" delay="500" start="0" end="105" time="300"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="zoom" center="auto" delay="500" start="0" end="105" time="300" />
 						</animation>
 						<top>5</top>
 						<left>365</left>
@@ -1237,8 +1237,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="zoom" center="auto" delay="500" start="0" end="105" time="300"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="zoom" center="auto" delay="500" start="0" end="105" time="300" />
 						</animation>
 						<left>365</left>
 						<width>1200</width>
@@ -1295,8 +1295,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="slide" delay="500" start="0,-400" end="0,0" time="300" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="slide" delay="500" start="0,-400" end="0,0" time="300" tween="bounce" easing="out" />
 						</animation>
 						<top>5</top>
 						<left>975</left>
@@ -1311,8 +1311,8 @@
 					<control type="label">
 						<visible>!Container(110).OnNext + !Container(110).OnPrevious</visible>
 						<animation type="Visible" reversible="false">
-							<effect type="fade" start="0" delay="500" time="200"/>
-							<effect type="slide" delay="500" start="0,-400" end="0,0" time="300" tween="bounce" easing="out"/>
+							<effect type="fade" start="0" delay="500" time="200" />
+							<effect type="slide" delay="500" start="0,-400" end="0,0" time="300" tween="bounce" easing="out" />
 						</animation>
 						<left>975</left>
 						<width>700</width>
@@ -1329,7 +1329,7 @@
 		<control type="label" id="200">
 			<include>HiddenObject</include>
 		</control>
-		<!-- Button to prevent mouse menu popup unless at top of screen -->
+		<!-- Button To Prevent Mouse Menu Popup Unless At Top Of Screen -->
 		<control type="label">
 			<description>Scraper label</description>
 			<left>870</left>

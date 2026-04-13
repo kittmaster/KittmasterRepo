@@ -11,6 +11,20 @@ class ListItemInfoGetter(BaseItemInfoGetter):
     def get_cur_item(self):
         return self._item.get_identifier()
 
+    def get_cur_info(self):
+        """
+        Check to see if some form of information is retrievable from item
+        Previously checked only folderpath but might be problematic for static items without one
+        Now check to see if there is a label or icon first
+        """
+        return (
+            self._item.get_infolabel('label')
+            or self._item.get_infolabel('icon')
+            or self._item.get_infolabel('folderpath')
+            or self._item.get_infolabel('filenameandpath')
+            or self._item.get_infolabel('path')
+        )
+
     # ==================
     # COMPARISON METHODS
     # ==================
@@ -28,6 +42,13 @@ class ListItemInfoGetter(BaseItemInfoGetter):
             return self.cur_window
         if update:
             self.pre_window = self.cur_window
+
+    def is_same_base_window(self, update=True):
+        self.cur_base_window = self.get_cur_base_window()
+        if self.cur_base_window == self.pre_base_window:
+            return self.cur_base_window
+        if update:
+            self.pre_base_window = self.cur_base_window
 
     # ================
     # SETUP PROPERTIES

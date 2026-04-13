@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window type="window" id="1103">
-    <!-- Check if the setting TMDbHelper.MonitorContainer has a value, and if so, clear it -->
-    <onload condition="!IsEmpty(Skin.String(TMDbHelper.MonitorContainer))">
-        Skin.Reset(TMDBHelper.MonitorContainer)
-    </onload>   
+	<!-- Check If The Setting Tmdbhelper.Monitorcontainer Has A Value, And If So, Clear It -->
+	<onload>Skin.SetBool(TMDbHelper.Service)</onload>
+	<onload>Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
+	<!-- <onload>RunScript(script.skin.info.service)</onload> -->
+	<onload>Skin.SetBool(TMDbHelper.DirectCallAuto)</onload>
+	<onload condition="!IsEmpty(Skin.String(TMDbHelper.MonitorContainer))">Skin.Reset(TMDBHelper.MonitorContainer)</onload>
+	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper) | !Skin.HasSetting(BlurEnabled)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fanart)|Art(tvshow.fanart)|Art(landscape)|Art(thumb)|Icon,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.Fallback,special://home/addons/resource.images.skin.madnox/resources/backgrounds/default_livecases.jpg,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+
+	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
+	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<animation effect="fade" delay="1000" time="480">WindowOpen</animation>
 	<animation effect="fade" time="480">WindowClose</animation>
@@ -11,8 +20,8 @@
 	<controls>
 		<control type="button" id="10">
 			<include>FullScreenDimensions</include>
-			<texturefocus/>
-			<texturenofocus/>
+			<texturefocus />
+			<texturenofocus />
 			<onup>ReplaceWindow($INFO[System.StartupWindow])</onup>
 			<ondown>ReplaceWindow($INFO[System.StartupWindow])</ondown>
 			<onleft>ReplaceWindow($INFO[System.StartupWindow])</onleft>
@@ -20,30 +29,30 @@
 			<onclick>ReplaceWindow($INFO[System.StartupWindow])</onclick>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<animation effect="fade" start="100" end="0" time="6000">Focus</animation>
-		</control>		
-        <control type="image">
-            <centerleft>50%</centerleft>
-            <centertop>50%</centertop>
-            <aspectratio>keep</aspectratio>
-            <texture>$VAR[StartUpLogoSizeVar]</texture>
-
-            <!-- RULE 1: MASTER VISIBILITY SWITCH -->
-            <!-- Only show this entire control if 'startuplogoshowonstart' is enabled. -->
-            <!-- If this is false, the skin engine ignores everything else inside. -->
-            <visible>Skin.HasSetting(startuplogoshowonstart)</visible>
-
-            <!-- RULE 2: CONDITIONAL SIZING (This part only runs if the control is visible) -->
-            <!-- IF 'startuplogolargesizeonstart' is enabled, use the LARGE dimensions. -->
-            <include content="StartUpLogoWidthLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
-            <include content="StartUpLogoHeightLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
-
-            <!-- ELSE (if 'startuplogolargesizeonstart' is NOT enabled), use the SMALL dimensions. -->
-            <include content="StartUpLogoWidthSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
-            <include content="StartUpLogoHeightSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
-        </control>		
+		</control>
 		<control type="image">
 			<centerleft>50%</centerleft>
-			<top>660</top>
+			<centertop>50%</centertop>
+			<aspectratio>keep</aspectratio>
+			<texture>$VAR[StartUpLogoSizeVar]</texture>
+
+			<!-- Master Visibility Switch -->
+			<!-- Only show this entire control if 'startuplogoshowonstart' is enabled. -->
+			<!-- If this is false, the skin engine ignores everything else inside. -->
+			<visible>Skin.HasSetting(startuplogoshowonstart)</visible>
+
+			<!-- Conditional Sizing (This Part Only Runs If The Control Is Visible) -->
+			<!-- IF 'startuplogolargesizeonstart' is enabled, use the LARGE dimensions. -->
+			<include content="StartUpLogoWidthLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
+			<include content="StartUpLogoHeightLargeVar" condition="Skin.HasSetting(startuplogolargesizeonstart)" />
+
+			<!-- Else (If 'Startuplogolargesizeonstart' Is Not Enabled), Use The Small Dimensions. -->
+			<include content="StartUpLogoWidthSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
+			<include content="StartUpLogoHeightSmallVar" condition="!Skin.HasSetting(startuplogolargesizeonstart)" />
+		</control>
+		<control type="image">
+			<centerleft>50%</centerleft>
+			<top>820</top>
 			<width>100</width>
 			<height>100</height>
 			<aspectratio>keep</aspectratio>

@@ -7,25 +7,21 @@ import xbmcaddon
 import xbmcgui
 
 # Add JSON support for queries
-if sys.version_info.major == 3:
+try:
     import simplejson as json
-else:
+except ImportError:
     import json
 
-#from settings import log
-from resources.lib.utils import log_msg
-
-# Import the common settings
-from resources.lib.settings import Settings
-#from resources.lib.settings import log
-from resources.lib.settings import os_path_join
-from resources.lib.settings import os_path_split
-from resources.lib.settings import normalize_string
-from resources.lib.settings import WindowShowing
-
-from resources.lib.themeFinder import ThemeFiles
-from resources.lib.themeFinder import MusicThemeFiles
-from resources.lib.themePlayer import ThemePlayer
+try:
+    from resources.lib.utils import log_msg
+    from resources.lib.settings import Settings, os_path_join, os_path_split, normalize_string, WindowShowing
+    from resources.lib.themeFinder import ThemeFiles, MusicThemeFiles
+    from resources.lib.themePlayer import ThemePlayer
+except ModuleNotFoundError:
+    from utils import log_msg
+    from settings import Settings, os_path_join, os_path_split, normalize_string, WindowShowing
+    from themeFinder import ThemeFiles, MusicThemeFiles
+    from themePlayer import ThemePlayer
 
 #########################################################
 # Class to handle delaying the start of playing a theme
@@ -138,7 +134,7 @@ class TunesBackend():
                     # screen-saver, otherwise the action of us stopping the theme will reset the
                     # timeout and the user will have to wait longer
                     log_msg("TunesBackend: Restarting screensaver that TvTunes stopped")
-                    executebuiltin("ActivateScreensaver", True)
+                    xbmc.executebuiltin("ActivateScreensaver", True)
                 continue
 
             # Check if TvTunes is blocked from playing any themes

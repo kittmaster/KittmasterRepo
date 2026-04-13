@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<backgroundcolor>FF000000</backgroundcolor>
 	<controls>
@@ -68,7 +68,7 @@
 			<texture colordiffuse="$VAR[BackgroundShadowColorVar]">panels/patterns/shadow.png</texture>
 			<visible>!Skin.HasSetting(MusicOSDDisableBackgroundShadow) + Skin.HasSetting(BackgroundShadow)</visible>
 		</control>
-		<!-- Background scroll labels -->
+		<!-- Background Scroll Labels -->
 		<control type="fadelabel">
 			<visible>Skin.HasSetting(MusicOSDBackgroundInfo)</visible>
 			<include>AnimationWindowFade</include>
@@ -99,7 +99,7 @@
 			<textoffsetx>20</textoffsetx>
 			<resetonlabelchange>true</resetonlabelchange>
 		</control>
-		<!-- Music info -->
+		<!-- Music Info -->
 		<control type="group">
 			<visible>[Player.ShowInfo + String.IsEmpty(Skin.String(MusicOSDInfo))] | Skin.String(MusicOSDInfo,persistant)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -195,13 +195,13 @@
 				</control>
 			</control>
 		</control>
-		<!-- Button to prevent mouse menu popup unless at top of screen -->
+		<!-- Button To Prevent Mouse Menu Popup Unless At Top Of Screen -->
 		<control type="button" id="1000">
 			<top>1</top>
 			<width>1920</width>
 			<height>1080</height>
-			<texturefocus/>
-			<texturenofocus/>
+			<texturefocus />
+			<texturenofocus />
 		</control>
 	</controls>
 </window>

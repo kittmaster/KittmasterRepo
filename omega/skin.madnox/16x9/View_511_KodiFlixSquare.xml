@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="View511KodiFlixSquare">
-		<!-- Video preview -->
+		<!-- Video Preview -->
 		<control type="group">
 			<visible>Control.IsVisible(511) + Player.HasVideo + Skin.HasSetting(View511VideoPreviewWindow)</visible>
 			<include content="AnimationSlideRightWindow">
@@ -17,13 +17,13 @@
 			<control type="image">
 				<texture>colors/black.png</texture>
 			</control>
-			<control type="videowindow"/>
+			<control type="videowindow" />
 			<control type="image">
 				<bordersize>-10</bordersize>
 				<texture border="20">thumbs/overlay2.png</texture>
 			</control>
 		</control>
-		<!-- Background fade -->
+		<!-- Background Fade -->
 		<control type="image">
 			<visible>Control.IsVisible(511)</visible>
 			<width>1300</width>
@@ -41,7 +41,7 @@
 		<include content="View511Panel" condition="Skin.HasSetting(View511FixedList)">
 			<param name="listtype">fixedlist</param>
 		</include>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(511)</visible>
 			<include content="AnimationSlideBottomWindow">
@@ -58,7 +58,7 @@
 			</include>
 		</control>
 	</include>
-	<!-- Includes panel -->
+	<!-- Includes Panel -->
 	<include name="View511Panel">
 		<param name="listtype">wraplist</param>
 		<definition>

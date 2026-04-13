@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--[PHASE 4: TMDB EXTERNAL MODULES - COMPLETED] -->
+<window type="dialog">
+	<defaultcontrol>9000</defaultcontrol>
+	<onload>SetFocus(9000,0)</onload>
+	<controls>
+		<!-- Container For The Item Details -->
+		<control type="list" id="10051">
+			<include>HiddenList</include>
+		</control>
+
+		<!-- Background (Using new standardized base) -->
+		<include content="DialogInfo_Base">
+			<param name="blur">Skin.HasSetting(VideoBlurEnabled)</param>
+			<param name="art">$INFO[Container(10051).ListItem.Art(thumb)]</param>
+		</include>
+
+		<!-- Inject the modular layout -->
+		<include>DialogInfo_TMDbPerson</include>
+	</controls>
+</window>

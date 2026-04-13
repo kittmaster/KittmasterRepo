@@ -113,6 +113,11 @@
                     </constraints>
                     <control type="spinner" format="string"/>
                 </setting>
+                <setting id="force_english_plot_fallback" type="boolean" label="32349" help="32350">
+                    <level>0</level>
+                    <default>false</default>
+                    <control type="toggle"/>
+                </setting>
             </group>
             <group id="3" label="32367">
                 <setting id="use_kodi_local_db" type="integer" label="32038" help="">
@@ -167,6 +172,14 @@
                 <setting id="delete_itemtype" type="action" label="32052" help="32053">
                     <level>0</level>
                     <data>RunScript(plugin.video.themoviedb.helper, delete_itemtype)</data>
+                    <constraints>
+                        <allowempty>true</allowempty>
+                    </constraints>
+                    <control type="button" format="action"/>
+                </setting>
+                <setting id="delete_listdata" type="action" label="32396" help="">
+                    <level>0</level>
+                    <data>RunScript(plugin.video.themoviedb.helper, delete_listdata)</data>
                     <constraints>
                         <allowempty>true</allowempty>
                     </constraints>
@@ -407,7 +420,19 @@
                     </control>
                 </setting>
             </group>
-            <group id="4" label="32030">
+            <group id="4" label="32147">
+                <setting id="gemini_apikey" type="string" label="32148" help="">
+                    <level>0</level>
+                    <default/>
+                    <constraints>
+                        <allowempty>true</allowempty>
+                    </constraints>
+                    <control type="edit" format="string">
+                        <heading>32148</heading>
+                    </control>
+                </setting>
+            </group>
+            <group id="5" label="32030">
                 <setting id="fanarttv_clientkey" type="string" label="32019" help="">
                     <level>0</level>
                     <default/>
@@ -447,7 +472,7 @@
                     <enable>false</enable>
                 </setting>
             </group>
-            <group id="5" label="32484">
+            <group id="6" label="32484">
                 <visible>false</visible>
                 <setting id="tvdb_token" type="string" label="32011" help="">
                     <level>0</level>
@@ -472,7 +497,7 @@
                     <enable>false</enable>
                 </setting>
             </group>
-            <group id="6" label="32520">
+            <group id="7" label="32520">
                 <visible>false</visible>
                 <setting id="tmdb_user_token" type="string" label="32011" help="">
                     <level>0</level>
@@ -676,6 +701,16 @@
                         <data>RunScript(plugin.video.themoviedb.helper,provider_allowlist)</data>
                     </control>
                 </setting>
+                <setting id="use_online_artwork" type="boolean" label="32377" help="">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="use_online_ratings" type="boolean" label="32386" help="">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
                 <setting id="service_container_content_fallback" type="boolean" label="32497" help="32498">
                     <level>0</level>
                     <default>False</default>
@@ -684,6 +719,9 @@
                 <setting id="service_prefers_online_clearlogo" type="boolean" label="32129" help="">
                     <level>0</level>
                     <default>false</default>
+                    <dependencies>
+                        <dependency type="visible" operator="is" setting="use_online_artwork">true</dependency>
+                    </dependencies>
                     <control type="toggle"/>
                 </setting>
             </group>
@@ -801,6 +839,16 @@
                     <control type="button" format="path">
                         <heading>32506</heading>
                     </control>
+                </setting>
+                <setting id="genre_fanart" type="boolean" label="32388" help="">
+                    <level>0</level>
+                    <default>False</default>
+                    <control type="toggle"/>
+                </setting>
+                <setting id="provider_fanart" type="boolean" label="32389" help="">
+                    <level>0</level>
+                    <default>False</default>
+                    <control type="toggle"/>
                 </setting>
             </group>
             <group id="5" label="25000">
