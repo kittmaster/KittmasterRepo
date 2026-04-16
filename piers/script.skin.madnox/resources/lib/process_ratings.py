@@ -11,7 +11,12 @@ def calculate_and_set_ratings(params):
     out_f10  = params.get("output_file_10star", "InfoDialog.User.File10Star")
     out_prec = params.get("output_file_precision", "InfoDialog.User.FilePrecision")
     out_star = params.get("output_star", "InfoDialog.User.StarValue")
-    out_ready = params.get("output_ready", "InfoDialog.Ratings.Ready")  # NEW
+    out_ready = params.get("output_ready", "InfoDialog.Ratings.Ready")
+
+    # --- NEW: Check skin setting for display preference ---
+    # True  = Show as Number (e.g., 8.5)
+    # False = Show as Percentage (e.g., 85)
+    use_numbers = xbmc.getCondVisibility("Skin.HasSetting(RatingsAsNumbers)")
 
     # 2. Bio/Person Protection
     if xbmc.getCondVisibility("String.IsEqual(ListItem.DBTYPE,person) | String.IsEqual(ListItem.DBTYPE,actor) | String.IsEqual(ListItem.Property(item.type),person)"):
@@ -21,22 +26,28 @@ def calculate_and_set_ratings(params):
     # then we set it again below to force a full layout recalculation
     xbmc.executebuiltin(f"ClearProperty({out_ready},Home)")
 
-    # --- 3. Process TMDb Percentage ---
+    # --- 3. Process TMDb ---
     tmdb = xbmc.getInfoLabel('ListItem.Property(TMDb_Rating)') or \
            xbmc.getInfoLabel('Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)') or \
            xbmc.getInfoLabel('ListItem.Rating(themoviedb)')
     if tmdb:
         try:
-            val = int(round(float(tmdb) * 10))
+            if use_numbers:
+                val = f"{float(tmdb):.1f}"
+            else:
+                val = str(int(round(float(tmdb) * 10)))
             xbmc.executebuiltin(f"SetProperty({out_tmdb},{val},Home)")
         except: pass
 
-    # --- 4. Process IMDb Percentage ---
+    # --- 4. Process IMDb ---
     imdb = xbmc.getInfoLabel('Window(Home).Property(TMDbHelper.ListItem.IMDb_Rating)') or \
            xbmc.getInfoLabel('ListItem.Rating(imdb)')
     if imdb:
         try:
-            val = int(round(float(imdb) * 10))
+            if use_numbers:
+                val = f"{float(imdb):.1f}"
+            else:
+                val = str(int(round(float(imdb) * 10)))
             xbmc.executebuiltin(f"SetProperty({out_imdb},{val},Home)")
         except: pass
 
@@ -48,8 +59,18 @@ def calculate_and_set_ratings(params):
     if user:
         try:
             n = float(user)
+            # Static formatted output
             xbmc.executebuiltin(f"SetProperty({out_user},{round(n, 1):.1f},Home)")
-            xbmc.executebuiltin(f"SetProperty({out_pct},{int(round(n * 10))},Home)")
+            
+            # Toggled value (Percent OR Number based on setting)
+            if use_numbers:
+                toggled_user = f"{n:.1f}"
+            else:
+                toggled_user = str(int(round(n * 10)))
+                
+            xbmc.executebuiltin(f"SetProperty({out_pct},{toggled_user},Home)")
+            
+            # Other visual outputs
             xbmc.executebuiltin(f"SetProperty({out_f5},rating{int(round(n / 2.0))},Home)")
             xbmc.executebuiltin(f"SetProperty({out_f10},{int(round(n))},Home)")
             xbmc.executebuiltin(f"SetProperty({out_prec},{round(n, 1):.1f},Home)")

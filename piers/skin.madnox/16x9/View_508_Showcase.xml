@@ -401,7 +401,7 @@
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 				<onup condition="!Skin.String(View508InfoDelay,manual) | ListItem.IsParentFolder | String.Startswith(ListItem.Label,*)">9050</onup>
 				<onup condition="Skin.String(View508InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">9999</onup>
-				<onunfocus>PlayerControl(Stop)</onunfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<ondown>60508</ondown>
 				<pagecontrol>60508</pagecontrol>
 				<orientation>horizontal</orientation>

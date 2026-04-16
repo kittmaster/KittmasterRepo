@@ -84,7 +84,7 @@
 				<height>780</height>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 				<onleft>9050</onleft>
-				<onunfocus>PlayerControl(Stop)</onunfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onright>60533</onright>
 				<pagecontrol>60533</pagecontrol>
 				<include>ContainerScrollTime</include>

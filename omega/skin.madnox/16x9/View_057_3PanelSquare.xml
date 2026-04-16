@@ -89,6 +89,9 @@
 		<control type="group">
 			<visible>Control.IsVisible(57)</visible>
 			<include>AnimationSlidePanel</include>
+			<!-- =============================================================== -->
+			<!-- START OF FIX: Restored detailed art groups from old file      -->
+			<!-- =============================================================== -->
 			<control type="group">
 				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)</visible>
 				<left>822</left>
@@ -226,6 +229,9 @@
 					<param name="diffuse">diffuse/rounded5-522x522.png</param>
 				</include>
 			</control>
+			<!-- =============================================================== -->
+			<!-- END OF FIX                                                    -->
+			<!-- =============================================================== -->
 			<control type="image">
 				<visible>!Skin.HasSetting(View57HideLogo)</visible>
 				<top>214</top>

@@ -54,7 +54,7 @@
 					<onup condition="Skin.String(View500InfoDelay,manual) + !ListItem.IsParentFolder">9999</onup>
 					<ondown>60500</ondown>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-					<onunfocus>PlayerControl(Stop)</onunfocus>
+					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<onleft>9050</onleft>
 					<onright>6055</onright>
 					<pagecontrol>60500</pagecontrol>

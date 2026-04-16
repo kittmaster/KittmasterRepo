@@ -163,14 +163,24 @@ class TrailerMonitor(xbmc.Monitor):
 
 # --- MODULE ENTRY POINT ---
 def run(params=None):
-    # --- SINGLETON CHECK ---
-    if xbmcgui.Window(10000).getProperty(PROP_RUNNING) == "true":
-        log_debug("Script already running (singleton check), exiting duplicate.")
-        return 
+    # Determine which action to perform
+    action = params.get('action') if params else 'trailer_rolling'
 
-    xbmcgui.Window(10000).setProperty(PROP_RUNNING, "true")
-    log_debug("Script started via Router (entering main loop).")
+    if action == 'trailer_rolling':
+        # --- SINGLETON CHECK ---
+        if xbmcgui.Window(10000).getProperty(PROP_RUNNING) == "true":
+            log_debug("Script already running (singleton check), exiting duplicate.")
+            return
 
-    # Start the monitor
-    monitor = TrailerMonitor()
-    monitor.run()
+        xbmcgui.Window(10000).setProperty(PROP_RUNNING, "true")
+        log_debug("Script started via Router (entering main loop).")
+
+        # Start the monitor
+        monitor = TrailerMonitor()
+        monitor.run()
+
+    elif action == 'trailer_cleanup':
+        # This is our new, targeted cleanup action
+        log_debug("Cleanup action called directly from XML.")
+        monitor = TrailerMonitor()
+        monitor.cleanup()

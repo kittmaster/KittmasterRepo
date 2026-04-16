@@ -1381,7 +1381,7 @@
 				<label>$INFO[Container(1060).ListItem.TotalDiscs]</label>
 			</control>
 			<control type="label">
-				<visible>String.IsEqual(ListItem.DBTYPE,album)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,album) + ![Control.HasFocus(1010) | Container(9000).HasFocus(101) | Control.HasFocus(1060) | Container(9000).HasFocus(106)]</visible>
 				<left>-135.5</left>
 				<include>MediaFlagBigLabel</include>
 				<label>$INFO[ListItem.TotalDiscs]</label>
@@ -1398,7 +1398,7 @@
 				<label>$INFO[Container(7006).NumItems]</label>
 			</control>
 			<control type="label">
-				<visible>String.IsEqual(ListItem.DBTYPE,album) + !Control.HasFocus(1090)</visible>
+				<visible>String.IsEqual(ListItem.DBTYPE,album) + ![Control.HasFocus(1010) | Container(9000).HasFocus(101) | Control.HasFocus(1060) | Container(9000).HasFocus(106) | Control.HasFocus(1090)]</visible>
 				<left>-135.5</left>
 				<include>MediaFlagBigLabel</include>
 				<label>$INFO[Container(9050).NumItems]</label>

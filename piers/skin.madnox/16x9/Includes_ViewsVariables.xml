@@ -1625,10 +1625,10 @@
 		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
 	</variable>
 
-	<!-- <variable name="EnableDisableLabel-XXXX">
-		<value condition="!Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+	<variable name="EnableDisableLabel-RatingsAsNumbers">
+		<value condition="Skin.HasSetting(RatingsAsNumbers)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
 		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
-	</variable> -->
+	</variable>
 
 	<!-- <variable name="EnableDisableLabel-XXXXX">
 		<value condition="!Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
@@ -1696,17 +1696,20 @@
 	</variable>
 
 	<variable name="TMDbRatingLogicVar">
-		<!-- Instant Kill If Person -->
-		<value condition="String.IsEqual(ListItem.DBTYPE,video)" />
-		<!-- Show Calculated Percent If Available -->
-		<value condition="!String.IsEmpty(Window(Home).Property(InfoDialog.TMDb.Percent))">$INFO[Window(Home).Property(InfoDialog.TMDb.Percent), ,%  ]</value>
-		<!-- Fallback To Helper Raw Rating -->
+		<!-- Person/Bio Protection -->
+		<value condition="String.IsEqual(ListItem.DBTYPE,person) | String.IsEqual(ListItem.DBTYPE,actor)" />
+		<!-- Show Calculated Value (Number or Percent) and add the correct suffix -->
+		<value condition="!String.IsEmpty(Window(Home).Property(InfoDialog.TMDb.Percent))">$INFO[Window(Home).Property(InfoDialog.TMDb.Percent)]$VAR[RatingSuffix,,]</value>
+		<!-- Fallback To Helper Raw Rating (if script hasn't run yet) -->
 		<value>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating)]</value>
 	</variable>
 
 	<variable name="IMDbRatingLogicVar">
-		<value condition="String.IsEqual(ListItem.DBTYPE,video)" />
-		<value condition="!String.IsEmpty(Window(Home).Property(InfoDialog.IMDb.Percent))">$INFO[Window(Home).Property(InfoDialog.IMDb.Percent), ,%  ]</value>
+		<!-- Person/Bio Protection -->
+		<value condition="String.IsEqual(ListItem.DBTYPE,person) | String.IsEqual(ListItem.DBTYPE,actor)" />
+		<!-- Show Calculated Value (Number or Percent) and add the correct suffix -->
+		<value condition="!String.IsEmpty(Window(Home).Property(InfoDialog.IMDb.Percent))">$INFO[Window(Home).Property(InfoDialog.IMDb.Percent)]$VAR[RatingSuffix,,]</value>
+		<!-- Fallback To Helper Raw Rating (if script hasn't run yet) -->
 		<value>$INFO[Window(Home).Property(TMDbHelper.ListItem.IMDb_Rating)]</value>
 	</variable>
 

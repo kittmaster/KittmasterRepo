@@ -29,7 +29,7 @@
 				<left>90</left>
 				<width>1740</width>
 				<height>492</height>
-				<onunfocus>PlayerControl(Stop)</onunfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onup>9050</onup>
 				<ondown>60502</ondown>
 				<pagecontrol>60502</pagecontrol>

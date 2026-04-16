@@ -58,7 +58,7 @@
 					<onup condition="Skin.String(View503InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">PlayerControl(Stop)</onup>
 					<onup condition="Skin.String(View503InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">9999</onup>
 					<!-- Down (To Scrollbar 60503) -->
-					<onunfocus>PlayerControl(Stop)</onunfocus>
+					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<ondown>60503</ondown>
 					<!-- Fixed ID (Was 60502) -->
 					<pagecontrol>60503</pagecontrol>

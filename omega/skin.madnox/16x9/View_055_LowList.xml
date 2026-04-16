@@ -61,7 +61,7 @@
 				<height>500</height>
 				<!-- Script Trigger: Runs Once When Entering The List -->
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-				<onunfocus>PlayerControl(Stop)</onunfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onleft>9050</onleft>
 				<onright>6055</onright>
 				<pagecontrol>6055</pagecontrol>
@@ -208,51 +208,30 @@
 				<onright condition="Control.IsVisible(61300)">61300</onright>
 			</control>
 		</control>
-		<!-- Media flags Fix overlapping icons when Movie & TV Show is linked -->
+		<!-- Media flags -->
 		<control type="group">
 			<visible>Control.IsVisible(55)</visible>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>
 			</include>
-			<control type="group">
-				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "movie")</visible>
-				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
-					<param name="right">20</param>
-					<param name="bottom">15</param>
-				</include>
-			</control>
-			<control type="group">
-				<visible>Control.IsVisible(55) + !String.Contains(ListItem.DBType, "season") &amp; String.Contains(ListItem.DBType, "episode")</visible>
-				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
-					<param name="right">20</param>
-					<param name="bottom">15</param>
-				</include>
-			</control>
-			<control type="group">
-				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "season")</visible>
-				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-					<param name="right">20</param>
-					<param name="bottom">15</param>
-				</include>
-			</control>
-			<control type="group">
-				<visible>Control.IsVisible(55) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
-				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-					<param name="right">20</param>
-					<param name="bottom">15</param>
-				</include>
-			</control>
-			<control type="group">
-				<visible>Control.IsVisible(55) + Container.Content(musicvideos)</visible>
-				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
-					<param name="right">20</param>
-					<param name="bottom">15</param>
-				</include>
-			</control>
+			<!-- =============================================================== -->
+			<!-- START OF FIX: Restored specific media flag groups from old file -->
+			<!-- =============================================================== -->
+			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+				<param name="right">20</param>
+				<param name="bottom">15</param>
+			</include>
+			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos4">
+				<param name="right">20</param>
+				<param name="bottom">15</param>
+			</include>
 			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudio">
 				<param name="right">20</param>
 				<param name="bottom">15</param>
 			</include>
+			<!-- =============================================================== -->
+			<!-- END OF FIX                                                    -->
+			<!-- =============================================================== -->
 		</control>
 	</include>
 </includes>

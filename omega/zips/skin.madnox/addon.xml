@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<addon id="skin.madnox" version="21.10.01" name="Madnox" provider-name="Kittmaster">
+<addon id="skin.madnox" version="21.10.02" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.skin.madnox" version="1.0.1" />
@@ -64,6 +64,15 @@
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>
 		<news>
+			v.21.10.02
+			- Repaired unexpected media stopping from new trailer rolling feature. Media/Music will continue uninterrupted
+			- Restored jump list to music section
+			- Restored multiple views for music specific sections i.e. missing artwork, covers etc.
+			- Created user selectable display for certain ratings as floating numbers or show as percent
+			- Reverted use of .xbt file and unpacked images per Kodi admin suggestion for addon submission
+			- Added missing dialog notification info if there is no biography or plot data
+			- Removed nav trap in 1020 view
+			- Consolidated identical plot methods into one singular callout			
 			v.21.10.01
 			** Front end **
 			-Display/Hide main context menu options

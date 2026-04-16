@@ -348,6 +348,7 @@
 				<control type="panel" id="1020">
 					<onclick condition="String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">PlayMedia($ESCINFO[ListItem.Filenameandpath])</onclick>
 					<onclick condition="!String.IsEqual(Container(1020).ListItem.DBTYPE,movie)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/go_to_path.json,use_rules=True,target=videos,"folderpath=$INFO[ListItem.FolderPath]")</onclick>
+					<onup>9000</onup>
 					<ondown>50</ondown>
 					<include content="DialogExtraInfo">
 						<param name="visible">Control.HasFocus(1020)</param>
@@ -840,39 +841,7 @@
 				<texture background="true">$VAR[ActorPanel_PlotArt_Var]</texture>
 			</control>
 			<!-- Biography / Plot Text (WITH space for flags) -->
-			<control type="textbox">
-				<visible>[Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + !String.IsEmpty(Control.GetLabel(200))</visible>
-				<top>644</top>
-				<right>340</right>
-				<bottom>125</bottom>
-				<include>AutoScrollPlot</include>
-				<label>$VAR[ActorPanel_Plot_Var]</label>
-			</control>
-			<control type="textbox">
-				<visible>[Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + String.IsEmpty(Control.GetLabel(200))</visible>
-				<top>644</top>
-				<right>10</right>
-				<bottom>125</bottom>
-				<include>AutoScrollPlot</include>
-				<label>$VAR[ActorPanel_Plot_Var]</label>
-			</control>
-			<!-- Biography / Plot Text (EXPANDED when no flags are visible) -->
-			<control type="textbox">
-				<visible>![Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + !String.IsEmpty(Control.GetLabel(200))</visible>
-				<top>644</top>
-				<right>340</right>
-				<bottom>45</bottom>
-				<include>AutoScrollPlot</include>
-				<label>$VAR[ActorPanel_Plot_Var]</label>
-			</control>
-			<control type="textbox">
-				<visible>![Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + String.IsEmpty(Control.GetLabel(200))</visible>
-				<top>644</top>
-				<right>10</right>
-				<bottom>45</bottom>
-				<include>AutoScrollPlot</include>
-				<label>$VAR[ActorPanel_Plot_Var]</label>
-			</control>
+			<include>PersonPlotTextBoxes</include>
 			<!-- Countdown Timer -->
 			<control type="label">
 				<visible>Container(9000).Hasfocus(100001) + !Skin.HasSetting(enablemovietvshowslidercountdowntimer) + [Integer.IsGreater(Container(9004).NumItems, 8)]</visible>
@@ -1115,7 +1084,7 @@
 		</control>
 		<!-- Get Album Details -->
 		<control type="list" id="7004">
-			<visible>String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,artist)</visible>
+			<visible>String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)</visible>
 			<include>HiddenList</include>
 			<content>$VAR[MusicInfoAlbumContentVar]</content>
 		</control>
@@ -1126,7 +1095,7 @@
 		</control>
 		<!-- Get Album Track Details -->
 		<control type="list" id="7006">
-			<visible>String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,artist)</visible>
+			<visible>String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)</visible>
 			<include>HiddenList</include>
 			<content>$VAR[MusicInfoTrackContentVar]</content>
 		</control>
@@ -1374,7 +1343,7 @@
 			<control type="group" id="9001">
 				<!-- Albums -->
 				<control type="panel" id="1010">
-					<visible>String.IsEqual(ListItem.DBTYPE,artist)</visible>
+					<visible>String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)</visible>
 					<onclick>Dialog.Close(all)</onclick>
 					<onclick>PlayMedia($INFO[Container(1010).ListItem.FolderPath],isdir)</onclick>
 					<top>211</top>
@@ -1388,7 +1357,10 @@
 						<param name="containerheight">305</param>
 						<param name="label2">$INFO[ListItem.Year]</param>
 					</include>
-					<content target="music" sortby="year" sortorder="descending">musicdb://artists/$INFO[ListItem.DBID]?albumartistsonly=false</content>
+					<!-- Query when viewing an Artist -->
+					<content target="music" sortby="year" sortorder="descending" condition="String.IsEqual(ListItem.DBTYPE,artist)">musicdb://artists/$INFO[ListItem.DBID]/-1/</content>
+					<!-- Query when viewing an Album: Finds other albums by this artist, excluding the current one -->
+					<content target="music" sortby="year" sortorder="descending" condition="String.IsEqual(ListItem.DBTYPE,album)">musicdb://albums/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[ListItem.Artist]%22%5D%7D%2C%7B%22field%22%3A%22album%22%2C%22operator%22%3A%22isnot%22%2C%22value%22%3A%5B%22$INFO[ListItem.Album]%22%5D%7D%5D%7D%2C%22type%22%3A%22albums%22%7D</content>
 				</control>
 				<!-- Music Videos -->
 				<control type="panel" id="1090">
@@ -1704,6 +1676,7 @@
 			<control type="group">
 				<left>1018</left>
 				<top>124</top>
+				<!-- REPLACE WITH THIS BLOCK -->
 				<control type="grouplist">
 					<height>38</height>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -1745,7 +1718,7 @@
 						<width>auto</width>
 						<font>Font30_Reg</font>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
-						<label>$INFO[Container(10051).ListItem.Rating, ,  ]</label>
+						<label>$INFO[Container(10051).ListItem.Rating]$VAR[RatingSuffix, , ]</label>
 					</control>
 					<control type="image">
 						<visible>!String.IsEmpty(Control.GetLabel(5305))</visible>
@@ -1758,7 +1731,7 @@
 						<width>auto</width>
 						<font>Font30_Reg</font>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
-						<label>$INFO[Container(10051).ListItem.Property(rating.imdb), ,  ]</label>
+						<label>$INFO[Container(10051).ListItem.Property(rating.imdb)]$VAR[RatingSuffix, , ]</label>
 					</control>
 					<control type="image">
 						<visible>!String.IsEmpty(Control.GetLabel(5306))</visible>
@@ -1771,7 +1744,7 @@
 						<width>auto</width>
 						<font>Font30_Reg</font>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
-						<label>$INFO[Container(10051).ListItem.Property(Rating.Rotten), ,%  ]</label>
+						<label>$INFO[Container(10051).ListItem.Property(Rating.Rotten), , ]$VAR[RatingSuffix, , ]</label>
 					</control>
 					<control type="image">
 						<visible>!String.IsEmpty(Control.GetLabel(5307))</visible>
@@ -1784,7 +1757,7 @@
 						<width>auto</width>
 						<font>Font30_Reg</font>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
-						<label>$INFO[Container(10051).ListItem.Property(Rating.Rotten_User), ,%  ]</label>
+						<label>$INFO[Container(10051).ListItem.Property(Rating.Rotten_User), , ]$VAR[RatingSuffix, , ]</label>
 					</control>
 					<control type="image">
 						<visible>!String.IsEmpty(Control.GetLabel(5308))</visible>
@@ -1797,7 +1770,7 @@
 						<width>auto</width>
 						<font>Font30_Reg</font>
 						<textcolor>$VAR[PanelTextColorVar]</textcolor>
-						<label>$INFO[Container(10051).ListItem.Property(Rating.Metacritic), ,%  ]</label>
+						<label>$INFO[Container(10051).ListItem.Property(Rating.Metacritic), , ]$VAR[RatingSuffix, , ]</label>
 					</control>
 				</control>
 			</control>
@@ -2355,39 +2328,7 @@
 					<texture background="true">$VAR[VideoInfoPlotArtVar]</texture>
 				</control>
 				<!-- Biography / Plot Text (WITH space for flags) -->
-				<control type="textbox">
-					<visible>[Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + !String.IsEmpty(Control.GetLabel(200))</visible>
-					<top>644</top>
-					<right>340</right>
-					<bottom>125</bottom>
-					<include>AutoScrollPlot</include>
-					<label>$VAR[ActorPanel_Plot_Var]</label>
-				</control>
-				<control type="textbox">
-					<visible>[Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + String.IsEmpty(Control.GetLabel(200))</visible>
-					<top>644</top>
-					<right>10</right>
-					<bottom>125</bottom>
-					<include>AutoScrollPlot</include>
-					<label>$VAR[ActorPanel_Plot_Var]</label>
-				</control>
-				<!-- Biography / Plot Text (EXPANDED when no flags are visible) -->
-				<control type="textbox">
-					<visible>![Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + !String.IsEmpty(Control.GetLabel(200))</visible>
-					<top>644</top>
-					<right>340</right>
-					<bottom>45</bottom>
-					<include>AutoScrollPlot</include>
-					<label>$VAR[ActorPanel_Plot_Var]</label>
-				</control>
-				<control type="textbox">
-					<visible>![Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + String.IsEmpty(Control.GetLabel(200))</visible>
-					<top>644</top>
-					<right>10</right>
-					<bottom>45</bottom>
-					<include>AutoScrollPlot</include>
-					<label>$VAR[ActorPanel_Plot_Var]</label>
-				</control>
+				<include>PersonPlotTextBoxes</include>
 				<!-- Inject Media Flags for TMDb Person View -->
 				<include>MediaFlags_Person</include>
 			</control>
@@ -2460,6 +2401,43 @@
 					<label></label>
 				</control>
 			</control>
+		</control>
+	</include>
+
+	<include name="PersonPlotTextBoxes">
+		<!-- Biography / Plot Text (WITH space for flags) -->
+		<control type="textbox">
+			<visible>[Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + !String.IsEmpty(Control.GetLabel(200))</visible>
+			<top>644</top>
+			<right>340</right>
+			<bottom>125</bottom>
+			<include>AutoScrollPlot</include>
+			<label>$VAR[ActorPanel_Plot_Var]</label>
+		</control>
+		<control type="textbox">
+			<visible>[Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + String.IsEmpty(Control.GetLabel(200))</visible>
+			<top>644</top>
+			<right>10</right>
+			<bottom>125</bottom>
+			<include>AutoScrollPlot</include>
+			<label>$VAR[ActorPanel_Plot_Var]</label>
+		</control>
+		<!-- Biography / Plot Text (EXPANDED when no flags are visible) -->
+		<control type="textbox">
+			<visible>![Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + !String.IsEmpty(Control.GetLabel(200))</visible>
+			<top>644</top>
+			<right>340</right>
+			<bottom>45</bottom>
+			<include>AutoScrollPlot</include>
+			<label>$VAR[ActorPanel_Plot_Var]</label>
+		</control>
+		<control type="textbox">
+			<visible>![Container(9000).HasFocus(100002) | Container(9000).HasFocus(100003) | Control.HasFocus(20052) | Control.HasFocus(20053)] + String.IsEmpty(Control.GetLabel(200))</visible>
+			<top>644</top>
+			<right>10</right>
+			<bottom>45</bottom>
+			<include>AutoScrollPlot</include>
+			<label>$VAR[ActorPanel_Plot_Var]</label>
 		</control>
 	</include>
 
@@ -3086,7 +3064,8 @@
 					<width>auto</width>
 					<font>Font30_Reg</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
-					<label>$VAR[TMDbRatingLogicVar]</label>
+					<!-- Leave white space for positioning -->
+					<label> $VAR[TMDbRatingLogicVar] </label>
 				</control>
 				<!-- 5305: IMDb Rating -->
 				<control type="image">
@@ -3102,7 +3081,7 @@
 					<width>auto</width>
 					<font>Font30_Reg</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
-					<label>$VAR[IMDbRatingLogicVar]</label>
+					<label> $VAR[IMDbRatingLogicVar] </label>
 				</control>
 				<!-- 5306: Rotten Tomatoes Critics -->
 				<control type="image">
@@ -3423,9 +3402,9 @@
 		<!-- Check Tmdb Helper Memory (Fixes The 'Back' Button Issue) -->
 		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))">$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),,% ]</value>
 		<!-- Check Ratings Container (7005) -->
-		<value condition="!String.IsEmpty(Container(7005).ListItem.Rating(tomatometerallcritics))">$INFO[Container(7005).ListItem.Rating(tomatometerallcritics),,% ]</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Rating(tomatometerallcritics))">$INFO[Container(7005).ListItem.Rating(tomatometerallcritics),, ]</value>
 		<!-- Check Standard Library -->
-		<value condition="!String.IsEmpty(ListItem.Rating(tomatometerallcritics))">$INFO[ListItem.Rating(tomatometerallcritics),,% ]</value>
+		<value condition="!String.IsEmpty(ListItem.Rating(tomatometerallcritics))">$INFO[ListItem.Rating(tomatometerallcritics),, ]</value>
 	</variable>
 
 	<variable name="ViewInfoRTAllAudienceIconVar">
@@ -3458,8 +3437,8 @@
 
 	<variable name="ViewInfoMetacriticLabelVar">
 		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Metacritic_Rating), ,% ]</value>
-		<value condition="!String.IsEmpty(ListItem.Rating(metacritic))">$INFO[ListItem.Rating(metacritic), ,% ]</value>
-		<value condition="!String.IsEmpty(Container(7005).ListItem.Rating(metacritic))">$INFO[Container(7005).ListItem.Rating(metacritic), ,% ]</value>
+		<value condition="!String.IsEmpty(ListItem.Rating(metacritic))">$INFO[ListItem.Rating(metacritic), , ]</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Rating(metacritic))">$INFO[Container(7005).ListItem.Rating(metacritic), , ]</value>
 	</variable>
 
 	<variable name="ViewInfoTop250Var">
@@ -3646,14 +3625,17 @@
 		<value>tmdb_id=$INFO[ListItem.IMDbNumber]</value>
 	</variable>
 
+	<!-- REPLACE WITH THIS NEW VARIABLE DEFINITION -->
 	<variable name="VideoInfoPlotVar">
 		<value condition="Skin.HasSetting(VideoInfoPlotOutline) + !String.IsEmpty(Container.ListItem.PlotOutline)">$INFO[Container.ListItem.PlotOutline]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Plot)">$INFO[Container.ListItem.Plot]</value>
+		<!-- This line is important: it handles showing actor bios/plots when focus is on the cast list. Do not change it. -->
 		<value condition="ControlGroup(9001).HasFocus + !Control.HasFocus(50)">$LOCALIZE[31348]</value>
 		<value condition="Skin.HasSetting(VideoInfoPlotOutline) + !String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
 		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 		<value condition="!String.IsEmpty(Window.Property(plot))">$INFO[Window.Property(plot)]</value>
-		<value>$LOCALIZE[31348]</value>
+		<!-- This is the only line that changes. -->
+		<value>[I]$LOCALIZE[207]: $LOCALIZE[31348][/I]</value>
 	</variable>
 
 	<variable name="VideoInfoContainerIcon">
@@ -3909,20 +3891,33 @@
 		<value condition="[Control.HasFocus(10053) | Container(9000).HasFocus(102)] + !String.IsEmpty(Container(10053).ListItem.Art(discart))">$INFO[Container(10053).ListItem.Art(discart)]</value>
 	</variable>
 
+	<!-- REPLACE WITH THIS NEW VARIABLE DEFINITION -->
 	<variable name="ActorPanel_Plot_Var">
-		<!-- Check Local Movie/TV Panels -->
+		<!-- SCENARIO 1: Focused on a MOVIE in the actor's filmography -->
 		<value condition="[Control.HasFocus(20052) | Container(9000).HasFocus(100002)] + !String.IsEmpty(Container(20052).ListItem.Plot)">$INFO[Container(20052).ListItem.Plot]</value>
+		<value condition="[Control.HasFocus(20052) | Container(9000).HasFocus(100002)]">[I]$LOCALIZE[31348][/I]</value>
+
+		<!-- SCENARIO 2: Focused on a TV SHOW in the actor's filmography -->
 		<value condition="[Control.HasFocus(20053) | Container(9000).HasFocus(100003)] + !String.IsEmpty(Container(20053).ListItem.Plot)">$INFO[Container(20053).ListItem.Plot]</value>
-		<!-- Check TMDb Movie/TV Panels -->
-		<value condition="[Control.HasFocus(10052) | Container(9000).HasFocus(101)] + !String.IsEmpty(Container(10052).ListItem.Plot)">$INFO[Container(10052).ListItem.Plot]</value>
-		<value condition="[Control.HasFocus(10053) | Container(9000).HasFocus(102)] + !String.IsEmpty(Container(10053).ListItem.Plot)">$INFO[Container(10053).ListItem.Plot]</value>
-		<!-- Fallback to Actor Biography -->
-		<value>$INFO[ListItem.Plot]</value>
+		<value condition="[Control.HasFocus(20053) | Container(9000).HasFocus(100003)]">[I]$LOCALIZE[31348][/I]</value>
+
+		<!-- SCENARIO 3: Focused on BIOGRAPHY button -->
+		<!-- If the actor's biography is NOT empty, show it -->
+		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+		<!-- Ultimate fallback: Biography is empty, show fallback message -->
+		<value>[I]$LOCALIZE[21887]: $LOCALIZE[31348][/I]</value>
 	</variable>
 
 	<variable name="TMDbHelper_EpisodeParams_Var">
 		<!-- Use the correct XML-encoded ampersand (&amp;) -->
 		<value condition="String.IsEqual(ListItem.DBTYPE,episode)">&amp;season=$INFO[ListItem.Season]&amp;episode=$INFO[ListItem.Episode]</value>
 		<value />
+	</variable>
+
+	<variable name="RatingSuffix">
+		<value condition="Skin.HasSetting(RatingsAsNumbers)" />
+		<!-- Returns nothing for numbers -->
+		<value>%</value>
+		<!-- Returns % by default (for percentages) -->
 	</variable>
 </includes>

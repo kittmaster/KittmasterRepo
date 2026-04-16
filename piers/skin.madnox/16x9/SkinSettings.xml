@@ -951,6 +951,12 @@
 							<selected>Skin.HasSetting(force_context_996)</selected>
 							<include>SettingsRadioButton</include>
 						</control>
+						<control type="radiobutton" id="555">
+							<label>$LOCALIZE[31523]: $VAR[EnableDisableLabel-RatingsAsNumbers]</label>
+							<onclick>Skin.ToggleSetting(RatingsAsNumbers)</onclick>
+							<selected>Skin.HasSetting(RatingsAsNumbers)</selected>
+							<include>SettingsRadioButton</include>
+						</control>
 						<control type="radiobutton" id="580">
 							<label>[CAPITALIZE]"$LOCALIZE[1405]-$LOCALIZE[31304]"[/CAPITALIZE] [LOWERCASE]$LOCALIZE[31440][/LOWERCASE]: $VAR[EnableDisableLabel-DisableProgressBarUserColorSelect]</label>
 							<onclick>Skin.ToggleSetting(DisableProgressBarUserColorSelect)</onclick>

@@ -634,7 +634,7 @@
 				<width>1920</width>
 				<height>645</height>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-				<onunfocus>PlayerControl(Stop)</onunfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onup>9050</onup>
 				<ondown>60506</ondown>
 				<pagecontrol>60506</pagecontrol>

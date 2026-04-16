@@ -18,6 +18,9 @@
 				<param name="diffusetexture">diffuse/siderounded20-863X820.png</param>
 				<param name="reflect">!Skin.HasSetting(View54HideReflect)</param>
 			</include>
+			<!-- =============================================================== -->
+			<!-- START OF FIX: Restored detailed art groups from old file      -->
+			<!-- =============================================================== -->
 			<control type="group">
 				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<top>184</top>
@@ -215,6 +218,9 @@
 					<animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
 				</control>
 			</control>
+			<!-- =============================================================== -->
+			<!-- END OF FIX                                                    -->
+			<!-- =============================================================== -->
 			<control type="grouplist">
 				<animation effect="slide" end="0,-39" condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">Conditional</animation>
 				<top>536</top>
@@ -284,7 +290,7 @@
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 					<onleft>9050</onleft>
 					<onright>6054</onright>
-					<onunfocus>PlayerControl(Stop)</onunfocus>
+					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<pagecontrol>6054</pagecontrol>
 					<include>ContainerScrollTime</include>
 					<viewtype label="$LOCALIZE[31221]">list</viewtype>
@@ -331,6 +337,5 @@
 			</control>
 			<include condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist)">MediaFlagsAudio</include>
 		</control>
-
 	</include>
 </includes>

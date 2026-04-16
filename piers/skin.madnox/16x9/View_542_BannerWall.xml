@@ -30,7 +30,7 @@
 				<height>999</height>
 				<!-- Script Trigger and Navigation Cleanup -->
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-				<onunfocus>PlayerControl(Stop)</onunfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onleft>9050</onleft>
 				<onright>60542</onright>
 				<pagecontrol>60542</pagecontrol>
