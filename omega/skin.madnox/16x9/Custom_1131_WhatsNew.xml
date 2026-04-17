@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <window type="dialog" id="1131">
-	<!-- MODIFIED: Default focus to the textbox itself -->
-	<defaultcontrol always="true">2</defaultcontrol>
-	<!-- Clean up the text properties when the window closes -->
+
+	<!--
+		Navigation model (proven Kodi pattern for read-only scrolling text):
+
+		  defaultcontrol → OK button (10) — the ONLY button-type control.
+		  Kodi requires a focusable child as defaultcontrol.  grouplist with
+		  only a textbox inside produces a null focus on open (keypresses fire
+		  into a void — confirmed in log: actions arrive but nothing responds).
+
+		  Scrolling is handled by the textbox's own built-in scroll engine via
+		  its pagecontrol link to scrollbar (60).  The scrollbar receives UP/DOWN
+		  from the OK button's onup, making the scrollbar the keyboard-scroll
+		  proxy.  Mouse wheel on the textbox area works independently through
+		  Kodi's mouse handler.
+
+		  Focus chain:
+		    [open] → OK button (10)
+		    OK onup → scrollbar (60)   <- scrollbar accepts UP/DOWN to page text
+		    scrollbar ondown → OK button (10)
+		    OK onclick → Close
+	-->
+	<defaultcontrol always="true">10</defaultcontrol>
+
 	<onunload>ClearProperty(TextViewer_Header,home)</onunload>
 	<onunload>ClearProperty(TextViewer_Text,home)</onunload>
 
 	<controls>
-		<!-- Background tint to darken the screen behind the popup -->
+
+		<!-- Background tint -->
 		<control type="image">
 			<texture colordiffuse="E6FFFFFF">colors/black50.png</texture>
 		</control>
@@ -24,6 +45,7 @@
 				<param name="height" value="800" />
 			</include>
 
+			<!-- Logo -->
 			<control type="image">
 				<right>40</right>
 				<top>30</top>
@@ -33,8 +55,8 @@
 				<texture>icons/logo.png</texture>
 			</control>
 
-			<!-- Header Text -->
-			<control type="textbox" id="1">
+			<!-- Header label (single line, passive) -->
+			<control type="label" id="1">
 				<left>40</left>
 				<top>40</top>
 				<width>960</width>
@@ -44,34 +66,30 @@
 				<label>$LOCALIZE[24054] $LOCALIZE[1405] MADNOX: v$INFO[System.AddonVersion(skin.madnox)]</label>
 			</control>
 
-			<!-- Scrollable grouplist container. NO navigation tags here. -->
-			<control type="grouplist" id="50">
+			<!--
+				Scrollable text body - textbox at window level (NOT inside a grouplist).
+				pagecontrol="60" links it to the scrollbar so the scrollbar thumb
+				tracks the text position and the scrollbar's UP/DOWN actions page
+				through the text.
+				Width is pulled in from the right to leave clear room for the scrollbar.
+			-->
+			<control type="textbox" id="2">
 				<left>40</left>
 				<top>100</top>
-				<width>1420</width>
+				<width>1400</width>
 				<height>580</height>
-				<orientation>vertical</orientation>
+				<font>Font28_Reg</font>
+				<label>$INFO[Window(home).Property(TextViewer_Text)]</label>
+				<autoscroll>false</autoscroll>
 				<pagecontrol>60</pagecontrol>
-				<!-- This links it to the scrollbar -->
-
-				<!-- MODIFIED: The textbox is now the focusable control with navigation -->
-				<control type="textbox" id="2">
-					<width>1400</width>
-					<height>auto</height>
-					<font>Font28_Reg</font>
-					<label>$INFO[Window(home).Property(TextViewer_Text)]</label>
-					<autoscroll>false</autoscroll>
-					<!-- Navigation now lives on the textbox -->
-					<onup>10</onup>
-					<!-- When at top of text, navigate to OK button -->
-					<ondown>10</ondown>
-					<!-- When at bottom of text, navigate to OK button -->
-					<onright>60</onright>
-					<!-- On right, navigate to scrollbar -->
-				</control>
 			</control>
 
-			<!-- Scrollbar for long changelogs -->
+			<!--
+				Scrollbar - linked to the textbox via pagecontrol on the textbox.
+				This is also the keyboard-scroll proxy: OK button navigates UP to
+				here, and UP/DOWN on the scrollbar pages through the text.
+				ondown / onleft / onright all return focus to the OK button.
+			-->
 			<control type="scrollbar" id="60">
 				<right>20</right>
 				<top>100</top>
@@ -79,12 +97,18 @@
 				<height>580</height>
 				<orientation>vertical</orientation>
 				<showonepage>false</showonepage>
-				<!-- MODIFIED: onleft now points back to the textbox -->
-				<onleft>2</onleft>
+				<ondown>10</ondown>
+				<onleft>10</onleft>
 				<onright>10</onright>
 			</control>
 
-			<!-- OK / Close Button -->
+			<!--
+				OK / Close button - the ONLY focusable (button-type) control.
+				This is the defaultcontrol so focus always lands here on open.
+				onup goes to the scrollbar so the user can page through the text
+				with UP/DOWN after navigating there once.
+				onleft/onright are self-referencing (no other buttons).
+			-->
 			<control type="grouplist" id="9131">
 				<left>40</left>
 				<top>700</top>
@@ -92,18 +116,20 @@
 				<height>80</height>
 				<orientation>horizontal</orientation>
 				<align>center</align>
+
 				<control type="button" id="10">
 					<width>350</width>
 					<include>DialogButtonAlwaysFocused</include>
 					<label>$LOCALIZE[186]</label>
 					<align>center</align>
 					<onclick>Close</onclick>
-					<!-- MODIFIED: onup now points to the textbox -->
-					<onup>2</onup>
-					<onleft>60</onleft>
-					<onright>60</onright>
+					<onup>60</onup>
+					<onleft>10</onleft>
+					<onright>10</onright>
 				</control>
+
 			</control>
+
 		</control>
 	</controls>
 </window>

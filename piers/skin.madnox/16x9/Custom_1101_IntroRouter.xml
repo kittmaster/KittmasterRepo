@@ -16,6 +16,7 @@
 	<!-- ================================================================= -->
 	<!-- 2. NORMAL BOOT (Executes ONLY after template has initialized)     -->
 	<!-- ================================================================= -->
+	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload> -->
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
 
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
@@ -35,7 +36,8 @@
 	<!-- === Intro Video Logic (Only if Initialized) === -->
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">Skin.SetBool(Madnox.IntroActive)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">SetFocus(10)</onload>
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload>
+	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload> -->
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue)) + Skin.HasSetting(Madnox_Backgrounds_Migrated)">ReplaceWindow(1103)</onload>
 
 	<controls>
 		<control type="button" id="10">
