@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<window type="dialog" id="1131">
+	<!-- MODIFIED: Default focus to the textbox itself -->
+	<defaultcontrol always="true">2</defaultcontrol>
+	<!-- Clean up the text properties when the window closes -->
+	<onunload>ClearProperty(TextViewer_Header,home)</onunload>
+	<onunload>ClearProperty(TextViewer_Text,home)</onunload>
+
+	<controls>
+		<!-- Background tint to darken the screen behind the popup -->
+		<control type="image">
+			<texture colordiffuse="E6FFFFFF">colors/black50.png</texture>
+		</control>
+
+		<!-- Main Dialog Box -->
+		<control type="group">
+			<width>1500</width>
+			<height>800</height>
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+
+			<include content="DialogBackground">
+				<param name="width" value="1500" />
+				<param name="height" value="800" />
+			</include>
+
+			<control type="image">
+				<right>40</right>
+				<top>30</top>
+				<width>120</width>
+				<height>60</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+
+			<!-- Header Text -->
+			<control type="textbox" id="1">
+				<left>40</left>
+				<top>40</top>
+				<width>960</width>
+				<height>50</height>
+				<font>Font28_Bold</font>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$LOCALIZE[24054] $LOCALIZE[1405] MADNOX: v$INFO[System.AddonVersion(skin.madnox)]</label>
+			</control>
+
+			<!-- Scrollable grouplist container. NO navigation tags here. -->
+			<control type="grouplist" id="50">
+				<left>40</left>
+				<top>100</top>
+				<width>1420</width>
+				<height>580</height>
+				<orientation>vertical</orientation>
+				<pagecontrol>60</pagecontrol>
+				<!-- This links it to the scrollbar -->
+
+				<!-- MODIFIED: The textbox is now the focusable control with navigation -->
+				<control type="textbox" id="2">
+					<width>1400</width>
+					<height>auto</height>
+					<font>Font28_Reg</font>
+					<label>$INFO[Window(home).Property(TextViewer_Text)]</label>
+					<autoscroll>false</autoscroll>
+					<!-- Navigation now lives on the textbox -->
+					<onup>10</onup>
+					<!-- When at top of text, navigate to OK button -->
+					<ondown>10</ondown>
+					<!-- When at bottom of text, navigate to OK button -->
+					<onright>60</onright>
+					<!-- On right, navigate to scrollbar -->
+				</control>
+			</control>
+
+			<!-- Scrollbar for long changelogs -->
+			<control type="scrollbar" id="60">
+				<right>20</right>
+				<top>100</top>
+				<width>30</width>
+				<height>580</height>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<!-- MODIFIED: onleft now points back to the textbox -->
+				<onleft>2</onleft>
+				<onright>10</onright>
+			</control>
+
+			<!-- OK / Close Button -->
+			<control type="grouplist" id="9131">
+				<left>40</left>
+				<top>700</top>
+				<width>1420</width>
+				<height>80</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<control type="button" id="10">
+					<width>350</width>
+					<include>DialogButtonAlwaysFocused</include>
+					<label>$LOCALIZE[186]</label>
+					<align>center</align>
+					<onclick>Close</onclick>
+					<!-- MODIFIED: onup now points to the textbox -->
+					<onup>2</onup>
+					<onleft>60</onleft>
+					<onright>60</onright>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>
