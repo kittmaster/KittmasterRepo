@@ -16,7 +16,7 @@
 	<!-- ================================================================= -->
 	<!-- 2. NORMAL BOOT (Executes ONLY after template has initialized)     -->
 	<!-- ================================================================= -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
 
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
