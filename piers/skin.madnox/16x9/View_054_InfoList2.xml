@@ -250,20 +250,24 @@
 				</control>
 			</control>
 			<control type="scrollbar" id="60541">
-				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Plot)</visible>
 				<top>619</top>
 				<right>80</right>
 				<bottom>195</bottom>
 				<onleft>6054</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
+				<showonepage>false</showonepage>
 			</control>
 			<control type="scrollbar" id="60542">
-				<visible>![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+				<visible>![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + [!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))]</visible>
 				<top>580</top>
 				<right>80</right>
 				<bottom>195</bottom>
 				<onleft>6054</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
+				<showonepage>false</showonepage>
 			</control>
 		</control>
 		<!-- List -->
@@ -304,8 +308,14 @@
 					<left>937</left>
 					<bottom>140</bottom>
 					<onleft>54</onleft>
-					<onright condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">60541</onright>
-					<onright condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">60542</onright>
+					<!-- Video Content: Try 60541 first, then jump bar -->
+					<onright condition="[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Control.IsVisible(60541)">60541</onright>
+					<onright condition="[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Control.IsVisible(60541) + Control.IsVisible(61300)">61300</onright>
+					<onright condition="[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Control.IsVisible(60541) + Control.IsVisible(61301)">61301</onright>
+					<!-- Music/Other Content: Try 60542 first, then jump bar -->
+					<onright condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Control.IsVisible(60542)">60542</onright>
+					<onright condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Control.IsVisible(60542) + Control.IsVisible(61300)">61300</onright>
+					<onright condition="![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Control.IsVisible(60542) + Control.IsVisible(61301)">61301</onright>
 				</control>
 			</control>
 		</control>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<window>
+<window type="dialog">
 	<defaultcontrol always="true">205</defaultcontrol>
 	<controls>
 		<control type="group">
@@ -49,18 +49,25 @@
 					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					<visible>Visualisation.Enabled + !Skin.HasSetting(MusicOSDDisableVizOptionsButton)</visible>
 				</control>
-				<control type="radiobutton" id="500">
+				<control type="radiobutton" id="104">
 					<include content="DialogButtonOSD">
 						<param name="texture" value="buttons/player/visualisation.png" />
 					</include>
 					<visible>!Skin.HasSetting(MusicOSDDisableVizButton)</visible>
+				</control>
+				<control type="radiobutton" id="105">
+					<include content="DialogButtonOSD">
+						<param name="texture" value="buttons/player/info.png" />
+					</include>
+					<onclick>Action(Info)</onclick>
+					<visible>!Skin.HasSetting(MusicOSDDisableInfoButton)</visible>
 				</control>
 			</control>
 			<control type="grouplist">
 				<top>-5</top>
 				<height>120</height>
 				<onright>301</onright>
-				<onleft>500</onleft>
+				<onleft>105</onleft>
 				<ondown>close</ondown>
 				<align>center</align>
 				<itemgap>-10</itemgap>

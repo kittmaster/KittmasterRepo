@@ -60,13 +60,14 @@
 					<include>AutoScrollPlot</include>
 				</control>
 			</control>
-			<control type="scrollbar" id="60571">
+			<!-- <control type="scrollbar" id="60571">
 				<visible>!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303))</visible>
 				<right>80</right>
 				<top>667</top>
 				<bottom>225</bottom>
 				<onleft>6057</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 			<control type="scrollbar" id="60572">
 				<visible>!Container.Content(artists) + String.IsEmpty(Control.GetLabel(5303))</visible>
@@ -75,6 +76,7 @@
 				<bottom>225</bottom>
 				<onleft>6057</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 			<control type="scrollbar" id="60573">
 				<visible>Container.Content(artists)</visible>
@@ -83,6 +85,37 @@
 				<bottom>225</bottom>
 				<onleft>6057</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
+			</control> -->
+			<control type="scrollbar" id="60571">
+				<visible>!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303)) + [!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description))]</visible>
+				<right>80</right>
+				<top>667</top>
+				<bottom>225</bottom>
+				<onleft>6057</onleft>
+				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
+				<showonepage>false</showonepage>
+			</control>
+			<control type="scrollbar" id="60572">
+				<visible>!Container.Content(artists) + String.IsEmpty(Control.GetLabel(5303)) + [!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description))]</visible>
+				<right>80</right>
+				<top>629</top>
+				<bottom>225</bottom>
+				<onleft>6057</onleft>
+				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
+				<showonepage>false</showonepage>
+			</control>
+			<control type="scrollbar" id="60573">
+				<visible>Container.Content(artists) + [!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Artist_Description))]</visible>
+				<right>80</right>
+				<top>590</top>
+				<bottom>225</bottom>
+				<onleft>6057</onleft>
+				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
+				<showonepage>false</showonepage>
 			</control>
 		</control>
 		<!-- Art -->
@@ -278,7 +311,7 @@
 					<param name="biglistvisible">Skin.HasSetting(View57BigList)</param>
 				</include>
 			</control>
-			<control type="scrollbar" id="6057">
+			<!-- <control type="scrollbar" id="6057">
 				<left>812</left>
 				<top>430</top>
 				<bottom>140</bottom>
@@ -286,6 +319,24 @@
 				<onright condition="!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303))">60571</onright>
 				<onright condition="!Container.Content(artists) + String.IsEmpty(Control.GetLabel(5303))">60572</onright>
 				<onright condition="Container.Content(artists)">60573</onright>
+			</control> -->
+			<control type="scrollbar" id="6057">
+				<left>812</left>
+				<top>430</top>
+				<bottom>140</bottom>
+				<onleft>57</onleft>
+				<!-- Condition 1: Try 60571, then fall back to jump bar -->
+				<onright condition="!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303)) + Control.IsVisible(60571)">60571</onright>
+				<onright condition="!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303)) + !Control.IsVisible(60571) + Control.IsVisible(61300)">61300</onright>
+				<onright condition="!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303)) + !Control.IsVisible(60571) + Control.IsVisible(61301)">61301</onright>
+				<!-- Condition 2: Try 60572, then fall back to jump bar -->
+				<onright condition="!Container.Content(artists) + String.IsEmpty(Control.GetLabel(5303)) + Control.IsVisible(60572)">60572</onright>
+				<onright condition="!Container.Content(artists) + String.IsEmpty(Control.GetLabel(5303)) + !Control.IsVisible(60572) + Control.IsVisible(61300)">61300</onright>
+				<onright condition="!Container.Content(artists) + String.IsEmpty(Control.GetLabel(5303)) + !Control.IsVisible(60572) + Control.IsVisible(61301)">61301</onright>
+				<!-- Condition 3: Try 60573, then fall back to jump bar -->
+				<onright condition="Container.Content(artists) + Control.IsVisible(60573)">60573</onright>
+				<onright condition="Container.Content(artists) + !Control.IsVisible(60573) + Control.IsVisible(61300)">61300</onright>
+				<onright condition="Container.Content(artists) + !Control.IsVisible(60573) + Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 		<!-- Media Flags -->

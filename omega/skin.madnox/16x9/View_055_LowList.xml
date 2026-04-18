@@ -92,7 +92,9 @@
 				<top>680</top>
 				<bottom>10</bottom>
 				<onleft>55</onleft>
-				<onright>60551</onright>
+				<onright condition="Control.IsVisible(60551)">60551</onright>
+				<onright condition="!Control.IsVisible(60551) + Control.IsVisible(61300)">61300</onright>
+				<onright condition="!Control.IsVisible(60551) + Control.IsVisible(61301)">61301</onright>
 			</control>
 			<!-- Art -->
 			<control type="group">
@@ -200,12 +202,15 @@
 				</control>
 			</control>
 			<control type="scrollbar" id="60551">
+				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))</visible>
 				<animation effect="slide" end="-5" time="200" condition="Control.HasFocus(60551)">Conditional</animation>
 				<right>-20</right>
 				<top>662</top>
 				<bottom>132</bottom>
 				<onleft>6055</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
+				<showonepage>false</showonepage>
 			</control>
 		</control>
 		<!-- Media flags -->

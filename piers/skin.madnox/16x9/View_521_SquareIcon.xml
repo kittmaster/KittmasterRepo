@@ -111,6 +111,7 @@
 				<bottom>170</bottom>
 				<onleft>521</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 		<!-- Bottom info/Media flags: suppressed in Favourites (has its own HUD) -->
@@ -197,6 +198,7 @@
 				<bottom>170</bottom>
 				<onleft>5211</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 	</include>

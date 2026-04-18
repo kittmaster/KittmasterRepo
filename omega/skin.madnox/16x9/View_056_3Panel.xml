@@ -67,6 +67,7 @@
 				<bottom>188</bottom>
 				<onleft>6056</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 			<control type="scrollbar" id="60562">
 				<visible>String.IsEqual(ListItem.DBTYPE,set)</visible>
@@ -75,6 +76,7 @@
 				<bottom>188</bottom>
 				<onleft>6056</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 			<control type="scrollbar" id="60563">
 				<visible>Container.Content(seasons)</visible>
@@ -83,6 +85,7 @@
 				<bottom>188</bottom>
 				<onleft>6056</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 		<!-- Art Panel -->
@@ -212,9 +215,8 @@
 					<width>732</width>
 					<height>$PARAM[height]</height>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-					<onleft>PlayerControl(Stop)</onleft>
 					<onleft>9050</onleft>
-					<onright>PlayerControl(Stop)</onright>
+					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<onright>6056</onright>
 					<pagecontrol>6056</pagecontrol>
 					<include>ContainerScrollTime</include>

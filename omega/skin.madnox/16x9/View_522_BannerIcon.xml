@@ -30,9 +30,8 @@
 				<height>726</height>
 				<!-- Script Trigger and Navigation Cleanup -->
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-				<onleft>PlayerControl(Stop)</onleft>
 				<onleft>9050</onleft>
-				<onright>PlayerControl(Stop)</onright>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onright>60514</onright>
 				<pagecontrol>60514</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -100,6 +99,7 @@
 				<bottom>170</bottom>
 				<onleft>522</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 		<!-- Bottom Info/Media Flags -->

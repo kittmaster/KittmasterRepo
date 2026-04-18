@@ -23,9 +23,8 @@
 					<effect type="width" end="970" time="400" tween="cubic" easing="out" />
 				</animation>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-				<onleft>PlayerControl(Stop)</onleft>
 				<onleft>9050</onleft>
-				<onright>PlayerControl(Stop)</onright>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onright>6051</onright>
 				<pagecontrol>6051</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -45,6 +44,7 @@
 				<bottom>140</bottom>
 				<onleft>51</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 		<!-- Media Flags -->

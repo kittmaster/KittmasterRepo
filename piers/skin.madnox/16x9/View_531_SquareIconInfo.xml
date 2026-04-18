@@ -146,7 +146,9 @@
 				<top>140</top>
 				<bottom>140</bottom>
 				<onleft>531</onleft>
-				<onright>605311</onright>
+				<!-- <onright>605311</onright> -->
+				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 		<!-- Media Flags -->

@@ -28,9 +28,8 @@
 				<height>800</height>
 				<!-- Script Trigger and Navigation Cleanup -->
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-				<onleft>PlayerControl(Stop)</onleft>
 				<onleft>9050</onleft>
-				<onright>PlayerControl(Stop)</onright>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onright>6050</onright>
 				<pagecontrol>6050</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -50,6 +49,7 @@
 				<bottom>140</bottom>
 				<onleft>50</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 
@@ -277,7 +277,7 @@
 					</control>
 					<include content="ViewArtwork">
 						<param name="art">$VAR[PosterVar]</param>
-						<param name="aspect">scale</param>
+						<param name="aspect">keep</param>
 						<param name="fallback">DefaultFile.png</param>
 						<param name="diffuse">diffuse/rounded5-532x532.png</param>
 					</include>
@@ -298,7 +298,7 @@
 					<visible>Skin.HasSetting(View50AnimatedFanart)</visible>
 					<control type="image">
 						<texture fallback="colors/black.png">$VAR[FanartVar]</texture>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="videowindow">
 						<visible>Player.HasVideo</visible>

@@ -34,9 +34,8 @@
 					<right>20</right>
 					<height>838</height>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
-					<onleft>PlayerControl(Stop)</onleft>
 					<onleft>9050</onleft>
-					<onright>PlayerControl(Stop)</onright>
+					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<onright>6058</onright>
 					<pagecontrol>6058</pagecontrol>
 					<movement>3</movement>
@@ -1087,6 +1086,7 @@
 				<bottom>150</bottom>
 				<onleft>58</onleft>
 				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<onright condition="Control.IsVisible(61301)">61301</onright>
 				<texturesliderbackground border="2">buttons/scrollbar-nib-back-vertical.png</texturesliderbackground>
 			</control>
 		</control>
