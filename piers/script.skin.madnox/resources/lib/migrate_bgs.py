@@ -6,6 +6,23 @@ import xbmcvfs
 
 # ---------------------------------------------------------------------------
 # CHANGELOG
+# v4 fixes:
+#   - Added FIX 7: JSON-aware icon/thumb path migration covering ALL known
+#     source forms across every platform:
+#       special://skin/extras/icons/<file>
+#         (skinshortcuts-native; written on Android, FireTV, Linux)
+#       special://home/addons/script.skin.madnox/resources/extras/icons/<file>
+#         (old script addon path with extras/ segment; seen on Windows installs
+#          that set icons before the resource-addon split)
+#       special://home/addons/script.skin.madnox/resources/icons/<file>
+#         (old script addon path without extras/ segment; variant of above)
+#     All three are rewritten to:
+#       special://home/addons/resource.images.skin.madnox/resources/icons/<file>
+#     Scoped strictly to 'icon' and 'thumb' property types — never touches
+#     'background', 'widgetPath', 'backgroundPlaylist', or any other prop.
+#     FIX 7 runs in Pass 2 (JSON-aware) alongside fix_playlist_backgrounds.
+#     Both fixes share a single file write at the end of Pass 2.
+#
 # v3 fixes:
 #   - Added FIX 6: rewrites raw Windows (and POSIX) absolute paths to .xsp
 #     files that appear inside <action> tags in .DATA.xml files.
@@ -332,6 +349,74 @@ def fix_playlist_backgrounds(entries):
 
 
 # ---------------------------------------------------------------------------
+# FIX 7 — JSON-aware icon/thumb path migration
+#
+# Covers ALL known source forms for icon/thumb paths across every platform:
+#
+#   Form 1 — skinshortcuts-native virtual path (Android, FireTV, Linux):
+#     special://skin/extras/icons/<file>
+#
+#   Form 2 — old script addon path with extras/ segment (Windows pre-split):
+#     special://home/addons/script.skin.madnox/resources/extras/icons/<file>
+#
+#   Form 3 — old script addon path without extras/ segment (Windows variant):
+#     special://home/addons/script.skin.madnox/resources/icons/<file>
+#
+# All three are rewritten to the canonical resource.images addon form:
+#     special://home/addons/resource.images.skin.madnox/resources/icons/<file>
+#
+# Paths already in the resource.images form are left unchanged (no prefix
+# match fires).  Any path in the destination form is already correct.
+#
+# Scoped strictly to 'icon' and 'thumb' property types.  Will never touch
+# 'background', 'backgroundPlaylist', 'widgetPath', or any other property
+# even if it happens to contain an icons/ path.
+# ---------------------------------------------------------------------------
+_ICON_PROPS = {"icon", "thumb"}
+_ICON_DST_PREFIX = "special://home/addons/resource.images.skin.madnox/resources/icons/"
+
+# Ordered longest-first so the more specific extras/ form is matched before
+# the shorter resources/ form (avoids a double-strip if order were reversed).
+_ICON_SRC_PREFIXES = [
+    "special://home/addons/script.skin.madnox/resources/extras/icons/",
+    "special://home/addons/script.skin.madnox/resources/icons/",
+    "special://skin/extras/icons/",
+]
+
+def fix_icon_paths(entries):
+    """
+    Rewrite all known stale icon/thumb path forms to the canonical
+    resource.images addon form.
+
+    Returns (entries, was_changed).
+    """
+    changed = False
+    for entry in entries:
+        if len(entry) != 4:
+            continue
+        group, item_id, prop, value = entry
+        if prop not in _ICON_PROPS:
+            continue
+        if not isinstance(value, str):
+            continue
+        value_lower = value.lower()
+        for src in _ICON_SRC_PREFIXES:
+            if value_lower.startswith(src.lower()):
+                filename = value[len(src):]
+                new_value = _ICON_DST_PREFIX + filename
+                entry[3] = new_value
+                changed = True
+                xbmc.log(
+                    "{}: FIX 7 rewrote icon [{}/{}] '{}' -> '{}'".format(
+                        LOG_PREFIX, group, item_id, value, new_value
+                    ),
+                    xbmc.LOGINFO
+                )
+                break  # only one prefix can match; move to next entry
+    return entries, changed
+
+
+# ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
@@ -409,13 +494,18 @@ def run(params=None):
                     continue
 
         # ---------------------------------------------------------------
-        # Pass 2 — JSON-aware playlist background sentinel fix
-        # Re-reads the file after Pass 1 so it sees the already-rewritten
-        # paths, which means PLAYLIST_BACKGROUND_MAP only needs to cover
-        # the resource.images form for paths that came through Pass 1.
-        # The special://skin/ and script.skin.madnox forms are still
-        # included in the map as a fallback for .DATA.xml files or any
-        # file that Pass 1 did not modify.
+        # Pass 2 — JSON-aware fixes on .properties files
+        #
+        # Re-reads the file after Pass 1 so it sees already-rewritten paths.
+        #
+        # fix_playlist_backgrounds: rewrites static JPG background values to
+        #   the "playlist" sentinel and inserts backgroundPlaylist entries.
+        #
+        # fix_icon_paths (FIX 7): rewrites all stale icon/thumb path forms
+        #   (special://skin/extras/icons/ and script.skin.madnox absolute
+        #   forms) to the canonical resource.images addon form.
+        #
+        # Both fixes share a single file write at the end of Pass 2.
         # ---------------------------------------------------------------
         if filename.endswith('.properties'):
             try:
@@ -446,15 +536,19 @@ def run(params=None):
                 )
                 continue
 
-            fixed_entries, was_changed = fix_playlist_backgrounds(entries)
+            entries, changed_bg    = fix_playlist_backgrounds(entries)
+            entries, changed_icons = fix_icon_paths(entries)
+            was_changed = changed_bg or changed_icons
 
             if was_changed:
                 try:
                     with open(file_path, 'w', encoding='utf-8') as f:
-                        json.dump(fixed_entries, f, indent=4, ensure_ascii=False)
+                        json.dump(entries, f, indent=4, ensure_ascii=False)
                     changes_made = True
                     xbmc.log(
-                        "{}: Wrote playlist sentinel fixes to '{}'.".format(LOG_PREFIX, filename),
+                        "{}: Wrote Pass 2 fixes to '{}' (bg={}, icons={}).".format(
+                            LOG_PREFIX, filename, changed_bg, changed_icons
+                        ),
                         xbmc.LOGINFO
                     )
                 except (IOError, OSError) as e:

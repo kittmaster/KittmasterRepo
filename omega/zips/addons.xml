@@ -90,7 +90,7 @@
 		<platform>all</platform>
 		<license>Creative Commons Attribution 3.0</license>
 	</extension>
-</addon><addon id="resource.images.skin.madnox" version="1.0.0" name="Madnox Image Resources" provider-name="Kittmaster">
+</addon><addon id="resource.images.skin.madnox" version="1.0.1" name="Madnox Image Resources" provider-name="Kittmaster">
     <requires>
         
         <import addon="kodi.resource" version="1.0.0" />
@@ -230,7 +230,7 @@ v0.4.0 (2025-03-23)
         </assets>
         <news>Added TMDB language options</news>
     </extension>
-</addon><addon id="script.skin.madnox" name="Madnox Skin Helper" version="1.0.4" provider-name="Kittmaster">
+</addon><addon id="script.skin.madnox" name="Madnox Skin Helper" version="1.0.5" provider-name="Kittmaster">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
@@ -375,11 +375,11 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.10.06" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.10.07" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.skin.madnox" version="1.0.4" />
-		<import addon="resource.images.skin.madnox" version="1.0.0" />		
+		<import addon="resource.images.skin.madnox" version="1.0.1" />		
 		<import addon="script.skinshortcuts" version="1.0.17" />
 		<import addon="plugin.video.themoviedb.helper" version="6.11.5" />
 		<import addon="script.image.resource.select" version="2.0.4" />
@@ -440,6 +440,10 @@ v0.4.0 (2025-03-23)
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>
 <news>
+v.21.10.07
+- Replaced PVR, channel, TV icons for updated icon set
+- Repaired migrator script causing icons to point to wrong location (Rerun in advanced if you have main menu icons missing)
+- Weather animation rework
 v.21.10.06
 - Reordered conflicting IDs causing remote control navigation jamming
 - Restructured admin entry panel to include skin settings
