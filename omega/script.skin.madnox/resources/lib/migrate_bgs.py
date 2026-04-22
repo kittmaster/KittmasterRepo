@@ -6,6 +6,21 @@ import xbmcvfs
 
 # ---------------------------------------------------------------------------
 # CHANGELOG
+# v3 fixes:
+#   - Added FIX 6: rewrites raw Windows (and POSIX) absolute paths to .xsp
+#     files that appear inside <action> tags in .DATA.xml files.
+#     Two forms are handled:
+#       a) ...\skin.madnox\extras[/\]playlists[/\]...xsp
+#          (old skin-internal path, pre-extras-refactor)
+#       b) ...\script.skin.madnox\resources[/\]extras[/\]playlists[/\]...xsp
+#          (post-extras-refactor script addon path)
+#          ...\script.skin.madnox\resources[/\]playlists[/\]...xsp
+#          (variant without the 'extras' segment)
+#     Both are rewritten to:
+#          special://skin/extras/playlists/<subpath>.xsp
+#     FIX 5 already covered the special://home/addons/... prefix form;
+#     FIX 6 covers the raw filesystem path form that FIX 5 never reached.
+#
 # v2 fixes:
 #   - Removed FIX 1 (special://skin/extras/ → script addon absolute path).
 #     FIX 1 was corrupting icon/background paths that were already in the
@@ -135,12 +150,12 @@ def _apply_fix4(data):
 # ---------------------------------------------------------------------------
 # FIX 5
 # Restores any .xsp path that ended up with a script.skin.madnox or
-# resource.images.skin.madnox absolute prefix back to the canonical
-# special://skin/extras/ form that skinshortcuts expects at runtime.
+# resource.images.skin.madnox absolute special:// prefix back to the
+# canonical special://skin/extras/ form that skinshortcuts expects at runtime.
 #
-# This is a safety net. With FIX 1 removed it should never fire, but it
-# is kept because it is cheap and harmless, and guards against any future
-# code inadvertently expanding .xsp paths.
+# Handles:
+#   special://home/addons/script.skin.madnox/resources/[extras/]playlists/...xsp
+#   special://home/addons/resource.images.skin.madnox/resources/[extras/]playlists/...xsp
 # ---------------------------------------------------------------------------
 _FIX5_PATTERN = re.compile(
     r'special://home/addons/(?:script|resource\.images)\.skin\.madnox/resources/(?:extras/)?'
@@ -150,6 +165,66 @@ _FIX5_PATTERN = re.compile(
 
 def _apply_fix5(data):
     return _FIX5_PATTERN.sub(r'special://skin/extras/\1', data)
+
+
+# ---------------------------------------------------------------------------
+# FIX 6
+# Rewrites raw Windows or POSIX absolute filesystem paths to .xsp files
+# that appear inside <action> tags in .DATA.xml files.
+#
+# Kodi's skinshortcuts addon stores user-edited shortcut actions as absolute
+# paths when a playlist shortcut is created on Windows.  After the Madnox
+# extras refactor the paths recorded can be one of:
+#
+#   Form A — old skin-internal path (pre-refactor):
+#     C:\...\skin.madnox\extras\playlists\<subpath>.xsp
+#     C:\...\skin.madnox\extras/playlists/<subpath>.xsp  (mixed separators)
+#
+#   Form B — script addon path (post-refactor, before resource-addon move):
+#     C:\...\script.skin.madnox\resources\extras\playlists\<subpath>.xsp
+#     C:\...\script.skin.madnox\resources\playlists\<subpath>.xsp
+#     (and POSIX equivalents with forward slashes)
+#
+# Both forms must be rewritten to:
+#     special://skin/extras/playlists/<subpath>.xsp
+#
+# The regex captures everything after the 'playlists' segment (using either
+# slash direction) as the subpath, then normalises separators to forward
+# slashes in the replacement.
+#
+# We match inside ActivateWindow(...) action strings. The pattern stops at
+# the first comma or closing paren so it never overruns the argument boundary.
+# ---------------------------------------------------------------------------
+_FIX6_PATTERN = re.compile(
+    r'(?:'
+    # Windows Form A: drive:\...\skin.madnox\extras\playlists\  (old skin-internal)
+    r'[A-Za-z]:[/\\][^"<>]*?[/\\]skin\.madnox[/\\]extras[/\\]playlists[/\\]'
+    r'|'
+    # Windows Form B: drive:\...\script.skin.madnox\resources[\extras]\playlists\
+    r'[A-Za-z]:[/\\][^"<>]*?[/\\]script\.skin\.madnox[/\\]resources[/\\](?:extras[/\\])?playlists[/\\]'
+    r'|'
+    # POSIX Form A: /path/to/skin.madnox/extras/playlists/
+    r'/[^"<>]*?/skin\.madnox/extras/playlists/'
+    r'|'
+    # POSIX Form B: /path/to/script.skin.madnox/resources[/extras]/playlists/
+    r'/[^"<>]*?/script\.skin\.madnox/resources/(?:extras/)?playlists/'
+    r')'
+    r'([^\s",)<>]+?\.xsp)',     # capture: subpath (no spaces, commas, parens, angle brackets)
+    re.IGNORECASE
+)
+
+def _fix6_replacer(m):
+    # Normalise any backslashes in the captured subpath to forward slashes.
+    subpath = m.group(1).replace('\\', '/')
+    result = 'special://skin/extras/playlists/' + subpath
+    xbmc.log(
+        "{}: FIX 6 rewrote '{}' -> '{}'".format(LOG_PREFIX, m.group(0), result),
+        xbmc.LOGINFO
+    )
+    return result
+
+def _apply_fix6(data):
+    return _FIX6_PATTERN.sub(_fix6_replacer, data)
 
 
 # ---------------------------------------------------------------------------
@@ -184,7 +259,7 @@ def fix_playlist_backgrounds(entries):
     for i, entry in enumerate(entries):
         if len(entry) != 4:
             continue
-        group, item_id, prop, _value = entry
+        group, item_id, prop, value = entry
         key = (group, item_id)
         if prop == "background":
             bg_index[key] = i
@@ -195,11 +270,8 @@ def fix_playlist_backgrounds(entries):
 
     changed = False
 
-    # Iterate over a snapshot of keys so list.insert() doesn't shift indices
-    # we haven't visited yet.  We re-read entry positions from the live list
-    # inside the loop via the stored index, which may be stale after an
-    # insert.  To keep this safe we process entries in reverse index order
-    # so that any insert at idx+1 only shifts entries we have already handled.
+    # Process in reverse order so that insertions don't shift indices of
+    # entries we haven't visited yet.
     for key in sorted(bg_index.keys(), key=lambda k: bg_index[k], reverse=True):
         idx = bg_index[key]
         group, item_id = key
@@ -208,22 +280,21 @@ def fix_playlist_backgrounds(entries):
         if current_bg_value not in PLAYLIST_BACKGROUND_MAP:
             continue
 
-        # If a backgroundName is present, verify it belongs to a known
-        # playlist background before proceeding.
-        name_idx = bgname_index.get(key)
-        if name_idx is not None:
-            stored_name = entries[name_idx][3]
-            if stored_name not in PLAYLIST_BACKGROUND_NAMES:
+        sentinel, xsp_path = PLAYLIST_BACKGROUND_MAP[current_bg_value]
+
+        # If a backgroundName entry exists for this item, only proceed if
+        # it is one of the known Madnox playlist background names.
+        bgname_idx = bgname_index.get(key)
+        if bgname_idx is not None:
+            bgname_value = entries[bgname_idx][3]
+            if bgname_value not in PLAYLIST_BACKGROUND_NAMES:
                 xbmc.log(
-                    "{}: Skipping [{}/{}] — backgroundName '{}' is not a known "
-                    "playlist background name, treating as user custom.".format(
-                        LOG_PREFIX, group, item_id, stored_name
+                    "{}: Skipping [{}/{}] — backgroundName '{}' is user-custom.".format(
+                        LOG_PREFIX, group, item_id, bgname_value
                     ),
                     xbmc.LOGINFO
                 )
                 continue
-
-        sentinel, xsp_path = PLAYLIST_BACKGROUND_MAP[current_bg_value]
 
         # Rewrite the background value to the "playlist" sentinel
         entries[idx][3] = sentinel
@@ -289,9 +360,13 @@ def run(params=None):
 
         # ---------------------------------------------------------------
         # Pass 1 — String-level path rewrite (.properties and .DATA.xml)
-        # Rewrites background image paths to the canonical resource.images
-        # addon form.  Icon paths (special://skin/extras/icons/) are NOT
-        # matched by FIX 4 and are left untouched.
+        #
+        # FIX 4: background image paths → resource.images addon canonical form
+        # FIX 5: special://home/addons/... prefixed .xsp paths → special://skin/extras/
+        # FIX 6: raw Windows/POSIX absolute filesystem .xsp paths inside
+        #         <action> tags → special://skin/extras/  (DATA.xml only in
+        #         practice, but safe to run on .properties too since the
+        #         pattern is too specific to match anything else)
         # ---------------------------------------------------------------
         if filename.endswith('.properties') or filename.endswith('.DATA.xml'):
             try:
@@ -307,15 +382,15 @@ def run(params=None):
             original_data = data
 
             # FIX 4: Rewrite background image paths to resource.images addon.
-            #   Handles all three source forms:
-            #     special://skin/extras/backgrounds/...
-            #     special://home/addons/script.skin.madnox/resources/[extras/]backgrounds/...
-            #     special://home/addons/resource.images.skin.madnox/resources/[extras/]backgrounds/...
             data = _apply_fix4(data)
 
-            # FIX 5: Safety net — restore any .xsp path that ended up with
-            # an absolute addon prefix back to special://skin/extras/.
+            # FIX 5: Restore special://home/addons/... .xsp paths to
+            # special://skin/extras/ canonical form.
             data = _apply_fix5(data)
+
+            # FIX 6: Rewrite raw Windows/POSIX absolute paths to .xsp files
+            # (inside ActivateWindow actions) to special://skin/extras/ form.
+            data = _apply_fix6(data)
 
             if data != original_data:
                 try:
@@ -409,3 +484,10 @@ def run(params=None):
     # Mark migration as complete so Custom_1101_IntroRouter.xml does not
     # fire this script again on subsequent boots.
     xbmc.executebuiltin('Skin.SetBool(Madnox_Backgrounds_Migrated)')
+
+    # Wait 3 seconds to allow skinshortcuts rebuild to initialize
+    xbmc.sleep(2000)
+    
+    # Show notification: Notification(header, message, time_in_ms, icon)
+    # 7000ms = 7 seconds
+    xbmc.executebuiltin('Notification("Madnox", "Migrator repair complete", 7000, "info")')
