@@ -272,6 +272,7 @@
 		<value condition="Container(7000).HasFocus(5)">$LOCALIZE[31922]</value>
 		<value condition="Container(7000).HasFocus(6)">$LOCALIZE[31923]</value>
 		<value condition="Container(7000).HasFocus(7)">$LOCALIZE[31924]</value>
+		<value condition="Container(7000).HasFocus(8)">$LOCALIZE[31973]</value>
 	</variable>
 
 	<!-- General Description -->
@@ -283,6 +284,17 @@
 		<value condition="Control.HasFocus(107)">$LOCALIZE[31915]</value>
 		<value condition="Control.HasFocus(108)">$LOCALIZE[31916]</value>
 		<value condition="Control.HasFocus(110)">$LOCALIZE[31917]</value>
+		<value condition="Container(7000).HasFocus(1)">$LOCALIZE[31918]</value>
+	</variable>
+
+	<!-- Themes Description -->
+	<variable name="ThemesDescriptionVar">
+		<value condition="Container(7000).HasFocus(2)">$LOCALIZE[31919]</value>
+	</variable>
+
+	<!-- Colors Description -->
+	<variable name="ColorsDescriptionVar">
+		<value condition="Container(7000).HasFocus(3)">$LOCALIZE[31920]</value>
 	</variable>
 
 	<!-- Background Description -->
@@ -291,7 +303,7 @@
 		<value condition="Control.HasFocus(403)">$LOCALIZE[31424]</value>
 		<value condition="Control.HasFocus(404)">$LOCALIZE[31956]</value>
 		<value condition="Control.HasFocus(411)">$LOCALIZE[31957]</value>
-		<value condition="Control.HasFocus(412)">$LOCALIZE[31961]</value>
+		<!-- <value condition="Control.HasFocus(412)">$LOCALIZE[31961]</value> -->
 		<value condition="Control.HasFocus(413)">$LOCALIZE[31962]</value>
 		<value condition="Control.HasFocus(414)">$LOCALIZE[31958]</value>
 		<value condition="Control.HasFocus(415)">$LOCALIZE[31959]</value>
@@ -331,9 +343,7 @@
 		<value condition="Control.HasFocus(535)">$LOCALIZE[31967]</value>
 		<value condition="Control.HasFocus(537)">$LOCALIZE[31189]</value>
 		<value condition="Control.HasFocus(538)">$LOCALIZE[31420]</value>
-		<value condition="Control.HasFocus(540)">$LOCALIZE[31470]</value>
 		<value condition="Control.HasFocus(541)">$LOCALIZE[31507]</value>
-		<value condition="Control.HasFocus(542)">$LOCALIZE[31506]</value>
 		<value condition="Control.HasFocus(544)">$LOCALIZE[31516]</value>
 		<value condition="Control.HasFocus(545)">$LOCALIZE[31516]</value>
 		<value condition="Control.HasFocus(546)">$LOCALIZE[31516]</value>
@@ -349,6 +359,7 @@
 		<value condition="Control.HasFocus(581)">$LOCALIZE[31473]</value>
 		<value condition="Control.HasFocus(582)">$LOCALIZE[31505]</value>
 		<value condition="Control.HasFocus(598)">$LOCALIZE[31438]</value>
+		<value condition="Container(7000).HasFocus(5)">$LOCALIZE[31922]</value>
 	</variable>
 
 	<!-- Artwork Description -->
@@ -373,6 +384,7 @@
 		<value condition="Control.HasFocus(628)">$LOCALIZE[31952]</value>
 		<value condition="Control.HasFocus(629)">$LOCALIZE[31953]</value>
 		<value condition="Control.HasFocus(630)">$LOCALIZE[31954]</value>
+		<value condition="Container(7000).HasFocus(6)">$LOCALIZE[31923]</value>
 	</variable>
 
 	<!-- Addon Description -->
@@ -398,6 +410,16 @@
 		<value condition="Control.HasFocus(727)">$LOCALIZE[31972]</value>
 		<value condition="Control.HasFocus(728)">$LOCALIZE[31970]</value>
 		<value condition="Control.HasFocus(729)">$LOCALIZE[31514]</value>
+		<value condition="Container(7000).HasFocus(7)">$LOCALIZE[31924]</value>
+	</variable>
+
+	<!-- Advanced Description -->
+	<variable name="AdvancedDescriptionVar">
+		<value condition="Control.HasFocus(802)">$LOCALIZE[31506]</value>
+		<value condition="Control.HasFocus(803)">$LOCALIZE[31527]</value>
+		<value condition="Control.HasFocus(804)">$LOCALIZE[31526]</value>
+		<value condition="Control.HasFocus(805)">$LOCALIZE[31470]</value>
+		<value condition="Container(7000).HasFocus(8)">$LOCALIZE[31973]</value>
 	</variable>
 
 	<!-- Required Addons -->

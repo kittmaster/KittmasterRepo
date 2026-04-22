@@ -42,7 +42,7 @@
 				<ondown condition="Container(8000).Column(1)">SetFocus(8001,1)</ondown>
 				<ondown condition="Container(8000).Column(2)">SetFocus(8001,2)</ondown>
 				<ondown condition="Container(8000).Column(3)">SetFocus(8001,3)</ondown>
-				<itemlayout height="223" width="422.5">
+				<itemlayout height="223" width="338">
 					<control type="image">
 						<bordersize>10</bordersize>
 						<aspectratio scalediffuse="false">scale</aspectratio>
@@ -55,19 +55,19 @@
 						<bottom>10</bottom>
 						<height>60</height>
 						<left>10</left>
-						<width>405</width>
+						<width>320</width>
 						<texture border="10">buttons/focus-fade.png</texture>
 					</control>
 					<control type="label">
 						<bottom>10</bottom>
 						<height>60</height>
 						<align>center</align>
-						<font>Font32_Reg</font>
+						<font>Font28_Reg</font>
 						<label>$INFO[ListItem.Label]</label>
 						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 					</control>
 				</itemlayout>
-				<focusedlayout height="223" width="422.5">
+				<focusedlayout height="223" width="338">
 					<control type="image">
 						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 					</control>
@@ -87,7 +87,7 @@
 							<bottom>10</bottom>
 							<height>60</height>
 							<left>10</left>
-							<width>405</width>
+							<width>320</width>
 							<texture border="10">buttons/focus-fade.png</texture>
 						</control>
 						<control type="label">
@@ -117,18 +117,23 @@
 						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/sysinfo.jpg</icon>
 					</item>
 					<item id="4">
+						<label>$LOCALIZE[14210]</label>
+						<onclick>ActivateWindow(Profiles)</onclick>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/profiles.jpg</icon>
+					</item>
+					<item id="5">
 						<visible>![System.AddonIsEnabled(service.libreelec.settings) | System.AddonIsEnabled(service.coreelec.settings)]</visible>
 						<label>$LOCALIZE[14114]</label>
 						<onclick>ActivateWindow(eventlog)</onclick>
 						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/eventlog.jpg</icon>
 					</item>
-					<item id="5">
+					<item id="6">
 						<visible>System.AddonIsEnabled(service.libreelec.settings)</visible>
 						<label>LibreELEC $LOCALIZE[5]</label>
 						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/libreelec.jpg</icon>
 						<onclick>RunScript(service.libreelec.settings)</onclick>
 					</item>
-					<item id="6">
+					<item id="7">
 						<visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
 						<label>CoreELEC $LOCALIZE[5]</label>
 						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/libreelec.jpg</icon>
@@ -214,15 +219,15 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<!-- <item id="1">
-						<label>$LOCALIZE[20077]</label>
-						<onclick>ActivateWindow(SkinSettings)</onclick>
-						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/skinsettings.jpg</icon>
-					</item> -->
-					<item id="2">
+					<item id="1">
 						<label>$LOCALIZE[14207]</label>
 						<onclick>ActivateWindow(InterfaceSettings)</onclick>
 						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/interface.jpg</icon>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[20077]</label>
+						<onclick>ActivateWindow(SkinSettings)</onclick>
+						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/skinsettings.jpg</icon>
 					</item>
 					<item id="3">
 						<label>$LOCALIZE[14212]</label>
@@ -249,11 +254,11 @@
 						<onclick>ActivateWindow(PVRSettings)</onclick>
 						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/livetv.jpg</icon>
 					</item>
-					<item id="8">
+					<!-- <item id="8">
 						<label>$LOCALIZE[14210]</label>
 						<onclick>ActivateWindow(Profiles)</onclick>
 						<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system/profiles.jpg</icon>
-					</item>
+					</item> -->
 					<item id="9">
 						<visible>System.GetBool(gamesgeneral.enable)</visible>
 						<label>$LOCALIZE[15016]</label>

@@ -2645,6 +2645,21 @@ msgctxt "#31524"
 msgid "Allows changes to the ratings to convert between floating numbers or as a percentage. Affects TMDb & IMDb, all others remain as their default display."
 msgstr "Tillåter ändringar av betygen att konvertera mellan flytande tal eller som en procentandel. Påverkar TMDb och IMDb, alla andra finns kvar som standardskärm."
 
+#: /16x9/SkinSettings.xml
+msgctxt "#31525"
+msgid "Re-Run skin shortcuts migrator"
+msgstr "Kör om migrator för hudgenvägar"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31526"
+msgid "This will rewrite the skin shortcuts .properties file to the current 3 module addon structure. Only run if there are issues with background images or playlists are not working."
+msgstr "Detta kommer att skriva om skin-genvägarna .properties-filen till den nuvarande 3-modulstilläggsstrukturen. Kör bara om det finns problem med bakgrundsbilder eller spellistor inte fungerar."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31527"
+msgid "This will reactivate the addons installer. Only run if addons were not installed when skin was first installed."
+msgstr "Detta kommer att återaktivera installationsprogrammet för tillägg. Kör bara om tillägg inte installerades när skin först installerades."
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
@@ -2999,3 +3014,18 @@ msgstr "Visa överläggsmarkeringsinformation för tittade, otittade och pågåe
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "Ett skript för att redigera Kodis inbyggda RSS-ticker."
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Hudversion och återställningsalternativ. Återställer alla standardinställningar till dag ett operation."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31974"
+msgid "Addons"
+msgstr "Tillägg"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Hudversion och återställningsalternativ. Återställer alla standardinställningar till dag ett operation."
+

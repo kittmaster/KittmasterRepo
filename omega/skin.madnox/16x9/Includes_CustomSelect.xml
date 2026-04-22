@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <includes>
 	<include name="SelectMusicOSDBackground">
 		<item>
@@ -452,101 +452,101 @@
 			<onclick>Skin.ToggleSetting(VideoAnimatedFanart)</onclick>
 			<selected>Skin.HasSetting(VideoAnimatedFanart)</selected>
 		</control>
-		<control type="label" id="115">
+		<control type="label" id="104">
 			<label>$LOCALIZE[31036]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="button" id="116">
+		<control type="button" id="105">
 			<label>$LOCALIZE[571]</label>
 			<include>DialogButton</include>
 			<onclick>Dialog.Close(1111)</onclick>
 			<onclick>Skin.Reset(VideoFallbackBackground)</onclick>
 		</control>
-		<control type="button" id="117">
+		<control type="button" id="106">
 			<label>$LOCALIZE[31007]</label>
 			<include>DialogButton</include>
 			<onclick>Dialog.Close(1111)</onclick>
 			<onclick>Skin.SetImage(VideoFallbackBackground)</onclick>
 		</control>
-		<control type="button" id="118">
+		<control type="button" id="107">
 			<label>$LOCALIZE[31008]</label>
 			<include>DialogButton</include>
 			<onclick>Dialog.Close(1111)</onclick>
 			<onclick>Skin.SetPath(VideoFallbackBackground)</onclick>
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
-		<control type="label" id="120">
+		<control type="label" id="108">
 			<visible>Container.Content(movies) | Container.Content(sets) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[31076]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="121">
+		<control type="radiobutton" id="109">
 			<visible>Container.Content(movies) | Container.Content(sets) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[24022]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoSetCover)</onclick>
 			<selected>Skin.HasSetting(VideoSetCover)</selected>
 		</control>
-		<control type="radiobutton" id="122">
+		<control type="radiobutton" id="110">
 			<visible>Skin.HasSetting(VideoSetCover) + [Container.Content(movies) | Container.Content(sets) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31084]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoSetCoverCase)</onclick>
 			<selected>Skin.HasSetting(VideoSetCoverCase)</selected>
 		</control>
-		<control type="radiobutton" id="123">
+		<control type="radiobutton" id="111">
 			<visible>Skin.HasSetting(VideoSetCover) + [Container.Content(movies) | Container.Content(sets) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[20445]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoSetCoverFanart)</onclick>
 			<selected>Skin.HasSetting(VideoSetCoverFanart)</selected>
 		</control>
-		<control type="label" id="124">
+		<control type="label" id="112">
 			<visible>Container.Content(tvshows) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[31306]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="125">
+		<control type="radiobutton" id="113">
 			<visible>Container.Content(tvshows) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[24022]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoSeasonCover)</onclick>
 			<selected>Skin.HasSetting(VideoSeasonCover)</selected>
 		</control>
-		<control type="radiobutton" id="126">
+		<control type="radiobutton" id="114">
 			<visible>Skin.HasSetting(VideoSeasonCover) + [Container.Content(tvshows) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31084]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoSeasonCoverCase)</onclick>
 			<selected>Skin.HasSetting(VideoSeasonCoverCase)</selected>
 		</control>
-		<control type="radiobutton" id="127">
+		<control type="radiobutton" id="115">
 			<visible>Skin.HasSetting(VideoSeasonCover) + [Container.Content(tvshows) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[20445]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoSeasonCoverFanart)</onclick>
 			<selected>Skin.HasSetting(VideoSeasonCoverFanart)</selected>
 		</control>
-		<control type="label" id="128">
+		<control type="label" id="116">
 			<visible>Container.Content(genres) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[31307]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="129">
+		<control type="radiobutton" id="117">
 			<visible>Container.Content(genres) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[24022]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoGenreCover)</onclick>
 			<selected>Skin.HasSetting(VideoGenreCover)</selected>
 		</control>
-		<control type="radiobutton" id="130">
+		<control type="radiobutton" id="118">
 			<visible>Skin.HasSetting(VideoGenreCover) + [Container.Content(genres) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31084]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoGenreCoverCase)</onclick>
 			<selected>Skin.HasSetting(VideoGenreCoverCase)</selected>
 		</control>
-		<control type="radiobutton" id="131">
+		<control type="radiobutton" id="119">
 			<visible>Skin.HasSetting(VideoGenreCover) + [Container.Content(genres) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[20445]</label>
 			<include>DialogRadioButton</include>
@@ -575,68 +575,68 @@
 			<onclick>Skin.ToggleSetting(MusicAnimatedFanart)</onclick>
 			<selected>Skin.HasSetting(MusicAnimatedFanart)</selected>
 		</control>
-		<control type="label" id="110">
+		<control type="label" id="104">
 			<label>$LOCALIZE[31036]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="button" id="111">
+		<control type="button" id="105">
 			<label>$LOCALIZE[571]</label>
 			<include>DialogButton</include>
 			<onclick>Dialog.Close(1111)</onclick>
 			<onclick>Skin.Reset(VideoFallbackBackground)</onclick>
 		</control>
-		<control type="button" id="112">
+		<control type="button" id="106">
 			<label>$LOCALIZE[31007]</label>
 			<include>DialogButton</include>
 			<onclick>Dialog.Close(1111)</onclick>
 			<onclick>Skin.SetImage(VideoFallbackBackground)</onclick>
 		</control>
-		<control type="button" id="113">
+		<control type="button" id="107">
 			<label>$LOCALIZE[31008]</label>
 			<include>DialogButton</include>
 			<onclick>Dialog.Close(1111)</onclick>
 			<onclick>Skin.SetPath(VideoFallbackBackground)</onclick>
 		</control>
 		<include condition="Window.IsActive(Custom_1115_ViewSettings.xml)">SelectNowPlayingBackground</include>
-		<control type="label" id="120">
+		<control type="label" id="108">
 			<visible>Container.Content(artists) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[31308]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="121">
+		<control type="radiobutton" id="109">
 			<visible>Container.Content(artists) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[24022]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicAlbumCover)</onclick>
 			<selected>Skin.HasSetting(MusicAlbumCover)</selected>
 		</control>
-		<control type="radiobutton" id="122">
+		<control type="radiobutton" id="110">
 			<visible>Skin.HasSetting(MusicAlbumCover) + [Container.Content(artists) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31084]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicAlbumCoverCase)</onclick>
 			<selected>Skin.HasSetting(MusicAlbumCoverCase)</selected>
 		</control>
-		<control type="radiobutton" id="123">
+		<control type="radiobutton" id="111">
 			<visible>Skin.HasSetting(MusicAlbumCover) + [Container.Content(artists) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[20445]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicAlbumCoverFanart)</onclick>
 			<selected>Skin.HasSetting(MusicAlbumCoverFanart)</selected>
 		</control>
-		<control type="label" id="124">
+		<control type="label" id="112">
 			<visible>Container.Content(genres) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[31307]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="125">
+		<control type="radiobutton" id="113">
 			<visible>Container.Content(genres) | Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[24022]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicGenreCover)</onclick>
 			<selected>Skin.HasSetting(MusicGenreCover)</selected>
 		</control>
-		<control type="radiobutton" id="126">
+		<control type="radiobutton" id="114">
 			<visible>Skin.HasSetting(MusicGenreCover) + [Container.Content(genres) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[20445]</label>
 			<include>DialogRadioButton</include>
@@ -1484,71 +1484,71 @@
 			<selected>Skin.HasSetting(MusicOSDBackgroundInfo)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="label" id="110">
+		<control type="label" id="106">
 			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="button" id="111">
+		<control type="button" id="107">
 			<label>$LOCALIZE[33068]</label>
 			<label2>$VAR[MusicOSDFanArtLabelVar]</label2>
 			<onclick>SetProperty(CustomSelect,$LOCALIZE[31315],home)</onclick>
 			<onclick>ActivateWindow(1110)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="button" id="113">
+		<control type="button" id="108">
 			<visible>Skin.String(MusicOSDBackground,artistsslideshow)</visible>
 			<label>$LOCALIZE[31354]</label>
 			<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="radiobutton" id="114">
+		<control type="radiobutton" id="109">
 			<label>$LOCALIZE[31038]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicOSDAnimatedBackground)</onclick>
 			<selected>Skin.HasSetting(MusicOSDAnimatedBackground)</selected>
 		</control>
-		<control type="button" id="124">
+		<control type="button" id="110">
 			<label>$LOCALIZE[31379]</label>
 			<label2>$VAR[NowPlayingDimBackgroundLabelVar]</label2>
 			<onclick>SetProperty(CustomSelect,$LOCALIZE[31380],home)</onclick>
 			<onclick>ActivateWindow(1110)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="radiobutton" id="115">
+		<control type="radiobutton" id="111">
 			<visible>!String.IsEmpty(Skin.String(BackgroundTexture.texture))</visible>
 			<label>$LOCALIZE[31358]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableBackgroundTexture)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableBackgroundTexture)</selected>
 		</control>
-		<control type="radiobutton" id="116">
+		<control type="radiobutton" id="112">
 			<visible>Skin.HasSetting(BackgroundShadow)</visible>
 			<label>$LOCALIZE[39166]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableBackgroundShadow)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableBackgroundShadow)</selected>
 		</control>
-		<control type="radiobutton" id="117">
+		<control type="radiobutton" id="113">
 			<label>$LOCALIZE[31084]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDCase)</onclick>
 			<selected>Skin.HasSetting(MusicOSDCase)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="118">
+		<control type="radiobutton" id="114">
 			<visible>Window.IsVisible(skinsettings) | ![Player.IsInternetStream | Pvr.IsPlayingRadio]</visible>
 			<label>$LOCALIZE[31123]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableLogo)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableLogo)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="119">
+		<control type="radiobutton" id="115">
 			<visible>Window.IsVisible(skinsettings) | ![Player.IsInternetStream | Pvr.IsPlayingRadio]</visible>
 			<label>$LOCALIZE[31108]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableDiscArt)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableDiscArt)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="button" id="120">
+		<control type="button" id="116">
 			<visible>Window.IsVisible(skinsettings) | ![Player.IsInternetStream | Pvr.IsPlayingRadio]</visible>
 			<label>$LOCALIZE[31009]</label>
 			<label2>$VAR[NowPlayingMusicDiscArtLabelVar]</label2>
@@ -1556,99 +1556,99 @@
 			<onclick>ActivateWindow(1110)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="label" id="121">
+		<control type="label" id="117">
 			<label>$LOCALIZE[24013]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="button" id="122">
+		<control type="button" id="118">
 			<visible>System.AddonIsEnabled(script.cu.lrclyrics)</visible>
 			<label>$LOCALIZE[31069]</label>
 			<include>DialogButton</include>
 			<onclick>Addon.OpenSettings(script.cu.lrclyrics)</onclick>
 		</control>
-		<control type="radiobutton" id="123">
+		<control type="radiobutton" id="119">
 			<label>$LOCALIZE[31195]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableAnimatedLyrics)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableAnimatedLyrics)</selected>
 		</control>
-		<control type="label" id="131">
+		<control type="label" id="120">
 			<label>$LOCALIZE[35059]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="132">
+		<control type="radiobutton" id="121">
 			<label>$LOCALIZE[250]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableVizButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableVizButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="133">
+		<control type="radiobutton" id="122">
 			<label>$LOCALIZE[31334]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableVizPresetsButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableVizPresetsButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="134">
+		<control type="radiobutton" id="123">
 			<label>$LOCALIZE[31335]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableVizOptionsButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableVizOptionsButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="135">
+		<control type="radiobutton" id="124">
 			<visible>Window.IsVisible(skinsettings) | !MusicPlayer.Content(LiveTV)</visible>
 			<label>$LOCALIZE[559]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisablePlaylistButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisablePlaylistButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="136">
+		<control type="radiobutton" id="125">
 			<visible>Window.IsVisible(skinsettings) | ![MusicPlayer.Content(LiveTV) | MusicPartyMode.Enabled]</visible>
 			<label>$LOCALIZE[486]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableRepeatButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableRepeatButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="137">
+		<control type="radiobutton" id="126">
 			<visible>Window.IsVisible(skinsettings) | ![MusicPlayer.Content(LiveTV) | MusicPartyMode.Enabled]</visible>
 			<label>$LOCALIZE[590]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableRandomButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableRandomButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="138">
+		<control type="radiobutton" id="127">
 			<visible>Window.IsVisible(skinsettings) | ![Pvr.IsPlayingRadio | Player.IsInternetStream]</visible>
 			<label>$LOCALIZE[563]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableRatingButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableRatingButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="139">
+		<control type="radiobutton" id="128">
 			<visible>Window.IsVisible(skinsettings) | !MusicPlayer.Content(LiveTV)</visible>
 			<label>$LOCALIZE[24013]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableLyricsButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableLyricsButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="140">
+		<control type="radiobutton" id="129">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.HasEpg</visible>
 			<label>$LOCALIZE[14301]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableChannelsButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableChannelsButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="141">
+		<control type="radiobutton" id="130">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.HasEpg</visible>
 			<label>$LOCALIZE[19069]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableGuideButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableGuideButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="label" id="151">
+		<control type="label" id="131">
 			<visible>!Window.IsVisible(skinsettings)</visible>
 			<label>$LOCALIZE[31106]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="152">
+		<control type="radiobutton" id="132">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[12381]</label>
 			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/TMDb_Helper_SettingsWriter.py, mode=toggle, setting=musicfiles.selectaction)</onclick> -->
@@ -1755,47 +1755,47 @@
 			<selected>Skin.HasSetting(VideoOSDTimeRemaining)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="label" id="120">
+		<control type="label" id="118">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)</visible>
 			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="121">
+		<control type="radiobutton" id="119">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 			<label>$LOCALIZE[31325]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDCase)</onclick>
 			<selected>Skin.HasSetting(VideoOSDCase)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="122">
+		<control type="radiobutton" id="120">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(musicvideos)</visible>
 			<label>$LOCALIZE[31326]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDMusicVideoCase)</onclick>
 			<selected>Skin.HasSetting(VideoOSDMusicVideoCase)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="123">
+		<control type="radiobutton" id="121">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)</visible>
 			<label>$LOCALIZE[31123]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableLogo)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableLogo)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="124">
+		<control type="radiobutton" id="122">
 			<visible>!Skin.String(VideoOSDInfo,persistant) + [Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)]</visible>
 			<label>$LOCALIZE[31165]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableClearArt)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableClearArt)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="125">
+		<control type="radiobutton" id="123">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)</visible>
 			<label>$LOCALIZE[31108]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableDiscArt)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableDiscArt)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="button" id="126">
+		<control type="button" id="124">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(musicvideos)</visible>
 			<label>$LOCALIZE[31009]</label>
 			<label2>$VAR[NowPlayingMusicDiscArtLabelVar]</label2>
@@ -1803,7 +1803,7 @@
 			<onclick>ActivateWindow(1110)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="button" id="127">
+		<control type="button" id="125">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies)</visible>
 			<label>$LOCALIZE[31299]</label>
 			<label2>$VAR[NowPlayingVideoDiscArtLabelVar]</label2>
@@ -1811,53 +1811,53 @@
 			<onclick>ActivateWindow(1110)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="label" id="131">
+		<control type="label" id="126">
 			<label>$LOCALIZE[35059]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="132">
+		<control type="radiobutton" id="127">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.HasInfo</visible>
 			<label>$LOCALIZE[29915]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableInfoButton)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableInfoButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="133">
+		<control type="radiobutton" id="128">
 			<visible>Window.IsVisible(skinsettings) | !VideoPlayer.Content(livetv)</visible>
 			<label>$LOCALIZE[298]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableBookmarkButton)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableBookmarkButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="134">
+		<control type="radiobutton" id="129">
 			<visible>Window.IsVisible(skinsettings) | ![VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos)]</visible>
 			<label>$LOCALIZE[21447]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableAudioButton)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableAudioButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="134">
+		<control type="radiobutton" id="130">
 			<visible>Window.IsVisible(skinsettings) | ![VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos)]</visible>
 			<label>$LOCALIZE[462]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableSubtitleButton)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableSubtitleButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="135">
+		<control type="radiobutton" id="131">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.HasEpg</visible>
 			<label>$LOCALIZE[14301]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableChannelsButton)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableChannelsButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="136">
+		<control type="radiobutton" id="132">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.HasEpg</visible>
 			<label>$LOCALIZE[19069]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableGuideButton)</onclick>
 			<selected>!Skin.HasSetting(VideoOSDDisableGuideButton)</selected>
 			<include>DialogRadioButton</include>
 		</control>
-		<control type="radiobutton" id="138">
+		<control type="radiobutton" id="133">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.HasTeletext</visible>
 			<label>$LOCALIZE[10550]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDDisableTeletextButton)</onclick>
@@ -1885,12 +1885,12 @@
 			<onclick>Skin.ToggleSetting(VideoInfoTMDbActor)</onclick>
 			<selected>Skin.HasSetting(VideoInfoTMDbActor)</selected>
 		</control>
-		<control type="label" id="111">
+		<control type="label" id="104">
 			<label>$LOCALIZE[39123]</label>
 			<include>DialogLabel</include>
 		</control>
 		<!-- MASTER GATE: ENABLE BLUR -->
-		<control type="radiobutton" id="112">
+		<control type="radiobutton" id="105">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[31164]</label>
 			<include>DialogRadioButton</include>
@@ -1901,7 +1901,7 @@
 			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
 		</control>
 		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
-		<control type="radiobutton" id="144">
+		<control type="radiobutton" id="106">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<!-- Only allow interaction if Master Blur (112) is ON -->
 			<enable>Skin.HasSetting(VideoBlurEnabled)</enable>
@@ -1917,7 +1917,7 @@
 			<selected>Skin.HasSetting(VideoBlurWithColor)</selected>
 		</control>
 		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
-		<control type="radiobutton" id="143">
+		<control type="radiobutton" id="107">
 			<enable>Skin.HasSetting(VideoBlurEnabled) + Skin.HasSetting(VideoBlurWithColor)</enable>
 			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
 			<!-- <label2>[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2> -->
@@ -1933,7 +1933,7 @@
 			</include>
 			<include>SettingsButton</include>
 		</control>
-		<control type="button" id="144">
+		<control type="button" id="108">
 			<enable>!Skin.HasSetting(VideoBlurEnabled)</enable>
 			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
 			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
@@ -1941,45 +1941,45 @@
 			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
 		</control>
 		<!-- Reset to Default Button with Dynamic Label -->
-		<control type="button" id="145">
+		<control type="button" id="109">
 			<enable>!Skin.HasSetting(VideoBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
 			<label>$VAR[ResetDimmingLabelVar]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.SetString(FanartBlackAlpha,8)</onclick>
 		</control>
-		<control type="radiobutton" id="113">
+		<control type="radiobutton" id="110">
 			<label>$LOCALIZE[31084]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoCase)</onclick>
 			<selected>Skin.HasSetting(VideoInfoCase)</selected>
 		</control>
-		<control type="radiobutton" id="114">
+		<control type="radiobutton" id="111">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)</visible>
 			<label>$LOCALIZE[31108]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableDiscArt)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableDiscArt)</selected>
 		</control>
-		<control type="radiobutton" id="115">
+		<control type="radiobutton" id="112">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)</visible>
 			<label>$LOCALIZE[31162]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableCharacterArt)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableCharacterArt)</selected>
 		</control>
-		<control type="label" id="121">
+		<control type="label" id="113">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + [Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)]</visible>
 			<label>$LOCALIZE[31295]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="122">
+		<control type="radiobutton" id="114">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + [Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)]</visible>
 			<label>$LOCALIZE[24022]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaMode)</onclick>
 			<selected>Skin.HasSetting(CinemaMode)</selected>
 		</control>
-		<control type="button" id="123">
+		<control type="button" id="115">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31296]</label>
 			<label2>$INFO[Skin.String(TrailerCount)]</label2>
@@ -1987,7 +1987,7 @@
 			<onclick>Skin.SetNumeric(TrailerCount)</onclick>
 		</control>
 		<!-- Trailer Source Selector -->
-		<control type="button" id="126">
+		<control type="button" id="116">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[20410] [LOWERCASE]$LOCALIZE[21870] [/LOWERCASE]($LOCALIZE[31480])</label>
 			<label2>$VAR[CinemaSourceLabel]</label2>
@@ -1997,23 +1997,23 @@
 			<onclick condition="String.IsEqual(Skin.String(TrailerSource),1)">Skin.SetString(TrailerSource,2)</onclick>
 			<onclick condition="String.IsEqual(Skin.String(TrailerSource),2)">Skin.SetString(TrailerSource,0)</onclick>
 		</control>
-		<control type="button" id="124">
+		<control type="button" id="117">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31297]</label>
 			<label2>$INFO[Skin.String(IntroPath)]</label2>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.SetPath(IntroPath)</onclick>
 		</control>
-		<control type="button" id="401">
+		<control type="button" id="118">
 			<description>Folder Assets Check</description>
-			<label>>> $LOCALIZE[24058]</label>
+			<label>&gt;&gt; $LOCALIZE[24058]</label>
 			<label2>$VAR[CinemaAssetsStatusIcon]</label2>
 			<visible>!String.IsEmpty(Skin.String(IntroPath))</visible>
 			<include>DialogRadioButton</include>
 			<!-- <onclick>RunScript(special://home/addons/skin.madnox/extras/scripts/madnox_cinema.py, mode=setup)</onclick> -->
 			<onclick>RunScript(script.skin.madnox, action=madnox_cinema, mode=setup)</onclick>
 		</control>
-		<control type="radiobutton" id="125">
+		<control type="radiobutton" id="119">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31166]</label>
 			<include>DialogRadioButton</include>
@@ -2021,62 +2021,62 @@
 			<selected>Skin.HasSetting(CinemaModePlay)</selected>
 		</control>
 		<!-- Feature Intro -->
-		<control type="radiobutton" id="301">
+		<control type="radiobutton" id="120">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31429] $LOCALIZE[31442][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableFeatureIntro)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableFeatureIntro)</selected>
 		</control>
 		<!-- Trailer Intro -->
-		<control type="radiobutton" id="302">
+		<control type="radiobutton" id="121">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[20410] $LOCALIZE[31442][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableTrailerIntro)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableTrailerIntro)</selected>
 		</control>
 		<!-- Trailer Outro -->
-		<control type="radiobutton" id="303">
+		<control type="radiobutton" id="122">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[20410] $LOCALIZE[31443][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableTrailerOutro)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableTrailerOutro)</selected>
 		</control>
 		<!-- Audio Format -->
-		<control type="radiobutton" id="304">
+		<control type="radiobutton" id="123">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[292] $LOCALIZE[31457][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableAudio)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableAudio)</selected>
 		</control>
 		<!-- Courtesy -->
-		<control type="radiobutton" id="305">
+		<control type="radiobutton" id="124">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31461] $LOCALIZE[31457][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableCourtesy)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableCourtesy)</selected>
 		</control>
 		<!-- Ratings -->
-		<control type="radiobutton" id="306">
+		<control type="radiobutton" id="125">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[563] $LOCALIZE[31457][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableRatings)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableRatings)</selected>
 		</control>
 		<!-- Countdown -->
-		<control type="radiobutton" id="307">
+		<control type="radiobutton" id="126">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31460][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableCountdown)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableCountdown)</selected>
 		</control>
 		<!-- Feature Outro -->
-		<control type="radiobutton" id="308">
+		<control type="radiobutton" id="127">
 			<label>$LOCALIZE[24022] [LOWERCASE]$LOCALIZE[31429] $LOCALIZE[31443][/LOWERCASE]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(CinemaDisableFeatureOutro)</onclick>
 			<selected>!Skin.HasSetting(CinemaDisableFeatureOutro)</selected>
 		</control>
-		<control type="radiobutton" id="127">
+		<control type="radiobutton" id="128">
 			<description>Show Cinema Errors/Debug Notifications</description>
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(CinemaMode) + [String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(skinsettings)]</visible>
 			<label>$LOCALIZE[31462]</label>
@@ -2084,86 +2084,86 @@
 			<onclick>Skin.ToggleSetting(CinemaNotifications)</onclick>
 			<selected>Skin.HasSetting(CinemaNotifications)</selected>
 		</control>
-		<control type="label" id="131">
+		<control type="label" id="129">
 			<label>$LOCALIZE[35059]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="132">
+		<control type="radiobutton" id="130">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)</visible>
 			<label>$LOCALIZE[20410]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableTrailer)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableTrailer)</selected>
 		</control>
-		<control type="radiobutton" id="133">
+		<control type="radiobutton" id="131">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<label>$LOCALIZE[31351]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoTMDb)</onclick>
 			<selected>Skin.HasSetting(VideoInfoTMDb)</selected>
 		</control>
-		<control type="radiobutton" id="134">
+		<control type="radiobutton" id="132">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)</visible>
 			<label>$LOCALIZE[20434]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableSets)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableSets)</selected>
 		</control>
-		<control type="radiobutton" id="135">
+		<control type="radiobutton" id="133">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,tvshow)</visible>
 			<label>$LOCALIZE[209]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableNext)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableNext)</selected>
 		</control>
-		<control type="radiobutton" id="136">
+		<control type="radiobutton" id="134">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)</visible>
 			<label>$LOCALIZE[33054]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableSeasons)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableSeasons)</selected>
 		</control>
-		<control type="radiobutton" id="137">
+		<control type="radiobutton" id="135">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)</visible>
 			<label>$LOCALIZE[20339]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableDirector)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableDirector)</selected>
 		</control>
-		<control type="radiobutton" id="138">
+		<control type="radiobutton" id="136">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,movie)</visible>
 			<label>$LOCALIZE[20417]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableWriter)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableWriter)</selected>
 		</control>
-		<control type="radiobutton" id="139">
+		<control type="radiobutton" id="137">
 			<visible>Window.IsVisible(skinsettings) | !String.IsEqual(ListItem.DBType,episode)</visible>
 			<label>$LOCALIZE[31110]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableSimilar)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableSimilar)</selected>
 		</control>
-		<control type="radiobutton" id="153">
+		<control type="radiobutton" id="138">
 			<visible>System.AddonIsEnabled(script.wikipedia)</visible>
 			<label>$LOCALIZE[31439]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(WikipediaIsInstalled)</onclick>
 			<selected>Skin.HasSetting(WikipediaIsInstalled)</selected>
 		</control>
-		<control type="radiobutton" id="140">
+		<control type="radiobutton" id="139">
 			<label>$LOCALIZE[563]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableRate)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableRate)</selected>
 		</control>
-		<control type="radiobutton" id="141">
+		<control type="radiobutton" id="140">
 			<label>$LOCALIZE[184]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableRefresh)</onclick>
 			<selected>!Skin.HasSetting(VideoInfoDisableRefresh)</selected>
 		</control>
-		<control type="radiobutton" id="142">
+		<control type="radiobutton" id="141">
 			<label>$LOCALIZE[39123]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoDisableArtwork)</onclick>
@@ -2188,7 +2188,7 @@
 			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
 		</control>
 		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
-		<control type="radiobutton" id="144">
+		<control type="radiobutton" id="113">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<!-- Only allow interaction if Master Blur (112) is ON -->
 			<enable>Skin.HasSetting(VideoBlurEnabled)</enable>
@@ -2204,7 +2204,7 @@
 			<selected>Skin.HasSetting(VideoBlurWithColor)</selected>
 		</control>
 		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
-		<control type="radiobutton" id="143">
+		<control type="radiobutton" id="114">
 			<enable>Skin.HasSetting(VideoBlurEnabled) + Skin.HasSetting(VideoBlurWithColor)</enable>
 			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
 			<!-- <label2>[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2> -->
@@ -2220,7 +2220,7 @@
 			</include>
 			<include>SettingsButton</include>
 		</control>
-		<control type="button" id="144">
+		<control type="button" id="115">
 			<enable>!Skin.HasSetting(VideoBlurEnabled)</enable>
 			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
 			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
@@ -2228,7 +2228,7 @@
 			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
 		</control>
 		<!-- Reset to Default Button with Dynamic Label -->
-		<control type="button" id="145">
+		<control type="button" id="116">
 			<enable>!Skin.HasSetting(VideoBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
 			<label>$VAR[ResetDimmingLabelVar]</label>
 			<include>DialogRadioButton</include>
@@ -2253,7 +2253,7 @@
 			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
 		</control>
 		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
-		<control type="radiobutton" id="144">
+		<control type="radiobutton" id="113">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<!-- Only allow interaction if Master Blur (112) is ON -->
 			<enable>Skin.HasSetting(VideoBlurEnabled)</enable>
@@ -2269,7 +2269,7 @@
 			<selected>Skin.HasSetting(VideoBlurWithColor)</selected>
 		</control>
 		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
-		<control type="radiobutton" id="143">
+		<control type="radiobutton" id="114">
 			<enable>Skin.HasSetting(VideoBlurEnabled) + Skin.HasSetting(VideoBlurWithColor)</enable>
 			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
 			<!-- <label2>[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2> -->
@@ -2285,7 +2285,7 @@
 			</include>
 			<include>SettingsButton</include>
 		</control>
-		<control type="button" id="144">
+		<control type="button" id="115">
 			<enable>!Skin.HasSetting(VideoBlurEnabled)</enable>
 			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
 			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
@@ -2293,7 +2293,7 @@
 			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
 		</control>
 		<!-- Reset to Default Button with Dynamic Label -->
-		<control type="button" id="145">
+		<control type="button" id="116">
 			<enable>!Skin.HasSetting(VideoBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
 			<label>$VAR[ResetDimmingLabelVar]</label>
 			<include>DialogRadioButton</include>
@@ -2319,7 +2319,7 @@
 			<onclick>Skin.SetBool(TMDbHelper.EnableBlur)</onclick>
 		</control>
 		<!-- SUB-GATE: BLUR WITH COLOR (Handles backup and clearing) -->
-		<control type="radiobutton" id="144">
+		<control type="radiobutton" id="113">
 			<visible>System.AddonIsEnabled(plugin.video.themoviedb.helper)</visible>
 			<enable>Skin.HasSetting(MusicBlurEnabled)</enable>
 			<label>$LOCALIZE[31515]</label>
@@ -2331,17 +2331,17 @@
 			<!-- IF OFF: Restore color from backup -->
 			<onclick condition="!Skin.HasSetting(MusicBlurWithColor) + !String.IsEmpty(Skin.String(PreviousBlurColorBackup))">Skin.SetString(blur_listitem_art_overlay.color, $INFO[Skin.String(PreviousBlurColorBackup)])</onclick>
 
-			<!-- FIX: Toggle the correct setting -->
+			<!-- Toggle the correct setting -->
 			<onclick>Skin.ToggleSetting(MusicBlurWithColor)</onclick>
-			<!-- FIX: Select based on the correct setting -->
+			<!-- Select based on the correct setting -->
 			<selected>Skin.HasSetting(MusicBlurWithColor)</selected>
 		</control>
 		<!-- COLOR SELECTION: ACTIVE ONLY IF BOTH ABOVE ARE ON -->
-		<control type="radiobutton" id="143">
-			<!-- FIX: Enable based on the two different settings -->
+		<control type="radiobutton" id="114">
+			<!-- Enable based on the two different settings -->
 			<enable>Skin.HasSetting(MusicBlurEnabled) + Skin.HasSetting(MusicBlurWithColor)</enable>
 			<label>$LOCALIZE[39173] [LOWERCASE]$LOCALIZE[31458][/LOWERCASE]</label>
-			<!-- FIX: Show label2 based on the correct setting -->
+			<!-- Show label2 based on the correct setting -->
 			<label2 condition="Skin.HasSetting(MusicBlurWithColor)">[COLOR $VAR[BlurColorVar]]$VAR[BlurColorLabelVar][/COLOR]$VAR[BlurAccentPaddingVar]</label2>
 			<onclick>SetProperty(Reset.Color,blur_listitem_art_overlay.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelName,blur_listitem_art_overlay.color,Home)</onclick>
@@ -2355,7 +2355,7 @@
 			<include>SettingsButton</include>
 		</control>
 
-		<control type="button" id="144">
+		<control type="button" id="115">
 			<enable>!Skin.HasSetting(MusicBlurEnabled)</enable>
 			<label>$LOCALIZE[20445] [LOWERCASE]$LOCALIZE[31459][/LOWERCASE]</label>
 			<label2>$VAR[FanartBlackAlphaLabelVar]</label2>
@@ -2363,65 +2363,65 @@
 			<onclick>$VAR[FanartBlurOffDimmingVar]</onclick>
 		</control>
 		<!-- Reset to Default Button with Dynamic Label -->
-		<control type="button" id="145">
+		<control type="button" id="116">
 			<enable>!Skin.HasSetting(MusicBlurEnabled) + !String.IsEmpty(Skin.String(FanartBlackAlpha)) + !String.IsEqual(Skin.String(FanartBlackAlpha),8)</enable>
 			<label>$VAR[ResetDimmingLabelVar]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.SetString(FanartBlackAlpha,8)</onclick>
 		</control>
 
-		<control type="radiobutton" id="113">
+		<control type="radiobutton" id="117">
 			<label>$LOCALIZE[31291]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(VideoInfoMusicCase)</onclick>
 			<selected>Skin.HasSetting(VideoInfoMusicCase)</selected>
 		</control>
-		<control type="radiobutton" id="114">
+		<control type="radiobutton" id="118">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
 			<label>$LOCALIZE[31123]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableLogo)</onclick>
 			<selected>!Skin.HasSetting(MusicInfoDisableLogo)</selected>
 		</control>
-		<control type="label" id="115">
+		<control type="label" id="119">
 			<label>$LOCALIZE[35059]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="116">
+		<control type="radiobutton" id="120">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,song)</visible>
 			<label>$LOCALIZE[31339]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableContributors)</onclick>
 			<selected>!Skin.HasSetting(MusicInfoDisableContributors)</selected>
 		</control>
-		<control type="radiobutton" id="117">
+		<control type="radiobutton" id="121">
 			<visible>Window.IsVisible(skinsettings) | !String.IsEqual(ListItem.DBType,musicvideos)</visible>
 			<label>$LOCALIZE[20389]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableMusicVideos)</onclick>
 			<selected>!Skin.HasSetting(MusicInfoDisableMusicVideos)</selected>
 		</control>
-		<control type="radiobutton" id="118">
+		<control type="radiobutton" id="122">
 			<visible>Window.IsVisible(skinsettings) | String.IsEqual(ListItem.DBType,musicvideos)</visible>
 			<label>$LOCALIZE[132]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableAlbums)</onclick>
 			<selected>!Skin.HasSetting(MusicInfoDisableAlbums)</selected>
 		</control>
-		<control type="radiobutton" id="119">
+		<control type="radiobutton" id="123">
 			<visible>!String.IsEqual(ListItem.DBType,artist)</visible>
 			<label>$LOCALIZE[563]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableRate)</onclick>
 			<selected>!Skin.HasSetting(MusicInfoDisableRate)</selected>
 		</control>
-		<control type="radiobutton" id="120">
+		<control type="radiobutton" id="124">
 			<label>$LOCALIZE[184]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableRefresh)</onclick>
 			<selected>!Skin.HasSetting(MusicInfoDisableRefresh)</selected>
 		</control>
-		<control type="radiobutton" id="121">
+		<control type="radiobutton" id="125">
 			<label>$LOCALIZE[39123]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(MusicInfoDisableArtwork)</onclick>

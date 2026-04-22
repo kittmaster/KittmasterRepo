@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <window type="dialog" id="1131">
-
 	<!--
 		Navigation model (proven Kodi pattern for read-only scrolling text):
 
@@ -27,7 +26,6 @@
 	<onunload>ClearProperty(TextViewer_Text,home)</onunload>
 
 	<controls>
-
 		<!-- Background tint -->
 		<control type="image">
 			<texture colordiffuse="E6FFFFFF">colors/black50.png</texture>
@@ -63,7 +61,7 @@
 				<height>50</height>
 				<font>Font28_Bold</font>
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
-				<label>$LOCALIZE[24054] $LOCALIZE[1405] MADNOX: v$INFO[System.AddonVersion(skin.madnox)]</label>
+				<label>$LOCALIZE[24054] $LOCALIZE[1405] $INFO[ListItem.AddonName]$INFO[ListItem.AddonVersion, : v]</label>
 			</control>
 
 			<!--
@@ -127,9 +125,7 @@
 					<onleft>10</onleft>
 					<onright>10</onright>
 				</control>
-
 			</control>
-
 		</control>
 	</controls>
 </window>

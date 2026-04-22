@@ -736,14 +736,33 @@
 				<top>150</top>
 				<width>1295</width>
 				<height>780</height>
+
+				<!-- Map Background (Area) -->
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture>$INFO[Window(weather).Property(Map.$PARAM[item].Area)]</texture>
 				</control>
-				<control type="image">
+
+				<!-- Map Layer: ANIMATED (Only visible when Precipitation [Menu Item 7] is selected) -->
+				<control type="multiimage">
+					<visible>Container(8000).HasFocus(7)</visible>
 					<aspectratio>scale</aspectratio>
-					<texture colordiffuse="55FFFFFF">$INFO[Window(weather).Property(Map.$PARAM[item].Layer)]</texture>
+					<imagepath>$INFO[Window(weather).Property(Map.$PARAM[item].Layer)]</imagepath>
+					<timeperimage>300</timeperimage>
+					<fadetime>0</fadetime>
+					<pauseatend>1500</pauseatend>
+					<randomize>false</randomize>
+					<loop>true</loop>
 				</control>
+
+				<!-- Map Layer: STATIC (Visible for Clouds, Temp, Wind, Pressure) -->
+				<control type="image">
+					<visible>!Container(8000).HasFocus(7)</visible>
+					<aspectratio>scale</aspectratio>
+					<texture>$INFO[Window(weather).Property(Map.$PARAM[item].Layer)]</texture>
+				</control>
+
+				<!-- Legend remains a static image -->
 				<control type="image">
 					<right>20</right>
 					<bottom>20</bottom>

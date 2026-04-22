@@ -1209,7 +1209,7 @@
 					<right>80</right>
 					<height>$PARAM[textboxheight]</height>
 					<onleft>60$PARAM[id]</onleft>
-					<onright condition="Control.IsVisible(61300)">61300</onright>
+					<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 					<onright condition="Control.IsVisible(61301)">61301</onright>
 					<showonepage>false</showonepage>
 				</control>

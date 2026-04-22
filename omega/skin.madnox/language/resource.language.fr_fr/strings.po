@@ -2643,6 +2643,21 @@ msgctxt "#31524"
 msgid "Allows changes to the ratings to convert between floating numbers or as a percentage. Affects TMDb & IMDb, all others remain as their default display."
 msgstr "Permet aux modifications apportées aux notes de se convertir entre des nombres flottants ou en pourcentage. Affecte TMDb et IMDb, tous les autres restent comme affichage par défaut."
 
+#: /16x9/SkinSettings.xml
+msgctxt "#31525"
+msgid "Re-Run skin shortcuts migrator"
+msgstr "Ré-exécuter le migrateur de raccourcis skin"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31526"
+msgid "This will rewrite the skin shortcuts .properties file to the current 3 module addon structure. Only run if there are issues with background images or playlists are not working."
+msgstr "Cela réécrira le fichier .properties des raccourcis skin dans la structure actuelle du module complémentaire à 3 modules. Exécutez-le uniquement s'il y a des problèmes avec les images d'arrière-plan ou si les listes de lecture ne fonctionnent pas."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31527"
+msgid "This will reactivate the addons installer. Only run if addons were not installed when skin was first installed."
+msgstr "Cela réactivera le programme d’installation des modules complémentaires. Exécuté uniquement si les modules complémentaires n'ont pas été installés lors de la première installation du skin."
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
@@ -2997,3 +3012,18 @@ msgstr "Afficher les informations de marqueur superposé pour les éléments mul
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "Un script pour éditer le téléscripteur RSS intégré de Kodi."
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Version du skin et options de récupération. Restaure tous les paramètres par défaut au premier jour d'opération."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31974"
+msgid "Addons"
+msgstr "Modules complémentaires"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Version du skin et options de récupération. Restaure tous les paramètres par défaut au premier jour d'opération."
+

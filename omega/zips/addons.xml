@@ -375,10 +375,10 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.10.05" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.10.06" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.skin.madnox" version="1.0.1" />
+		<import addon="script.skin.madnox" version="1.0.3" />
 		<import addon="resource.images.skin.madnox" version="1.0.0" />		
 		<import addon="script.skinshortcuts" version="1.0.17" />
 		<import addon="plugin.video.themoviedb.helper" version="6.11.5" />
@@ -440,6 +440,12 @@ v0.4.0 (2025-03-23)
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>
 <news>
+v.21.10.06
+- Reordered conflicting IDs causing remote control navigation jamming
+- Restructured admin entry panel to include skin settings
+- Created new admin menu item for advanced controls
+- Added option re-run skin shortcuts migrator if conversion was unsuccesful on upgrade
+- Removed multiple broken migrated navigation from refactor
 v.21.10.05
 - Fixed remaining rolling trailer shutoffs affecting music section
 - Added missing Jump To Letter offset value to enable from refactoring for music section
@@ -459,134 +465,134 @@ v.21.10.02
 - Consolidated identical plot methods into one singular callout			
 v.21.10.01
 ** Front end **
--Display/Hide main context menu options
--1st run startup will set all the default skin values if not present, ensures all controls are initialized
--Widget QOL updates, left navigations updates main page as one would expect
--Music section completely rebuilt and refactored, better artwork rendering, layout, matches video/movie/tv layouts
--Refactored infodialogs to be compartmentalized for faster loading, expansion, future growth
--Added star ratings with color selection to the movie info videoinfo line
--Revamped Media Flags to cover all the user cases, should be a major improvement
--Wikipedia user color control to the backing overlay
--Favorites overhauled with new HUD and active resizing
--Increased widgets on home screen from 6 to 20
--Widgets now have two modes, Carousel (original operation) &amp; Grid mode (new)
--Multiple "mini" system widgets to select from include CPU, GPU, Memory and others.
--Music: Converted scaling for fanart from scale to keep (User feedback: elve)			
--Built new fallback process when blur is turned off with adjustable dimming
--Blur can be fanart driven with gaussian, mixed with color, or custom color picker with alpha selected
--Complete refactor of Movie/TV show sub dialog pages
--Added custom accent color control to VideoOSD (User feedback: crazyturk)			 
--Repaired skin shortcuts for "In-Progress" movies in widgets and ALL views
--Added "In-Progress" bar overlay to all views when viewed
--Custom color selection of "In-Progress" bar globally in all views			
--New native "jump to letter" built into Kodi decoupled from Embuary Helper
--Added icons to info metadata fields for movie/TV shows rows with disable
--Added Wikipedia addon feature in detailed views
--New skin initializer for missing startup settings installer on 1st run
--Added factory restore feature resetting to 1st run out of the box values
--Added auto trailer viewer on library hover Automatic trailer video preview with fanart fill selectable			
--Video codec format type selection for media flags selection as 4K or 2160p (User feedback: lynxstrike)
--Rebuilt cinema mode and enhanced usability to include user full features (bumpers, ratings, mpaa)
--Cinema mode diagnostics with verification of path and reconstruction capability to ensure smooth user experience
--Integrating PreShow Experience for advanced Cinema Mode, allows for simple and advanced cinema experience (WIP)			
--Reformatted and updated color media flags
--Synced/Updated/Created default greyscale flags assets to match color media flags
--Moved startup logo spinner down and off large logo
--Updated missing filmstrip genre image files for completeness
--Fixed views with broken 2 and 4 thumbs to use selected fanart, fully repaired
--Jump to letter: When in "numbers", # is replaced by actual number of movie. Example 300 &gt; 3 is showin in bar instead of #
--Poster is no longer the domanent image in views, if slider panel is selected like similar, it will display active hovered item until released
+- Display/Hide main context menu options
+- 1st run startup will set all the default skin values if not present, ensures all controls are initialized
+- Widget QOL updates, left navigations updates main page as one would expect
+- Music section completely rebuilt and refactored, better artwork rendering, layout, matches video/movie/tv layouts
+- Refactored infodialogs to be compartmentalized for faster loading, expansion, future growth
+- Added star ratings with color selection to the movie info videoinfo line
+- Revamped Media Flags to cover all the user cases, should be a major improvement
+- Wikipedia user color control to the backing overlay
+- Favorites overhauled with new HUD and active resizing
+- Increased widgets on home screen from 6 to 20
+- Widgets now have two modes, Carousel (original operation) &amp; Grid mode (new)
+- Multiple "mini" system widgets to select from include CPU, GPU, Memory and others.
+- Music: Converted scaling for fanart from scale to keep (User feedback: elve)			
+- Built new fallback process when blur is turned off with adjustable dimming
+- Blur can be fanart driven with gaussian, mixed with color, or custom color picker with alpha selected
+- Complete refactor of Movie/TV show sub dialog pages
+- Added custom accent color control to VideoOSD (User feedback: crazyturk)			 
+- Repaired skin shortcuts for "In- Progress" movies in widgets and ALL views
+- Added "In- Progress" bar overlay to all views when viewed
+- Custom color selection of "In- Progress" bar globally in all views			
+- New native "jump to letter" built into Kodi decoupled from Embuary Helper
+- Added icons to info metadata fields for movie/TV shows rows with disable
+- Added Wikipedia addon feature in detailed views
+- New skin initializer for missing startup settings installer on 1st run
+- Added factory restore feature resetting to 1st run out of the box values
+- Added auto trailer viewer on library hover Automatic trailer video preview with fanart fill selectable			
+- Video codec format type selection for media flags selection as 4K or 2160p (User feedback: lynxstrike)
+- Rebuilt cinema mode and enhanced usability to include user full features (bumpers, ratings, mpaa)
+- Cinema mode diagnostics with verification of path and reconstruction capability to ensure smooth user experience
+- Integrating PreShow Experience for advanced Cinema Mode, allows for simple and advanced cinema experience (WIP)			
+- Reformatted and updated color media flags
+- Synced/Updated/Created default greyscale flags assets to match color media flags
+- Moved startup logo spinner down and off large logo
+- Updated missing filmstrip genre image files for completeness
+- Fixed views with broken 2 and 4 thumbs to use selected fanart, fully repaired
+- Jump to letter: When in "numbers", # is replaced by actual number of movie. Example 300 &gt; 3 is showin in bar instead of #
+- Poster is no longer the domanent image in views, if slider panel is selected like similar, it will display active hovered item until released
 
 ** Admin (Back end) **
--Conversion to TMDb Helper from Embuary helper completed
--Built missing code for blurring fanart images in all areas via TMDb helper
--Refactored Skin Shortcuts to remove Embuary Helper to TMDb helper link template constructors
--Custom Video Codec media flags override selector, removes skin hacking, resettable (WIP)
--Restructuring of media flags detection (WIP)
--Startup video intro controls: None, Skin built-in, Custom selectable with preview on hover
--Fixed media flags admin selector to use colored flags where screen would reset and blank out, fully repaired
--Fixed shifting color swatches shifting and showing placeholder text when disable is active
--Created "in-process" control color selection and enable control
--Controls for metadata in movies and tv shows to enable in-row icons
--Reset all skin options to default control
+- Conversion to TMDb Helper from Embuary helper completed
+- Built missing code for blurring fanart images in all areas via TMDb helper
+- Refactored Skin Shortcuts to remove Embuary Helper to TMDb helper link template constructors
+- Custom Video Codec media flags override selector, removes skin hacking, resettable (WIP)
+- Restructuring of media flags detection (WIP)
+- Startup video intro controls: None, Skin built- in, Custom selectable with preview on hover
+- Fixed media flags admin selector to use colored flags where screen would reset and blank out, fully repaired
+- Fixed shifting color swatches shifting and showing placeholder text when disable is active
+- Created "in- process" control color selection and enable control
+- Controls for metadata in movies and tv shows to enable in- row icons
+- Reset all skin options to default control
 
 ** General All **
--2/16/2026 Madnox now has its own dedicated skin helper to consolidate all scripts and satisfy Kodi's requirements of free running scripts
-            		-2/16/2026 1st run will write all required settings (version controlled) for added dev work without prompting preventing odd behavior until restart &amp; continued use to initialize missing settings
--Multiple issues resolved (syntax, spelling, missing calls)
--Removed startup script causing forced icon view overriding all user selection (Dev leftover)
--Comprehensive removal of as many hardcoded strings into localization and all files fully translated
--Startup bugs and errors resolved
--Intro startup videos added on Kodi start.
+- 2/16/2026 Madnox now has its own dedicated skin helper to consolidate all scripts and satisfy Kodi's requirements of free running scripts
+- 2/16/2026 1st run will write all required settings (version controlled) for added dev work without prompting preventing odd behavior until restart &amp; continued use to initialize missing settings
+- Multiple issues resolved (syntax, spelling, missing calls)
+- Removed startup script causing forced icon view overriding all user selection (Dev leftover)
+- Comprehensive removal of as many hardcoded strings into localization and all files fully translated
+- Startup bugs and errors resolved
+- Intro startup videos added on Kodi start.
 
 v.21.02.06
--Added ability to turn off Madnox startup logo inside admin furniture panel
--Turned off main menu forced icons settings (dev testing left active by mistake in script)
+- Added ability to turn off Madnox startup logo inside admin furniture panel
+- Turned off main menu forced icons settings (dev testing left active by mistake in script)
 v.21.02.05
--Fixed widgets on main screen to use custom color picker
--Subtitle color parameters can now be adjusted within the skin using custom color picker
--Remove experimental replacement dev flag until next iteration
--Minor code cleanup and refactoring
+- Fixed widgets on main screen to use custom color picker
+- Subtitle color parameters can now be adjusted within the skin using custom color picker
+- Remove experimental replacement dev flag until next iteration
+- Minor code cleanup and refactoring
 v.21.02.04
--Fixed navigation corrections to TMDb Helper page and Movie/TV Show buttons/panels.
+- Fixed navigation corrections to TMDb Helper page and Movie/TV Show buttons/panels.
 v.21.02.03
--Removed duplicate language strings
--Fixed metadata slider and countdown timer inverted logic
--Add Norwegian language strings
+- Removed duplicate language strings
+- Fixed metadata slider and countdown timer inverted logic
+- Add Norwegian language strings
 v.21.02.02
--Added navigation corrections to TMDb Helper page
--Adjust default icon color include variable to correct for "icon error" where error is not present.
+- Added navigation corrections to TMDb Helper page
+- Adjust default icon color include variable to correct for "icon error" where error is not present.
 v.21.02.01
--* Global *-
--Minor version increase to 21.02.01.
--(WIP) (Long Term) - Begin migration from Embuary Helper to TMDb Helper. Not a trivial change, maintained as much of the physical workflow as possible, some minor changes have been made and cannot be reverted to old methods, adoption should be easily understood.
--Restructured Information dialog to support Person/Bio info into same dialog structure.
--Multiple additions to Meta data fields providing more online and local data media labels.
--Choice of large or small Madnox logo on startup.
--Added Left/Right arrows for metadata when value is greater than 8 items for visual cue.
--User adjustable time interval for Left/Right arrow slide (i.e. how often it switches if greater than 8 items).
--Added countdown timer to display Left/Right switching duration and switch point (visual cue).
--Added icons to various dialogs like "effects" for snow/leaves to visually display icon in dialog selection.
--Added Madnox logo to all dialog popups.
--Updated multiple strings to add uniqueness and better user experience diverging from cookie cutter phrases.
--Added Recommendations panel to TMDb display dialog.
--Added additional icons, feedback, graphical elements based on restructured layout to TMDb Infopage.
--Fixed aspect ratio for "Videos" and removed limit of 2 in TMDb Infopage.
--Aspect Ratio and Resolution icons colors can be set globally in the admin panel (10 options).
--Entirely retooled color picker dialog replacing Kodi's built-in version allowing slider control of RGBA.
--Local script logging enable/disable, defaults to off to prevent bloating KODI log file for debugging.
--Automatic download of baseline image collections (weather, studio etc.), can be removed or replaced as needed. Rationale: provide better start point of visuals since most users can be overwhelmed on what they should or should not use based on taste/workflow. Default download and enable will provide a better user experience and will not affect lower tier hardware as it requires minimal space requirements.
--Removed errant label in system info right side panel
--Multiple mini scripts to replicate Embuary Helper to maintain core functionality, including play all, color picker, and new feature adds.
--Added Skin Variables addons to add additional capability to replicate local related type movies and future capability updates and features.
+- * Global *
+- Minor version increase to 21.02.01.
+- (WIP) (Long Term) -  Begin migration from Embuary Helper to TMDb Helper. Not a trivial change, maintained as much of the physical workflow as possible, some minor changes have been made and cannot be reverted to old methods, adoption should be easily understood.
+- Restructured Information dialog to support Person/Bio info into same dialog structure.
+- Multiple additions to Meta data fields providing more online and local data media labels.
+- Choice of large or small Madnox logo on startup.
+- Added Left/Right arrows for metadata when value is greater than 8 items for visual cue.
+- User adjustable time interval for Left/Right arrow slide (i.e. how often it switches if greater than 8 items).
+- Added countdown timer to display Left/Right switching duration and switch point (visual cue).
+- Added icons to various dialogs like "effects" for snow/leaves to visually display icon in dialog selection.
+- Added Madnox logo to all dialog popups.
+- Updated multiple strings to add uniqueness and better user experience diverging from cookie cutter phrases.
+- Added Recommendations panel to TMDb display dialog.
+- Added additional icons, feedback, graphical elements based on restructured layout to TMDb Infopage.
+- Fixed aspect ratio for "Videos" and removed limit of 2 in TMDb Infopage.
+- Aspect Ratio and Resolution icons colors can be set globally in the admin panel (10 options).
+- Entirely retooled color picker dialog replacing Kodi's built- in version allowing slider control of RGBA.
+- Local script logging enable/disable, defaults to off to prevent bloating KODI log file for debugging.
+- Automatic download of baseline image collections (weather, studio etc.), can be removed or replaced as needed. Rationale: provide better start point of visuals since most users can be overwhelmed on what they should or should not use based on taste/workflow. Default download and enable will provide a better user experience and will not affect lower tier hardware as it requires minimal space requirements.
+- Removed errant label in system info right side panel
+- Multiple mini scripts to replicate Embuary Helper to maintain core functionality, including play all, color picker, and new feature adds.
+- Added Skin Variables addons to add additional capability to replicate local related type movies and future capability updates and features.
 
--* Biography *-
--Added death date (if applicable).
--Updated Infoline with additional icons below main title.
--Added feedback on rollover of panel data across all buttons.
--Restructured page for better flow.
--Shows local discart if movies are in focus and rollover of local movie with artwork is present.			
+- * Biography *
+- Added death date (if applicable).
+- Updated Infoline with additional icons below main title.
+- Added feedback on rollover of panel data across all buttons.
+- Restructured page for better flow.
+- Shows local discart if movies are in focus and rollover of local movie with artwork is present.			
 
--* Movies *-			
--Added date to main title in Information view.
--Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
--Updated Infoline and icons below main title with several revised icons.
--Several string updates for uniformity between dialogs
--Increased icon sizes in Infoline.			
+- * Movies *	
+- Added date to main title in Information view.
+- Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
+- Updated Infoline and icons below main title with several revised icons.
+- Several string updates for uniformity between dialogs
+- Increased icon sizes in Infoline.			
 
--* TV Shows *-
--Added color control to TV Show returning/air date from grey to color picker selection with persistence.
--Updated icons for returning, not returning.
--Added date to main title in Information view.
--Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
--Updated Infoline and icons below main title with several revised icons.
--Increased icon sizes in Infoline.
+- * TV Shows *
+- Added color control to TV Show returning/air date from grey to color picker selection with persistence.
+- Updated icons for returning, not returning.
+- Added date to main title in Information view.
+- Added all relevant meta tags in grid based on TMDb Helpers tag structure retrieval.
+- Updated Infoline and icons below main title with several revised icons.
+- Increased icon sizes in Infoline.
 
--* Music *-
--Added year to Now Playing after album (if present).
--Added Aspect Ratio adjust to Admin panel to control Fanart background.
--Added switch to Now Playing script view when Play All is activated.
--(WIP) - Looking at reworking ID tag area.
+- * Music *
+- Added year to Now Playing after album (if present).
+- Added Aspect Ratio adjust to Admin panel to control Fanart background.
+- Added switch to Now Playing script view when Play All is activated.
+- (WIP) - Looking at reworking ID tag area.
 </news>
 	</extension>
 </addon></addons>

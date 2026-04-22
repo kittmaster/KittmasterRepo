@@ -110,7 +110,7 @@
 				<include condition="Skin.HasSetting(View521SmallIcons) + !Window.IsVisible(MyFavourites.xml)">View521Scroll2</include>
 				<bottom>170</bottom>
 				<onleft>521</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
@@ -197,7 +197,7 @@
 				<top>161</top>
 				<bottom>170</bottom>
 				<onleft>5211</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>

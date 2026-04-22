@@ -19,7 +19,7 @@
 				<param name="reflect">!Skin.HasSetting(View54HideReflect)</param>
 			</include>
 			<!-- =============================================================== -->
-			<!-- START OF FIX: Restored detailed art groups from old file      -->
+			<!-- Restored detailed art groups from old file                      -->
 			<!-- =============================================================== -->
 			<control type="group">
 				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
@@ -255,7 +255,7 @@
 				<right>80</right>
 				<bottom>195</bottom>
 				<onleft>6054</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 				<showonepage>false</showonepage>
 			</control>
@@ -265,7 +265,7 @@
 				<right>80</right>
 				<bottom>195</bottom>
 				<onleft>6054</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 				<showonepage>false</showonepage>
 			</control>

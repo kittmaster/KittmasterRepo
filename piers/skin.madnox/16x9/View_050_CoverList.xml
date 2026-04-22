@@ -48,7 +48,7 @@
 				<left>1218</left>
 				<bottom>140</bottom>
 				<onleft>50</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
@@ -67,7 +67,7 @@
 			<control type="group">
 				<visible>String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
 				<!-- =============================================================== -->
-				<!-- START OF FIX: Restored detailed art groups from old file      -->
+				<!-- Restored detailed art groups from old file                      -->
 				<!-- This restores specific layouts for movies, music, artists, etc. -->
 				<!-- =============================================================== -->
 				<control type="group">

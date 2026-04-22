@@ -1085,7 +1085,7 @@
 				<top>80</top>
 				<bottom>150</bottom>
 				<onleft>58</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 				<texturesliderbackground border="2">buttons/scrollbar-nib-back-vertical.png</texturesliderbackground>
 			</control>

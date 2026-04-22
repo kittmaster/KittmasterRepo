@@ -152,7 +152,7 @@
 				<include condition="Skin.HasSetting(View521SmallIcons) + Skin.HasSetting(View521AlbumCase)">View524Scroll4</include>
 				<bottom>170</bottom>
 				<onleft>524</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>

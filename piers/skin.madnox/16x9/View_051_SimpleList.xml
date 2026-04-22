@@ -43,7 +43,7 @@
 				<right>80</right>
 				<bottom>140</bottom>
 				<onleft>51</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
+				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
