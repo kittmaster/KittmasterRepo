@@ -2425,8 +2425,8 @@ msgstr "Змінити"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31481"
-msgid "Madnox skin helper service"
-msgstr "Послуга помічника шкіри Madnox"
+msgid "Madnox script skin helper addon"
+msgstr "Madnox script допоміжний аддон"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31482"
@@ -2659,6 +2659,11 @@ msgid "This will reactivate the addons installer. Only run if addons were not in
 msgstr "Це повторно активує інсталятор додатків. Запускайте, лише якщо аддони не були встановлені під час першого встановлення скіна."
 
 #: /16x9/Includes_Settings.xml
+msgctxt "#31528"
+msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
+msgstr "Спеціальний аддон для Madnox потрібен для Piers+. З метою безпеки переміщує зображення скінів у спеціальний аддон."
+
+#: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
 msgstr "Налаштування домашнього екрана, віджетів та меню швидкого доступу."
@@ -2675,8 +2680,8 @@ msgstr "Надає вибір кольорів."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
-msgid "Install and select image addons."
-msgstr "Встановлення та вибір доповнень зображень."
+msgid "Script for skinners to let users select an image resource addon."
+msgstr "Сценарій для скінерів, який дозволяє користувачам вибирати аддон ресурсу зображення."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31905"

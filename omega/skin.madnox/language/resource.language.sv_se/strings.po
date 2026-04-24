@@ -2427,8 +2427,8 @@ msgstr "Ändra"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31481"
-msgid "Madnox skin helper service"
-msgstr "Madnox hudhjälpartjänst"
+msgid "Madnox script skin helper addon"
+msgstr "Madnox script skin helper-tillägg"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31482"
@@ -2661,6 +2661,11 @@ msgid "This will reactivate the addons installer. Only run if addons were not in
 msgstr "Detta kommer att återaktivera installationsprogrammet för tillägg. Kör bara om tillägg inte installerades när skin först installerades."
 
 #: /16x9/Includes_Settings.xml
+msgctxt "#31528"
+msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
+msgstr "Dedikerad addon för Madnox krävs för Piers+. Flyttar hudbilder till ett dedikerat tillägg av säkerhetsskäl."
+
+#: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
 msgstr "Anpassning av startskärmen, widgetar och genvägsmenyn."
@@ -2677,8 +2682,8 @@ msgstr "Tillhandahåller färgval."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
-msgid "Install and select image addons."
-msgstr "Installera och välj bildtillägg."
+msgid "Script for skinners to let users select an image resource addon."
+msgstr "Skript för skinnare för att låta användare välja en bildresurstillägg."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31905"

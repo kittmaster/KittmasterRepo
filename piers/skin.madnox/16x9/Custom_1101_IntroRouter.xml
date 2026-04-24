@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--
-	This file acts as a router on startup.
-	It checks the value of the 'IntroVideoSelectStartupValue' skin string.
-	- If the string has a value (a video is selected), it plays the video.
-	- If the string is empty, it immediately loads your standard splash screen (window 1103).
-	To enable this, set this file as the startup window in your skin's addon.xml file.
-	Example: <startup>custom_1101_Startup.xml</startup>
--->
-<window id="1101" type="window">
-	<!-- ================================================================= -->
-	<!-- 1. FIRST RUN INITIALIZATION (Locks all other routing)             -->
-	<!-- ================================================================= -->
-	<onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">RunScript(script.skin.madnox, action=apply_template)</onload>
-
-	<!-- ================================================================= -->
-	<!-- 2. NORMAL BOOT (Executes ONLY after template has initialized)     -->
-	<!-- ================================================================= -->
-	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload> -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
-
+<window id="1101">
+	<!-- TMDb Helper skin settings -->
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.DirectCallAuto)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !IsEmpty(Skin.String(TMDbHelper.MonitorContainer))">Skin.Reset(TMDBHelper.MonitorContainer)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + [!System.AddonIsEnabled(plugin.video.themoviedb.helper) | !Skin.HasSetting(BlurEnabled)]">Skin.Reset(TMDbHelper.EnableBlur)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+
+	<!-- Intro Video Logic -->
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">Skin.SetBool(Madnox.IntroActive)</onload>
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">SetFocus(10)</onload>
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload>
+
+	<!-- Unconditional fallback: if not initialized yet, go straight to 1103 -->
+	<onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ReplaceWindow(1103)</onload>
 
 	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
 	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>
@@ -33,13 +23,23 @@
 	<animation effect="fade" time="480">WindowClose</animation>
 	<include>onunload_SkinSettings</include>
 
-	<!-- === Intro Video Logic (Only if Initialized) === -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">Skin.SetBool(Madnox.IntroActive)</onload>
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">SetFocus(10)</onload>
-	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload> -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue)) + Skin.HasSetting(Madnox_Backgrounds_Migrated)">ReplaceWindow(1103)</onload>
-
 	<controls>
+		<!-- Black background so it's never a transparent black void -->
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>colors/black.png</texture>
+		</control>
+
+		<!-- Escape hatch: if still here after 1.5s for any reason, force to 1103 -->
+		<control type="image">
+			<include>HiddenObject</include>
+			<animation effect="fade" start="100" end="100" time="1" delay="1500" onend="ReplaceWindow(1103)" condition="Window.IsVisible(1101)">WindowOpen</animation>
+		</control>
+
+		<!-- Intro video trigger button -->
 		<control type="button" id="10">
 			<include>HiddenObject</include>
 			<onfocus>ReplaceWindow(1108)</onfocus>

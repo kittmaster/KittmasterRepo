@@ -2,34 +2,33 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<menucontrol>9050</menucontrol>
-	<!-- script.skin.madnox -->
-	<onload condition="!System.AddonIsEnabled(script.skin.madnox)">EnableAddon(script.skin.madnox)</onload>
-	<onload condition="!System.HasAddon(script.skin.madnox)">InstallAddon(script.skin.madnox)</onload>
-	<!-- script.skinshortcuts -->
-	<onload condition="!System.AddonIsEnabled(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onload>
-	<onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
-	<!-- script.image.resource.select -->
-	<onload condition="!System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onload>
-	<onload condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onload>
-	<!-- script.skinvariables -->
-	<onload condition="!System.AddonIsEnabled(script.skinvariables)">EnableAddon(script.skinvariables)</onload>
-	<onload condition="!System.HasAddon(script.skinvariables)">InstallAddon(script.skinvariables)</onload>
-	<!-- plugin.video.themoviedb.helper -->
-	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">EnableAddon(plugin.video.themoviedb.helper)</onload>
-	<onload condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onload>
-	<!-- <onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(special://home/addons/skin.madnox/extras/scripts/tmdb_installed_validation.py)</onload> -->
-	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(script.skin.madnox, action=validate_tmdb_helper)</onload>
 
-	<!-- Optional extras: Ask only after the skin has fully initialized via template -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>
+	<!-- =============================================================== -->
+	<!-- INITIALIZATION SCRIPTS                                          -->
+	<!-- One-shot guard: Madnox.HomeInitDone ensures these only fire    -->
+	<!-- on the first Home load per session, not on every return.       -->
+	<!-- =============================================================== -->
+
+	<!-- First Run -->
+	<onload condition="System.HasAddon(script.skin.madnox) + !Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxInitDelay,RunScript(script.skin.madnox,action=apply_template),00:00:03,true,true)</onload>
+
+	<!-- Background Migration -->
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox,action=migrate_bgs)</onload>
 
 	<!-- Skin Shortcuts -->
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
-	<!-- 1st Run Settings File Init And Populate Default Values -->
-	<!-- <onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ActivateWindow(1106)</onload> -->
+	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
 
-	<!-- Signal That Home Is Loaded And Notifications Are Now Allowed -->
+	<!-- Signal Home is ready -->
 	<onload>SetProperty(Madnox.SkinReady,True,Home)</onload>
+
+	<!-- TMDb validation: only on first Home load per session -->
+	<onload condition="System.HasAddon(script.skin.madnox) + !System.AddonIsEnabled(plugin.video.themoviedb.helper) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxTMDbCheck,RunScript(script.skin.madnox,action=validate_tmdb_helper),00:00:04,true,true)</onload>
+
+	<!-- Optional extras: only on first Home load per session -->
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxExtrasDelay,RunScript(script.skin.madnox,action=install_extras),00:00:05,true,true)</onload>
+
+	<!-- Stamp this session so the above one-shot blocks don't re-fire on return -->
+	<onload>SetProperty(Madnox.HomeInitDone,true,Home)</onload>
 
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
@@ -912,7 +911,8 @@
 				<include content="AnimationSlideBottomWindow">
 					<param name="slide">540</param>
 				</include>
-				<animation effect="fade" start="100" end="0" time="480" condition="[!Skin.HasSetting(NowplayingHomeDisable) + Player.HasAudio + !ControlGroup(90010).HasFocus] | [Player.HasVideo + !Skin.HasSetting(NowplayingHomeDisable) + !ControlGroup(90010).HasFocus] | [Skin.HasSetting(WidgetHide) + !ControlGroup(90010).HasFocus]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-390" time="300" easing="out" tween="sine" condition="Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)">Conditional</animation>
+				<!-- <animation effect="fade" start="100" end="0" time="480" condition="[!Skin.HasSetting(NowplayingHomeDisable) + Player.HasAudio + !ControlGroup(90010).HasFocus] | [Player.HasVideo + !Skin.HasSetting(NowplayingHomeDisable) + !ControlGroup(90010).HasFocus] | [Skin.HasSetting(WidgetHide) + !ControlGroup(90010).HasFocus]">Conditional</animation> -->
 				<include>skinshortcuts-template-widget1</include>
 				<include>skinshortcuts-template-widget2</include>
 				<include>skinshortcuts-template-widget3</include>
@@ -1043,6 +1043,7 @@
 
 			<control type="grouplist" id="9900">
 				<visible>Skin.HasSetting(SystemWidget.GridMode) + !Skin.HasSetting(widgethide)</visible>
+				<animation effect="slide" start="0,0" end="0,-390" time="300" easing="out" tween="sine" condition="Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)">Conditional</animation>
 				<include content="AnimationSlideBottomWindow">
 					<param name="slide">540</param>
 				</include>

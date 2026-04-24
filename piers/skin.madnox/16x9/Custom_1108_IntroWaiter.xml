@@ -12,9 +12,7 @@
 	<onunload>CancelAlarm(IntroWatchdog,silent)</onunload>
 	<onunload>CancelAlarm(WaitStart,silent)</onunload>
 	<onunload>ClearProperty(IntroDelayDone,Home)</onunload>
-	<!-- Clear The "Playing" Flag So Notifications Work Again After This -->
 	<onunload>ClearProperty(IntroVideoPlaying,Home)</onunload>
-	<!-- Turn Off The Global Intro Active Flag When We Leave This Screen -->
 	<onunload>Skin.Reset(Madnox.IntroActive)</onunload>
 
 	<controls>
@@ -27,8 +25,8 @@
 			<include>HiddenObject</include>
 			<visible>!String.IsEmpty(Window(Home).Property(IntroDelayDone)) + !Player.HasMedia</visible>
 
-			<onfocus>ReplaceWindow(Home)</onfocus>
-			<!-- <onfocus condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ActivateWindow(1106)</onfocus> -->
+			<!-- Go to 1103 not Home directly — avoids re-triggering Home onload chain -->
+			<onfocus>ReplaceWindow(1103)</onfocus>
 		</control>
 	</controls>
 </window>

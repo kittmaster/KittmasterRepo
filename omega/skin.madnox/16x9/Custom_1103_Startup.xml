@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <window type="window" id="1103">
-	<!-- Check If The Setting Tmdbhelper.Monitorcontainer Has A Value, And If So, Clear It -->
-	<onload>Skin.SetBool(TMDbHelper.Service)</onload>
-	<onload>Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
-	<!-- <onload>RunScript(script.skin.info.service)</onload> -->
-	<onload>Skin.SetBool(TMDbHelper.DirectCallAuto)</onload>
-	<onload condition="!IsEmpty(Skin.String(TMDbHelper.MonitorContainer))">Skin.Reset(TMDBHelper.MonitorContainer)</onload>
-	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper) | !Skin.HasSetting(BlurEnabled)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
 	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fanart)|Art(tvshow.fanart)|Art(landscape)|Art(thumb)|Icon,Home)</onload>
 	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.Fallback,special://home/addons/resource.images.skin.madnox/resources/backgrounds/default_livecases.jpg,Home)</onload>
-	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 
 	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
 	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>

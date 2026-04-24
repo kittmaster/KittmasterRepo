@@ -1235,7 +1235,8 @@
 		<animation effect="fade" end="100" time="300">Visible</animation>
 		<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
 		<control type="image">
-			<visible>ControlGroup(90010).HasFocus | Control.HasFocus(1607)</visible>
+			<!-- <visible>ControlGroup(90010).HasFocus | Control.HasFocus(1607)</visible> -->
+			<visible>[ControlGroup(90010).HasFocus | Control.HasFocus(1607)] + ![Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)]</visible>
 			<include>AnimationVisibleFade</include>
 			<top>-600</top>
 			<width>1300</width>
@@ -1550,7 +1551,7 @@
 			<texture colordiffuse="$VAR[MainMenuShadowColorVar]">panels/widget-gradient.png</texture>
 		</control>
 		<control type="group">
-			<visible>!ControlGroup(90010).HasFocus</visible>
+			<!-- <visible>!ControlGroup(90010).HasFocus</visible> -->
 			<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
 			<top>388</top>
 			<left>30</left>
