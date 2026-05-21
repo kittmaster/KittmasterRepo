@@ -4,15 +4,18 @@ import time
 
 # --- CONFIGURATION ---
 SUPPORTED_VIEWS = {
-    50:  "View50VideoPreviewWindow",   51:  "View51VideoPreviewWindow",   53:  "View53VideoPreviewWindow",
-    54:  "View54VideoPreviewWindow",   55:  "View55VideoPreviewWindow",   56:  "View56VideoPreviewWindow",
-    58:  "View58VideoPreviewWindow",   500: "View500VideoPreviewWindow",  502: "View502VideoPreviewWindow",
-    503: "View503VideoPreviewWindow",  504: "View504VideoPreviewWindow",  505: "View505VideoPreviewWindow",
-    506: "View506VideoPreviewWindow",  507: "View507VideoPreviewWindow",  508: "View508VideoPreviewWindow",
-    510: "View510VideoPreviewWindow",  511: "View511VideoPreviewWindow",  512: "View512VideoPreviewWindow",
-    520: "View520VideoPreviewWindow",  522: "View522VideoPreviewWindow",  523: "View523VideoPreviewWindow",
-    530: "View530VideoPreviewWindow",  532: "View532VideoPreviewWindow",  533: "View533VideoPreviewWindow",
-    540: "View540VideoPreviewWindow",  542: "View542VideoPreviewWindow",  543: "View543VideoPreviewWindow",
+    50:  "View50VideoPreviewWindow",   51:  "View51VideoPreviewWindow",   52:  "View52VideoPreviewWindow",
+    53:  "View53VideoPreviewWindow",   54:  "View54VideoPreviewWindow",   55:  "View55VideoPreviewWindow",
+    56:  "View56VideoPreviewWindow",   57:  "View57VideoPreviewWindow",   58:  "View58VideoPreviewWindow",
+    59:  "View59VideoPreviewWindow",   60:  "View60VideoPreviewWindow",   61:  "View61VideoPreviewWindow",
+    62:  "View62VideoPreviewWindow",   63:  "View63VideoPreviewWindow",   500: "View500VideoPreviewWindow",
+    502: "View502VideoPreviewWindow",  503: "View503VideoPreviewWindow",  504: "View504VideoPreviewWindow",
+    505: "View505VideoPreviewWindow",  506: "View506VideoPreviewWindow",  507: "View507VideoPreviewWindow",
+    508: "View508VideoPreviewWindow",  510: "View510VideoPreviewWindow",  511: "View511VideoPreviewWindow",
+    512: "View512VideoPreviewWindow",  520: "View520VideoPreviewWindow",  522: "View522VideoPreviewWindow",
+    523: "View523VideoPreviewWindow",  530: "View530VideoPreviewWindow",  532: "View532VideoPreviewWindow",
+    533: "View533VideoPreviewWindow",  540: "View540VideoPreviewWindow",  542: "View542VideoPreviewWindow",
+    543: "View543VideoPreviewWindow",
 }
 
 # --- CONSTANTS ---
@@ -78,8 +81,8 @@ class TrailerMonitor(xbmc.Monitor):
                     xbmc.sleep(500) 
                     continue
 
-                # If the active view (e.g. 540) does not have focus (Removed invalid syntax Window ID check)
-                if not xbmc.getCondVisibility(f'Control.HasFocus({active_view})'):
+                # If the active view container does not have focus
+                if not xbmc.getCondVisibility(f'Container({active_view}).HasFocus'):
                     if xbmcgui.Window(10000).getProperty(PROP_IS_TRAILER):
                         log_debug(f"Active view {active_view} lost focus. Cleaning up.")
                         self.cleanup()
@@ -134,15 +137,13 @@ class TrailerMonitor(xbmc.Monitor):
             log_debug("Script finished/exited.")
 
     def get_active_view(self):
-        # Double check we are in MyVideoNav
         if xbmcgui.getCurrentWindowId() != VIDEOS_WINDOW_ID:
             return None
             
         for view_id, setting_name in SUPPORTED_VIEWS.items():
-            # Check control visibility AND focus (Removed invalid syntax Window ID check)
             if xbmc.getCondVisibility(f'Control.IsVisible({view_id})') and \
-               xbmc.getCondVisibility(f'Skin.HasSetting({setting_name})') and \
-               xbmc.getCondVisibility(f'Control.HasFocus({view_id})'):
+            xbmc.getCondVisibility(f'Skin.HasSetting({setting_name})') and \
+            xbmc.getCondVisibility(f'Container({view_id}).HasFocus'):  # <-- FIXED
                 return view_id
         return None
 

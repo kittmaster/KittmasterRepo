@@ -71,7 +71,7 @@
 	<setting id="view522logo" type="bool">true</setting>
 	<setting id="videoseasoncover" type="bool">false</setting>
 	<setting id="disableautoscroll" type="bool">false</setting>
-	<setting id="moviemetascrollingdelayvara" type="bool">false</setting>
+	<setting id="moviemetascrollingdelayvara" type="bool"></setting>
 	<setting id="view543animatedfanart" type="bool">false</setting>
 	<setting id="skinshortcuts-background-special://skin/extras/backgrounds/music.jpg" type="bool">true</setting>
 	<setting id="shortcutdisableeject" type="bool">false</setting>
@@ -91,7 +91,7 @@
 	<setting id="view506hidefloor" type="bool">false</setting>
 	<setting id="view51hidereflect" type="bool">false</setting>
 	<setting id="view522hidereflect" type="bool">false</setting>
-	<setting id="view56animatedfanart" type="bool">true</setting>
+	<setting id="view56animatedfanart" type="bool">false</setting>
 	<setting id="view58hidediscart" type="bool">false</setting>
 	<setting id="videoosdmusicvideocase" type="bool">false</setting>
 	<setting id="view503videopreviewwindow" type="bool">false</setting>
@@ -494,7 +494,7 @@
 	<setting id="startuplogoshowonstart" type="bool">true</setting>
 	<setting id="videoosdmovieinfo" type="string" />
 	<setting id="topbarshadowtexture.color" type="string" />
-	<setting id="WeatherIcons.ext" type="string">.png</setting>
+	<setting id="WeatherIcons.ext" type="string"></setting>
 	<setting id="TMDbHelper.Blur.Size" type="string">1080</setting>
 	<setting id="paneldisabledtext.color" type="string" />
 	<setting id="mainmenusubmenubar.texture" type="string" />
@@ -510,7 +510,7 @@
 	<setting id="mainmenutexture.color" type="string" />
 	<setting id="videoosdvideoinfo" type="string" />
 	<setting id="view501info" type="string" />
-	<setting id="musicosdinfo" type="string">persistant</setting>
+	<setting id="musicosdinfo" type="string"></setting>
 	<setting id="topbartexture.texture" type="string" />
 	<setting id="view523art" type="string" />
 	<setting id="topbartexture.color" type="string" />
@@ -588,7 +588,7 @@
 	<setting id="musicfanartbackgroundgroupvarvalue" type="string">scale</setting>
 	<setting id="nowplayingmusicbackground" type="string" />
 	<setting id="WeatherFanart.path" type="string">resource://resource.images.weatherfanart.multi/</setting>
-	<setting id="mycolorfile" type="string">special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml</setting>
+	<setting id="mycolorfile" type="string">special://skin/extras/colors/madnox-(24-colors).xml</setting>
 	<setting id="view509info" type="string" />
 	<setting id="moviemetascrollingdelayvaluevara" type="string">7</setting>
 	<setting id="skinshortcuts-sharedmenu" type="string">false</setting>
@@ -683,7 +683,7 @@
     <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/addons.jpg" type="bool">true</setting>
     <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/favourites.jpg" type="bool">true</setting>
     <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/games.jpg" type="bool">true</setting>
-    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/movies.jpg" type="bool">false</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/movies.jpg" type="bool">true</setting>
     <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/music.jpg" type="bool">true</setting>
     <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/musicvideos.jpg" type="bool">true</setting>
     <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/pictures.jpg" type="bool">true</setting>
@@ -695,4 +695,103 @@
     <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/weather.jpg" type="bool">true</setting>
     <setting id="view50epgchannelnumber" type="bool">false</setting>
     <setting id="view50epgdisableicons" type="bool">false</setting>
+    <setting id="view500usebanner" type="bool">true</setting>
+    <setting id="view501usebanner" type="bool">false</setting>
+    <setting id="view502usebanner" type="bool">false</setting>
+    <setting id="view503usebanner" type="bool">false</setting>
+    <setting id="view504usebanner" type="bool">false</setting>
+    <setting id="view505usebanner" type="bool">false</setting>
+    <setting id="view508usebanner" type="bool">false</setting>
+    <setting id="view509usebanner" type="bool">false</setting>
+    <setting id="view510usebanner" type="bool">false</setting>
+    <setting id="view511usebanner" type="bool">false</setting>
+    <setting id="view512usebanner" type="bool">false</setting>
+    <setting id="view520usebanner" type="bool">false</setting>
+    <setting id="view521usebanner" type="bool">false</setting>
+    <setting id="view522usebanner" type="bool">false</setting>
+    <setting id="view523usebanner" type="bool">false</setting>
+    <setting id="view530usebanner" type="bool">false</setting>
+    <setting id="view531usebanner" type="bool">false</setting>
+    <setting id="view532usebanner" type="bool">false</setting>
+    <setting id="view533usebanner" type="bool">false</setting>
+    <setting id="view540usebanner" type="bool">false</setting>
+    <setting id="view541usebanner" type="bool">false</setting>
+    <setting id="view542usebanner" type="bool">false</setting>
+    <setting id="view543usebanner" type="bool">false</setting>
+    <setting id="videoosddisablegenreinfo" type="bool">false</setting>
+    <setting id="videoosdtooltipsmaster" type="bool">true</setting>
+    <setting id="videoosdtooltipsmasterplayeroff" type="bool">true</setting>
+    <setting id="view50usebanner" type="bool">false</setting>
+    <setting id="view52animatedfanart" type="bool">false</setting>
+    <setting id="view52disablewatchedstatus" type="bool">false</setting>
+    <setting id="view52usebanner" type="bool">false</setting>
+    <setting id="view52videocase" type="bool">false</setting>
+    <setting id="view52videopreviewwindow" type="bool">true</setting>
+    <setting id="view53usebanner" type="bool">false</setting>
+    <setting id="view54usebanner" type="bool">false</setting>
+    <setting id="view55usebanner" type="bool">false</setting>
+    <setting id="view57usebanner" type="bool">false</setting>
+    <setting id="view58usebanner" type="bool">false</setting>
+    <setting id="view59animatedfanart" type="bool">false</setting>
+    <setting id="view59disablewatchedstatus" type="bool">false</setting>
+    <setting id="view59usebanner" type="bool">false</setting>
+    <setting id="view59usecases" type="bool">false</setting>
+    <setting id="view59videocase" type="bool">false</setting>
+    <setting id="view59videopreviewwindow" type="bool">true</setting>
+    <setting id="view60animatedfanart" type="bool">false</setting>
+    <setting id="view60disablewatchedstatus" type="bool">false</setting>
+    <setting id="view60usebanner" type="bool">false</setting>
+    <setting id="view60videocase" type="bool">false</setting>
+    <setting id="view60videopreviewwindow" type="bool">false</setting>
+    <setting id="view61disablewatchedstatus" type="bool">false</setting>
+    <setting id="view61usebanner" type="bool">false</setting>
+    <setting id="view62disablewatchedstatus" type="bool">false</setting>
+    <setting id="view62usebanner" type="bool">false</setting>
+    <setting id="view63disablewatchedstatus" type="bool">false</setting>
+    <setting id="view63usebanner" type="bool">false</setting>
+    <setting id="view63videopreviewwindow" type="bool">false</setting>
+    <setting id="WeatherIcons.multi" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/disc.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-cover" type="bool">true</setting>
+    <setting id="ratingsasnumbers" type="bool">true</setting>
+    <setting id="searchanimatedfanart" type="bool">false</setting>
+    <setting id="searchbackground" type="string"></setting>
+    <setting id="searchhidetopbar" type="bool">false</setting>
+    <setting id="SearchTerm" type="string"></setting>
+    <setting id="SelectedColor" type="string"></setting>
+    <setting id="ServiceInterval" type="string"></setting>
+    <setting id="personmetascrollingdelayvara" type="string"></setting>
+    <setting id="mytimersetting" type="string"></setting>
+    <setting id="PanelFocusText.color.name" type="string"></setting>
+    <setting id="PanelHighlight.color.name" type="string"></setting>
+    <setting id="PanelSubText.color.name" type="string"></setting>
+    <setting id="PanelText.color.name" type="string"></setting>
+    <setting id="opacityslidervalue" type="string">100</setting>
+    <setting id="musicosddisableinfobutton" type="bool">false</setting>
+    <setting id="metadataalarmtrigger" type="string"></setting>
+    <setting id="mainmenuvertical" type="bool">false</setting>
+    <setting id="madnox_backup_file_version" type="string">v1.0.1</setting>
+    <setting id="madnox.extrasinstalled" type="bool">false</setting>
+    <setting id="madnox.introactive" type="bool">false</setting>
+    <setting id="madnox.settings.initialized" type="bool">false</setting>
+    <setting id="madnox.settings.reloaded" type="bool">false</setting>
+    <setting id="madnox_backgrounds_migrated" type="bool">false</setting>
+    <setting id="ItemListCountDownNextX" type="string">9</setting>
+    <setting id="ItemListCountDownTimer" type="string">10</setting>
+    <setting id="ItemListCountDownTimerX" type="string">10</setting>
+    <setting id="ItemsSliderMyTimerSetting" type="string">4</setting>
+    <setting id="itemsslidermytimersettings" type="string"></setting>
+    <setting id="kioskdisablefullscreenaudiosettings" type="bool">false</setting>
+    <setting id="kioskdisablefullscreenvideosettings" type="bool">false</setting>
+    <setting id="disableviewshowcasehero" type="bool">false</setting>
+    <setting id="disableviewspotlight" type="bool">false</setting>
+    <setting id="disableviewstage" type="bool">false</setting>
+    <setting id="disableviewcinematicshelf" type="bool">false</setting>
+    <setting id="disablevieweditorial" type="bool">false</setting>
+    <setting id="disableviewimmersive" type="bool">false</setting>
+    <setting id="disableautoscrollplot" type="bool">false</setting>
+    <setting id="clearplaylist" type="bool">false</setting>
+    <setting id="bkgcolor" type="string"></setting>
+    <setting id="autolibrarytags" type="bool">false</setting>
+    <setting id="startcountdown" type="bool">false</setting>
 </settings>

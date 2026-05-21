@@ -51,7 +51,7 @@
 	<include name="SettingsLeftLabelWidgetsShortcut">
 		<top>132</top>
 		<left>100</left>
-		<width>520</width>
+		<width>580</width>
 		<height>67</height>
 		<textoffsetx>25</textoffsetx>
 		<font>Font33_Bold_Caps</font>
@@ -389,37 +389,41 @@
 
 	<!-- Addon Description -->
 	<variable name="AddonDescriptionVar">
-		<value condition="Control.HasFocus(702)">$LOCALIZE[31901]</value>
-		<value condition="Control.HasFocus(703)">$LOCALIZE[31902]</value>
-		<value condition="Control.HasFocus(704)">$LOCALIZE[31903]</value>
-		<value condition="Control.HasFocus(705)">$LOCALIZE[31904]</value>
-		<value condition="Control.HasFocus(706)">$LOCALIZE[31187]</value>
-		<value condition="Control.HasFocus(707)">$LOCALIZE[31512]</value>
-		<value condition="Control.HasFocus(708)">$LOCALIZE[31513]</value>
-		<value condition="Control.HasFocus(709)">$LOCALIZE[31953]</value>
-		<value condition="Control.HasFocus(711)">$LOCALIZE[31905]</value>
-		<value condition="Control.HasFocus(712)">$LOCALIZE[31952]</value>
-		<value condition="Control.HasFocus(713)">$LOCALIZE[31907]</value>
-		<value condition="Control.HasFocus(714)">$LOCALIZE[31511]</value>
-		<value condition="Control.HasFocus(715)">$LOCALIZE[31528]</value>
-		<value condition="Control.HasFocus(721)">$LOCALIZE[31908]</value>
-		<value condition="Control.HasFocus(722)">$LOCALIZE[31909]</value>
-		<value condition="Control.HasFocus(723)">$LOCALIZE[31910]</value>
-		<value condition="Control.HasFocus(724)">$LOCALIZE[31960]</value>
-		<value condition="Control.HasFocus(725)">$LOCALIZE[31968]</value>
-		<value condition="Control.HasFocus(726)">$LOCALIZE[31969]</value>
-		<value condition="Control.HasFocus(727)">$LOCALIZE[31972]</value>
-		<value condition="Control.HasFocus(728)">$LOCALIZE[31970]</value>
-		<value condition="Control.HasFocus(729)">$LOCALIZE[31514]</value>
+		<value condition="Control.HasFocus(702)">$LOCALIZE[31910]</value>
+		<value condition="Control.HasFocus(703)">$LOCALIZE[31904]</value>
+		<value condition="Control.HasFocus(704)">$LOCALIZE[31528]</value>
+		<value condition="Control.HasFocus(705)">$LOCALIZE[31511]</value>
+		<value condition="Control.HasFocus(706)">$LOCALIZE[31901]</value>
+		<value condition="Control.HasFocus(707)">$LOCALIZE[31187]</value>
+		<value condition="Control.HasFocus(708)">$LOCALIZE[31512]</value>
+
+		<value condition="Control.HasFocus(721)">$LOCALIZE[31905]</value>
+		<value condition="Control.HasFocus(722)">$LOCALIZE[31907]</value>
+		<value condition="Control.HasFocus(724)">$LOCALIZE[31952]</value>
+		<value condition="Control.HasFocus(725)">$LOCALIZE[31513]</value>
+
+		<value condition="Control.HasFocus(731)">$LOCALIZE[31960]</value>
+		<value condition="Control.HasFocus(732)">$LOCALIZE[31970]</value>
+		<value condition="Control.HasFocus(733)">$LOCALIZE[31953]</value>
+		<value condition="Control.HasFocus(734)">$LOCALIZE[31514]</value>
+		<value condition="Control.HasFocus(735)">$LOCALIZE[31972]</value>
+		<value condition="Control.HasFocus(736)">$LOCALIZE[31908]</value>
+		<value condition="Control.HasFocus(737)">$LOCALIZE[31969]</value>
+		<value condition="Control.HasFocus(738)">$LOCALIZE[31968]</value>
+
 		<value condition="Container(7000).HasFocus(7)">$LOCALIZE[31924]</value>
 	</variable>
 
 	<!-- Advanced Description -->
 	<variable name="AdvancedDescriptionVar">
 		<value condition="Control.HasFocus(802)">$LOCALIZE[31506]</value>
-		<value condition="Control.HasFocus(803)">$LOCALIZE[31527]</value>
-		<value condition="Control.HasFocus(804)">$LOCALIZE[31526]</value>
-		<value condition="Control.HasFocus(805)">$LOCALIZE[31470]</value>
+		<value condition="Control.HasFocus(803)">$LOCALIZE[31540]</value>
+		<value condition="Control.HasFocus(804)">$LOCALIZE[31541]</value>
+		<value condition="Control.HasFocus(805)">$LOCALIZE[31542]</value>
+		<value condition="Control.HasFocus(806)">$LOCALIZE[31543]</value>
+		<value condition="Control.HasFocus(807)">$LOCALIZE[31527]</value>
+		<value condition="Control.HasFocus(808)">$LOCALIZE[31526]</value>
+		<value condition="Control.HasFocus(809)">$LOCALIZE[31470]</value>
 		<value condition="Container(7000).HasFocus(8)">$LOCALIZE[31973]</value>
 	</variable>
 
@@ -460,16 +464,29 @@
 		<value>$INFO[System.AddonVersion(plugin.video.themoviedb.helper),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
+	<!-- Recommended Addons -->
+	<variable name="AddonLyricsVar">
+		<value condition="!System.HasAddon(script.cu.lrclyrics)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(script.cu.lrclyrics)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(script.cu.lrclyrics),v, ][COLOR green]✓[/COLOR]</value>
+	</variable>
+
+	<variable name="AddonKittmasterRepoVar">
+		<value condition="!System.HasAddon(repository.kittmaster)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(repository.kittmaster)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(repository.kittmaster),v, ][COLOR green]✓[/COLOR]</value>
+	</variable>
+
 	<variable name="AddonWikipediaVar">
 		<value condition="!System.HasAddon(script.wikipedia)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.wikipedia)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
 		<value>$INFO[System.AddonVersion(script.wikipedia),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
-	<variable name="AddonMovieGenreIconsBW">
-		<value condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">[COLOR red]✕[/COLOR]</value>
-		<value condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
-		<value>$INFO[System.AddonVersion(resource.images.moviegenreicons.filmstrip-hd.bw),v, ][COLOR green]✓[/COLOR]</value>
+	<variable name="AddonArtworkDumpVar">
+		<value condition="!System.HasAddon(script.artwork.dump)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(script.artwork.dump)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(script.artwork.dump),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
 	<variable name="AddonMovieGenreIconsColor">
@@ -478,14 +495,14 @@
 		<value>$INFO[System.AddonVersion(resource.images.moviegenreicons.filmstrip-hd.colour),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
-	<!-- Recommended Addons -->
-	<variable name="AddonLyricsVar">
-		<value condition="!System.HasAddon(script.cu.lrclyrics)">[COLOR red]✕[/COLOR]</value>
-		<value condition="!System.AddonIsEnabled(script.cu.lrclyrics)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
-		<value>$INFO[System.AddonVersion(script.cu.lrclyrics),v, ][COLOR green]✓[/COLOR]</value>
+	<!-- Optional Addons -->
+
+	<variable name="AddonMovieGenreIconsBW">
+		<value condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(resource.images.moviegenreicons.filmstrip-hd.bw),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
-	<!-- Optional Addons -->
 	<variable name="AddonPreShowExperienceVar">
 		<value condition="!System.HasAddon(script.preshowexperience)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.preshowexperience)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
@@ -502,12 +519,6 @@
 		<value condition="!System.HasAddon(script.favourites)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.favourites)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
 		<value>$INFO[System.AddonVersion(script.favourites),v, ][COLOR green]✓[/COLOR]</value>
-	</variable>
-
-	<variable name="AddonArtworkDumpVar">
-		<value condition="!System.HasAddon(script.artwork.dump)">[COLOR red]✕[/COLOR]</value>
-		<value condition="!System.AddonIsEnabled(script.artwork.dump)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
-		<value>$INFO[System.AddonVersion(script.artwork.dump),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
 	<variable name="AddonArtistSlideshowVar">

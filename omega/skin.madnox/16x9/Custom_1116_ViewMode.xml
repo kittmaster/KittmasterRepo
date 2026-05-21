@@ -36,11 +36,21 @@
 					<onclick>Container.SetViewMode(51)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
+				<!-- Showcase hero-->
+				<control type="button" id="152">
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
+					<visible>!Skin.HasSetting(DisableViewShowcaseHero)</visible>
+					<label>$LOCALIZE[31529]</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=52)</onclick>
+					<include>MediaMenuButtonViewType</include>
+				</control>
 				<control type="button" id="153">
 					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(addons) | Container.Content(musicvideos) | Window.IsVisible(MyPlaylist.xml)</visible>
 					<visible>!Skin.HasSetting(DisableViewInfo1)</visible>
 					<label>$LOCALIZE[31267]</label>
 					<onclick>Container.SetViewMode(53)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=53)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="154">
@@ -48,6 +58,7 @@
 					<visible>!Window.IsVisible(MyPlaylist.xml) + !Skin.HasSetting(DisableViewInfo2)</visible>
 					<label>$LOCALIZE[31268]</label>
 					<onclick>Container.SetViewMode(54)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=54)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="155">
@@ -55,6 +66,7 @@
 					<visible>!Window.IsVisible(MyPlaylist.xml) + !Skin.HasSetting(DisableViewLow)</visible>
 					<label>$LOCALIZE[391]</label>
 					<onclick>Container.SetViewMode(55)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=55)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="156">
@@ -62,6 +74,7 @@
 					<visible>!Window.IsVisible(MyPlaylist.xml) + !Skin.HasSetting(DisableView3Panel)</visible>
 					<label>$LOCALIZE[31225]</label>
 					<onclick>Container.SetViewMode(56)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=56)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="157">
@@ -76,6 +89,56 @@
 					<visible>!Window.IsVisible(MyPlaylist.xml) + !Skin.HasSetting(DisableViewRightList)</visible>
 					<label>$LOCALIZE[39164]</label>
 					<onclick>Container.SetViewMode(58)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=58)</onclick>
+					<include>MediaMenuButtonViewType</include>
+				</control>
+				<!-- Spotlight -->
+				<control type="button" id="159">
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
+					<visible>!Skin.HasSetting(DisableViewSpotlight)</visible>
+					<label>$LOCALIZE[31530]</label>
+					<onclick>Container.SetViewMode(59)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=59)</onclick>
+					<include>MediaMenuButtonViewType</include>
+				</control>
+
+				<!-- Cinematic Shelf -->
+				<control type="button" id="160">
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+					<visible>!Skin.HasSetting(DisableViewCinematicShelf)</visible>
+					<label>$LOCALIZE[31531]</label>
+					<onclick>Container.SetViewMode(60)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=60)</onclick>
+					<include>MediaMenuButtonViewType</include>
+				</control>
+
+				<!-- Editorial -->
+				<control type="button" id="161">
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
+					<visible>!Skin.HasSetting(DisableViewEditorial)</visible>
+					<label>$LOCALIZE[31532]</label>
+					<onclick>Container.SetViewMode(61)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=61)</onclick>
+					<include>MediaMenuButtonViewType</include>
+				</control>
+
+				<!-- Immersive -->
+				<control type="button" id="162">
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
+					<visible>!Skin.HasSetting(DisableView62Immersive)</visible>
+					<label>$LOCALIZE[31533]</label>
+					<onclick>Container.SetViewMode(62)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=62)</onclick>
+					<include>MediaMenuButtonViewType</include>
+				</control>
+
+				<!-- Stage -->
+				<control type="button" id="163">
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
+					<visible>!Skin.HasSetting(DisableView63Stage)</visible>
+					<label>$LOCALIZE[31534]</label>
+					<onclick>Container.SetViewMode(63)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=63)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<!-- Cover Flow -->
@@ -89,6 +152,7 @@
 					<visible>!Skin.HasSetting(DisableViewSquare)</visible>
 					<label>$LOCALIZE[31203]</label>
 					<onclick>Container.SetViewMode(500)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=500)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1501">
@@ -103,6 +167,7 @@
 					<visible>!Skin.HasSetting(DisableViewFocus)</visible>
 					<label>$LOCALIZE[20020]</label>
 					<onclick>Container.SetViewMode(502)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=502)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1503">
@@ -110,6 +175,7 @@
 					<visible>!Window.IsVisible(MyPlaylist.xml) + !Skin.HasSetting(DisableViewLandscape)</visible>
 					<label>$LOCALIZE[31201]</label>
 					<onclick>Container.SetViewMode(503)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=503)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1504">
@@ -117,6 +183,7 @@
 					<visible>!Skin.HasSetting(DisableViewFocus)</visible>
 					<label>$LOCALIZE[31245]</label>
 					<onclick>Container.SetViewMode(504)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=504)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1505">
@@ -131,6 +198,7 @@
 					<visible>!Skin.HasSetting(DisableViewCascade)</visible>
 					<label>$LOCALIZE[31246]</label>
 					<onclick>Container.SetViewMode(506)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=506)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1507">
@@ -145,6 +213,7 @@
 					<visible>!Skin.HasSetting(DisableViewShowCase)</visible>
 					<label>$LOCALIZE[31230]</label>
 					<onclick>Container.SetViewMode(508)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=508)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1509">
@@ -159,6 +228,7 @@
 					<visible>!Skin.HasSetting(DisableViewKodiflix)</visible>
 					<label>$LOCALIZE[31247]</label>
 					<onclick>Container.SetViewMode(510)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=510)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1511">
@@ -173,6 +243,7 @@
 					<visible>!Window.IsVisible(MyPlaylist.xml) + !Skin.HasSetting(DisableViewKodiflixLandscape)</visible>
 					<label>$LOCALIZE[31265]</label>
 					<onclick>Container.SetViewMode(512)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=512)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<!-- Icon -->
@@ -186,6 +257,7 @@
 					<visible>!Skin.HasSetting(DisableViewPortraitIcon)</visible>
 					<label>$LOCALIZE[31203]</label>
 					<onclick>Container.SetViewMode(520)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=520)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1521">
@@ -193,6 +265,7 @@
 					<visible>!Skin.HasSetting(DisableViewSquareIcon)</visible>
 					<label>$LOCALIZE[31130]</label>
 					<onclick>Container.SetViewMode(521)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=521)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1524">
@@ -207,6 +280,7 @@
 					<visible>!Skin.HasSetting(DisableViewBannerIcon)</visible>
 					<label>$LOCALIZE[20020]</label>
 					<onclick>Container.SetViewMode(522)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=522)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1523">
@@ -214,6 +288,7 @@
 					<visible>!Skin.HasSetting(DisableViewLandscapeIcon)</visible>
 					<label>$LOCALIZE[31201]</label>
 					<onclick>Container.SetViewMode(523)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=523)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<!-- Icon Info -->
@@ -227,6 +302,7 @@
 					<visible>!Skin.HasSetting(DisableViewPortraitIconInfo)</visible>
 					<label>$LOCALIZE[31203]</label>
 					<onclick>Container.SetViewMode(530)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=530)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1531">
@@ -241,6 +317,7 @@
 					<visible>!Skin.HasSetting(DisableViewBannerIconInfo)</visible>
 					<label>$LOCALIZE[20020]</label>
 					<onclick>Container.SetViewMode(532)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=532)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1533">
@@ -248,6 +325,7 @@
 					<visible>!Skin.HasSetting(DisableViewLandscapeIconInfo)</visible>
 					<label>$LOCALIZE[31201]</label>
 					<onclick>Container.SetViewMode(533)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=533)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<!-- Wall -->
@@ -261,6 +339,7 @@
 					<visible>!Skin.HasSetting(DisableViewPortraitWall)</visible>
 					<label>$LOCALIZE[31203]</label>
 					<onclick>Container.SetViewMode(540)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=540)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1541">
@@ -268,6 +347,7 @@
 					<visible>!Skin.HasSetting(DisableViewSquareWall)</visible>
 					<label>$LOCALIZE[31130]</label>
 					<onclick>Container.SetViewMode(541)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=541)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1542">
@@ -275,6 +355,7 @@
 					<visible>!Skin.HasSetting(DisableViewBannerWall)</visible>
 					<label>$LOCALIZE[20020]</label>
 					<onclick>Container.SetViewMode(542)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=542)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 				<control type="button" id="1543">
@@ -282,6 +363,7 @@
 					<visible>!Skin.HasSetting(DisableViewLandscapeWall)</visible>
 					<label>$LOCALIZE[31201]</label>
 					<onclick>Container.SetViewMode(543)</onclick>
+					<onclick>RunScript(script.skin.madnox, action=collection_view_sync, mode=save, viewid=543)</onclick>
 					<include>MediaMenuButtonViewType</include>
 				</control>
 			</control>

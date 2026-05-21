@@ -34,6 +34,11 @@
 					<right>20</right>
 					<height>838</height>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<!-- Global Collection View Sync: path check and timing handled in Python -->
+					<!-- Global Collection View Sync: fires SetViewMode at the exact right moment -->
+					<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
+					<onclick>Action(Select)</onclick>
+					<onclick condition="String.IsEqual(ListItem.DBTYPE,set) | Container.Content(sets)">RunScript(script.skin.madnox, action=collection_view_sync, mode=enter)</onclick>
 					<onleft>9050</onleft>
 					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<onright>6058</onright>
@@ -68,6 +73,7 @@
 							<bottom>15</bottom>
 							<right>78</right>
 							<height>30</height>
+							<width>600</width>
 							<align>right</align>
 							<font>Font28_Reg</font>
 							<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
@@ -348,6 +354,8 @@
 								<top>38</top>
 								<height>30</height>
 								<align>right</align>
+								<right>0</right>
+								<width>610</width>
 								<font>Font28_Reg</font>
 								<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 								<label>$VAR[RightListFocusMoviesVar]</label>
@@ -393,7 +401,8 @@
 							<control type="textbox">
 								<visible>[!String.IsEmpty(ListItem.Tagline) + String.IsEqual(Container.SortMethod,$LOCALIZE[556])] | [!String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + !String.IsEmpty(ListItem.Label2)]</visible>
 								<top>113</top>
-								<left>555</left>
+								<!-- <left>555</left> -->
+								<right>0</right>
 								<width>620</width>
 								<height>120</height>
 								<align>right</align>
@@ -404,7 +413,8 @@
 							<control type="textbox">
 								<visible>[String.IsEmpty(ListItem.Tagline) + String.IsEqual(Container.SortMethod,$LOCALIZE[556])] | [!String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + String.IsEmpty(ListItem.Label2)]</visible>
 								<top>77</top>
-								<left>555</left>
+								<!-- <left>555</left> -->
+								<right>0</right>
 								<width>620</width>
 								<height>156</height>
 								<align>right</align>
@@ -1090,7 +1100,7 @@
 				<texturesliderbackground border="2">buttons/scrollbar-nib-back-vertical.png</texturesliderbackground>
 			</control>
 		</control>
-		<!-- Art -->
+		<!-- Art Panel -->
 		<control type="group">
 			<visible>Control.IsVisible(58)</visible>
 			<include content="AnimationSlideLeftWindow">
@@ -1101,56 +1111,250 @@
 			</include>
 			<control type="group">
 				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+
+				<!-- Draw DiscArt First -->
+				<control type="image">
+					<visible>!Skin.HasSetting(View58HideDiscArt) + Container.Content(movies)</visible>
+					<include>AnimationDiscArtLibrary</include>
+					<bottom>434</bottom>
+					<left>30</left>
+					<width>395</width>
+					<height>395</height>
+					<fadetime>TextureFadeTime</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture diffuse="diffuse/disc.png" background="true">$VAR[LibraryVideoDiscArtVar]</texture>
+				</control>
+
+				<!-- Poster/Case and Video Player Container drawn SECOND -->
 				<control type="group">
 					<visible>!Skin.HasSetting(View58HideCover)</visible>
 					<left>10</left>
 					<width>435</width>
 					<bottom>10</bottom>
 					<height>642</height>
-					<control type="image">
-						<visible>!Skin.HasSetting(View58HideDiscArt) + Container.Content(movies)</visible>
-						<include>AnimationDiscArtLibrary</include>
-						<bottom>434</bottom>
-						<left>20</left>
-						<width>395</width>
-						<height>395</height>
-						<fadetime>TextureFadeTime</fadetime>
-						<aspectratio>keep</aspectratio>
-						<texture diffuse="diffuse/disc.png" background="true">$VAR[LibraryVideoDiscArtVar]</texture>
-					</control>
+					<!-- Static Poster Art (Visible when trailer is NOT playing) -->
 					<control type="group">
-						<visible>!Skin.HasSetting(View58VideoCase)</visible>
-						<include content="ViewArtwork">
-							<param name="diffuse">diffuse/rounded5-415x622.png</param>
+						<visible>String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+						<control type="group">
+							<visible>!Skin.HasSetting(View58VideoCase)</visible>
+							<include content="ViewArtwork">
+								<param name="diffuse">diffuse/rounded5-415x622.png</param>
+							</include>
+						</control>
+						<control type="group">
+							<visible>Skin.HasSetting(View58VideoCase)</visible>
+							<include content="ViewArtworkVideoCase">
+								<param name="logoheight">44</param>
+								<param name="bordersize">18,52,18,21</param>
+							</include>
+						</control>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="30" />
+							<param name="height" value="12" />
 						</include>
 					</control>
+					<!-- Video Player (Visible WHEN trailer IS playing) -->
+					<!-- <control type="group">
+						<visible>!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+						<control type="group">
+							<visible>Skin.HasSetting(View58AnimatedFanart)</visible>
+							<control type="image">
+								<texture fallback="colors/black.png">$VAR[FanartVar]</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="videowindow">
+								<visible>Player.HasVideo</visible>
+								<animation effect="fade" time="400" delay="200">Visible</animation>
+								<colordiffuse>FFA0A0A0</colordiffuse>
+							</control>
+						</control>
+						<control type="group">
+							<visible>!Skin.HasSetting(View58AnimatedFanart)</visible>
+							<control type="image">
+								<texture>colors/black.png</texture>
+							</control>
+							<control type="videowindow">
+								<colordiffuse>FFA0A0A0</colordiffuse>
+							</control>
+						</control>
+						<control type="image">
+							<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+						</control>
+					</control> -->
+					<!-- Video Player (Visible WHEN trailer IS playing) -->
 					<control type="group">
-						<visible>Skin.HasSetting(View58VideoCase)</visible>
-						<include content="ViewArtworkVideoCase">
-							<param name="logoheight">44</param>
-							<param name="bordersize">18,52,18,21</param>
-						</include>
+						<visible>!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+
+						<!-- 1. BASE SHADOW -->
+						<control type="image">
+							<bordersize>10</bordersize>
+							<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+						</control>
+
+						<!-- 2. THE INSET GROUP (10px padding on all sides) -->
+						<control type="group">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+
+							<!-- 3. THE CONTENT -->
+							<!-- Solid background to prevent transparency holes -->
+							<control type="image">
+								<texture>colors/black.png</texture>
+							</control>
+
+							<control type="group">
+								<visible>Skin.HasSetting(View58AnimatedFanart)</visible>
+								<!-- Fanart with the exact 415x622 diffuse mask applied -->
+								<control type="image">
+									<texture background="true" diffuse="diffuse/rounded5-415x622.png" fallback="colors/black.png">$VAR[FanartVar]</texture>
+									<aspectratio scalediffuse="false">scale</aspectratio>
+								</control>
+								<!-- Video Window cropped naturally by the inset group -->
+								<control type="videowindow">
+									<visible>Player.HasVideo</visible>
+									<animation effect="fade" time="400" delay="200">Visible</animation>
+									<aspectratio>keep</aspectratio>
+									<colordiffuse>FFA0A0A0</colordiffuse>
+								</control>
+							</control>
+
+							<control type="group">
+								<visible>!Skin.HasSetting(View58AnimatedFanart)</visible>
+								<control type="videowindow">
+									<aspectratio>keep</aspectratio>
+									<colordiffuse>FFA0A0A0</colordiffuse>
+								</control>
+							</control>
+						</control>
+
+						<!-- 4. THE OVERLAY FRAME (Drawn at full size, covers the inset content) -->
+						<control type="image">
+							<texture border="20">thumbs/overlay.png</texture>
+						</control>
 					</control>
 				</control>
+
+				<!-- ========================================================================================= -->
+				<!-- RE-ARCHITECTED CLEARLOGO/BANNER/TITLE BLOCKS — Supports dual positions and banner override -->
+				<!-- ========================================================================================= -->
+
+				<!-- BLOCK 1: POSITION WHEN COVER ART IS VISIBLE -->
 				<control type="group">
-					<visible>!Skin.HasSetting(View58HideLogo)</visible>
-					<left>10</left>
-					<width>415</width>
-					<control type="image">
-						<visible>!Skin.HasSetting(View58HideCover)</visible>
+					<visible>!Skin.HasSetting(View58HideCover)</visible>
+
+					<!-- STATE 1: BANNER OVERRIDE -->
+					<control type="group">
+						<visible>Skin.HasSetting(View58UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
+						<left>20</left>
 						<bottom>850</bottom>
-						<height>161</height>
-						<fadetime>TextureFadeTime</fadetime>
-						<aspectratio aligny="center">keep</aspectratio>
-						<texture background="true">$VAR[ClearLogoVar]</texture>
+						<width>1000</width>
+						<height>185</height>
+						<!-- Scale to 41.5% to match 415px width. Center pinned to absolute Bottom-Left (20, 1080-850). -->
+						<animation type="Conditional" condition="true">
+							<effect type="zoom" end="41.5" center="20,230" time="0" />
+						</animation>
+						<include content="ViewArtwork">
+							<param name="aspect">scale</param>
+							<param name="texturefadetime">TextureFadeTime</param>
+							<param name="art">$VAR[ClearLogoVar]</param>
+							<param name="diffuse">diffuse/rounded5-593x110.png</param>
+							<param name="watchedstatusvisible">false</param>
+						</include>
 					</control>
-					<control type="image">
-						<visible>Skin.HasSetting(View58HideCover)</visible>
+
+					<!-- STATE 2: CLEARLOGO -->
+					<control type="group">
+						<visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(artist.clearlogo))] + ![Skin.HasSetting(View58UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+						<control type="image">
+							<left>20</left>
+							<bottom>850</bottom>
+							<width>415</width>
+							<height>161</height>
+							<fadetime>TextureFadeTime</fadetime>
+							<aspectratio align="left" aligny="center">keep</aspectratio>
+							<texture background="true">$VAR[ClearLogoVar]</texture>
+						</control>
+					</control>
+
+					<!-- STATE 3: TITLE FALLBACK -->
+					<control type="group">
+						<visible>String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(artist.clearlogo)) + ![Skin.HasSetting(View58UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+						<control type="label">
+							<left>20</left>
+							<bottom>850</bottom>
+							<width>415</width>
+							<height>161</height>
+							<font>Font38_Bold</font>
+							<!-- <textcolor>ffffffff</textcolor> -->
+							<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+							<shadowcolor>ff000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+				</control>
+
+				<!-- BLOCK 2: POSITION WHEN COVER ART IS HIDDEN -->
+				<control type="group">
+					<visible>Skin.HasSetting(View58HideCover)</visible>
+
+					<!-- STATE 1: BANNER OVERRIDE -->
+					<control type="group">
+						<visible>Skin.HasSetting(View58UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
+						<left>20</left>
 						<bottom>20</bottom>
-						<height>161</height>
-						<fadetime>TextureFadeTime</fadetime>
-						<aspectratio aligny="center">keep</aspectratio>
-						<texture background="true">$VAR[ClearLogoVar]</texture>
+						<width>1000</width>
+						<height>185</height>
+						<!-- Scale to 41.5%. Center pinned to absolute Bottom-Left (20, 1080-20). -->
+						<animation type="Conditional" condition="true">
+							<effect type="zoom" end="41.5" center="20,1060" time="0" />
+						</animation>
+						<include content="ViewArtwork">
+							<param name="aspect">scale</param>
+							<param name="texturefadetime">TextureFadeTime</param>
+							<param name="art">$VAR[ClearLogoVar]</param>
+							<param name="diffuse">diffuse/rounded5-593x110.png</param>
+							<param name="watchedstatusvisible">false</param>
+						</include>
+					</control>
+
+					<!-- STATE 2: CLEARLOGO -->
+					<control type="group">
+						<visible>[!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(artist.clearlogo))] + ![Skin.HasSetting(View58UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+						<control type="image">
+							<left>20</left>
+							<bottom>20</bottom>
+							<width>415</width>
+							<height>161</height>
+							<fadetime>TextureFadeTime</fadetime>
+							<aspectratio align="left" aligny="center">keep</aspectratio>
+							<texture background="true">$VAR[ClearLogoVar]</texture>
+						</control>
+					</control>
+
+					<!-- STATE 3: TITLE FALLBACK -->
+					<control type="group">
+						<visible>String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(artist.clearlogo)) + ![Skin.HasSetting(View58UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+						<control type="label">
+							<left>20</left>
+							<bottom>20</bottom>
+							<width>415</width>
+							<height>161</height>
+							<font>Font38_Bold</font>
+							<!-- <textcolor>ffffffff</textcolor> -->
+							<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+							<shadowcolor>ff000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
 					</control>
 				</control>
 			</control>
@@ -1254,20 +1458,40 @@
 				</control>
 			</control>
 		</control>
-		<!-- Media flags -->
+		<!-- Media Flags -->
 		<control type="group">
 			<visible>Control.IsVisible(58)</visible>
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>
 			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
-				<param name="right">30</param>
-				<param name="bottom">20</param>
-			</include>
+			<control type="group">
+				<visible>Control.IsVisible(58) + String.Contains(ListItem.DBType, "movie")</visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(58) + !String.Contains(ListItem.DBType, "season") &amp; String.Contains(ListItem.DBType, "episode")</visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(58) + String.Contains(ListItem.DBType, "season")</visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(58) + String.Contains(ListItem.DBType, "tvshow") | Container.Content(tvshows) </visible>
+				<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShows">
+					<param name="right">30</param>
+					<param name="bottom">20</param>
+				</include>
+			</control>
 			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudio">
 				<param name="right">30</param>
 				<param name="bottom">20</param>

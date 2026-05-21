@@ -118,49 +118,87 @@
 	<include name="InfoTimeBar">
 		<control type="group">
 			<top>760</top>
+			<!-- VERTICAL MODE: Slides down 232px to seat perfectly at the absolute bottom (760 + 232 = 992) -->
+			<animation effect="slide" end="0,278" time="0" condition="Skin.HasSetting(MainMenuVertical)">Conditional</animation>
+
 			<visible>!Skin.HasSetting(InfoBarTop)</visible>
 			<include>AnimationVisibleFade</include>
 			<include>AnimationSlideBottomWindow</include>
+
 			<control type="group">
 				<visible>String.IsEmpty(Skin.String(MainMenuSystemBar.texture))</visible>
 				<include>AnimationVisibleFade</include>
+
+				<!-- ============================================== -->
+				<!-- HORIZONTAL MODE: Standard Textures             -->
+				<!-- ============================================== -->
 				<control type="image">
-					<visible>[Player.HasMedia + Skin.HasSetting(NowplayingSystemBar)] | !String.IsEmpty(Container(9000).ListItem.Property(InfoLine)) + !Skin.HasSetting(HideInfoLine)</visible>
+					<visible>!Skin.HasSetting(MainMenuVertical) + [[Player.HasMedia + Skin.HasSetting(NowplayingSystemBar)] | [!String.IsEmpty(Container(9000).ListItem.Property(InfoLine)) + !Skin.HasSetting(HideInfoLine)]]</visible>
 					<width>810</width>
 					<height>88</height>
-					<include>AnimationVisibleFade</include>
 					<texture flipx="true" border="1,1,70,1" colordiffuse="$VAR[TopbarTextureColorVar]">panels/mainmenu/default-systembar.png</texture>
 				</control>
 				<control type="image">
+					<visible>!Skin.HasSetting(MainMenuVertical)</visible>
 					<right>0</right>
 					<width>810</width>
 					<height>88</height>
-					<include>AnimationVisibleFade</include>
 					<texture border="70,1,1,1" colordiffuse="$VAR[TopbarTextureColorVar]">panels/mainmenu/default-systembar.png</texture>
 				</control>
+
+				<!-- ============================================== -->
+				<!-- Vertical Mode: Flipped Textures                -->
+				<!-- ============================================== -->
+				<control type="image">
+					<visible>Skin.HasSetting(MainMenuVertical) + [[Player.HasMedia + Skin.HasSetting(NowplayingSystemBar)] | [!String.IsEmpty(Container(9000).ListItem.Property(InfoLine)) + !Skin.HasSetting(HideInfoLine)]]</visible>
+					<width>810</width>
+					<height>88</height>
+					<texture flipx="true" flipy="true" border="1,1,70,1" colordiffuse="$VAR[TopbarTextureColorVar]">panels/mainmenu/default-systembar.png</texture>
+				</control>
+				<control type="image">
+					<visible>Skin.HasSetting(MainMenuVertical)</visible>
+					<right>0</right>
+					<width>810</width>
+					<height>88</height>
+					<texture border="70,1,1,1" flipy="true" colordiffuse="$VAR[TopbarTextureColorVar]">panels/mainmenu/default-systembar.png</texture>
+				</control>
+
+				<!-- ============================================== -->
+				<!-- Shared Content: Progress Bars                  -->
+				<!-- ============================================== -->
 				<include content="TopBarNowPlayingProgress">
 					<param name="visible">Player.HasMedia + Skin.HasSetting(NowplayingSystemBar)</param>
-					<param name="top">47</param>
+					<!-- Text/Progress sits at top 47 for Horizontal, top 0 for Vertical -->
+					<param name="top" condition="!Skin.HasSetting(MainMenuVertical)">47</param>
+					<param name="top" condition="Skin.HasSetting(MainMenuVertical)">0</param>
 					<param name="width">740</param>
 					<param name="info">Player.ProgressCache</param>
 				</include>
 				<include content="TopBarNowPlayingProgress">
 					<param name="visible">Player.HasMedia + !VideoPlayer.HasEpg + Skin.HasSetting(NowplayingSystemBar)</param>
-					<param name="top">47</param>
+					<param name="top" condition="!Skin.HasSetting(MainMenuVertical)">47</param>
+					<param name="top" condition="Skin.HasSetting(MainMenuVertical)">0</param>
 					<param name="width">740</param>
 				</include>
 				<include content="TopBarNowPlayingProgress">
 					<param name="visible">VideoPlayer.HasEpg + Skin.HasSetting(NowplayingSystemBar)</param>
-					<param name="top">47</param>
+					<param name="top" condition="!Skin.HasSetting(MainMenuVertical)">47</param>
+					<param name="top" condition="Skin.HasSetting(MainMenuVertical)">0</param>
 					<param name="width">740</param>
 					<param name="info">PVR.EpgEventProgress</param>
 				</include>
-				<include content="InfoTimeBarContent">
+
+				<include condition="!Skin.HasSetting(MainMenuVertical)" content="InfoTimeBarContent">
 					<param name="top">47</param>
 				</include>
+				<include condition="Skin.HasSetting(MainMenuVertical)" content="InfoTimeBarContent">
+					<param name="top">0</param>
+				</include>
 			</control>
+
 			<control type="group">
 				<visible>Skin.String(MainMenuSystemBar.texture,wide)</visible>
+				<!-- The rest of your wide-bar and shadow-bar code stays exactly the same -->
 				<include>AnimationVisibleFade</include>
 				<control type="image">
 					<width>1920</width>
@@ -547,7 +585,7 @@
 							<control type="group">
 								<visible>Control.HasFocus(9001)</visible>
 								<control type="image">
-									<texture border="1" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texture>
+									<!-- <texture border="1" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texture> -->
 									<visible>!Skin.String(MainMenuSubmenuBar.texture,shadow)</visible>
 								</control>
 								<control type="image">
@@ -765,14 +803,595 @@
 		</definition>
 	</include>
 
+	<!-- ===================================================================== -->
+	<!-- Vertical Menu — in-panel drill-down swap                             -->
+	<!--                                                                      -->
+	<!-- State is tracked by Window(Home).Property(VertSubOpen):             -->
+	<!--   Empty  = main list visible   (9000)                               -->
+	<!--   "true" = submenu visible     (9002)                               -->
+	<!--                                                                      -->
+	<!-- Both groups sit at left=0, same column, same size.                  -->
+	<!-- The panel background is a static sibling — never animates.          -->
+	<!-- 9000 slides LEFT  out / RIGHT back  driven by VertSubOpen           -->
+	<!-- 9002 slides RIGHT out / LEFT  in    driven by VertSubOpen           -->
+	<!--                                                                      -->
+	<!-- Navigation flow (keyboard/remote):                                  -->
+	<!--   9000 onright (no submenu, has widgets) → 9013 → widget carousel  -->
+	<!--   9000 onright (has submenu)             → 9012 → opens 9001       -->
+	<!--   9000 ondown  (no submenu, has widgets) → 9013 → widget carousel  -->
+	<!--   9001 onright (has widgets)             → 9013 → widget carousel  -->
+	<!--   9001 ondown  (has widgets)             → 9013 → widget carousel  -->
+	<!--   Widget onup / ondown                   → 9014 → 9001 or 9000     -->
+	<!--   Widget onleft (at pos 0) / onback      → 9001 or 9000 direct     -->
+	<!-- ===================================================================== -->
+	<include name="VerticalMenu">
+		<param name="listtype">fixedlist</param>
+		<definition>
+			<!-- Outer wrapper — full panel height, drives window slide-in -->
+			<control type="group">
+				<left>0</left>
+				<top>0</top>
+				<width>340</width>
+				<height>1080</height>
+				<include>AnimationSlideBottomWindow</include>
+
+				<!-- STATIC PANEL BACKGROUND — never moves -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>340</width>
+					<height>1080</height>
+					<texture colordiffuse="$VAR[MainMenuStyleColorVar]" fallback="panels/mainmenu/default-vertical.png">$INFO[Skin.String(MainMenuStyle.texture)]</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>340</width>
+					<height>1080</height>
+					<texture colordiffuse="$VAR[MainMenuTextureColorVar]">$INFO[Skin.String(MainMenuTexture.texture)]</texture>
+				</control>
+
+				<!-- HIDDEN ROUTER BUTTONS -->
+				<control type="button" id="9011">
+					<include>HiddenObject</include>
+					<onfocus>ClearProperty(VertSubOpen,Home)</onfocus>
+					<onfocus>SetFocus(9000)</onfocus>
+				</control>
+
+				<control type="button" id="9012">
+					<include>HiddenObject</include>
+					<onfocus>SetProperty(VertSubOpen,true,Home)</onfocus>
+					<onfocus>SetFocus(9001)</onfocus>
+				</control>
+
+				<!-- GHOSTBUSTER: ONRIGHT to Widgets (from 9000 or 9001) -->
+				<!-- Resolves the correct carousel widget list ID and moves focus + resets to item 1.    -->
+				<!-- Grid mode always targets 9901. Carousel mode builds ID as 1600{menuId}1.          -->
+				<!-- Action(FirstPage) is sent *before* SetFocus so it resets the soon-to-be-focused   -->
+				<!-- list via the window's action dispatch (targeting whichever list Kodi picks next).  -->
+				<!-- If no widget is available (id resolves to nothing), fallback goes to 9001/9000.    -->
+				<control type="button" id="9013">
+					<include>HiddenObject</include>
+					<!-- Step 1: Resolve and store target widget list ID -->
+					<onfocus>SetProperty(TargetWidgetListId,dummy,Home)</onfocus>
+					<onfocus condition="!Skin.HasSetting(SystemWidget.GridMode)">SetProperty(TargetWidgetListId,1600$INFO[Container(9000).ListItem.Property(id)]1,Home)</onfocus>
+					<onfocus condition="Skin.HasSetting(SystemWidget.GridMode)">SetProperty(TargetWidgetListId,9901,Home)</onfocus>
+					<!-- Step 2: Clear any stale WidgetFocus slot state so slot 1 is always visible on entry.   -->
+					<!-- Without this, a previous slot-2+ selection leaves slot 1 invisible and Kodi           -->
+					<!-- falls through to the nearest visible focusable (the submenu) instead.                 -->
+					<onfocus condition="!Skin.HasSetting(SystemWidget.GridMode)">ClearProperty(WidgetFocus$INFO[Container(9000).ListItem.Property(id)],Home)</onfocus>
+					<!-- Step 3: Move focus to slot 1 of the target widget panel -->
+					<onfocus>SetFocus($INFO[Window(Home).Property(TargetWidgetListId)])</onfocus>
+					<!-- Step 4: Reset the widget carousel to item 1 now that it has focus -->
+					<onfocus>Action(FirstPage)</onfocus>
+					<!-- Step 5: Safety — if focus never left 9013 (invalid widget ID), return to menu -->
+					<onfocus condition="Control.HasFocus(9013) + String.IsEqual(Window(Home).Property(VertSubOpen),true)">SetFocus(9001)</onfocus>
+					<onfocus condition="Control.HasFocus(9013) + !String.IsEqual(Window(Home).Property(VertSubOpen),true)">SetFocus(9000)</onfocus>
+				</control>
+
+				<!-- ROUTER: ONUP from Widgets back to the vertical menu -->
+				<!-- When UP is pressed in a widget, focus arrives here.                              -->
+				<!-- We simply route back to 9001 (submenu) or 9000 (main list) as appropriate.     -->
+				<!-- Widget position reset (FirstPage) happens via 9013 when the user navigates      -->
+				<!-- right again — no need to fight Kodi's focus dispatch order here.               -->
+				<control type="button" id="9014">
+					<include>HiddenObject</include>
+					<!-- Clear stale slot state so next widget entry via 9013 starts at slot 1 -->
+					<onfocus condition="!Skin.HasSetting(SystemWidget.GridMode)">ClearProperty(WidgetFocus$INFO[Container(9000).ListItem.Property(id)],Home)</onfocus>
+					<onfocus condition="String.IsEqual(Window(Home).Property(VertSubOpen),true)">SetFocus(9001)</onfocus>
+					<onfocus condition="!String.IsEqual(Window(Home).Property(VertSubOpen),true)">SetFocus(9000)</onfocus>
+				</control>
+
+				<!-- MAIN LIST (9000) -->
+				<control type="$PARAM[listtype]" id="9000">
+					<left>0</left>
+					<top>90</top>
+					<width>340</width>
+					<height>902</height>
+					<onleft>9050</onleft>
+
+					<!-- GHOST CATCHER: Bounces focus directly into the newly loaded widgets -->
+					<onfocus condition="String.IsEqual(Window(Home).Property(CycleWidget),true) + !Skin.HasSetting(SystemWidget.GridMode)">SetFocus(90010)</onfocus>
+					<onfocus condition="String.IsEqual(Window(Home).Property(CycleWidget),true) + Skin.HasSetting(SystemWidget.GridMode)">SetFocus(9900)</onfocus>
+					<onfocus condition="String.IsEqual(Window(Home).Property(CycleWidget),true)">ClearProperty(CycleWidget,Home)</onfocus>
+
+					<!-- OnRight to Widgets: now targets the Ghostbuster 9013 -->
+					<onright condition="Skin.HasSetting(MainMenuVertical) + !String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !String.IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9013</onright>
+					<onright condition="String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True)">9012</onright>
+					<!-- Fallback if no widgets or submenu visible -->
+					<onright>9000</onright>
+
+					<onup>9000</onup>
+					<!-- VERTICAL MODE: DOWN goes to widgets (no submenu) or self-loops (submenu present / no widgets) -->
+					<ondown condition="Skin.HasSetting(MainMenuVertical) + !String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !String.IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9013</ondown>
+					<ondown>9000</ondown>
+					<orientation>vertical</orientation>
+					<focusposition>3</focusposition>
+					<usealtfocus>true</usealtfocus>
+					<altfocusposition>-1</altfocusposition>
+					<scrolltime tween="sine" easing="inout">450</scrolltime>
+					<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(VertSubOpen),true)" reversible="false">
+						<effect type="slide" start="0,0" end="-340,0" time="280" tween="cubic" easing="inout" />
+						<effect type="fade" start="100" end="0" time="220" tween="quadratic" easing="in" />
+					</animation>
+					<animation type="Conditional" condition="!String.IsEqual(Window(Home).Property(VertSubOpen),true)" reversible="false">
+						<effect type="slide" start="-340,0" end="0,0" time="280" tween="cubic" easing="inout" />
+						<effect type="fade" start="0" end="100" time="220" tween="quadratic" easing="out" />
+					</animation>
+
+					<!-- 1. DEFAULT (Text Only) unfocused -->
+					<itemlayout width="340" height="72" condition="String.IsEmpty(Skin.String(MainMenuLayout))">
+						<control type="label">
+							<left>63</left>
+							<width>300</width>
+							<height>72</height>
+							<aligny>center</aligny>
+							<font>Font_MainMenu_Icons</font>
+							<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+
+					<!-- 1. DEFAULT (Text Only) focused -->
+					<focusedlayout width="340" height="72" condition="String.IsEmpty(Skin.String(MainMenuLayout))">
+						<control type="group">
+							<control type="image">
+								<right>20</right>
+								<top>0</top>
+								<width>28</width>
+								<height>72</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelTextColorVar]">panels/nowplaying.png</texture>
+								<visible>String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(SubmenuHide)</visible>
+							</control>
+							<control type="label">
+								<left>63</left>
+								<width>282</width>
+								<height>72</height>
+								<aligny>center</aligny>
+								<font>Font_MainMenu_Icons</font>
+								<textcolor>$VAR[PanelTextColorVar]</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</control>
+					</focusedlayout>
+
+					<!-- 2. WIDE (Text Only, Taller Spacing) unfocused -->
+					<itemlayout width="340" height="110" condition="Skin.String(MainMenuLayout,wide)">
+						<control type="label">
+							<left>63</left>
+							<width>300</width>
+							<height>110</height>
+							<aligny>center</aligny>
+							<font>Font_MainMenu_Icons</font>
+							<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+
+					<!-- 2. WIDE (Text Only, Taller Spacing) focused -->
+					<focusedlayout width="340" height="110" condition="Skin.String(MainMenuLayout,wide)">
+						<control type="group">
+							<control type="image">
+								<right>20</right>
+								<top>0</top>
+								<width>28</width>
+								<height>110</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelTextColorVar]">panels/nowplaying.png</texture>
+								<visible>String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(SubmenuHide)</visible>
+							</control>
+							<control type="label">
+								<left>63</left>
+								<width>282</width>
+								<height>110</height>
+								<aligny>center</aligny>
+								<font>Font_MainMenu_Icons</font>
+								<textcolor>$VAR[PanelTextColorVar]</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</control>
+					</focusedlayout>
+
+					<!-- 3. ICONS (Stacked Icon & Text) unfocused -->
+					<itemlayout width="340" height="100" condition="Skin.String(MainMenuLayout,icons)">
+						<control type="image">
+							<left>0</left>
+							<top>10</top>
+							<width>340</width>
+							<height>50</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture colordiffuse="4dffffff">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<top>65</top>
+							<width>300</width>
+							<height>30</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_MainMenu_Icons</font>
+							<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+
+					<!-- 3. ICONS (Stacked Icon & Text) focused -->
+					<focusedlayout width="340" height="100" condition="Skin.String(MainMenuLayout,icons)">
+						<control type="group">
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>340</width>
+								<height>100</height>
+							</control>
+							<control type="image">
+								<right>20</right>
+								<top>0</top>
+								<width>28</width>
+								<height>100</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelTextColorVar]">panels/nowplaying.png</texture>
+								<visible>String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(SubmenuHide)</visible>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>10</top>
+								<width>340</width>
+								<height>50</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="label">
+								<left>20</left>
+								<top>65</top>
+								<width>300</width>
+								<height>30</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Font_MainMenu_Icons</font>
+								<textcolor>$VAR[PanelTextColorVar]</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</control>
+					</focusedlayout>
+
+					<!-- 4. ICONS WIDE (Stacked, Taller Spacing) unfocused -->
+					<itemlayout width="340" height="140" condition="Skin.String(MainMenuLayout,iconswide)">
+						<control type="image">
+							<left>0</left>
+							<top>20</top>
+							<width>340</width>
+							<height>60</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture colordiffuse="4dffffff">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<top>90</top>
+							<width>300</width>
+							<height>30</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_MainMenu_Icons</font>
+							<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+
+					<!-- 4. ICONS WIDE (Stacked, Taller Spacing) focused -->
+					<focusedlayout width="340" height="140" condition="Skin.String(MainMenuLayout,iconswide)">
+						<control type="group">
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>340</width>
+								<height>140</height>
+							</control>
+							<control type="image">
+								<right>20</right>
+								<top>0</top>
+								<width>28</width>
+								<height>140</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelTextColorVar]">panels/nowplaying.png</texture>
+								<visible>String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(SubmenuHide)</visible>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>20</top>
+								<width>340</width>
+								<height>60</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="label">
+								<left>20</left>
+								<top>90</top>
+								<width>300</width>
+								<height>30</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Font_MainMenu_Icons</font>
+								<textcolor>$VAR[PanelTextColorVar]</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</control>
+					</focusedlayout>
+
+					<!-- 5. BIG ICONS (Icon Only) unfocused -->
+					<itemlayout width="340" height="100" condition="Skin.String(MainMenuLayout,bigicons)">
+						<control type="image">
+							<left>0</left>
+							<top>5</top>
+							<width>340</width>
+							<height>90</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture colordiffuse="4dffffff">$INFO[ListItem.Icon]</texture>
+						</control>
+					</itemlayout>
+
+					<!-- 5. BIG ICONS (Icon Only) focused -->
+					<focusedlayout width="340" height="100" condition="Skin.String(MainMenuLayout,bigicons)">
+						<control type="group">
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>340</width>
+								<height>100</height>
+							</control>
+							<control type="image">
+								<right>20</right>
+								<top>0</top>
+								<width>28</width>
+								<height>100</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelTextColorVar]">panels/nowplaying.png</texture>
+								<visible>String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(SubmenuHide)</visible>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>5</top>
+								<width>340</width>
+								<height>90</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[ListItem.Icon]</texture>
+							</control>
+						</control>
+					</focusedlayout>
+
+					<!-- 6. BIG ICONS WIDE (Icon Only, Taller Spacing) unfocused -->
+					<itemlayout width="340" height="150" condition="Skin.String(MainMenuLayout,bigiconswide)">
+						<control type="image">
+							<left>0</left>
+							<top>10</top>
+							<width>340</width>
+							<height>130</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture colordiffuse="4dffffff">$INFO[ListItem.Icon]</texture>
+						</control>
+					</itemlayout>
+
+					<!-- 6. BIG ICONS WIDE (Icon Only, Taller Spacing) focused -->
+					<focusedlayout width="340" height="150" condition="Skin.String(MainMenuLayout,bigiconswide)">
+						<control type="group">
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>340</width>
+								<height>150</height>
+							</control>
+							<control type="image">
+								<right>20</right>
+								<top>0</top>
+								<width>28</width>
+								<height>150</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<texture colordiffuse="$VAR[PanelTextColorVar]">panels/nowplaying.png</texture>
+								<visible>String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(SubmenuHide)</visible>
+							</control>
+							<control type="image">
+								<left>0</left>
+								<top>10</top>
+								<width>340</width>
+								<height>130</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[ListItem.Icon]</texture>
+							</control>
+						</control>
+					</focusedlayout>
+
+					<content>
+						<include>skinshortcuts-mainmenu</include>
+					</content>
+				</control>
+
+				<!-- SUBMENU GROUP (9002) -->
+				<control type="group" id="9002">
+					<left>0</left>
+					<top>90</top>
+					<width>340</width>
+					<height>902</height>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(hasSubmenu),True) + String.IsEqual(Window(Home).Property(VertSubOpen),true)</visible>
+					<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(VertSubOpen),true)" reversible="false">
+						<effect type="slide" start="340,0" end="0,0" time="280" tween="cubic" easing="inout" />
+						<effect type="fade" start="0" end="100" time="220" tween="quadratic" easing="out" />
+					</animation>
+					<animation type="Conditional" condition="!String.IsEqual(Window(Home).Property(VertSubOpen),true)" reversible="false">
+						<effect type="slide" start="0,0" end="340,0" time="280" tween="cubic" easing="inout" />
+						<effect type="fade" start="100" end="0" time="220" tween="quadratic" easing="in" />
+					</animation>
+
+					<!-- Breadcrumb header row -->
+					<control type="group">
+						<left>0</left>
+						<top>0</top>
+						<width>340</width>
+						<height>58</height>
+						<control type="image">
+							<left>0</left>
+							<width>340</width>
+							<height>58</height>
+							<visible>Control.HasFocus(9010)</visible>
+						</control>
+						<control type="image">
+							<left>70</left>
+							<top>4</top>
+							<width>28</width>
+							<height>50</height>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture colordiffuse="$VAR[PanelSubTextColorVar]" flipx="true">panels/nowplaying.png</texture>
+						</control>
+						<control type="label">
+							<left>35</left>
+							<width>270</width>
+							<height>58</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font30_Caps</font>
+							<textcolor>$VAR[PanelTextColorVar]</textcolor>
+							<label>$INFO[Container(9000).ListItem.Label]</label>
+						</control>
+						<control type="button" id="9010">
+							<left>0</left>
+							<top>0</top>
+							<width>340</width>
+							<height>58</height>
+							<onclick>ClearProperty(VertSubOpen,Home)</onclick>
+							<onclick>SetFocus(9000)</onclick>
+							<onleft>9011</onleft>
+							<!-- OnRight to Widgets: now targets the Ghostbuster 9013 -->
+							<onright condition="Skin.HasSetting(MainMenuVertical) + !String.IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9013</onright>
+							<onright>9010</onright>
+							<onup>9010</onup>
+							<ondown>9001</ondown>
+							<onback>9011</onback>
+							<texturefocus />
+							<texturenofocus />
+							<label />
+						</control>
+					</control>
+
+					<!-- Separator line below breadcrumb -->
+					<control type="image">
+						<left>10</left>
+						<top>58</top>
+						<width>320</width>
+						<height>1</height>
+						<texture colordiffuse="$VAR[PanelHighlightColorVar]">white.png</texture>
+					</control>
+
+					<!-- Submenu list — below header -->
+					<control type="fixedlist" id="9001">
+						<left>0</left>
+						<top>59</top>
+						<width>340</width>
+						<height>843</height>
+						<onleft>9011</onleft>
+						<!-- OnRight to Widgets: now targets the Ghostbuster 9013 -->
+						<onright condition="Skin.HasSetting(MainMenuVertical) + !String.IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9013</onright>
+						<onright>9001</onright>
+						<onup>9010</onup>
+						<!-- VERTICAL MODE: DOWN goes to widgets if available, otherwise self-loops within list -->
+						<ondown condition="Skin.HasSetting(MainMenuVertical) + !String.IsEmpty(Container(9000).ListItem.Property(widgetPath.1))">9013</ondown>
+						<ondown>9001</ondown>
+						<onback>9011</onback>
+						<orientation>vertical</orientation>
+						<focusposition>6</focusposition>
+						<usealtfocus>true</usealtfocus>
+						<altfocusposition>-1</altfocusposition>
+						<scrolltime tween="sine" easing="inout">450</scrolltime>
+						<itemlayout width="340" height="52">
+							<control type="label">
+								<left>20</left>
+								<width>300</width>
+								<height>52</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Font28_Reg</font>
+								<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout width="340" height="52">
+							<control type="group">
+								<animation effect="fade" start="100" end="30" time="200" condition="!Control.HasFocus(9001)">Conditional</animation>
+								<control type="image">
+									<left>0</left>
+									<width>340</width>
+									<height>52</height>
+								</control>
+								<control type="label">
+									<left>20</left>
+									<width>300</width>
+									<height>52</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>Font28_Reg</font>
+									<textcolor>$VAR[PanelTextColorVar]</textcolor>
+									<label>$INFO[ListItem.Label]</label>
+								</control>
+							</control>
+						</focusedlayout>
+						<content>
+							<include>skinshortcuts-submenu</include>
+						</content>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<!-- ===================================================================== -->
+	<!-- End Vertical Menu                                                     -->
+	<!-- ===================================================================== -->
+
 	<!-- Widgets -->
 	<include name="WidgetContainerCommon">
 		<left>30</left>
-		<right>30</right>
-		<bottom>304</bottom>
+		<width condition="Skin.HasSetting(MainMenuVertical)">1850</width>
+		<width condition="!Skin.HasSetting(MainMenuVertical)">1860</width>
+		<bottom>280</bottom>
 		<onclick condition="String.IsEqual(ListItem.DBType,album)">PlayMedia($INFO[Container.ListItem.FolderPath],isdir)</onclick>
-		<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
-		<ondown>9000</ondown>
+		<animation effect="slide" end="0,30" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
+		<animation effect="slide" end="0,140" time="0" condition="Skin.HasSetting(MainMenuVertical)">Conditional</animation>
+
+		<!-- VERTICAL MODE: DOWN routes back to the menu via 9014.                              -->
+		<!-- UP is intentionally NOT set here — template.xml panels own UP navigation,          -->
+		<!-- cycling through widget slots and escaping to 9014 at the final slot.               -->
+		<!-- Setting onup here would fire before the panel's own onup and break slot cycling.   -->
+		<ondown condition="Skin.HasSetting(MainMenuVertical)">9014</ondown>
+
+		<!-- HORIZONTAL MODE: DOWN returns to the main menu list -->
+		<ondown condition="!Skin.HasSetting(MainMenuVertical)">9000</ondown>
+
+		<!-- LEFT ESCAPES at position 0: fires when carousel cannot scroll further left.          -->
+		<!-- Kodi handles list-internal scrolling first; this only triggers at the first poster.  -->
+		<onleft condition="Skin.HasSetting(MainMenuVertical) + String.IsEqual(Window(Home).Property(VertSubOpen),true)">9001</onleft>
+		<onleft condition="Skin.HasSetting(MainMenuVertical) + !String.IsEqual(Window(Home).Property(VertSubOpen),true)">9000</onleft>
+
+		<onback condition="Skin.HasSetting(MainMenuVertical) + String.IsEqual(Window(Home).Property(VertSubOpen),true)">9001</onback>
+		<onback condition="Skin.HasSetting(MainMenuVertical) + !String.IsEqual(Window(Home).Property(VertSubOpen),true)">9000</onback>
+
 		<preloaditems>2</preloaditems>
 		<orientation>horizontal</orientation>
 		<include>ContainerScrollTime</include>
@@ -1234,26 +1853,43 @@
 		<visible>$PARAM[visible]</visible>
 		<animation effect="fade" end="100" time="300">Visible</animation>
 		<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+
+		<!-- Widget Text Background Glow -->
 		<control type="image">
-			<!-- <visible>ControlGroup(90010).HasFocus | Control.HasFocus(1607)</visible> -->
-			<visible>[ControlGroup(90010).HasFocus | Control.HasFocus(1607)] + ![Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)]</visible>
+			<visible>ControlGroup(90010).HasFocus + ![Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)]</visible>
 			<include>AnimationVisibleFade</include>
+			<!-- Shifts the lighting glow to the right to follow the widgets -->
+			<animation effect="slide" end="320,0" time="0" condition="Skin.HasSetting(MainMenuVertical)">Conditional</animation>
 			<top>-600</top>
-			<width>1300</width>
+			<width condition="Skin.HasSetting(MainMenuVertical)">1280</width>
+			<width condition="!Skin.HasSetting(MainMenuVertical)">1300</width>
 			<height>1680</height>
 			<texture colordiffuse="$VAR[MainMenuShadowColorVar]">panels/kodiflix-gradient.png</texture>
 		</control>
+
+		<!-- Widget Text Group -->
 		<control type="group">
 			<visible>$PARAM[infovisible]</visible>
-			<bottom>310</bottom>
-			<!-- Shifts the group DOWN 30 pixels (to 280) instantly when InfoBarTop is true -->
-			<animation effect="slide" end="0,40" time="0" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
-			<!-- cmb -->
+			<!-- <bottom>285</bottom> -->
+			<bottom condition="!Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)">150</bottom>
+			<animation effect="slide" end="0,-135" time="300" easing="inout" tween="sine" condition="Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)">Conditional</animation>
+
+			<!-- HORIZONTAL MODE: Shifts DOWN 40 pixels when InfoBarTop is true -->
+			<animation effect="slide" end="0,40" time="0" condition="Skin.HasSetting(InfoBarTop) + !Skin.HasSetting(MainMenuVertical)">Conditional</animation>
+
+			<!-- VERTICAL MODE Low (InfoBar at Bottom): title sits above widgets -->
+			<animation effect="slide" end="0,140" time="0" condition="Skin.HasSetting(MainMenuVertical) + !Skin.HasSetting(InfoBarTop)">Conditional</animation>
+			<!-- VERTICAL MODE High (InfoBar at Top): shift down extra ~30px to follow posters -->
+			<animation effect="slide" end="0,170" time="0" condition="Skin.HasSetting(MainMenuVertical) + Skin.HasSetting(InfoBarTop)">Conditional</animation>
+
 			<left>40</left>
-			<right>40</right>
+			<width condition="Skin.HasSetting(MainMenuVertical)">1520</width>
+			<width condition="!Skin.HasSetting(MainMenuVertical)">1840</width>
+
 			<control type="grouplist">
-				<visible>ControlGroup(90010).HasFocus + !Control.HasFocus(1607)</visible>
+				<visible>ControlGroup(90010).HasFocus</visible>
 				<bottom>350</bottom>
+				<animation effect="slide" end="0,105" time="300" easing="inout" tween="sine" condition="Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable) + Skin.HasSetting(MainMenuVertical)">Conditional</animation>
 				<width>910</width>
 				<height>400</height>
 				<itemgap>10</itemgap>
@@ -1381,9 +2017,33 @@
 		<visible>Skin.HasSetting(WidgetNextButton) + !String.IsEmpty(Container(9000).ListItem.Property(widget.2))</visible>
 		<animation effect="fade" end="100" delay="480" time="240">WindowOpen</animation>
 		<animation effect="fade" start="100" end="0" time="0">WindowClose</animation>
+		<!-- Counter-acts the parent right-shift in Vertical mode to keep it on screen -->
+		<animation effect="slide" end="-320,-120" time="0" condition="Skin.HasSetting(MainMenuVertical)">Conditional</animation>
 		<top>40</top>
 		<right>30</right>
 		<label></label>
+
+		<!-- Horizontal mode: cycle widget slot via SetFocus + Action(Right) -->
+		<onclick condition="!Skin.HasSetting(SystemWidget.GridMode) + !Skin.HasSetting(MainMenuVertical)">SetFocus(90010)</onclick>
+		<onclick condition="Skin.HasSetting(SystemWidget.GridMode) + !Skin.HasSetting(MainMenuVertical)">SetFocus(9900)</onclick>
+		<onclick condition="!Skin.HasSetting(MainMenuVertical)">Action(Right)</onclick>
+
+		<!-- Vertical mode: onclick fires the SetProperty on the panel's button (template handles that), -->
+		<!-- then we immediately push focus to the carousel group so the newly visible panel gets it.    -->
+		<!-- This prevents focus stranding on button 1607 inside its now-invisible slot group.           -->
+		<onclick condition="Skin.HasSetting(MainMenuVertical)">SetFocus(90010)</onclick>
+
+		<onleft condition="Skin.HasSetting(MainMenuVertical) + String.IsEqual(Window(Home).Property(VertSubOpen),true)">9001</onleft>
+		<onleft condition="Skin.HasSetting(MainMenuVertical) + !String.IsEqual(Window(Home).Property(VertSubOpen),true)">9000</onleft>
+		<onleft condition="!Skin.HasSetting(MainMenuVertical)">9000</onleft>
+
+		<!-- Safety: if keyboard/remote focus ever lands on button 1607, push it back to the panel -->
+		<onup condition="Skin.HasSetting(MainMenuVertical)">90010</onup>
+		<ondown condition="Skin.HasSetting(MainMenuVertical)">90010</ondown>
+
+		<ondown condition="Control.IsVisible(9900)">9900</ondown>
+		<ondown condition="Control.IsVisible(90010)">90010</ondown>
+
 		<include>RSSShortcutsIcon</include>
 	</include>
 
@@ -1398,6 +2058,7 @@
 	<include name="PVRWidget">
 		<control type="group">
 			<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
+			<animation effect="slide" end="0,140" time="0" condition="Skin.HasSetting(MainMenuVertical)">Conditional</animation>
 			<control type="group">
 				<visible>String.IsEqual(Container(9000).ListItem.Property(pvrWidget),pvr) + PVR.IsRecording</visible>
 				<include>AnimationVisibleFade</include>
@@ -1539,234 +2200,275 @@
 		</definition>
 	</include>
 
-	<!-- Now Playing -->
+	<!-- ===================================================================== -->
+	<!-- Now Playing - Main Controller                                         -->
+	<!-- This include now contains two completely separate layout groups.      -->
+	<!-- Each group calls the shared content, forcing coordinate inheritance.  -->
+	<!-- ===================================================================== -->
 	<include name="HomeNowPlaying">
-		<control type="image">
-			<visible>!ControlGroup(90010).HasFocus</visible>
-			<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
-			<include>AnimationVisibleFade</include>
-			<bottom>0</bottom>
-			<width>1920</width>
-			<height>968</height>
-			<texture colordiffuse="$VAR[MainMenuShadowColorVar]">panels/widget-gradient.png</texture>
-		</control>
+		<!-- LAYOUT 1: HORIZONTAL MENU -->
 		<control type="group">
-			<!-- <visible>!ControlGroup(90010).HasFocus</visible> -->
-			<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
-			<top>388</top>
-			<left>30</left>
-			<right>30</right>
-			<include>AnimationVisibleFade</include>
-			<!-- Video -->
+			<visible>!Skin.HasSetting(MainMenuVertical)</visible>
+			<control type="image">
+				<visible>!ControlGroup(90010).HasFocus</visible>
+				<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
+				<include>AnimationVisibleFade</include>
+				<bottom>0</bottom>
+				<width>1920</width>
+				<height>968</height>
+				<texture colordiffuse="$VAR[MainMenuShadowColorVar]">panels/widget-gradient.png</texture>
+			</control>
 			<control type="group">
-				<visible>Player.HasVideo</visible>
+				<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
+				<top>388</top>
+				<left>30</left>
+				<right>30</right>
+				<include>AnimationVisibleFade</include>
+				<include>HomeNowPlaying_SharedContent</include>
+			</control>
+		</control>
+
+		<!-- LAYOUT 2: VERTICAL MENU -->
+		<control type="group">
+			<visible>Skin.HasSetting(MainMenuVertical)</visible>
+			<control type="image">
+				<visible>!ControlGroup(90010).HasFocus</visible>
+				<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
+				<include>AnimationVisibleFade</include>
+				<left>340</left>
+				<bottom>0</bottom>
+				<width>1580</width>
+				<height>968</height>
+				<texture colordiffuse="$VAR[MainMenuShadowColorVar]">panels/widget-gradient.png</texture>
+			</control>
+			<control type="group">
+				<animation effect="slide" end="0,42" condition="Skin.HasSetting(InfoBarTop)">Conditional</animation>
+				<!-- EDIT THIS VALUE to move the Now Playing artwork up or down -->
+				<top>0</top>
+				<left>370</left>
+				<right>30</right>
+				<include>AnimationVisibleFade</include>
+				<include>HomeNowPlaying_SharedContent</include>
+			</control>
+		</control>
+	</include>
+
+	<!-- ===================================================================== -->
+	<!-- Now Playing - Shared Content                                          -->
+	<!-- This block contains all the video/audio logic. It's called by the   -->
+	<!-- controller above to avoid duplicating hundreds of lines of code.      -->
+	<!-- ===================================================================== -->
+	<include name="HomeNowPlaying_SharedContent">
+		<!-- Video -->
+		<control type="group">
+			<visible>Player.HasVideo</visible>
+			<control type="group">
+				<visible>VideoPlayer.Content(movies) + !Player.IsInternetStream</visible>
 				<control type="group">
-					<visible>VideoPlayer.Content(movies) + !Player.IsInternetStream</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMovieInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomePortraitContent">
-							<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-							<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
-						</include>
-					</control>
-					<control type="group">
-						<visible>!Skin.String(NowPlayingHomeMovieInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomePortraitContent">
-							<param name="right">650</param>
-							<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-							<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
-						</include>
-					</control>
-				</control>
-				<control type="group">
-					<visible>VideoPlayer.Content(episodes) + !Player.IsInternetStream</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMovieInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomePortraitContent">
-							<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-						</include>
-					</control>
-					<control type="group">
-						<visible>!Skin.String(NowPlayingHomeMovieInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomePortraitContent">
-							<param name="right">650</param>
-							<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-						</include>
-					</control>
-				</control>
-				<control type="group">
-					<visible>VideoPlayer.Content(musicvideos) + !Player.IsInternetStream</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeVideoInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-							<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
-						</include>
-					</control>
-					<control type="group">
-						<visible>!Skin.String(NowPlayingHomeVideoInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="right">650</param>
-							<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-							<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
-						</include>
-					</control>
-				</control>
-				<control type="group">
-					<visible>![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)]</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeVideoInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="aspect">keep</param>
-						</include>
-					</control>
-					<control type="group">
-						<visible>!Skin.String(NowPlayingHomeVideoInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="right">650</param>
-							<param name="aspect">keep</param>
-						</include>
-					</control>
-				</control>
-				<control type="group">
-					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !Player.IsInternetStream</visible>
+					<visible>Skin.String(NowPlayingHomeMovieInfo,none)</visible>
 					<include>AnimationVisibleFade</include>
-					<control type="grouplist">
-						<visible>String.IsEmpty(Skin.String(NowPlayingHomeMovieInfo))</visible>
-						<include>HomeNowPlayingVideoInfo</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMovieInfo,cast)</visible>
-						<include>HomeNowPlayingVideoCast</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMovieInfo,plot)</visible>
-						<include>HomeNowPlayingPortraitPlot</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMovieInfo,preview)</visible>
-						<include>HomeNowPlayingVideoPreview</include>
-					</control>
+					<include content="NowPlayingHomePortraitContent">
+						<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+						<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
+					</include>
 				</control>
 				<control type="group">
-					<visible>![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
+					<visible>!Skin.String(NowPlayingHomeMovieInfo,none)</visible>
 					<include>AnimationVisibleFade</include>
-					<control type="grouplist">
-						<visible>String.IsEmpty(Skin.String(NowPlayingHomeVideoInfo))</visible>
-						<include>HomeNowPlayingVideoInfo</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeVideoInfo,plot)</visible>
-						<include>HomeNowPlayingSquarePlot</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeVideoInfo,preview)</visible>
-						<include>HomeNowPlayingVideoPreview</include>
-					</control>
+					<include content="NowPlayingHomePortraitContent">
+						<param name="right">650</param>
+						<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+						<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
+					</include>
 				</control>
 			</control>
-			<!-- Audio -->
 			<control type="group">
-				<visible>Player.HasAudio</visible>
+				<visible>VideoPlayer.Content(episodes) + !Player.IsInternetStream</visible>
 				<control type="group">
-					<visible>![Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream]</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMusicInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-							<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
-						</include>
-					</control>
-					<control type="group">
-						<visible>!Skin.String(NowPlayingHomeMusicInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="right">650</param>
-							<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
-							<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
-							<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
-						</include>
-					</control>
+					<visible>Skin.String(NowPlayingHomeMovieInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomePortraitContent">
+						<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+					</include>
 				</control>
 				<control type="group">
-					<visible>Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeAudioInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="aspect">keep</param>
-							<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
-						</include>
-					</control>
-					<control type="group">
-						<visible>!Skin.String(NowPlayingHomeAudioInfo,none)</visible>
-						<include>AnimationVisibleFade</include>
-						<include content="NowPlayingHomeSquareContent">
-							<param name="right">650</param>
-							<param name="aspect">keep</param>
-							<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
-						</include>
-					</control>
+					<visible>!Skin.String(NowPlayingHomeMovieInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomePortraitContent">
+						<param name="right">650</param>
+						<param name="case">Skin.HasSetting(NowPlayingHomeVideoCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>VideoPlayer.Content(musicvideos) + !Player.IsInternetStream</visible>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeVideoInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+						<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
+					</include>
 				</control>
 				<control type="group">
-					<visible>![Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream]</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMusicInfo,next) + MusicPlayer.HasNext</visible>
-						<include>NowPlayingHomeAudioNext</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMusicInfo,tracks) + MusicPlayer.HasNext</visible>
-						<include>NowPlayingHomeAudioTrackList</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeMusicInfo,plot)</visible>
-						<include>HomeNowPlayingSquarePlot</include>
-					</control>
-					<control type="grouplist">
-						<visible>String.IsEmpty(Skin.String(NowPlayingHomeMusicInfo))</visible>
-						<include>NowPlayingHomeAudioInfo</include>
-					</control>
+					<visible>!Skin.String(NowPlayingHomeVideoInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="right">650</param>
+						<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+						<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)]</visible>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeVideoInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="aspect">keep</param>
+					</include>
 				</control>
 				<control type="group">
-					<visible>Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream</visible>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeAudioInfo,next) + MusicPlayer.HasNext</visible>
-						<include>NowPlayingHomeAudioNext</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeAudioInfo,tracks) + MusicPlayer.HasNext</visible>
-						<include>NowPlayingHomeAudioTrackList</include>
-					</control>
-					<control type="group">
-						<visible>Skin.String(NowPlayingHomeAudioInfo,plot)</visible>
-						<include>HomeNowPlayingSquarePlot</include>
-					</control>
-					<control type="grouplist">
-						<visible>String.IsEmpty(Skin.String(NowPlayingHomeAudioInfo))</visible>
-						<include>NowPlayingHomeAudioInfo</include>
-					</control>
+					<visible>!Skin.String(NowPlayingHomeVideoInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="right">650</param>
+						<param name="aspect">keep</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !Player.IsInternetStream</visible>
+				<include>AnimationVisibleFade</include>
+				<control type="grouplist">
+					<visible>String.IsEmpty(Skin.String(NowPlayingHomeMovieInfo))</visible>
+					<include>HomeNowPlayingVideoInfo</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeMovieInfo,cast)</visible>
+					<include>HomeNowPlayingVideoCast</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeMovieInfo,plot)</visible>
+					<include>HomeNowPlayingPortraitPlot</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeMovieInfo,preview)</visible>
+					<include>HomeNowPlayingVideoPreview</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
+				<include>AnimationVisibleFade</include>
+				<control type="grouplist">
+					<visible>String.IsEmpty(Skin.String(NowPlayingHomeVideoInfo))</visible>
+					<include>HomeNowPlayingVideoInfo</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeVideoInfo,plot)</visible>
+					<include>HomeNowPlayingSquarePlot</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeVideoInfo,preview)</visible>
+					<include>HomeNowPlayingVideoPreview</include>
+				</control>
+			</control>
+		</control>
+		<!-- Audio -->
+		<control type="group">
+			<visible>Player.HasAudio</visible>
+			<control type="group">
+				<visible>![Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream]</visible>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeMusicInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+						<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
+					</include>
+				</control>
+				<control type="group">
+					<visible>!Skin.String(NowPlayingHomeMusicInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="right">650</param>
+						<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
+						<param name="logo">!Skin.HasSetting(NowPlayingHomeDisableLogo)</param>
+						<param name="discart">!Skin.HasSetting(NowPlayingHomeDisableDiscArt)</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream</visible>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeAudioInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="aspect">keep</param>
+						<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
+					</include>
+				</control>
+				<control type="group">
+					<visible>!Skin.String(NowPlayingHomeAudioInfo,none)</visible>
+					<include>AnimationVisibleFade</include>
+					<include content="NowPlayingHomeSquareContent">
+						<param name="right">650</param>
+						<param name="aspect">keep</param>
+						<param name="case">Skin.HasSetting(NowPlayingHomeMusicCase)</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>![Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream]</visible>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeMusicInfo,next) + MusicPlayer.HasNext</visible>
+					<include>NowPlayingHomeAudioNext</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeMusicInfo,tracks) + MusicPlayer.HasNext</visible>
+					<include>NowPlayingHomeAudioTrackList</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeMusicInfo,plot)</visible>
+					<include>HomeNowPlayingSquarePlot</include>
+				</control>
+				<control type="grouplist">
+					<visible>String.IsEmpty(Skin.String(NowPlayingHomeMusicInfo))</visible>
+					<include>NowPlayingHomeAudioInfo</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Pvr.IsPlayingTv | Pvr.IsPlayingRadio | Player.IsInternetStream</visible>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeAudioInfo,next) + MusicPlayer.HasNext</visible>
+					<include>NowPlayingHomeAudioNext</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeAudioInfo,tracks) + MusicPlayer.HasNext</visible>
+					<include>NowPlayingHomeAudioTrackList</include>
+				</control>
+				<control type="group">
+					<visible>Skin.String(NowPlayingHomeAudioInfo,plot)</visible>
+					<include>HomeNowPlayingSquarePlot</include>
+				</control>
+				<control type="grouplist">
+					<visible>String.IsEmpty(Skin.String(NowPlayingHomeAudioInfo))</visible>
+					<include>NowPlayingHomeAudioInfo</include>
 				</control>
 			</control>
 		</control>
 	</include>
 
 	<!-- Variables -->
+
 	<variable name="MainMenuLayoutLabelVar">
 		<value condition="Skin.String(MainMenuLayout,wide)">$LOCALIZE[539]</value>
 		<value condition="Skin.String(MainMenuLayout,icons)">$LOCALIZE[536]</value>

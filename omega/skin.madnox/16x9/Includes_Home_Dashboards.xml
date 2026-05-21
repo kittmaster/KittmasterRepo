@@ -81,7 +81,7 @@
 
 	<!-- SLOT 1 -->
 	<variable name="GridSlot1Label">
-		<!-- ADDED FOR WEATHER FIX -->
+		<!-- Weather Fix -->
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.1),daily)]">$INFO[Window(weather).Property(Day0.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.1),hourly)]">$INFO[Window(weather).Property(Hourly.1.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Hourly.1.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent)">$INFO[Window(weather).Property(Day0.HighTemp)] / $INFO[Window(weather).Property(Day0.LowTemp)]</value>
@@ -99,7 +99,7 @@
 		<value>$INFO[Container(9000).ListItem.Property(widgetName.1)]</value>
 	</variable>
 	<variable name="GridSlot1Icon">
-		<!-- ADDED FOR WEATHER FIX -->
+		<!-- Weather Fix -->
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.1),daily)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.1),hourly)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -134,7 +134,7 @@
 		<value>$INFO[Container(981).ListItem.Icon]</value>
 	</variable>
 	<variable name="GridSlot1Action">
-		<!-- ADDED FOR WEATHER FIX -->
+		<!-- Weather Fix -->
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent)">ActivateWindow(Weather)</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemContent)">ActivateWindow(1120)</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemCPU)">ActivateWindow(1121)</value>
@@ -1453,7 +1453,7 @@
 			<!-- Action for System Info widgets -->
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">$VAR[GridSlot$PARAM[slotnum]Action]</onclick>
 
-			<!-- ADDED FOR WEATHER: Set Tab Property and Trigger Action Natively -->
+			<!-- Added For Weather: Set Tab Property and Trigger Action Natively -->
 			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)]">SetProperty(MadnoxWeatherTab,Daily,Home)</onclick>
 			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)]">SetProperty(MadnoxWeatherTab,Hourly,Home)</onclick>
 			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent)">$VAR[GridSlot$PARAM[slotnum]Action]</onclick>
@@ -1480,7 +1480,7 @@
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">SetProperty(MadnoxWidgetLabel,$INFO[Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum])],Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">SetProperty(MadnoxWidgetArtwork,$INFO[Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum])],Home)</onclick>
 
-			<!-- =================== NEW LOGIC START =================== -->
+			<!-- =================== New Logic Start =================== -->
 			<!-- Set the correct control ID to focus in the widget dialog based on widget properties -->
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + String.IsEqual(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]),videos) + [String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),squareicon) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),landscapeicon) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),landscape) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),clearart) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),clearlogo) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),fanart) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),thumb)]">SetProperty(MadnoxFocusControlId,501,Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + String.IsEqual(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]),videos) + ![String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),squareicon) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),landscapeicon) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),landscape) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),clearart) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),clearlogo) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),fanart) | String.IsEqual(Container(9000).ListItem.Property(widgetArtwork.$PARAM[slotnum]),thumb)]">SetProperty(MadnoxFocusControlId,50,Home)</onclick>
@@ -1490,13 +1490,13 @@
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + String.IsEqual(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]),pvr)">SetProperty(MadnoxFocusControlId,54,Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + String.IsEqual(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]),program)">SetProperty(MadnoxFocusControlId,55,Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + String.IsEqual(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]),favourites)">SetProperty(MadnoxFocusControlId,56,Home)</onclick>
-			<!-- =================== NEW LOGIC END ===================== -->
+			<!-- =================== New Logic End ===================== -->
 
-			<!-- IF WIDGET IS A MEDIA FOLDER, OPEN THE 1130 VIEWER (BLOCKED FOR WEATHER) -->
+			<!-- If Widget Is A Media Folder, Open The 1130 Viewer (Blocked For Weather) -->
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + !String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + !String.IsEmpty(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]))">SetProperty(FocusWidgetView,true,Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + !String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + !String.IsEmpty(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]))">ActivateWindow(1130)</onclick>
 
-			<!-- IF WIDGET HAS NO FOLDER TARGET, EXECUTE ACTION NATIVELY LIKE CAROUSEL (BLOCKED FOR WEATHER) -->
+			<!-- If Widget Has No Folder Target, Execute Action Natively Like Carousel (Blocked For Weather) -->
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system) + !String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + String.IsEmpty(Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum]))">$INFO[Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum])]</onclick>
 
 			<!-- Explicit navigation -->
@@ -1507,24 +1507,24 @@
 		<control type="group">
 			<top>50</top>
 
-			<!-- ANIMATION LOCKED: 100% to 100% -->
+			<!-- Animation Locked: 100% to 100% -->
 			<animation type="Conditional" condition="Control.HasFocus($PARAM[id])" reversible="true">
 				<effect type="zoom" start="100" end="100" center="auto" time="200" tween="cubic" easing="out" />
 			</animation>
 
-			<!-- FOCUS GLOW -->
+			<!-- Focus Glow -->
 			<control type="image">
 				<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 				<visible>Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- INNER BACKGROUND -->
+			<!-- Inner Background -->
 			<control type="image">
 				<bordersize>10</bordersize>
 				<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
 			</control>
 
-			<!-- ADDED: WEATHER WIDGET TITLE (Forced Bold, exactly 15px top spacing) -->
+			<!-- Weather Widget Title (Forced Bold, exactly 15px top spacing) -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1571,7 +1571,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent)</visible>
 			</control>
 
-			<!-- TEXT GRADIENT SHADOW -->
+			<!-- Text Gradient Shadow -->
 			<control type="image">
 				<left>0</left>
 				<right>0</right>
@@ -1581,16 +1581,16 @@
 				<texture>panels/background-gradient.png</texture>
 			</control>
 
-			<!-- OVERLAY / GLOSS -->
+			<!-- Overlay / Gloss -->
 			<control type="image">
 				<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
 			</control>
 
 			<!-- ========================================== -->
-			<!-- WEATHER LABELS (SPLIT CONDITION & TEMPS)   -->
+			<!-- Weather Labels (Split Condition & Temps)   -->
 			<!-- ========================================== -->
 
-			<!-- DAILY CONDITION (Outlook) - Focused -->
+			<!-- Daily Condition (Outlook) - Focused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1604,7 +1604,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- DAILY CONDITION (Outlook) - Unfocused -->
+			<!-- Daily Condition (Outlook) - Unfocused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1618,7 +1618,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- HOURLY CONDITION (Current) - Focused -->
+			<!-- Hourly Condition (Current) - Focused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1632,7 +1632,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- HOURLY CONDITION (Current) - Unfocused -->
+			<!-- Hourly Condition (Current) - Unfocused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1646,7 +1646,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- DAILY TEMPS - Focused -->
+			<!-- Daily Temps - Focused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1660,7 +1660,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- DAILY TEMPS - Unfocused -->
+			<!-- Daily Temps - Unfocused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1674,7 +1674,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- HOURLY TEMPS (Current) - Focused -->
+			<!-- Hourly Temps (Current) - Focused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1688,7 +1688,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- HOURLY TEMPS (Current) - Unfocused -->
+			<!-- Hourly Temps (Current) - Unfocused -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1702,10 +1702,7 @@
 				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
-			<!-- ========================================== -->
-			<!-- STANDARD LABELS (Original Size & Position) -->
-			<!-- ========================================== -->
-			<!-- STANDARD LABEL (Highlight Color on Focus) -->
+			<!-- Standard Label (Highlight Color on Focus) -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>
@@ -1719,7 +1716,7 @@
 				<visible>!String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + Control.HasFocus($PARAM[id]) + $PARAM[sublabelvisible]</visible>
 			</control>
 
-			<!-- STANDARD LABEL (Standard Color on Unfocus) -->
+			<!-- Standard Label (Standard Color on Unfocus) -->
 			<control type="label">
 				<left>20</left>
 				<right>20</right>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<window type="dialog" id="1132">
+	<defaultcontrol>900</defaultcontrol>
+	<controls>
+		<control type="group">
+			<!-- SOLID BACKGROUND TO PREVENT TEXT BLEED-THROUGH -->
+			<control type="image">
+				<width>1400</width>
+				<height>855</height>
+				<!-- Use the skin's native dialog shape with an opaque color to block bleed-through perfectly -->
+				<texture colordiffuse="FF080808" border="40">$VAR[DialogStyleVar]</texture>
+				<animation effect="fade" time="400">WindowOpen</animation>
+			</control>
+
+			<include content="DialogBackground">
+				<description>Window Header Label</description>
+				<param name="width" value="1400" />
+				<param name="height" value="855" />
+				<param name="id">1</param>
+				<param name="diffusetexture">diffuse/rounded10-877x470.png</param>
+			</include>
+
+			<!-- Set Dialog Title -->
+			<control type="label">
+				<top>30</top>
+				<left>25</left>
+				<width>1200</width>
+				<height>50</height>
+				<align>left</align>
+				<label>Madnox [LOWERCASE]$LOCALIZE[13388] $LOCALIZE[31546][/LOWERCASE]</label>
+				<include>SettingsLabel</include>
+			</control>
+
+			<control type="image">
+				<left>1100</left>
+				<top>14</top>
+				<width>161.5</width>
+				<height>86</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+
+			<!-- ============================================== -->
+			<!-- LEFT COLUMN: Global Actions                    -->
+			<!-- ============================================== -->
+			<control type="grouplist" id="9000">
+				<left>20</left>
+				<top>90</top>
+				<width>400</width>
+				<height>640</height>
+				<onright>900</onright>
+				<itemgap>5</itemgap>
+
+				<control type="button" id="9001">
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[13012]</label>
+					<!-- Exit -->
+					<onclick>close</onclick>
+				</control>
+
+				<control type="button" id="9002">
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[31331] [LOWERCASE]$LOCALIZE[842] $LOCALIZE[13388][/LOWERCASE]</label>
+				</control>
+
+				<control type="button" id="9003">
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[31547]</label>
+				</control>
+
+				<control type="button" id="9004">
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[31548]</label>
+				</control>
+
+				<control type="button" id="9005">
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>[COLOR FFCC4444]$LOCALIZE[117] [UPPERCASE]$LOCALIZE[593][/UPPERCASE] [LOWERCASE]$LOCALIZE[31549][/LOWERCASE][/COLOR]</label>
+				</control>
+
+				<control type="image" id="9099">
+					<width>400</width>
+					<height>150</height>
+					<!-- <texture>colors/transparent.png</texture> -->
+				</control>
+
+				<!-- NEW AM/PM TOGGLE -->
+				<control type="radiobutton" id="9006">
+					<width>400</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[12383]</label>
+					<selected>Skin.HasSetting(Madnox.Presets.Use12Hour)</selected>
+				</control>
+			</control>
+
+			<control type="image">
+				<top>90</top>
+				<left>430</left>
+				<bottom>121</bottom>
+				<width>4</width>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+			</control>
+
+			<!-- ============================================== -->
+			<!-- CENTER COLUMN: The Preset List                 -->
+			<!-- ============================================== -->
+			<control type="list" id="900">
+				<left>450</left>
+				<top>90</top>
+				<width>520</width>
+				<height>640</height>
+				<pagecontrol>60</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>9100</onright>
+				<include>ContainerScrollTime</include>
+				<itemlayout height="80" width="520">
+					<control type="image">
+						<left>10</left>
+						<top>15</top>
+						<width>50</width>
+						<height>50</height>
+						<texture colordiffuse="$VAR[PanelSubTextColorVar]">icons/default/files.png</texture>
+					</control>
+					<control type="label">
+						<left>75</left>
+						<top>10</top>
+						<width>430</width>
+						<height>35</height>
+						<font>Font30_Reg</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>75</left>
+						<top>45</top>
+						<width>430</width>
+						<height>25</height>
+						<font>Font25_Cond</font>
+						<textcolor>$VAR[PanelDisabledTextColorVar]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="80" width="520">
+					<control type="image">
+						<width>520</width>
+						<height>80</height>
+						<texture border="5" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texture>
+						<visible>Control.HasFocus(900)</visible>
+					</control>
+					<control type="image">
+						<width>520</width>
+						<height>80</height>
+						<texture border="5" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-focus.png</texture>
+						<visible>!Control.HasFocus(900)</visible>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>15</top>
+						<width>50</width>
+						<height>50</height>
+						<texture colordiffuse="$VAR[PanelFocusTextColorVar]">icons/colored/files.png</texture>
+					</control>
+					<control type="label">
+						<left>75</left>
+						<top>10</top>
+						<width>430</width>
+						<height>35</height>
+						<font>Font30_Reg</font>
+						<scroll>true</scroll>
+						<!-- LONG FILE NAMES WILL NOW SCROLL WHEN HIGHLIGHTED -->
+						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>75</left>
+						<top>45</top>
+						<width>430</width>
+						<height>25</height>
+						<font>Font25_Cond</font>
+						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+			</control>
+
+			<control type="image">
+				<top>90</top>
+				<left>980</left>
+				<bottom>121</bottom>
+				<width>4</width>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+			</control>
+
+			<!-- ============================================== -->
+			<!-- RIGHT COLUMN: Context Actions                  -->
+			<!-- ============================================== -->
+			<control type="grouplist" id="9100">
+				<left>990</left>
+				<top>90</top>
+				<width>380</width>
+				<height>640</height>
+				<onleft>900</onleft>
+				<itemgap>5</itemgap>
+				<!-- HIDE ENTIRE MENU IF NO PRESETS EXIST -->
+				<visible>Integer.IsGreater(Container(900).NumItems,0)</visible>
+
+				<control type="label" id="9101">
+					<width>380</width>
+					<height>50</height>
+					<font>Font28_Cond</font>
+					<align>center</align>
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<label>$LOCALIZE[31551]:</label>
+				</control>
+
+				<!-- REPLACED LABEL WITH TEXTBOX TO AUTO-WRAP LONG NAMES -->
+				<control type="textbox" id="9102">
+					<width>380</width>
+					<height>160</height>
+					<font>Font28_Reg</font>
+					<align>center</align>
+					<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+					<label>$INFO[Container(900).ListItem.Label]</label>
+				</control>
+
+				<control type="image" id="9103">
+					<width>380</width>
+					<height>20</height>
+					<!-- <texture>colors/transparent.png</texture> -->
+				</control>
+
+				<control type="button" id="9104">
+					<width>380</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[31550] [LOWERCASE]$LOCALIZE[13388][/LOWERCASE]</label>
+					<textcolor>FF00FF00</textcolor>
+				</control>
+
+				<control type="button" id="9105">
+					<width>380</width>
+					<include>DialogButton</include>
+					<label>$LOCALIZE[118] [LOWERCASE]$LOCALIZE[13388][/LOWERCASE]</label>
+				</control>
+
+				<control type="button" id="9106">
+					<width>380</width>
+					<include>DialogButton</include>
+					<label>[COLOR FFCC4444]$LOCALIZE[117] [LOWERCASE]$LOCALIZE[13388][/LOWERCASE][/COLOR]</label>
+				</control>
+			</control>
+
+			<!-- ============================================== -->
+			<!-- FOOTERS / SCROLLBARS                           -->
+			<!-- ============================================== -->
+			<control type="image">
+				<bottom>120</bottom>
+				<left>0</left>
+				<right>20</right>
+				<height>170</height>
+				<texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
+			</control>
+
+			<control type="label">
+				<description>Preset File Counter</description>
+				<bottom>50</bottom>
+				<right>40</right>
+				<width>460</width>
+				<height>50</height>
+				<align>right</align>
+				<font>Font25_Cond</font>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>$INFO[Container(900).NumItems] [LOWERCASE]$LOCALIZE[31549] $LOCALIZE[31552][/LOWERCASE]!</label>
+			</control>
+
+			<control type="scrollbar" id="60">
+				<onleft>900</onleft>
+				<onright>9100</onright>
+				<left>950</left>
+				<include>DialogScrollBar</include>
+			</control>
+
+			<control type="image">
+				<top>90</top>
+				<left>1375</left>
+				<bottom>121</bottom>
+				<width>4</width>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -385,10 +385,17 @@
 				</control>
 			</control>
 			<!-- Hidden Object For Open Case -->
-			<control type="label" id="1970">
+			<!-- <control type="label" id="1970">
 				<visible>Skin.HasSetting(View508VideoCase) + Skin.HasSetting(View508OpenCase) + String.IsEqual(ListItem.DBTYPE,movie) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]</visible>
 				<include>HiddenObject</include>
 				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<animation effect="fade" end="100" time="120" delay="1000">Visible</animation>
+				<animation effect="fade" end="100" time="120" delay="1000">WindowOpen</animation>
+			</control> -->
+			<!-- Hidden Object For Open Case -->
+			<control type="label" id="1970">
+				<include>HiddenObject</include>
+				<visible>Skin.HasSetting(View508VideoCase) + Skin.HasSetting(View508OpenCase) + String.IsEqual(ListItem.DBTYPE,movie) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)] + !Container.OnNext + !Container.OnPrevious</visible>
 				<animation effect="fade" end="100" time="120" delay="1000">Visible</animation>
 				<animation effect="fade" end="100" time="120" delay="1000">WindowOpen</animation>
 			</control>
@@ -399,6 +406,8 @@
 				<width>1820</width>
 				<height>396</height>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 				<onup condition="!Skin.String(View508InfoDelay,manual) | ListItem.IsParentFolder | String.Startswith(ListItem.Label,*)">9050</onup>
 				<onup condition="Skin.String(View508InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">9999</onup>
 				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>

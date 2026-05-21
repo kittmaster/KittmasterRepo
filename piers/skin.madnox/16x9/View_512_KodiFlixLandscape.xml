@@ -47,17 +47,23 @@
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>
 			</include>
+
+			<!-- Music Flags (This was already correct) -->
 			<include condition="Window.IsVisible(MyMusicNav.xml)" content="MediaFlagsAudioLeft">
 				<param name="align">left</param>
 				<param name="left">50</param>
 				<param name="bottom">20</param>
 			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShowsLeft">
+
+			<!-- TV Show/Episode Flags (FIXED) -->
+			<include condition="Window.IsVisible(MyVideoNav.xml) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]" content="MediaFlagsTVShowsLeft">
 				<param name="align">left</param>
 				<param name="left">50</param>
 				<param name="bottom">20</param>
 			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+
+			<!-- Movie Flags (FIXED) -->
+			<include condition="Window.IsVisible(MyVideoNav.xml) + [Container.Content(movies) | Container.Content(sets)]" content="MediaFlagsVideos8">
 				<param name="align">left</param>
 				<param name="left">50</param>
 				<param name="bottom">20</param>
@@ -89,6 +95,8 @@
 					<width>2320</width>
 					<height>432</height>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+					<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 					<onup>9050</onup>
 					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<ondown>60512</ondown>

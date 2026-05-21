@@ -556,11 +556,39 @@
 	</variable>
 
 	<variable name="ClearLogoVar">
+		<!-- ========================================================== -->
+		<!-- BANNER OVERRIDES: Triggers if 'Prefer Banners' is checked  -->
+		<!-- for the active view, AND a banner actually exists.         -->
+		<!-- Split into groups for cleaner parsing.                     -->
+		<!-- ========================================================== -->
+
+		<!-- Views 50 - 63 -->
+		<value condition="!String.IsEmpty(ListItem.Art(banner)) + [[Control.IsVisible(50) + Skin.HasSetting(View50UseBanner)] | [Control.IsVisible(52) + Skin.HasSetting(View52UseBanner)] | [Control.IsVisible(53) + Skin.HasSetting(View53UseBanner)] | [Control.IsVisible(54) + Skin.HasSetting(View54UseBanner)] | [Control.IsVisible(55) + Skin.HasSetting(View55UseBanner)] | [Control.IsVisible(57) + Skin.HasSetting(View57UseBanner)] | [Control.IsVisible(58) + Skin.HasSetting(View58UseBanner)] | [Control.IsVisible(59) + Skin.HasSetting(View59UseBanner)] | [Control.IsVisible(60) + Skin.HasSetting(View60UseBanner)] | [Control.IsVisible(61) + Skin.HasSetting(View61UseBanner)] | [Control.IsVisible(62) + Skin.HasSetting(View62UseBanner)] | [Control.IsVisible(63) + Skin.HasSetting(View63UseBanner)]]">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.banner)) + [[Control.IsVisible(50) + Skin.HasSetting(View50UseBanner)] | [Control.IsVisible(52) + Skin.HasSetting(View52UseBanner)] | [Control.IsVisible(53) + Skin.HasSetting(View53UseBanner)] | [Control.IsVisible(54) + Skin.HasSetting(View54UseBanner)] | [Control.IsVisible(55) + Skin.HasSetting(View55UseBanner)] | [Control.IsVisible(57) + Skin.HasSetting(View57UseBanner)] | [Control.IsVisible(58) + Skin.HasSetting(View58UseBanner)] | [Control.IsVisible(59) + Skin.HasSetting(View59UseBanner)] | [Control.IsVisible(60) + Skin.HasSetting(View60UseBanner)] | [Control.IsVisible(61) + Skin.HasSetting(View61UseBanner)] | [Control.IsVisible(62) + Skin.HasSetting(View62UseBanner)] | [Control.IsVisible(63) + Skin.HasSetting(View63UseBanner)]]">$INFO[ListItem.Art(tvshow.banner)]</value>
+
+		<!-- Views 500 - 512 -->
+		<value condition="!String.IsEmpty(ListItem.Art(banner)) + [[Control.IsVisible(500) + Skin.HasSetting(View500UseBanner)] | [Control.IsVisible(501) + Skin.HasSetting(View501UseBanner)] | [Control.IsVisible(502) + Skin.HasSetting(View502UseBanner)] | [Control.IsVisible(503) + Skin.HasSetting(View503UseBanner)] | [Control.IsVisible(504) + Skin.HasSetting(View504UseBanner)] | [Control.IsVisible(505) + Skin.HasSetting(View505UseBanner)] | [Control.IsVisible(508) + Skin.HasSetting(View508UseBanner)] | [Control.IsVisible(509) + Skin.HasSetting(View509UseBanner)] | [Control.IsVisible(510) + Skin.HasSetting(View510UseBanner)] | [Control.IsVisible(511) + Skin.HasSetting(View511UseBanner)] | [Control.IsVisible(512) + Skin.HasSetting(View512UseBanner)]]">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.banner)) + [[Control.IsVisible(500) + Skin.HasSetting(View500UseBanner)] | [Control.IsVisible(501) + Skin.HasSetting(View501UseBanner)] | [Control.IsVisible(502) + Skin.HasSetting(View502UseBanner)] | [Control.IsVisible(503) + Skin.HasSetting(View503UseBanner)] | [Control.IsVisible(504) + Skin.HasSetting(View504UseBanner)] | [Control.IsVisible(505) + Skin.HasSetting(View505UseBanner)] | [Control.IsVisible(508) + Skin.HasSetting(View508UseBanner)] | [Control.IsVisible(509) + Skin.HasSetting(View509UseBanner)] | [Control.IsVisible(510) + Skin.HasSetting(View510UseBanner)] | [Control.IsVisible(511) + Skin.HasSetting(View511UseBanner)] | [Control.IsVisible(512) + Skin.HasSetting(View512UseBanner)]]">$INFO[ListItem.Art(tvshow.banner)]</value>
+
+		<!-- Views 520 - 543 -->
+		<value condition="!String.IsEmpty(ListItem.Art(banner)) + [[Control.IsVisible(520) + Skin.HasSetting(View520UseBanner)] | [Control.IsVisible(521) + Skin.HasSetting(View521UseBanner)] | [Control.IsVisible(522) + Skin.HasSetting(View522UseBanner)] | [Control.IsVisible(523) + Skin.HasSetting(View523UseBanner)] | [Control.IsVisible(530) + Skin.HasSetting(View530UseBanner)] | [Control.IsVisible(531) + Skin.HasSetting(View531UseBanner)] | [Control.IsVisible(532) + Skin.HasSetting(View532UseBanner)] | [Control.IsVisible(533) + Skin.HasSetting(View533UseBanner)] | [Control.IsVisible(540) + Skin.HasSetting(View540UseBanner)] | [Control.IsVisible(541) + Skin.HasSetting(View541UseBanner)] | [Control.IsVisible(542) + Skin.HasSetting(View542UseBanner)] | [Control.IsVisible(543) + Skin.HasSetting(View543UseBanner)]]">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.banner)) + [[Control.IsVisible(520) + Skin.HasSetting(View520UseBanner)] | [Control.IsVisible(521) + Skin.HasSetting(View521UseBanner)] | [Control.IsVisible(522) + Skin.HasSetting(View522UseBanner)] | [Control.IsVisible(523) + Skin.HasSetting(View523UseBanner)] | [Control.IsVisible(530) + Skin.HasSetting(View530UseBanner)] | [Control.IsVisible(531) + Skin.HasSetting(View531UseBanner)] | [Control.IsVisible(532) + Skin.HasSetting(View532UseBanner)] | [Control.IsVisible(533) + Skin.HasSetting(View533UseBanner)] | [Control.IsVisible(540) + Skin.HasSetting(View540UseBanner)] | [Control.IsVisible(541) + Skin.HasSetting(View541UseBanner)] | [Control.IsVisible(542) + Skin.HasSetting(View542UseBanner)] | [Control.IsVisible(543) + Skin.HasSetting(View543UseBanner)]]">$INFO[ListItem.Art(tvshow.banner)]</value>
+
+		<!-- ========================================================== -->
+		<!-- STANDARD CLEARLOGO FALLBACKS                               -->
+		<!-- ========================================================== -->
 		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Property(clearlogo))">$INFO[ListItem.Property(clearlogo)]</value>
 	</variable>
+
+	<!-- <variable name="ClearLogoVar">
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(clearlogo))">$INFO[ListItem.Property(clearlogo)]</value>
+	</variable> -->
 
 	<variable name="BannerVar">
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
@@ -1418,67 +1446,71 @@
 		<!-- "None" -->
 	</variable>
 
+	<!-- ============================================================================	-->
+	<!-- Button status indicators begin													-->
+	<!-- ============================================================================	-->
+
 	<variable name="EnableDisableLabel-IconsColored">
-		<value condition="Skin.HasSetting(IconsColored)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(IconsColored)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableProgressBarUserColorSelect">
-		<value condition="!Skin.HasSetting(DisableProgressBarUserColorSelect)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableProgressBarUserColorSelect)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableScrollLetter">
-		<value condition="!Skin.HasSetting(DisableScrollLetter)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableScrollLetter)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableJumptoLetter">
-		<value condition="!Skin.HasSetting(DisableJumptoLetter)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableJumptoLetter)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisablePlotOutline">
-		<value condition="!Skin.HasSetting(DisablePlotOutline)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisablePlotOutline)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableShowIconsInMetadataSlider">
-		<value condition="!Skin.HasSetting(DisableShowIconsInMetadataSlider)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableShowIconsInMetadataSlider)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableAutoScroll">
-		<value condition="!Skin.HasSetting(DisableAutoScroll)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableAutoScroll)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-disableautoscrollmoviemetadata">
-		<value condition="!Skin.HasSetting(disableautoscrollmoviemetadata)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(disableautoscrollmoviemetadata)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-disableautoscrollpersonmetadata">
-		<value condition="!Skin.HasSetting(disableautoscrollpersonmetadata)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(disableautoscrollpersonmetadata)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-enablemovietvshowslidercountdowntimer">
 		<!-- If Both Meta Scroll Settings Are Disabled, This Control Is Disabled -->
-		<value condition="Skin.HasSetting(disableautoscrollmoviemetadata) + Skin.HasSetting(disableautoscrollpersonmetadata)">[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(disableautoscrollmoviemetadata) + Skin.HasSetting(disableautoscrollpersonmetadata)">[COLOR FFCC4444] ✕[/COLOR]</value>
 		<!-- Otherwise Reflect The Setting's Actual State -->
-		<value condition="!Skin.HasSetting(enablemovietvshowslidercountdowntimer)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(enablemovietvshowslidercountdowntimer)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-disablecounterscriptloggingall">
-		<value condition="!Skin.HasSetting(disablecounterscriptloggingall)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(disablecounterscriptloggingall)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-trailer_rolling_debug">
-		<value condition="Skin.HasSetting(trailer_rolling_debug)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(trailer_rolling_debug)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableShortcuts">
@@ -1487,156 +1519,315 @@
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableVideoPlaylistButton">
-		<value condition="!Skin.HasSetting(DisableVideoPlaylistButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableVideoPlaylistButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableMusicPlaylistButton">
-		<value condition="!Skin.HasSetting(DisableMusicPlaylistButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableMusicPlaylistButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-EnableFullscreenButton">
-		<value condition="Skin.HasSetting(EnableFullscreenButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(EnableFullscreenButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableShortcutsButton">
-		<value condition="!Skin.HasSetting(DisableShortcutsButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableShortcutsButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisablePlayerControlButton">
-		<value condition="!Skin.HasSetting(DisablePlayerControlButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisablePlayerControlButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-startuplogoshowonstart">
-		<value condition="Skin.HasSetting(startuplogoshowonstart)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(startuplogoshowonstart)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-startuplogolargesizeonstart">
 		<!-- If Parent (537) Is Off, This Control Is Disabled -->
-		<value condition="!Skin.HasSetting(startuplogoshowonstart)">[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(startuplogoshowonstart)">[COLOR FFCC4444] ✕[/COLOR]</value>
 
 		<!-- Otherwise Reflect This Setting's Own State -->
-		<value condition="Skin.HasSetting(startuplogolargesizeonstart)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(startuplogolargesizeonstart)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-SmallerNotifications">
-		<value condition="Skin.HasSetting(SmallerNotifications)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(SmallerNotifications)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableDialogBackground">
-		<value condition="!Skin.HasSetting(DisableDialogBackground)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableDialogBackground)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableAutoOpenMusicVizVar">
-		<value condition="!Skin.HasSetting(DisableAutoOpenMusicVizVar)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableAutoOpenMusicVizVar)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-NowplayingVizBackground">
-		<value condition="Skin.HasSetting(NowplayingVizBackground)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(NowplayingVizBackground)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-NowplayingVideoBackground">
-		<value condition="Skin.HasSetting(NowplayingVideoBackground)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(NowplayingVideoBackground)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-PanelSquare.texture">
-		<value condition="Skin.HasSetting(PanelSquare.texture)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(PanelSquare.texture)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-PanelEmboss.texture">
-		<value condition="Skin.HasSetting(PanelEmboss.texture)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(PanelEmboss.texture)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-BackgroundShadow">
-		<value condition="Skin.HasSetting(BackgroundShadow)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(BackgroundShadow)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-force_context_996">
-		<value condition="Skin.HasSetting(force_context_996)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(force_context_996)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-ShowWidgetInProgressBar">
-		<value condition="Skin.HasSetting(WidgetShowProgress)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(WidgetShowProgress)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableSettingsButton">
-		<value condition="!Skin.HasSetting(DisableSettingsButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableSettingsButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableExitButton">
-		<value condition="!Skin.HasSetting(DisableExitButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableExitButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisablePowerDownButton">
-		<value condition="!Skin.HasSetting(DisablePowerDownButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisablePowerDownButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableShutdownTimerButton">
-		<value condition="!Skin.HasSetting(DisableShutdownTimerButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableShutdownTimerButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableSuspendButton">
-		<value condition="!Skin.HasSetting(DisableSuspendButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableSuspendButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableHibernateButton">
-		<value condition="!Skin.HasSetting(DisableHibernateButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableHibernateButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableRebootButton">
-		<value condition="!Skin.HasSetting(DisableRebootButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableRebootButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableFavoritesButton">
-		<value condition="!Skin.HasSetting(DisableFavoritesButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableFavoritesButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableSkinFavoritesButton">
-		<value condition="!Skin.HasSetting(DisableSkinFavoritesButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableSkinFavoritesButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-DisableEditMainMenuButton">
-		<value condition="!Skin.HasSetting(DisableEditMainMenuButton)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="!Skin.HasSetting(DisableEditMainMenuButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<variable name="EnableDisableLabel-RatingsAsNumbers">
-		<value condition="Skin.HasSetting(RatingsAsNumbers)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting(RatingsAsNumbers)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-MainMenuVertical">
+		<value condition="Skin.HasSetting(MainMenuVertical)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-MainMenuFixedList">
+		<value condition="Skin.HasSetting(MainMenuFixedList)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-SubmenuHide">
+		<value condition="Skin.HasSetting(SubmenuHide)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutDisablePower">
+		<value condition="!Skin.HasSetting(ShortCutDisablePower)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutEnableVideos">
+		<value condition="Skin.HasSetting(ShortCutEnableVideos)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutDisableSearch">
+		<value condition="!Skin.HasSetting(ShortCutDisableSearch)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutDisableFav">
+		<value condition="!Skin.HasSetting(ShortcutDisableFav)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutDisableUpdate">
+		<value condition="!Skin.HasSetting(ShortcutDisableUpdate)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutEnableDisc">
+		<value condition="Skin.HasSetting(ShortcutEnableDisc)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutEnableEject">
+		<value condition="Skin.HasSetting(ShortcutEnableEject)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutEnableSystem">
+		<value condition="Skin.HasSetting(ShortCutEnableSystem)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-InfoBarTop">
+		<value condition="Skin.HasSetting(InfoBarTop)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-HideInfoLine">
+		<value condition="!Skin.HasSetting(HideInfoLine)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-NowplayingSystemBar">
+		<value condition="Skin.HasSetting(NowplayingSystemBar)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-lookandfeel.enablerssfeeds">
+		<value condition="system.getbool(lookandfeel.enablerssfeeds)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-WidgetHide">
+		<value condition="Skin.HasSetting(WidgetHide)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-WidgetPlot">
+		<value condition="Skin.HasSetting(WidgetPlot)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-DisableWidgetFanart">
+		<value condition="!Skin.HasSetting(DisableWidgetFanart)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-WidgetNextButton">
+		<value condition="Skin.HasSetting(WidgetNextButton)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-HomeAnimatedFanart">
+		<value condition="Skin.HasSetting(HomeAnimatedFanart)">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable>
 
 	<!-- <variable name="EnableDisableLabel-XXXXX">
-		<value condition="!Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
-		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66] ✓[/COLOR]</value>
+		<value>[COLOR FFCC4444] ✕[/COLOR]</value>
 	</variable> -->
 
 	<!-- ============================================================================	-->
-	<!-- Variables for Star Rating Style Selector      								-->
+	<!-- Button status indicators end													-->
+	<!-- ============================================================================	-->
+
+	<!-- ============================================================================	-->
+	<!-- Variables for Star Rating Style Selector begin    								-->
 	<!-- ============================================================================	-->
 
 	<!-- Define the Folder Name -->
@@ -1694,6 +1885,10 @@
 		<!-- Fallback value must be a full image path -->
 		<value>flags/stars/Yellow5/rating5.png</value>
 	</variable>
+
+	<!-- ============================================================================	-->
+	<!-- Variables for Star Rating Style Selector end    								-->
+	<!-- ============================================================================	-->
 
 	<variable name="TMDbRatingLogicVar">
 		<!-- Person/Bio Protection -->

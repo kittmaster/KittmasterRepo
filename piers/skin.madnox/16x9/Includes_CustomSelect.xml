@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="SelectMusicOSDBackground">
 		<item>
@@ -964,206 +964,242 @@
 			<include>DialogLabel</include>
 		</control>
 		<control type="radiobutton" id="102">
+			<label>$LOCALIZE[31529]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(DisableViewView52ShowcaseHero)</onclick>
+			<selected>!Skin.HasSetting(DisableViewView52ShowcaseHero)</selected>
+		</control>
+		<control type="radiobutton" id="103">
 			<label>$LOCALIZE[31267]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewInfo1)</onclick>
 			<selected>!Skin.HasSetting(DisableViewInfo1)</selected>
 		</control>
-		<control type="radiobutton" id="103">
+		<control type="radiobutton" id="104">
 			<label>$LOCALIZE[31268]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewInfo2)</onclick>
 			<selected>!Skin.HasSetting(DisableViewInfo2)</selected>
 		</control>
-		<control type="radiobutton" id="104">
+		<control type="radiobutton" id="105">
 			<label>$LOCALIZE[391]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewLow)</onclick>
 			<selected>!Skin.HasSetting(DisableViewLow)</selected>
 		</control>
-		<control type="radiobutton" id="105">
+		<control type="radiobutton" id="106">
 			<label>$LOCALIZE[31225]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableView3Panel)</onclick>
 			<selected>!Skin.HasSetting(DisableView3Panel)</selected>
 		</control>
-		<control type="radiobutton" id="106">
+		<control type="radiobutton" id="107">
 			<label>$LOCALIZE[31233]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableView3PanelSquare)</onclick>
 			<selected>!Skin.HasSetting(DisableView3PanelSquare)</selected>
 		</control>
-		<control type="radiobutton" id="107">
+		<control type="radiobutton" id="108">
 			<label>$LOCALIZE[31071]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewRightList)</onclick>
 			<selected>!Skin.HasSetting(DisableViewRightList)</selected>
 		</control>
-		<control type="label" id="108">
+		<control type="radiobutton" id="109">
+			<label>$LOCALIZE[31530]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(DisableView59Spotlight)</onclick>
+			<selected>!Skin.HasSetting(DisableView59Spotlight)</selected>
+		</control>
+		<control type="radiobutton" id="110">
+			<label>$LOCALIZE[31531]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(DisableView60CinematicShelf)</onclick>
+			<selected>!Skin.HasSetting(DisableView60CinematicShelf)</selected>
+		</control>
+		<control type="radiobutton" id="111">
+			<label>$LOCALIZE[31532]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(DisableView61Editorial)</onclick>
+			<selected>!Skin.HasSetting(DisableView61Editorial)</selected>
+		</control>
+		<control type="radiobutton" id="112">
+			<label>$LOCALIZE[31533]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(DisableView62Immersive)</onclick>
+			<selected>!Skin.HasSetting(DisableView62Immersive)</selected>
+		</control>
+		<control type="radiobutton" id="113">
+			<label>$LOCALIZE[31534]</label>
+			<include>DialogRadioButton</include>
+			<onclick>Skin.ToggleSetting(DisableView63Stage)</onclick>
+			<selected>!Skin.HasSetting(DisableView63Stage)</selected>
+		</control>
+		<control type="label" id="114">
 			<width>990</width>
 			<label>$LOCALIZE[31269]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="109">
+		<control type="radiobutton" id="115">
 			<label>$LOCALIZE[31203]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewPortrait)</onclick>
 			<selected>!Skin.HasSetting(DisableViewPortrait)</selected>
 		</control>
-		<control type="radiobutton" id="110">
+		<control type="radiobutton" id="116">
 			<label>$LOCALIZE[31130]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewSquare)</onclick>
 			<selected>!Skin.HasSetting(DisableViewSquare)</selected>
 		</control>
-		<control type="radiobutton" id="111">
+		<control type="radiobutton" id="117">
 			<label>$LOCALIZE[20020]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewBanner)</onclick>
 			<selected>!Skin.HasSetting(DisableViewBanner)</selected>
 		</control>
-		<control type="radiobutton" id="112">
+		<control type="radiobutton" id="118">
 			<label>$LOCALIZE[31201]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewLandscape)</onclick>
 			<selected>!Skin.HasSetting(DisableViewLandscape)</selected>
 		</control>
-		<control type="radiobutton" id="113">
+		<control type="radiobutton" id="119">
 			<label>$LOCALIZE[31245]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewFocus)</onclick>
 			<selected>!Skin.HasSetting(DisableViewFocus)</selected>
 		</control>
-		<control type="radiobutton" id="114">
+		<control type="radiobutton" id="120">
 			<label>$LOCALIZE[31258]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewFocusSquare)</onclick>
 			<selected>!Skin.HasSetting(DisableViewFocusSquare)</selected>
 		</control>
-		<control type="radiobutton" id="115">
+		<control type="radiobutton" id="121">
 			<label>$LOCALIZE[31246]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewCascade)</onclick>
 			<selected>!Skin.HasSetting(DisableViewCascade)</selected>
 		</control>
-		<control type="radiobutton" id="116">
+		<control type="radiobutton" id="122">
 			<label>$LOCALIZE[31263]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewCascadeSquare)</onclick>
 			<selected>!Skin.HasSetting(DisableViewCascadeSquare)</selected>
 		</control>
-		<control type="radiobutton" id="117">
+		<control type="radiobutton" id="123">
 			<label>$LOCALIZE[31230]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewShowCase)</onclick>
 			<selected>!Skin.HasSetting(DisableViewShowCase)</selected>
 		</control>
-		<control type="radiobutton" id="118">
+		<control type="radiobutton" id="124">
 			<label>$LOCALIZE[31264]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewShowCaseSquare)</onclick>
 			<selected>!Skin.HasSetting(DisableViewShowCaseSquare)</selected>
 		</control>
-		<control type="radiobutton" id="119">
+		<control type="radiobutton" id="125">
 			<label>$LOCALIZE[31247]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewKodiflix)</onclick>
 			<selected>!Skin.HasSetting(DisableViewKodiflix)</selected>
 		</control>
-		<control type="radiobutton" id="120">
+		<control type="radiobutton" id="126">
 			<label>$LOCALIZE[31262]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewKodiflixSquare)</onclick>
 			<selected>!Skin.HasSetting(DisableViewKodiflixSquare)</selected>
 		</control>
-		<control type="radiobutton" id="121">
+		<control type="radiobutton" id="127">
 			<label>$LOCALIZE[31265]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewKodiflixLandscape)</onclick>
 			<selected>!Skin.HasSetting(DisableViewKodiflixLandscape)</selected>
 		</control>
-		<control type="label" id="122">
+		<control type="label" id="128">
 			<width>990</width>
 			<label>$LOCALIZE[31061]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="123">
+		<control type="radiobutton" id="129">
 			<label>$LOCALIZE[31203]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewPortraitIcon)</onclick>
 			<selected>!Skin.HasSetting(DisableViewPortraitIcon)</selected>
 		</control>
-		<control type="radiobutton" id="124">
+		<control type="radiobutton" id="130">
 			<label>$LOCALIZE[31130]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewSquareIcon)</onclick>
 			<selected>!Skin.HasSetting(DisableViewSquareIcon)</selected>
 		</control>
-		<control type="radiobutton" id="125">
+		<control type="radiobutton" id="131">
 			<label>$LOCALIZE[20020]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewBannerIcon)</onclick>
 			<selected>!Skin.HasSetting(DisableViewBannerIcon)</selected>
 		</control>
-		<control type="radiobutton" id="126">
+		<control type="radiobutton" id="132">
 			<label>$LOCALIZE[31201]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewLandscapeIcon)</onclick>
 			<selected>!Skin.HasSetting(DisableViewLandscapeIcon)</selected>
 		</control>
-		<control type="label" id="127">
+		<control type="label" id="133">
 			<width>990</width>
 			<label>$LOCALIZE[31271]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="128">
+		<control type="radiobutton" id="134">
 			<label>$LOCALIZE[31203]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewPortraitIconInfo)</onclick>
 			<selected>!Skin.HasSetting(DisableViewPortraitIconInfo)</selected>
 		</control>
-		<control type="radiobutton" id="129">
+		<control type="radiobutton" id="135">
 			<label>$LOCALIZE[31130]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewSquareIconInfo)</onclick>
 			<selected>!Skin.HasSetting(DisableViewSquareIconInfo)</selected>
 		</control>
-		<control type="radiobutton" id="130">
+		<control type="radiobutton" id="136">
 			<label>$LOCALIZE[20020]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewBannerIconInfo)</onclick>
 			<selected>!Skin.HasSetting(DisableViewBannerIconInfo)</selected>
 		</control>
-		<control type="radiobutton" id="131">
+		<control type="radiobutton" id="137">
 			<label>$LOCALIZE[31201]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewLandscapeIconInfo)</onclick>
 			<selected>!Skin.HasSetting(DisableViewLandscapeIconInfo)</selected>
 		</control>
-		<control type="label" id="132">
+		<control type="label" id="138">
 			<width>990</width>
 			<label>$LOCALIZE[31272]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="133">
+		<control type="radiobutton" id="139">
 			<label>$LOCALIZE[31203]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewPortraitWall)</onclick>
 			<selected>!Skin.HasSetting(DisableViewPortraitWall)</selected>
 		</control>
-		<control type="radiobutton" id="134">
+		<control type="radiobutton" id="140">
 			<label>$LOCALIZE[31130]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewSquareWall)</onclick>
 			<selected>!Skin.HasSetting(DisableViewSquareWall)</selected>
 		</control>
-		<control type="radiobutton" id="135">
+		<control type="radiobutton" id="141">
 			<label>$LOCALIZE[20020]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewBannerWall)</onclick>
 			<selected>!Skin.HasSetting(DisableViewBannerWall)</selected>
 		</control>
-		<control type="radiobutton" id="136">
+		<control type="radiobutton" id="142">
 			<label>$LOCALIZE[31201]</label>
 			<include>DialogRadioButton</include>
 			<onclick>Skin.ToggleSetting(DisableViewLandscapeWall)</onclick>
@@ -1478,10 +1514,23 @@
 			<onclick condition="Skin.String(MusicOSDAudioInfo,none)">Skin.Reset(MusicOSDAudioInfo)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="radiobutton" id="105">
+		<control type="radiobutton" id="1040">
 			<label>$LOCALIZE[31196]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDBackgroundInfo)</onclick>
 			<selected>Skin.HasSetting(MusicOSDBackgroundInfo)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1041">
+			<label>$LOCALIZE[31553] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31554][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMaster)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMaster)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1131">
+			<label>$LOCALIZE[31538] [LOWERCASE]$LOCALIZE[14200][/LOWERCASE] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31555] $LOCALIZE[31554][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMasterPlayerOff)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)</selected>
+			<enable>Skin.HasSetting(VideoOSDToolTipsMaster)</enable>
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="label" id="106">
@@ -1576,12 +1625,12 @@
 			<label>$LOCALIZE[35059]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="121">
+		<!-- <control type="radiobutton" id="121">
 			<label>$LOCALIZE[250]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableVizButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableVizButton)</selected>
 			<include>DialogRadioButton</include>
-		</control>
+		</control> -->
 		<control type="radiobutton" id="122">
 			<label>$LOCALIZE[31334]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableVizPresetsButton)</onclick>
@@ -1726,6 +1775,19 @@
 			<onclick condition="Skin.String(VideoOSDMediaFlags,off)">Skin.Reset(VideoOSDMediaFlags)</onclick>
 			<include>DialogButton</include>
 		</control>
+		<control type="radiobutton" id="1130">
+			<label>$LOCALIZE[31553] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31554][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMaster)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMaster)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1131">
+			<label>$LOCALIZE[31538] [LOWERCASE]$LOCALIZE[14200][/LOWERCASE] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31555] $LOCALIZE[31554][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMasterPlayerOff)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)</selected>
+			<enable>Skin.HasSetting(VideoOSDToolTipsMaster)</enable>
+			<include>DialogRadioButton</include>
+		</control>
 		<control type="button" id="114">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 			<label>$LOCALIZE[31211]</label>
@@ -1753,6 +1815,13 @@
 			<label>$LOCALIZE[31372]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDTimeRemaining)</onclick>
 			<selected>Skin.HasSetting(VideoOSDTimeRemaining)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1170">
+			<visible>!Skin.String(VideoOSDInfo,persistant) + [Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | PVR.IsPlayingTv]</visible>
+			<label>$LOCALIZE[31538] [LOWERCASE]$LOCALIZE[14211] $LOCALIZE[21866][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(VideoOSDDisableGenreInfo)</onclick>
+			<selected>!Skin.HasSetting(VideoOSDDisableGenreInfo)</selected>
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="label" id="118">
@@ -2726,7 +2795,7 @@
 		</item>
 	</include>
 
-	<!-- Favourites Select -->
+	<!-- Favorites Select -->
 	<include name="SelectCustomFavourites">
 		<item>
 			<label>$LOCALIZE[31293] 1</label>

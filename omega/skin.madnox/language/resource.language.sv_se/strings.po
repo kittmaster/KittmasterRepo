@@ -633,8 +633,8 @@ msgstr "Stora ikoner breda"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31123"
-msgid "Clearlogo or Title/Tagline"
-msgstr "Clearlogo eller Titel/Tagline"
+msgid "Clearlogo"
+msgstr ""
 
 #: /16x9/Custom_1114_Addons.xml
 msgctxt "#31124"
@@ -1158,8 +1158,8 @@ msgstr "Välj hur länge, i sekunder, innan metadatagalleriet för filmrader rul
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31228"
-msgid "Trailer preview window"
-msgstr "Förhandsgranskningsfönster för trailer"
+msgid "Trailer preview"
+msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31229"
@@ -2647,8 +2647,8 @@ msgstr "Tillåter ändringar av betygen att konvertera mellan flytande tal eller
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31525"
-msgid "Re-Run skin shortcuts migrator"
-msgstr "Kör om migrator för hudgenvägar"
+msgid "Re-run skin shortcuts migrator"
+msgstr "Kör migrator för hudgenvägar igen"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31526"
@@ -2665,20 +2665,65 @@ msgctxt "#31528"
 msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
 msgstr "Dedikerad addon för Madnox krävs för Piers+. Flyttar hudbilder till ett dedikerat tillägg av säkerhetsskäl."
 
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase Hero"
+msgstr "Showcase Hero"
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr "Strålkastare"
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic Shelf"
+msgstr "Filmhylla"
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr "Redaktionell"
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr "Uppslukande"
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr "Etapp"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr "Paus"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr "Stopp"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr "Vertikal"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr "Visa"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr "Ner"
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
 msgstr "Anpassning av startskärmen, widgetar och genvägsmenyn."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31902"
-msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
-msgstr "Hjälpskript för att tillhandahålla extra skinegenskaper och funktioner, inklusive ytterligare widgetar, biografläge och suddiga bakgrunder."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31903"
-msgid "Provides colour selection."
-msgstr "Tillhandahåller färgval."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
@@ -2704,11 +2749,6 @@ msgstr "Texter för musik. Krävs för att aktivera animerade texter."
 msgctxt "#31908"
 msgid "Sync your collection and watched status with trakt.tv."
 msgstr "Synkronisera din samling och tittade status med trakt.tv."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31909"
-msgid "TMDb information dialogs and widgets."
-msgstr "TMDb informationsdialoger och widgetar."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31910"

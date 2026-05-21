@@ -48,6 +48,8 @@
 				<width>992</width>
 				<height>800</height>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 				<onleft>9050</onleft>
 				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onright>6053</onright>

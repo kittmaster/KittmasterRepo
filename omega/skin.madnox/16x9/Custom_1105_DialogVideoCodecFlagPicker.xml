@@ -5,6 +5,14 @@
 	<onload>SetProperty(FlagEditMode,4K,Home)</onload>
 	<controls>
 		<control type="group">
+			<!-- Solid Background To Prevent Text Bleed-Through -->
+			<control type="image">
+				<width>1253</width>
+				<height>940</height>
+				<!-- Use the skin's native dialog shape with an opaque color to block bleed-through perfectly -->
+				<texture colordiffuse="FF080808" border="40">$VAR[DialogStyleVar]</texture>
+				<animation effect="fade" time="400">WindowOpen</animation>
+			</control>
 			<include content="DialogBackground">
 				<description>Window Header Label</description>
 				<param name="width" value="1253" />

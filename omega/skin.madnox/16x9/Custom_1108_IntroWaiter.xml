@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <window id="1108">
+	<!-- always="true" forces Kodi to constantly seek focus, triggering the exit instantly when the conditions are met -->
 	<defaultcontrol always="true">10</defaultcontrol>
 
-	<!-- Safety Delay -->
-	<onload>AlarmClock(WaitStart,SetProperty(IntroDelayDone,1,Home),00:02,silent)</onload>
-
-	<!-- Watchdog Loop -->
-	<onload>AlarmClock(IntroWatchdog,SetFocus(10),00:01,silent,loop)</onload>
-
-	<!-- Clean Up When Leaving This Window -->
-	<onunload>CancelAlarm(IntroWatchdog,silent)</onunload>
-	<onunload>CancelAlarm(WaitStart,silent)</onunload>
-	<onunload>ClearProperty(IntroDelayDone,Home)</onunload>
-	<onunload>ClearProperty(IntroVideoPlaying,Home)</onunload>
-	<onunload>Skin.Reset(Madnox.IntroActive)</onunload>
-
 	<controls>
+		<!-- Black background -->
 		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
 			<texture>colors/black.png</texture>
 		</control>
 
-		<!-- Trigger Button -->
+		<!-- EXIT TRIGGER: Becomes active ONLY after VideoFullScreen has opened and subsequently closed -->
 		<control type="button" id="10">
-			<include>HiddenObject</include>
-			<visible>!String.IsEmpty(Window(Home).Property(IntroDelayDone)) + !Player.HasMedia</visible>
-
-			<!-- Go to 1103 not Home directly — avoids re-triggering Home onload chain -->
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>1</width>
+			<height>1</height>
+			<visible>!Window.IsActive(fullscreenvideo) + !String.IsEmpty(Window(Home).Property(IntroStarted))</visible>
+			<onfocus>ClearProperty(IntroStarted,Home)</onfocus>
 			<onfocus>ReplaceWindow(1103)</onfocus>
+		</control>
+
+		<!-- HOLDING PEN: Holds focus quietly while we wait for the video to start, or while it's playing over us -->
+		<control type="button" id="11">
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>1</width>
+			<height>1</height>
+			<visible>String.IsEmpty(Window(Home).Property(IntroStarted)) | Window.IsActive(fullscreenvideo)</visible>
+		</control>
+
+		<!-- FAILSAFE: If 5 seconds pass and the video engine completely failed to start, force an exit to Home -->
+		<control type="image">
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>1</width>
+			<height>1</height>
+			<visible>String.IsEmpty(Window(Home).Property(IntroStarted))</visible>
+			<animation effect="fade" start="100" end="100" time="5000" onend="ReplaceWindow(1103)">Visible</animation>
 		</control>
 	</controls>
 </window>

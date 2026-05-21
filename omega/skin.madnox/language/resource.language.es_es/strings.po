@@ -631,8 +631,8 @@ msgstr "Iconos grandes anchos"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31123"
-msgid "Clearlogo or Title/Tagline"
-msgstr "Clearlogo o Título/Eslogan"
+msgid "Clearlogo"
+msgstr ""
 
 #: /16x9/Custom_1114_Addons.xml
 msgctxt "#31124"
@@ -1156,8 +1156,8 @@ msgstr "Seleccione cuánto tiempo, en segundos, antes de que la cuadrícula de m
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31228"
-msgid "Trailer preview window"
-msgstr "Ventana de vista previa del tráiler"
+msgid "Trailer preview"
+msgstr ""
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31229"
@@ -2645,7 +2645,7 @@ msgstr "Permite cambios en las calificaciones para convertir entre números flot
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31525"
-msgid "Re-Run skin shortcuts migrator"
+msgid "Re-run skin shortcuts migrator"
 msgstr "Vuelva a ejecutar el migrador de atajos de máscara"
 
 #: /16x9/SkinSettings.xml
@@ -2663,20 +2663,65 @@ msgctxt "#31528"
 msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
 msgstr "Se requiere un complemento dedicado para Madnox para Piers+. Mueve imágenes de máscaras a un complemento dedicado por motivos de seguridad."
 
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase Hero"
+msgstr "Héroe del escaparate"
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr "Destacar"
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic Shelf"
+msgstr "Estante cinematográfico"
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr "Editorial"
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr "inmersivo"
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr "Escenario"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr "Pausa"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr "Detener"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr "Vertical"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr "Espectáculo"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr "Abajo"
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
 msgstr "Personalización de la pantalla de inicio, widgets y menú de accesos directos."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31902"
-msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
-msgstr "Script de ayuda para proporcionar características y funciones adicionales a la apariencia, incluyendo widgets adicionales, modo cine y fondos borrosos."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31903"
-msgid "Provides colour selection."
-msgstr "Proporciona selección de color."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
@@ -2702,11 +2747,6 @@ msgstr "Letras de canciones. Necesario para habilitar letras animadas."
 msgctxt "#31908"
 msgid "Sync your collection and watched status with trakt.tv."
 msgstr "Sincroniza tu colección y el estado de visualización con trakt.tv."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31909"
-msgid "TMDb information dialogs and widgets."
-msgstr "Diálogos de información y widgets de TMDb."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31910"

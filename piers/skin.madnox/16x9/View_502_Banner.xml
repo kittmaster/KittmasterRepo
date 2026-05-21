@@ -25,6 +25,8 @@
 			</include>
 			<control type="panel" id="502">
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 				<top>588</top>
 				<left>90</left>
 				<width>1740</width>

@@ -332,9 +332,9 @@
 			<!-- Containers -->
 			<control type="group" id="9001">
 				<top>211</top>
-				<!-- Cast -->
+				<!-- NATIVE Cast (Instant load for Movies, TV Shows, Episodes) -->
 				<control type="panel" id="50">
-					<!-- <onfocus>RunScript(script.skin.madnox, action=process_ratings, output_tmdb=InfoDialog.TMDb.Percent, output_imdb=InfoDialog.IMDb.Percent, output_user=InfoDialog.User.Formatted, output_star=InfoDialog.User.StarValue)</onfocus> -->
+					<visible>!String.IsEqual(ListItem.DBTYPE,season)</visible>
 					<onfocus>RunScript(script.skin.madnox, action=process_ratings, output_tmdb=InfoDialog.TMDb.Percent, output_imdb=InfoDialog.IMDb.Percent, output_user=InfoDialog.User.Formatted, output_star=InfoDialog.User.StarValue, output_ready=InfoDialog.Ratings.Ready)</onfocus>
 					<onup condition="!Skin.HasSetting(VideoInfoTMDbActor)">1020</onup>
 					<onup condition="Skin.HasSetting(VideoInfoTMDbActor)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$VAR[TMDbOriginTypeVar],origin_tmdb_id=$INFO[ListItem.UniqueID(tmdb)],origin_dbid=$INFO[ListItem.DBID],call_auto=1190)</onup>
@@ -343,6 +343,20 @@
 						<param name="aspect">scale</param>
 						<param name="labelvisible">true</param>
 					</include>
+				</control>
+
+				<!-- TMDB HELPER Cast (Only for Seasons to fix the missing cast gap) -->
+				<control type="panel" id="50">
+					<visible>String.IsEqual(ListItem.DBTYPE,season)</visible>
+					<onfocus>RunScript(script.skin.madnox, action=process_ratings, output_tmdb=InfoDialog.TMDb.Percent, output_imdb=InfoDialog.IMDb.Percent, output_user=InfoDialog.User.Formatted, output_star=InfoDialog.User.StarValue, output_ready=InfoDialog.Ratings.Ready)</onfocus>
+					<onup condition="!Skin.HasSetting(VideoInfoTMDbActor)">1020</onup>
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$VAR[TMDbOriginTypeVar],origin_tmdb_id=$INFO[ListItem.UniqueID(tmdb)],origin_dbid=$INFO[ListItem.DBID],call_auto=1190)</onup>
+					<include content="DialogExtraInfo">
+						<param name="visible">[!Control.HasFocus(1020) + Container(9000).HasFocus(101)] | Control.HasFocus(50)</param>
+						<param name="aspect">scale</param>
+						<param name="labelvisible">true</param>
+					</include>
+					<content>plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[TMDbHelperTypeVar]&amp;$VAR[TMDbHelperIDVar]$VAR[TMDbHelper_SeasonParams_Var]</content>
 				</control>
 				<!-- Actor Movies/Tv Shows Todo Review -->
 				<control type="panel" id="1020">
@@ -973,6 +987,7 @@
 		</control>
 
 		<!-- ========================================================================= -->
+		<!-- Debug must be active to see these labels, DEV only use                    -->
 		<!-- X-RAY HUD FOR ACTOR METADATA (To map Studio/MPAA filenames)               -->
 		<!-- ========================================================================= -->
 		<control type="grouplist">
@@ -1251,8 +1266,8 @@
 					<item id="102">
 						<description>View Tracks</description>
 						<visible>String.IsEqual(ListItem.DBType,album) and !Control.HasFocus(9050)</visible>
-						<label></label>
-						<label2>View Tracks</label2>
+						<label>:</label>
+						<label2>$LOCALIZE[21483] [LOWERCASE]$LOCALIZE[182][/LOWERCASE]</label2>
 						<onclick>SetFocus(9050)</onclick>
 					</item>
 					<item id="103">
@@ -1984,7 +1999,8 @@
 						<onclick>RunScript(plugin.video.themoviedb.helper,recommendations=onaction,"builtin=ActivateWindow(videos,videodb://tvshows/titles/$INFO[Container(10051).ListItem.DBID]/,return)",window_id=1190,after)</onclick>
 					</item>
 					<item id="101">
-						<visible>String.IsEmpty(Container(10051).ListItem.DBID)</visible>
+						<!-- <visible>String.IsEmpty(Container(10051).ListItem.DBID)</visible> -->
+						<visible>String.IsEmpty(Container(10051).ListItem.DBID) | String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
 						<description>Cast</description>
 						<label></label>
 						<label2>$LOCALIZE[206]</label2>
@@ -3271,6 +3287,12 @@
 	<!-- Variables																		-->
 	<!-- 																				-->
 	<!-- ============================================================================	-->
+
+	<variable name="TMDbHelper_SeasonParams_Var">
+		<value condition="String.IsEqual(ListItem.DBTYPE,episode)">&amp;season=$INFO[ListItem.Season]&amp;episode=$INFO[ListItem.Episode]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE,season)">&amp;season=$INFO[ListItem.Season]</value>
+		<value />
+	</variable>
 
 	<variable name="VideoInfoTitleVar">
 		<!-- Priority 1: Handle Episode context inside the TMDb window -->

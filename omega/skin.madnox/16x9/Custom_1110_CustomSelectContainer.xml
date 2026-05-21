@@ -7,6 +7,14 @@
 		<control type="group">
 			<visible>!Window.IsActive(DialogSelect.xml)</visible>
 			<include>AnimationDialogPopupVisible</include>
+			<!-- SOLID BACKGROUND TO PREVENT TEXT BLEED-THROUGH -->
+			<control type="image">
+				<width>1220</width>
+				<height>760</height>
+				<!-- Use the skin's native dialog shape with an opaque color to block bleed-through perfectly -->
+				<texture colordiffuse="FF080808" border="40">$VAR[DialogStyleVar]</texture>
+				<animation effect="fade" time="400">WindowOpen</animation>
+			</control>
 			<include content="DialogBackground">
 				<param name="width" value="1220" />
 				<param name="height" value="760" />

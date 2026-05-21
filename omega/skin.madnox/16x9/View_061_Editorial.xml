@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<includes>
+	<include name="View61Editorial">
+		<!-- ============================================================   -->
+		<!--  EDITORIAL — View 061                                          -->
+		<!--  Left column: three static panels driven by Container.ListItem -->
+		<!--  showing items 0, 1, 2 from the active list position           -->
+		<!--  Right column: vertical fixedlist — the navigable container    -->
+		<!--  Focused item in list drives the left static panels            -->
+		<!--  Layout: left 900px = panels, right 980px = list               -->
+		<!-- ============================================================   -->
+		<!-- Floor -->
+		<include content="Floor">
+			<param name="visible">Skin.HasSetting(View61HideFloor) + Control.IsVisible(61)</param>
+			<param name="highlight">FloorHighlightRight</param>
+		</include>
+		<!-- Background dim -->
+		<control type="group">
+			<visible>Control.IsVisible(61)</visible>
+			<include>AnimationVisibleFade</include>
+			<include>AnimationWindowFade</include>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<texture colordiffuse="88000000">colors/black.png</texture>
+			</control>
+		</control>
+
+		<!-- ── LEFT: Static editorial panels ── -->
+		<!-- These show items relative to the currently focused list position -->
+		<control type="group">
+			<visible>Control.IsVisible(61)</visible>
+			<include content="AnimationSlideLeftWindow">
+				<param name="slide">400</param>
+			</include>
+
+			<!-- Large panel: focused item (ListItem(0) = current) — landscape -->
+			<control type="group">
+				<left>40</left>
+				<top>65</top>
+				<width>580</width>
+				<height>326</height>
+
+				<!-- 1. BASE SHADOW -->
+				<control type="image">
+					<bordersize>10</bordersize>
+					<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+				</control>
+
+				<!-- 2. THE INSET GROUP (10px padding on all sides) -->
+				<control type="group">
+					<left>10</left>
+					<top>10</top>
+					<right>10</right>
+					<bottom>10</bottom>
+
+					<!-- Black base -->
+					<control type="image">
+						<texture>colors/black.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+
+					<!-- Landscape Art -->
+					<control type="image">
+						<texture background="true" diffuse="diffuse/rounded5-577x324.png" fallback="DefaultFile.png">$VAR[LandscapeVar]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<fadetime>TextureFadeTime</fadetime>
+					</control>
+
+					<!-- Bottom gradient for progress bar legibility -->
+					<control type="group">
+						<bottom>0</bottom>
+						<height>60</height>
+						<control type="image">
+							<texture colordiffuse="DD000000">panels/background-gradient.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</control>
+
+					<!-- Progress bar -->
+					<include content="Object_ProgressBar">
+						<param name="left" value="16" />
+						<param name="right" value="16" />
+						<param name="bottom" value="8" />
+						<param name="height" value="5" />
+					</include>
+				</control>
+
+				<!-- 4. OVERLAY FRAME (Drawn full size to cover edges) -->
+				<control type="image">
+					<texture border="20">thumbs/overlay.png</texture>
+				</control>
+
+				<!-- Watched badge -->
+				<include content="ViewWatchedStatus">
+					<param name="visible">!Skin.HasSetting(View61DisableWatchedStatus)</param>
+				</include>
+			</control>
+
+			<!-- Meta strip below large panel -->
+			<control type="label">
+				<left>40</left>
+				<top>400</top>
+				<width>580</width>
+				<height>28</height>
+				<font>Font26_Cond_07</font>
+				<textcolor>CCffffff</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Year]  ·  $INFO[ListItem.Duration(hh:mm)]$INFO[ListItem.Rating(2),  ·  ,]</label>
+			</control>
+
+			<!-- Genre -->
+			<control type="label">
+				<left>40</left>
+				<top>434</top>
+				<width>580</width>
+				<height>26</height>
+				<font>Font26_Cond_07</font>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Genre]</label>
+			</control>
+
+			<!-- Thin separator -->
+			<control type="image">
+				<left>40</left>
+				<top>466</top>
+				<width>520</width>
+				<height>2</height>
+				<texture colordiffuse="33FFFFFF">panels/separator.png</texture>
+			</control>
+
+			<!-- Plot -->
+			<control type="textbox">
+				<left>40</left>
+				<top>476</top>
+				<width>580</width>
+				<height>200</height>
+				<font>Font26_Reg</font>
+				<textcolor>BBffffff</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
+				<label>$VAR[ViewPlotVar]</label>
+				<include>AutoScrollPlot</include>
+			</control>
+		</control>
+
+		<!-- ── RIGHT: Navigable vertical list ── -->
+		<control type="group">
+			<visible>Control.IsVisible(61)</visible>
+			<include>AnimationZoomWindow</include>
+			<include>AnimationZoomVisible</include>
+			<animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))" reversible="true">
+				<effect type="slide" end="-680,0" time="400" tween="cubic" easing="out" />
+			</animation>
+
+			<control type="fixedlist" id="61">
+				<left>660</left>
+				<top>65</top>
+				<width>1220</width>
+				<height>820</height>
+				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
+				<onleft>9050</onleft>
+				<onright>60061</onright>
+				<onup>61</onup>
+				<ondown>61</ondown>
+				<pagecontrol>60061</pagecontrol>
+				<focusposition>3</focusposition>
+				<include>ContainerScrollTime</include>
+				<viewtype label="$LOCALIZE[31532]">list</viewtype>
+				<orientation>vertical</orientation>
+
+				<!-- Unfocused row: poster + title + year -->
+				<itemlayout height="100" width="1220">
+					<control type="image">
+						<texture colordiffuse="22FFFFFF" border="1">panels/separator.png</texture>
+					</control>
+					<!-- Poster thumbnail -->
+					<control type="group">
+						<left>10</left>
+						<top>10</top>
+						<width>57</width>
+						<height>80</height>
+						<colordiffuse>88FFFFFF</colordiffuse>
+						<include content="ViewArtwork">
+							<param name="aspect">scale</param>
+							<param name="art">$VAR[PosterVar]</param>
+							<param name="texturefadetime">0</param>
+							<param name="diffuse">diffuse/rounded5-96x96.png</param>
+							<param name="watchedstatusvisible">false</param>
+						</include>
+					</control>
+					<!-- Title -->
+					<control type="label">
+						<left>80</left>
+						<top>22</top>
+						<right>180</right>
+						<height>34</height>
+						<font>Font30_Reg</font>
+						<textcolor>$VAR[PanelTextColorVar]</textcolor>
+						<shadowcolor>ff000000</shadowcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<!-- Year right-aligned -->
+					<control type="label">
+						<right>20</right>
+						<top>22</top>
+						<width>140</width>
+						<height>34</height>
+						<font>Font26_Cond_07</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+					</control>
+					<!-- Genre sub-line -->
+					<control type="label">
+						<left>80</left>
+						<top>56</top>
+						<right>180</right>
+						<height>28</height>
+						<font>Font26_Cond_07</font>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Genre]</label>
+					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="80" />
+						<param name="right" value="20" />
+						<param name="bottom" value="8" />
+						<param name="height" value="3" />
+					</include>
+				</itemlayout>
+
+				<!-- Focused row: highlighted, slightly taller -->
+				<focusedlayout height="100" width="1220">
+					<control type="image">
+						<texture border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texture>
+					</control>
+					<!-- Poster thumbnail -->
+					<control type="group">
+						<left>10</left>
+						<top>10</top>
+						<width>57</width>
+						<height>80</height>
+						<include content="ViewArtwork">
+							<param name="aspect">scale</param>
+							<param name="art">$VAR[PosterVar]</param>
+							<param name="texturefadetime">0</param>
+							<param name="diffuse">diffuse/rounded5-96x96.png</param>
+							<param name="watchedstatusvisible">!Skin.HasSetting(View61DisableWatchedStatus)</param>
+						</include>
+					</control>
+					<!-- Title -->
+					<control type="label">
+						<left>80</left>
+						<top>22</top>
+						<right>180</right>
+						<height>34</height>
+						<font>Font30_Bold</font>
+						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+						<shadowcolor>ff000000</shadowcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<!-- Year -->
+					<control type="label">
+						<right>20</right>
+						<top>22</top>
+						<width>140</width>
+						<height>34</height>
+						<font>Font26_Cond_07</font>
+						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Year]</label>
+					</control>
+					<!-- Genre sub-line -->
+					<control type="label">
+						<left>80</left>
+						<top>56</top>
+						<right>180</right>
+						<height>28</height>
+						<font>Font26_Cond_07</font>
+						<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Genre]</label>
+					</control>
+					<include content="Object_ProgressBar">
+						<param name="left" value="80" />
+						<param name="right" value="20" />
+						<param name="bottom" value="8" />
+						<param name="height" value="3" />
+					</include>
+				</focusedlayout>
+			</control>
+
+			<!-- Scrollbar -->
+			<control type="scrollbar" id="60061">
+				<right>10</right>
+				<top>65</top>
+				<bottom>170</bottom>
+				<onleft>61</onleft>
+				<onright>61301</onright>
+			</control>
+		</control>
+
+		<!-- Bottom flags bar -->
+		<control type="group">
+			<visible>Control.IsVisible(61)</visible>
+			<include content="AnimationSlideBottomWindow">
+				<param name="slide">220</param>
+			</include>
+
+			<!-- ClearLogo — left-anchored in flags bar, exact 063/062 values -->
+			<control type="group">
+				<visible>!ListItem.IsParentFolder + [!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(artist.clearlogo))]</visible>
+				<animation effect="fade" start="0" end="100" time="480" delay="100">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="240">Hidden</animation>
+				<control type="image">
+					<left>20</left>
+					<bottom>45</bottom>
+					<width>340</width>
+					<height>132</height>
+					<texture>$VAR[ClearLogoVar]</texture>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+					<fadetime>TextureFadeTime</fadetime>
+				</control>
+			</control>
+
+			<!-- Title fallback label — shown when no clearlogo, exact 063/062 values -->
+			<control type="group">
+				<visible>!ListItem.IsParentFolder + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(artist.clearlogo))</visible>
+				<control type="label">
+					<left>30</left>
+					<bottom>28</bottom>
+					<width>300</width>
+					<height>80</height>
+					<font>Font28_Bold</font>
+					<textcolor>ffffffff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</control>
+
+			<!-- Disc art — movies, fixed right in flags bar, exact 063 values -->
+			<control type="group">
+				<visible>!ListItem.IsParentFolder + Container.Content(movies) + !String.IsEmpty(ListItem.Art(discart))</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="50">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+				<control type="image">
+					<right>100</right>
+					<bottom>30</bottom>
+					<width>165</width>
+					<height>165</height>
+					<texture fadetime="150">$INFO[ListItem.Art(discart)]</texture>
+					<aspectratio>keep</aspectratio>
+					<include>AnimationDiscArtLibrary</include>
+				</control>
+			</control>
+
+			<!-- ClearArt — TV shows/seasons, fixed right in flags bar, exact 063 values -->
+			<control type="group">
+				<visible>!ListItem.IsParentFolder + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Art(clearart))</visible>
+				<animation effect="fade" start="0" end="100" time="480" delay="100">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="240">Hidden</animation>
+				<control type="image">
+					<right>30</right>
+					<bottom>28</bottom>
+					<width>200</width>
+					<height>80</height>
+					<texture>$VAR[ClearArtVar]</texture>
+					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<fadetime>TextureFadeTime</fadetime>
+				</control>
+			</control>
+
+			<control type="grouplist">
+				<visible>!ListItem.IsParentFolder + [Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
+				<bottom>28</bottom>
+				<left>50</left>
+				<right>50</right>
+				<height>80</height>
+				<align>center</align>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="image">
+					<visible>!ListItem.IsCollection</visible>
+					<bordersize>0,5,0,10</bordersize>
+					<texture>$VAR[StudioIconsVar]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<control type="image">
+					<visible>!ListItem.IsCollection</visible>
+					<texture>$VAR[MediaFlagsPathVar]mpaa/$VAR[RatingFlagVar]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<control type="image">
+					<visible>!String.IsEmpty(ListItem.VideoAspect)</visible>
+					<texture>$VAR[MediaFlagsPathVar]videoaspect/$VAR[MediaFlagsPathExpandedAspectRatioVar]$INFO[ListItem.VideoAspect,,.png]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<control type="image">
+					<visible>!String.IsEmpty(ListItem.VideoCodec)</visible>
+					<texture>$VAR[VideoFormatFlagVar]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<include>ResolutionFlags</include>
+				<control type="image">
+					<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
+					<texture>$VAR[AudioCodecFlagVar]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<control type="image">
+					<visible>!String.IsEmpty(ListItem.AudioChannels)</visible>
+					<texture>$VAR[MediaFlagsPathVar]$INFO[ListItem.AudioChannels,audiochannels/,.png]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<include>LanguageFlags</include>
+				<!-- CC ICON -->
+				<control type="image">
+					<visible>!String.IsEmpty(ListItem.SubtitleLanguage)</visible>
+					<texture>$VAR[MediaFlagsPathVar]cc.png</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<!-- SUBTITLE LANGUAGES -->
+				<include>SubtitleFlags</include>
+			</control>
+			<control type="grouplist">
+				<visible>!ListItem.IsParentFolder + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
+				<bottom>28</bottom>
+				<left>50</left>
+				<right>50</right>
+				<height>80</height>
+				<align>center</align>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="image">
+					<bordersize>0,5,0,10</bordersize>
+					<texture>$VAR[StudioIconsVar]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<control type="image">
+					<texture>$VAR[MediaFlagsPathVar]mpaa/$VAR[RatingFlagVar]</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<!-- CC ICON -->
+				<control type="image">
+					<visible>!String.IsEmpty(ListItem.SubtitleLanguage)</visible>
+					<texture>$VAR[MediaFlagsPathVar]cc.png</texture>
+					<include>MediaFlagImage</include>
+				</control>
+				<!-- SUBTITLE LANGUAGES -->
+				<include>SubtitleFlags</include>
+			</control>
+		</control>
+
+		<!-- Trailer popup -->
+		<control type="group">
+			<visible>Control.IsVisible(61) + !String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+			<include>AnimationVideoPreviewPopup400</include>
+			<right>50</right>
+			<top>120</top>
+			<width>700</width>
+			<height>800</height>
+			<control type="group">
+				<width>700</width>
+				<height>394</height>
+				<control type="image">
+					<texture>colors/black.png</texture>
+				</control>
+				<control type="videowindow">
+					<colordiffuse>FFA0A0A0</colordiffuse>
+				</control>
+				<control type="image">
+					<bordersize>-15</bordersize>
+					<texture border="20" colordiffuse="$VAR[PanelHighlightColorVar]">thumbs/overlay.png</texture>
+				</control>
+			</control>
+			<control type="group">
+				<top>410</top>
+				<control type="image">
+					<width>700</width>
+					<height>400</height>
+					<texture colordiffuse="bb2a2a2a">colors/black.png</texture>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<width>660</width>
+					<height>90</height>
+					<font>Font28_Bold</font>
+					<textcolor>ff00aaff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[ListItem.Title]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="image">
+					<top>90</top>
+					<left>20</left>
+					<width>660</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+				<control type="textbox">
+					<top>100</top>
+					<left>20</left>
+					<width>660</width>
+					<height>280</height>
+					<font>Font28_Reg</font>
+					<textcolor>ffcccccc</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>justify</align>
+					<label>$INFO[ListItem.Plot]</label>
+					<animation effect="scroll" time="20000" delay="5000" end="100%" condition="true" loop="true" reversible="false">Conditional</animation>
+				</control>
+				<control type="image">
+					<top>390</top>
+					<left>20</left>
+					<width>660</width>
+					<height>4</height>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

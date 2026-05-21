@@ -23,6 +23,15 @@
 			<width>1400</width>
 			<height>800</height>
 
+			<!-- SOLID BACKGROUND TO PREVENT TEXT BLEED-THROUGH -->
+			<control type="image">
+				<width>1400</width>
+				<height>800</height>
+				<!-- Use the skin's native dialog shape with an opaque color to block bleed-through perfectly -->
+				<texture colordiffuse="FF080808" border="40">$VAR[DialogStyleVar]</texture>
+				<animation effect="fade" time="400">WindowOpen</animation>
+			</control>
+
 			<!-- Use The Skin's Native Dialogbackground Include -->
 			<include content="DialogBackground">
 				<param name="width" value="1400" />
@@ -45,10 +54,8 @@
 				<left>40</left>
 				<right>40</right>
 				<height>50</height>
-				<!-- <font>Font48_Reg</font> -->
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				<label>$LOCALIZE[31503] $LOCALIZE[14116]...</label>
-				<!-- Dashboard Infomation -->
 				<align>left</align>
 				<include>SettingsLeftLabelWidgetsShortcut</include>
 			</control>

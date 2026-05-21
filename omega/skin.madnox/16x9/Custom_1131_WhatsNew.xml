@@ -10,14 +10,14 @@
 
 		  Scrolling is handled by the textbox's own built-in scroll engine via
 		  its pagecontrol link to scrollbar (60).  The scrollbar receives UP/DOWN
-		  from the OK button's onup, making the scrollbar the keyboard-scroll
+		  from the OK button's onright, making the scrollbar the keyboard-scroll
 		  proxy.  Mouse wheel on the textbox area works independently through
 		  Kodi's mouse handler.
 
 		  Focus chain:
 		    [open] → OK button (10)
-		    OK onup → scrollbar (60)   <- scrollbar accepts UP/DOWN to page text
-		    scrollbar ondown → OK button (10)
+		    OK onright → scrollbar (60)   <- scrollbar accepts UP/DOWN to page text
+		    scrollbar onleft → OK button (10)
 		    OK onclick → Close
 	-->
 	<defaultcontrol always="true">10</defaultcontrol>
@@ -84,9 +84,9 @@
 
 			<!--
 				Scrollbar - linked to the textbox via pagecontrol on the textbox.
-				This is also the keyboard-scroll proxy: OK button navigates UP to
+				This is also the keyboard-scroll proxy: OK button navigates RIGHT to
 				here, and UP/DOWN on the scrollbar pages through the text.
-				ondown / onleft / onright all return focus to the OK button.
+				onleft returns focus to the OK button.
 			-->
 			<control type="scrollbar" id="60">
 				<right>20</right>
@@ -103,9 +103,9 @@
 			<!--
 				OK / Close button - the ONLY focusable (button-type) control.
 				This is the defaultcontrol so focus always lands here on open.
-				onup goes to the scrollbar so the user can page through the text
-				with UP/DOWN after navigating there once.
-				onleft/onright are self-referencing (no other buttons).
+				onright goes to the scrollbar so the user can page through the
+				text with UP/DOWN after navigating there once.
+				onup/onleft self-reference (no other buttons in those directions).
 			-->
 			<control type="grouplist" id="9131">
 				<left>40</left>
@@ -114,6 +114,7 @@
 				<height>80</height>
 				<orientation>horizontal</orientation>
 				<align>center</align>
+				<onright>60</onright>
 
 				<control type="button" id="10">
 					<width>350</width>
@@ -121,9 +122,9 @@
 					<label>$LOCALIZE[186]</label>
 					<align>center</align>
 					<onclick>Close</onclick>
-					<onup>60</onup>
+					<onup>10</onup>
 					<onleft>10</onleft>
-					<onright>10</onright>
+					<onright>60</onright>
 				</control>
 			</control>
 		</control>

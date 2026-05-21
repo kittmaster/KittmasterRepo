@@ -1,9 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
-	<defaultcontrol/>
+	<!-- HANDSHAKE: Tell 1108 that the video successfully started -->
+	<onload condition="Skin.HasSetting(Madnox.IntroActive)">SetProperty(IntroStarted,1,Home)</onload>
+
+	<!-- Clean up boolean, then let Kodi natively close this window and drop back to 1108 -->
+	<onplaybackended condition="Skin.HasSetting(Madnox.IntroActive)">Skin.Reset(Madnox.IntroActive)</onplaybackended>
+	<onplaybackstopped condition="Skin.HasSetting(Madnox.IntroActive)">Skin.Reset(Madnox.IntroActive)</onplaybackstopped>
+
+	<defaultcontrol />
 	<controls>
 		<control type="group" id="0">
-			<visible>Control.IsVisible(10) + !Window.IsVisible(seekbar)</visible>
+			<!-- Hides UI during intro -->
+			<visible>Control.IsVisible(10) + !Window.IsVisible(seekbar) + !Skin.HasSetting(Madnox.IntroActive)</visible>
 			<width>1920</width>
 			<height>162</height>
 			<include content="AnimationSlideTopVisible">
@@ -45,7 +53,8 @@
 			<font>Font_MainMenu</font>
 			<shadowcolor>black</shadowcolor>
 			<include>AnimationVisibleFade</include>
-			<visible>!String.IsEmpty(Player.SeekNumeric)</visible>
+			<!-- Hides seek time during intro -->
+			<visible>!String.IsEmpty(Player.SeekNumeric) + !Skin.HasSetting(Madnox.IntroActive)</visible>
 		</control>
 	</controls>
 </window>

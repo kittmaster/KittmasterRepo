@@ -1,15 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
+	<!-- Instantly close if Kodi tries to force it open during the Intro -->
+	<onload condition="Skin.HasSetting(Madnox.IntroActive)">Dialog.Close(VideoOSD,true)</onload>
+
 	<onload condition="VideoPlayer.Content(LiveTV) + !Player.PauseEnabled">SetFocus(201)</onload>
 	<defaultcontrol>206</defaultcontrol>
 	<controls>
+		<!-- MOUSE SHIELD: If mouse movement forces this window open during intro, 
+		     this button steals focus and instantly closes it -->
+		<control type="button" id="9999">
+			<left>-20</left>
+			<top>-20</top>
+			<width>1</width>
+			<height>1</height>
+			<visible>Skin.HasSetting(Madnox.IntroActive)</visible>
+			<onfocus>Dialog.Close(VideoOSD,true)</onfocus>
+		</control>
+
 		<control type="group">
-			<visible>!Window.IsActive(videobookmarks) + !Window.IsActive(dialogsettings.xml) + !Window.IsActive(dialogselect.xml) + !Window.IsActive(subtitlesearch) + !Window.IsActive(pvrosdChannels) + !Window.IsActive(pvrchannelguide) + !Window.IsActive(teletext) + !Integer.IsGreater(Player.SeekNumeric,0) + !Window.IsActive(1111)</visible>
+			<!-- Added your new boolean to the visibility condition here -->
+			<visible>!Window.IsActive(videobookmarks) + !Window.IsActive(dialogsettings.xml) + !Window.IsActive(dialogselect.xml) + !Window.IsActive(subtitlesearch) + !Window.IsActive(pvrosdChannels) + !Window.IsActive(pvrchannelguide) + !Window.IsActive(teletext) + !Integer.IsGreater(Player.SeekNumeric,0) + !Window.IsActive(1111) + !Skin.HasSetting(Madnox.IntroActive)</visible>
 			<animation effect="fade" delay="200" time="280">Visible</animation>
 			<animation effect="fade" time="0">Hidden</animation>
 			<animation effect="fade" delay="200" time="280">WindowOpen</animation>
 			<animation effect="fade" time="0">WindowClose</animation>
 			<top>870</top>
+			<control type="label">
+				<visible>Skin.HasSetting(VideoOSDToolTipsMaster)</visible>
+				<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
+				<right>20</right>
+				<!-- <top>0</top> -->
+				<bottom>200</bottom>
+				<align>right</align>
+				<aligny>center</aligny>
+				<width>1000</width>
+				<height>50</height>
+				<font>Font21_Cond_Bold</font>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$VAR[OSDHelpTextVar]</label>
+				<shadowcolor>black</shadowcolor>
+			</control>
 			<control type="group" id="4000">
 				<control type="grouplist" id="1000">
 					<left>0</left>
@@ -22,14 +52,14 @@
 					<orientation>horizontal</orientation>
 					<control type="radiobutton" id="101">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/visualisationsettings.png"/>
+							<param name="texture" value="buttons/player/visualisationsettings.png" />
 						</include>
 						<onclick>SetProperty(CustomSelectGroup,$LOCALIZE[13395],home)</onclick>
 						<onclick>ActivateWindow(1111)</onclick>
 					</control>
 					<control type="radiobutton" id="102">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/settings.png"/>
+							<param name="texture" value="buttons/player/settings.png" />
 						</include>
 						<onclick>SetProperty(CustomSelectGroup,$LOCALIZE[31338],home)</onclick>
 						<onclick>ActivateWindow(1111)</onclick>
@@ -37,7 +67,7 @@
 					</control>
 					<control type="radiobutton" id="103">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/3d.png"/>
+							<param name="texture" value="buttons/player/3d.png" />
 						</include>
 						<onclick>StereoMode</onclick>
 						<visible>VideoPlayer.IsStereoscopic</visible>
@@ -55,35 +85,35 @@
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="radiobutton" id="201">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/up.png"/>
+							<param name="texture" value="buttons/player/up.png" />
 						</include>
 						<onclick>ChannelUp</onclick>
 						<visible>VideoPlayer.Content(livetv)</visible>
 					</control>
 					<control type="radiobutton" id="202">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/down.png"/>
+							<param name="texture" value="buttons/player/down.png" />
 						</include>
 						<onclick>ChannelDown</onclick>
 						<visible>VideoPlayer.Content(livetv)</visible>
 					</control>
 					<control type="radiobutton" id="203">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/previous.png"/>
+							<param name="texture" value="buttons/player/previous.png" />
 						</include>
 						<onclick>PlayerControl(Previous)</onclick>
 						<visible>!VideoPlayer.Content(livetv)</visible>
 					</control>
 					<control type="radiobutton" id="204">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/rw.png"/>
+							<param name="texture" value="buttons/player/rw.png" />
 						</include>
 						<onclick>PlayerControl(Rewind)</onclick>
 						<visible>Player.SeekEnabled</visible>
 					</control>
 					<control type="radiobutton" id="205">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/stop.png"/>
+							<param name="texture" value="buttons/player/stop.png" />
 						</include>
 						<onclick>PlayerControl(Stop)</onclick>
 					</control>
@@ -101,14 +131,14 @@
 					</control>
 					<control type="radiobutton" id="208">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/ff.png"/>
+							<param name="texture" value="buttons/player/ff.png" />
 						</include>
 						<onclick>PlayerControl(Forward)</onclick>
 						<visible>Player.SeekEnabled</visible>
 					</control>
 					<control type="radiobutton" id="209">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/next.png"/>
+							<param name="texture" value="buttons/player/next.png" />
 						</include>
 						<onclick>PlayerControl(Next)</onclick>
 						<visible>!VideoPlayer.Content(livetv)</visible>
@@ -127,7 +157,7 @@
 					</control>
 					<control type="radiobutton" id="212">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/disc.png"/>
+							<param name="texture" value="buttons/player/disc.png" />
 						</include>
 						<onclick>PlayerControl(ShowVideoMenu)</onclick>
 						<visible>VideoPlayer.HasMenu</visible>
@@ -170,28 +200,28 @@
 					</control>
 					<control type="radiobutton" id="305">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/info.png"/>
+							<param name="texture" value="buttons/player/info.png" />
 						</include>
 						<onclick>Action(Info)</onclick>
 						<visible>VideoPlayer.HasInfo + !Skin.HasSetting(VideoOSDDisableInfoButton)</visible>
 					</control>
 					<control type="radiobutton" id="306">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/bookmark.png"/>
+							<param name="texture" value="buttons/player/bookmark.png" />
 						</include>
 						<onclick>ActivateWindow(videobookmarks)</onclick>
 						<visible>!VideoPlayer.Content(livetv) + !Skin.HasSetting(VideoOSDDisableBookmarkButton)</visible>
 					</control>
 					<control type="radiobutton" id="307">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/audio.png"/>
+							<param name="texture" value="buttons/player/audio.png" />
 						</include>
 						<onclick>AudioNextLanguage</onclick>
 						<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos) + !Skin.HasSetting(VideoOSDDisableAudioButton)</visible>
 					</control>
 					<control type="radiobutton" id="308">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/subtitle.png"/>
+							<param name="texture" value="buttons/player/subtitle.png" />
 						</include>
 						<onclick condition="VideoPlayer.HasSubtitles">Action(NextSubtitle)</onclick>
 						<onclick condition="!VideoPlayer.HasSubtitles">Close</onclick>
@@ -200,21 +230,21 @@
 					</control>
 					<control type="radiobutton" id="309">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/channels.png"/>
+							<param name="texture" value="buttons/player/channels.png" />
 						</include>
 						<onclick>ActivateWindow(pvrosdChannels)</onclick>
 						<visible>VideoPlayer.HasEpg + !Skin.HasSetting(VideoOSDDisableChannelsButton)</visible>
 					</control>
 					<control type="radiobutton" id="310">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/guide.png"/>
+							<param name="texture" value="buttons/player/guide.png" />
 						</include>
 						<onclick>ActivateWindow(pvrchannelguide)</onclick>
 						<visible>VideoPlayer.HasEpg + !Skin.HasSetting(VideoOSDDisableGuideButton)</visible>
 					</control>
 					<control type="radiobutton" id="311">
 						<include content="DialogButtonOSD">
-							<param name="texture" value="buttons/player/txt.png"/>
+							<param name="texture" value="buttons/player/txt.png" />
 						</include>
 						<onclick>ActivateWindow(teletext)</onclick>
 						<visible>VideoPlayer.HasTeletext + !Skin.HasSetting(VideoOSDDisableTeletextButton)</visible>

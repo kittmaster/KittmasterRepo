@@ -46,21 +46,41 @@
 				<param name="opencondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]]</param>
 				<param name="closecondition">![Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]]</param>
 			</include>
-			<include content="PanelWide">
-				<param name="top">550</param>
-				<param name="toptexture">570</param>
-				<param name="topshadow">550</param>
-				<param name="height">530</param>
-				<param name="heighttexture">510</param>
-			</include>
+			<control type="group">
+				<visible>!Container.Content(episodes)</visible>
+				<include content="PanelWide">
+					<param name="top">550</param>
+					<param name="toptexture">570</param>
+					<param name="topshadow">550</param>
+					<param name="height">530</param>
+					<param name="heighttexture">510</param>
+				</include>
+			</control>
+			<control type="group">
+				<visible>Container.Content(episodes)</visible>
+				<include content="PanelWide">
+					<param name="top">693</param>
+					<param name="toptexture">713</param>
+					<param name="topshadow">693</param>
+					<param name="height">387</param>
+					<param name="heighttexture">367</param>
+				</include>
+			</control>
 			<!-- List -->
 			<control type="list" id="55">
+				<animation effect="slide" end="0,143" condition="Container.Content(episodes)">conditional</animation>
+				<animation effect="height" end="357" condition="Container.Content(episodes)">conditional</animation>
 				<left>545</left>
 				<bottom>10</bottom>
 				<width>802</width>
 				<height>500</height>
 				<!-- Script Trigger: Runs Once When Entering The List -->
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: path check and timing handled in Python -->
+				<!-- Global Collection View Sync: fires SetViewMode at the exact right moment -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
+				<onclick>Action(Select)</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,set) | Container.Content(sets)">RunScript(script.skin.madnox, action=collection_view_sync, mode=enter)</onclick>
 				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onleft>9050</onleft>
 				<onright>6055</onright>
@@ -74,6 +94,8 @@
 				</include>
 			</control>
 			<control type="image">
+				<animation effect="slide" end="0,143" condition="Container.Content(episodes)">conditional</animation>
+				<animation effect="height" end="367" condition="Container.Content(episodes)">conditional</animation>
 				<right>570</right>
 				<top>570</top>
 				<width>4</width>
@@ -98,7 +120,7 @@
 			</control>
 			<!-- Art -->
 			<control type="group">
-				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]] + !Container.Content(episodes)</visible>
 				<bottom>0</bottom>
 				<width>555</width>
 				<height>822</height>
@@ -116,7 +138,7 @@
 					<visible>!Skin.HasSetting(View55VideoCase)</visible>
 					<include content="ViewArtwork">
 						<param name="diffuse">diffuse/rounded5-535x802.png</param>
-						<param name="aspect">keep</param>
+						<param name="aspect">scale</param>
 					</include>
 				</control>
 				<control type="group">
@@ -125,6 +147,23 @@
 						<param name="bordersize">19,63,19,23</param>
 					</include>
 				</control>
+			</control>
+			<!-- Episode Art: landscape thumb fills left column of panel -->
+			<control type="group">
+				<visible>Container.Content(episodes)</visible>
+				<bottom>0</bottom>
+				<width>555</width>
+				<height>367</height>
+				<include content="ViewArtwork">
+					<param name="art">$VAR[ThumbVar]</param>
+					<param name="diffuse">diffuse/rounded5-535x535.png</param>
+				</include>
+				<include content="Object_ProgressBar">
+					<param name="left" value="25" />
+					<param name="right" value="25" />
+					<param name="bottom" value="30" />
+					<param name="height" value="12" />
+				</include>
 			</control>
 			<control type="group">
 				<visible>[Container.Content(albums) | Container.Content(songs) | Container.Content(musicvideos)] + !Window.IsVisible(MyVideoNav.xml)</visible>
@@ -175,26 +214,142 @@
 					<param name="diffuse">diffuse/rounded5-535x535.png</param>
 				</include>
 			</control>
-			<control type="image">
-				<visible>[!Skin.HasSetting(View55HideLogo) + !Skin.HasSetting(View55VideoPreviewWindow)] | [!Skin.HasSetting(View55HideLogo) + Skin.HasSetting(View55VideoPreviewWindow) + !Player.HasVideo]</visible>
-				<bottom>520</bottom>
+
+			<!-- ============================================================ -->
+			<!-- BLOCK 1: NON-EPISODES (Anchored Right & Bottom)              -->
+			<!-- ============================================================ -->
+
+			<!-- STATE 1: BANNER OVERRIDE (High-Res Zoom Method) -->
+			<control type="group">
+				<visible>[[!Skin.HasSetting(View55HideLogo) + !Skin.HasSetting(View55VideoPreviewWindow)] | [!Skin.HasSetting(View55HideLogo) + Skin.HasSetting(View55VideoPreviewWindow) + !Player.HasVideo]] + !Container.Content(episodes) + Skin.HasSetting(View55UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
 				<right>10</right>
-				<width>552</width>
-				<height>214</height>
-				<aspectratio>keep</aspectratio>
-				<fadetime>TextureFadeTime</fadetime>
-				<texture background="true">$VAR[ClearLogoVar]</texture>
+				<bottom>520</bottom>
+				<width>1000</width>
+				<height>185</height>
+				<!-- Scale down to 55% (to match 552px width). Center is pinned to the absolute Bottom-Right corner (1920-10, 1080-520). -->
+				<animation type="Conditional" condition="true">
+					<effect type="zoom" end="55" center="1910,560" time="0" />
+				</animation>
+				<include content="ViewArtwork">
+					<param name="aspect">scale</param>
+					<param name="texturefadetime">TextureFadeTime</param>
+					<param name="art">$VAR[ClearLogoVar]</param>
+					<param name="diffuse">diffuse/rounded5-593x110.png</param>
+					<param name="watchedstatusvisible">false</param>
+				</include>
 			</control>
+
+			<!-- STATE 2: CLEARLOGO -->
+			<control type="group">
+				<visible>[[!Skin.HasSetting(View55HideLogo) + !Skin.HasSetting(View55VideoPreviewWindow)] | [!Skin.HasSetting(View55HideLogo) + Skin.HasSetting(View55VideoPreviewWindow) + !Player.HasVideo]] + !Container.Content(episodes) + [!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(artist.clearlogo))] + ![Skin.HasSetting(View55UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+				<control type="image">
+					<right>10</right>
+					<bottom>520</bottom>
+					<width>552</width>
+					<height>214</height>
+					<aspectratio align="right" aligny="bottom">keep</aspectratio>
+					<fadetime>TextureFadeTime</fadetime>
+					<texture background="true">$VAR[ClearLogoVar]</texture>
+				</control>
+			</control>
+
+			<!-- STATE 3: TITLE FALLBACK -->
+			<control type="group">
+				<visible>[[!Skin.HasSetting(View55HideLogo) + !Skin.HasSetting(View55VideoPreviewWindow)] | [!Skin.HasSetting(View55HideLogo) + Skin.HasSetting(View55VideoPreviewWindow) + !Player.HasVideo]] + !Container.Content(episodes) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(artist.clearlogo)) + ![Skin.HasSetting(View55UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+				<control type="label">
+					<right>10</right>
+					<bottom>520</bottom>
+					<width>552</width>
+					<height>214</height>
+					<font>Font44_Bold</font>
+					<!-- <textcolor>ffffffff</textcolor> -->
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>right</align>
+					<aligny>bottom</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+
+			<!-- ============================================================ -->
+			<!-- BLOCK 2: EPISODES ONLY (Anchored Left & Bottom)              -->
+			<!-- ============================================================ -->
+
+			<!-- STATE 1: BANNER OVERRIDE (High-Res Zoom Method) -->
+			<control type="group">
+				<visible>[[!Skin.HasSetting(View55HideLogo) + !Skin.HasSetting(View55VideoPreviewWindow)] | [!Skin.HasSetting(View55HideLogo) + Skin.HasSetting(View55VideoPreviewWindow) + !Player.HasVideo]] + Container.Content(episodes) + Skin.HasSetting(View55UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
+				<left>10</left>
+				<bottom>377</bottom>
+				<width>1000</width>
+				<height>185</height>
+				<!-- Scale down to 54% (to match 535px width). Center is pinned to the absolute Bottom-Left corner (10, 1080-377). -->
+				<animation type="Conditional" condition="true">
+					<effect type="zoom" end="54" center="10,703" time="0" />
+				</animation>
+				<include content="ViewArtwork">
+					<param name="aspect">scale</param>
+					<param name="texturefadetime">TextureFadeTime</param>
+					<param name="art">$VAR[ClearLogoVar]</param>
+					<param name="diffuse">diffuse/rounded5-593x110.png</param>
+					<param name="watchedstatusvisible">false</param>
+				</include>
+			</control>
+
+			<!-- STATE 2: CLEARLOGO -->
+			<control type="group">
+				<visible>[[!Skin.HasSetting(View55HideLogo) + !Skin.HasSetting(View55VideoPreviewWindow)] | [!Skin.HasSetting(View55HideLogo) + Skin.HasSetting(View55VideoPreviewWindow) + !Player.HasVideo]] + Container.Content(episodes) + [!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(artist.clearlogo))] + ![Skin.HasSetting(View55UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+				<control type="image">
+					<left>10</left>
+					<bottom>377</bottom>
+					<width>535</width>
+					<height>161</height>
+					<aspectratio align="left" aligny="bottom">keep</aspectratio>
+					<fadetime>TextureFadeTime</fadetime>
+					<texture background="true">$VAR[ClearLogoVar]</texture>
+				</control>
+			</control>
+
+			<!-- STATE 3: TITLE FALLBACK -->
+			<control type="group">
+				<visible>[[!Skin.HasSetting(View55HideLogo) + !Skin.HasSetting(View55VideoPreviewWindow)] | [!Skin.HasSetting(View55HideLogo) + Skin.HasSetting(View55VideoPreviewWindow) + !Player.HasVideo]] + Container.Content(episodes) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(artist.clearlogo)) + ![Skin.HasSetting(View55UseBanner) + [!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner))]]</visible>
+				<control type="label">
+					<left>10</left>
+					<bottom>377</bottom>
+					<width>535</width>
+					<height>161</height>
+					<font>Font38_Bold</font>
+					<!-- <textcolor>ffffffff</textcolor> -->
+					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<align>left</align>
+					<aligny>bottom</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+
 			<!-- Info -->
 			<control type="grouplist">
+				<animation effect="slide" end="0,143" condition="Container.Content(episodes)">conditional</animation>
 				<top>585</top>
 				<right>20</right>
 				<width>530</width>
 				<height>796</height>
 				<include>ViewListInfo</include>
 				<control type="textbox">
+					<visible>!Container.Content(episodes)</visible>
 					<top>-3</top>
 					<height>285</height>
+					<font>Font28_Reg_106</font>
+					<label>$VAR[ViewPlotVar]</label>
+					<pagecontrol>60551</pagecontrol>
+					<include>AutoScrollPlot</include>
+				</control>
+				<control type="textbox">
+					<visible>Container.Content(episodes)</visible>
+					<top>-3</top>
+					<height>142</height>
 					<font>Font28_Reg_106</font>
 					<label>$VAR[ViewPlotVar]</label>
 					<pagecontrol>60551</pagecontrol>
@@ -204,6 +359,8 @@
 			<control type="scrollbar" id="60551">
 				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))</visible>
 				<animation effect="slide" end="-5" time="200" condition="Control.HasFocus(60551)">Conditional</animation>
+				<animation effect="slide" end="0,143" condition="Container.Content(episodes)">conditional</animation>
+				<animation effect="height" end="143" condition="Container.Content(episodes)">conditional</animation>
 				<right>-20</right>
 				<top>662</top>
 				<bottom>132</bottom>

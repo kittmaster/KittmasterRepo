@@ -49,12 +49,13 @@
 					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					<visible>Visualisation.Enabled + !Skin.HasSetting(MusicOSDDisableVizOptionsButton)</visible>
 				</control>
-				<control type="radiobutton" id="104">
+				<!-- <control type="radiobutton" id="104">
 					<include content="DialogButtonOSD">
 						<param name="texture" value="buttons/player/visualisation.png" />
 					</include>
+					<onclick>ActivateWindow(Visualisation)</onclick>
 					<visible>!Skin.HasSetting(MusicOSDDisableVizButton)</visible>
-				</control>
+				</control> -->
 				<control type="radiobutton" id="105">
 					<include content="DialogButtonOSD">
 						<param name="texture" value="buttons/player/info.png" />
@@ -221,6 +222,19 @@
 					<visible>VideoPlayer.HasEpg</visible>
 					<visible>MusicPlayer.Content(LiveTV) + !Skin.HasSetting(MusicOSDDisableGuideButton)</visible>
 				</control>
+			</control>
+			<control type="label">
+				<visible>Skin.HasSetting(VideoOSDToolTipsMaster)</visible>
+				<right>20</right>
+				<top>115</top>
+				<!-- 140 pushes it just below the 130px OSD background panel -->
+				<align>right</align>
+				<aligny>center</aligny>
+				<width>1000</width>
+				<height>50</height>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$VAR[OSDHelpTextVar]</label>
+				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
 		<!-- Button To Prevent Menu Popup From Mouse Move Unless At Top Of Screen -->

@@ -406,7 +406,7 @@
 			<property name="widgetTarget.4">videos</property>
 			<property name="widgetPath.4">plugin://plugin.video.themoviedb.helper/?info=all_studios&amp;type=movie&amp;widget=True&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
 			<property name="widgetArtwork.4">landscapeicon</property>
-			<property name="widgetStyle.2">big</property>
+			<property name="widgetStyle.2">medium</property>
 			<property name="widgetLabel.1">true</property>
 			<property name="widgetWatchedStatus.5">false</property>
 			<property name="widgetCaseVideo.3">false</property>
@@ -774,6 +774,8 @@
 			<property name="widgetType.1">tvshows</property>
 			<property name="widgetTarget.1">videos</property>
 			<property name="widgetPath.1">plugin://plugin.video.themoviedb.helper/?info=all_networks&amp;type=tvshow&amp;widget=True&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
+			<property name="widgetArtwork.1">landscapeicon</property>
+			<property name="widgetStyle.1">big</property>
 			<property name="widgetType.2">none</property>
 			<property name="widgetType.3">none</property>
 			<property name="widgetType.4">none</property>
@@ -852,9 +854,7 @@
 			<property name="widgetWatchedStatus.18">false</property>
 			<property name="widgetWatchedStatus.19">false</property>
 			<property name="widgetWatchedStatus.20">false</property>
-			<property name="widgetArtwork.1">portraiticon</property>
 			<property name="widgetArtwork.7">squareicon</property>
-			<property name="widgetStyle.1">medium</property>
 			<property name="widgetStyle.7">medium</property>
 			<property name="widgetLimit.1">20</property>
 			<property name="widgetLimit.2">20</property>
@@ -959,7 +959,7 @@
 			<property name="widgetTarget.13" />
 			<property name="widgetPath.13">$INCLUDE[skinshortcuts-template-SystemNetwork]</property>
 			<property name="widgetLimit.12">$NUMBER[50]</property>
-			<property name="widgetStyle.1">medium</property>
+			<property name="widgetStyle.1">big</property>
 			<property name="widget.14">addon</property>
 			<property name="widgetName.14">Version14</property>
 			<property name="widgetType.14">system</property>
@@ -1001,6 +1001,8 @@
 			<property name="widgetTarget.5" />
 			<property name="widgetPath.5">$INCLUDE[skinshortcuts-template-SystemContent]</property>
 			<property name="widgetLabel.12">true</property>
+			<property name="widgetStyle.3">small</property>
+			<property name="widgetStyle.4">big</property>
 			<property name="widgetCaseMusic.1">false</property>
 			<property name="widgetCaseVideo.1">false</property>
 			<property name="widgetCaseMusic.2">false</property>
@@ -1082,8 +1084,6 @@
 			<property name="widgetArtwork.19">squareicon</property>
 			<property name="widgetArtwork.20">squareicon</property>
 			<property name="widgetStyle.2">medium</property>
-			<property name="widgetStyle.3">medium</property>
-			<property name="widgetStyle.4">medium</property>
 			<property name="widgetStyle.5">medium</property>
 			<property name="widgetStyle.6">medium</property>
 			<property name="widgetStyle.8">medium</property>
@@ -1903,8 +1903,8 @@
 			<property name="labelID">575</property>
 			<property name="background">playlist</property>
 			<property name="backgroundPlaylist">special://skin/extras/playlists/01movies/inprogress.xsp</property>
-			<onclick>ActivateWindow(videos,C:\Appz\Kodi_Portables\Omega\portable_data\addons\script.skin.madnox\resources\extras/playlists/01movies/inprogress.xsp,return)</onclick>
-			<property name="path">ActivateWindow(videos,C:\Appz\Kodi_Portables\Omega\portable_data\addons\script.skin.madnox\resources\extras/playlists/01movies/inprogress.xsp,return)</property>
+			<onclick>ActivateWindow(videos,special://skin/extras/playlists/01movies/inprogress.xsp,return)</onclick>
+			<property name="path">ActivateWindow(videos,special://skin/extras/playlists/01movies/inprogress.xsp,return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -2745,8 +2745,8 @@
 			<property name="labelID">575</property>
 			<property name="background">playlist</property>
 			<property name="backgroundPlaylist">special://skin/extras/playlists/01movies/inprogress.xsp</property>
-			<onclick>ActivateWindow(videos,C:\Appz\Kodi_Portables\Omega\portable_data\addons\script.skin.madnox\resources\extras/playlists/01movies/inprogress.xsp,return)</onclick>
-			<property name="path">ActivateWindow(videos,C:\Appz\Kodi_Portables\Omega\portable_data\addons\script.skin.madnox\resources\extras/playlists/01movies/inprogress.xsp,return)</property>
+			<onclick>ActivateWindow(videos,special://skin/extras/playlists/01movies/inprogress.xsp,return)</onclick>
+			<property name="path">ActivateWindow(videos,special://skin/extras/playlists/01movies/inprogress.xsp,return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -2831,8 +2831,8 @@
 			<property name="labelID">575</property>
 			<property name="background">playlist</property>
 			<property name="backgroundPlaylist">special://skin/extras/playlists/01movies/inprogress.xsp</property>
-			<onclick>ActivateWindow(videos,C:\Appz\Kodi_Portables\Omega\portable_data\addons\script.skin.madnox\resources\extras/playlists/01movies/inprogress.xsp,return)</onclick>
-			<property name="path">ActivateWindow(videos,C:\Appz\Kodi_Portables\Omega\portable_data\addons\script.skin.madnox\resources\extras/playlists/01movies/inprogress.xsp,return)</property>
+			<onclick>ActivateWindow(videos,special://skin/extras/playlists/01movies/inprogress.xsp,return)</onclick>
+			<property name="path">ActivateWindow(videos,special://skin/extras/playlists/01movies/inprogress.xsp,return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -4640,23 +4640,22 @@
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<include content="WidgetInfo">
 				<param name="label">$ADDON[plugin.video.themoviedb.helper 32189]</param>
-				<param name="infoposition">339</param>
+				<param name="infoposition">357</param>
 				<param name="infovisible">true</param>
 				<param name="visible">String.IsEmpty(Window(home).Property(WidgetFocus7))</param>
 				</include>
 			<control type="button" id="1607">
 				<include>WidgetNextButton</include>
 				<onclick condition="false">SetProperty(WidgetFocus7,2,home)</onclick>
-				<onclick condition="false">SetFocus(160072)</onclick>
 				</control>
 			<control type="panel" id="160071">
-				<height>339</height>
+				<height>357</height>
 				<onup condition="false">SetProperty(WidgetFocus7,2,home)</onup>
 				<onup condition="false">SetFocus(160072)</onup>
 				<include content="WidgetContainer">
 					<param name="id">160071</param>
-					<param name="containerwidth">232.5</param>
-					<param name="diffuse">diffuse/rounded5-212x319.png</param>
+					<param name="containerwidth">620</param>
+					<param name="diffuse">diffuse/rounded5-445x250.png</param>
 					<param name="artwork">$VAR[PosterVar]</param>
 					<param name="border">10</param>
 					<param name="artworkaspect">stretch</param>
@@ -4672,7 +4671,7 @@
 					<param name="label2position">46</param>
 					<param name="label3position">12</param>
 					<param name="studioiconvisible">true</param>
-					<param name="iconstudioheight">24</param>
+					<param name="iconstudioheight">27</param>
 					<param name="logofallback">false</param>
 					<param name="landscapefallback">false</param>
 					<param name="watchedstatus">false</param>
@@ -4692,22 +4691,21 @@
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13000)</visible>
 			<include content="WidgetInfo">
 				<param name="label">Battery1</param>
-				<param name="infoposition">310</param>
+				<param name="infoposition">372</param>
 				<param name="infovisible">true</param>
 				<param name="visible">String.IsEmpty(Window(home).Property(WidgetFocus8))</param>
 				</include>
 			<control type="button" id="1607">
 				<include>WidgetNextButton</include>
 				<onclick condition="true">SetProperty(WidgetFocus8,2,home)</onclick>
-				<onclick condition="true">SetFocus(160082)</onclick>
 				</control>
 			<control type="panel" id="160081">
-				<height>310</height>
+				<height>372</height>
 				<onup condition="true">SetProperty(WidgetFocus8,2,home)</onup>
 				<onup condition="true">SetFocus(160082)</onup>
 				<include content="WidgetContainer">
 					<param name="id">160081</param>
-					<param name="containerwidth">310</param>
+					<param name="containerwidth">372</param>
 					<param name="diffuse">diffuse/rounded5-290x290.png</param>
 					<param name="artwork">$VAR[PosterVar]</param>
 					<param name="border">10</param>
@@ -4724,7 +4722,7 @@
 					<param name="label2position">46</param>
 					<param name="label3position">12</param>
 					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
+					<param name="iconstudioheight">27</param>
 					<param name="logofallback">false</param>
 					<param name="landscapefallback">false</param>
 					<param name="watchedstatus">false</param>
@@ -4859,7 +4857,7 @@
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<include content="WidgetInfo">
 				<param name="label">135</param>
-				<param name="infoposition">388</param>
+				<param name="infoposition">339</param>
 				<param name="infovisible">true</param>
 				<param name="visible">String.IsEqual(Window(home).Property(WidgetFocus4),2)</param>
 				</include>
@@ -4869,14 +4867,14 @@
 				<onclick condition="!true">ClearProperty(WidgetFocus4,home)</onclick>
 				</control>
 			<control type="panel" id="160042">
-				<height>388</height>
+				<height>339</height>
 				<onup condition="true">SetProperty(WidgetFocus4,3,home)</onup>
 				<onup condition="true">SetFocus(160043)</onup>
 				<onup condition="!true">ClearProperty(WidgetFocus4,home)</onup>
 				<onup condition="!true">SetFocus(160041)</onup>
 				<include content="WidgetContainer">
 					<param name="id">160042</param>
-					<param name="containerwidth">265.7</param>
+					<param name="containerwidth">232.5</param>
 					<param name="diffuse">diffuse/rounded5-212x319.png</param>
 					<param name="artwork">$VAR[PosterVar]</param>
 					<param name="border">10</param>
@@ -4893,7 +4891,7 @@
 					<param name="label2position">46</param>
 					<param name="label3position">12</param>
 					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">27</param>
+					<param name="iconstudioheight">24</param>
 					<param name="logofallback">false</param>
 					<param name="landscapefallback">false</param>
 					<param name="watchedstatus">false</param>
@@ -5082,7 +5080,7 @@
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13000)</visible>
 			<include content="WidgetInfo">
 				<param name="label">Memory3</param>
-				<param name="infoposition">310</param>
+				<param name="infoposition">265</param>
 				<param name="infovisible">true</param>
 				<param name="visible">String.IsEqual(Window(home).Property(WidgetFocus8),3)</param>
 				</include>
@@ -5092,14 +5090,14 @@
 				<onclick condition="!true">ClearProperty(WidgetFocus8,home)</onclick>
 				</control>
 			<control type="panel" id="160083">
-				<height>310</height>
+				<height>265</height>
 				<onup condition="true">SetProperty(WidgetFocus8,4,home)</onup>
 				<onup condition="true">SetFocus(160084)</onup>
 				<onup condition="!true">ClearProperty(WidgetFocus8,home)</onup>
 				<onup condition="!true">SetFocus(160081)</onup>
 				<include content="WidgetContainer">
 					<param name="id">160083</param>
-					<param name="containerwidth">310</param>
+					<param name="containerwidth">265.7</param>
 					<param name="diffuse">diffuse/rounded5-290x290.png</param>
 					<param name="artwork">$VAR[PosterVar]</param>
 					<param name="border">10</param>
@@ -5116,7 +5114,7 @@
 					<param name="label2position">46</param>
 					<param name="label3position">12</param>
 					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
+					<param name="iconstudioheight">21</param>
 					<param name="logofallback">false</param>
 					<param name="landscapefallback">false</param>
 					<param name="watchedstatus">false</param>
@@ -5197,7 +5195,7 @@
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13000)</visible>
 			<include content="WidgetInfo">
 				<param name="label">Storage4</param>
-				<param name="infoposition">310</param>
+				<param name="infoposition">372</param>
 				<param name="infovisible">true</param>
 				<param name="visible">String.IsEqual(Window(home).Property(WidgetFocus8),4)</param>
 				</include>
@@ -5207,14 +5205,14 @@
 				<onclick condition="!true">ClearProperty(WidgetFocus8,home)</onclick>
 				</control>
 			<control type="panel" id="160084">
-				<height>310</height>
+				<height>372</height>
 				<onup condition="true">SetProperty(WidgetFocus8,5,home)</onup>
 				<onup condition="true">SetFocus(160085)</onup>
 				<onup condition="!true">ClearProperty(WidgetFocus8,home)</onup>
 				<onup condition="!true">SetFocus(160081)</onup>
 				<include content="WidgetContainer">
 					<param name="id">160084</param>
-					<param name="containerwidth">310</param>
+					<param name="containerwidth">372</param>
 					<param name="diffuse">diffuse/rounded5-290x290.png</param>
 					<param name="artwork">$VAR[PosterVar]</param>
 					<param name="border">10</param>
@@ -5231,7 +5229,7 @@
 					<param name="label2position">46</param>
 					<param name="label3position">12</param>
 					<param name="studioiconvisible">false</param>
-					<param name="iconstudioheight">24</param>
+					<param name="iconstudioheight">27</param>
 					<param name="logofallback">false</param>
 					<param name="landscapefallback">false</param>
 					<param name="watchedstatus">false</param>

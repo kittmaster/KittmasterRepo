@@ -99,7 +99,7 @@
 				<width>567</width>
 				<!-- Static Poster Art (Visible only when trailer is NOT playing) -->
 				<control type="group">
-					<visible>String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(IsPlayingTrailer)) + !Container.Content(episodes)</visible>
 					<control type="group">
 						<visible>!Skin.HasSetting(View56VideoCase)</visible>
 						<control type="group">
@@ -129,10 +129,40 @@
 						<param name="height" value="12" />
 					</include>
 				</control>
+				<!-- Episode Art: black fill with landscape thumb centered, replaces poster -->
+				<control type="group">
+					<visible>String.IsEmpty(Window(Home).Property(IsPlayingTrailer)) + Container.Content(episodes)</visible>
+					<!-- Rounded black fill covering full panel area -->
+					<control type="image">
+						<width>567</width>
+						<aspectratio>stretch</aspectratio>
+						<texture diffuse="diffuse/rounded5-547x820.png">colors/black80.png</texture>
+					</control>
+					<!-- Landscape thumb centered vertically -->
+					<control type="group">
+						<top>260</top>
+						<width>567</width>
+						<height>319</height>
+						<include content="ViewArtwork">
+							<param name="art">$VAR[ThumbVar]</param>
+							<param name="diffuse">diffuse/rounded5-535x535.png</param>
+						</include>
+						<include content="Object_ProgressBar">
+							<param name="left" value="25" />
+							<param name="right" value="25" />
+							<param name="bottom" value="30" />
+							<param name="height" value="12" />
+						</include>
+					</control>
+				</control>
 				<!-- Video Player Container (Visible only WHEN trailer IS playing) -->
 				<control type="group">
 					<visible>!String.IsEmpty(Window(Home).Property(IsPlayingTrailer))</visible>
-					<!-- Animated Fanart Transition -->
+					<!-- Black fill always behind everything -->
+					<control type="image">
+						<texture>colors/black.png</texture>
+					</control>
+					<!-- Animated Fanart Transition (fanart scales behind 16:9 video) -->
 					<control type="group">
 						<visible>Skin.HasSetting(View56AnimatedFanart)</visible>
 						<control type="image">
@@ -142,16 +172,15 @@
 						<control type="videowindow">
 							<visible>Player.HasVideo</visible>
 							<animation effect="fade" time="400" delay="200">Visible</animation>
+							<aspectratio>keep</aspectratio>
 							<colordiffuse>FFA0A0A0</colordiffuse>
 						</control>
 					</control>
 					<!-- Standard Black Background (if Animated Fanart is off) -->
 					<control type="group">
 						<visible>!Skin.HasSetting(View56AnimatedFanart)</visible>
-						<control type="image">
-							<texture>colors/black.png</texture>
-						</control>
 						<control type="videowindow">
+							<aspectratio>keep</aspectratio>
 							<colordiffuse>FFA0A0A0</colordiffuse>
 						</control>
 					</control>
@@ -215,6 +244,8 @@
 					<width>732</width>
 					<height>$PARAM[height]</height>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+					<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 					<onleft>9050</onleft>
 					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<onright>6056</onright>

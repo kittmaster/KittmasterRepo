@@ -42,6 +42,42 @@
 					<param name="heighttexture">200</param>
 				</include>
 			</control>
+			<!-- Clearart Is Visible -->
+			<control type="label">
+				<visible>!Skin.HasSetting(VideoOSDDisableGenreInfo) + !Skin.HasSetting(VideoOSDDisableClearArt) + !VideoPlayer.HasEpg + [!String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Player.Art(artist.clearart)) | !String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.poster)) | !String.IsEmpty(Player.Art(artist.clearlogo))] + [Skin.String(VideoOSDInfo,off) | ![Skin.String(VideoOSDInfo,persistant) | Player.ShowInfo]]</visible>
+				<animation effect="fade" time="200">Visible</animation>
+				<animation effect="fade" end="0" time="200">Hidden</animation>
+				<animation effect="fade" end="100" delay="480" time="0" condition="!Player.HasPerformedSeek(3)">visible</animation>
+				<animation effect="slide" end="0,-84" time="480" condition="Window.IsActive(videoosd) + !Window.IsActive(1111)">Conditional</animation>
+				<left>440</left>
+				<bottom>110</bottom>
+				<width>800</width>
+				<height>40</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Font21_Cond_Bold</font>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$INFO[VideoPlayer.Genre]</label>
+			</control>
+
+			<!-- Clearart Is Hidden / Missing -->
+			<control type="label">
+				<visible>!Skin.HasSetting(VideoOSDDisableGenreInfo) + [Skin.HasSetting(VideoOSDDisableClearArt) | VideoPlayer.HasEpg | [String.IsEmpty(Player.Art(clearart)) + String.IsEmpty(Player.Art(tvshow.clearart)) + String.IsEmpty(Player.Art(artist.clearart)) + String.IsEmpty(Player.Art(clearlogo)) + String.IsEmpty(Player.Art(tvshow.poster)) + String.IsEmpty(Player.Art(artist.clearlogo))]] + [Skin.String(VideoOSDInfo,off) | ![Skin.String(VideoOSDInfo,persistant) | Player.ShowInfo]]</visible>
+				<animation effect="fade" time="200">Visible</animation>
+				<animation effect="fade" end="0" time="200">Hidden</animation>
+				<animation effect="fade" end="100" delay="480" time="0" condition="!Player.HasPerformedSeek(3)">visible</animation>
+				<animation effect="slide" end="0,-84" time="480" condition="Window.IsActive(videoosd) + !Window.IsActive(1111)">Conditional</animation>
+				<left>20</left>
+				<bottom>110</bottom>
+				<width>800</width>
+				<height>40</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Font21_Cond_Bold</font>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$INFO[VideoPlayer.Genre]</label>
+			</control>
+
 			<control type="group">
 				<left>25</left>
 				<right>25</right>

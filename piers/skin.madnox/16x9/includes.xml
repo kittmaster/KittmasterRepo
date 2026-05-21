@@ -22,12 +22,18 @@
 	<include file="Includes_Topbar.xml" />
 	<include file="View_050_CoverList.xml" />
 	<include file="View_051_SimpleList.xml" />
+	<include file="View_052_ShowcaseHero.xml" />
 	<include file="View_053_InfoList1.xml" />
 	<include file="View_054_InfoList2.xml" />
 	<include file="View_055_LowList.xml" />
 	<include file="View_056_3Panel.xml" />
 	<include file="View_057_3PanelSquare.xml" />
 	<include file="View_058_RightList.xml" />
+	<include file="View_059_Spotlight.xml" />
+	<include file="View_060_CinematicShelf.xml" />
+	<include file="View_061_Editorial.xml" />
+	<include file="View_062_Immersive.xml" />
+	<include file="View_063_Stage.xml" />
 	<include file="View_500_Portrait.xml" />
 	<include file="View_501_Square.xml" />
 	<include file="View_502_Banner.xml" />
@@ -694,7 +700,7 @@
 			<item>
 				<label>$INFO[Window(weather).Property(Hourly.$PARAM[item].Time)]$INFO[Window(weather).Property(Hourly.$PARAM[item].LongDate), ]</label>
 				<label2>$INFO[Window(weather).Property(Hourly.$PARAM[item].Outlook)][CR]$INFO[Window(weather).Property(Hourly.$PARAM[item].Temperature)]</label2>
-				<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Daily.$PARAM[item].FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+				<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.$PARAM[item].FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
 				<property name="label3">$INFO[Window.Property(Hourly.$PARAM[item].Precipitation),$LOCALIZE[1448] ][CR]$INFO[Window.Property(Hourly.$PARAM[item].WindSpeed)]$INFO[Window.Property(Hourly.$PARAM[item].WindDirection),  ]$INFO[Window.Property(Hourly.$PARAM[item].WindDegree),  ,]$INFO[Window.Property(Hourly.$PARAM[item].Humidity),[CR]$LOCALIZE[406] ]</property>
 				<visible>!String.IsEmpty(Window(weather).Property(Hourly.$PARAM[item].Time))</visible>
 			</item>
@@ -2424,4 +2430,124 @@
 		<value condition="!String.IsEmpty(Skin.String(WikiSection.color))">$INFO[Skin.String(WikiSection.color)]</value>
 		<value>FF161515</value>
 	</variable>
+
+	<variable name="OSDHelpTextVar">
+		<!-- ========================================== -->
+		<!-- 1. MUSIC OSD SPECIFIC CONTROLS             -->
+		<!-- ========================================== -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(101)">$LOCALIZE[31337]</value>
+		<!-- Music Settings -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(102)">$LOCALIZE[31334]</value>
+		<!-- Visualisation presets -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(103)">$LOCALIZE[31335]</value>
+		<!-- Visualisation options -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(104)">$LOCALIZE[250]</value>
+		<!-- Select Visualisation -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(105)">$LOCALIZE[19033]</value>
+		<!-- Info -->
+
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(301)">$LOCALIZE[559]</value>
+		<!-- Playlist -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(302) + Playlist.IsRepeatOne">$LOCALIZE[596]</value>
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(302) + Playlist.IsRepeat">$LOCALIZE[597]</value>
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(302)">$LOCALIZE[595]</value>
+		<!-- Repeat -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(304) + Playlist.IsRandom">$LOCALIZE[590]: $LOCALIZE[16041]</value>
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(304)">$LOCALIZE[590]: $LOCALIZE[16039]</value>
+		<!-- Random -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(306)">$LOCALIZE[38023]</value>
+		<!-- Rating -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(307)">$LOCALIZE[24013]</value>
+		<!-- Lyrics -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(308)">$LOCALIZE[19287]</value>
+		<!-- Channels -->
+		<value condition="Window.IsActive(musicosd) + Control.HasFocus(309)">$LOCALIZE[19069]</value>
+		<!-- Guide -->
+
+		<!-- ========================================== -->
+		<!-- 2. VIDEO OSD SPECIFIC CONTROLS             -->
+		<!-- ========================================== -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(101)">$LOCALIZE[13395]</value>
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(102)">$LOCALIZE[157] [LOWERCASE]$LOCALIZE[21483] $LOCALIZE[5][/LOWERCASE]</value>
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(103)">3D Mode</value>
+
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(301) + Playlist.IsRepeatOne">$LOCALIZE[596]</value>
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(301) + Playlist.IsRepeat">$LOCALIZE[597]</value>
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(301)">$LOCALIZE[595]</value>
+		<!-- Repeat -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(303) + Playlist.IsRandom">$LOCALIZE[590]: $LOCALIZE[16041]</value>
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(303)">$LOCALIZE[590]: $LOCALIZE[16039]</value>
+		<!-- Random -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(305)">$LOCALIZE[19033]</value>
+		<!-- Info -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(306)">$LOCALIZE[298]</value>
+		<!-- Bookmarks -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(307)">$LOCALIZE[460]</value>
+		<!-- Audio -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(308)">$LOCALIZE[24012]</value>
+		<!-- Subtitles -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(309)">$LOCALIZE[19287]</value>
+		<!-- Channels -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(310)">$LOCALIZE[19069]</value>
+		<!-- Guide -->
+		<value condition="Window.IsActive(videoosd) + Control.HasFocus(311)">$LOCALIZE[23050]</value>
+		<!-- Teletext -->
+
+		<!-- ========================================== -->
+		<!-- 3. UNIVERSAL PLAYBACK FALLBACK (Both OSDs) -->
+		<!-- ========================================== -->
+		<value condition="Control.HasFocus(201) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[19029] $LOCALIZE[31452]</value>
+		<value condition="Control.HasFocus(202) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[19029] $LOCALIZE[31539]</value>
+		<value condition="Control.HasFocus(203) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[210]</value>
+		<value condition="Control.HasFocus(204) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31199]</value>
+		<value condition="Control.HasFocus(205) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31536]</value>
+		<value condition="Control.HasFocus(206) + Player.Paused + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[208]</value>
+		<value condition="Control.HasFocus(206) + !Player.Paused + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31535]</value>
+		<value condition="Control.HasFocus(208) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31198]</value>
+		<value condition="Control.HasFocus(209) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[209]</value>
+		<value condition="Control.HasFocus(210) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[264]</value>
+	</variable>
+
+	<!-- <variable name="VideoOSDHelpTextVar">
+		<value condition="Control.HasFocus(101)">$LOCALIZE[13395]</value>
+		<value condition="Control.HasFocus(102)">$LOCALIZE[157] [LOWERCASE]$LOCALIZE[21483] $LOCALIZE[5][/LOWERCASE]</value>
+
+		<value condition="Control.HasFocus(201) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[19029] $LOCALIZE[31452]</value>
+		<value condition="Control.HasFocus(202) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[19029] $LOCALIZE[31539]</value>
+		<value condition="Control.HasFocus(203) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[210]</value>
+		<value condition="Control.HasFocus(204) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31199]</value>
+		<value condition="Control.HasFocus(205) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31536]</value>
+		<value condition="Control.HasFocus(206) + Player.Paused + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[208]</value>
+		<value condition="Control.HasFocus(206) + !Player.Paused + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31535]</value>
+		<value condition="Control.HasFocus(208) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31198]</value>
+		<value condition="Control.HasFocus(209) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[209]</value>
+		<value condition="Control.HasFocus(210) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[264]</value>
+
+		<value condition="Control.HasFocus(301) + Playlist.IsRepeatOne">$LOCALIZE[596]</value>
+		<value condition="Control.HasFocus(301) + Playlist.IsRepeat">$LOCALIZE[597]</value>
+		<value condition="Control.HasFocus(301)">$LOCALIZE[595]</value>
+		<value condition="Control.HasFocus(303)">$LOCALIZE[590]</value>
+		<value condition="Control.HasFocus(305)">$LOCALIZE[19033]</value>
+		<value condition="Control.HasFocus(306)">$LOCALIZE[298]</value>
+		<value condition="Control.HasFocus(307)">$LOCALIZE[460]</value>
+		<value condition="Control.HasFocus(308)">$LOCALIZE[24012]</value>
+		<value condition="Control.HasFocus(309)">$LOCALIZE[19287]</value>
+		<value condition="Control.HasFocus(310)">$LOCALIZE[19069]</value>
+
+		Old imported trash, delete upon completion
+		<value condition="Control.HasFocus(87) + !Player.Paused">$LOCALIZE[31054]</value>
+		<value condition="Control.HasFocus(87) + [Player.Paused + Window.IsVisible(videoosd)]">$LOCALIZE[31055]</value>
+		<value condition="Control.HasFocus(608)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
+		<value condition="Control.HasFocus(804)">$LOCALIZE[33061]</value>
+		<value condition="Control.HasFocus(70040)">$LOCALIZE[19019]</value>
+		<value condition="Control.HasFocus(70042)">$LOCALIZE[31065]</value>
+		<value condition="Control.HasFocus(70047)">$LOCALIZE[36501]</value>
+		<value condition="Control.HasFocus(70050)">$LOCALIZE[29900]</value>
+		<value condition="Control.HasFocus(70051)">$LOCALIZE[31066]</value>
+		<value condition="Control.HasFocus(70052)">$LOCALIZE[31033]$INFO[MusicPlayer.UserRating, : ]</value>
+		<value condition="Control.HasFocus(70053)">$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</value>
+		<value condition="Control.HasFocus(70054) + Playlist.IsRandom">$LOCALIZE[590]: $LOCALIZE[16041]</value>
+		<value condition="Control.HasFocus(70054)">$LOCALIZE[590]: $LOCALIZE[16039]</value>
+		<value condition="Control.HasFocus(70055)">$LOCALIZE[24013]</value>
+	</variable> -->
 </includes>

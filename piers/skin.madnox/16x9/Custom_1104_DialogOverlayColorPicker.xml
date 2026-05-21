@@ -3,6 +3,15 @@
 	<defaultcontrol>6</defaultcontrol>
 	<controls>
 		<control type="group">
+			<!-- SOLID BACKGROUND TO PREVENT TEXT BLEED-THROUGH -->
+			<control type="image">
+				<width>1253</width>
+				<height>855</height>
+				<!-- Use the skin's native dialog shape with an opaque color to block bleed-through perfectly -->
+				<texture colordiffuse="FF080808" border="40">$VAR[DialogStyleVar]</texture>
+				<animation effect="fade" time="400">WindowOpen</animation>
+			</control>
+
 			<include content="DialogBackground">
 				<description>Window Header Label</description>
 				<param name="width" value="1253" />
@@ -25,12 +34,9 @@
 
 			<control type="image">
 				<left>1052</left>
-				<!-- <bottom>90</bottom> -->
 				<top>14</top>
 				<width>161.5</width>
 				<height>86</height>
-				<!-- <width>323</width> -->
-				<!-- <height>172</height> -->
 				<aspectratio>keep</aspectratio>
 				<texture>icons/logo.png</texture>
 			</control>
@@ -47,8 +53,6 @@
 					<description>Cancel Button</description>
 					<width>350</width>
 					<include>DialogButton</include>
-					<!-- <label>$LOCALIZE[13012] / $LOCALIZE[222]</label> -->
-					<!-- <label>$LOCALIZE[222]</label> -->
 					<label>$LOCALIZE[13012]</label>
 					<onclick>close</onclick>
 				</control>
@@ -69,8 +73,6 @@
 					<include>DialogButton</include>
 					<label>$LOCALIZE[424] [LOWERCASE]$LOCALIZE[31025][/LOWERCASE]</label>
 					<onclick>Skin.SetFile(mycolorfile,*.xml,special://home/addons/resource.images.skin.madnox/resources/colors/)</onclick>
-					<!-- We'll reload colors in Python after user picks a new file. 
-                         This button won't automatically reload them from here. -->
 				</control>
 
 				<!-- None (reset) -->
@@ -142,7 +144,6 @@
 						<ondown>SetFocus(9)</ondown>
 						<onclick>Skin.SetString($INFO[Window(Home).Property(Reset.Color)],$VAR[Def_Percent_To_Hex_Color])</onclick>
 						<onclick>SetProperty(ActiveControlPanelNameValue,$VAR[Def_Percent_To_Hex_Color],Home)</onclick>
-						<!-- Let Python Code Handle The Same Click, To Refresh The Dialog Label -->
 						<onclick>SetFocus(3203)</onclick>
 					</control>
 				</control>

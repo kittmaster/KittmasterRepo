@@ -47,6 +47,8 @@
 				</include>
 				<control type="$PARAM[listtype]" id="503">
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+					<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 					<top>656</top>
 					<left>-212</left>
 					<width>2132</width>

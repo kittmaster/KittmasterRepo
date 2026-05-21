@@ -88,7 +88,7 @@
 						<description>What's new</description>
 						<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
 						<label></label>
-						<label2>What's new</label2>
+						<label2>$LOCALIZE[24054]</label2>
 						<onclick>SetProperty(TextViewer_Header,$LOCALIZE[31141] $INFO[ListItem.AddonVersion],home)</onclick>
 						<onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
 						<onclick>ActivateWindow(1131)</onclick>

@@ -5,8 +5,10 @@
 	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 	<!-- Start the ratings processing script in background monitor mode for the Library view -->
 	<onload>RunScript(script.skin.madnox, action=process_ratings, mode=monitor, window_id=videos)</onload>
+	<!-- Global Collection View Sync: enforce saved view on every container load -->
+	<onload>RunScript(script.skin.madnox, action=collection_view_sync, mode=apply)</onload>
 	<defaultcontrol always="true">50</defaultcontrol>
-	<views>50,51,53,54,55,56,57,58,500,501,502,503,504,505,506,507,508,509,510,511,512,520,521,522,523,530,531,532,533,540,541,542,543</views>
+	<views>50,51,52,53,54,55,56,57,58,59,60,61,62,63,500,501,502,503,504,505,506,507,508,509,510,511,512,520,521,522,523,530,531,532,533,540,541,542,543</views>
 	<menucontrol>9050</menucontrol>
 	<controls>
 		<!-- Background -->
@@ -124,6 +126,18 @@
 			<include condition="!Skin.HasSetting(DisableViewSquareWall)">View541SquareWall</include>
 			<include condition="!Skin.HasSetting(DisableViewBannerWall)">View542BannerWall</include>
 			<include condition="!Skin.HasSetting(DisableViewLandscapeWall)">View543LandscapeWall</include>
+			<!-- Showcase-->
+			<include condition="!Skin.HasSetting(DisableViewShowcaseHero)">View52ShowcaseHero</include>
+			<!-- Spotlight -->
+			<include condition="!Skin.HasSetting(DisableViewSpotlight)">View59Spotlight</include>
+			<!-- Cinematic -->
+			<include condition="!Skin.HasSetting(DisableViewCinematicShelf)">View60CinematicShelf</include>
+			<!-- Editorial -->
+			<include condition="!Skin.HasSetting(DisableViewEditorial)">View61Editorial</include>
+			<!-- Immersive -->
+			<include condition="!Skin.HasSetting(DisableViewImmersive)">View62Immersive</include>
+			<!-- Stage -->
+			<include condition="!Skin.HasSetting(DisableViewStage)">View63Stage</include>
 			<!-- Studio Logo Check If Image Exists -->
 			<control type="image" id="811112">
 				<include>HiddenObject</include>

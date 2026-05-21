@@ -271,6 +271,14 @@
 							<label>$LOCALIZE[31041]</label>
 							<include>SettingsLabel</include>
 						</control>
+						<!-- Vertical sidebar menu toggle (Estuary-style) -->
+						<control type="radiobutton" id="236">
+							<label>$LOCALIZE[31537] [LOWERCASE]$LOCALIZE[10822][/LOWERCASE]: $VAR[EnableDisableLabel-MainMenuVertical]</label>
+							<onclick>Skin.ToggleSetting(MainMenuVertical)</onclick>
+							<onclick>ClearProperty(VertSubOpen,Home)</onclick>
+							<selected>Skin.HasSetting(MainMenuVertical)</selected>
+							<include>SettingsRadioButton</include>
+						</control>
 						<control type="button" id="231">
 							<label>$LOCALIZE[736]</label>
 							<label2>$VAR[MainMenuStyleLabelVar]</label2>
@@ -1499,7 +1507,7 @@
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="624">
-							<label>$LOCALIZE[31444] [LOWERCASE]$LOCALIZE[29909] $LOCALIZE[536][/LOWERCASE]</label>
+							<label>Lynxstrike's [LOWERCASE]$LOCALIZE[31444] $LOCALIZE[29909] $LOCALIZE[536][/LOWERCASE]</label>
 							<label2>$VAR[AddonColouredStudiosVar]</label2>
 							<onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>
 							<include>SettingsRadioButton</include>
@@ -1541,7 +1549,7 @@
 							<include>SettingsRadioButton</include>
 						</control>
 					</control>
-					<!-- Artwork description -->
+					<!-- Artwork Description -->
 					<control type="textbox">
 						<visible>Container(7000).Hasfocus(6)</visible>
 						<left>460</left>
@@ -1567,126 +1575,7 @@
 							<label>$LOCALIZE[31124]</label>
 							<include>SettingsLabel</include>
 						</control>
-						<control type="button" id="714">
-							<label>$LOCALIZE[31481]</label>
-							<label2>$VAR[AddonMadnoxSkinServiceVar]</label2>
-							<onclick condition="!System.HasAddon(script.skin.madnox)">InstallAddon(script.skin.madnox)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.skin.madnox)">EnableAddon(script.skin.madnox)</onclick>
-							<onclick condition="System.HasAddon(script.skin.madnox)">Addon.OpenSettings(script.skin.madnox)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="715">
-							<label>$LOCALIZE[31521]</label>
-							<label2>$VAR[AddonMadnoxSkinImagesServiceVar]</label2>
-							<onclick condition="!System.HasAddon(resource.images.skin.madnox)">InstallAddon(resource.images.skin.madnox)</onclick>
-							<onclick condition="!System.AddonIsEnabled(resource.images.skin.madnox)">EnableAddon(resource.images.skin.madnox)</onclick>
-							<onclick condition="System.HasAddon(resource.images.skin.madnox)">Addon.OpenSettings(resource.images.skin.madnox)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
 						<control type="button" id="702">
-							<label>$LOCALIZE[166] [LOWERCASE]$LOCALIZE[111][/LOWERCASE]</label>
-							<label2>$VAR[AddonSkinShortcutsVar]</label2>
-							<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onclick>
-							<onclick condition="System.HasAddon(script.skinshortcuts)">Addon.OpenSettings(script.skinshortcuts)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="705">
-							<label>$LOCALIZE[31446] [LOWERCASE]$LOCALIZE[31447] $LOCALIZE[424] $LOCALIZE[31445][/LOWERCASE]</label>
-							<label2>$VAR[AddonResourceSelectVar]</label2>
-							<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
-							<onclick condition="System.HasAddon(script.image.resource.select)">Addon.OpenSettings(script.image.resource.select)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="706">
-							<label>$LOCALIZE[166] variables</label>
-							<label2>$VAR[AddonSkinVariablesVar]</label2>
-							<onclick condition="!System.HasAddon(script.skinvariables)">InstallAddon(script.skinvariables)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.skinvariables)">EnableAddon(script.skinvariables)</onclick>
-							<onclick condition="System.HasAddon(script.skinvariables)">Addon.OpenSettings(script.skinvariables)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="707">
-							<label>TMDb helper</label>
-							<label2>$VAR[AddonTMDbHelperVar]</label2>
-							<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
-							<onclick condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">EnableAddon(plugin.video.themoviedb.helper)</onclick>
-							<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">Addon.OpenSettings(plugin.video.themoviedb.helper)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="708">
-							<label>Wikipedia</label>
-							<label2>$VAR[AddonWikipediaVar]</label2>
-							<onclick condition="!System.HasAddon(script.wikipedia)">InstallAddon(script.wikipedia)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.wikipedia)">EnableAddon(script.wikipedia)</onclick>
-							<onclick condition="System.HasAddon(script.wikipedia)">Addon.OpenSettings(script.wikipedia)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="709">
-							<label>$LOCALIZE[20338] [LOWERCASE]$LOCALIZE[515] $LOCALIZE[536] $LOCALIZE[19662][/LOWERCASE]</label>
-							<label2>$VAR[AddonMovieGenreIconsBW]</label2>
-							<onclick condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">InstallAddon(resource.images.moviegenreicons.filmstrip-hd.bw)</onclick>
-							<onclick condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">EnableAddon(resource.images.moviegenreicons.filmstrip-hd.bw)</onclick>
-							<onclick condition="System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">Addon.OpenSettings(resource.images.moviegenreicons.filmstrip-hd.bw)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="712">
-							<label>$LOCALIZE[20338] [LOWERCASE]$LOCALIZE[515] $LOCALIZE[536] $LOCALIZE[737][/LOWERCASE]</label>
-							<label2>$VAR[AddonMovieGenreIconsColor]</label2>
-							<onclick condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour)">InstallAddon(resource.images.moviegenreicons.filmstrip-hd.colour)</onclick>
-							<onclick condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">EnableAddon(resource.images.moviegenreicons.filmstrip-hd.colour)</onclick>
-							<onclick condition="System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour)">Addon.OpenSettings(resource.images.moviegenreicons.filmstrip-hd.colour)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="label" id="710">
-							<label>$LOCALIZE[31205]</label>
-							<include>SettingsLabel</include>
-						</control>
-						<control type="button" id="711">
-							<label>$LOCALIZE[31450]</label>
-							<label2>$VAR[AddonArtworkDumpVar]</label2>
-							<onclick condition="System.HasAddon(repository.rector.stuff) + !System.HasAddon(script.artwork.dump)">InstallAddon(script.artwork.dump)</onclick>
-							<onclick condition="System.HasAddon(repository.rector.stuff) + System.HasAddon(script.artwork.dump)">Addon.OpenSettings(script.artwork.dump)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="713">
-							<label>CU LRC $LOCALIZE[24013]</label>
-							<label2>$VAR[AddonLyricsVar]</label2>
-							<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.cu.lrclyrics)">EnableAddon(script.cu.lrclyrics)</onclick>
-							<onclick condition="System.HasAddon(script.cu.lrclyrics)">Addon.OpenSettings(script.cu.lrclyrics)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="label" id="720">
-							<label>$LOCALIZE[31126]</label>
-							<include>SettingsLabel</include>
-						</control>
-						<control type="button" id="729">
-							<label>$LOCALIZE[31451]</label>
-							<label2>$VAR[AddonPreShowExperienceVar]</label2>
-							<onclick condition="!System.HasAddon(script.preshowexperience)">InstallAddon(script.preshowexperience)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.preshowexperience)">EnableAddon(script.preshowexperience)</onclick>
-							<onclick condition="System.HasAddon(script.preshowexperience)">Addon.OpenSettings(script.preshowexperience)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="721">
-							<label>$LOCALIZE[31088].$LOCALIZE[36037]</label>
-							<label2>$VAR[AddonTraktVar]</label2>
-							<onclick condition="!System.HasAddon(script.trakt)">InstallAddon(script.trakt)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.trakt)">EnableAddon(script.trakt)</onclick>
-							<onclick condition="System.HasAddon(script.trakt)">Addon.OpenSettings(script.trakt)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="725">
-							<label>$LOCALIZE[31452] [LOWERCASE]$LOCALIZE[209][/LOWERCASE]</label>
-							<label2>$VAR[AddonUpNextVar]</label2>
-							<onclick condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onclick>
-							<onclick condition="!System.AddonIsEnabled(service.upnext)">EnableAddon(service.upnext)</onclick>
-							<onclick condition="System.HasAddon(service.upnext)">Addon.OpenSettings(service.upnext)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="723">
 							<label>$LOCALIZE[31083]</label>
 							<label2>$VAR[AddonFavouritesVar]</label2>
 							<onclick condition="!System.HasAddon(script.favourites)">InstallAddon(script.favourites)</onclick>
@@ -1694,7 +1583,102 @@
 							<onclick condition="System.HasAddon(script.favourites)">Addon.OpenSettings(script.favourites)</onclick>
 							<include>SettingsRadioButton</include>
 						</control>
+						<control type="button" id="703">
+							<label>$LOCALIZE[31446] [LOWERCASE]$LOCALIZE[31447] $LOCALIZE[424] $LOCALIZE[31445][/LOWERCASE]</label>
+							<label2>$VAR[AddonResourceSelectVar]</label2>
+							<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
+							<onclick condition="System.HasAddon(script.image.resource.select)">Addon.OpenSettings(script.image.resource.select)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="704">
+							<label>$LOCALIZE[31521]</label>
+							<label2>$VAR[AddonMadnoxSkinImagesServiceVar]</label2>
+							<onclick condition="!System.HasAddon(resource.images.skin.madnox)">InstallAddon(resource.images.skin.madnox)</onclick>
+							<onclick condition="!System.AddonIsEnabled(resource.images.skin.madnox)">EnableAddon(resource.images.skin.madnox)</onclick>
+							<onclick condition="System.HasAddon(resource.images.skin.madnox)">Addon.OpenSettings(resource.images.skin.madnox)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="705">
+							<label>$LOCALIZE[31481]</label>
+							<label2>$VAR[AddonMadnoxSkinServiceVar]</label2>
+							<onclick condition="!System.HasAddon(script.skin.madnox)">InstallAddon(script.skin.madnox)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.skin.madnox)">EnableAddon(script.skin.madnox)</onclick>
+							<onclick condition="System.HasAddon(script.skin.madnox)">Addon.OpenSettings(script.skin.madnox)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="706">
+							<label>$LOCALIZE[166] [LOWERCASE]$LOCALIZE[111][/LOWERCASE]</label>
+							<label2>$VAR[AddonSkinShortcutsVar]</label2>
+							<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onclick>
+							<onclick condition="System.HasAddon(script.skinshortcuts)">Addon.OpenSettings(script.skinshortcuts)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="707">
+							<label>$LOCALIZE[166] variables</label>
+							<label2>$VAR[AddonSkinVariablesVar]</label2>
+							<onclick condition="!System.HasAddon(script.skinvariables)">InstallAddon(script.skinvariables)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.skinvariables)">EnableAddon(script.skinvariables)</onclick>
+							<onclick condition="System.HasAddon(script.skinvariables)">Addon.OpenSettings(script.skinvariables)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="708">
+							<label>TMDb helper</label>
+							<label2>$VAR[AddonTMDbHelperVar]</label2>
+							<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
+							<onclick condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">EnableAddon(plugin.video.themoviedb.helper)</onclick>
+							<onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">Addon.OpenSettings(plugin.video.themoviedb.helper)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="label" id="720">
+							<label>$LOCALIZE[31205]</label>
+							<include>SettingsLabel</include>
+						</control>
+						<control type="button" id="721">
+							<label>$LOCALIZE[31450]</label>
+							<label2>$VAR[AddonArtworkDumpVar]</label2>
+							<onclick condition="System.HasAddon(repository.rector.stuff) + !System.HasAddon(script.artwork.dump)">InstallAddon(script.artwork.dump)</onclick>
+							<onclick condition="System.HasAddon(repository.rector.stuff) + System.HasAddon(script.artwork.dump)">Addon.OpenSettings(script.artwork.dump)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="722">
+							<label>CU LRC $LOCALIZE[24013]</label>
+							<label2>$VAR[AddonLyricsVar]</label2>
+							<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.cu.lrclyrics)">EnableAddon(script.cu.lrclyrics)</onclick>
+							<onclick condition="System.HasAddon(script.cu.lrclyrics)">Addon.OpenSettings(script.cu.lrclyrics)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="723">
+							<label>Kittmaster's [LOWERCASE]$LOCALIZE[24011][/LOWERCASE]</label>
+							<label2>$VAR[AddonKittmasterRepoVar]</label2>
+							<onclick condition="!System.HasAddon(repository.kittmaster)">InstallAddon(repository.kittmaster)</onclick>
+							<onclick condition="!System.AddonIsEnabled(repository.kittmaster)">EnableAddon(repository.kittmaster)</onclick>
+							<onclick condition="System.HasAddon(repository.kittmaster)">Addon.OpenSettings(repository.kittmaster)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
 						<control type="button" id="724">
+							<label>$LOCALIZE[20338] [LOWERCASE]$LOCALIZE[515] $LOCALIZE[536] $LOCALIZE[737][/LOWERCASE]</label>
+							<label2>$VAR[AddonMovieGenreIconsColor]</label2>
+							<onclick condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour)">InstallAddon(resource.images.moviegenreicons.filmstrip-hd.colour)</onclick>
+							<onclick condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">EnableAddon(resource.images.moviegenreicons.filmstrip-hd.colour)</onclick>
+							<onclick condition="System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour)">Addon.OpenSettings(resource.images.moviegenreicons.filmstrip-hd.colour)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="725">
+							<label>Wikipedia</label>
+							<label2>$VAR[AddonWikipediaVar]</label2>
+							<onclick condition="!System.HasAddon(script.wikipedia)">InstallAddon(script.wikipedia)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.wikipedia)">EnableAddon(script.wikipedia)</onclick>
+							<onclick condition="System.HasAddon(script.wikipedia)">Addon.OpenSettings(script.wikipedia)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="label" id="730">
+							<label>$LOCALIZE[31126]</label>
+							<include>SettingsLabel</include>
+						</control>
+						<control type="button" id="731">
 							<label>$LOCALIZE[557] [LOWERCASE]$LOCALIZE[108][/LOWERCASE]</label>
 							<label2>$VAR[AddonArtistSlideshowVar]</label2>
 							<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
@@ -1702,23 +1686,7 @@
 							<onclick condition="System.HasAddon(script.artistslideshow)">Addon.OpenSettings(script.artistslideshow)</onclick>
 							<include>SettingsRadioButton</include>
 						</control>
-						<control type="button" id="726">
-							<label>$LOCALIZE[36037] tunes</label>
-							<label2>$VAR[AddonTVtunesVar]</label2>
-							<onclick condition="!System.HasAddon(service.tvtunes)">InstallAddon(service.tvtunes)</onclick>
-							<onclick condition="!System.AddonIsEnabled(service.tvtunes)">EnableAddon(service.tvtunes)</onclick>
-							<onclick condition="System.HasAddon(service.tvtunes)">Addon.OpenSettings(service.tvtunes)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="727">
-							<label>RSS $LOCALIZE[33065]</label>
-							<label2>$VAR[AddonRSSVar]</label2>
-							<onclick condition="!System.HasAddon(script.rss.editor)">InstallAddon(script.rss.editor)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.rss.editor)">EnableAddon(script.rss.editor)</onclick>
-							<onclick condition="System.HasAddon(script.rss.editor)">RunScript(script.rss.editor)</onclick>
-							<include>SettingsRadioButton</include>
-						</control>
-						<control type="button" id="728">
+						<control type="button" id="732">
 							<label>$LOCALIZE[14022] [LOWERCASE]$LOCALIZE[31449] $LOCALIZE[33065][/LOWERCASE]</label>
 							<label2>$VAR[AddonNodeVar]</label2>
 							<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
@@ -1726,8 +1694,56 @@
 							<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
 							<include>SettingsRadioButton</include>
 						</control>
+						<control type="button" id="733">
+							<label>$LOCALIZE[20338] [LOWERCASE]$LOCALIZE[515] $LOCALIZE[536] $LOCALIZE[19662][/LOWERCASE]</label>
+							<label2>$VAR[AddonMovieGenreIconsBW]</label2>
+							<onclick condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">InstallAddon(resource.images.moviegenreicons.filmstrip-hd.bw)</onclick>
+							<onclick condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">EnableAddon(resource.images.moviegenreicons.filmstrip-hd.bw)</onclick>
+							<onclick condition="System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">Addon.OpenSettings(resource.images.moviegenreicons.filmstrip-hd.bw)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="734">
+							<label>$LOCALIZE[31451]</label>
+							<label2>$VAR[AddonPreShowExperienceVar]</label2>
+							<onclick condition="!System.HasAddon(script.preshowexperience)">InstallAddon(script.preshowexperience)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.preshowexperience)">EnableAddon(script.preshowexperience)</onclick>
+							<onclick condition="System.HasAddon(script.preshowexperience)">Addon.OpenSettings(script.preshowexperience)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="735">
+							<label>RSS [LOWERCASE]$LOCALIZE[33065][/LOWERCASE]</label>
+							<label2>$VAR[AddonRSSVar]</label2>
+							<onclick condition="!System.HasAddon(script.rss.editor)">InstallAddon(script.rss.editor)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.rss.editor)">EnableAddon(script.rss.editor)</onclick>
+							<onclick condition="System.HasAddon(script.rss.editor)">RunScript(script.rss.editor)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="736">
+							<label>$LOCALIZE[31088].$LOCALIZE[36037]</label>
+							<label2>$VAR[AddonTraktVar]</label2>
+							<onclick condition="!System.HasAddon(script.trakt)">InstallAddon(script.trakt)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.trakt)">EnableAddon(script.trakt)</onclick>
+							<onclick condition="System.HasAddon(script.trakt)">Addon.OpenSettings(script.trakt)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="737">
+							<label>TvTunes</label>
+							<label2>$VAR[AddonTVtunesVar]</label2>
+							<onclick condition="!System.HasAddon(service.tvtunes)">InstallAddon(service.tvtunes)</onclick>
+							<onclick condition="!System.AddonIsEnabled(service.tvtunes)">EnableAddon(service.tvtunes)</onclick>
+							<onclick condition="System.HasAddon(service.tvtunes)">Addon.OpenSettings(service.tvtunes)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="738">
+							<label>$LOCALIZE[31452] [LOWERCASE]$LOCALIZE[209][/LOWERCASE]</label>
+							<label2>$VAR[AddonUpNextVar]</label2>
+							<onclick condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onclick>
+							<onclick condition="!System.AddonIsEnabled(service.upnext)">EnableAddon(service.upnext)</onclick>
+							<onclick condition="System.HasAddon(service.upnext)">Addon.OpenSettings(service.upnext)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
 					</control>
-					<!-- Addon description -->
+					<!-- Addon Description -->
 					<control type="textbox">
 						<visible>Container(7000).Hasfocus(7)</visible>
 						<left>460</left>
@@ -1759,23 +1775,29 @@
 							<label2>$LOCALIZE[166]: v$INFO[System.AddonVersion(skin.madnox)] | $LOCALIZE[24009]: v$INFO[System.AddonVersion(script.skin.madnox)] | $LOCALIZE[31522]: v$INFO[System.AddonVersion(resource.images.skin.madnox)]</label2>
 							<include>SettingsButton</include>
 						</control>
+						<!-- Preset Management Dialog -->
 						<control type="button" id="803">
+							<label>$LOCALIZE[31028] [LOWERCASE]$LOCALIZE[31549][/LOWERCASE]</label>
+							<onclick>RunScript(script.skin.madnox, action=manage_presets)</onclick>
+							<include>SettingsButton</include>
+						</control>
+						<control type="button" id="807">
 							<label>[COLOR FFEEEE9B]$LOCALIZE[31518][/COLOR]</label>
 							<onclick>ActivateWindow(1109)</onclick>
 							<include>SettingsButton</include>
 						</control>
-						<control type="button" id="804">
+						<control type="button" id="808">
 							<label>[COLOR FFCC4444]$LOCALIZE[31525][/COLOR]</label>
 							<onclick>RunScript(script.skin.madnox, action=migrate_bgs)</onclick>
 							<include>SettingsButton</include>
 						</control>
-						<control type="button" id="805">
+						<control type="button" id="809">
 							<label>[COLOR FFCC4444]$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE][/COLOR]</label>
 							<onclick>ActivateWindow(1107)</onclick>
 							<include>SettingsButton</include>
 						</control>
 					</control>
-					<!-- Advanced description -->
+					<!-- Advanced Description -->
 					<control type="textbox">
 						<visible>Container(7000).Hasfocus(8)</visible>
 						<left>460</left>

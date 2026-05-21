@@ -48,12 +48,18 @@
 				<width>1080</width>
 				<height>780</height>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 				<onleft>9050</onleft>
 				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onright>60530</onright>
 				<pagecontrol>60530</pagecontrol>
 				<include>ContainerScrollTime</include>
 				<viewtype label="$LOCALIZE[31251]">icon</viewtype>
+
+				<!-- ============================================== -->
+				<!-- PORTRAIT ICON INFO NORMAL -->
+				<!-- ============================================== -->
 				<itemlayout height="390" width="267" condition="!Skin.HasSetting(View530SmallIcons)">
 					<control type="group">
 						<visible>!Skin.HasSetting(View530VideoCase)</visible>
@@ -74,34 +80,81 @@
 						</include>
 					</control>
 				</itemlayout>
+
 				<focusedlayout height="390" width="267" condition="!Skin.HasSetting(View530SmallIcons)">
-					<control type="image">
-						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
-					</control>
 					<control type="group">
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto" />
-						</animation>
-						<control type="group">
+						<camera x="133" y="195" />
+						<animation effect="zoom" start="100" end="115" center="auto" time="240">focus</animation>
+						<animation effect="zoom" start="115" end="100" center="auto" time="240">unfocus</animation>
+
+						<!-- Focus Border (No Video Case) -->
+						<control type="image">
 							<visible>!Skin.HasSetting(View530VideoCase)</visible>
-							<include content="ViewArtwork">
-								<param name="texturefadetime">0</param>
-								<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
-								<param name="diffuse">diffuse/rounded5-247x370.png</param>
-							</include>
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 						</control>
-						<control type="group">
+						<!-- Focus Border (Video Case Enabled) -->
+						<control type="image">
 							<visible>Skin.HasSetting(View530VideoCase)</visible>
-							<include content="ViewArtworkVideoCase">
-								<param name="logoheight">27</param>
-								<param name="texturefadetime">0</param>
-								<param name="bordersize">16,36,16,18</param>
-								<param name="watchedstatustop">39</param>
-								<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
-							</include>
+							<bordersize>16,36,16,18</bordersize>
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+						</control>
+
+						<!-- LAYER 1: BACK TRAY & DISC -->
+						<control type="group">
+							<visible>Skin.HasSetting(View530VideoCase) + Skin.HasSetting(View530OpenCase) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]</visible>
+							<animation effect="fade" start="0" end="100" time="300" delay="1000">focus</animation>
+							<animation effect="fade" start="100" end="0" time="150">unfocus</animation>
+							<control type="image">
+								<left>16</left>
+								<top>36</top>
+								<width>235</width>
+								<height>336</height>
+								<texture border="20">$VAR[ShowCaseBackVar]</texture>
+							</control>
+							<control type="image">
+								<!-- <left>28</left>
+								<top>98</top>
+								<width>211</width>
+								<height>211</height> -->
+								<left>43</left>
+								<top>120</top>
+								<width>174</width>
+								<height>174</height>
+								<texture background="true">$VAR[LibraryVideoDiscArtVar]</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+						</control>
+
+						<!-- LAYER 2: FRONT COVER HINGE -->
+						<control type="group">
+							<animation effect="rotatey" center="16,0" start="0" end="100" time="400" delay="1000" tween="quadratic" easing="out" condition="Skin.HasSetting(View530VideoCase) + Skin.HasSetting(View530OpenCase) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]">focus</animation>
+							<animation effect="rotatey" center="16,0" start="100" end="0" time="250" tween="quadratic" easing="in" condition="Skin.HasSetting(View530VideoCase) + Skin.HasSetting(View530OpenCase) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]">unfocus</animation>
+
+							<control type="group">
+								<visible>!Skin.HasSetting(View530VideoCase)</visible>
+								<include content="ViewArtwork">
+									<param name="texturefadetime">0</param>
+									<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
+									<param name="diffuse">diffuse/rounded5-247x370.png</param>
+								</include>
+							</control>
+							<control type="group">
+								<visible>Skin.HasSetting(View530VideoCase)</visible>
+								<include content="ViewArtworkVideoCase">
+									<param name="logoheight">27</param>
+									<param name="texturefadetime">0</param>
+									<param name="bordersize">16,36,16,18</param>
+									<param name="watchedstatustop">39</param>
+									<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
+								</include>
+							</control>
 						</control>
 					</control>
 				</focusedlayout>
+
+				<!-- ============================================== -->
+				<!-- PORTRAIT ICON INFO SMALL -->
+				<!-- ============================================== -->
 				<itemlayout height="260" width="178" condition="Skin.HasSetting(View530SmallIcons)">
 					<control type="group">
 						<visible>!Skin.HasSetting(View530VideoCase)</visible>
@@ -122,31 +175,74 @@
 						</include>
 					</control>
 				</itemlayout>
+
 				<focusedlayout height="260" width="178" condition="Skin.HasSetting(View530SmallIcons)">
-					<control type="image">
-						<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
-					</control>
 					<control type="group">
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="95" end="100" time="240" center="auto" />
-						</animation>
-						<control type="group">
+						<camera x="89" y="130" />
+						<animation effect="zoom" start="100" end="115" center="auto" time="240">focus</animation>
+						<animation effect="zoom" start="115" end="100" center="auto" time="240">unfocus</animation>
+
+						<!-- Focus Border (No Video Case) -->
+						<control type="image">
 							<visible>!Skin.HasSetting(View530VideoCase)</visible>
-							<include content="ViewArtwork">
-								<param name="texturefadetime">0</param>
-								<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
-								<param name="diffuse">diffuse/rounded5-158x240.png</param>
-							</include>
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 						</control>
-						<control type="group">
+						<!-- Focus Border (Video Case Enabled) -->
+						<control type="image">
 							<visible>Skin.HasSetting(View530VideoCase)</visible>
-							<include content="ViewArtworkVideoCase">
-								<param name="logoheight">19</param>
-								<param name="texturefadetime">0</param>
-								<param name="bordersize">15,28,15,16</param>
-								<param name="watchedstatustop">32</param>
-								<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
-							</include>
+							<bordersize>15,28,15,16</bordersize>
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
+						</control>
+
+						<!-- LAYER 1: BACK TRAY & DISC -->
+						<control type="group">
+							<visible>Skin.HasSetting(View530VideoCase) + Skin.HasSetting(View530OpenCase) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]</visible>
+							<animation effect="fade" start="0" end="100" time="300" delay="1000">focus</animation>
+							<animation effect="fade" start="100" end="0" time="150">unfocus</animation>
+							<control type="image">
+								<left>15</left>
+								<top>28</top>
+								<width>148</width>
+								<height>216</height>
+								<texture border="10">$VAR[ShowCaseBackVar]</texture>
+							</control>
+							<control type="image">
+								<!-- <left>22</left>
+								<top>69</top>
+								<width>134</width>
+								<height>134</height> -->
+								<left>33</left>
+								<top>83</top>
+								<width>110</width>
+								<height>110</height>
+								<texture background="true">$VAR[LibraryVideoDiscArtVar]</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+						</control>
+
+						<!-- LAYER 2: FRONT COVER HINGE -->
+						<control type="group">
+							<animation effect="rotatey" center="15,0" start="0" end="100" time="400" delay="1000" tween="quadratic" easing="out" condition="Skin.HasSetting(View530VideoCase) + Skin.HasSetting(View530OpenCase) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]">focus</animation>
+							<animation effect="rotatey" center="15,0" start="100" end="0" time="250" tween="quadratic" easing="in" condition="Skin.HasSetting(View530VideoCase) + Skin.HasSetting(View530OpenCase) + [!String.IsEmpty(ListItem.Art(discart)) | !String.IsEqual(Skin.String(LibraryVideoDiscArtFallback),none)]">unfocus</animation>
+
+							<control type="group">
+								<visible>!Skin.HasSetting(View530VideoCase)</visible>
+								<include content="ViewArtwork">
+									<param name="texturefadetime">0</param>
+									<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
+									<param name="diffuse">diffuse/rounded5-158x240.png</param>
+								</include>
+							</control>
+							<control type="group">
+								<visible>Skin.HasSetting(View530VideoCase)</visible>
+								<include content="ViewArtworkVideoCase">
+									<param name="logoheight">19</param>
+									<param name="texturefadetime">0</param>
+									<param name="bordersize">15,28,15,16</param>
+									<param name="watchedstatustop">32</param>
+									<param name="watchedstatusvisible">!Skin.HasSetting(View530DisableWatchedStatus)</param>
+								</include>
+							</control>
 						</control>
 					</control>
 				</focusedlayout>
@@ -178,14 +274,5 @@
 				<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
 			</control>
 		</control>
-
-		<!-- 		<control type="group">
-			<visible>Control.IsVisible(530)</visible>
-			<include content="AnimationSlideBottomWindow">
-				<param name="slide">220</param>
-			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsTVShows</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos4</include>
-		</control> -->
 	</include>
 </includes>
