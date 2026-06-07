@@ -162,7 +162,7 @@
 					<height>30</height>
 					<font>Font29_Cond</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
-					<label>$LOCALIZE[31022][COLOR $VAR[PanelSubTextColorVar]]$INFO[System.CPUUsage,  ][/COLOR]</label>
+					<label>$LOCALIZE[31486][COLOR $VAR[PanelSubTextColorVar]]$INFO[System.CPUUsage,  ][/COLOR]</label>
 				</control>
 				<control type="progress">
 					<info>System.CPUUsage</info>
@@ -171,7 +171,7 @@
 					<height>30</height>
 					<font>Font29_Cond</font>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
-					<label>$LOCALIZE[31023][COLOR $VAR[PanelSubTextColorVar]]$INFO[system.memory(used.percent),  ][/COLOR]</label>
+					<label>$LOCALIZE[31497][COLOR $VAR[PanelSubTextColorVar]]$INFO[system.memory(used.percent),  ][/COLOR]</label>
 				</control>
 				<control type="progress">
 					<info>system.memory(used)</info>

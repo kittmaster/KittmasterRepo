@@ -495,35 +495,50 @@
 	<variable name="Fanart1Var">
 		<value condition="!String.IsEmpty(ListItem.Art(fanart1))">$INFO[ListItem.Art(fanart1)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart1))">$INFO[ListItem.Art(tvshow.fanart1)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart1))">$INFO[ListItem.Art(artist.fanart1)]</value>
-		<value>$VAR[extraFanartLocation]fanart0.jpg</value>
+		<!-- Artist: Kodi wiki confirms fanart files start at fanart1.jpg (no fanart0); primary DB key is artist.fanart -->
+		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart))">$INFO[ListItem.Art(artist.fanart)]</value>
+		<value>$VAR[extraFanartLocation]fanart1.jpg</value>
 	</variable>
 
 	<variable name="Fanart2Var">
 		<value condition="!String.IsEmpty(ListItem.Art(fanart2))">$INFO[ListItem.Art(fanart2)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart2))">$INFO[ListItem.Art(tvshow.fanart2)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart2))">$INFO[ListItem.Art(artist.fanart2)]</value>
-		<value>$VAR[extraFanartLocation]fanart1.jpg</value>
+		<!-- artist.fanart1 = first extra scraped; cascade to primary if not present -->
+		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart1))">$INFO[ListItem.Art(artist.fanart1)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart))">$INFO[ListItem.Art(artist.fanart)]</value>
+		<value>$VAR[extraFanartLocation]fanart2.jpg</value>
 	</variable>
 
 	<variable name="Fanart3Var">
 		<value condition="!String.IsEmpty(ListItem.Art(fanart3))">$INFO[ListItem.Art(fanart3)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart3))">$INFO[ListItem.Art(tvshow.fanart3)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart3))">$INFO[ListItem.Art(artist.fanart3)]</value>
-		<value>$VAR[extraFanartLocation]fanart2.jpg</value>
+		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart2))">$INFO[ListItem.Art(artist.fanart2)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart))">$INFO[ListItem.Art(artist.fanart)]</value>
+		<value>$VAR[extraFanartLocation]fanart3.jpg</value>
 	</variable>
 
 	<variable name="Fanart4Var">
 		<value condition="!String.IsEmpty(ListItem.Art(fanart4))">$INFO[ListItem.Art(fanart4)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart4))">$INFO[ListItem.Art(tvshow.fanart4)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart4))">$INFO[ListItem.Art(artist.fanart4)]</value>
-		<value>$VAR[extraFanartLocation]fanart3.jpg</value>
+		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart3))">$INFO[ListItem.Art(artist.fanart3)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(artist.fanart))">$INFO[ListItem.Art(artist.fanart)]</value>
+		<value>$VAR[extraFanartLocation]fanart4.jpg</value>
 	</variable>
 
 	<variable name="extraFanartLocation">
 		<value condition="[container.content(movies) | String.IsEqual(ListItem.DBTYPE,movie)]">$INFO[listitem.path,,extrafanart/]</value>
-		<value condition="[container.content(tvshows) | String.IsEqual(ListItem.DBTYPE,tvshow)]">$INFO[listitem.filenameandpath,,extrafanart/]</value>
+		<value condition="[container.content(tvshows) | String.IsEqual(ListItem.DBTYPE,tvshow)]">$INFO[listitem.path,,extrafanart/]</value>
+		<!-- Music albums/songs: Artwork Dump writes files directly in the folder, no extrafanart subfolder -->
+		<value condition="[container.content(albums) | String.IsEqual(ListItem.DBTYPE,album)]">$INFO[listitem.path]</value>
+		<value condition="[container.content(songs) | String.IsEqual(ListItem.DBTYPE,song)]">$INFO[listitem.path]</value>
+		<!-- Artists: path resolved by script.skin.madnox action=artist_fanart_path, set on focus change -->
+		<value condition="[container.content(artists) | String.IsEqual(ListItem.DBTYPE,artist)] + !String.IsEmpty(Window(Home).Property(ArtistFanartPath))">$INFO[Window(Home).Property(ArtistFanartPath)]</value>
 	</variable>
+
+	<!-- <variable name="extraFanartLocation">
+		<value condition="[container.content(movies) | String.IsEqual(ListItem.DBTYPE,movie)]">$INFO[listitem.path,,extrafanart/]</value>
+		<value condition="[container.content(tvshows) | String.IsEqual(ListItem.DBTYPE,tvshow)]">$INFO[listitem.filenameandpath,,extrafanart/]</value>
+	</variable> -->
 
 	<variable name="ThumbVar">
 		<value condition="!String.IsEmpty(ListItem.Thumb) + String.IsEqual(ListItem.DBTYPE,episode)">$INFO[ListItem.Thumb]</value>

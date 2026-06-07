@@ -282,7 +282,6 @@
 					<height>45</height>
 					<control type="label">
 						<top>9</top>
-						<left>195</left>
 						<visible>!Control.HasFocus(3015) + Window.IsVisible(SettingsCategory.xml)</visible>
 						<width>152</width>
 						<height>40</height>
@@ -316,7 +315,6 @@
 					<height>45</height>
 					<control type="label">
 						<top>9</top>
-						<left>195</left>
 						<visible>!Control.HasFocus(3200)</visible>
 						<width>152</width>
 						<height>40</height>
@@ -350,7 +348,6 @@
 					<height>45</height>
 					<control type="label">
 						<top>9</top>
-						<left>195</left>
 						<visible>!Control.HasFocus(3201)</visible>
 						<width>152</width>
 						<height>40</height>
@@ -384,7 +381,6 @@
 					<height>45</height>
 					<control type="label">
 						<top>9</top>
-						<left>195</left>
 						<visible>!Control.HasFocus(3202)</visible>
 						<width>252</width>
 						<height>40</height>

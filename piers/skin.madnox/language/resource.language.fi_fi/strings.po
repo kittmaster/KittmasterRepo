@@ -1,0 +1,2847 @@
+# Kodi Media Center language file
+# Addon Name: Madnox Redux
+# Addon id: skin.madnox.redux
+# Addon Provider: Team Madnox
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Finnish\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /16x9/DialogAddonSettings.xml /16x9/Variables.xml /16x9/DialogTextViewer.xml /16x9/Custom_1100_TextViewer.xml /16x9/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31000"
+msgid "Page"
+msgstr "Sivu"
+
+#: /16x9/DialogAddonSettings.xml /16x9/DialogMediaSource.xml /16x9/Includes_CommonObjects.xml /16x9/Variables.xml /16x9/DialogFavourites.xml /16x9/Includes_Dialogs.xml /16x9/Custom_1110_CustomSelectContainer.xml /16x9/DialogSettings.xml /16x9/DialogSubtitles.xml
+msgctxt "#31001"
+msgid "Items"
+msgstr "Kohteet"
+
+#: /16x9/Home.xml /16x9/Variables.xml /16x9/Custom_1111_Topbar.xml
+msgctxt "#31002"
+msgid "Now playing"
+msgstr "Nyt toistetaan"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31003"
+msgid "Order"
+msgstr "Järjestys"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31004"
+msgid "Weather background"
+msgstr "Säätausta"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31007"
+msgid "Single image"
+msgstr "Yksittäinen kuva"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31008"
+msgid "Multi image"
+msgstr "Monikuva"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31009"
+msgid "Music discart fallback"
+msgstr "Musiikin levykuvan korvike"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31010"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Aseta tyyppi ja lisää sääntöjä luodaksesi älykkään soittolistan. Nämä soittolistat ovat dynaamisia ja sisältävät kaikki tietokantasi mediatiedostot, jotka vastaavat valitsemiasi sääntöjä."
+
+#: /16x9/Variables.xml
+msgctxt "#31011"
+msgid "Returning"
+msgstr "Palaava"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31016"
+msgid "Smaller pop-up notifications"
+msgstr "Pienemmät ponnahdusikkunailmoitukset"
+
+#: /16x9/Home.xml /16x9/SkinSettings.xml
+msgctxt "#31017"
+msgid "Edit main menu"
+msgstr "Muokkaa päävalikkoa"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31019"
+msgid "Show scroll letter"
+msgstr "Näytä selauskirjain"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31020"
+msgid "Dim screen on dialog popup"
+msgstr "Himmennä näyttö valintaikkunan avautuessa"
+
+#: /16x9/Home.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31021"
+msgid "Area"
+msgstr "Alue"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31025"
+msgid "Palette"
+msgstr "Paletti"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31028"
+msgid "Manage"
+msgstr "Hallitse"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31030"
+msgid "Music now playing background"
+msgstr "Musiikin toistotausta"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31034"
+msgid "Weather icons"
+msgstr "Sääkuvakkeet"
+
+#: /16x9/Variables.xml
+msgctxt "#31035"
+msgid "Extra fanart"
+msgstr "Ylimääräinen fanitaide"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31036"
+msgid "Fallback"
+msgstr "Korvaava"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31038"
+msgid "Animated background"
+msgstr "Animoitu tausta"
+
+#: /16x9/Home.xml /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+msgctxt "#31039"
+msgid "Widgets"
+msgstr "Widgetit"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31040"
+msgid "Settings menu"
+msgstr "Asetusvalikko"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31041"
+msgid "Main menu"
+msgstr "Päävalikko"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31042"
+msgid "Top bar"
+msgstr "Yläpalkki"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31043"
+msgid "Fixed list"
+msgstr "Kiinteä lista"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31044"
+msgid "Palette color selected"
+msgstr "Paletin väri valittu"
+
+#: /16x9/Custom_1111_Topbar.xml
+msgctxt "#31046"
+msgid "Item Count"
+msgstr "Kohteiden määrä"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31047"
+msgid "Floor"
+msgstr "Lattia"
+
+#: /16x9/SkinSettings.xml /16x9/DialogColorPicker.xml
+msgctxt "#31048"
+msgid "Palette selected"
+msgstr "Paletti valittu"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31049"
+msgid "Highlight"
+msgstr "Korostus"
+
+#: /16x9/script-skinshortcuts.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31050"
+msgid "Info line"
+msgstr "Inforivi"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31051"
+msgid "Texture"
+msgstr "Tekstuuri"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31052"
+msgid "Coloured"
+msgstr "Värillinen"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31053"
+msgid "Country icons"
+msgstr "Maakuvakkeet"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31055"
+msgid "Weather fanart"
+msgstr "Sääfanitaide"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31056"
+msgid "Panel"
+msgstr "Paneeli"
+
+#: /16x9/Variables.xml /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31057"
+msgid "Seasons"
+msgstr "Tuotantokaudet"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31059"
+msgid "Layout"
+msgstr "Asettelu"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31060"
+msgid "Language flags"
+msgstr "Kieliliput"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml /16x9/script-skinshortcuts.xml
+msgctxt "#31061"
+msgid "Icon"
+msgstr "Kuvake"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31063"
+msgid "On air"
+msgstr "Lähetetään parhaillaan"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31064"
+msgid "Last aired"
+msgstr "Viimeksi lähetetty"
+
+#: /16x9/Custom_1117_MusicVisSettings.xml
+msgctxt "#31069"
+msgid "Lyrics add-on settings"
+msgstr "Sanoituslisäosan asetukset"
+
+#: /16x9/View_700_RightList.xml
+msgctxt "#31071"
+msgid "Right list"
+msgstr "Oikea lista"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31072"
+msgid "Artisans behind the scenes"
+msgstr "Tekijät kulissien takana"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31073"
+msgid "Video decoder"
+msgstr "Videodekooderi"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31074"
+msgid "Pixel format"
+msgstr "Pikselimuoto"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31075"
+msgid "Decoding"
+msgstr "Dekoodaus"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31076"
+msgid "Movie set cover background"
+msgstr "Elokuvasarjan kansitausta"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31077"
+msgid "Signal"
+msgstr "Signaali"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31078"
+msgid "Furniture"
+msgstr "Käyttöliittymäosat"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31081"
+msgid "Media menu buttons"
+msgstr "Mediavalikon painikkeet"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31082"
+msgid "Info dialogs"
+msgstr "Tietoikkunat"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31083"
+msgid "Favourites script"
+msgstr "Suosikit-skripti"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31084"
+msgid "Case"
+msgstr "Kotelo"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31086"
+msgid "Video playlist"
+msgstr "Videosoittolista"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31088"
+msgid "Trakt"
+msgstr "Trakt"
+
+#: /16x9/MyVideoNav.xml
+msgctxt "#31089"
+msgid "Add node"
+msgstr "Lisää solmu"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31090"
+msgid "Daily"
+msgstr "Päivittäinen"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31091"
+msgid "Map"
+msgstr "Kartta"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31092"
+msgid "Overview"
+msgstr "Yleiskatsaus"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31094"
+msgid "Restore"
+msgstr "Palauta"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31098"
+msgid "Kiosk mode"
+msgstr "Kioskitila"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31100"
+msgid "Screen ensemble"
+msgstr "Näyttelijät ja työryhmä"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31101"
+msgid "YouTube"
+msgstr "YouTube"
+
+#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml /16x9/variables.xml
+msgctxt "#31103"
+msgid "Live background"
+msgstr "Live-tausta"
+
+#: /16x9/DialogSubtitles.xml
+msgctxt "#31104"
+msgid "Local subtitles available"
+msgstr "Paikalliset tekstitykset saatavilla"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31106"
+msgid "Global"
+msgstr "Yleinen"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31107"
+msgid "background"
+msgstr "tausta"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31108"
+msgid "Disc art"
+msgstr "Levykuva"
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31110"
+msgid "Similar"
+msgstr "Samankaltaiset"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31111"
+msgid "Production details"
+msgstr "Tuotantotiedot"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31112"
+msgid "Movie Roles"
+msgstr "Elokuvaroolit"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31113"
+msgid "TV Roles"
+msgstr "Sarjaroolit"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31114"
+msgid "Carbon"
+msgstr "Hiilikuitu"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31115"
+msgid "Pixels"
+msgstr "Pikselit"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31116"
+msgid "Steel plate"
+msgstr "Teräslevy"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31117"
+msgid "Wallpaper"
+msgstr "Taustakuva"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31118"
+msgid "Wood"
+msgstr "Puu"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31119"
+msgid "Wrinkles"
+msgstr "Rypyt"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31120"
+msgid "Facebook"
+msgstr "Facebook"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31121"
+msgid "Icons wide"
+msgstr "Leveät kuvakkeet"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31122"
+msgid "Big icons wide"
+msgstr "Suuret leveät kuvakkeet"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31123"
+msgid "Clearlogo"
+msgstr "Selkeä logo"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31124"
+msgid "Required"
+msgstr "Vaadittu"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31125"
+msgid "Instagram"
+msgstr "Instagram"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31126"
+msgid "Optional"
+msgstr "Valinnainen"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31127"
+msgid "RSS"
+msgstr "RSS"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31128"
+msgid "Dialog"
+msgstr "Valintaikkuna"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31130"
+msgid "Square"
+msgstr "Neliö"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31131"
+msgid "Emboss"
+msgstr "Kohokuvio"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31132"
+msgid "texture"
+msgstr "tekstuuri"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31133"
+msgid "Pattern"
+msgstr "Kuvio"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31134"
+msgid "Gradient"
+msgstr "Väriliuku"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31135"
+msgid "Brushed"
+msgstr "Harjattu"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31136"
+msgid "Text"
+msgstr "Teksti"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31137"
+msgid "Subtext"
+msgstr "Alateksti"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31138"
+msgid "Focus text"
+msgstr "Korostusteksti"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31139"
+msgid "List separator"
+msgstr "Luettelon erotin"
+
+#: 31140 /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31141"
+msgid "System bar"
+msgstr "Järjestelmäpalkki"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31142"
+msgid "Submenu bar"
+msgstr "Alivalikkopalkki"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31143"
+msgid "RSS bar"
+msgstr "RSS-palkki"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31145"
+msgid "Effects"
+msgstr "Tehosteet"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31146"
+msgid "Leaves"
+msgstr "Lehdet"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31147"
+msgid "Confetti"
+msgstr "Konfetti"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31148"
+msgid "Valentine"
+msgstr "Ystävänpäivä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31149"
+msgid "Easter"
+msgstr "Pääsiäinen"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31150"
+msgid "Concrete"
+msgstr "Betoni"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31151"
+msgid "Media menu"
+msgstr "Mediavalikko"
+
+#: /16x9/Variables.xml
+msgctxt "#31153"
+msgid "PVR channels"
+msgstr "PVR-kanavat"
+
+#: /16x9/Variables.xml /shortcuts/overrides.xml
+msgctxt "#31154"
+msgid "Movies and TV shows"
+msgstr "Elokuvat ja sarjat"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31159"
+msgid "Now playing progress"
+msgstr "Toiston edistyminen"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31160"
+msgid "Top bar / Main menu bars"
+msgstr "Yläpalkki / Päävalikkopalkit"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31162"
+msgid "Character art"
+msgstr "Hahmotaide"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31164"
+msgid "Blur background"
+msgstr "Sumennettu tausta"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31165"
+msgid "Clear art"
+msgstr "Selkeä taide"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31166"
+msgid "Replace play with cinema mode"
+msgstr "Korvaa toisto elokuvateatteritilalla"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31169"
+msgid "X (Twitter)"
+msgstr "X (Twitter)"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31170"
+msgid "Audio info"
+msgstr "Äänitiedot"
+
+#: /16x9/Variables.xml /shortcuts/mainmenu.DATA.xml /shortcuts/overrides.xml
+msgctxt "#31173"
+msgid "Live TV"
+msgstr "Live-TV"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31174"
+msgid "Disabled text"
+msgstr "Poistettu teksti käytöstä"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31175"
+msgid "Default texture"
+msgstr "Oletustekstuuri"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31181"
+msgid "Video background"
+msgstr "Videotausta"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31182"
+msgid "Vinyl"
+msgstr "Vinyyli"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31183"
+msgid "TikTok"
+msgstr "TikTok"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31184"
+msgid "Show Madnox logo at startup"
+msgstr "Näytä Madnox-logo käynnistyksessä"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31185"
+msgid "Filename"
+msgstr "Tiedostonimi"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31186"
+msgid "Golden"
+msgstr "Kulta"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31187"
+msgid "Skin Variables helps skinners to construct variables and expressions for multiple containers and listitems using a template."
+msgstr "Skin Variables auttaa ulkoasun tekijöitä rakentamaan muuttujia ja lausekkeita useille säiliöille ja luettelon kohteille mallin avulla."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31188"
+msgid "Creator"
+msgstr "Tekijä"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31189"
+msgid "Select this option if you want to disable showing the Madnox logo when Kodi is loading the skin on startup. You will still see the spinning blue circle to show loading progress."
+msgstr "Valitse tämä vaihtoehto, jos haluat ottaa pois käytöstä Madnox-logon näyttämisen, kun Kodi lataa ulkoasua käynnistyksessä. Näet edelleen pyörivän sinisen ympyrän, joka osoittaa latauksen edistymisen."
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31190"
+msgid "Purple"
+msgstr "Purppura"
+
+#: /16x9/Includes_SkinSettings.xml
+msgctxt "#31191"
+msgid "Movies & TV shows / Seasons-Episode display"
+msgstr "Elokuvat ja sarjat / Tuotantokausi- ja jaksonäyttö"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31193"
+msgid "On info"
+msgstr "Tiedoissa"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31194"
+msgid "Persistant"
+msgstr "Pysyvä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31195"
+msgid "Animated"
+msgstr "Animoitu"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31196"
+msgid "Background now playing info"
+msgstr "Taustalla toistettavat tiedot"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31197"
+msgid "Most recognized as"
+msgstr "Tunnetaan parhaiten nimellä"
+
+#: /16x9/Variables.xml
+msgctxt "#31198"
+msgid "Forward"
+msgstr "Eteenpäin"
+
+#: /16x9/Variables.xml
+msgctxt "#31199"
+msgid "Rewind"
+msgstr "Kelaa taaksepäin"
+
+#: /16x9/Variables.xml
+msgctxt "#31200"
+msgid "Internet stream"
+msgstr "Internet-striimi"
+
+#: /16x9/Variables.xml
+msgctxt "#31201"
+msgid "Landscape"
+msgstr "Maisema"
+
+#: /16x9/Variables.xml
+msgctxt "#31202"
+msgid "Clear logo"
+msgstr "Selkeä logo"
+
+#: /16x9/Variables.xml
+msgctxt "#31203"
+msgid "Portrait"
+msgstr "Pystykuva"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31204"
+msgid "Recently released"
+msgstr "Äskettäin julkaistut"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31205"
+msgid "Recommended"
+msgstr "Suositellut"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31206"
+msgid "Most played"
+msgstr "Eniten toistetut"
+
+#: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31210"
+msgid "Big"
+msgstr "Suuri"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31211"
+msgid "Movie/TV show info"
+msgstr "Elokuvan/sarjan tiedot"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31212"
+msgid "Select how long, in seconds, before the movie rows metadata grid slides left or right (If greater than 8 items)."
+msgstr "Valitse sekunteina aika, jonka jälkeen elokuvarivien metatietoruudukko liukuu vasemmalle tai oikealle (jos kohteita on enemmän kuin 8)."
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31214"
+msgid "Reflect"
+msgstr "Heijastus"
+
+#: /16x9/View_051_SimpleList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31215"
+msgid "Simple list"
+msgstr "Yksinkertainen lista"
+
+#: /16x9/View_053_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31219"
+msgid "Info list 1"
+msgstr "Infolista 1"
+
+#: /16x9/View_054_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31221"
+msgid "Info list 2"
+msgstr "Infolista 2"
+
+#: /16x9/View_55_LowList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31223"
+msgid "Low list"
+msgstr "Matala lista"
+
+#: /16x9/View_56_3Panel.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31225"
+msgid "3 panel"
+msgstr "3 paneelia"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31227"
+msgid "Select how long, in seconds, before the persons row metadata grid slides left or right (If greater than 8 items)."
+msgstr "Valitse sekunteina aika, jonka jälkeen henkilörivien metatietoruudukko liukuu vasemmalle tai oikealle (jos kohteita on enemmän kuin 8)."
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31228"
+msgid "Trailer preview"
+msgstr "Trailerin esikatselu"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31229"
+msgid "Icon size"
+msgstr "Kuvakkeen koko"
+
+#: /16x9/View_553_ShowCase.xml
+msgctxt "#31230"
+msgid "Showcase"
+msgstr "Showcase"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31231"
+msgid "2 thumbs"
+msgstr "2 pikkukuvaa"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31232"
+msgid "4 thumbs"
+msgstr "4 pikkukuvaa"
+
+#: /16x9/View_57_3PanelSquare.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31233"
+msgid "3 panel square"
+msgstr "3 neliöpaneelia"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31234"
+msgid "Media flags"
+msgstr "Medialiput"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31235"
+msgid "Small icons"
+msgstr "Pienet kuvakkeet"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31236"
+msgid "Album case"
+msgstr "Albumin kotelo"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31237"
+msgid "Video case"
+msgstr "Videokotelo"
+
+#: /16x9/View_051_SimpleList.xml
+msgctxt "#31238"
+msgid "Cover list"
+msgstr "Kansilista"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31239"
+msgid "Cover flow portrait"
+msgstr "Pystykansivirta"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31241"
+msgid "Cover flow square"
+msgstr "Neliökansivirta"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31242"
+msgid "Cover flow banner"
+msgstr "Bannerikansivirta"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31243"
+msgid "Cover flow landscape"
+msgstr "Maisemakansivirta"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31244"
+msgid "Open case"
+msgstr "Avattu kotelo"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31245"
+msgid "Focus"
+msgstr "Kohdistus"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31246"
+msgid "Cascade"
+msgstr "Kaskadi"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31247"
+msgid "Kodiflix"
+msgstr "Kodiflix"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31248"
+msgid "Portrait icon"
+msgstr "Pystykuvakuvake"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31249"
+msgid "Banner icon"
+msgstr "Bannerikuvake"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31250"
+msgid "Landscape icon"
+msgstr "Maisemakuvake"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31251"
+msgid "Portrait icon info"
+msgstr "Pystykuvakuvakkeen tiedot"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31252"
+msgid "Banner icon info"
+msgstr "Bannerikuvakkeen tiedot"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31253"
+msgid "Landscape icon info"
+msgstr "Maisemakuvakkeen tiedot"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31254"
+msgid "Portrait wall"
+msgstr "Pystykuvaseinä"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31255"
+msgid "Square wall"
+msgstr "Neliöseinä"
+
+#: /16x9/View_542_BannerWall.xml
+msgctxt "#31256"
+msgid "Banner wall"
+msgstr "Banneriseinä"
+
+#: /16x9/View_543_LandscapeWall.xml
+msgctxt "#31257"
+msgid "Landscape wall"
+msgstr "Maisemaseinä"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31258"
+msgid "Focus square"
+msgstr "Kohdistusneliö"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31259"
+msgid "Cover"
+msgstr "Kansi"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31260"
+msgid "Square icon"
+msgstr "Neliökuvake"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31261"
+msgid "Square icon info"
+msgstr "Neliökuvakkeen tiedot"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31262"
+msgid "Kodiflix square"
+msgstr "Kodiflix neliö"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31263"
+msgid "Cascade square"
+msgstr "Kaskadi neliö"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31264"
+msgid "Showcase square"
+msgstr "Showcase neliö"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31265"
+msgid "Kodiflix landscape"
+msgstr "Kodiflix maisema"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31266"
+msgid "Simple"
+msgstr "Yksinkertainen"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31267"
+msgid "Info 1"
+msgstr "Tieto 1"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31268"
+msgid "Info 2"
+msgstr "Tieto 2"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31269"
+msgid "Cover flow"
+msgstr "Kansivirta"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31270"
+msgid "Enable/Disable views"
+msgstr "Ota käyttöön / poista käytöstä näkymiä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31271"
+msgid "Icon info"
+msgstr "Kuvaketieto"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31272"
+msgid "Wall"
+msgstr "Seinä"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31273"
+msgid "Info delay"
+msgstr "Tietojen viive"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31274"
+msgid "Install genre icons"
+msgstr "Asenna tyylilajikuvakkeet"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31275"
+msgid "B/W genre icons"
+msgstr "MV-tyylilajikuvakkeet"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31276"
+msgid "Install colour genre icons"
+msgstr "Asenna värilliset tyylilajikuvakkeet"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31277"
+msgid "Install B/W genre icons"
+msgstr "Asenna mustavalkoiset tyylilajikuvakkeet"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31279"
+msgid "TV shows season & returning text"
+msgstr "Sarjojen tuotantokausi- ja palaamisteksti"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31280"
+msgid "Next aired"
+msgstr "Seuraavaksi lähetetään"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31281"
+msgid "Panels"
+msgstr "Paneelit"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31282"
+msgid "Mud"
+msgstr "Muta"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31283"
+msgid "Plain"
+msgstr "Yksinkertainen"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31284"
+msgid "Shadow texture"
+msgstr "Varjotekstuuri"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31285"
+msgid "Themes & Colours"
+msgstr "Teemat ja värit"
+
+#: /16x9/Home.xml
+msgctxt "#31286"
+msgid "Menus"
+msgstr "Valikot"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31287"
+msgid "Shortcut menu"
+msgstr "Pikavalikko"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31288"
+msgid "Hide"
+msgstr "Piilota"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31289"
+msgid "Widget"
+msgstr "Widget"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31291"
+msgid "Music case"
+msgstr "Musiikkikotelo"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31292"
+msgid "Custom favourites"
+msgstr "Mukautetut suosikit"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31293"
+msgid "Favourite"
+msgstr "Suosikki"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31294"
+msgid "Custom favourite addons"
+msgstr "Mukautetut suosikkilisäosat"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31295"
+msgid "Cinema mode"
+msgstr "Elokuvateatteritila"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31296"
+msgid "Trailer count"
+msgstr "Trailereiden määrä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31297"
+msgid "Intro path"
+msgstr "Alkuvideon polku"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31298"
+msgid "Select theme"
+msgstr "Valitse teema"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31299"
+msgid "Video discart fallback"
+msgstr "Videon levykuvan korvike"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31300"
+msgid "Customise"
+msgstr "Mukauta"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31301"
+msgid "Channel number"
+msgstr "Kanavanumero"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31302"
+msgid "Channel name"
+msgstr "Kanavan nimi"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31303"
+msgid "Repository"
+msgstr "Asennuslähde"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31304"
+msgid "Progress bar"
+msgstr "Edistymispalkki"
+
+#: /16x9/DialogPVRChannelManager.xml
+msgctxt "#31305"
+msgid "Apply"
+msgstr "Käytä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31306"
+msgid "TV Show season cover background"
+msgstr "Sarjan tuotantokauden kansitausta"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31307"
+msgid "Genre cover background"
+msgstr "Tyylilajin kansitausta"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31308"
+msgid "Artist album cover background"
+msgstr "Artistin albumin kansitausta"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31310"
+msgid "Fanart rotation speed"
+msgstr "Fanitaiteen vaihtumisnopeus"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31311"
+msgid "seconds"
+msgstr "sekuntia"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31312"
+msgid "Fullscreen audio"
+msgstr "Koko näytön ääni"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31313"
+msgid "Jump to letter"
+msgstr "Siirry kirjaimeen"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31314"
+msgid "Disable library fanart"
+msgstr "Poista kirjaston fanitaide käytöstä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31315"
+msgid "Music background"
+msgstr "Musiikin tausta"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31317"
+msgid "PVR status"
+msgstr "PVR-tila"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31318"
+msgid "TV status"
+msgstr "TV-tila"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31319"
+msgid "Radio status"
+msgstr "Radiotila"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31322"
+msgid "PVR widget"
+msgstr "PVR-widget"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31323"
+msgid "Movie & TV shows meta countdown timer text"
+msgstr "Elokuvien ja sarjojen metatietojen ajastinteksti"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31324"
+msgid "Movie/Episode case"
+msgstr "Elokuvan/jakson kotelo"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31325"
+msgid "Movie/TV show case"
+msgstr "Elokuvan/sarjan kotelo"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31326"
+msgid "Music video case"
+msgstr "Musiikkivideon kotelo"
+
+#: /16x9/Includes_NowPlaying.xml
+msgctxt "#31327"
+msgid "Special"
+msgstr "Erikois"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31328"
+msgid "Show media flags"
+msgstr "Näytä medialiput"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31330"
+msgid "Video info settings"
+msgstr "Videon tietojen asetukset"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31331"
+msgid "Create"
+msgstr "Luo"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31332"
+msgid "Set episode"
+msgstr "Aseta jakso"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31333"
+msgid "Seek icon"
+msgstr "Hakeutumiskuvake"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31334"
+msgid "Visualisation presets"
+msgstr "Visualisoinnin esiasetukset"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31335"
+msgid "Visualisation options"
+msgstr "Visualisoinnin asetukset"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31336"
+msgid "Music settings"
+msgstr "Musiikin asetukset"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31337"
+msgid "Audio view settings"
+msgstr "Ääninäkymän asetukset"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31338"
+msgid "Video view settings"
+msgstr "Videonäkymän asetukset"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31339"
+msgid "Contributors"
+msgstr "Avustajat"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31340"
+msgid "Rate"
+msgstr "Arvostele"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31341"
+msgid "Next episode"
+msgstr "Seuraava jakso"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31342"
+msgid "Movies and TV Shows starring"
+msgstr "Elokuvat ja sarjat pääosissa"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31343"
+msgid "Directed by"
+msgstr "Ohjannut"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31344"
+msgid "More movies directed by"
+msgstr "Muita ohjaajan elokuvia"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31345"
+msgid "Written by"
+msgstr "Käsikirjoittanut"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31346"
+msgid "More movies written by"
+msgstr "Muita käsikirjoittajan elokuvia"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31347"
+msgid "More like this"
+msgstr "Samankaltaisia"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31348"
+msgid "No information available."
+msgstr "Tietoja ei ole saatavilla."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31350"
+msgid "Music info settings"
+msgstr "Musiikin tietojen asetukset"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31351"
+msgid "TMDb info"
+msgstr "TMDb-tiedot"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31352"
+msgid "TMDb actor info"
+msgstr "TMDb-näyttelijätiedot"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31353"
+msgid "Artist slideshow"
+msgstr "Artistin diaesitys"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31354"
+msgid "Artist slideshow settings"
+msgstr "Artistin diaesityksen asetukset"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31356"
+msgid "Global now playing"
+msgstr "Yleinen nyt toistetaan"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31357"
+msgid "Panel texture"
+msgstr "Paneelin tekstuuri"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31358"
+msgid "Background texture"
+msgstr "Taustatekstuuri"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31359"
+msgid "Main menu texture"
+msgstr "Päävalikon tekstuuri"
+
+#: /16x9/Includes_Topbar.xml
+msgctxt "#31360"
+msgid "Filtered"
+msgstr "Suodatettu"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31361"
+msgid "Now playing music discart fallback"
+msgstr "Musiikin toiston levykuvan korvike"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31362"
+msgid "Now playing video discart fallback"
+msgstr "Videon toiston levykuvan korvike"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31363"
+msgid "Watched status"
+msgstr "Katselutila"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31364"
+msgid "Unwatched episode count"
+msgstr "Katsomattomien jaksojen määrä"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31365"
+msgid "Widget watched status"
+msgstr "Widgetin katselutila"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31366"
+msgid "Movies starring"
+msgstr "Elokuvat pääosissa"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31367"
+msgid "TV Shows starring"
+msgstr "Sarjat pääosissa"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31368"
+msgid "Movie & TV shows slider countdown enable"
+msgstr "Ota käyttöön elokuvien ja sarjojen liukusäätimen ajastin"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31369"
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "Kytkee digitaalisen ajastimen päälle/pois tietojen nuoliliukusäätimien alla. Ota käyttöön näyttääksesi, milloin liukusäädin siirtyy vasemmalle/oikealle sen saavuttaessa arvon 0. Elokuvien tai henkilöiden automaattisen selauksen on oltava käytössä tämän toiminnon aktivoimiseksi."
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31370"
+msgid "Search results for"
+msgstr "Hakutulokset hakusanalle"
+
+#: /16x9/Custom_1112_Search.xml
+msgctxt "#31371"
+msgid "Music video artists"
+msgstr "Musiikkivideoiden artistit"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31372"
+msgid "Time remaining"
+msgstr "Aikaa jäljellä"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31374"
+msgid "Cover background settings"
+msgstr "Kansikuvan tausta-asetukset"
+
+#: /16x9/Settings.xml
+msgctxt "#31375"
+msgid "Management"
+msgstr "Hallinta"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31376"
+msgid "Next button"
+msgstr "Seuraava-painike"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31377"
+msgid "HDR/SDR"
+msgstr "HDR/SDR"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31378"
+msgid "Bit depth"
+msgstr "Bittisyvyys"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31379"
+msgid "Dim background"
+msgstr "Himmennetty tausta"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31380"
+msgid "Now playing dim background"
+msgstr "Toiston himmennetty tausta"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31381"
+msgid "Appeared in"
+msgstr "Esiintynyt teoksissa"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31382"
+msgid "Press up for actor info"
+msgstr "Paina ylös nähdäksesi näyttelijän tiedot"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31383"
+msgid "Press up for library items by actor"
+msgstr "Paina ylös nähdäksesi näyttelijän kirjastokohteet"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31384"
+msgid "Source flags"
+msgstr "Lähdeliput"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31385"
+msgid "Limit"
+msgstr "Rajoitus"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31386"
+msgid "Recently added (include watched)"
+msgstr "Äskettäin lisätyt (sisältää katsotut)"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31387"
+msgid "Recently released (include watched)"
+msgstr "Äskettäin julkaistut (sisältää katsotut)"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31388"
+msgid "Character"
+msgstr "Hahmo"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31390"
+msgid "Job"
+msgstr "Tehtävä"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31391"
+msgid "Budget"
+msgstr "Budjetti"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31392"
+msgid "Years Old"
+msgstr "Vuotta vanha"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31393"
+msgid "Revenue"
+msgstr "Tuotto"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31394"
+msgid "Color icons"
+msgstr "Värikuvakkeet"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31395"
+msgid "Resolution icon color"
+msgstr "Resoluutiokuvakkeen väri"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31396"
+msgid "Violet"
+msgstr "Violetti"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31397"
+msgid "Magenta"
+msgstr "Magenta"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31398"
+msgid "Turquoise"
+msgstr "Turkoosi"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31399"
+msgid "Brown"
+msgstr "Ruskea"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31401"
+msgid "Aspect ratio icon color"
+msgstr "Kuvasuhdekuvakkeen väri"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31402"
+msgid "Sets the color for the resolution flags."
+msgstr "Asettaa resoluutiolippujen värin."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31403"
+msgid "Sets the color for the aspect ratio flags."
+msgstr "Asettaa kuvasuhteen lippujen värin."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31404"
+msgid "Large splash screen Madnox logo on startup"
+msgstr "Suuri käynnistyksen Madnox-splash-logo"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31405"
+msgid "Image gallery for"
+msgstr "Kuvagalleria kohteelle"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31406"
+msgid "Image Gallery"
+msgstr "Kuvagalleria"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31407"
+msgid "Not Available or Listed"
+msgstr "Ei saatavilla tai luetteloituna"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31408"
+msgid "Awards"
+msgstr "Palkinnot"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31409"
+msgid "Enable auto scrolling for movie's meta data"
+msgstr "Ota käyttöön elokuvien metatietojen automaattinen selaus"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31410"
+msgid "Movie meta rotation delay time"
+msgstr "Elokuvien metatietojen vaihtumisen viive"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31411"
+msgid "Enable auto scrolling for person's meta data"
+msgstr "Ota käyttöön henkilöiden metatietojen automaattinen selaus"
+
+#: /16x9/SkinSettings.xml /16x9/SkinSettings.xml
+msgctxt "#31412"
+msgid "Person meta rotation delay time"
+msgstr "Henkilöiden metatietojen vaihtumisen viive"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31413"
+msgid "Automatically scroll movie's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "Selaa elokuvien metatietoja automaattisesti, kun näkyvissä on yli 8 kohdetta. Selaa kaikkia tietoja käytettävissä olevien tietojen näkyvyyden mukaan."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31414"
+msgid "Automatically scroll person's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "Selaa henkilöiden metatietoja automaattisesti, kun näkyvissä on yli 8 kohdetta. Selaa kaikkia tietoja käytettävissä olevien tietojen näkyvyyden mukaan."
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31415"
+msgid "Crew"
+msgstr "Työryhmä"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31416"
+msgid "TMDb"
+msgstr "TMDb"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31417"
+msgid "TVDb"
+msgstr "TVDb"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31418"
+msgid "Recommendations"
+msgstr "Suositukset"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31419"
+msgid "Guest stars"
+msgstr "Vierailevat tähdet"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31420"
+msgid "Display larger DPI scaled logo when Kodi first loads. Large logo: 1600x520px, Small logo: 800x260px. Kodi will auto-scale in windowed view."
+msgstr "Näytä suurempi DPI-skaalattu logo, kun Kodi ladataan ensimmäisen kerran. Suuri logo: 1600x520 px, pieni logo: 800x260 px. Kodi skaalaa logon automaattisesti ikkunatilassa."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31421"
+msgid "Turn on skin debugging to log"
+msgstr "Ota käyttöön ulkoasun vianetsintä lokiin"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31422"
+msgid "Off by default, leave this setting off unless troubleshooting is needed. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
+msgstr "Oletuksena pois käytöstä, jätä tämä asetus pois päältä, ellei vianetsintä ole tarpeen. Tämä kasvattaa vianetsintälokia ja laitteen välimuistia nopeasti ja saattaa aiheuttaa epävakautta, jos sitä ei valvota. Sinua on varoitettu."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31423"
+msgid "Fanart background size ratio"
+msgstr "Fanitaustan koon suhde"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31424"
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center: Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgstr "Asettaa fanitaustan koon suhteen. Skaalaa/Säilytä/Keskitä: Kuvasuhde säilytetään. Venytä: Kuvasuhdetta ei säilytetä."
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31425"
+msgid "Custom colour"
+msgstr "Mukautettu väri"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31426"
+msgid "Alpha"
+msgstr "Alfa"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31427"
+msgid "Applied"
+msgstr "Käytössä"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31428"
+msgid "Preview"
+msgstr "Esikatselu"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31429"
+msgid "Feature"
+msgstr "Ominaisuus"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31430"
+msgid "Sliders"
+msgstr "Liukusäätimet"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31431"
+msgid "Core mode (Palette locked)"
+msgstr "Ydintila (Paletti lukittu)"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31432"
+msgid "Scale"
+msgstr "Skaalaa"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31433"
+msgid "Stretch"
+msgstr "Venytä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31434"
+msgid "Image"
+msgstr "Kuva"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31435"
+msgid "Navigation"
+msgstr "Navigointi"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31436"
+msgid "Media flags data style"
+msgstr "Medialippujen tyyli"
+
+#: /16x9/Custom_1111_CustomSelectContainer.xml
+msgctxt "#31437"
+msgid "TMDB Info Settings"
+msgstr "TMDB-tietojen asetukset"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31438"
+msgid "Displays icons in each row when the metadata is shown in Movies, TVShows, Biographies, & TMDb display modes."
+msgstr "Näyttää kuvakkeet jokaisella rivillä, kun metatiedot esitetään elokuvissa, sarjoissa, elämäkerroissa ja TMDb-näyttötiloissa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31439"
+msgid "Wiki"
+msgstr "Wiki"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31440"
+msgid "Color selection"
+msgstr "Värin valinta"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31441"
+msgid "Flags"
+msgstr "Liput"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31442"
+msgid "Intro"
+msgstr "Intro"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31443"
+msgid "Outro"
+msgstr "Outro"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31444"
+msgid "Colored"
+msgstr "Värillinen"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31445"
+msgid "Addon"
+msgstr "Lisäosa"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31447"
+msgid "Resource"
+msgstr "Resurssi"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31448"
+msgid "Codec"
+msgstr "Koodekki"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31449"
+msgid "Node"
+msgstr "Solmu"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31450"
+msgid "Artwork dump"
+msgstr "Kuvituksen vienti"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31451"
+msgid "PreShow Experience"
+msgstr "PreShow Experience"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31452"
+msgid "Up"
+msgstr "Ylös"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31453"
+msgid "Current"
+msgstr "Nykyinen"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31454"
+msgid "Editing"
+msgstr "Muokataan"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31455"
+msgid "Container"
+msgstr "Säiliö"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31456"
+msgid "Legacy"
+msgstr "Perinteinen"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31457"
+msgid "Bumpers"
+msgstr "Puskurit"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31458"
+msgid "Accent color"
+msgstr "Tehosteväri"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31459"
+msgid "overlay dimming"
+msgstr "peitteen himmennys"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31460"
+msgid "Countdown"
+msgstr "Laskuri"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31461"
+msgid "Courtesy"
+msgstr "Kohteliaisuus"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31462"
+msgid "Show Error Notifications"
+msgstr "Näytä virheilmoitukset"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31465"
+msgid "Master reset"
+msgstr "Yleinen nollaus"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31466"
+msgid "Confirm factory reset"
+msgstr "Vahvista tehdasasetusten palautus"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31467"
+msgid "Welcome to Madnox! For the best experience, we recommend applying the default settings. This will configure all visual options and features. Would you like to apply the Madnox recommended settings now?"
+msgstr "Tervetuloa Madnoxiin! Parhaan käyttökokemuksen saavuttamiseksi suosittelemme oletusasetusten käyttöönottoa. Tämä määrittää kaikki visuaaliset asetukset ja ominaisuudet. Haluatko ottaa Madnoxin suosittelemat asetukset käyttöön nyt?"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31468"
+msgid "This will restore all skin settings to their original defaults.[CR][CR]Your current customizations will be lost.[CR]Are you sure you want to continue?"
+msgstr "Tämä palauttaa kaikki ulkoasun asetukset alkuperäisiksi oletusasetuksiksi.[CR][CR]Nykyiset mukautuksesi menetetään.[CR]Haluatko varmasti jatkaa?"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31470"
+msgid "Restore Madnox skin settings to day 1 out of the box startup values. Only affects skin settings, does not alter or change anything else like scripts or plugins."
+msgstr "Palauta Madnox-ulkoasun asetukset alkuperäisiin oletusarvoihinsa. Tämä vaikuttaa vain ulkoasun asetuksiin eikä muuta mitään muuta, kuten skriptejä tai lisäosia."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31471"
+msgid "Allows customization of default media flags without requiring outside hacks to the skin. This allows you to custom select which video container icons will be displayed for WebDL, 1080p, 720p etc. This can be reset at any time."
+msgstr "Sallii oletusarvoisten medialippujen mukauttamisen ilman ulkoasun ulkopuolisia muutoksia. Tämän avulla voit valita itse, mitkä videosäiliökuvakkeet näytetään esimerkiksi WebDL-, 1080p- ja 720p-videoille. Tämä voidaan nollata milloin tahansa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31472"
+msgid "Enables setting of the color of \"In-Progress\" bar feature."
+msgstr "Ottaa käyttöön \"Käynnissä\"-palkin värin määrittämisen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31473"
+msgid "Sets of the color of \"In-Progress\" bar feature globally when enabled."
+msgstr "Määrittää \"Käynnissä\"-palkin värin yleisesti, kun se on käytössä."
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31474"
+msgid "Startup intro video"
+msgstr "Käynnistyksen aloitusvideo"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31475"
+msgid "Turn on trailer debugging to log"
+msgstr "Ota käyttöön trailerin vianetsintä lokiin"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31476"
+msgid "Off by default, leave this setting off unless troubleshooting auto preview trailer rolling is needed."
+msgstr "Oletuksena pois käytöstä, jätä tämä asetus pois päältä, ellei automaattisen esikatselutrailerin toiston vianetsintä ole tarpeen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31477"
+msgid "When enabled, Kodi will remember the last context menu position. Example: TV Shows seasons || \"Marked as watched\": Will remain highlighted as each season is marked as watched."
+msgstr "Kun käytössä, Kodi muistaa viimeisimmän pikavalikon sijainnin. Esimerkki: TV-sarjojen tuotantokaudet || \"Merkitty katsotuksi\": Valinta pysyy korostettuna, kun jokainen tuotantokausi merkitään katsotuksi."
+
+#: /16x9/Includes.xml
+msgctxt "#31478"
+msgid "Local"
+msgstr "Paikallinen"
+
+#: /16x9/Includes.xml
+msgctxt "#31479"
+msgid "Upcoming"
+msgstr "Tulevat"
+
+#: /16x9/Includes.xml
+msgctxt "#31480"
+msgid "Modify"
+msgstr "Muokkaa"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31481"
+msgid "Madnox script skin helper addon"
+msgstr "Madnoxin script skin helper -lisäosa"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31482"
+msgid "Only"
+msgstr "Vain"
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31483"
+msgid "Battery"
+msgstr "Akku"
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31485"
+msgid "PVR"
+msgstr "PVR"
+
+#: /16x9/.xml
+msgctxt "#31486"
+msgid "CPU"
+msgstr "CPU"
+
+#: /16x9/.xml
+msgctxt "#31487"
+msgid "GPU"
+msgstr "GPU"
+
+#: /16x9/.xml
+msgctxt "#31488"
+msgid "Frequency"
+msgstr "Taajuus"
+
+#: /16x9/.xml
+msgctxt "#31489"
+msgid "Bytes"
+msgstr "Tavut"
+
+#: /16x9/.xml
+msgctxt "#31490"
+msgid "Uptime"
+msgstr "Käyntiaika"
+
+#: /16x9/.xml
+msgctxt "#31491"
+msgid "Screen"
+msgstr "Näyttö"
+
+#: /16x9/.xml
+msgctxt "#31492"
+msgid "Build"
+msgstr "Versio"
+
+#: /16x9/.xml
+msgctxt "#31493"
+msgid "Locale"
+msgstr "Maa-asetusto"
+
+#: /16x9/Custom_1120_Dashboard.xml /16x9/Custom_1129_Version.xml
+msgctxt "#31494"
+msgid "Kodi"
+msgstr "Kodi"
+
+#: /16x9/.xml
+msgctxt "#31495"
+msgid "Cores"
+msgstr "Ytimet"
+
+#: /16x9/.xml
+msgctxt "#31496"
+msgid "Frames per second"
+msgstr "Kuvaa sekunnissa"
+
+#: /16x9/.xml
+msgctxt "#31497"
+msgid "Memory"
+msgstr "Muisti"
+
+#: /16x9/.xml
+msgctxt "#31498"
+msgid "Freeable"
+msgstr "Vapautettavissa"
+
+#: /16x9/.xml
+msgctxt "#31499"
+msgid "Full"
+msgstr "Täynnä"
+
+#: /16x9/.xml
+msgctxt "#31500"
+msgid "Code"
+msgstr "Koodi"
+
+#: /16x9/.xml
+msgctxt "#31501"
+msgid "Host"
+msgstr "Isäntä"
+
+#: /16x9/.xml
+msgctxt "#31502"
+msgid "Remaining"
+msgstr "Jäljellä"
+
+#: /16x9/.xml
+msgctxt "#31503"
+msgid "Dashboard"
+msgstr "Kojelauta"
+
+#: /16x9/.xml
+msgctxt "#31504"
+msgid "Slot Available"
+msgstr "Paikka vapaana"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31505"
+msgid "Enables widgets \"In-Progress\" bar feature in the popup dialog."
+msgstr "Ottaa käyttöön widgetien \"Käynnissä\"-palkkiominaisuuden ponnahdusikkunassa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31506"
+msgid "Current built-in revision level of the default Madnox values to reset / initialize the skin."
+msgstr "Sisäänrakennettu Madnoxin oletusarvojen versio ulkoasun nollaamiseksi / alustamiseksi."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31507"
+msgid "Select if an intro video will play when Kodi is first started. None: No video, Built-In: Kodi's release level intro video, Custom: Pick video of your choice to display."
+msgstr "Valitse, toistetaanko aloitusvideo, kun Kodi käynnistetään ensimmäisen kerran. Ei mitään: Ei videota, Sisäänrakennettu: Kodin julkaisuversion aloitusvideo, Mukautettu: Valitse itse näytettävä video."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31508"
+msgid "This setting forces the media flag to resolution flag as 4K or 2160p providing user icon control without skin modifcations."
+msgstr "Tämä asetus pakottaa resoluutiolipuksi 4K:n tai 2160p:n tarjoten käyttäjälle kuvakkeiden hallinnan ilman ulkoasumuutoksia."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31509"
+msgid "Change the stars color displayed in the video info line. Click to cycle through fixed colors or select a custom color."
+msgstr "Muuta videotietorivillä näkyvien tähtien väriä. Napsauta selataksesi kiinteitä värejä tai valitse mukautettu väri."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31510"
+msgid "Allows star ratings style to use a custom color when it is set to \"Custom\"."
+msgstr "Sallii tähtiarvioiden tyylin käyttää mukautettua väriä, kun asetukseksi on valittu \"Mukautettu\"."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31511"
+msgid "Dedicated addon for Madnox required for Piers+. Moves all free running scripts to a dedicated addon for security purposes."
+msgstr "Erillinen lisäosa Madnoxille, jota vaaditaan Piers+:lle. Siirtää kaikki vapaasti suoritettavat skriptit erilliseen lisäosaan turvallisuussyistä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31512"
+msgid "TMDbHelper provides several tools to assist skinners with retrieving information from TMDb, OMDb and Trakt APIs."
+msgstr "TMDbHelper tarjoaa useita työkaluja, jotka auttavat ulkoasun tekijöitä tietojen noutamisessa TMDb-, OMDb- ja Trakt-rajapinnoista."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31513"
+msgid "Wikipedia addon for Kodi."
+msgstr "Wikipedia-lisäosa Kodille."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31514"
+msgid "Advanced CinemaVision replacement that can be enabled to replace Madnox's built in simpler CinemaMode. Allows the ultimate CinemaMode experience and customisation."
+msgstr "Edistynyt CinemaVision-korvike, joka voidaan ottaa käyttöön korvaamaan Madnoxin sisäänrakennettu yksinkertaisempi CinemaMode. Mahdollistaa parhaan mahdollisen CinemaMode-kokemuksen ja -mukautuksen."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31515"
+msgid "Blur with color"
+msgstr "Sumennus värillä"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31516"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard)."
+msgstr "Näyttää tai piilottaa valikon kohteen pääpikavalikossa (näppäimistön S-näppäin)."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31517"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard). NOTE: This menu item is visible ONLY on the home screen only regardless of this setting."
+msgstr "Näyttää tai piilottaa valikon kohteen pääpikavalikossa (näppäimistön S-näppäin). HUOMAUTUS: Tämä valikkokohta on näkyvissä VAIN aloitusnäytössä tästä asetuksesta riippumatta."
+
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr "Suorita valinnaisten lisäosien asennusohjelma uudelleen"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr "Valinnaisten lisäosien asennusohjelma"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr "Tämä suorittaa valinnaisten lisäosien asennusohjelman uudelleen. Kaikki lisäosat ladataan ja asennetaan poistetussa tilassa. Ota käyttöön vain tarvitsemasi kohdassa Asetukset > Ulkoasun asetukset > Lisäosat."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31521"
+msgid "Madnox image resource addon"
+msgstr "Madnoxin kuvaresurssilisäosa"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31522"
+msgid "Images"
+msgstr "Kuvat"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31523"
+msgid "Display ratings as 10-point numbers"
+msgstr "Näytä arviot 10-pisteen numeroina"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31524"
+msgid "Allows changes to the ratings to convert between floating numbers or as a percentage. Affects TMDb & IMDb, all others remain as their default display."
+msgstr "Sallii arvioiden muuttamisen liukulukujen ja prosenttiosuuksien välillä. Vaikuttaa TMDb:hen ja IMDb:hen, kaikki muut pysyvät oletusarvoisessa näytössään."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31525"
+msgid "Re-run skin shortcuts migrator"
+msgstr "Suorita ulkoasun pikakuvakkeiden siirto-ohjelma uudelleen"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31526"
+msgid "This will rewrite the skin shortcuts .properties file to the current 3 module addon structure. Only run if there are issues with background images or playlists are not working."
+msgstr "Tämä kirjoittaa ulkoasun pikakuvakkeiden .properties-tiedoston uudelleen nykyiseen 3 moduulin lisäosarakenteeseen. Suorita tämä vain, jos taustakuvissa on ongelmia tai soittolistat eivät toimi."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31527"
+msgid "This will reactivate the addons installer. Only run if addons were not installed when skin was first installed."
+msgstr "Tämä aktivoi lisäosien asennusohjelman uudelleen. Suorita tämä vain, jos lisäosia ei asennettu, kun ulkoasu asennettiin ensimmäisen kerran."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31528"
+msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
+msgstr "Erillinen lisäosa Madnoxille, jota vaaditaan Piers+:lle. Siirtää ulkoasun kuvat erilliseen lisäosaan turvallisuussyistä."
+
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase hero"
+msgstr "Showcase sankarikuva"
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr "Valokeila"
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic shelf"
+msgstr "Elokuvahylly"
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr "Editorial"
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr "Immersiivinen"
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr "Näyttämö"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr "Tauko"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr "Pysäytä"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr "Pystysuora"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr "Näytä"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr "Alas"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31540"
+msgid "Save Madnox current settings to the preset folder."
+msgstr "Tallenna Madnoxin nykyiset asetukset esiasetuskansioon."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31541"
+msgid "Load Madnox previously saved settings from the preset folder."
+msgstr "Lataa Madnoxin aiemmin tallennetut asetukset esiasetuskansiosta."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31542"
+msgid "Export current settings to an external file (Used for sharing or collaboration)."
+msgstr "Vie nykyiset asetukset ulkoiseen tiedostoon (käytetään jakamiseen tai yhteistyöhön)."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31543"
+msgid "Import settings from an external file (Used for sharing or collaboration). Invalid files/format will not be loaded."
+msgstr "Tuo asetukset ulkoisesta tiedostosta (käytetään jakamiseen tai yhteistyöhön). Virheellisiä tiedostoja/muotoja ei ladata."
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31544"
+msgid "Widget Layout"
+msgstr "Widgetin asettelu"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31545"
+msgid "Prefer"
+msgstr "Suosi"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31546"
+msgid "Manager"
+msgstr "Hallinta"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31547"
+msgid "Import from file (Ext)"
+msgstr "Tuo tiedostosta (Ulkoiset)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31548"
+msgid "Export to folder (Ext)"
+msgstr "Vie kansioon (Ulkoiset)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31549"
+msgid "Presets"
+msgstr "Esiasetukset"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31550"
+msgid "Load"
+msgstr "Lataa"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31551"
+msgid "Actions for selected file"
+msgstr "Valitun tiedoston toiminnot"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31552"
+msgid "Found"
+msgstr "Löytyi"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31553"
+msgid "Show all"
+msgstr "Näytä kaikki"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31554"
+msgid "Tooltips"
+msgstr "Työkaluvihjeet"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31555"
+msgid "Transport"
+msgstr "Toistonohjaus"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31556"
+msgid "Visibility"
+msgstr "Näkyvyys"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31557"
+msgid "Categories"
+msgstr "Kategoriat"
+
+# --- Colored prefix labels ---
+
+#: /16x9/includes.xml
+msgctxt "#31559"
+msgid "Customise 4K / UHD flag:"
+msgstr "Mukauta 4K / UHD -lippu:"
+
+#: /16x9/includes.xml
+msgctxt "#31560"
+msgid "Customise WebDL flag:"
+msgstr "Mukauta WebDL-lippu:"
+
+#: /16x9/includes.xml
+msgctxt "#31561"
+msgid "Customise 1080p flag:"
+msgstr "Mukauta 1080p-lippu:"
+
+#: /16x9/includes.xml
+msgctxt "#31562"
+msgid "Customise 720p flag:"
+msgstr "Mukauta 720p-lippu:"
+
+#: /16x9/includes.xml
+msgctxt "#31563"
+msgid "Customise DVD / SD flag:"
+msgstr "Mukauta DVD / SD -lippu:"
+
+#: /16x9/includes.xml
+msgctxt "#31564"
+msgid "Category filter:"
+msgstr "Kategoriasuodatin:"
+
+#: /16x9/includes.xml
+msgctxt "#31565"
+msgid "Restore default:"
+msgstr "Palauta oletus:"
+
+#: /16x9/includes.xml
+msgctxt "#31566"
+msgid "Toggle Color Scheme:"
+msgstr "Vaihda väriteemaa:"
+
+# --- Body texts: top row category selectors (controls 901–904, 905) ---
+
+#: /16x9/includes.xml
+msgctxt "#31567"
+msgid "Highlight a logo from the palette below and click to assign it to 4K / UHD video files."
+msgstr "Korosta logo alla olevasta paletista ja napsauta määrittääksesi sen 4K / UHD -videotiedostoille."
+
+#: /16x9/includes.xml
+msgctxt "#31568"
+msgid "Highlight a logo from the palette below and click to assign it to WebDL and streaming video sources."
+msgstr "Korosta logo alla olevasta paletista ja napsauta määrittääksesi sen WebDL- ja suoratoistovideolähteille."
+
+#: /16x9/includes.xml
+msgctxt "#31569"
+msgid "Highlight a logo from the palette below and click to assign it to 1080p Full HD video files."
+msgstr "Korosta logo alla olevasta paletista ja napsauta määrittääksesi sen 1080p Full HD -videotiedostoille."
+
+#: /16x9/includes.xml
+msgctxt "#31570"
+msgid "Highlight a logo from the palette below and click to assign it to 720p HD video files."
+msgstr "Korosta logo alla olevasta paletista ja napsauta määrittääksesi sen 720p HD -videotiedostoille."
+
+#: /16x9/includes.xml
+msgctxt "#31571"
+msgid "Highlight a logo from the palette below and click to assign it to DVD and standard-definition video files."
+msgstr "Korosta logo alla olevasta paletista ja napsauta määrittääksesi sen DVD- ja standardipiirron videotiedostoille."
+
+# --- Body texts: left menu category buttons (controls 91–97) ---
+
+#: /16x9/includes.xml
+msgctxt "#31572"
+msgid "View only ultra-high-definition and 4K logo designs in the palette grid."
+msgstr "Näytä vain ultra-high-definition- ja 4K-logomallit palettiruudukossa."
+
+#: /16x9/includes.xml
+msgctxt "#31573"
+msgid "View only HEVC and H.265 codec logo designs in the palette grid."
+msgstr "Näytä vain HEVC- ja H.265-koodekkien logomallit palettiruudukossa."
+
+#: /16x9/includes.xml
+msgctxt "#31574"
+msgid "View only AVC and H.264 codec logo designs in the palette grid."
+msgstr "Näytä vain AVC- ja H.264-koodekkien logomallit palettiruudukossa."
+
+#: /16x9/includes.xml
+msgctxt "#31575"
+msgid "View only DivX, XviD, and legacy MPEG-4 format logo designs in the palette grid."
+msgstr "Näytä vain DivX-, XviD- ja vanhojen MPEG-4-formaattien logomallit palettiruudukossa."
+
+#: /16x9/includes.xml
+msgctxt "#31576"
+msgid "View classic MPEG, DVD, and standard TV broadcast logo designs in the palette grid."
+msgstr "Näytä perinteiset MPEG-, DVD- ja tavallisten TV-lähetysten logomallit palettiruudukossa."
+
+#: /16x9/includes.xml
+msgctxt "#31577"
+msgid "View Windows Media Video and VC-1 codec logo designs in the palette grid."
+msgstr "Näytä Windows Media Video- ja VC-1-koodekkien logomallit palettiruudukossa."
+
+#: /16x9/includes.xml
+msgctxt "#31578"
+msgid "View container wrappers, disk formats, and other miscellaneous logo designs in the palette grid."
+msgstr "Näytä säiliömuotojen, levymuotojen ja muiden erilaisten logomallien kuvakkeet palettiruudukossa."
+
+# --- Standalone entries (no colored prefix) ---
+
+#: /16x9/includes.xml
+msgctxt "#31579"
+msgid "Close this flag customization dialog and return to settings."
+msgstr "Sulje tämä lippujen mukautusikkuna ja palaa asetuksiin."
+
+#: /16x9/includes.xml
+msgctxt "#31580"
+msgid "Highlight any logo design in the center grid and click to save it as your custom flag for the active category."
+msgstr "Korosta mikä tahansa logomalli keskimmäisessä ruudukossa ja napsauta tallentaaksesi sen mukautetuksi lipuksesi aktiivisessa kategoriassa."
+
+# --- Body texts: right panel actions (controls 801, 98) ---
+
+#: /16x9/includes.xml
+msgctxt "#31581"
+msgid "Clear your custom flag choice and restore this category to the skin's automatic default flag logic."
+msgstr "Tyhjennä mukautettu lippuvalintasi ja palauta tämä kategoria ulkoasun automaattiseen oletuslippulogiikkaan."
+
+#: /16x9/includes.xml
+msgctxt "#31582"
+msgid "Toggle global flag artwork between colored designs and monochromatic default white."
+msgstr "Vaihda yleinen lippukuvitus värillisten mallien ja yksivärisen oletusvalkoisen välillä."
+
+# --- Default / idle state ---
+
+#: /16x9/includes.xml
+msgctxt "#31583"
+msgid "Use your directional keys to navigate options. Press Back or select Exit at any time to close without changes."
+msgstr "Käytä suuntapainikkeita asetuksissa liikkumiseen. Paina Takaisin tai valitse Poistu milloin tahansa sulkeaksesi ilman muutoksia."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31584"
+msgid "Select to modify"
+msgstr "Valitse muokataksesi"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31901"
+msgid "Customisation of the home screen, widgets and shortcuts menu."
+msgstr "Aloitusnäytön, widgetien ja pikavalikon mukauttaminen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31904"
+msgid "Script for skinners to let users select an image resource addon."
+msgstr "Skripti ulkoasun tekijöille, jotta käyttäjät voivat valita kuvaresurssien lisäosan."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31905"
+msgid "Automatically adds extra artwork for media in your media libraries."
+msgstr "Lisää automaattisesti ylimääräistä kuvitusta mediakirjastojesi mediatiedostoille."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31907"
+msgid "Lyrics for music. Required to enable animated lyrics."
+msgstr "Musiikin sanoitukset. Vaaditaan animoitujen sanoitusten käyttöönottoon."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31908"
+msgid "Sync your collection and watched status with trakt.tv."
+msgstr "Synkronoi kokoelmasi ja katselutilasi trakt.tv-palvelun kanssa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31910"
+msgid "Create a custom favourite from selected kodi favourites."
+msgstr "Luo mukautettu suosikki valituista Kodin suosikeista."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31911"
+msgid "Edit the home screen menu, widgets, backgrounds and infolines."
+msgstr "Muokkaa aloitusnäytön valikkoa, widgetejä, taustoja ja inforivejä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31912"
+msgid "Reset the home screen menu, widgets, backgrounds and infolines to default."
+msgstr "Palauta aloitusnäytön valikko, widgetit, taustat ja inforivit oletusasetuksiin."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31913"
+msgid "Create a custom favourite from selected kodi favourites. For use in main menu widgets. Requires script favourites to be installed."
+msgstr "Luo mukautettu suosikki valituista Kodin suosikeista päävalikon widgeteissä käytettäväksi. Vaatii suosikit-skriptin asennuksen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31914"
+msgid "Create a custom addon favourite from installed addons. For use in main menu widgets."
+msgstr "Luo mukautettu suosikkilisäosa asennetuista lisäosista päävalikon widgeteissä käytettäväksi."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31915"
+msgid "Reset the skin theme and colours to default."
+msgstr "Palauta ulkoasun teema ja värit oletusarvoisiksi."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31916"
+msgid "Select from a list of pre-defined themes."
+msgstr "Valitse ennalta määritettyjen teemojen luettelosta."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31917"
+msgid "Lock preferences to disable view mode, view options, info dialog and fullscreen settings."
+msgstr "Lukitse mieltymykset poistaaksesi näkymätilan, näkymäasetukset, tietoikkunan ja koko näytön asetukset käytöstä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31918"
+msgid "Customise the home screen, favourites, predefined themes and kiosk mode."
+msgstr "Mukauta aloitusnäyttöä, suosikkeja, ennalta määritettyjä teemoja ja kioskitiilaa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31919"
+msgid "Change skin theme textures."
+msgstr "Muuta ulkoasun teeman tekstuureja."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31920"
+msgid "Customise the skin texture colours."
+msgstr "Mukauta ulkoasun tekstuurivärejä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31921"
+msgid "Customise the background and fallbacks for specific skin areas."
+msgstr "Mukauta taustaa ja korvaavia taustoja tietyille ulkoasun alueille."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31922"
+msgid "Enable or disable various skin features."
+msgstr "Ota käyttöön tai poista käytöstä useita ulkoasun toimintoja."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31923"
+msgid "Customise artwork and install supported artwork packs."
+msgstr "Mukauta kuvitusta ja asenna tuettuja kuvituspaketteja."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31924"
+msgid "Install and configure supported addons."
+msgstr "Asenna ja määritä tuettuja lisäosia."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31925"
+msgid "Enable and disable library views. Disabling library views on low spec systems may improve performance."
+msgstr "Ota käyttöön ja poista käytöstä kirjastonäkymiä. Kirjastonäkymien poistaminen käytöstä vähätehoisissa järjestelmissä saattaa parantaa suorituskykyä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31926"
+msgid "Shows scroll letter when scrolling in library views."
+msgstr "Näyttää selauskirjaimen kirjastonäkymiä selattaessa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31927"
+msgid "Shows the alphabet to jump to a position of the container. Will only work for default sorting methods (A-Z)."
+msgstr "Näyttää aakkoset siirtyäksesi tiettyyn kohtaan säiliössä. Toimii vain oletusarvoisilla lajittelumenetelmillä (A-Ö)."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31928"
+msgid "Shows plot outline for tv shows and movies if available, otherwise will display the default plot."
+msgstr "Näyttää sarjojen ja elokuvien juonen lyhennelmän, jos se on saatavilla, muussa tapauksessa näytetään oletusjuoni."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31929"
+msgid "Auto scroll the plot if it does not fit the control dimensions."
+msgstr "Selaa juonikuvausta automaattisesti, jos se ei mahdu sille varattuun tilaan."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31930"
+msgid "Enable the shortcut menu for instant access to specific skin areas. In the media menu click left to open or click on the shortcut icon."
+msgstr "Ota käyttöön pikavalikko nopeaa pääsyä varten tietyille ulkoasun alueille. Paina vasemmalle mediavalikossa avataksesi sen tai napsauta pikavalikkokuvaketta."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31931"
+msgid "Edit the shortcut menu."
+msgstr "Muokkaa pikavalikkoa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31932"
+msgid "Enable and disable the topbar elements."
+msgstr "Ota käyttöön ja poista käytöstä yläpalkin elementtejä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31933"
+msgid "Change video info settings."
+msgstr "Muuta videon tietojen asetuksia."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31934"
+msgid "Change music info settings."
+msgstr "Muuta musiikin tietojen asetuksia."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31935"
+msgid "Change fullscreen video settings."
+msgstr "Muuta koko näytön videon asetuksia."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31936"
+msgid "Change fullscreen audio settings."
+msgstr "Muuta koko näytön äänen asetuksia."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31937"
+msgid "Reduce the size of pop up notifications."
+msgstr "Pienennä ponnahdusikkunailmoitusten kokoa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31938"
+msgid "Darkens the screen behind dialog popups. Not applicable for fullscreen video or audio."
+msgstr "Himmennä näytön valintaikkunoiden takana. Ei koske koko näytön videota tai ääntä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31940"
+msgid "Enable coloured icons for the topbar, media information and library views."
+msgstr "Ota käyttöön värilliset kuvakkeet yläpalkissa, mediatiedoissa ja kirjastonäkymissä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31941"
+msgid "Enable coloured, HDR, bit depth and language media flags."
+msgstr "Ota käyttöön värilliset, HDR-, bittisyvyys- ja kielimedialiput."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31943"
+msgid "Audio cd art fallback skin wide."
+msgstr "Äänen CD-levykuvan korvike koko ulkoasussa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31944"
+msgid "Video cd art fallback skin wide."
+msgstr "Videon CD-levykuvan korvike koko ulkoasussa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31945"
+msgid "Select and install a weather icon pack for the topbar, widgets and weather."
+msgstr "Valitse ja asenna sääkuvakepaketti yläpalkille, widgeteille ja säälle."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31946"
+msgid "Select and install a weather fanart pack for the backgrounds, widgets and weather."
+msgstr "Valitse ja asenna sääfanitaidepaketti taustoille, widgeteille ja säälle."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31947"
+msgid "Install white studio icons for use throughout the skin."
+msgstr "Asenna valkoiset studiokuvakkeet käytettäväksi koko ulkoasussa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31948"
+msgid "Install coloured studio icons for use throughout the skin."
+msgstr "Asenna värilliset studiokuvakkeet käytettäväksi koko ulkoasussa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31949"
+msgid "Install record label icons for use throughout the skin."
+msgstr "Asenna levy-yhtiökuvakkeet käytettäväksi koko ulkoasussa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31950"
+msgid "Install language flags for library views and subtitle selection."
+msgstr "Asenna kieliliput kirjastonäkymiä ja tekstityksen valintaa varten."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31951"
+msgid "Install music genre icons for music and music videos."
+msgstr "Asenna musiikin tyylilajikuvakkeet musiikille ja musiikkivideoille."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31952"
+msgid "Install coloured movie genre icons for movies and tv shows."
+msgstr "Asenna värilliset elokuvien tyylilajikuvakkeet elokuville ja sarjoille."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31953"
+msgid "Install black and white movie genre icons for movies and tv shows."
+msgstr "Asenna mustavalkoiset elokuvien tyylilajikuvakkeet elokuville ja sarjoille."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31954"
+msgid "Install country icons for movies country node."
+msgstr "Asenna maakuvakkeet elokuvien maasolmua varten."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31955"
+msgid "Set the delay between fanart transitions skin wide."
+msgstr "Määritä viive fanitaiteen vaihtumiselle koko ulkoasussa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31956"
+msgid "Falling background effects. Snow, Leaves etc."
+msgstr "Putoavat taustatehosteet. Lumi, lehdet jne."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31957"
+msgid "Show music fanart of currently playing item skin wide. Overrides library fanart."
+msgstr "Näytä parhaillaan toistettavan kohteen musiikkifanitaide koko ulkoasussa. Ohittaa kirjaston fanitaiteen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31958"
+msgid "Enables music visualisation in background while playing music. Requires visualisation to be enabled in settings - Player settings/Music."
+msgstr "Ottaa käyttöön musiikin visualisoinnin taustalla musiikkia toistettaessa. Vaatii visualisoinnin olevan käytössä kohdassa Asetukset - Soittimen asetukset/Musiikki."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31959"
+msgid "Show now playing video in background while browsing library. Overrides library fanart."
+msgstr "Näytä parhaillaan toistettava video taustalla kirjastoa selattaessa. Ohittaa kirjaston fanitaiteen."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31960"
+msgid "Download images and additional information from fanart.tv and theaudiodb.com of the currently playing artist. For fullscreen music, internet streams and radio."
+msgstr "Lataa kuvia ja lisätietoja fanart.tv- ja theaudiodb.com-palveluista parhaillaan toistettavalta artistilta. Koko näytön musiikille, internet-striimeille ja radiolle."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31962"
+msgid "Artist slideshow script settings."
+msgstr "Artistin diaesityksen skriptiasetukset."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31963"
+msgid "A shortcut to the video playlist if not empty."
+msgstr "Pikakuvake videosoittolistaan, jos se ei ole tyhjä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31964"
+msgid "A shortcut to the music playlist if not empty."
+msgstr "Pikakuvake musiikkisoittolistaan, jos se ei ole tyhjä."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31965"
+msgid "Shortcut to fullscreen when media is playing."
+msgstr "Pikakuvake koko näyttöön median toiston aikana."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31966"
+msgid "Click to open shortcut menu."
+msgstr "Napsauta avataksesi pikavalikon."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31967"
+msgid "Player controls when media is playing."
+msgstr "Soittimen ohjaimet median toiston aikana."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31968"
+msgid "Play the next TV show episode automatically."
+msgstr "Toista sarjan seuraava jakso automaattisesti."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31969"
+msgid "Play themes while navigating TV Shows, Movies and Music Videos."
+msgstr "Toista teemamusiikkia selattaessa sarjoja, elokuvia ja musiikkivideoita."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31970"
+msgid "The Library Node Editor allows you to create and customise custom video nodes and music nodes within Kodi."
+msgstr "Kirjastosolmujen muokkain (Library Node Editor) sallii mukautettujen videosolmujen ja musiikkisolmujen luomisen ja muokkaamisen Kodissa."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31971"
+msgid "Show overlay marker information for watched, unwatched, and in progress media items."
+msgstr "Näytä katselutilan merkit katsotuille, katsomattomille ja käynnissä oleville mediakohteille."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31972"
+msgid "A script for editing Kodi's built in RSS Ticker."
+msgstr "Skripti Kodin sisäänrakennetun RSS-uutisnauhan muokkaamiseen."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Ulkoasun versio ja palautusasetukset. Palauttaa kaikki oletukset alkuperäiseen tilaan."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31974"
+msgid "Addons"
+msgstr "Lisäosat"

@@ -81,54 +81,59 @@
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
 				<onright>60</onright>
-				<!-- Header -->
+
+				<!-- Header (Status:) -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[857] $LOCALIZE[126]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[13000] $LOCALIZE[126]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
+
+				<!-- Resolution -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[169]:[/COLOR] [B]$INFO[System.ScreenResolution][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[169]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.ScreenResolution][/B][/COLOR]</label>
 				</control>
+
+				<!-- Operating system -->
 				<control type="label">
 					<height>80</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[13283][/COLOR] [B]$INFO[System.OSVersionInfo][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[13283][/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.OSVersionInfo][/B][/COLOR]</label>
 				</control>
+
+				<!-- Kodi Version -->
 				<control type="label">
 					<height>80</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31494] $LOCALIZE[19114]:[/COLOR] [B]$INFO[System.BuildVersion][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31494] $LOCALIZE[19114]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BuildVersion][/B][/COLOR]</label>
 				</control>
+
+				<!-- Language -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[248]:[/COLOR] [B]$INFO[System.Language][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[248]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.Language][/B][/COLOR]</label>
 				</control>
+
+				<!-- Locale -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31493]:[/COLOR] [B]$INFO[System.Locale(region)][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31493]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.Locale(region)][/B][/COLOR]</label>
 				</control>
+
+				<!-- Battery level -->
 				<control type="label">
 					<visible>!String.IsEqual(System.BatteryLevel,0%)</visible>
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[12395]:[/COLOR] [B]$INFO[System.BatteryLevel][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[12395]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BatteryLevel][/B][/COLOR]</label>
 				</control>
-				<!-- <control type="label">
-					<visible>!String.IsEqual(System.BatteryLevel,0%)</visible>
-					<height>30</height>
-					<font>Font23_Cond_Bold</font>
-					<textcolor>FFFF0000</textcolor>
-					<shadowcolor>FF000000</shadowcolor>
-					<label>[COLOR=FF00FF00]Battery Debug:[/COLOR] $INFO[System.BatteryLevel]</label>
-				</control> -->
 			</control>
 
 			<!-- Scrollbar For The Stats Group -->

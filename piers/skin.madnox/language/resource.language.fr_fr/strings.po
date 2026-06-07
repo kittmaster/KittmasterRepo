@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: kittmaster"
-"Language-Team: \n"
+"Last-Translator: kittmaster\n"
+"Language-Team: French\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,16 +39,6 @@ msgctxt "#31004"
 msgid "Weather background"
 msgstr "Arrière-plan météo"
 
-#: /16x9/SkinSettings.xml
-msgctxt "#31005"
-msgid "shadow"
-msgstr "ombre"
-
-#: /16x9/Variables_Themes.xml
-msgctxt "#31006"
-msgid "Flat"
-msgstr "Plat"
-
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31007"
 msgid "Single image"
@@ -74,26 +64,6 @@ msgctxt "#31011"
 msgid "Returning"
 msgstr "De retour"
 
-#: /16x9/Variables.xml
-msgctxt "#31012"
-msgid "Ended"
-msgstr "Terminé"
-
-#: /16x9/Variables.xml
-msgctxt "#31013"
-msgid "TBD"
-msgstr "À déterminer"
-
-#: /16x9/Variables.xml
-msgctxt "#31014"
-msgid "New series"
-msgstr "Nouvelle série"
-
-#: /16x9/DialogColorPicker.xml
-msgctxt "#31015"
-msgid "Finale"
-msgstr "Finale"
-
 #: /16x9/SkinSettings.xml
 msgctxt "#31016"
 msgid "Smaller pop-up notifications"
@@ -103,11 +73,6 @@ msgstr "Notifications pop-up plus petites"
 msgctxt "#31017"
 msgid "Edit main menu"
 msgstr "Modifier le menu principal"
-
-#: /16x9/Home.xml /16x9/SkinSettings.xml
-msgctxt "#31018"
-msgid "Reset main menu"
-msgstr "Réinitialiser le menu principal"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31019"
@@ -124,35 +89,10 @@ msgctxt "#31021"
 msgid "Area"
 msgstr "Zone"
 
-#: /16x9/SettingsSystemInfo.xml
-msgctxt "#31022"
-msgid "CPU"
-msgstr "CPU"
-
-#: /16x9/SettingsSystemInfo.xml
-msgctxt "#31023"
-msgid "Memory"
-msgstr "Mémoire"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31024"
-msgid "Customise shortcut menu"
-msgstr "Personnaliser le menu des raccourcis"
-
 #: /16x9/DialogColorPicker.xml
 msgctxt "#31025"
 msgid "Palette"
 msgstr "palette"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31026"
-msgid "Predictive text for virtual keyboard"
-msgstr "Texte prédictif pour le clavier virtuel"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31027"
-msgid "Global override"
-msgstr "Remplacement global"
 
 #: /16x9/SkinSettings.xml /16x9/Custom_1110_Colors.xml
 msgctxt "#31028"
@@ -160,29 +100,9 @@ msgid "Manage"
 msgstr "Gérer"
 
 #: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
-msgctxt "#31029"
-msgid "Video now playing background"
-msgstr "Arrière-plan de la vidéo en cours de lecture"
-
-#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
 msgctxt "#31030"
 msgid "Music now playing background"
 msgstr "Arrière-plan de la musique en cours de lecture"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31031"
-msgid "Enable day and night colour themes"
-msgstr "Activer les thèmes de couleurs jour et nuit"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31032"
-msgid "Theme for day time"
-msgstr "Thème pour le jour"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31033"
-msgid "Theme for night time"
-msgstr "Thème pour la nuit"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31034"
@@ -198,11 +118,6 @@ msgstr "Fanart supplémentaire"
 msgctxt "#31036"
 msgid "Fallback"
 msgstr "Repli"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31037"
-msgid "Animated posters"
-msgstr "Affiches animées"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31038"
@@ -238,11 +153,6 @@ msgstr "Liste fixe"
 msgctxt "#31044"
 msgid "Palette color selected"
 msgstr "Couleur de la palette sélectionnée"
-
-#: /16x9/Custom_1110_Colors.xml /16x9/SkinSettings.xml /16x9/Variables_Colors.xml
-msgctxt "#31045"
-msgid "Global default"
-msgstr "Par défaut global"
 
 #: /16x9/Custom_1111_Topbar.xml
 msgctxt "#31046"
@@ -285,11 +195,6 @@ msgid "Country icons"
 msgstr "Icônes de pays"
 
 #: /16x9/SkinSettings.xml
-msgctxt "#31054"
-msgid "Default backgrounds"
-msgstr "Arrière-plans par défaut"
-
-#: /16x9/SkinSettings.xml
 msgctxt "#31055"
 msgid "Weather fanart"
 msgstr "Fanart météo"
@@ -303,11 +208,6 @@ msgstr "Panneau"
 msgctxt "#31057"
 msgid "Seasons"
 msgstr "Saisons"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31058"
-msgid "Not installed"
-msgstr "Non installé"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31059"
@@ -324,11 +224,6 @@ msgctxt "#31061"
 msgid "Icon"
 msgstr "Icône"
 
-#: /16x9/SkinSettings.xml
-msgctxt "#31062"
-msgid "Coloured icons"
-msgstr "Icônes colorées"
-
 #: /16x9/Includes_MediaFlags.xml
 msgctxt "#31063"
 msgid "On air"
@@ -340,34 +235,9 @@ msgid "Last aired"
 msgstr "Dernière diffusion"
 
 #: /16x9/Custom_1117_MusicVisSettings.xml
-msgctxt "#31065"
-msgid "Visualisation settings"
-msgstr "Paramètres de visualisation"
-
-#: /16x9/Custom_1117_MusicVisSettings.xml
-msgctxt "#31066"
-msgid "Choose presets"
-msgstr "Choisir des préréglages"
-
-#: /16x9/DialogSubtitles.xml
-msgctxt "#31067"
-msgid "Local subtitle available"
-msgstr "Sous-titre local disponible"
-
-#: /16x9/Custom_1117_MusicVisSettings.xml
-msgctxt "#31068"
-msgid "Lyrics add-on"
-msgstr "Add-on de paroles"
-
-#: /16x9/Custom_1117_MusicVisSettings.xml
 msgctxt "#31069"
 msgid "Lyrics add-on settings"
 msgstr "Paramètres de l'add-on de paroles"
-
-#: /16x9/View_507_FanartList.xml
-msgctxt "#31070"
-msgid "Fanart list"
-msgstr "Liste de fanarts"
 
 #: /16x9/View_700_RightList.xml
 msgctxt "#31071"
@@ -410,16 +280,6 @@ msgid "Furniture"
 msgstr "Mobilier"
 
 #: /16x9/SkinSettings.xml
-msgctxt "#31079"
-msgid "Prefer plot outline"
-msgstr "Préférer le résumé de l'intrigue"
-
-#: /16x9/MyVideoNav.xml
-msgctxt "#31080"
-msgid "Edit Nodes"
-msgstr "Modifier les nœuds"
-
-#: /16x9/SkinSettings.xml
 msgctxt "#31081"
 msgid "Media menu buttons"
 msgstr "Boutons du menu multimédia"
@@ -439,20 +299,10 @@ msgctxt "#31084"
 msgid "Case"
 msgstr "Boîtier"
 
-#: /16x9/Custom_1127_BackgroundCustomizer.xml
-msgctxt "#31085"
-msgid "Overlay"
-msgstr "Superposition"
-
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31086"
 msgid "Video playlist"
 msgstr "Liste de lecture vidéo"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31087"
-msgid "Embuary info"
-msgstr "Informations Embuary"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31088"
@@ -480,39 +330,14 @@ msgid "Overview"
 msgstr "Aperçu"
 
 #: /16x9/SkinSettings.xml
-msgctxt "#31093"
-msgid "Backup"
-msgstr "Sauvegarde"
-
-#: /16x9/SkinSettings.xml
 msgctxt "#31094"
 msgid "Restore"
 msgstr "Restaurer"
 
 #: /16x9/SkinSettings.xml
-msgctxt "#31095"
-msgid "Hide view options"
-msgstr "Masquer les options d'affichage"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31096"
-msgid "Hide view options & types"
-msgstr "Masquer les options et types d'affichage"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31097"
-msgid "Hide menus"
-msgstr "Masquer les menus"
-
-#: /16x9/SkinSettings.xml
 msgctxt "#31098"
 msgid "Kiosk mode"
 msgstr "Mode kiosque"
-
-#: /16x9/Includes_CustomSelect.xml
-msgctxt "#31099"
-msgid "Dark"
-msgstr "Sombre"
 
 #: /16x9/script-tmdbhelper-recommendations.xml
 msgctxt "#31100"
@@ -524,11 +349,6 @@ msgctxt "#31101"
 msgid "YouTube"
 msgstr "YouTube"
 
-#: /16x9/script-skinshortcuts.xml /16x9/variables.xml
-msgctxt "#31102"
-msgid "Select live background"
-msgstr "Sélectionner l'arrière-plan en direct"
-
 #: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml /16x9/variables.xml
 msgctxt "#31103"
 msgid "Live background"
@@ -538,11 +358,6 @@ msgstr "Arrière-plan en direct"
 msgctxt "#31104"
 msgid "Local subtitles available"
 msgstr "Sous-titres locaux disponibles"
-
-#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31105"
-msgid "colour"
-msgstr "couleur"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31106"
@@ -558,11 +373,6 @@ msgstr "arrière-plan"
 msgctxt "#31108"
 msgid "Disc art"
 msgstr "Disque d'art"
-
-#: /16x9/DialogVideoInfo.xml /16x9/DialogMusicInfo.xml
-msgctxt "#31109"
-msgid "Get art"
-msgstr "Obtenir l'art"
 
 #: /16x9/DialogVideoInfo.xml
 msgctxt "#31110"
@@ -632,7 +442,7 @@ msgstr "Grandes icônes larges"
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31123"
 msgid "Clearlogo"
-msgstr ""
+msgstr "Logo clair"
 
 #: /16x9/Custom_1114_Addons.xml
 msgctxt "#31124"
@@ -658,11 +468,6 @@ msgstr "RSS"
 msgctxt "#31128"
 msgid "Dialog"
 msgstr "Dialogue"
-
-#: /16x9/SkinSettings.xml
-msgctxt "#31129"
-msgid "style"
-msgstr "style"
 
 #: /16x9/Variables.xml /16x9/SkinSettings.xml
 msgctxt "#31130"
@@ -714,11 +519,6 @@ msgctxt "#31139"
 msgid "List separator"
 msgstr "Séparateur de liste"
 
-#: /16x9/SkinSettings.xml
-msgctxt "#31140"
-msgid "White media flags"
-msgstr "Drapeaux multimédias blancs"
-
 #: 31140 /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
 msgctxt "#31141"
 msgid "System bar"
@@ -733,11 +533,6 @@ msgstr "Barre de sous-menu"
 msgctxt "#31143"
 msgid "RSS bar"
 msgstr "Barre RSS"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31144"
-msgid "layout"
-msgstr "agencement"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31145"
@@ -774,11 +569,6 @@ msgctxt "#31151"
 msgid "Media menu"
 msgstr "Menu multimédia"
 
-#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31152"
-msgid "Focus icon"
-msgstr "Icône de mise au point"
-
 #: /16x9/Variables.xml
 msgctxt "#31153"
 msgid "PVR channels"
@@ -788,26 +578,6 @@ msgstr "Chaînes PVR"
 msgctxt "#31154"
 msgid "Movies and TV shows"
 msgstr "Films et émissions de télévision"
-
-#: /16x9/Variables.xml /shortcuts/overrides.xml
-msgctxt "#31155"
-msgid "Video and music add-ons"
-msgstr "Extensions vidéo et musicales"
-
-#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31156"
-msgid "Weather icon"
-msgstr "Icône météo"
-
-#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31157"
-msgid "Nofocus text"
-msgstr "Texte non focalisé"
-
-#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31158"
-msgid "Nofocus icon"
-msgstr "Icône non focalisée"
 
 #: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31159"
@@ -819,20 +589,10 @@ msgctxt "#31160"
 msgid "Top bar / Main menu bars"
 msgstr "Barre supérieure / Barres du menu principal"
 
-#: 31160 /16x9/Includes_CustomSelect.xml
-msgctxt "#31161"
-msgid "Extended info"
-msgstr "Informations étendues"
-
 #: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
 msgctxt "#31162"
 msgid "Character art"
 msgstr "Art de personnage"
-
-#: /16x9/Includes_CustomSelect.xml
-msgctxt "#31163"
-msgid "Prefer info"
-msgstr "Préférer les informations"
 
 #: /16x9/Includes_CustomSelect.xml
 msgctxt "#31164"
@@ -849,16 +609,6 @@ msgctxt "#31166"
 msgid "Replace play with cinema mode"
 msgstr "Remplacer la lecture par le mode cinéma"
 
-#: /16x9/Includes_CustomSelect.xml
-msgctxt "#31167"
-msgid "Library backgrounds"
-msgstr "Arrière-plans de la bibliothèque"
-
-#: /16x9/Includes_CustomSelect.xml
-msgctxt "#31168"
-msgid "Tool tips"
-msgstr "Info-bulles"
-
 #: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31169"
 msgid "X (Twitter)"
@@ -868,16 +618,6 @@ msgstr "X (Twitter)"
 msgctxt "#31170"
 msgid "Audio info"
 msgstr "Informations audio"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
-msgctxt "#31171"
-msgid "Glass"
-msgstr "Verre"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
-msgctxt "#31172"
-msgid "CD clear"
-msgstr "CD clair"
 
 #: /16x9/Variables.xml /shortcuts/mainmenu.DATA.xml /shortcuts/overrides.xml
 msgctxt "#31173"
@@ -893,31 +633,6 @@ msgstr "Texte désactivé"
 msgctxt "#31175"
 msgid "Default texture"
 msgstr "Texture par défaut"
-
-#: 31175 /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31176"
-msgid "case"
-msgstr "boîtier"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31177"
-msgid "Visualisation music info"
-msgstr "Informations musicales de visualisation"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31178"
-msgid "Visualisation audio info"
-msgstr "Informations audio de visualisation"
-
-#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31179"
-msgid "fanart"
-msgstr "fanart"
-
-#: /16x9/Includes_MediaMenu.xml
-msgctxt "#31180"
-msgid "Audio background"
-msgstr "Arrière-plan audio"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31181"
@@ -973,11 +688,6 @@ msgstr "Violet"
 msgctxt "#31191"
 msgid "Movies & TV shows / Seasons-Episode display"
 msgstr "Films et émissions de télévision / Affichage Saisons-Épisodes"
-
-#: /16x9/Includes_MediaMenu.xml
-msgctxt "#31192"
-msgid "Skin helper extended art"
-msgstr "Art étendu de l'aide du skin"
 
 #: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
 msgctxt "#31193"
@@ -1049,21 +759,6 @@ msgctxt "#31206"
 msgid "Most played"
 msgstr "Les plus joués"
 
-#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
-msgctxt "#31207"
-msgid "Position"
-msgstr "Position"
-
-#: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
-msgctxt "#31208"
-msgid "Bottom"
-msgstr "Bas"
-
-#: /16x9/Variables.xml /shortcuts/overrides.xml
-msgctxt "#31209"
-msgid "Top"
-msgstr "Haut"
-
 #: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31210"
 msgid "Big"
@@ -1079,11 +774,6 @@ msgctxt "#31212"
 msgid "Select how long, in seconds, before the movie rows metadata grid slides left or right (If greater than 8 items)."
 msgstr "Sélectionnez le délai, en secondes, avant que la grille de métadonnées des lignes de films ne glisse à gauche ou à droite (si plus de 8 éléments)."
 
-#: /16x9/View_050_PosterList.xml /16x9/Custom_1115_ViewSettings.xml /16x9/Includes_MediaFlags.xml
-msgctxt "#31213"
-msgid "Poster list"
-msgstr "Liste d'affiches"
-
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31214"
 msgid "Reflect"
@@ -1094,60 +784,25 @@ msgctxt "#31215"
 msgid "Simple list"
 msgstr "Liste simple"
 
-#: /16x9/View_501_BigSimpleList.xml /16x9/Custom_1115_ViewSettings.xml
-msgctxt "#31216"
-msgid "Big simple list"
-msgstr "Grande liste simple"
-
-#: /16x9/View_052_TwinList.xml /16x9/Custom_1115_ViewSettings.xml
-msgctxt "#31217"
-msgid "Twin list"
-msgstr "Liste double"
-
-#: /16x9/View_502_BigTwinList.xml /16x9/Custom_1115_ViewSettings.xml
-msgctxt "#31218"
-msgid "Big twin list"
-msgstr "Grande liste double"
-
 #: /16x9/View_053_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31219"
 msgid "Info list 1"
 msgstr "Liste d'informations 1"
-
-#: /16x9/View_503_BigInfoList1.xml /16x9/Custom_1115_ViewSettings.xml
-msgctxt "#31220"
-msgid "Big info list 1"
-msgstr "Grande liste d'informations 1"
 
 #: /16x9/View_054_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31221"
 msgid "Info list 2"
 msgstr "Liste d'informations 2"
 
-#: /16x9/View_504_BigInfoList1.xml /16x9/Custom_1115_ViewSettings.xml
-msgctxt "#31222"
-msgid "Big info list 2"
-msgstr "Grande liste d'informations 2"
-
 #: /16x9/View_55_LowList.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31223"
 msgid "Low list"
 msgstr "Liste basse"
 
-#: /16x9/View_505_LowList.xml /16x9/Custom_1115_ViewSettings.xml
-msgctxt "#31224"
-msgid "Big low list"
-msgstr "Grande liste basse"
-
 #: /16x9/View_56_3Panel.xml /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31225"
 msgid "3 panel"
 msgstr "3 panneaux"
-
-#: /16x9/View_506_Big3Panel.xml /16x9/Custom_1115_ViewSettings.xml
-msgctxt "#31226"
-msgid "Big 3 panel"
-msgstr "Grand 3 panneaux"
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31227"
@@ -1157,7 +812,7 @@ msgstr "Sélectionnez le délai, en secondes, avant que la grille de métadonné
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31228"
 msgid "Trailer preview"
-msgstr ""
+msgstr "Aperçu de la bande-annonce"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31229"
@@ -1213,11 +868,6 @@ msgstr "Liste de couvertures"
 msgctxt "#31239"
 msgid "Cover flow portrait"
 msgstr "Cover flow portrait"
-
-#: /16x9/Includes_MediaMenu.xml
-msgctxt "#31240"
-msgid "Press up for info"
-msgstr "Appuyer vers le haut pour l'info"
 
 #: /16x9/Custom_1115_ViewSettings.xml
 msgctxt "#31241"
@@ -1404,11 +1054,6 @@ msgctxt "#31277"
 msgid "Install B/W genre icons"
 msgstr "Installer les icônes de genre N/B"
 
-#: /16x9/View_058_BannerList.xml
-msgctxt "#31278"
-msgid "Banner list"
-msgstr "Liste des bannières"
-
 #: /16x9/SkinSettings.xml
 msgctxt "#31279"
 msgid "TV shows season & returning text"
@@ -1463,11 +1108,6 @@ msgstr "Masquer"
 msgctxt "#31289"
 msgid "Widget"
 msgstr "Widget"
-
-#: /16x9/script-skinshortcuts.xml
-msgctxt "#31290"
-msgid "Aspect"
-msgstr "Aspect"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31291"
@@ -1560,11 +1200,6 @@ msgid "Artist album cover background"
 msgstr "Arrière-plan de la pochette d'album de l'artiste"
 
 #: /16x9/SkinSettings.xml
-msgctxt "#31309"
-msgid "Cover background"
-msgstr "Arrière-plan de la couverture"
-
-#: /16x9/SkinSettings.xml
 msgctxt "#31310"
 msgid "Fanart rotation speed"
 msgstr "Vitesse de rotation du fanart"
@@ -1594,11 +1229,6 @@ msgctxt "#31315"
 msgid "Music background"
 msgstr "Fond de musique"
 
-#: /16x9/Includes_CustomSelect.xml
-msgctxt "#31316"
-msgid "Stream/Radio background"
-msgstr "Fond de flux/radio"
-
 #: /shortcuts/overrides.xml
 msgctxt "#31317"
 msgid "PVR status"
@@ -1613,16 +1243,6 @@ msgstr "Statut TV"
 msgctxt "#31319"
 msgid "Radio status"
 msgstr "Statut radio"
-
-#: /16x9/script-skinshortcuts.xml
-msgctxt "#31320"
-msgid "TV widget"
-msgstr "Widget TV"
-
-#: /16x9/script-skinshortcuts.xml
-msgctxt "#31321"
-msgid "Radio widget"
-msgstr "Widget radio"
 
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31322"
@@ -1658,11 +1278,6 @@ msgstr "Spécial"
 msgctxt "#31328"
 msgid "Show media flags"
 msgstr "Afficher les drapeaux médias"
-
-#: /16x9/Includes_CustomSelect.xml
-msgctxt "#31329"
-msgid "Show cover"
-msgstr "Afficher la couverture"
 
 #: /16x9/Custom_1111_CustomSelectGrouplist.xml
 msgctxt "#31330"
@@ -1759,11 +1374,6 @@ msgctxt "#31348"
 msgid "No information available."
 msgstr "Aucune information disponible."
 
-#: /16x9/Includes_InfoDialogs.xml
-msgctxt "#31349"
-msgid "Info dialog"
-msgstr "Boîte de dialogue d'informations"
-
 #: /16x9/SkinSettings.xml
 msgctxt "#31350"
 msgid "Music info settings"
@@ -1788,11 +1398,6 @@ msgstr "Diaporama d'artiste"
 msgctxt "#31354"
 msgid "Artist slideshow settings"
 msgstr "Paramètres du diaporama d'artiste"
-
-#: /16x9/Custom_1110_CustomSelectContainer.xml
-msgctxt "#31355"
-msgid "Stream/Radio now playing background"
-msgstr "Arrière-plan du flux/radio en cours de lecture"
 
 #: /16x9/Includes_MediaMenu.xml
 msgctxt "#31356"
@@ -1879,11 +1484,6 @@ msgctxt "#31372"
 msgid "Time remaining"
 msgstr "Temps restant"
 
-#: /16x9/Includes_ViewsVariables.xml
-msgctxt "#31373"
-msgid "Labels"
-msgstr "Étiquettes"
-
 #: /16x9/script-skinshortcuts.xml
 msgctxt "#31374"
 msgid "Cover background settings"
@@ -1960,11 +1560,6 @@ msgid "Character"
 msgstr "Personnage"
 
 #: /16x9/Includes_InfoDialogs.xml
-msgctxt "#31389"
-msgid "Department"
-msgstr "Département"
-
-#: /16x9/Includes_InfoDialogs.xml
 msgctxt "#31390"
 msgid "Job"
 msgstr "Tâche"
@@ -2013,11 +1608,6 @@ msgstr "Turquoise"
 msgctxt "#31399"
 msgid "Brown"
 msgstr "Brun"
-
-#: /16x9/Includes_CustomSelect.xml
-msgctxt "#31400"
-msgid "       "
-msgstr "       "
 
 #: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
 msgctxt "#31401"
@@ -2245,11 +1835,6 @@ msgid "Addon"
 msgstr "Ajouter sur"
 
 #: /16x9/Skin_Settings.xml
-msgctxt "#31446"
-msgid "Image"
-msgstr "Image"
-
-#: /16x9/Skin_Settings.xml
 msgctxt "#31447"
 msgid "Resource"
 msgstr "Ressource"
@@ -2329,19 +1914,8 @@ msgctxt "#31462"
 msgid "Show Error Notifications"
 msgstr "Afficher les notifications d'erreur"
 
-#: /16x9/Custom_1106_DiaglogFirstRun.xml
-msgctxt "#31463"
-msgid "WARNING: Are you sure you want to reset all Madnox skin settings to defaults?
-There is NO UNDO once executed.
-Only affects skin settings, all addons/scripts are unaffected."
-msgstr "AVERTISSEMENT : êtes-vous sûr de vouloir réinitialiser tous les paramètres du skin Madnox aux valeurs par défaut ?
 Il n'y a AUCUNE ANNULATION une fois exécuté.
 N'affecte que les paramètres du skin, tous les modules complémentaires/scripts ne sont pas affectés."
-
-#: /16x9/Custom_1106_DiaglogFirstRun.xml
-msgctxt "#31464"
-msgid "Are you sure you want to reset all Madnox skin settings...?[CR]This action cannot be undone!"
-msgstr "Êtes-vous sûr de vouloir réinitialiser tous les paramètres du skin Madnox... ?[CR]Cette action ne peut pas être annulée !"
 
 #: /16x9/Skin_Settings.xml
 msgctxt "#31465"
@@ -2362,11 +1936,6 @@ msgstr "Bienvenue chez Madnox ! Pour une expérience optimale, nous vous recomma
 msgctxt "#31468"
 msgid "This will restore all skin settings to their original defaults.[CR][CR]Your current customizations will be lost.[CR]Are you sure you want to continue?"
 msgstr "Cela restaurera tous les paramètres d'apparence par défaut.[CR][CR]Vos personnalisations actuelles seront perdues.[CR]Êtes-vous sûr de vouloir continuer ?"
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31469"
-msgid "Initiate Madnox global skin reset"
-msgstr "Lancer la réinitialisation globale du skin Madnox"
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31470"
@@ -2437,11 +2006,6 @@ msgstr "Seulement"
 msgctxt "#31483"
 msgid "Battery"
 msgstr "Batterie"
-
-#: /16x9/Custom_1126_Battery.xml
-msgctxt "#31484"
-msgid "Build"
-msgstr "Construire"
 
 #: /16x9/Custom_1126_Battery.xml
 msgctxt "#31485"
@@ -2718,6 +2282,226 @@ msgctxt "#31539"
 msgid "Down"
 msgstr "Vers le bas"
 
+#: /16x9/SkinSettings.xml
+msgctxt "#31540"
+msgid "Save Madnox current settings to the preset folder."
+msgstr "Enregistrez les paramètres actuels de Madnox dans le dossier prédéfini."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31541"
+msgid "Load Madnox previously saved settings from the preset folder."
+msgstr "Chargez les paramètres précédemment enregistrés de Madnox à partir du dossier prédéfini."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31542"
+msgid "Export current settings to an external file (Used for sharing or collaboration)."
+msgstr "Exportez les paramètres actuels vers un fichier externe (utilisé pour le partage ou la collaboration)."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31543"
+msgid "Import settings from an external file (Used for sharing or collaboration). Invalid files/format will not be loaded."
+msgstr "Importer les paramètres à partir d'un fichier externe (utilisé pour le partage ou la collaboration). Les fichiers/formats invalides ne seront pas chargés."
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31544"
+msgid "Widget Layout"
+msgstr "Disposition des widgets"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31545"
+msgid "Prefer"
+msgstr "Préférer"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31546"
+msgid "Manager"
+msgstr "Directeur"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31547"
+msgid "Import from file (Ext)"
+msgstr "Importer à partir d'un fichier (Ext)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31548"
+msgid "Export to folder (Ext)"
+msgstr "Exporter vers un dossier (Ext)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31549"
+msgid "Presets"
+msgstr "Préréglages"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31550"
+msgid "Load"
+msgstr "Charger"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31551"
+msgid "Actions for selected file"
+msgstr "Actions pour le fichier sélectionné"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31552"
+msgid "Found"
+msgstr "Trouvé"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31553"
+msgid "Show all"
+msgstr "Afficher tout"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31554"
+msgid "Tooltips"
+msgstr "Info-bulles"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31555"
+msgid "Transport"
+msgstr "Transport"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31556"
+msgid "Visibility"
+msgstr "Visibilité"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31557"
+msgid "Categories"
+msgstr "Catégories"
+
+#: /16x9/includes.xml
+msgctxt "#31559"
+msgid "Customise 4K / UHD flag:"
+msgstr "Personnaliser le drapeau 4K/UHD :"
+
+#: /16x9/includes.xml
+msgctxt "#31560"
+msgid "Customise WebDL flag:"
+msgstr "Personnaliser l'indicateur WebDL :"
+
+#: /16x9/includes.xml
+msgctxt "#31561"
+msgid "Customise 1080p flag:"
+msgstr "Personnaliser le drapeau 1080p :"
+
+#: /16x9/includes.xml
+msgctxt "#31562"
+msgid "Customise 720p flag:"
+msgstr "Personnaliser le drapeau 720p :"
+
+#: /16x9/includes.xml
+msgctxt "#31563"
+msgid "Customise DVD / SD flag:"
+msgstr "Personnaliser le drapeau DVD/SD :"
+
+#: /16x9/includes.xml
+msgctxt "#31564"
+msgid "Category filter:"
+msgstr "Filtre de catégorie :"
+
+#: /16x9/includes.xml
+msgctxt "#31565"
+msgid "Restore default:"
+msgstr "Restaurer les valeurs par défaut :"
+
+#: /16x9/includes.xml
+msgctxt "#31566"
+msgid "Toggle Color Scheme:"
+msgstr "Basculer le schéma de couleurs :"
+
+#: /16x9/includes.xml
+msgctxt "#31567"
+msgid "Highlight a logo from the palette below and click to assign it to 4K / UHD video files."
+msgstr "Mettez en surbrillance un logo dans la palette ci-dessous et cliquez pour l'attribuer aux fichiers vidéo 4K/UHD."
+
+#: /16x9/includes.xml
+msgctxt "#31568"
+msgid "Highlight a logo from the palette below and click to assign it to WebDL and streaming video sources."
+msgstr "Mettez en surbrillance un logo dans la palette ci-dessous et cliquez pour l'attribuer aux sources WebDL et vidéo en streaming."
+
+#: /16x9/includes.xml
+msgctxt "#31569"
+msgid "Highlight a logo from the palette below and click to assign it to 1080p Full HD video files."
+msgstr "Mettez en surbrillance un logo dans la palette ci-dessous et cliquez pour l'attribuer aux fichiers vidéo Full HD 1080p."
+
+#: /16x9/includes.xml
+msgctxt "#31570"
+msgid "Highlight a logo from the palette below and click to assign it to 720p HD video files."
+msgstr "Mettez en surbrillance un logo dans la palette ci-dessous et cliquez pour l'attribuer aux fichiers vidéo HD 720p."
+
+#: /16x9/includes.xml
+msgctxt "#31571"
+msgid "Highlight a logo from the palette below and click to assign it to DVD and standard-definition video files."
+msgstr "Mettez en surbrillance un logo dans la palette ci-dessous et cliquez pour l'attribuer aux fichiers DVD et vidéo de définition standard."
+
+#: /16x9/includes.xml
+msgctxt "#31572"
+msgid "View only ultra-high-definition and 4K logo designs in the palette grid."
+msgstr "Affichez uniquement les logos en ultra haute définition et 4K dans la grille de la palette."
+
+#: /16x9/includes.xml
+msgctxt "#31573"
+msgid "View only HEVC and H.265 codec logo designs in the palette grid."
+msgstr "Affichez uniquement les logos des codecs HEVC et H.265 dans la grille de la palette."
+
+#: /16x9/includes.xml
+msgctxt "#31574"
+msgid "View only AVC and H.264 codec logo designs in the palette grid."
+msgstr "Affichez uniquement les logos des codecs AVC et H.264 dans la grille de la palette."
+
+#: /16x9/includes.xml
+msgctxt "#31575"
+msgid "View only DivX, XviD, and legacy MPEG-4 format logo designs in the palette grid."
+msgstr "Affichez uniquement les logos au format DivX, XviD et MPEG-4 hérités dans la grille de la palette."
+
+#: /16x9/includes.xml
+msgctxt "#31576"
+msgid "View classic MPEG, DVD, and standard TV broadcast logo designs in the palette grid."
+msgstr "Affichez les logos classiques de diffusion MPEG, DVD et TV standard dans la grille de la palette."
+
+#: /16x9/includes.xml
+msgctxt "#31577"
+msgid "View Windows Media Video and VC-1 codec logo designs in the palette grid."
+msgstr "Affichez les logos Windows Media Video et codec VC-1 dans la grille de la palette."
+
+#: /16x9/includes.xml
+msgctxt "#31578"
+msgid "View container wrappers, disk formats, and other miscellaneous logo designs in the palette grid."
+msgstr "Affichez les emballages de conteneurs, les formats de disque et d'autres conceptions de logo diverses dans la grille de la palette."
+
+#: /16x9/includes.xml
+msgctxt "#31579"
+msgid "Close this flag customization dialog and return to settings."
+msgstr "Fermez cette boîte de dialogue de personnalisation du drapeau et revenez aux paramètres."
+
+#: /16x9/includes.xml
+msgctxt "#31580"
+msgid "Highlight any logo design in the center grid and click to save it as your custom flag for the active category."
+msgstr "Mettez en surbrillance n’importe quel logo dans la grille centrale et cliquez pour l’enregistrer en tant que drapeau personnalisé pour la catégorie active."
+
+#: /16x9/includes.xml
+msgctxt "#31581"
+msgid "Clear your custom flag choice and restore this category to the skin's automatic default flag logic."
+msgstr "Effacez votre choix de drapeau personnalisé et restaurez cette catégorie selon la logique de drapeau par défaut automatique du skin."
+
+#: /16x9/includes.xml
+msgctxt "#31582"
+msgid "Toggle global flag artwork between colored designs and monochromatic default white."
+msgstr "Basculez l’illustration du drapeau global entre les motifs colorés et le blanc monochromatique par défaut."
+
+#: /16x9/includes.xml
+msgctxt "#31583"
+msgid "Use your directional keys to navigate options. Press Back or select Exit at any time to close without changes."
+msgstr "Utilisez vos touches directionnelles pour parcourir les options. Appuyez sur Retour ou sélectionnez Quitter à tout moment pour fermer sans modifications."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31584"
+msgid "Select to modify"
+msgstr "Sélectionnez pour modifier"
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
@@ -2732,11 +2516,6 @@ msgstr "Script pour les skinners permettant aux utilisateurs de sélectionner un
 msgctxt "#31905"
 msgid "Automatically adds extra artwork for media in your media libraries."
 msgstr "Ajoute automatiquement des illustrations supplémentaires pour les médias dans vos bibliothèques multimédia."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31906"
-msgid "Next aired library information and widgets."
-msgstr "Informations de la bibliothèque des prochaines diffusions et widgets."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31907"
@@ -2894,11 +2673,6 @@ msgid "Darkens the screen behind dialog popups. Not applicable for fullscreen vi
 msgstr "Assombrit l'écran derrière les fenêtres contextuelles de dialogue. Non applicable pour la vidéo ou l'audio en plein écran."
 
 #: /16x9/Includes_Settings.xml
-msgctxt "#31939"
-msgid "Automatically switches to fullscreen when you press play on an album or audio file. If audio is already playing no action will be taken."
-msgstr "Passe automatiquement en plein écran lorsque vous appuyez sur lecture sur un album ou un fichier audio. Si l'audio est déjà en cours de lecture, aucune action ne sera entreprise."
-
-#: /16x9/Includes_Settings.xml
 msgctxt "#31940"
 msgid "Enable coloured icons for the topbar, media information and library views."
 msgstr "Activer les icônes colorées pour la barre supérieure, les informations multimédia et les vues de la bibliothèque."
@@ -2997,11 +2771,6 @@ msgstr "Afficher la vidéo en cours de lecture en arrière-plan pendant la navig
 msgctxt "#31960"
 msgid "Download images and additional information from fanart.tv and theaudiodb.com of the currently playing artist. For fullscreen music, internet streams and radio."
 msgstr "Téléchargez des images et des informations supplémentaires depuis fanart.tv et theaudiodb.com de l'artiste en cours de lecture. Pour la musique plein écran, les flux Internet et la radio."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31961"
-msgid "Show stream/radio fanart of currently playing item skin wide. Overrides library fanart."
-msgstr "Affiche le fanart de flux/radio de l'élément en cours de lecture sur tout le skin. Remplace le fanart de la bibliothèque."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31962"

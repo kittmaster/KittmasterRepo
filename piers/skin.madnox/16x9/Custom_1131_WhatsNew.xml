@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <window type="dialog" id="1131">
-	<!--
-		Navigation model (proven Kodi pattern for read-only scrolling text):
-
-		  defaultcontrol → OK button (10) — the ONLY button-type control.
-		  Kodi requires a focusable child as defaultcontrol.  grouplist with
-		  only a textbox inside produces a null focus on open (keypresses fire
-		  into a void — confirmed in log: actions arrive but nothing responds).
-
-		  Scrolling is handled by the textbox's own built-in scroll engine via
-		  its pagecontrol link to scrollbar (60).  The scrollbar receives UP/DOWN
-		  from the OK button's onright, making the scrollbar the keyboard-scroll
-		  proxy.  Mouse wheel on the textbox area works independently through
-		  Kodi's mouse handler.
-
-		  Focus chain:
-		    [open] → OK button (10)
-		    OK onright → scrollbar (60)   <- scrollbar accepts UP/DOWN to page text
-		    scrollbar onleft → OK button (10)
-		    OK onclick → Close
-	-->
-	<defaultcontrol always="true">10</defaultcontrol>
-
+	<defaultcontrol always="true">60</defaultcontrol>
 	<onunload>ClearProperty(TextViewer_Header,home)</onunload>
 	<onunload>ClearProperty(TextViewer_Text,home)</onunload>
 
@@ -64,13 +43,6 @@
 				<label>$LOCALIZE[24054] $LOCALIZE[1405] $INFO[ListItem.AddonName]$INFO[ListItem.AddonVersion, : v]</label>
 			</control>
 
-			<!--
-				Scrollable text body - textbox at window level (NOT inside a grouplist).
-				pagecontrol="60" links it to the scrollbar so the scrollbar thumb
-				tracks the text position and the scrollbar's UP/DOWN actions page
-				through the text.
-				Width is pulled in from the right to leave clear room for the scrollbar.
-			-->
 			<control type="textbox" id="2">
 				<left>40</left>
 				<top>100</top>
@@ -82,12 +54,6 @@
 				<pagecontrol>60</pagecontrol>
 			</control>
 
-			<!--
-				Scrollbar - linked to the textbox via pagecontrol on the textbox.
-				This is also the keyboard-scroll proxy: OK button navigates RIGHT to
-				here, and UP/DOWN on the scrollbar pages through the text.
-				onleft returns focus to the OK button.
-			-->
 			<control type="scrollbar" id="60">
 				<right>20</right>
 				<top>100</top>
@@ -100,13 +66,6 @@
 				<onright>10</onright>
 			</control>
 
-			<!--
-				OK / Close button - the ONLY focusable (button-type) control.
-				This is the defaultcontrol so focus always lands here on open.
-				onright goes to the scrollbar so the user can page through the
-				text with UP/DOWN after navigating there once.
-				onup/onleft self-reference (no other buttons in those directions).
-			-->
 			<control type="grouplist" id="9131">
 				<left>40</left>
 				<top>700</top>
@@ -115,7 +74,6 @@
 				<orientation>horizontal</orientation>
 				<align>center</align>
 				<onright>60</onright>
-
 				<control type="button" id="10">
 					<width>350</width>
 					<include>DialogButtonAlwaysFocused</include>

@@ -172,7 +172,7 @@
 				<width>145</width>
 				<height>145</height>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
-				<texture fallback="DefaultIcon.png" diffuse="diffuse/rounded5-220x220.png">$INFO[ListItem.Icon]</texture>
+				<texture fallback="DefaultIconError.png" diffuse="diffuse/rounded5-220x220.png">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="group">
 				<left>230</left>
@@ -321,7 +321,7 @@
 				<width>145</width>
 				<height>145</height>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
-				<texture fallback="DefaultIcon.png" diffuse="diffuse/rounded5-220x220.png">$INFO[ListItem.Icon]</texture>
+				<texture fallback="DefaultIconError.png" diffuse="diffuse/rounded5-220x220.png">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="group">
 				<left>230</left>

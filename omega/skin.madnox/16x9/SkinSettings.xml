@@ -652,7 +652,6 @@
 						<control type="label" id="351">
 							<label>$LOCALIZE[31047]</label>
 							<include>SettingsLabel</include>
-							<texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus>
 						</control>
 						<control type="radiobutton" id="352">
 							<label>$LOCALIZE[736]</label>
@@ -690,7 +689,6 @@
 						<control type="label" id="354">
 							<label>$LOCALIZE[31191]</label>
 							<include>SettingsLabel</include>
-							<texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus>
 						</control>
 						<control type="radiobutton" id="355">
 							<label>$LOCALIZE[31279]</label>
@@ -729,7 +727,6 @@
 						<control type="label" id="357">
 							<label>$LOCALIZE[10116] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE] [LOWERCASE]$LOCALIZE[131][/LOWERCASE]</label>
 							<include>SettingsLabel</include>
-							<texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus>
 						</control>
 						<control type="radiobutton" id="358">
 							<label>$LOCALIZE[736]</label>
@@ -751,7 +748,6 @@
 						<control type="label" id="359">
 							<label>$LOCALIZE[31439] [LOWERCASE]$LOCALIZE[131][/LOWERCASE]</label>
 							<include>SettingsLabel</include>
-							<texturenofocus border="0" colordiffuse="3AFFFFFF">panels/floor/floor.png</texturenofocus>
 						</control>
 						<control type="radiobutton" id="360">
 							<label>$LOCALIZE[33068]</label>
@@ -1407,7 +1403,7 @@
 						</control>
 
 						<control type="button" id="605">
-							<label>$LOCALIZE[636] [LOWERCASE]$LOCALIZE[157] $LOCALIZE[31448] $LOCALIZE[31441][/LOWERCASE] [COLOR FFCC4444](W.I.P.)[/COLOR]</label>
+							<label>$LOCALIZE[636] [LOWERCASE]$LOCALIZE[157] $LOCALIZE[31448] $LOCALIZE[31441][/LOWERCASE]</label>
 							<!-- Video codec flag custom select -->
 							<onclick>SetProperty(CustomSelectGroup,Video codec flag custom select,home)</onclick>
 							<onclick>ActivateWindow(1105)</onclick>
@@ -1489,13 +1485,13 @@
 							<include>SettingsLabel</include>
 						</control>
 						<control type="button" id="621">
-							<label>$LOCALIZE[31034] ($LOCALIZE[19284])</label>
+							<label>$LOCALIZE[31034] ($LOCALIZE[31584])</label>
 							<label2>$VAR[AddonWeatherIconsVar]</label2>
 							<onclick>RunScript(script.image.resource.select,property=WeatherIcons&amp;type=resource.images.weathericons)</onclick>
 							<include>SettingsButton</include>
 						</control>
 						<control type="button" id="622">
-							<label>$LOCALIZE[31004] ($LOCALIZE[20437])</label>
+							<label>$LOCALIZE[31004] ($LOCALIZE[31584])</label>
 							<label2>$VAR[AddonWeatherFanartVar]</label2>
 							<onclick>RunScript(script.image.resource.select,property=WeatherFanart&amp;type=resource.images.weatherfanart)</onclick>
 							<include>SettingsRadioButton</include>
@@ -1584,7 +1580,7 @@
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="703">
-							<label>$LOCALIZE[31446] [LOWERCASE]$LOCALIZE[31447] $LOCALIZE[424] $LOCALIZE[31445][/LOWERCASE]</label>
+							<label>$LOCALIZE[31434] [LOWERCASE]$LOCALIZE[31447] $LOCALIZE[424] $LOCALIZE[31445][/LOWERCASE]</label>
 							<label2>$VAR[AddonResourceSelectVar]</label2>
 							<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 							<onclick condition="!System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
@@ -1771,28 +1767,26 @@
 						</control>
 						<control type="button" id="802">
 							<label>Madnox [LOWERCASE]$LOCALIZE[31974] $LOCALIZE[24069][/LOWERCASE]</label>
-							<!-- <label2>$VAR[MadnoxBackupFileVersionLabel2Var]</label2> -->
 							<label2>$LOCALIZE[166]: v$INFO[System.AddonVersion(skin.madnox)] | $LOCALIZE[24009]: v$INFO[System.AddonVersion(script.skin.madnox)] | $LOCALIZE[31522]: v$INFO[System.AddonVersion(resource.images.skin.madnox)]</label2>
 							<include>SettingsButton</include>
 						</control>
-						<!-- Preset Management Dialog -->
 						<control type="button" id="803">
 							<label>$LOCALIZE[31028] [LOWERCASE]$LOCALIZE[31549][/LOWERCASE]</label>
 							<onclick>RunScript(script.skin.madnox, action=manage_presets)</onclick>
 							<include>SettingsButton</include>
 						</control>
 						<control type="button" id="807">
-							<label>[COLOR FFEEEE9B]$LOCALIZE[31518][/COLOR]</label>
+							<label>$LOCALIZE[31518]</label>
 							<onclick>ActivateWindow(1109)</onclick>
 							<include>SettingsButton</include>
 						</control>
 						<control type="button" id="808">
-							<label>[COLOR FFCC4444]$LOCALIZE[31525][/COLOR]</label>
+							<label>$LOCALIZE[31525]</label>
 							<onclick>RunScript(script.skin.madnox, action=migrate_bgs)</onclick>
 							<include>SettingsButton</include>
 						</control>
 						<control type="button" id="809">
-							<label>[COLOR FFCC4444]$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE][/COLOR]</label>
+							<label>$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE]</label>
 							<onclick>ActivateWindow(1107)</onclick>
 							<include>SettingsButton</include>
 						</control>

@@ -69,48 +69,57 @@
 				<height>680</height>
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
+
 				<!-- Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[31486] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[31486] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
+
+				<!-- CPU Frequency -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31486] [LOWERCASE]$LOCALIZE[31488][/LOWERCASE]:[/COLOR] [B]$INFO[System.CpuFrequency][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31486] [LOWERCASE]$LOCALIZE[31488][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.CpuFrequency][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(System.CpuFrequency)</visible>
 				</control>
+
+				<!-- CPU Usage -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[13271][/COLOR] [B]$INFO[System.CpuUsage][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[13271][/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.CpuUsage][/B][/COLOR]</label>
 					<visible>System.SupportsCPUUsage</visible>
 				</control>
 				<control type="progress">
 					<info>System.CpuUsage</info>
 				</control>
+
+				<!-- CPU Temperature -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[1375]:[/COLOR] [B]$INFO[System.CpuTemperature][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[1375]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.CpuTemperature][/B][/COLOR]</label>
 					<visible>Integer.IsGreater(System.CPUTemperature,1)</visible>
 				</control>
+
+				<!-- Fan Speed -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[13300]:[/COLOR] [B]$INFO[System.FanSpeed] RPM[/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[13300]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.FanSpeed] RPM[/B][/COLOR]</label>
 					<visible>Integer.IsGreater(System.FanSpeed,1)</visible>
 				</control>
+
+				<!-- Cores (Dynamic Multi-Core list) -->
 				<control type="label">
-					<height>300</height>
+					<height>360</height>
 					<font>Font30_Reg</font>
-					<!-- Aligny Top Prevents The Text From Jumping Up/Down When Lines Wrap -->
 					<aligny>top</aligny>
 					<wrapmultiline>true</wrapmultiline>
-					<!-- 24 Cores. If A Core Is Missing, The Number And Percentage Hide Automatically. -->
-					<label>[COLOR FF6db9e5]$LOCALIZE[31486] [LOWERCASE]$LOCALIZE[31495][/LOWERCASE]:[/COLOR]$INFO[System.CoreUsage(0), [COLOR FF6db9e5](1)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(1), [COLOR ff6db9e5](2)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(2), [COLOR ff6db9e5](3)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(3), [COLOR ff6db9e5](4)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(4), [COLOR ff6db9e5](5)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(5), [COLOR ff6db9e5](6)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(6), [COLOR ff6db9e5](7)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(7), [COLOR ff6db9e5](8)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(8), [COLOR ff6db9e5](9)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(9), [COLOR ff6db9e5](10)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(10), [COLOR ff6db9e5](11)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(11), [COLOR ff6db9e5](12)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(12), [COLOR ff6db9e5](13)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(13), [COLOR ff6db9e5](14)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(14), [COLOR ff6db9e5](15)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(15), [COLOR ff6db9e5](16)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(16), [COLOR ff6db9e5](17)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(17), [COLOR ff6db9e5](18)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(18), [COLOR ff6db9e5](19)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(19), [COLOR ff6db9e5](20)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(20), [COLOR ff6db9e5](21)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(21), [COLOR ff6db9e5](22)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(22), [COLOR ff6db9e5](23)[/COLOR] [B],%[/B]]$INFO[System.CoreUsage(23), [COLOR ff6db9e5](24)[/COLOR] [B],%[/B]]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31486] [LOWERCASE]$LOCALIZE[31495][/LOWERCASE]: [COLOR $VAR[PanelTextColorVar]](0)[/COLOR] $INFO[System.CoreUsage(0),,%], [COLOR $VAR[PanelTextColorVar]](1)[/COLOR] $INFO[System.CoreUsage(1),,%], [COLOR $VAR[PanelTextColorVar]](2)[/COLOR] $INFO[System.CoreUsage(2),,%], [COLOR $VAR[PanelTextColorVar]](3)[/COLOR] $INFO[System.CoreUsage(3),,%], [COLOR $VAR[PanelTextColorVar]](4)[/COLOR] $INFO[System.CoreUsage(4),,%], [COLOR $VAR[PanelTextColorVar]](5)[/COLOR] $INFO[System.CoreUsage(5),,%], [COLOR $VAR[PanelTextColorVar]](6)[/COLOR] $INFO[System.CoreUsage(6),,%], [COLOR $VAR[PanelTextColorVar]](7)[/COLOR] $INFO[System.CoreUsage(7),,%], [COLOR $VAR[PanelTextColorVar]](8)[/COLOR] $INFO[System.CoreUsage(8),,%], [COLOR $VAR[PanelTextColorVar]](9)[/COLOR] $INFO[System.CoreUsage(9),,%], [COLOR $VAR[PanelTextColorVar]](10)[/COLOR] $INFO[System.CoreUsage(10),,%], [COLOR $VAR[PanelTextColorVar]](11)[/COLOR] $INFO[System.CoreUsage(11),,%], [COLOR $VAR[PanelTextColorVar]](12)[/COLOR] $INFO[System.CoreUsage(12),,%], [COLOR $VAR[PanelTextColorVar]](13)[/COLOR] $INFO[System.CoreUsage(13),,%], [COLOR $VAR[PanelTextColorVar]](14)[/COLOR] $INFO[System.CoreUsage(14),,%], [COLOR $VAR[PanelTextColorVar]](15)[/COLOR] $INFO[System.CoreUsage(15),,%], [COLOR $VAR[PanelTextColorVar]](16)[/COLOR] $INFO[System.CoreUsage(16),,%], [COLOR $VAR[PanelTextColorVar]](17)[/COLOR] $INFO[System.CoreUsage(17),,%], [COLOR $VAR[PanelTextColorVar]](18)[/COLOR] $INFO[System.CoreUsage(18),,%], [COLOR $VAR[PanelTextColorVar]](19)[/COLOR] $INFO[System.CoreUsage(19),,%], [COLOR $VAR[PanelTextColorVar]](20)[/COLOR] $INFO[System.CoreUsage(20),,%], [COLOR $VAR[PanelTextColorVar]](21)[/COLOR] $INFO[System.CoreUsage(21),,%], [COLOR $VAR[PanelTextColorVar]](22)[/COLOR] $INFO[System.CoreUsage(22),,%], [COLOR $VAR[PanelTextColorVar]](23)[/COLOR] $INFO[System.CoreUsage(23),,%]</label>
 				</control>
 			</control>
 

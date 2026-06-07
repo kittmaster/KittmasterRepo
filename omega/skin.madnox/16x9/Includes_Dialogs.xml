@@ -193,6 +193,24 @@
 		<alttexturenofocus colordiffuse="$VAR[PanelSubTextColorVar]" border="20">buttons/button.png</alttexturenofocus>
 	</include>
 
+	<!-- Dedicated variant of DialogKeyboardToggleButton, used ONLY by the 1105 Video Codec Flag Picker top buttons. -->
+	<!-- Identical to DialogKeyboardToggleButton EXCEPT alttexturenofocus uses the highlight (blue) colour instead of -->
+	<!-- the grey sub-text colour. This keeps the SELECTED (active) flag button blue when focus moves away to edit -->
+	<!-- another area. Kept as a separate include so the shared DialogKeyboardToggleButton used elsewhere is unaffected. -->
+	<include name="DialogKeyboardToggleButtonFlag">
+		<width>210</width>
+		<height>80</height>
+		<align>center</align>
+		<textoffsetx>10</textoffsetx>
+		<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+		<focusedcolor>$VAR[PanelFocusTextColorVar]</focusedcolor>
+		<disabledcolor>$VAR[PanelDisabledTextColorVar]</disabledcolor>
+		<texturefocus colordiffuse="$VAR[PanelHighlightColorVar]" border="20">buttons/button.png</texturefocus>
+		<texturenofocus colordiffuse="$VAR[PanelSubTextColorVar]" border="20">buttons/button.png</texturenofocus>
+		<alttexturefocus colordiffuse="$VAR[PanelHighlightColorVar]" border="20">buttons/button.png</alttexturefocus>
+		<alttexturenofocus colordiffuse="$VAR[PanelHighlightColorVar]" border="20">buttons/button.png</alttexturenofocus>
+	</include>
+
 	<include name="DialogButtonContextMenu">
 		<width>460</width>
 		<height>60</height>

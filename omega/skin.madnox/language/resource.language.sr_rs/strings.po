@@ -1,0 +1,2847 @@
+# Kodi Media Center language file
+# Addon Name: Madnox Redux
+# Addon id: skin.madnox.redux
+# Addon Provider: Team Madnox
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: kittmaster\n"
+"Language-Team: Serbian (Cyrillic)\n"
+"Language: sr_rs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /16x9/DialogAddonSettings.xml /16x9/Variables.xml /16x9/DialogTextViewer.xml /16x9/Custom_1100_TextViewer.xml /16x9/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31000"
+msgid "Page"
+msgstr "Страница"
+
+#: /16x9/DialogAddonSettings.xml /16x9/DialogMediaSource.xml /16x9/Includes_CommonObjects.xml /16x9/Variables.xml /16x9/DialogFavourites.xml /16x9/Includes_Dialogs.xml /16x9/Custom_1110_CustomSelectContainer.xml /16x9/DialogSettings.xml /16x9/DialogSubtitles.xml
+msgctxt "#31001"
+msgid "Items"
+msgstr "Ставке"
+
+#: /16x9/Home.xml /16x9/Variables.xml /16x9/Custom_1111_Topbar.xml
+msgctxt "#31002"
+msgid "Now playing"
+msgstr "Тренутно се репродукује"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31003"
+msgid "Order"
+msgstr "Редослед"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31004"
+msgid "Weather background"
+msgstr "Позадина за време"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31007"
+msgid "Single image"
+msgstr "Једна слика"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31008"
+msgid "Multi image"
+msgstr "Више слика"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31009"
+msgid "Music discart fallback"
+msgstr "Резервни изглед диска за музику"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31010"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Подесите тип и додајте правила да бисте креирали паметну плејлисту. Ове плејлисте су динамичне и укључују све медијске ставке из ваше базе података које испуњавају изабрана правила."
+
+#: /16x9/Variables.xml
+msgctxt "#31011"
+msgid "Returning"
+msgstr "Наставља се"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31016"
+msgid "Smaller pop-up notifications"
+msgstr "Мања искачућа обавештења"
+
+#: /16x9/Home.xml /16x9/SkinSettings.xml
+msgctxt "#31017"
+msgid "Edit main menu"
+msgstr "Уреди главни мени"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31019"
+msgid "Show scroll letter"
+msgstr "Прикажи почетно слово при клизању"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31020"
+msgid "Dim screen on dialog popup"
+msgstr "Затамни екран при искакању дијалога"
+
+#: /16x9/Home.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31021"
+msgid "Area"
+msgstr "Област"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31025"
+msgid "Palette"
+msgstr "Палета"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31028"
+msgid "Manage"
+msgstr "Управљање"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31030"
+msgid "Music now playing background"
+msgstr "Позадина за музику која се репродукује"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31034"
+msgid "Weather icons"
+msgstr "Иконе за време"
+
+#: /16x9/Variables.xml
+msgctxt "#31035"
+msgid "Extra fanart"
+msgstr "Додатни фан-арт"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31036"
+msgid "Fallback"
+msgstr "Резервно решење"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31038"
+msgid "Animated background"
+msgstr "Анимирана позадина"
+
+#: /16x9/Home.xml /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+msgctxt "#31039"
+msgid "Widgets"
+msgstr "Виџети"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31040"
+msgid "Settings menu"
+msgstr "Мени са подешавањима"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31041"
+msgid "Main menu"
+msgstr "Главни мени"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31042"
+msgid "Top bar"
+msgstr "Горња трака"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31043"
+msgid "Fixed list"
+msgstr "Фиксна листа"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31044"
+msgid "Palette color selected"
+msgstr "Изабрана боја палете"
+
+#: /16x9/Custom_1111_Topbar.xml
+msgctxt "#31046"
+msgid "Item Count"
+msgstr "Број ставки"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31047"
+msgid "Floor"
+msgstr "Подножје"
+
+#: /16x9/SkinSettings.xml /16x9/DialogColorPicker.xml
+msgctxt "#31048"
+msgid "Palette selected"
+msgstr "Изабрана палета"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31049"
+msgid "Highlight"
+msgstr "Истицање"
+
+#: /16x9/script-skinshortcuts.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31050"
+msgid "Info line"
+msgstr "Информативна линија"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31051"
+msgid "Texture"
+msgstr "Текстура"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31052"
+msgid "Coloured"
+msgstr "Обојено"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31053"
+msgid "Country icons"
+msgstr "Иконе држава"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31055"
+msgid "Weather fanart"
+msgstr "Фан-арт за време"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31056"
+msgid "Panel"
+msgstr "Панел"
+
+#: /16x9/Variables.xml /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31057"
+msgid "Seasons"
+msgstr "Сезоне"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31059"
+msgid "Layout"
+msgstr "Изглед"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31060"
+msgid "Language flags"
+msgstr "Заставе језика"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml /16x9/script-skinshortcuts.xml
+msgctxt "#31061"
+msgid "Icon"
+msgstr "Икона"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31063"
+msgid "On air"
+msgstr "У етру"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31064"
+msgid "Last aired"
+msgstr "Последње емитовано"
+
+#: /16x9/Custom_1117_MusicVisSettings.xml
+msgctxt "#31069"
+msgid "Lyrics add-on settings"
+msgstr "Подешавања додатка за текстове песама"
+
+#: /16x9/View_700_RightList.xml
+msgctxt "#31071"
+msgid "Right list"
+msgstr "Десна листа"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31072"
+msgid "Artisans behind the scenes"
+msgstr "Ствараоци иза кулиса"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31073"
+msgid "Video decoder"
+msgstr "Видео декодер"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31074"
+msgid "Pixel format"
+msgstr "Формат пиксела"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31075"
+msgid "Decoding"
+msgstr "Декодирање"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31076"
+msgid "Movie set cover background"
+msgstr "Позадина омота за колекцију филмова"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31077"
+msgid "Signal"
+msgstr "Сигнал"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31078"
+msgid "Furniture"
+msgstr "Елементи интерфејса"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31081"
+msgid "Media menu buttons"
+msgstr "Дугмад медијског менија"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31082"
+msgid "Info dialogs"
+msgstr "Информативни дијалози"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31083"
+msgid "Favourites script"
+msgstr "Скрипта за омиљене ставке"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31084"
+msgid "Case"
+msgstr "Кутија"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31086"
+msgid "Video playlist"
+msgstr "Видео плејлиста"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31088"
+msgid "Trakt"
+msgstr "Trakt"
+
+#: /16x9/MyVideoNav.xml
+msgctxt "#31089"
+msgid "Add node"
+msgstr "Додај чвор"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31090"
+msgid "Daily"
+msgstr "Дневно"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31091"
+msgid "Map"
+msgstr "Мапа"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31092"
+msgid "Overview"
+msgstr "Преглед"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31094"
+msgid "Restore"
+msgstr "Врати"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31098"
+msgid "Kiosk mode"
+msgstr "Киоск режим"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31100"
+msgid "Screen ensemble"
+msgstr "Екипа на екрану"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31101"
+msgid "YouTube"
+msgstr "YouTube"
+
+#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml /16x9/variables.xml
+msgctxt "#31103"
+msgid "Live background"
+msgstr "Жива позадина"
+
+#: /16x9/DialogSubtitles.xml
+msgctxt "#31104"
+msgid "Local subtitles available"
+msgstr "Доступни локални титлови"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31106"
+msgid "Global"
+msgstr "Глобално"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31107"
+msgid "background"
+msgstr "позадина"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31108"
+msgid "Disc art"
+msgstr "Изглед диска"
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31110"
+msgid "Similar"
+msgstr "Слично"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31111"
+msgid "Production details"
+msgstr "Детаљи о продукцији"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31112"
+msgid "Movie Roles"
+msgstr "Улоге у филму"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31113"
+msgid "TV Roles"
+msgstr "Улоге у ТВ серијама"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31114"
+msgid "Carbon"
+msgstr "Карбон"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31115"
+msgid "Pixels"
+msgstr "Пиксели"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31116"
+msgid "Steel plate"
+msgstr "Челична плоча"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31117"
+msgid "Wallpaper"
+msgstr "Тапет"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31118"
+msgid "Wood"
+msgstr "Дрво"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31119"
+msgid "Wrinkles"
+msgstr "Набори"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31120"
+msgid "Facebook"
+msgstr "Facebook"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31121"
+msgid "Icons wide"
+msgstr "Широке иконе"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31122"
+msgid "Big icons wide"
+msgstr "Велике широке иконе"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31123"
+msgid "Clearlogo"
+msgstr "Чист лого"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31124"
+msgid "Required"
+msgstr "Обавезно"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31125"
+msgid "Instagram"
+msgstr "Instagram"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31126"
+msgid "Optional"
+msgstr "Опционо"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31127"
+msgid "RSS"
+msgstr "RSS"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31128"
+msgid "Dialog"
+msgstr "Дијалог"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31130"
+msgid "Square"
+msgstr "Квадрат"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31131"
+msgid "Emboss"
+msgstr "Рељеф"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31132"
+msgid "texture"
+msgstr "текстура"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31133"
+msgid "Pattern"
+msgstr "Шара"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31134"
+msgid "Gradient"
+msgstr "Градијент"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31135"
+msgid "Brushed"
+msgstr "Брушено"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31136"
+msgid "Text"
+msgstr "Текст"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31137"
+msgid "Subtext"
+msgstr "Подтекст"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31138"
+msgid "Focus text"
+msgstr "Текст у фокусу"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31139"
+msgid "List separator"
+msgstr "Разделник листе"
+
+#: 31140 /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31141"
+msgid "System bar"
+msgstr "Системска трака"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31142"
+msgid "Submenu bar"
+msgstr "Трака подменија"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31143"
+msgid "RSS bar"
+msgstr "RSS трака"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31145"
+msgid "Effects"
+msgstr "Ефекти"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31146"
+msgid "Leaves"
+msgstr "Лишће"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31147"
+msgid "Confetti"
+msgstr "Конфете"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31148"
+msgid "Valentine"
+msgstr "Дан заљубљених"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31149"
+msgid "Easter"
+msgstr "Ускрс"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31150"
+msgid "Concrete"
+msgstr "Бетон"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31151"
+msgid "Media menu"
+msgstr "Медијски мени"
+
+#: /16x9/Variables.xml
+msgctxt "#31153"
+msgid "PVR channels"
+msgstr "PVR канали"
+
+#: /16x9/Variables.xml /shortcuts/overrides.xml
+msgctxt "#31154"
+msgid "Movies and TV shows"
+msgstr "Филмови и ТВ серије"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31159"
+msgid "Now playing progress"
+msgstr "Напредак тренутне репродукције"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31160"
+msgid "Top bar / Main menu bars"
+msgstr "Горња трака / Траке главног менија"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31162"
+msgid "Character art"
+msgstr "Уметнички приказ ликова"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31164"
+msgid "Blur background"
+msgstr "Замути позадину"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31165"
+msgid "Clear art"
+msgstr "Чиста уметничка слика"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31166"
+msgid "Replace play with cinema mode"
+msgstr "Замени репродукцију биоскопским режимом"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31169"
+msgid "X (Twitter)"
+msgstr "X (Twitter)"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31170"
+msgid "Audio info"
+msgstr "Информације о звуку"
+
+#: /16x9/Variables.xml /shortcuts/mainmenu.DATA.xml /shortcuts/overrides.xml
+msgctxt "#31173"
+msgid "Live TV"
+msgstr "ТВ уживо"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31174"
+msgid "Disabled text"
+msgstr "Онемогућени текст"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31175"
+msgid "Default texture"
+msgstr "Подразумевана текстура"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31181"
+msgid "Video background"
+msgstr "Видео позадина"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31182"
+msgid "Vinyl"
+msgstr "Винил"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31183"
+msgid "TikTok"
+msgstr "TikTok"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31184"
+msgid "Show Madnox logo at startup"
+msgstr "Прикажи Madnox лого при покретању"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31185"
+msgid "Filename"
+msgstr "Име датотеке"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31186"
+msgid "Golden"
+msgstr "Златно"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31187"
+msgid "Skin Variables helps skinners to construct variables and expressions for multiple containers and listitems using a template."
+msgstr "Skin Variables помаже креаторима маски да конструишу променљиве и изразе за више контејнера и ставки листе користећи шаблон."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31188"
+msgid "Creator"
+msgstr "Аутор"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31189"
+msgid "Select this option if you want to disable showing the Madnox logo when Kodi is loading the skin on startup. You will still see the spinning blue circle to show loading progress."
+msgstr "Изаберите ову опцију ако желите да онемогућите приказивање Madnox логотипа када Коди учитава маску при покретању. И даље ћете видети плави круг који се врти како би приказао напредак учитавања."
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31190"
+msgid "Purple"
+msgstr "Љубичаста"
+
+#: /16x9/Includes_SkinSettings.xml
+msgctxt "#31191"
+msgid "Movies & TV shows / Seasons-Episode display"
+msgstr "Филмови и ТВ серије / Приказ сезона и епизода"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31193"
+msgid "On info"
+msgstr "При информацијама"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31194"
+msgid "Persistant"
+msgstr "Трајно"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31195"
+msgid "Animated"
+msgstr "Анимирано"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31196"
+msgid "Background now playing info"
+msgstr "Информације у позадини о тренутној репродукцији"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31197"
+msgid "Most recognized as"
+msgstr "Најпознатији као"
+
+#: /16x9/Variables.xml
+msgctxt "#31198"
+msgid "Forward"
+msgstr "Напред"
+
+#: /16x9/Variables.xml
+msgctxt "#31199"
+msgid "Rewind"
+msgstr "Назад"
+
+#: /16x9/Variables.xml
+msgctxt "#31200"
+msgid "Internet stream"
+msgstr "Интернет стрим"
+
+#: /16x9/Variables.xml
+msgctxt "#31201"
+msgid "Landscape"
+msgstr "Пејзаж"
+
+#: /16x9/Variables.xml
+msgctxt "#31202"
+msgid "Clear logo"
+msgstr "Чист лого"
+
+#: /16x9/Variables.xml
+msgctxt "#31203"
+msgid "Portrait"
+msgstr "Портрет"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31204"
+msgid "Recently released"
+msgstr "Недавно објављено"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31205"
+msgid "Recommended"
+msgstr "Препоручено"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31206"
+msgid "Most played"
+msgstr "Највише пуштано"
+
+#: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31210"
+msgid "Big"
+msgstr "Велико"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31211"
+msgid "Movie/TV show info"
+msgstr "Инфо о филму/ТВ серији"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31212"
+msgid "Select how long, in seconds, before the movie rows metadata grid slides left or right (If greater than 8 items)."
+msgstr "Изаберите колико секунди ће проћи пре него што се мрежа метаподатака у редовима филмова помери лево или десно (ако има више од 8 ставки)."
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31214"
+msgid "Reflect"
+msgstr "Одраз"
+
+#: /16x9/View_051_SimpleList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31215"
+msgid "Simple list"
+msgstr "Једноставна листа"
+
+#: /16x9/View_053_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31219"
+msgid "Info list 1"
+msgstr "Информативна листа 1"
+
+#: /16x9/View_054_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31221"
+msgid "Info list 2"
+msgstr "Информативна листа 2"
+
+#: /16x9/View_55_LowList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31223"
+msgid "Low list"
+msgstr "Ниска листа"
+
+#: /16x9/View_56_3Panel.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31225"
+msgid "3 panel"
+msgstr "3 панела"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31227"
+msgid "Select how long, in seconds, before the persons row metadata grid slides left or right (If greater than 8 items)."
+msgstr "Изаберите колико секунди ће проћи пре него што се мрежа метаподатака у редовима особа помери лево или десно (ако има више од 8 ставки)."
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31228"
+msgid "Trailer preview"
+msgstr "Преглед трејлера"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31229"
+msgid "Icon size"
+msgstr "Величина иконе"
+
+#: /16x9/View_553_ShowCase.xml
+msgctxt "#31230"
+msgid "Showcase"
+msgstr "Витрина"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31231"
+msgid "2 thumbs"
+msgstr "2 умањене слике"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31232"
+msgid "4 thumbs"
+msgstr "4 умањене слике"
+
+#: /16x9/View_57_3PanelSquare.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31233"
+msgid "3 panel square"
+msgstr "3 квадратна панела"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31234"
+msgid "Media flags"
+msgstr "Медијске заставице"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31235"
+msgid "Small icons"
+msgstr "Мале иконе"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31236"
+msgid "Album case"
+msgstr "Кутија албума"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31237"
+msgid "Video case"
+msgstr "Видео кутија"
+
+#: /16x9/View_051_SimpleList.xml
+msgctxt "#31238"
+msgid "Cover list"
+msgstr "Листа омота"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31239"
+msgid "Cover flow portrait"
+msgstr "Портретни приказ омота"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31241"
+msgid "Cover flow square"
+msgstr "Квадратни приказ омота"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31242"
+msgid "Cover flow banner"
+msgstr "Банер приказ омота"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31243"
+msgid "Cover flow landscape"
+msgstr "Пејзажни приказ омота"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31244"
+msgid "Open case"
+msgstr "Отворена кутија"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31245"
+msgid "Focus"
+msgstr "Фокус"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31246"
+msgid "Cascade"
+msgstr "Каскада"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31247"
+msgid "Kodiflix"
+msgstr "Kodiflix"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31248"
+msgid "Portrait icon"
+msgstr "Портретна икона"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31249"
+msgid "Banner icon"
+msgstr "Икона банера"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31250"
+msgid "Landscape icon"
+msgstr "Пејзажна икона"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31251"
+msgid "Portrait icon info"
+msgstr "Инфо о портретној икони"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31252"
+msgid "Banner icon info"
+msgstr "Инфо о икони банера"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31253"
+msgid "Landscape icon info"
+msgstr "Инфо о пејзажној икони"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31254"
+msgid "Portrait wall"
+msgstr "Портретни зид"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31255"
+msgid "Square wall"
+msgstr "Квадратни зид"
+
+#: /16x9/View_542_BannerWall.xml
+msgctxt "#31256"
+msgid "Banner wall"
+msgstr "Зид са банерима"
+
+#: /16x9/View_543_LandscapeWall.xml
+msgctxt "#31257"
+msgid "Landscape wall"
+msgstr "Пејзажни зид"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31258"
+msgid "Focus square"
+msgstr "Квадратни фокус"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31259"
+msgid "Cover"
+msgstr "Омот"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31260"
+msgid "Square icon"
+msgstr "Квадратна икона"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31261"
+msgid "Square icon info"
+msgstr "Инфо о квадратној икони"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31262"
+msgid "Kodiflix square"
+msgstr "Kodiflix квадрат"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31263"
+msgid "Cascade square"
+msgstr "Каскадни квадрат"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31264"
+msgid "Showcase square"
+msgstr "Квадратна витрина"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31265"
+msgid "Kodiflix landscape"
+msgstr "Kodiflix пејзаж"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31266"
+msgid "Simple"
+msgstr "Једноставно"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31267"
+msgid "Info 1"
+msgstr "Инфо 1"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31268"
+msgid "Info 2"
+msgstr "Инфо 2"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31269"
+msgid "Cover flow"
+msgstr "Приказ омота"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31270"
+msgid "Enable/Disable views"
+msgstr "Омогући/Онемогући приказе"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31271"
+msgid "Icon info"
+msgstr "Инфо икона"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31272"
+msgid "Wall"
+msgstr "Зид"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31273"
+msgid "Info delay"
+msgstr "Одлагање информација"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31274"
+msgid "Install genre icons"
+msgstr "Инсталирај иконе жанрова"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31275"
+msgid "B/W genre icons"
+msgstr "Црно-беле иконе жанрова"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31276"
+msgid "Install colour genre icons"
+msgstr "Инсталирај обојене иконе жанрова"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31277"
+msgid "Install B/W genre icons"
+msgstr "Инсталирај црно-беле иконе жанрова"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31279"
+msgid "TV shows season & returning text"
+msgstr "Текст за сезону ТВ серије и наставак"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31280"
+msgid "Next aired"
+msgstr "Следеће емитовање"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31281"
+msgid "Panels"
+msgstr "Панели"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31282"
+msgid "Mud"
+msgstr "Блато"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31283"
+msgid "Plain"
+msgstr "Једноставно"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31284"
+msgid "Shadow texture"
+msgstr "Текстура сенке"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31285"
+msgid "Themes & Colours"
+msgstr "Теме и боје"
+
+#: /16x9/Home.xml
+msgctxt "#31286"
+msgid "Menus"
+msgstr "Менији"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31287"
+msgid "Shortcut menu"
+msgstr "Мени са пречицама"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31288"
+msgid "Hide"
+msgstr "Сакриј"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31289"
+msgid "Widget"
+msgstr "Виџет"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31291"
+msgid "Music case"
+msgstr "Музичка кутија"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31292"
+msgid "Custom favourites"
+msgstr "Прилагођене омиљене ставке"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31293"
+msgid "Favourite"
+msgstr "Омиљено"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31294"
+msgid "Custom favourite addons"
+msgstr "Прилагођени омиљени додаци"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31295"
+msgid "Cinema mode"
+msgstr "Биоскопски режим"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31296"
+msgid "Trailer count"
+msgstr "Број трејлера"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31297"
+msgid "Intro path"
+msgstr "Путања до увода"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31298"
+msgid "Select theme"
+msgstr "Изабери тему"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31299"
+msgid "Video discart fallback"
+msgstr "Резервни изглед диска за видео"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31300"
+msgid "Customise"
+msgstr "Прилагоди"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31301"
+msgid "Channel number"
+msgstr "Број канала"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31302"
+msgid "Channel name"
+msgstr "Назив канала"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31303"
+msgid "Repository"
+msgstr "Репозиторијум"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31304"
+msgid "Progress bar"
+msgstr "Трака напретка"
+
+#: /16x9/DialogPVRChannelManager.xml
+msgctxt "#31305"
+msgid "Apply"
+msgstr "Примени"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31306"
+msgid "TV Show season cover background"
+msgstr "Позадина омота за сезону ТВ серије"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31307"
+msgid "Genre cover background"
+msgstr "Позадина омота за жанр"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31308"
+msgid "Artist album cover background"
+msgstr "Позадина омота за албум извођача"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31310"
+msgid "Fanart rotation speed"
+msgstr "Брзина ротације фан-арта"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31311"
+msgid "seconds"
+msgstr "секунде"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31312"
+msgid "Fullscreen audio"
+msgstr "Цео екран за звук"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31313"
+msgid "Jump to letter"
+msgstr "Скочи на слово"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31314"
+msgid "Disable library fanart"
+msgstr "Онемогући фан-арт из библиотеке"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31315"
+msgid "Music background"
+msgstr "Музичка позадина"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31317"
+msgid "PVR status"
+msgstr "PVR статус"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31318"
+msgid "TV status"
+msgstr "ТВ статус"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31319"
+msgid "Radio status"
+msgstr "Радио статус"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31322"
+msgid "PVR widget"
+msgstr "PVR виџет"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31323"
+msgid "Movie & TV shows meta countdown timer text"
+msgstr "Текст тајмера одбројавања метаподатака филмова и ТВ серија"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31324"
+msgid "Movie/Episode case"
+msgstr "Кутија за филм/епизоду"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31325"
+msgid "Movie/TV show case"
+msgstr "Кутија за филм/ТВ серију"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31326"
+msgid "Music video case"
+msgstr "Кутија за музички видео"
+
+#: /16x9/Includes_NowPlaying.xml
+msgctxt "#31327"
+msgid "Special"
+msgstr "Специјал"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31328"
+msgid "Show media flags"
+msgstr "Прикажи медијске заставице"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31330"
+msgid "Video info settings"
+msgstr "Подешавања информација о видеу"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31331"
+msgid "Create"
+msgstr "Креирај"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31332"
+msgid "Set episode"
+msgstr "Постави епизоду"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31333"
+msgid "Seek icon"
+msgstr "Икона претраге"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31334"
+msgid "Visualisation presets"
+msgstr "Предефинисане визуелизације"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31335"
+msgid "Visualisation options"
+msgstr "Опције визуелизације"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31336"
+msgid "Music settings"
+msgstr "Подешавања музике"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31337"
+msgid "Audio view settings"
+msgstr "Подешавања аудио приказа"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31338"
+msgid "Video view settings"
+msgstr "Подешавања видео приказа"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31339"
+msgid "Contributors"
+msgstr "Сарадници"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31340"
+msgid "Rate"
+msgstr "Оцени"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31341"
+msgid "Next episode"
+msgstr "Следећа епизода"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31342"
+msgid "Movies and TV Shows starring"
+msgstr "Филмови и ТВ серије у којима глуми"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31343"
+msgid "Directed by"
+msgstr "Режија"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31344"
+msgid "More movies directed by"
+msgstr "Још филмова које је режирао"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31345"
+msgid "Written by"
+msgstr "Сценарио"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31346"
+msgid "More movies written by"
+msgstr "Још филмова које је написао"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31347"
+msgid "More like this"
+msgstr "Још оваквог садржаја"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31348"
+msgid "No information available."
+msgstr "Информације нису доступне."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31350"
+msgid "Music info settings"
+msgstr "Подешавања информација о музици"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31351"
+msgid "TMDb info"
+msgstr "TMDb информације"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31352"
+msgid "TMDb actor info"
+msgstr "TMDb информације о глумцу"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31353"
+msgid "Artist slideshow"
+msgstr "Слајдшоу извођача"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31354"
+msgid "Artist slideshow settings"
+msgstr "Подешавања слајдшоуа извођача"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31356"
+msgid "Global now playing"
+msgstr "Глобално тренутно репродуковано"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31357"
+msgid "Panel texture"
+msgstr "Текстура панела"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31358"
+msgid "Background texture"
+msgstr "Текстура позадине"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31359"
+msgid "Main menu texture"
+msgstr "Текстура главног менија"
+
+#: /16x9/Includes_Topbar.xml
+msgctxt "#31360"
+msgid "Filtered"
+msgstr "Филтрирано"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31361"
+msgid "Now playing music discart fallback"
+msgstr "Резервни изглед диска за тренутно пуштену музику"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31362"
+msgid "Now playing video discart fallback"
+msgstr "Резервни изглед диска за тренутно пуштени видео"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31363"
+msgid "Watched status"
+msgstr "Статус одгледаности"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31364"
+msgid "Unwatched episode count"
+msgstr "Број неодгледаних епизода"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31365"
+msgid "Widget watched status"
+msgstr "Статус одгледаности за виџет"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31366"
+msgid "Movies starring"
+msgstr "Филмови у којима глуми"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31367"
+msgid "TV Shows starring"
+msgstr "ТВ серије у којима глуми"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31368"
+msgid "Movie & TV shows slider countdown enable"
+msgstr "Омогући одбројавање клизача за филмове и ТВ серије"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31369"
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "Укључује/искључује дигитални тајмер одбројавања испод стрелица за клизање метаподатака. Омогућите да бисте приказали када ће се клизач померити лево/десно када стигне до 0. Аутоматско клизање за филмове или особе мора бити омогућено да би се активирала ова функција."
+
+#: /16x9/Custom_1112_Search.xml
+msgctxt "#31370"
+msgid "Search results for"
+msgstr "Резултати претраге за"
+
+#: /16x9/Custom_1112_Search.xml
+msgctxt "#31371"
+msgid "Music video artists"
+msgstr "Извођачи музичких спотова"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31372"
+msgid "Time remaining"
+msgstr "Преостало време"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31374"
+msgid "Cover background settings"
+msgstr "Подешавања позадине омота"
+
+#: /16x9/Settings.xml
+msgctxt "#31375"
+msgid "Management"
+msgstr "Управљање"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31376"
+msgid "Next button"
+msgstr "Дугме Даље"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31377"
+msgid "HDR/SDR"
+msgstr "HDR/SDR"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31378"
+msgid "Bit depth"
+msgstr "Дубина бита"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31379"
+msgid "Dim background"
+msgstr "Затамњена позадина"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31380"
+msgid "Now playing dim background"
+msgstr "Затамњена позадина за тренутно репродуковано"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31381"
+msgid "Appeared in"
+msgstr "Појављује се у"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31382"
+msgid "Press up for actor info"
+msgstr "Притисните горе за инфо о глумцу"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31383"
+msgid "Press up for library items by actor"
+msgstr "Притисните горе за ставке из библиотеке по глумцу"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31384"
+msgid "Source flags"
+msgstr "Заставице извора"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31385"
+msgid "Limit"
+msgstr "Ограничење"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31386"
+msgid "Recently added (include watched)"
+msgstr "Недавно додато (укључујући одгледано)"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31387"
+msgid "Recently released (include watched)"
+msgstr "Недавно објављено (укључујући одгледано)"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31388"
+msgid "Character"
+msgstr "Лик"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31390"
+msgid "Job"
+msgstr "Посао"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31391"
+msgid "Budget"
+msgstr "Буџет"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31392"
+msgid "Years Old"
+msgstr "Година старости"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31393"
+msgid "Revenue"
+msgstr "Приход"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31394"
+msgid "Color icons"
+msgstr "Иконе у боји"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31395"
+msgid "Resolution icon color"
+msgstr "Боја иконе за резолуцију"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31396"
+msgid "Violet"
+msgstr "Љубичаста"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31397"
+msgid "Magenta"
+msgstr "Магента"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31398"
+msgid "Turquoise"
+msgstr "Тиркизна"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31399"
+msgid "Brown"
+msgstr "Смеђа"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31401"
+msgid "Aspect ratio icon color"
+msgstr "Боја иконе за однос страница"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31402"
+msgid "Sets the color for the resolution flags."
+msgstr "Подешава боју за заставице резолуције."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31403"
+msgid "Sets the color for the aspect ratio flags."
+msgstr "Подешава боју за заставице односа страница."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31404"
+msgid "Large splash screen Madnox logo on startup"
+msgstr "Велики почетни Madnox лого при покретању"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31405"
+msgid "Image gallery for"
+msgstr "Галерија слика за"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31406"
+msgid "Image Gallery"
+msgstr "Галерија слика"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31407"
+msgid "Not Available or Listed"
+msgstr "Није доступно или наведено"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31408"
+msgid "Awards"
+msgstr "Награде"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31409"
+msgid "Enable auto scrolling for movie's meta data"
+msgstr "Омогући аутоматско клизање за метаподатке филмова"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31410"
+msgid "Movie meta rotation delay time"
+msgstr "Време одлагања ротације метаподатака филмова"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31411"
+msgid "Enable auto scrolling for person's meta data"
+msgstr "Омогући аутоматско клизање за метаподатке особа"
+
+#: /16x9/SkinSettings.xml /16x9/SkinSettings.xml
+msgctxt "#31412"
+msgid "Person meta rotation delay time"
+msgstr "Време одлагања ротације метаподатака особа"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31413"
+msgid "Automatically scroll movie's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "Аутоматски клизи кроз метаподатке филмова када има више од 8 видљивих ставки. Клизи кроз све податке на основу видљивости доступних података."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31414"
+msgid "Automatically scroll person's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "Аутоматски клизи кроз метаподатке особа када има више од 8 видљивих ставки. Клизи кроз све податке на основу видљивости доступних података."
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31415"
+msgid "Crew"
+msgstr "Екипа"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31416"
+msgid "TMDb"
+msgstr "TMDb"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31417"
+msgid "TVDb"
+msgstr "TVDb"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31418"
+msgid "Recommendations"
+msgstr "Препоруке"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31419"
+msgid "Guest stars"
+msgstr "Гостујуће звезде"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31420"
+msgid "Display larger DPI scaled logo when Kodi first loads. Large logo: 1600x520px, Small logo: 800x260px. Kodi will auto-scale in windowed view."
+msgstr "Приказује већи логотип прилагођен DPI скалирању када се Коди први пут учита. Велики логотип: 1600x520 пиксела, Мали логотип: 800x260 пиксела. Коди ће се аутоматски прилагодити у прозорском приказу."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31421"
+msgid "Turn on skin debugging to log"
+msgstr "Укључи отклањање грешака маске у дневник"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31422"
+msgid "Off by default, leave this setting off unless troubleshooting is needed. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
+msgstr "Искључено по подразумеваној вредности, оставите ово подешавање искљученим осим ако је потребно решавање проблема. Ово ће брзо повећати дневник отклањања грешака и кеш меморију уређака, што може проузроковати нестабилност ако се не провери. Обавештени сте."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31423"
+msgid "Fanart background size ratio"
+msgstr "Однос величине позадинског фан-арта"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31424"
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center: Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgstr "Подешава однос величине позадине фан-арта. Размера/Задржи/Центар: Однос страница се задржава. Развучено: Однос страница се не задржава."
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31425"
+msgid "Custom colour"
+msgstr "Прилагођена боја"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31426"
+msgid "Alpha"
+msgstr "Алфа"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31427"
+msgid "Applied"
+msgstr "Примењено"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31428"
+msgid "Preview"
+msgstr "Преглед"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31429"
+msgid "Feature"
+msgstr "Функција"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31430"
+msgid "Sliders"
+msgstr "Клизачи"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31431"
+msgid "Core mode (Palette locked)"
+msgstr "Основни режим (закључана палета)"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31432"
+msgid "Scale"
+msgstr "Размера"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31433"
+msgid "Stretch"
+msgstr "Развуци"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31434"
+msgid "Image"
+msgstr "Слика"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31435"
+msgid "Navigation"
+msgstr "Навигација"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31436"
+msgid "Media flags data style"
+msgstr "Стил података за медијске заставице"
+
+#: /16x9/Custom_1111_CustomSelectContainer.xml
+msgctxt "#31437"
+msgid "TMDB Info Settings"
+msgstr "Подешавања TMDB информација"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31438"
+msgid "Displays icons in each row when the metadata is shown in Movies, TVShows, Biographies, & TMDb display modes."
+msgstr "Приказује иконе у сваком реду када су приказани метаподаци у режимима приказа за филмове, ТВ серије, биографије и TMDb."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31439"
+msgid "Wiki"
+msgstr "Вики"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31440"
+msgid "Color selection"
+msgstr "Избор боје"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31441"
+msgid "Flags"
+msgstr "Заставице"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31442"
+msgid "Intro"
+msgstr "Увод"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31443"
+msgid "Outro"
+msgstr "Одјава"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31444"
+msgid "Colored"
+msgstr "Обојено"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31445"
+msgid "Addon"
+msgstr "Додатак"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31447"
+msgid "Resource"
+msgstr "Ресурс"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31448"
+msgid "Codec"
+msgstr "Кодек"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31449"
+msgid "Node"
+msgstr "Чвор"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31450"
+msgid "Artwork dump"
+msgstr "Извоз уметничких слика"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31451"
+msgid "PreShow Experience"
+msgstr "Искуство пре пројекције"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31452"
+msgid "Up"
+msgstr "Горе"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31453"
+msgid "Current"
+msgstr "Тренутно"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31454"
+msgid "Editing"
+msgstr "Уређивање"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31455"
+msgid "Container"
+msgstr "Контејнер"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31456"
+msgid "Legacy"
+msgstr "Застарело"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31457"
+msgid "Bumpers"
+msgstr "Шпице"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31458"
+msgid "Accent color"
+msgstr "Наглашена боја"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31459"
+msgid "overlay dimming"
+msgstr "затамњење преклопа"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31460"
+msgid "Countdown"
+msgstr "Одбројавање"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31461"
+msgid "Courtesy"
+msgstr "Учтивост"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31462"
+msgid "Show Error Notifications"
+msgstr "Прикажи обавештења о грешкама"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31465"
+msgid "Master reset"
+msgstr "Главно ресетовање"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31466"
+msgid "Confirm factory reset"
+msgstr "Потврда фабричког ресетовања"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31467"
+msgid "Welcome to Madnox! For the best experience, we recommend applying the default settings. This will configure all visual options and features. Would you like to apply the Madnox recommended settings now?"
+msgstr "Добродошли у Madnox! За најбоље искуство, препоручујемо примену подразумеваних подешавања. Ово ће конфигурисати све визуелне опције и функције. Да ли желите да примените препоручена Madnox подешавања сада?"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31468"
+msgid "This will restore all skin settings to their original defaults.[CR][CR]Your current customizations will be lost.[CR]Are you sure you want to continue?"
+msgstr "Ово ће вратити сва подешавања маске на њихове оригиналне подразумеване вредности.[CR][CR]Ваша тренутна прилагођавања ће бити изгубљена.[CR]Да ли сте сигурни да желите да наставите?"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31470"
+msgid "Restore Madnox skin settings to day 1 out of the box startup values. Only affects skin settings, does not alter or change anything else like scripts or plugins."
+msgstr "Вратите подешавања Madnox маске на вредности од првог дана након инсталације. Утиче само на подешавања маске, не мења ништа друго попут скрипти или прикључака."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31471"
+msgid "Allows customization of default media flags without requiring outside hacks to the skin. This allows you to custom select which video container icons will be displayed for WebDL, 1080p, 720p etc. This can be reset at any time."
+msgstr "Омогућава прилагођавање подразумеваних медијских заставица без захтевања спољних измена на масци. Ово вам омогућава да прилагођено изаберете које ће иконе видео контејнера бити приказане за WebDL, 1080p, 720p итд. Ово се може ресетовати у било ком тренутку."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31472"
+msgid "Enables setting of the color of \"In-Progress\" bar feature."
+msgstr "Омогућава подешавање боје за функцију траке у току репродукције."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31473"
+msgid "Sets of the color of \"In-Progress\" bar feature globally when enabled."
+msgstr "Подешава боју функције траке у току репродукције глобално када је омогућено."
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31474"
+msgid "Startup intro video"
+msgstr "Уводни видео при покретању"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31475"
+msgid "Turn on trailer debugging to log"
+msgstr "Укључи отклањање грешака трејлера у дневник"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31476"
+msgid "Off by default, leave this setting off unless troubleshooting auto preview trailer rolling is needed."
+msgstr "Искључено по подразумеваној вредности, оставите ово подешавање искљученим осим ако је потребно решавање проблема са аутоматским прегледом трејлера."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31477"
+msgid "When enabled, Kodi will remember the last context menu position. Example: TV Shows seasons || \"Marked as watched\": Will remain highlighted as each season is marked as watched."
+msgstr "Када је омогућено, Коди ће запамтити последњу позицију контекстног менија. Пример: Сезоне ТВ серија || „Означи као одгледано”: Остаће истакнуто како се свака сезона означава као одгледана."
+
+#: /16x9/Includes.xml
+msgctxt "#31478"
+msgid "Local"
+msgstr "Локално"
+
+#: /16x9/Includes.xml
+msgctxt "#31479"
+msgid "Upcoming"
+msgstr "Предстојеће"
+
+#: /16x9/Includes.xml
+msgctxt "#31480"
+msgid "Modify"
+msgstr "Измени"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31481"
+msgid "Madnox script skin helper addon"
+msgstr "Додатак за помоћну скрипту Madnox маске"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31482"
+msgid "Only"
+msgstr "Само"
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31483"
+msgid "Battery"
+msgstr "Батерија"
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31485"
+msgid "PVR"
+msgstr "PVR"
+
+#: /16x9/.xml
+msgctxt "#31486"
+msgid "CPU"
+msgstr "Процесор (CPU)"
+
+#: /16x9/.xml
+msgctxt "#31487"
+msgid "GPU"
+msgstr "Графички процесор (GPU)"
+
+#: /16x9/.xml
+msgctxt "#31488"
+msgid "Frequency"
+msgstr "Фреквенција"
+
+#: /16x9/.xml
+msgctxt "#31489"
+msgid "Bytes"
+msgstr "Бајтови"
+
+#: /16x9/.xml
+msgctxt "#31490"
+msgid "Uptime"
+msgstr "Време рада"
+
+#: /16x9/.xml
+msgctxt "#31491"
+msgid "Screen"
+msgstr "Екран"
+
+#: /16x9/.xml
+msgctxt "#31492"
+msgid "Build"
+msgstr "Верзија (Build)"
+
+#: /16x9/.xml
+msgctxt "#31493"
+msgid "Locale"
+msgstr "Локалитет"
+
+#: /16x9/Custom_1120_Dashboard.xml /16x9/Custom_1129_Version.xml
+msgctxt "#31494"
+msgid "Kodi"
+msgstr "Kodi"
+
+#: /16x9/.xml
+msgctxt "#31495"
+msgid "Cores"
+msgstr "Језгра"
+
+#: /16x9/.xml
+msgctxt "#31496"
+msgid "Frames per second"
+msgstr "Кадрови у секунди (FPS)"
+
+#: /16x9/.xml
+msgctxt "#31497"
+msgid "Memory"
+msgstr "Меморија"
+
+#: /16x9/.xml
+msgctxt "#31498"
+msgid "Freeable"
+msgstr "Ослободиво"
+
+#: /16x9/.xml
+msgctxt "#31499"
+msgid "Full"
+msgstr "Пуно"
+
+#: /16x9/.xml
+msgctxt "#31500"
+msgid "Code"
+msgstr "Код"
+
+#: /16x9/.xml
+msgctxt "#31501"
+msgid "Host"
+msgstr "Хост"
+
+#: /16x9/.xml
+msgctxt "#31502"
+msgid "Remaining"
+msgstr "Преостало"
+
+#: /16x9/.xml
+msgctxt "#31503"
+msgid "Dashboard"
+msgstr "Контролна табла"
+
+#: /16x9/.xml
+msgctxt "#31504"
+msgid "Slot Available"
+msgstr "Слот је доступан"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31505"
+msgid "Enables widgets \"In-Progress\" bar feature in the popup dialog."
+msgstr "Омогућава функцију траке у току репродукције за виџете у искачућем дијалогу."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31506"
+msgid "Current built-in revision level of the default Madnox values to reset / initialize the skin."
+msgstr "Тренутни уграђени ниво ревизије подразумеваних Madnox вредности за ресетовање / иницијализацију маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31507"
+msgid "Select if an intro video will play when Kodi is first started. None: No video, Built-In: Kodi's release level intro video, Custom: Pick video of your choice to display."
+msgstr "Изаберите да ли ће се уводни видео пуштати при првом покретању Кодија. Ништа: без видеа, Уграђено: уводни видео за тренутну верзију Кодија, Прилагођено: изаберите видео по свом избору за приказ."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31508"
+msgid "This setting forces the media flag to resolution flag as 4K or 2160p providing user icon control without skin modifcations."
+msgstr "Ово подешавање приморава медијску заставицу резолуције на 4K или 2160p, пружајући кориснику контролу над иконицама без измена маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31509"
+msgid "Change the stars color displayed in the video info line. Click to cycle through fixed colors or select a custom color."
+msgstr "Промените боју звездица приказаних у линији са информацијама о видеу. Кликните за кружење кроз фиксне боје или изаберите прилагођену боју."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31510"
+msgid "Allows star ratings style to use a custom color when it is set to \"Custom\"."
+msgstr "Омогућава стилу оцењивања звездицама да користи прилагођену боју када је подешен на „Прилагођено”."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31511"
+msgid "Dedicated addon for Madnox required for Piers+. Moves all free running scripts to a dedicated addon for security purposes."
+msgstr "Наменски додатак за Madnox потребан за Piers+. Премешта све слободно покренуте скрипте у наменски додатак ради безбедности."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31512"
+msgid "TMDbHelper provides several tools to assist skinners with retrieving information from TMDb, OMDb and Trakt APIs."
+msgstr "TMDbHelper пружа неколико алата који помажу креаторима маски у преузимању информација са TMDb, OMDb и Trakt API-ја."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31513"
+msgid "Wikipedia addon for Kodi."
+msgstr "Wikipedia додатак за Коди."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31514"
+msgid "Advanced CinemaVision replacement that can be enabled to replace Madnox's built in simpler CinemaMode. Allows the ultimate CinemaMode experience and customisation."
+msgstr "Напредна замена за CinemaVision која се може омогућити да замени уграђени једноставнији CinemaMode у Madnox-у. Омогућава врхунски доживљај и прилагођавање биоскопског режима."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31515"
+msgid "Blur with color"
+msgstr "Замути са бојом"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31516"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard)."
+msgstr "Приказује или скрива ставку менија у главном контекстном менију (S на тастатури)."
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31517"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard). NOTE: This menu item is visible ONLY on the home screen only regardless of this setting."
+msgstr "Приказује или скрива ставку менија у главном контекстном менију (S на тастатури). НАПОМЕНА: Ова ставка менија је видљива САМО на почетном екрану без обзира на ово подешавање."
+
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr "Поново покрени инсталатер опционих додатака"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr "Инсталатер опционих додатака"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr "Ово ће поново покренути инсталатер опционих додатака. Сви додаци ће бити преузети и инсталирани у онемогућеном стању. Омогућите само оно што вам је потребно у Подешавања > Подешавања маске > Додаци."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31521"
+msgid "Madnox image resource addon"
+msgstr "Додатак за ресурсе слика Madnox"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31522"
+msgid "Images"
+msgstr "Слике"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31523"
+msgid "Display ratings as 10-point numbers"
+msgstr "Прикажи оцене као бројеве на скали до 10"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31524"
+msgid "Allows changes to the ratings to convert between floating numbers or as a percentage. Affects TMDb & IMDb, all others remain as their default display."
+msgstr "Омогућава промену приказа оцена за конвертовање између децималних бројева или процента. Утиче на TMDb и IMDb, сви остали задржавају свој подразумевани приказ."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31525"
+msgid "Re-run skin shortcuts migrator"
+msgstr "Поново покрени мигратор пречица маске"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31526"
+msgid "This will rewrite the skin shortcuts .properties file to the current 3 module addon structure. Only run if there are issues with background images or playlists are not working."
+msgstr "Ово ће поново уписати .properties датотеку пречица маске у тренутну структуру додатка са 3 модула. Покрените само ако постоје проблеми са позадинским сликама или ако плејлисте не раде."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31527"
+msgid "This will reactivate the addons installer. Only run if addons were not installed when skin was first installed."
+msgstr "Ово ће поново активирати инсталатер додатака. Покрените само ако додаци нису инсталирани када је маска први пут инсталирана."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31528"
+msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
+msgstr "Наменски додатак за Madnox потребан за Piers+. Премешта слике маске у наменски додатак ради безбедности."
+
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase hero"
+msgstr "Истакнута витрина (Hero)"
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr "У жижи"
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic shelf"
+msgstr "Биоскопска полица"
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr "Уреднички приказ"
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr "Имерзивно"
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr "Сцена"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr "Пауза"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr "Заустави"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr "Вертикално"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr "Прикажи"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr "Доле"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31540"
+msgid "Save Madnox current settings to the preset folder."
+msgstr "Сачувај тренутна Madnox подешавања у фасциклу са предлошцима."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31541"
+msgid "Load Madnox previously saved settings from the preset folder."
+msgstr "Учитај претходно сачувана Madnox подешавања из фасцикле са предлошцима."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31542"
+msgid "Export current settings to an external file (Used for sharing or collaboration)."
+msgstr "Извези тренутна подешавања у спољну датотеку (користи се за дељење или сарадњу)."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31543"
+msgid "Import settings from an external file (Used for sharing or collaboration). Invalid files/format will not be loaded."
+msgstr "Увези подешавања из спољне датотеке (користи се за дељење или сарадњу). Неважеће датотеке/формати неће бити учитани."
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31544"
+msgid "Widget Layout"
+msgstr "Изглед виџета"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31545"
+msgid "Prefer"
+msgstr "Преферирај"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31546"
+msgid "Manager"
+msgstr "Управљач"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31547"
+msgid "Import from file (Ext)"
+msgstr "Увези из датотеке (спољне)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31548"
+msgid "Export to folder (Ext)"
+msgstr "Извези у фасциклу (спољну)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31549"
+msgid "Presets"
+msgstr "Предлошци"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31550"
+msgid "Load"
+msgstr "Учитај"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31551"
+msgid "Actions for selected file"
+msgstr "Акције за изабрану датотеку"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31552"
+msgid "Found"
+msgstr "Пронађено"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31553"
+msgid "Show all"
+msgstr "Прикажи све"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31554"
+msgid "Tooltips"
+msgstr "Савети"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31555"
+msgid "Transport"
+msgstr "Контроле репродукције"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31556"
+msgid "Visibility"
+msgstr "Видљивост"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31557"
+msgid "Categories"
+msgstr "Категорије"
+
+# --- Colored prefix labels ---
+
+#: /16x9/includes.xml
+msgctxt "#31559"
+msgid "Customise 4K / UHD flag:"
+msgstr "Прилагоди 4K / UHD заставицу:"
+
+#: /16x9/includes.xml
+msgctxt "#31560"
+msgid "Customise WebDL flag:"
+msgstr "Прилагоди WebDL заставицу:"
+
+#: /16x9/includes.xml
+msgctxt "#31561"
+msgid "Customise 1080p flag:"
+msgstr "Прилагоди 1080p заставицу:"
+
+#: /16x9/includes.xml
+msgctxt "#31562"
+msgid "Customise 720p flag:"
+msgstr "Прилагоди 720p заставицу:"
+
+#: /16x9/includes.xml
+msgctxt "#31563"
+msgid "Customise DVD / SD flag:"
+msgstr "Прилагоди DVD / SD заставицу:"
+
+#: /16x9/includes.xml
+msgctxt "#31564"
+msgid "Category filter:"
+msgstr "Филтер категорија:"
+
+#: /16x9/includes.xml
+msgctxt "#31565"
+msgid "Restore default:"
+msgstr "Врати подразумевано:"
+
+#: /16x9/includes.xml
+msgctxt "#31566"
+msgid "Toggle Color Scheme:"
+msgstr "Промени шему боја:"
+
+# --- Body texts: top row category selectors (controls 901–904, 905) ---
+
+#: /16x9/includes.xml
+msgctxt "#31567"
+msgid "Highlight a logo from the palette below and click to assign it to 4K / UHD video files."
+msgstr "Истакните логотип из палете испод и кликните да бисте га доделили 4K / UHD видео датотекама."
+
+#: /16x9/includes.xml
+msgctxt "#31568"
+msgid "Highlight a logo from the palette below and click to assign it to WebDL and streaming video sources."
+msgstr "Истакните логотип из палете испод и кликните да бисте га доделили WebDL и стриминг видео изворима."
+
+#: /16x9/includes.xml
+msgctxt "#31569"
+msgid "Highlight a logo from the palette below and click to assign it to 1080p Full HD video files."
+msgstr "Истакните логотип из палете испод и кликните да бисте га доделили 1080p Full HD видео датотекама."
+
+#: /16x9/includes.xml
+msgctxt "#31570"
+msgid "Highlight a logo from the palette below and click to assign it to 720p HD video files."
+msgstr "Истакните логотип из палете испод и кликните да бисте га доделили 720p HD видео датотекама."
+
+#: /16x9/includes.xml
+msgctxt "#31571"
+msgid "Highlight a logo from the palette below and click to assign it to DVD and standard-definition video files."
+msgstr "Истакните логотип из палете испод и кликните да бисте га доделили DVD и видео датотекама стандардне резолуције."
+
+# --- Body texts: left menu category buttons (controls 91–97) ---
+
+#: /16x9/includes.xml
+msgctxt "#31572"
+msgid "View only ultra-high-definition and 4K logo designs in the palette grid."
+msgstr "Прикажи само логотипе ултра високе резолуције и 4K у мрежи палете."
+
+#: /16x9/includes.xml
+msgctxt "#31573"
+msgid "View only HEVC and H.265 codec logo designs in the palette grid."
+msgstr "Прикажи само логотипе HEVC и H.265 кодека у мрежи палете."
+
+#: /16x9/includes.xml
+msgctxt "#31574"
+msgid "View only AVC and H.264 codec logo designs in the palette grid."
+msgstr "Прикажи само логотипе AVC и H.264 кодека у мрежи палете."
+
+#: /16x9/includes.xml
+msgctxt "#31575"
+msgid "View only DivX, XviD, and legacy MPEG-4 format logo designs in the palette grid."
+msgstr "Прикажи само логотипе за DivX, XviD и застареле MPEG-4 формате у мрежи палете."
+
+#: /16x9/includes.xml
+msgctxt "#31576"
+msgid "View classic MPEG, DVD, and standard TV broadcast logo designs in the palette grid."
+msgstr "Прикажи класичне MPEG, DVD и логотипе стандардног ТВ емитовања у мрежи палете."
+
+#: /16x9/includes.xml
+msgctxt "#31577"
+msgid "View Windows Media Video and VC-1 codec logo designs in the palette grid."
+msgstr "Прикажи логотипе за Windows Media Video и VC-1 кодеке у мрежи палете."
+
+#: /16x9/includes.xml
+msgctxt "#31578"
+msgid "View container wrappers, disk formats, and other miscellaneous logo designs in the palette grid."
+msgstr "Прикажи омоте контејнера, формате дискова и друге разне логотипе у мрежи палете."
+
+# --- Standalone entries (no colored prefix) ---
+
+#: /16x9/includes.xml
+msgctxt "#31579"
+msgid "Close this flag customization dialog and return to settings."
+msgstr "Затвори овај дијалог за прилагођавање заставица и врати се у подешавања."
+
+#: /16x9/includes.xml
+msgctxt "#31580"
+msgid "Highlight any logo design in the center grid and click to save it as your custom flag for the active category."
+msgstr "Истакните било који логотип у средишњој мрежи и кликните да бисте га сачували као своју прилагођену заставицу за активну категорију."
+
+# --- Body texts: right panel actions (controls 801, 98) ---
+
+#: /16x9/includes.xml
+msgctxt "#31581"
+msgid "Clear your custom flag choice and restore this category to the skin's automatic default flag logic."
+msgstr "Очистите свој избор прилагођене заставице и вратите ову категорију на аутоматску подразумевану логику заставица маске."
+
+#: /16x9/includes.xml
+msgctxt "#31582"
+msgid "Toggle global flag artwork between colored designs and monochromatic default white."
+msgstr "Пребаците глобални изглед заставица између обојених дизајна и једнобојне подразумеване беле боје."
+
+# --- Default / idle state ---
+
+#: /16x9/includes.xml
+msgctxt "#31583"
+msgid "Use your directional keys to navigate options. Press Back or select Exit at any time to close without changes."
+msgstr "Користите тастере са стрелицама за навигацију кроз опције. Притисните Назад или изаберите Излаз у било ком тренутку да бисте затворили без измена."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31584"
+msgid "Select to modify"
+msgstr "Изабери за измену"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31901"
+msgid "Customisation of the home screen, widgets and shortcuts menu."
+msgstr "Прилагођавање почетног екрана, виџета и менија са пречицама."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31904"
+msgid "Script for skinners to let users select an image resource addon."
+msgstr "Скрипта за креаторе маски која омогућава корисницима да изаберу додатак за ресурсе слика."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31905"
+msgid "Automatically adds extra artwork for media in your media libraries."
+msgstr "Аутоматски додаје додатне уметничке слике за медије у вашим библиотекама медија."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31907"
+msgid "Lyrics for music. Required to enable animated lyrics."
+msgstr "Текстови за музику. Потребно за омогућавање анимираних текстова."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31908"
+msgid "Sync your collection and watched status with trakt.tv."
+msgstr "Синхронизујте своју колекцију и статус одгледаности са trakt.tv."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31910"
+msgid "Create a custom favourite from selected kodi favourites."
+msgstr "Креирајте прилагођену омиљену ставку од изабраних Коди омиљених ставки."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31911"
+msgid "Edit the home screen menu, widgets, backgrounds and infolines."
+msgstr "Уредите мени почетног екрана, виџете, позадине и информативне линије."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31912"
+msgid "Reset the home screen menu, widgets, backgrounds and infolines to default."
+msgstr "Ресетујте мени почетног екрана, виџете, позадине и информативне линије на подразумеване вредности."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31913"
+msgid "Create a custom favourite from selected kodi favourites. For use in main menu widgets. Requires script favourites to be installed."
+msgstr "Креирајте прилагођену омиљену ставку од изабраних Коди омиљених ставки. За употребу у виџетима главног менија. Захтева да скрипта за омиљене ставке буде инсталирана."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31914"
+msgid "Create a custom addon favourite from installed addons. For use in main menu widgets."
+msgstr "Креирајте прилагођени омиљени додатак од инсталираних додатака. За употребу у виџетима главног менија."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31915"
+msgid "Reset the skin theme and colours to default."
+msgstr "Ресетујте тему и боје маске на подразумеване вредности."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31916"
+msgid "Select from a list of pre-defined themes."
+msgstr "Изаберите са листе предефинисаних тема."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31917"
+msgid "Lock preferences to disable view mode, view options, info dialog and fullscreen settings."
+msgstr "Закључајте подешавања да бисте онемогућили режим приказа, опције приказа, информативни дијалог и подешавања целог екрана."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31918"
+msgid "Customise the home screen, favourites, predefined themes and kiosk mode."
+msgstr "Прилагодите почетни екран, омиљене ставке, предефинисане теме и киоск режим."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31919"
+msgid "Change skin theme textures."
+msgstr "Промените текстуре теме маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31920"
+msgid "Customise the skin texture colours."
+msgstr "Прилагодите боје текстуре маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31921"
+msgid "Customise the background and fallbacks for specific skin areas."
+msgstr "Прилагодите позадину и резервна решења за одређене области маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31922"
+msgid "Enable or disable various skin features."
+msgstr "Омогућите или онемогућите разне функције маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31923"
+msgid "Customise artwork and install supported artwork packs."
+msgstr "Прилагодите уметничке слике и инсталирајте подржане пакете уметничких слика."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31924"
+msgid "Install and configure supported addons."
+msgstr "Инсталирајте и конфигуришите подржане додатке."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31925"
+msgid "Enable and disable library views. Disabling library views on low spec systems may improve performance."
+msgstr "Омогућите и онемогућите приказе библиотеке. Онемогућавање приказа библиотеке на слабијим системима може побољшати перформансе."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31926"
+msgid "Shows scroll letter when scrolling in library views."
+msgstr "Приказује почетно слово при брзом клизању кроз приказе библиотеке."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31927"
+msgid "Shows the alphabet to jump to a position of the container. Will only work for default sorting methods (A-Z)."
+msgstr "Приказује абецеду за скок на позицију у контејнеру. Радиће само за подразумеване методе сортирања (А-Ш)."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31928"
+msgid "Shows plot outline for tv shows and movies if available, otherwise will display the default plot."
+msgstr "Приказује кратак садржај (plot outline) за ТВ серије и филмове ако је доступан, у супротном ће приказати подразумевани дужи садржај."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31929"
+msgid "Auto scroll the plot if it does not fit the control dimensions."
+msgstr "Аутоматски клизи кроз садржај ако не стаје у димензије контроле."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31930"
+msgid "Enable the shortcut menu for instant access to specific skin areas. In the media menu click left to open or click on the shortcut icon."
+msgstr "Омогућите мени са пречицама за тренутни приступ одређеним областима маске. У медијском менију кликните лево да бисте га отворили или кликните на икону пречице."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31931"
+msgid "Edit the shortcut menu."
+msgstr "Уредите мени са пречицама."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31932"
+msgid "Enable and disable the topbar elements."
+msgstr "Омогућите и онемогућите елементе горње траке."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31933"
+msgid "Change video info settings."
+msgstr "Промените подешавања видео информација."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31934"
+msgid "Change music info settings."
+msgstr "Промените подешавања музичких информација."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31935"
+msgid "Change fullscreen video settings."
+msgstr "Промените подешавања видео репродукције преко целог екрана."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31936"
+msgid "Change fullscreen audio settings."
+msgstr "Промените подешавања аудио репродукције преко целог екрана."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31937"
+msgid "Reduce the size of pop up notifications."
+msgstr "Смањите величину искачућих обавештења."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31938"
+msgid "Darkens the screen behind dialog popups. Not applicable for fullscreen video or audio."
+msgstr "Затамњује екран иза искачућих дијалога. Није применљиво за видео или аудио преко целог екрана."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31940"
+msgid "Enable coloured icons for the topbar, media information and library views."
+msgstr "Омогућите иконе у боји за горњу траку, медијске информације и приказе библиотеке."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31941"
+msgid "Enable coloured, HDR, bit depth and language media flags."
+msgstr "Омогућите обојене, HDR, дубину бита и језичке медијске заставице."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31943"
+msgid "Audio cd art fallback skin wide."
+msgstr "Резервни изглед аудио CD-а на нивоу целе маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31944"
+msgid "Video cd art fallback skin wide."
+msgstr "Резервни изглед видео диска на нивоу целог система маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31945"
+msgid "Select and install a weather icon pack for the topbar, widgets and weather."
+msgstr "Изаберите и инсталирајте пакет икона за време за горњу траку, виџете и временску прогнозу."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31946"
+msgid "Select and install a weather fanart pack for the backgrounds, widgets and weather."
+msgstr "Изаберите и инсталирајте пакет фан-арта за време за позадине, виџете и временску прогнозу."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31947"
+msgid "Install white studio icons for use throughout the skin."
+msgstr "Инсталирајте беле иконе студија за употребу у целој масци."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31948"
+msgid "Install coloured studio icons for use throughout the skin."
+msgstr "Инсталирајте обојене иконе студија за употребу у целој масци."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31949"
+msgid "Install record label icons for use throughout the skin."
+msgstr "Инсталирајте иконе издавачких кућа за употребу у целој масци."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31950"
+msgid "Install language flags for library views and subtitle selection."
+msgstr "Инсталирајте заставице језика за приказе библиотеке и избор титлова."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31951"
+msgid "Install music genre icons for music and music videos."
+msgstr "Инсталирајте иконе музичких жанрова за музику и музичке спотове."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31952"
+msgid "Install coloured movie genre icons for movies and tv shows."
+msgstr "Инсталирајте обојене иконе филмских жанрова за филмове и ТВ серије."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31953"
+msgid "Install black and white movie genre icons for movies and tv shows."
+msgstr "Инсталирајте црно-беле иконе филмских жанрова за филмове и ТВ серије."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31954"
+msgid "Install country icons for movies country node."
+msgstr "Инсталирајте иконе држава за чвор држава у филмовима."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31955"
+msgid "Set the delay between fanart transitions skin wide."
+msgstr "Подесите време одлагања између прелаза фан-арта на нивоу целе маске."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31956"
+msgid "Falling background effects. Snow, Leaves etc."
+msgstr "Падајући позадински ефекти. Снег, лишће итд."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31957"
+msgid "Show music fanart of currently playing item skin wide. Overrides library fanart."
+msgstr "Прикажи музички фан-арт тренутно пуштене ставке у целој масци. Наткрива фан-арт библиотеке."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31958"
+msgid "Enables music visualisation in background while playing music. Requires visualisation to be enabled in settings - Player settings/Music."
+msgstr "Омогућава музичку визуелизацију у позадини током репродукције музике. Захтева да визуелизација буде омогућена у подешавањима - Подешавања плејера/Музика."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31959"
+msgid "Show now playing video in background while browsing library. Overrides library fanart."
+msgstr "Прикажи тренутно пуштени видео у позадини током прегледања библиотеке. Наткрива фан-арт библиотеке."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31960"
+msgid "Download images and additional information from fanart.tv and theaudiodb.com of the currently playing artist. For fullscreen music, internet streams and radio."
+msgstr "Преузми слике и додатне информације са fanart.tv и theaudiodb.com за тренутно пуштеног извођача. За музику преко целог екрана, интернет стримове и радио."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31962"
+msgid "Artist slideshow script settings."
+msgstr "Подешавања скрипте за слајдшоу извођача."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31963"
+msgid "A shortcut to the video playlist if not empty."
+msgstr "Пречица до видео плејлисте ако није празна."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31964"
+msgid "A shortcut to the music playlist if not empty."
+msgstr "Пречица до музичке плејлисте ако није празна."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31965"
+msgid "Shortcut to fullscreen when media is playing."
+msgstr "Пречица до целог екрана када се медиј репродукује."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31966"
+msgid "Click to open shortcut menu."
+msgstr "Кликните да бисте отворили мени са пречицама."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31967"
+msgid "Player controls when media is playing."
+msgstr "Контроле плејера када се медиј репродукује."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31968"
+msgid "Play the next TV show episode automatically."
+msgstr "Аутоматски пусти следећу епизоду ТВ серије."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31969"
+msgid "Play themes while navigating TV Shows, Movies and Music Videos."
+msgstr "Пуштај тематске мелодије током навигације кроз ТВ серије, филмове и музичке спотове."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31970"
+msgid "The Library Node Editor allows you to create and customise custom video nodes and music nodes within Kodi."
+msgstr "Уређивач чворова библиотеке вам омогућава да креирате и прилагођавате сопствене видео и музичке чворове унутар Кодија."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31971"
+msgid "Show overlay marker information for watched, unwatched, and in progress media items."
+msgstr "Прикажи информације о ознакама преко омота за одгледане, неодгледане и ставке у току репродукције."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31972"
+msgid "A script for editing Kodi's built in RSS Ticker."
+msgstr "Скрипта за уређивање уграђене Кодијеве RSS траке."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Верзија маске и опције опоравка. Враћа све подразумеване вредности на почетно стање од првог дана."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31974"
+msgid "Addons"
+msgstr "Додаци"

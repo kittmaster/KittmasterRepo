@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<addon id="skin.madnox" version="21.10.08" name="Madnox" provider-name="Kittmaster">
+<addon id="skin.madnox" version="21.10.09" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.skin.madnox" version="1.0.5" />
-		<import addon="resource.images.skin.madnox" version="1.0.1" />		
+		<import addon="script.skin.madnox" version="1.0.6" />
+		<import addon="resource.images.skin.madnox" version="1.0.2" />
 		<import addon="script.skinshortcuts" version="1.0.17" />
-		<import addon="plugin.video.themoviedb.helper" version="6.11.5" />
+		<import addon="plugin.video.themoviedb.helper" version="6.15.6" />
 		<import addon="script.image.resource.select" version="2.0.4" />
 		<import addon="script.skinvariables" version="2.1.14" />
 		<import addon="script.favourites" version="8.1.2" />
@@ -14,36 +14,243 @@
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
+		<summary lang="af_za">'n Kenmerkryke en volledig aanpasbare vel</summary>
+		<summary lang="am_et">ባህሪያት የበለጸге እና ሙሉ በሙሉ ሊበጅ የሚችል ገጽታ</summary>
 		<summary lang="ar_sa">مظهر غني بالميزات وقابل للتخصيص بالكامل</summary>
-		<summary lang="de_de">Ein funktionsreiches und vollständig anpassbares Skin</summary>
-		<summary lang="en_gb">A feature rich and fully customizable skin</summary>
-		<summary lang="en_us">A feature rich and fully customizable skin</summary>
-		<summary lang="es_es">Una piel rica en funciones y totalmente personalizable</summary>
-		<summary lang="fr_fr">Un thème riche en fonctionnalités et entièrement personnalisable</summary>
-		<summary lang="no_no">Et funksjonsrikt og fullt tilpassbart skall</summary>
-		<summary lang="pt_br">Um tema rico em recursos e totalmente personalizável</summary>
+		<summary lang="ast_es">Un aspeutu ricu en carauterístiques y totalmente personalizable</summary>
+		<summary lang="az_az">Zəngin funksiyalı və tam fərdiləşdirilə bilən örtük</summary>
+		<summary lang="be_by">Багатая функцыямі вокладка з магчымасцю поўнай персаналізацыі</summary>
+		<summary lang="bg_bg">Богата на функции и напълно персонализираща се обливка</summary>
+		<summary lang="bs_ba">Bogata funkcijama i potpuno prilagodljiva maska</summary>
+		<summary lang="ca_es">Una aparença rica en funcions i totalment personalitzable</summary>
+		<summary lang="cs_cz">Funkcemi nabitý a plně přizpůsobitelný vzhled</summary>
+		<summary lang="cy_gb">Gwedd gyfoethog o ran nodweddion y gellir ei haddasu'n llawn</summary>
+		<summary lang="da_dk">Et funktionsrigt og fuldt tilpasseligt skin</summary>
+		<summary lang="de_de">Ein funktionsreicher und vollständig anpassbarer Skin</summary>
+		<summary lang="el_gr">Μια πλούσια σε δυνατότητες και πλήρως παραμετροποιήσιμη εμφάνιση</summary>
+		<summary lang="en_au">A feature-rich and fully customizable skin</summary>
+		<summary lang="en_gb">A feature-rich and fully customizable skin</summary>
+		<summary lang="en_nz">A feature-rich and fully customizable skin</summary>
+		<summary lang="en_us">A feature-rich and fully customizable skin</summary>
+		<summary lang="eo">Trajtoriĉa kaj plene agordebla aspekto</summary>
+		<summary lang="es_ar">Una apariencia rica en funciones y totalmente personalizable</summary>
+		<summary lang="es_es">Una apariencia rica en funciones y totalmente personalizable</summary>
+		<summary lang="es_mx">Una apariencia rica en funciones y totalmente personalizable</summary>
+		<summary lang="et_ee">Funktsioonirikas ja täielikult kohandatav kest</summary>
+		<summary lang="eu_es">Ezaugarri ugari dituen eta guztiz pertsonalizagarria den itxura</summary>
+		<summary lang="fa_af">یک پوسته غنی از ویژگی‌ها و کاملاً قابل شخصی‌سازی</summary>
+		<summary lang="fa_ir">یک پوسته غنی از ویژگی‌ها و کاملاً قابل شخصی‌سازی</summary>
+		<summary lang="fil">Isang mayaman sa tampok at ganap na nako-customize na skin</summary>
+		<summary lang="fi_fi">Monipuolinen ja täysin mukautettava ulkoasu</summary>
+		<summary lang="fo_fo">Eitt funktiónsríkt og fullkomiliga tillagandi útlit</summary>
+		<summary lang="fr_ca">Un habillage riche en fonctionnalités et entièrement personnalisable</summary>
+		<summary lang="fr_fr">Un habillage riche en fonctionnalités et entièrement personnalisable</summary>
+		<summary lang="gl_es">Unha aparencia rica en funcións e totalmente personalizable</summary>
+		<summary lang="he_il">מעטפת עשيرة בתכונות וניתנת להתאמה אישית מלאה</summary>
+		<summary lang="hi_in">सुविधाओं से भरपूर और पूरी तरह से अनुकूलन योग्य स्किन</summary>
+		<summary lang="hr_hr">Značajkama bogata i potpuno prilagodljiva maska</summary>
+		<summary lang="hu_hu">Funkciógazdag és teljesen testre szabható felület</summary>
+		<summary lang="hy_am">Ֆունկցիաներով հարուստ և լիովին հարմարեցվող տեսք</summary>
+		<summary lang="id_id">Skin yang kaya fitur dan dapat disesuaikan sepenuhnya</summary>
+		<summary lang="is_is">Eiginleikaríkt og fullkomlega sérsniðið útlit</summary>
+		<summary lang="it_it">Una skin ricca di funzionalità e completamente personalizzabile</summary>
+		<summary lang="ja_jp">機能が豊富で、完全にカスタマイズ可能なスキン</summary>
+		<summary lang="kn_in">ವೈಶಿಷ್ಟ್ಯ ಭರಿತ ಮತ್ತು ಸಂಪೂರ್ಣವಾಗಿ ಗ್ರಾಹಕೀಯಗೊಳಿಸಬಹುದಾದ ಸ್ಕಿನ್</summary>
+		<summary lang="ko_kr">다양한 기능과 완전히 맞춤 설정 가능한 스킨</summary>
+		<summary lang="lt_lt">Daug funkcijų turintis ir visiškai pritaikomas apvalkalas</summary>
+		<summary lang="lv_lv">Funkcijām bagāts un pilnībā pielāgojams apvalks</summary>
+		<summary lang="mi">He kiri whai āhuatanga maha, ka taea te whakarerekē katoa</summary>
+		<summary lang="mk_mk">Богата со функции и целосно прилагодлива маска</summary>
+		<summary lang="ml_in">ധാരാളം സവിശേഷതകളുള്ളതും പൂർണ്ണമായും ഇഷ്ടാനുസൃതമാക്കാവുന്നതുമായ സ്കിൻ</summary>
+		<summary lang="mn_mn">Олон боломж бүхий, бүрэн өөрчлөх боломжтой загвар</summary>
+		<summary lang="ms_my">Skin yang kaya dengan ciri dan boleh disesuaikan sepenuhnya</summary>
+		<summary lang="mt_mt">Skin rikka fil-karatteristiċi u kompletament personalizzabbli</summary>
+		<summary lang="my_mm">လုပ်ဆောင်ချက်များစွာပါဝင်ပြီး အပြည့်အဝ စိတ်ကြိုက်ပြင်ဆင်နိုင်သော စကင်</summary>
+		<summary lang="nb_no">Et funksjonsrikt og fullstendig tilpassbart utseende</summary>
+		<summary lang="nl_nl">Een functierijke en volledig aanpasbare skin</summary>
+		<summary lang="no_no">Et funksjonsrikt og fullstendig tilpassbart utseende</summary>
+		<summary lang="pl_pl">Bogata w funkcje i w pełni konfigurowalna skórka</summary>
+		<summary lang="pt_br">Uma skin rica em recursos e totalmente personalizável</summary>
+		<summary lang="pt_pt">Uma skin rica em funcionalidades e totalmente personalizável</summary>
+		<summary lang="ro_ro">Un skin bogat în funcții și complet personalizabil</summary>
+		<summary lang="ru_ru">Богатая функциями и полностью настраиваемая обложка</summary>
+		<summary lang="si_lk">විශේෂාංග රාශියකින් යුත් සහ සම්පූර්ණයෙන්ම රිසිකරණය කළ හැකි පෙනුමක්</summary>
+		<summary lang="sk_sk">Funkciami nabitý a plne prispôsobiteľný vzhľad</summary>
+		<summary lang="sl_si">S funkcijami bogata in popolnoma prilagodljiva preobleka</summary>
+		<summary lang="sq_al">Një pamje e pasur me karakteristika dhe plotësisht e personalizueshme</summary>
+		<summary lang="sr_rs">Богата функцијама и потпуно прилагодљива маска</summary>
+		<summary lang="sr_rs@latin">Bogata funkcijama i potpuno prilagodljiva maska</summary>
 		<summary lang="sv_se">Ett funktionsrikt och helt anpassningsbart skal</summary>
-		<summary lang="uk_ua">Шкіра з багатими функціями та повним налаштуванням</summary>
-		<description lang="ar_sa">Madnox يتميز بجمال بصري وخيارات تخصيص متعددة. هناك العديد من طرق العرض والخيارات لعرض الوسائط بالطريقة التي تريدها. جميع طرق العرض قابلة للتخصيص بالكامل. يمكنك تغيير المظهر باستخدام أنماط وسمات وخيارات مختلفة.</description>
-		<description lang="de_de">Madnox steht für visuelle Attraktivität und Anpassbarkeit. Es gibt viele Ansichten und Optionen, um Ihre Medien ganz nach Wunsch zu präsentieren. Alle Ansichten sind vollständig anpassbar. Sie können das Erscheinungsbild mit verschiedenen Stilen, Themen und Optionen verändern.</description>
+		<summary lang="szl">Bogatŏ w funkcyje i w połni kōnfigurowalno skōra</summary>
+		<summary lang="ta_in">அம்சங்கள் நிறைந்த மற்றும் முழுமையாக தனிப்பயனாக்கக்கூடிய ஸ்கின்</summary>
+		<summary lang="te_in">ఫీచర్లు సమృద్ధిగా ఉన్న మరియు పూర్తిగా అనుకూలీకరించదగిన స్కిన్</summary>
+		<summary lang="tg_tj">Рӯйпӯши дорои хусусиятҳои бой ва пурра танзимшаванда</summary>
+		<summary lang="th_th">สกินที่มีฟีเจอร์หลากหลายและปรับแต่งได้อย่างเต็มที่</summary>
+		<summary lang="tr_tr">Zengin özelliklere sahip ve tamamen özelleştirilebilir bir kaplama</summary>
+		<summary lang="uk_ua">Багата функціями та повністю настроювана обкладинка</summary>
+		<summary lang="uz_uz">Xususiyatlarga boy va toʻliq moslashtiriladigan qobiq</summary>
+		<summary lang="vi_vn">Giao diện giàu tính năng và có thể tùy chỉnh hoàn toàn</summary>
+		<summary lang="zh_cn">功能丰富且完全可定制的皮肤</summary>
+		<summary lang="zh_hk">功能豐富且完全可自訂的面板</summary>
+		<summary lang="zh_tw">功能豐富且完全可自訂的面板</summary>
+		<description lang="af_za">Madnox staan vir streling vir die oog en verpersoonliking. Daar is baie verskillende aansigte en opsies om jou media aan te bied op die manier wat jy wil hê. Alle aansigte is volledig aanpasbaar. Jy kan die voorkoms verander met verskillende style, temas en opsies.</description>
+		<description lang="am_et">ማድኖክስ (Madnox) ማራኪ እይታን እና ማበጀትን ይወክላል። ሚዲያዎን በሚፈልጉት መንገድ ለማቅረብ ብዙ የተለያዩ እይታዎች እና አማраጮች አሉ። ሁሉም እይታዎች ሙሉ በሙሉ ሊበጁ የሚችሉ ናቸው። በተለያዩ ቅጦች፣ ገጽታዎች እና አማраጮች መልክውን መለወጥ ይችላሉ።</description>
+		<description lang="ar_sa">يرمز Madnox إلى المظهر الجذاب والتخصيص. هناك العديد من طرق العرض والخيارات المختلفة لتقديم الوسائط الخاصة بك بالطريقة التي تريدها. جميع طرق العرض قابلة للتخصيص بالكامل. يمكنك تغيير المظهر باستخدام أنماط وسمات وخيارات مختلفة.</description>
+		<description lang="ast_es">Madnox significa prestar visualmente y personalización. Hai munchos vistes y opciones diferentes pa presentar los tos archivos multimedia de la manera que quieras. Toles vistes son dafechu personalizables. Puedes camudar l'aspeutu con diferentes estilos, temes y opciones.</description>
+		<description lang="az_az">Madnox göz oxşayan vizuallıq və fərdiləşdirmə deməkdir. Medianızı istədiyiniz şəkildə təqdim etmək üçün bir çox fərqli görünüş və seçim var. Bütün görünüşlər tamamilə fərdiləşdirilə bilər. Görünüşü fərqli üslublar, mövzular və seçimlərlə dəyişə bilərsiniz.</description>
+		<description lang="be_by">Madnox азначае прывабны выгляд і персаналізацыю. Існуе мноства розных рэжымаў прагляду і опцый для прадстаўлення вашых медыяфайлаў так, як вы хочаце. Усе рэжымы прагляду цалкам наладжвальныя. Вы можаце змяніць выгляд з дапамогай розных стыляў, тэм і опцый.</description>
+		<description lang="bg_bg">Madnox е синоним на приятен външен вид и персонализация. Има много различни изгледи и опции за представяне на Вашите мултимедийни файлове по желания от Вас начин. Всички изгледи са напълно персонализируеми. Можете да промените облика с различни стилове, теми и опции.</description>
+		<description lang="bs_ba">Madnox se zalaže za atraktivan izgled i prilagođavanje. Postoji mnogo različitih prikaza i opcija za predstavljanje vaših medija na način na koji to želite. Svi prikazi su potpuno prilagodljivi. Možete promijeniti izgled s različitim stilovima, temama i opcijama.</description>
+		<description lang="ca_es">Madnox destaca pel seu atractiu visual i la seva personalització. Hi ha moltes vistes i opcions diferents per presentar els vostres continguts multimèdia de la manera que vulgueu. Totes les vistes es poden personalitzar completament. Podeu canviar l'aspecte amb diferents estils, temes i opcions.</description>
+		<description lang="cs_cz">Madnox představuje pastvu pro oči a přizpůsobení. K dispozici je mnoho různých zobrazení a možností, jak prezentovat vaše média přesně tak, jak chcete. Všechna zobrazení jsou plně přizpůsobitelná. Vzhled můžete změnit pomocí různých stylů, motivů a možností.</description>
+		<description lang="cy_gb">Mae Madnox yn sefyll am apêl weledol a phersonoli. Mae yna lawer o wahanol weddau ac opsiynau i gyflwyno eich cyfryngau fel y dymunwch. Mae'r holl weddau yn gwbl addasadwy. Gallwch newid yr edrychiad gyda gwahanol arddulliau, themâu ac opsiynau.</description>
+		<description lang="da_dk">Madnox står for flot udseende og tilpasning. Der er mange forskellige visninger og muligheder for at præsentere dine medier på den måde, du ønsker det. Alle visninger kan tilpasses fuldt ud. Du kan ændre udseendet med forskellige stilarter, temaer og muligheder.</description>
+		<description lang="de_de">Madnox steht für visuelle Ästhetik und Anpassbarkeit. Es gibt viele verschiedene Ansichten und Optionen, um Ihre Medien so zu präsentieren, wie Sie es möchten. Alle Ansichten sind vollständig anpassbar. Sie können das Aussehen mit verschiedenen Stilen, Designs und Optionen ändern.</description>
+		<description lang="el_gr">Το Madnox ξεχωρίζει за την ελκυστική του εμφάνιση και την προσαρμοστικότητα. Υπάρχουν πολλές διαφορετικές προβολές και επιλογές για να παρουσιάσετε τα πολυμέσα σας με τον τρόπο που θέλετε. Όλες οι προβολές είναι πλήρως προσαρμόσιμες. Μπορείτε να αλλάξετε την εμφάνιση με διαφορετικά στυλ, θέματα και επιλογές.</description>
+		<description lang="en_au">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
 		<description lang="en_gb">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
+		<description lang="en_nz">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
 		<description lang="en_us">Madnox stands for eye candy and customization. There are many different views and options to present your media in the way you want it. All views are fully customizable. You can change the look with different styles, themes and options.</description>
-		<description lang="es_es">Madnox destaca por su atractivo visual y personalización. Hay muchas vistas y opciones para mostrar tu contenido como prefieras. Todas las vistas son completamente personalizables. Puedes cambiar el aspecto con diferentes estilos, temas y opciones.</description>
-		<description lang="fr_fr">Madnox se distingue par son esthétique et sa personnalisation. De nombreuses vues et options permettent de présenter vos médias comme vous le souhaitez. Toutes les vues sont entièrement personnalisables. Vous pouvez modifier l’apparence avec différents styles, thèmes et options.</description>
-		<description lang="no_no">Madnox står for visuell appell og tilpasning. Det finnes mange visninger og alternativer for å presentere mediene dine slik du ønsker. Alle visninger kan tilpasses fullt ut. Du kan endre utseendet med ulike stiler, temaer og alternativer.</description>
-		<description lang="pt_br">Madnox é sinônimo de visual atrativo e personalização. Há muitas visualizações e opções para apresentar sua mídia como quiser. Todas as visualizações são totalmente personalizáveis. Você pode alterar o visual com diferentes estilos, temas e opções.</description>
-		<description lang="sv_se">Madnox står för ögongodis och anpassning. Det finns många olika vyer och alternativ för att visa ditt innehåll på det sätt du vill. Alla vyer är helt anpassningsbara. Du kan ändra utseendet med olika stilar, teman och alternativ.</description>
-		<description lang="uk_ua">Madnox — це візуальна привабливість і налаштування. Існує багато варіантів перегляду та опцій для представлення медіа так, як вам подобається. Усі перегляди повністю налаштовуються. Ви можете змінити вигляд за допомогою стилів, тем і параметрів.</description>
-		<disclaimer lang="ar_sa">Madnox هو خليفة Aeon Madnox من Mike_Doc وschimi2k وMeowMoo. إنه مظهر يعتمد على تصميم Aeon من djh_ وAeon Nox 4 من BigNoid وphil65. شكر خاص لـ Mr. V. جميع الحقوق محفوظة لمصممي هذه المظاهر والتعديلات.</disclaimer>
-		<disclaimer lang="de_de">Madnox ist der Nachfolger von Aeon Madnox von Mike_Doc, schimi2k und MeowMoo. Es basiert auf dem Design von Aeon von djh_ und Aeon Nox 4 von BigNoid und phil65. Besonderer Dank an Mr. V. Alle Credits gehen an die Entwickler dieser Skins und Mods.</disclaimer>
+		<description lang="eo">Madnox reprezentas vidan logecon kaj personigon. Ekzistas multaj diversaj vidoj kaj opcioj por prezenti viajn amaskomunikilojn laŭ via deziro. Ĉiuj vidoj estas tute personigeblaj. Vi povas ŝanĝi la aspekton per diversaj stiloj, etosoj kaj opcioj.</description>
+		<description lang="es_ar">Madnox se destaca por su atractivo visual y personalización. Hay muchas vistas y opciones diferentes para presentar tus archivos multimedia de la manera que quieras. Todas las vistas son completamente personalizables. Podés cambiar el aspecto con diferentes estilos, temas y opciones.</description>
+		<description lang="es_es">Madnox destaca por su atractivo visual y personalización. Hay muchas vistas y opciones diferentes para presentar tus archivos multimedia de la manera que quieras. Todas las vistas son completamente personalizables. Puedes cambiar el aspecto con diferentes estilos, temas y opciones.</description>
+		<description lang="es_mx">Madnox se destaca por su atractivo visual y personalización. Hay muchas vistas y opciones diferentes para presentar tus archivos multimedia de la manera que quieras. Todas las vistas son completamente personalizables. Puedes cambiar el aspecto con diferentes estilos, temas y opciones.</description>
+		<description lang="et_ee">Madnox tähistab silmarõõmu ja kohandatavust. Meedia esitamiseks soovitud viisil on palju erinevaid vaateid ja valikuid. Kõik vaated on täielikult kohandatavad. Saate muuta välimust erinevate stiilide, kujunduste ja valikutega.</description>
+		<description lang="eu_es">Madnoxek erakargarritasun bisuala eta pertsonalizazioa eskaintzen ditu. Ikuspegi eta aukera ugari daude zure multimedia nahi duzun moduan aurkezteko. Ikuspegi guztiak guztiz pertsonalizagarriak dira. Itxura alda dezakezu estilo, gai eta aukera ezberdinekin.</description>
+		<description lang="fa_af">برنامه Madnox مظهر زیبایی بصری و شخصی‌سازی است. نماها و گزینه‌های بسیار متفاوتی برای ارائه رسانه‌های شما به روش دلخواه‌تان وجود دارد. همه نماها کاملاً قابل شخصی‌سازی هستند. شما می‌توانید ظاهر را با سبک‌ها، تم‌ها و گزینه‌های مختلف تغییر دهید.</description>
+		<description lang="fa_ir">برنامه Madnox مظهر زیبایی بصری و شخصی‌سازی است. نماها و گزینه‌های بسیار متفاوتی برای ارائه رسانه‌های شما به روش دلخواه‌تان وجود دارد. همه نماها کاملاً قابل شخصی‌سازی هستند. شما می‌توانید ظاهر را با سبک‌ها، تم‌ها و گزینه‌های مختلف تغییر دهید.</description>
+		<description lang="fil">Ang Madnox ay nangangahulugang kagandahan sa paningin at pag-customize. Maraming iba't ibang view at opsyon para maipakita ang iyong media sa paraang gusto mo. Ang lahat ng view ay ganap na mako-customize. Maaari mong baguhin ang hitsura gamit ang iba't ibang estilo, tema, at opsyon.</description>
+		<description lang="fi_fi">Madnox edustaa silmänruokaa ja mukautettavuutta. Tarjolla on monia erilaisia näkymiä ja vaihtoehtoja median esittämiseen haluamallasi tavalla. Kaikki näkymät ovat täysin mukautettavissa. Voit muuttaa ulkoasua erilaisilla tyyleillä, teemoilla ja asetuksilla.</description>
+		<description lang="fo_fo">Madnox stendur fyri sjónligum snildi og tillaging. Nógvar ymiskar vísingar og møguleikar eru at vísa títt burturav evni á tann hátt, sum tú ynskir. Allar vísingar kunnu tillagast fullkomiliga. Tú kanst broyta útsjóndina við ymiskum stílum, temum og valmøguleikum.</description>
+		<description lang="fr_ca">Madnox est synonyme d'esthétique et de personnalisation. Il existe de nombreux affichages et options pour présenter vos médias de la manière dont vous le souhaitez. Tous les affichages sont entièrement personnalisables. Vous pouvez modifier l'apparence avec différents styles, thèmes et options.</description>
+		<description lang="fr_fr">Madnox est synonyme d'esthétique et de personnalisation. Il existe de nombreux affichages et options pour présenter vos médias de la manière dont vous le souhaitez. Tous les affichages sont entièrement personnalisables. Vous pouvez modifier l'apparence avec différents styles, thèmes et options.</description>
+		<description lang="gl_es">Madnox destaca polo seu atractivo visual e personalización. Hai moitas vistas e opcións diferentes para presentar os teus arquivos multimedia do xeito que queiras. Todas as vistas son totalmente personalizables. Podes cambiar o aspecto con diferentes estilos, temas e opcións.</description>
+		<description lang="he_il">Madnox מייצג יופי ויזואלי והתאמה אישית. ישנם תצוגות ואפשروיות רבות ושונות להצגת המדיה שלך בדיוק כפי שאתה רוצה. כל התצוגות ניתנות להתאמה אישית מלאה. אתה יכול לשנות את המראה עם סגנונות, ערכות נושא ואפשרויות שונות.</description>
+		<description lang="hi_in">Madnox आकर्षक दृश्यता (आई कैंडी) और अनुकूलन (कस्टमाइजेशन) का प्रतीक है। आपके मीडिया को आपकी पसंद के अनुसार प्रस्तुत करने के लिए कई अलग-अलग व्यू और विकल्प उपलब्ध हैं। सभी व्यू पूरी तरह से कस्टमाइज़ करने योग्य हैं। आप विभिन्न शैलियों, थीमों और विकल्पों के साथ इसके लुक को बदल सकते हैं।</description>
+		<description lang="hr_hr">Madnox se odlikuje privlačnim izgledom i prilagodbom. Postoji mnogo različitih prikaza i opcija za predstavljanje vaših medija na način na koji to želite. Svi su prikazi potpuno prilagodljivi. Izgled možete promijeniti različitim stilovima, temama i opcijama.</description>
+		<description lang="hu_hu">A Madnox a lenyűgöző látványt és a testreszabhatóságot jelenti. Számos különböző nézet és opció áll rendelkezésre, hogy a médiatartalmakat a kívánt módon jelenítsd meg. Minden nézet teljesen testreszabható. A megjelenést különböző stílusokkal, témákkal és opciókkal változtathatod meg.</description>
+		<description lang="hy_am">Madnox-ը նշանակում է գրավիչ տեսք և հարմարեցում: Կան բազմաթիվ տարբեր դիտման եղանակներ և տարբերակներ՝ ձեր մեդիան ձեր ուզած ձևով ներկայացնելու համար: Բոլոր դիտումները լիովին հարմարեցվող են: Դուք կարող եք փոխել տեսքը տարբեր ոճերով, թեմաներով և տարբերակներով:</description>
+		<description lang="id_id">Madnox mengutamakan tampilan visual yang memikat dan penyesuaian. Tersedia berbagai tampilan dan opsi untuk menyajikan media Anda sesuai keinginan. Semua tampilan dapat disesuaikan sepenuhnya. Anda dapat mengubah tampilan dengan berbagai gaya, tema, dan opsi.</description>
+		<description lang="is_is">Madnox stendur fyrir sjónrænt útlit og sérsnið. Það eru mörg mismunandi útlit og valkostir til að sýna miðla þína á þann hátt sem þú vilt. Öll útlit eru fyllilega sérsniðanleg. Þú getur breytt útlitinu með mismunandi stílum, þemum og valkostum.</description>
+		<description lang="it_it">Madnox è sinonimo di estetica e personalizzazione. Sono disponibili molte visualizzazioni e opzioni diverse per presentare i tuoi contenuti multimediali nel modo desiderato. Tutte le visualizzazioni sono completamente personalizzabili. Puoi cambiare l'aspetto con stili, temi e opzioni differenti.</description>
+		<description lang="ja_jp">Madnoxは、洗練されたビジュアルとカスタマイズ性を追求しています。メディアを好みの方法で表示するための、多彩なビューとオプションが用意されています。すべてのビューは完全にカスタマイズ可能です。さまざまなスタイル、テーマ、オプションを使用して、外観を変更できます。</description>
+		<description lang="kn_in">ಮ್ಯಾಡ್‌ನಾಕ್ಸ್ (Madnox) ಆಕರ್ಷక ನೋಟ ಮತ್ತು ಕಸ್ಟಮೈಸೇಶನ್‌ಗೆ ಹೆಸರುವಾಸಿಯಾಗಿದೆ. ನಿಮ್ಮ ಮಾಧ್ಯಮವನ್ನು ನೀವು ಬಯಸುವ ರೀತಿಯಲ್ಲಿ ಪ್ರಸ್ತುತಪಡಿಸಲು ಹಲವು ವಿಭಿನ್ನ ವೀಕ್ಷಣೆಗಳು ಮತ್ತು ಆಯ್ಕೆಗಳಿವೆ. ಎಲ್ಲಾ ವೀಕ್ಷಣೆಗಳನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಕಸ್ಟಮೈಸ್ ಮಾಡಬಹುದು. ವಿಭಿನ್ನ ಶೈಲಿಗಳು, ಥೀಮ್‌ಗಳು ಮತ್ತು ಆಯ್ಕೆಗಳೊಂದಿಗೆ ನೀವು ನೋಟವನ್ನು ಬದಲಾಯಿಸಬಹುದು.</description>
+		<description lang="ko_kr">Madnox는 시각적 아름다움และ 맞춤 설정을 지향합니다. 미디어를 원하는 방식으로 표현할 수 있는 다양하고 차별화된 보기와 옵션이 제공됩니다. 모든 보기는 완전히 맞춤 설정할 수 있으며, 다양한 스타일, 테마 및 옵션을 사용하여 디자인을 변경할 수 있습니다.</description>
+		<description lang="lt_lt">„Madnox“ pasižymi patrauklia išvaizda ir pritaikomumu. Yra daug skirtingų rodinių ir parinkčių, leidžiančių pateikti jūsų mediją taip, kaip norite. Visi rodiniai yra visiškai pritaikomi. Galite pakeisti išvaizdą naudodami skirtingus stilius, temas ir parinktis.</description>
+		<description lang="lv_lv">Madnox apvieno vizuālu pievilcību un pielāgojamību. Ir pieejami daudzi dažādi skati un opcijas, lai prezentētu savus medijus tieši tā, kā vēlaties. Visi skati ir pilnībā pielāgojami. Varat mainīt izskatu, izmantojot dažādus stilus, tēmas un opcijas.</description>
+		<description lang="mi">Ko Madnox te tohu o te āhua huatau me te whakaritenga. He maha ngā tirohanga me ngā kōwhiringa rerekē hei whakaatu i o pāpāho ki tāu e hiahia ai. Ka taea te whakarerekē katoa i ngā tirohanga. Ka taea e koe te huri i te āhua ki ngā momo momo, kaupapa me ngā kōwhiringa rerekē.</description>
+		<description lang="mk_mk">Madnox се залага за визуелна атрактивност и прилагодување. Постојат многу различни прегледи и опции за да ги претставите вашите медиуми на начинот на кој сакате. Сите прегледи се целосно прилагодливи. Можете да го промените изгледот со различни стилови, теми и опции.</description>
+		<description lang="ml_in">മാഡ്‌നോക്സ് (Madnox) മികച്ച ദൃശ്യഭംഗിക്കും കസ്റ്റമൈസേഷനും പ്രാധാന്യം നൽകുന്നു. നിങ്ങളുടെ മീഡിയ നിങ്ങൾ ആഗ്രഹിക്കുന്ന രീതിയിൽ അവതരിപ്പിക്കുന്നതിനായി നിരവധി വ്യത്യസ്ത കാഴ്‌ചകളും ഓപ്ഷനുകളും ലഭ്യമാണ്. എല്ലാ കാഴ്‌ചകളും പൂർണ്ണമായും കസ്റ്റമൈസ് ചെയ്യാവുന്നതാണ്. വ്യത്യസ്ത ശൈലികൾ, തീമുകൾ, ഓപ്ഷനുകൾ എന്നിവ ഉപയോഗിച്ച് നിങ്ങൾക്ക് ഇതിൻ്റെ രൂപഭാവം മാറ്റാനാകും.</description>
+		<description lang="mn_mn">Madnox нь үзэмжтэй дизайн болон өөрчлөн тохируулах боломжийг санал болгодог. Та өөрийн медиаг хүссэнээрээ харуулах олон янзын харагдац, сонголтууд байдаг. Бүх харагдацыг бүрэн өөрчлөх боломжтой. Та өөр өөр загвар, сэдэв, сонголтоор харагдацыг өөрчлөх боломжтой.</description>
+		<description lang="ms_my">Madnox mengutamakan kecantikan visual dan penyesuaian. Terdapat banyak paparan dan pilihan yang berbeza untuk mempersembahkan media anda mengikut cara yang anda mahukan. Semua paparan boleh disesuaikan sepenuhnya. Anda boleh mengubah penampilan dengan gaya, tema dan pilihan yang berbeza.</description>
+		<description lang="mt_mt">Madnox ifisser dehra attraenti u personalizzazzjoni. Hemm ħafna veduti u għażliet differenti biex tippreżenta l-midja tiegħek kif tixtieq int. Il-veduti kollha huma kompletament personalizzabbli. Tista' tibdel id-dehra bi stili, temi u għażliet differenti.</description>
+		<description lang="my_mm">Madnox သည် ဆွဲဆောင်မှုရှိသော အမြင်အာရုံနှင့် စိတ်ကြိုက်ပြင်ဆင်နိုင်မှုကို ကိုယ်စားပြုသည်။ သင့်မီဒီယာကို သင်အလိုရှိသည့်အတိုင်း တင်ပြရန် မတူညီသော မြင်ကွင်းများနှင့် ရွေးချယ်စရာများစွာ ရှိသည်။ မြင်ကွင်းအားလုံးကို စိတ်ကြိုက် အပြည့်အဝပြင်ဆင်နိုင်သည်။ မတူညီသော စတိုင်များ၊ အပြင်အဆင်များနှင့် ရွေးချယ်စရာများဖြင့် အသွင်အပြင်ကို ပြောင်းလဲနိုင်သည်။</description>
+		<description lang="nb_no">Madnox står for visuell estetikk og tilpasning. Det er mange forskjellige visninger og valgmuligheter for å presentere mediene dine på den måten du ønsker. Alle visninger kan tilpasses fullt ut. Du kan endre utseendet med forskjellige stilarter, temaer og alternativer.</description>
+		<description lang="nl_nl">Madnox staat voor visuele aantrekkingskracht en personalisatie. Er zijn veel verschillende weergaven en opties om je media te presenteren zoals jij dat wilt. Alle weergaven zijn volledig aanpasbaar. Je kunt het uiterlijk veranderen met verschillende stijlen, thema's en opties.</description>
+		<description lang="no_no">Madnox står for visuell estetikk og tilpasning. Det er mange forskjellige visninger og valgmuligheter for å presentere mediene dine på den måten du ønsker. Alle visninger kan tilpasses fullt ut. Du kan endre utseendet med forskjellige stilarter, temaer og alternativer.</description>
+		<description lang="pl_pl">Madnox to synonim atrakcyjnego wyglądu i personalizacji. Dostępnych jest wiele różnych widoków i opcji, które pozwalają prezentować multimedia w pożądany sposób. Wszystkie widoki są w pełni konfigurowalne. Możesz zmieniać wygląd za pomocą różnych stylów, motywów i opcji.</description>
+		<description lang="pt_br">Madnox é sinônimo de visual atraente e personalização. Existem muitas visualizações e opções diferentes para apresentar suas mídias do jeito que você deseja. Todas as visualizações são totalmente personalizáveis. Você pode alterar o visual com diferentes estilos, temas e opções.</description>
+		<description lang="pt_pt">Madnox é sinónimo de visual atraente e personalização. Existem muitas vistas e opções diferentes para apresentar os seus conteúdos multimédia da forma que deseja. Todas as vistas são totalmente personalizáveis. Pode alterar o visual com diferentes estilos, temas e opções.</description>
+		<description lang="ro_ro">Madnox este sinonim cu aspectul atractiv și personalizarea. Există multe vizualizări și opțiuni diferite pentru a vă prezenta fișierele media în modul în care doriți. Toate vizualizările sunt complet personalizabile. Puteți schimba aspectul cu diferite stiluri, teme și opțiuni.</description>
+		<description lang="ru_ru">Madnox — это привлекательный внешний вид и индивидуальная настройка. Доступно множество различных вариантов отображения и опций для представления вашей медиатеки в нужном виде. Все виды полностью настраиваемы. Вы можете изменять оформление с помощью различных стилей, тем и параметров.</description>
+		<description lang="si_lk">Madnox යනු ආකර්ශනීය පෙනුම සහ අභිරුචිකරණය සඳහා වන සංකේතයකි. ඔබ කැමති ආකාරයට ඔබේ මාධ්‍ය ඉදිරිපත් කිරීමට විවිධ දර්ශන සහ විකල්ප රාශියක් ඇත. සියලුම දර්ශන සම්පූර්ණයෙන්ම අභිරුචිකරණය කළ හැකිය. විවිධ මෝස්තර, තේමා සහ විකල්ප සමඟ ඔබට මෙහි පෙනුම වෙනස් කළ හැකිය.</description>
+		<description lang="sk_sk">Madnox predstavuje pastvu pre oči a prispôsobenie. K dispozícii je mnoho rôznych zobrazení a možností, ako prezentovať vaše médiá presne tak, ako chcete. Všetky zobrazenia sú plne prispôsobiteľné. Vzhľad môžete zmeniť pomocou rôznych štýlov, motívov a možností.</description>
+		<description lang="sl_si">Madnox se zavzema za privlačen videz in prilagoditev. Na voljo je veliko različnih pogledov in možnosti za predstavitev vaših medijev na način, kot si želite. Vsi pogledi so popolnoma prilagodljivi. Videz lahko spremenite z različnimi slogi, temami in možnostmi.</description>
+		<description lang="sq_al">Madnox përfaqëson tërheqjen vizuale dhe personalizimin. Ka shumë pamje dhe opsione të ndryshme për të paraqitur mediat tuaja në mënyrën që dëshironi. Të gjitha pamjet janë plotësisht të personalizueshme. Mund të ndryshoni pamjen me stile, tema dhe opsione të ndryshme.</description>
+		<description lang="sr_rs">Маднокс се залаже за атрактиван изглед и прилагођавање. Постоји много различитих приказа и опција за представљање ваших медија на начин на који то желите. Сви прикази су потпуно прилагодљиви. Изглед можете променити различитим стиловима, темама и опцијама.</description>
+		<description lang="sr_rs@latin">Madnox se zalaže za atraktivan izgled i prilagođavanje. Postoji mnogo različitih prikaza i opcija za predstavljanje vaših medija na način na koji to želite. Svi prikazi su potpuno prilagodljivi. Izgled možete promeniti različitim stilovima, temama i opcijama.</description>
+		<description lang="sv_se">Madnox står for visuell estetik och anpassning. Det finns många olika vyer och alternativ för att presentera din media på det sätt du vill ha det. Alla vyer är fullt anpassningsbara. Du kan ändra utseendet med olika stilar, teman och alternativ.</description>
+		<description lang="szl">Madnox to je synōnim lońskigo wyglōndu i personalizacyje. Je sam mocka roztōmaitych wejrzeń i opcyji, coby pokazać swojã medyjotekã tak, jak sam chcesz. Wszystke wejrzenia idzie blank dopasować. Możesz tyn wyglōnd mienić bez roztōmaite style, tymaty i opcyje.</description>
+		<description lang="ta_in">மேட்னாக்ஸ் (Madnox) என்பது கவர்ச்சிகரமான தோற்றம் மற்றும் தனிப்பயனாக்கத்தைக் குறிக்கிறது. உங்கள் ஊடகங்களை நீங்கள் விரும்பும் வழியில் வழங்குவதற்கு பல்வேறு காட்சிகளும் விருப்பങ്ങളും உள்ளன. அனைத்து காட்சிகளும் முழுமையாக தனிப்பயனாக்கக்கூடியவை. வெவ்வேறு பாணிகள், தீம்கள் மற்றும் விருப்பங்களைக் கொண்டு நீங்கள் இதன் தோற்றத்தை மாற்றலாம்.</description>
+		<description lang="te_in">మ్యాడ్‌నాక్స్ (Madnox) ఆకర్షణీయమైన రూపం మరియు అనుకూలీకరణకు చిహ్నం. మీ మీడియాను మీకు కావలసిన విధంగా ప్రదర్శించడానికి అనేక రకాల వీక్షణలు మరియు ఎంపికలు ఉన్నాయి. అన్ని వీక్షణలు పూర్తిగా అనుకూలీకరించదగినవి. విభిన్న శైలులు, థీమ్‌లు మరియు ఎంపికలతో మీరు రూపాన్ని మార్చవచ్చు.</description>
+		<description lang="tg_tj">Madnox намуди зоҳирии ҷолиб ва фардикунониро ифода мекунад. Барои пешниҳоди медиаи шумо бо тарзи дилхоҳатон намудҳо ва имконоти гуногун мавҷуданд. Ҳама намудҳо комилан танзимшаванда мебошанд. Шумо метавонед намуди зоҳириро бо услубҳо, мавзӯъҳо ва имконоти гуногун тағир диҳед.</description>
+		<description lang="th_th">Madnox หมายถึงความสวยงามสะดุดตาและการปรับแต่ง มีมุมมองและตัวเลือกที่หลากหลายเพื่อแสดงสื่อของคุณในแบบที่คุณต้องการ ทุกมุมมองสามารถปรับแต่งได้อย่างเต็มที่ คุณสามารถเปลี่ยนรูปลักษณ์ด้วยสไตล์ ธีม และตัวเลือกต่างๆ</description>
+		<description lang="tr_tr">Madnox, göz alıcı görsellik ve özelleştirme anlamına gelir. Medyanızı istediğiniz gibi sunmanız için birçok farklı görünüm ve seçenek mevcuttur. Tüm görünümler tamamen özelleştirilebilir. Farklı stiller, temalar ve seçeneklerle görünümü değiştirebilirsiniz.</description>
+		<description lang="uk_ua">Madnox — це привабливий зовнішній вигляд та індивідуальне налаштування. Доступно безліч різних варіантів відображення та опцій для представлення вашої медіатеки в потрібному вигляді. Усі види повністю налаштовуються. Ви можете змінювати оформлення за допомогою різних стилів, тем і параметрів.</description>
+		<description lang="uz_uz">Madnox jozibali ko'rinish va xususiylashtirishni anglatadi. Medialaringizni o'zingiz xohlagan tarzda taqdim etish uchun ko'plab turli ko'rinishlar va variantlar mavjud. Barcha ko'rinishlar to'liq xususiylashtirilishi mumkin. Tashqi ko'rinishni turli uslublar, mavzular va variantlar yordamida o'zgartirishingiz mumkin.</description>
+		<description lang="vi_vn">Madnox mang đến giao diện bắt mắt và khả năng tùy biến cao. Có nhiều chế độ hiển thị và tùy chọn khác nhau để trình bày phương tiện theo cách bạn muốn. Tất cả các chế độ xem đều có thể tùy chỉnh hoàn toàn. Bạn có thể thay đổi giao diện với các phong cách, chủ đề và tùy chọn khác nhau.</description>
+		<description lang="zh_cn">Madnox 致力于提供华丽的视觉效果和自定义功能。这里有许多不同的视图和选项，能够以您喜欢的方式呈现媒体内容。所有视图均支持完全自定义。您可以通过不同的样式、主题和选项来改变外观。</description>
+		<description lang="zh_hk">Madnox 致力於提供華麗的視覺效果和自訂功能。這裏有多種不同的檢視和選項，可以按您喜好的方式呈現媒體內容。所有檢視均支援完全自訂。您可以透過不同的樣式、主題和選項來變更外觀。</description>
+		<description lang="zh_tw">Madnox 致力於提供華麗的視覺效果和自訂功能。這裡有多種不同的檢視和選項，可以按您喜好的方式呈現媒體內容。所有檢視均支援完全自訂。您可以透過不同的樣式、主題和選項來變更外觀。</description>
+		<disclaimer lang="af_za">Madnox is die opvolger van Aeon Madnox deur Mike_Doc, schimi2k en MeowMoo. Dit is 'n skin (vel) gebaseer op die ontwerp van Aeon deur djh_ en Aeon Nox 4 deur BigNoid en phil65. Spesiale dank aan Mnr. V. Alle eer aan die makers van hierdie skins en mods.</disclaimer>
+		<disclaimer lang="am_et">ማድኖክስ (Madnox) በማይክ_ዶክ (Mike_Doc)፣ በሺሚ2ኬ (schimi2k) እና በሚያውሙ (MeowMoo) የተሰራው የኢዮን ማድኖክስ (Aeon Madnox) ተተኪ ነው። እሱ በ디ጄኤች_ (djh_) በተሰራው የኢዮን (Aeon) እና በቢግኖይด (BigNoid) እና ፊል65 (phil65) በተሰራው የኢዮን ኖክስ 4 (Aeon Nox 4) ንድፍ ላይ የተመሰረተ ስኪን (skin) ነው። ለምስተር ቪ (Mr. V) ልዩ ምስጋና ይግባው። ለእነዚህ ስኪኖች እና ሞዶች ፈጣሪዎች በሙሉ ምስጋና ይድረስ።</disclaimer>
+		<disclaimer lang="ar_sa">إن Madnox هو الخلف لـ Aeon Madnox من قبل Mike_Doc و schimi2k و MeowMoo. إنها واجهة (skin) مبنية على تصميم Aeon بواسطة djh_ و Aeon Nox 4 بواسطة BigNoid و phil65. شكر خاص لـ Mr. V. كل التقدير لصانعي هذه الواجهات والتعديلات.</disclaimer>
+		<disclaimer lang="ast_es">Madnox ye'l socesor d'Aeon Madnox de Mike_Doc, schimi2k y MeowMoo. Ye un tema basáu nel diseño d'Aeon de djh_ y Aeon Nox 4 de BigNoid y phil65. Gracies especiales a Mr. V. Tol crediu pa los creadores d'estos temes y cambeos.</disclaimer>
+		<disclaimer lang="az_az">Madnox, Mike_Doc, schimi2k və MeowMoo tərəfindən hazırlanmış Aeon Madnox-un davamçısıdır. Bu, djh_ tərəfindən Aeon və BigNoid və phil65 tərəfindən Aeon Nox 4 dizaynına əsaslanan bir örtükdür (skin). Mr. V-ə xüsusi təşəkkürlər. Bu örtüklərin və modların yaradıcılarına dərin minnətdarlığımızı bildiririk.</disclaimer>
+		<disclaimer lang="be_by">Madnox — пераемнік Aeon Madnox ад Mike_Doc, schimi2k і MeowMoo. Гэта вокладка (skin), заснаваная на дызайне Aeon ад djh_ і Aeon Nox 4 ад BigNoid і phil65. Асаблівая падзяка Mr. V. Уся ўдзячнасць стваральнікам гэтых вокладак і мадыфікацый.</disclaimer>
+		<disclaimer lang="bg_bg">Madnox е наследникът на Aeon Madnox от Mike_Doc, schimi2k и MeowMoo. Това е облик (skin), базиран на дизайна на Aeon от djh_ и Aeon Nox 4 от BigNoid и phil65. Специални благодарности на Mr. V. Всички кредити са за създателите на тези облици и модификации.</disclaimer>
+		<disclaimer lang="bs_ba">Madnox je nasljednik Aeon Madnox-a od autora Mike_Doc, schimi2k i MeowMoo. To je skin baziran na dizajnu Aeon-a od djh_ i Aeon Nox 4 od BigNoid-a i phil65. Posebna zahvalnost Mr. V. Sve zasluge idu tvorcima ovih skinova i modova.</disclaimer>
+		<disclaimer lang="ca_es">Madnox és el successor d'Aeon Madnox de Mike_Doc, schimi2k i MeowMoo. És una aparença basada en el disseny d'Aeon de djh_ i Aeon Nox 4 de BigNoid i phil65. Agraïment especial a Mr. V. Tot el crèdit als creadors d'aquestes aparences i modificacions.</disclaimer>
+		<disclaimer lang="cs_cz">Madnox je nástupcem vzhledu Aeon Madnox od autorů Mike_Doc, schimi2k a MeowMoo. Je to vzhled založený na designu Aeon od djh_ a Aeon Nox 4 od BigNoid a phil65. Zvláštní poděkování patří Mr. V. Veškeré uznání patří tvůrcům těchto vzhledů a modifikací.</disclaimer>
+		<disclaimer lang="cy_gb">Madnox yw olynydd Aeon Madnox gan Mike_Doc, schimi2k a MeowMoo. Mae'n grib (skin) sy'n seiliedig ar ddyluniad Aeon gan djh_ ac Aeon Nox 4 gan BigNoid a phil65. Diolch arbennig i Mr. V. Pob clod i grewyr y crwyn a'r modiau hyn.</disclaimer>
+		<disclaimer lang="da_dk">Madnox er efterfølgeren til Aeon Madnox af Mike_Doc, schimi2k og MeowMoo. Det er et skin baseret på designet af Aeon af djh_ og Aeon Nox 4 af BigNoid og phil65. Særlig tak til Mr. V. Al kredit går til skaberne af disse skins og mods.</disclaimer>
+		<disclaimer lang="de_de">Madnox ist der Nachfolger von Aeon Madnox von Mike_Doc, schimi2k und MeowMoo. Es ist ein Skin, der auf dem Design von Aeon von djh_ und Aeon Nox 4 von BigNoid und phil65 basiert. Besonderer Dank geht an Mr. V. Alle Anerkennung gebührt den Erstellern dieser Skins und Mods.</disclaimer>
+		<disclaimer lang="el_gr">Το Madnox είναι ο διάδοχος του Aeon Madnox από τους Mike_Doc, schimi2k και MeowMoo. Είναι ένα skin βασισμένο στη σχεδίαση του Aeon από τον djh_ και του Aeon Nox 4 από τους BigNoid και phil65. Ιδιαίτερες ευχαριστίες στον Mr. V. Όλα τα εύσημα ανήκουν στους δημιουργούς αυτών των skins και mods.</disclaimer>
+		<disclaimer lang="en_au">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
 		<disclaimer lang="en_gb">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
+		<disclaimer lang="en_nz">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
 		<disclaimer lang="en_us">Madnox is the successor to Aeon Madnox by Mike_Doc, schimi2k and MeowMoo. It is a skin based on the design of Aeon by djh_ and Aeon Nox 4 by BigNoid and phil65. Special thanks to Mr. V. All credits to the makers of these skins and mods.</disclaimer>
-		<disclaimer lang="es_es">Madnox es el sucesor de Aeon Madnox creado por Mike_Doc, schimi2k y MeowMoo. Es un skin basado en el diseño de Aeon de djh_ y Aeon Nox 4 de BigNoid y phil65. Agradecimientos especiales a Mr. V. Todos los créditos a los creadores de estos skins y modificaciones.</disclaimer>
-		<disclaimer lang="fr_fr">Madnox est le successeur d’Aeon Madnox par Mike_Doc, schimi2k et MeowMoo. Il s’inspire du design d’Aeon par djh_ et d’Aeon Nox 4 par BigNoid et phil65. Remerciements spéciaux à Mr. V. Tous les crédits vont aux créateurs de ces skins et mods.</disclaimer>
-		<disclaimer lang="no_no">Madnox er etterfølgeren til Aeon Madnox av Mike_Doc, schimi2k og MeowMoo. Skallet er basert på designet til Aeon av djh_ og Aeon Nox 4 av BigNoid og phil65. Spesiell takk til Mr. V. All ære til skaperne av disse skallene og modifikasjonene.</disclaimer>
-		<disclaimer lang="pt_br">Madnox é o sucessor do Aeon Madnox criado por Mike_Doc, schimi2k e MeowMoo. É um tema baseado no design do Aeon de djh_ e Aeon Nox 4 de BigNoid e phil65. Agradecimentos especiais ao Mr. V. Todos os créditos aos criadores desses temas e modificações.</disclaimer>
-		<disclaimer lang="sv_se">Madnox är efterföljaren till Aeon Madnox av Mike_Doc, schimi2k och MeowMoo. Det är ett skal baserat på designen av Aeon av djh_ och Aeon Nox 4 av BigNoid och phil65. Särskilt tack till Mr. V. All ära till skaparna av dessa skal och moddar.</disclaimer>
-		<disclaimer lang="uk_ua">Madnox — це наступник Aeon Madnox від Mike_Doc, schimi2k та MeowMoo. Це шкіра, заснована на дизайні Aeon від djh_ та Aeon Nox 4 від BigNoid і phil65. Особлива подяка Mr. V. Всі заслуги — авторам цих оформлень і модифікацій.</disclaimer>
+		<disclaimer lang="eo">Madnox estas la posteulo de Aeon Madnox de Mike_Doc, schimi2k kaj MeowMoo. Ĝi estas fasado (skin) bazita sur la dezajno de Aeon de djh_ kaj Aeon Nox 4 de BigNoid kaj phil65. Specialan dankon al Mr. V. Ĉiu danko al la kreintoj de ĉi tiuj fasadoj kaj modifoj.</disclaimer>
+		<disclaimer lang="es_ar">Madnox es el sucesor de Aeon Madnox por Mike_Doc, schimi2k y MeowMoo. Es una apariencia (skin) basada en el diseño de Aeon por djh_ y Aeon Nox 4 por BigNoid y phil65. Agradecimiento especial a Mr. V. Todo el crédito a los creadores de estas apariencias y modificaciones.</disclaimer>
+		<disclaimer lang="es_es">Madnox es el sucesor de Aeon Madnox por Mike_Doc, schimi2k y MeowMoo. Es un tema (skin) basado en el diseño de Aeon por djh_ y Aeon Nox 4 por BigNoid y phil65. Agradecimientos especiales a Mr. V. Todo el crédito para los creadores de estos temas y modificaciones.</disclaimer>
+		<disclaimer lang="es_mx">Madnox es el sucesor de Aeon Madnox por Mike_Doc, schimi2k y MeowMoo. Es un tema (skin) basado en el diseño de Aeon por djh_ y Aeon Nox 4 por BigNoid y phil65. Agradecimientos especiales a Mr. V. Todo el crédito a los creadores de estos temas y modificaciones.</disclaimer>
+		<disclaimer lang="et_ee">Madnox on järglane Aeon Madnoxile, mille autoriteks on Mike_Doc, schimi2k ja MeowMoo. See on kujundus (skin), mis põhineb djh_ Aeonil ja BigNoidi ning phil65 Aeon Nox 4-l. Eriline tänu kuulub Mr. V-le. Kogu tunnustus kuulub nende kujunduste ja modifikatsioonide loojatele.</disclaimer>
+		<disclaimer lang="eu_es">Madnox Mike_Doc, schimi2k eta MeowMook sortutako Aeon Madnoxen ondorengoa da. djh_-(re)n Aeon eta BigNoid eta phil65-(re)n Aeon Nox 4 diseinuetan oinarritutako azala (skin) da. Esker bereziak Mr. V-(r)i. Kreditu guztiak azal eta modifikazio hauen sortzaileentzat.</disclaimer>
+		<disclaimer lang="fa_af">مدناکس (Madnox) جانشین ایون مدناکس (Aeon Madnox) ساخته مایک داک (Mike_Doc)، شمی۲کی (schimi2k) و میومیو (MeowMoo) است. این پوسته (skin) بر اساس طرح ایون (Aeon) از djh_ و ایون ناکس ۴ (Aeon Nox 4) از BigNoid و phil65 ساخته شده است. تشکر ویژه از آقای وی (Mr. V). تمام اعتبار متعلق به سازندگان این پوسته‌ها و مادها می‌باشد.</disclaimer>
+		<disclaimer lang="fa_ir">مدناکس (Madnox) جانشین ایون مدناکس (Aeon Madnox) ساخته Mike_Doc، schimi2k و MeowMoo است. این پوسته (skin) بر اساس طراحی ایون (Aeon) اثر djh_ و ایون ناکس ۴ (Aeon Nox 4) اثر BigNoid و phil65 ساخته شده است. تشکر ویژه از Mr. V. تمام اعتبار متعلق به سازندگان این پوسته‌ها و مادها می‌باشد.</disclaimer>
+		<disclaimer lang="fil">Ang Madnox ay ang kahalili ng Aeon Madnox nina Mike_Doc, schimi2k at MeowMoo. Ito ay isang skin na nakabase sa disenyo ng Aeon ni djh_ at Aeon Nox 4 nina BigNoid at phil65. Espesyal na pasasalamat kay Mr. V. Ang lahat ng kredito ay para sa mga gumawa ng mga skin at mod na ito.</disclaimer>
+		<disclaimer lang="fi_fi">Madnox on seuraaja Mike_Docin, schimi2k:n ja MeowMoon luomalle Aeon Madnoxille. Se on ulkoasu (skin), joka perustuu djh_:n Aeon- ja BigNoidin sekä phil65:n Aeon Nox 4 -ulkoasuihin. Erityiskiitokset Mr. V:lle. Kaikki kunnia näiden ulkoasujen ja modien tekijöille.</disclaimer>
+		<disclaimer lang="fo_fo">Madnox er eftirfylgjarin til Aeon Madnox hjá Mike_Doc, schimi2k og MeowMoo. Tað er eitt skin rajgjørt eftir sniðinum hjá Aeon hjá djh_ og Aeon Nox 4 hjá BigNoid og phil65. Serlig tøkk til Mr. V. Allur heiður fer til tær, ið hava gjørt hesi skins og mods.</disclaimer>
+		<disclaimer lang="fr_ca">Madnox est le successeur d'Aeon Madnox par Mike_Doc, schimi2k et MeowMoo. C'est un habillage (skin) basé sur le design d'Aeon par djh_ et d'Aeon Nox 4 par BigNoid et phil65. Un merci tout spécial à Mr. V. Tout le mérite revient aux concepteurs de ces habillages et mods.</disclaimer>
+		<disclaimer lang="fr_fr">Madnox est le successeur d'Aeon Madnox par Mike_Doc, schimi2k et MeowMoo. C'est un habillage (skin) basé sur le design d'Aeon par djh_ et d'Aeon Nox 4 par BigNoid et phil65. Remerciements particuliers à Mr. V. Tout le mérite revient aux créateurs de ces habillages et mods.</disclaimer>
+		<disclaimer lang="gl_es">Madnox é o sucesor de Aeon Madnox de Mike_Doc, schimi2k e MeowMoo. É unha aparencia (skin) baseada no deseño de Aeon de djh_ e Aeon Nox 4 de BigNoid e phil65. Grazas especiais a Mr. V. Todo o crédito para os creadores destas aparencias e modificacións.</disclaimer>
+		<disclaimer lang="he_il">Madnox הוא היורש של Aeon Madnox מאת Mike_Doc, schimi2k ו-MeowMoo. זוהי מעטפת (skin) המבוססת על העיצוב של Aeon מאת djh_ ו-Aeon Nox 4 מאת BigNoid ו-phil65. תודה מיוחדת ל-Mr. V. כל הקרדיต ליוצרים של מעטפות והתאמות אלו.</disclaimer>
+		<disclaimer lang="hi_in">मॅडनॉक्स (Madnox), माइक_डॉक (Mike_Doc), शिमी2के (schimi2k) और म्याऊमू (MeowMoo) द्वारा बनाए गए इयोन मॅडनॉक्स (Aeon Madnox) का उत्तराधिकारी है। यह एक स्किन (skin) है जो djh_ द्वारा इयोन (Aeon) और बिगनॉइड (BigNoid) व फिल65 (phil65) द्वारा इयोन नॉक्स 4 (Aeon Nox 4) के डिज़ाईन पर आधारित है। मिस्टर वी (Mr. V) का विशेष धन्यवाद। इन स्किन्स और मॉड्स के निर्माताओं को पूरा श्रेय जाता है।</disclaimer>
+		<disclaimer lang="hr_hr">Madnox je nasljednik Aeon Madnoxa od autora Mike_Doc, schimi2k i MeowMoo. To je skin baziran na dizajnu Aeona od djh_ i Aeona Nox 4 od BigNoida i phil65. Posebno hvala gospodinu V (Mr. V). Sve zasluge idu tvorcima ovih skinova i modova.</disclaimer>
+		<disclaimer lang="hu_hu">A Madnox az Aeon Madnox utódja, melyet Mike_Doc, schimi2k és MeowMoo készített. Ez egy felület (skin), amely a djh_ által tervezett Aeon, valamint a BigNoid és phil65 által készített Aeon Nox 4 dizájnján alapul. Külön köszönet Mr. V-nek. Minden elismerés ezen felületek és módosítások készítőit illeti.</disclaimer>
+		<disclaimer lang="hy_am">Madnox-ը հանդիսանում է Mike_Doc-ի, schimi2k-ի և MeowMoo-ի կողմից ստեղծված Aeon Madnox-ի հաջորդողը: Այն թեմա (skin) է՝ հիմնված djh_-ի Aeon-ի և BigNoid-ի ու phil65-ի Aeon Nox 4-ի դիզայնի վրա: Հատուկ շնորհակալություն Mr. V-ին: Ողջ երախտագիտությունը այս թեմաների և ձևափոխումների (mods) հեղինակներին:</disclaimer>
+		<disclaimer lang="id_id">Madnox adalah penerus Aeon Madnox oleh Mike_Doc, schimi2k, dan MeowMoo. Ini adalah skin yang dibuat berdasarkan desain Aeon oleh djh_ dan Aeon Nox 4 oleh BigNoid dan phil65. Terima kasih khusus kepada Mr. V. Semua kredit diberikan kepada para pembuat skin dan mod ini.</disclaimer>
+		<disclaimer lang="is_is">Madnox er arftaki Aeon Madnox eftir Mike_Doc, schimi2k og MeowMoo. Þetta er útlit (skin) byggt á hönnun Aeon eftir djh_ og Aeon Nox 4 eftir BigNoid og phil65. Sérstakar þakkir til Mr. V. Allur heiður fer til höfunda þessara útlista og breytinga (mods).</disclaimer>
+		<disclaimer lang="it_it">Madnox è il successore di Aeon Madnox di Mike_Doc, schimi2k e MeowMoo. È una skin basata sul design di Aeon di djh_ e Aeon Nox 4 di BigNoid e phil65. Un ringraziamento speciale a Mr. V. Tutti i crediti vanno ai creatori di queste skin e mod.</disclaimer>
+		<disclaimer lang="ja_jp">Madnoxは、Mike_Doc、schimi2k、MeowMooによるAeon Madnoxの後継スキンです。djh_によるAeon、およびBigNoidとphil65によるAeon Nox 4のデザインに基づいています。Mr. Vに特別に感謝いたします。これらのスキンとモッドの制作者にすべてのクレジットを捧げます。</disclaimer>
+		<disclaimer lang="kn_in">ಮ್ಯಾಡ್‌ನಾಕ್ಸ್ (Madnox), ಮೈಕ್_ಡಾಕ್ (Mike_Doc), ಶಿಮಿ2ಕೆ (schimi2k) ಮತ್ತು ಮಿಯಾವ್‌ಮೂ (MeowMoo) ಅವರ ಏಯಾನ್ ಮ್ಯಾಡ್‌ನಾಕ್ಸ್ (Aeon Madnox) ನ ಉತ್ತರಾಧಿಕಾರಿಯಾಗಿದೆ. ಇದು djh_ ಅವರ ಏಯಾನ್ (Aeon) ಮತ್ತು ಬಿಗ್‌ನಾಯ್ಡ್ (BigNoid) ಹಾಗೂ ಫಿಲ್65 (phil65) ಅವರ ಏಯಾನ್ ನಾಕ್ಸ್ 4 (Aeon Nox 4) ವಿನ್ಯಾಸದ ಆಧಾರಿತ ಸ್ಕಿನ್ (skin) ಆಗಿದೆ. ಮಿಸ್ಟರ್ ವಿ (Mr. V) ಅವರಿಗೆ ವಿಶೇಷ ಧನ್ಯವಾದಗಳು. ಈ ಸ್ಕಿನ್‌ಗಳು ಮತ್ತು ಮಾಡ್ಸ್ ಸೃಷ್ಟಿಕರ್ತರಿಗೆ ಸಂಪೂರ್ಣ ಶ್ರೇಯಸ್ಸು ಸಲ್ಲುತ್ತದೆ.</disclaimer>
+		<disclaimer lang="ko_kr">Madnox는 Mike_Doc, schimi2k, MeowMoo가 제작한 Aeon Madnox의 후속 스킨입니다. djh_의 Aeon 디자인과 BigNoid 및 phil65의 Aeon Nox 4 디자인을 기반으로 제작되었습니다. Mr. V에게 특별한 감사를 전합니다. 이 스킨과 모드 제작자 분들께 모든 감사를 드립니다.</disclaimer>
+		<disclaimer lang="lt_lt">„Madnox“ yra „Aeon Madnox“, kurį sukūrė Mike_Doc, schimi2k ir MeowMoo, įpėdinis. Tai yra skinas (apvalkalas), sukurtas remiantis djh_ „Aeon“ ir BigNoid bei phil65 „Aeon Nox 4“ dizainu. Ypatingas ačiū Mr. V. Visa padėka šių skinų ir modifikacijų kūrėjams.</disclaimer>
+		<disclaimer lang="lv_lv">Madnox ir Aeon Madnox pēctecis, ko radījuši Mike_Doc, schimi2k un MeowMoo. Tā ir saskarne (skin), kas balstīta uz djh_ veidoto Aeon dizainu un BigNoid un phil65 veidoto Aeon Nox 4. Īpašs paldies Mr. V. Visa pateicība šo saskarņu un modifikāciju autoriem.</disclaimer>
+		<disclaimer lang="mi">Ko Madnox te kairiiwhi ki a Aeon Madnox nā Mike_Doc, schimi2k me MeowMoo. He kiri (skin) tenei i hangaia i runga i te hoahoa o Aeon nā djh_, me Aeon Nox 4 nā BigNoid me phil65. He mihi motuhake ki a Mr. V. Ko nga mihi katoa ki nga kaihanga o enei kiri me enei whakarereketanga.</disclaimer>
+		<disclaimer lang="mk_mk">Madnox е наследник на Aeon Madnox од Mike_Doc, schimi2k и MeowMoo. Тоа е изглед (skin) базиран на дизајнот на Aeon од djh_ и Aeon Nox 4 од BigNoid и phil65. Специјална благодарност до Mr. V. Сите заслуги одат кај творците на овие изгледи и модификации.</disclaimer>
+		<disclaimer lang="ml_in">മൈക്ക്_ഡോക് (Mike_Doc), ഷിമി2കെ (schimi2k), മിയാവുമൂ (MeowMoo) എന്നിവർ ചേർന്നൊരുക്കിയ ഇയോൺ മാഡ്നോക്സിന്റെ (Aeon Madnox) പിൻഗാമിയാണ് മാഡ്നോക്സ് (Madnox). djh_ രൂപകൽപ്പന ചെയ്ത ഇയോൺ (Aeon), ബിഗ്നോയിഡ് (BigNoid), ഫിൽ65 (phil65) എന്നിവർ രൂപകൽപ്പന ചെയ്ത ഇയോൺ നോക്സ് 4 (Aeon Nox 4) എന്നിവയുടെ ഡിസൈനിനെ അടിസ്ഥാനമാക്കിയുള്ള ഒരു സ്കിൻ (skin) ആണിത്. മിസ്റ്റർ വി-ക്ക് (Mr. V) പ്രത്യേക നന്ദി. ഈ സ്കിന്നുകളുടെയും മോഡുകളുടെയും നിർമ്മാതാക്കൾക്ക് എല്ലാ ക്രെഡിറ്റും നൽകുന്നു.</disclaimer>
+		<disclaimer lang="mn_mn">Madnox бол Mike_Doc, schimi2k болон MeowMoo нарын бүтээсэн Aeon Madnox-ийн залгамжлагч юм. Энэ нь djh_-ийн Aeon болон BigNoid, phil65 нарын Aeon Nox 4 загвар дээр суурилсан арьс (skin) юм. Mr. V-д тусгайлан талархал илэрхийлье. Эдгээр арьс болон модуудыг бүтээгчдэд бүх талархлыг зориулж байна.</disclaimer>
+		<disclaimer lang="ms_my">Madnox ialah pengganti kepada Aeon Madnox oleh Mike_Doc, schimi2k dan MeowMoo. Ia merupakan skin yang berasaskan reka bentuk Aeon oleh djh_ dan Aeon Nox 4 oleh BigNoid dan phil65. Penghargaan khas kepada Mr. V. Segala kredit diberikan kepada pencipta skin dan mod ini.</disclaimer>
+		<disclaimer lang="mt_mt">Madnox huwa s-suċċessur ta' Aeon Madnox minn Mike_Doc, schimi2k u MeowMoo. Din hija dehra (skin) ibbażata fuq id-disinn ta' Aeon minn djh_ u Aeon Nox 4 minn BigNoid u phil65. Ringrazzjament speċjali lil Mr. V. Il-krediti kollha jmorru għand il-kreatturi ta' dawn id-dehriet u modifikazzjonijiet.</disclaimer>
+		<disclaimer lang="my_mm">Madnox သည် Mike_Doc၊ schimi2k နှင့် MeowMoo တို့ ဖန်တီးခဲ့သော Aeon Madnox ၏ ဆက်ခံသူ ဖြစ်သည်။ ၎င်းသည် djh_ ၏ Aeon ဒီဇိုင်းနှင့် BigNoid နှင့် phil65 တို့၏ Aeon Nox 4 ဒီဇိုင်းပေါ်တွင် အခြေခံထားသော skin တစ်ခု ဖြစ်သည်။ Mr. V အား အထူးကျေးဇူးတင်ရှိပါသည်။ ဤ skin များနှင့် mod များကို ဖန်တီးသူများအားလုံးကို အသိအမှတ်ပြု ဂุဏ်ပြုပါသည်။</disclaimer>
+		<disclaimer lang="nb_no">Madnox er etterfølgeren til Aeon Madnox av Mike_Doc, schimi2k og MeowMoo. Det er et utseende (skin) basert på designet til Aeon av djh_ og Aeon Nox 4 av BigNoid og phil65. En spesiell takk til Mr. V. All ære går til skaperne av disse utseendene og modifikasjonene.</disclaimer>
+		<disclaimer lang="nl_nl">Madnox is de opvolger van Aeon Madnox door Mike_Doc, schimi2k en MeowMoo. Het is een skin gebaseerd op het ontwerp van Aeon door djh_ en Aeon Nox 4 door BigNoid en phil65. Speciale dank aan Mr. V. Alle eer gaat naar de makers van deze skins en mods.</disclaimer>
+		<disclaimer lang="no_no">Madnox er etterfølgeren til Aeon Madnox av Mike_Doc, schimi2k og MeowMoo. Det er et utseende (skin) basert på designet til Aeon av djh_ og Aeon Nox 4 av BigNoid og phil65. En spesiell takk til Mr. V. All ære går til skaperne av disse utseendene og modifikasjonene.</disclaimer>
+		<disclaimer lang="pl_pl">Madnox to następca Aeon Madnox autorstwa Mike_Doc, schimi2k i MeowMoo. Jest to skóra (skin) oparta na projekcie Aeon autorstwa djh_ oraz Aeon Nox 4 autorstwa BigNoid i phil65. Specjalne podziękowania dla Mr. V. Słowa uznania dla twórców tych skór i modyfikacji.</disclaimer>
+		<disclaimer lang="pt_br">Madnox é o sucessor do Aeon Madnox de Mike_Doc, schimi2k e MeowMoo. É uma skin baseada no design do Aeon de djh_ e Aeon Nox 4 de BigNoid e phil65. Agradecimentos especiais a Mr. V. Todos os créditos aos criadores destas skins e mods.</disclaimer>
+		<disclaimer lang="pt_pt">Madnox é o sucessor do Aeon Madnox de Mike_Doc, schimi2k e MeowMoo. É um tema (skin) baseado no design do Aeon de djh_ e Aeon Nox 4 de BigNoid e phil65. Agradecimentos especiais a Mr. V. Todos os créditos aos criadores destes temas e modificações.</disclaimer>
+		<disclaimer lang="ro_ro">Madnox este succesorul lui Aeon Madnox creat de Mike_Doc, schimi2k și MeowMoo. Este o interfață (skin) bazată pe designul Aeon realizat de djh_ și Aeon Nox 4 de BigNoid și phil65. Mulțumiri speciale lui Mr. V. Toate mulțumirile merg către creatorii acestor interfețe și modificări.</disclaimer>
+		<disclaimer lang="ru_ru">Madnox — это преемник Aeon Madnox от Mike_Doc, schimi2k и MeowMoo. Эта обложка (skin) создана на основе дизайна Aeon от djh_ и Aeon Nox 4 от BigNoid и phil65. Особая благодарность Mr. V. Все права и благодарности принадлежат авторам этих обложек и модификаций.</disclaimer>
+		<disclaimer lang="si_lk">Madnox යනු Mike_Doc, schimi2k සහ MeowMoo විසින් නිර්මාණය කරන ලද Aeon Madnox හි අනුප්‍රාප්තිකයා වේ. මෙය djh_ ගේ Aeon සහ BigNoid සහ phil65 ගේ Aeon Nox 4 සැලසුම් මත පදනම් වූ සංදර්ශක මුහුණතකි (skin). Mr. V වෙත විශේෂ ස්තූතිය හිමිවේ. මෙම සංදර්ශක මුහුණත් සහ මෝස්තර (mods) නිර්මාණය කළ සැමට උපහාරය හිමිවේ.</disclaimer>
+		<disclaimer lang="sk_sk">Madnox je nástupcom vzhľadu Aeon Madnox od autorov Mike_Doc, schimi2k a MeowMoo. Je to vzhľad založený na dizajne Aeon od djh_ a Aeon Nox 4 od BigNoid a phil65. Zvláštne poďakovanie patrí Mr. V. Všetky zásluhy patria tvorcom týchto vzhľadov a modifikácií.</disclaimer>
+		<disclaimer lang="sl_si">Madnox je naslednik preobleke Aeon Madnox avtorjev Mike_Doc, schimi2k in MeowMoo. To je preobleka (skin), ki temelji na obliki Aeon avtorja djh_ in Aeon Nox 4 avtorjev BigNoid in phil65. Posebna zahvala Mr. V. Vse zasluge gredo ustvarjalcem teh preoblek in modifikacij.</disclaimer>
+		<disclaimer lang="sq_al">Madnox është pasardhësi i Aeon Madnox nga Mike_Doc, schimi2k dhe MeowMoo. Kjo është një temë (skin) e bazuar në dizajnin e Aeon nga djh_ dhe Aeon Nox 4 nga BigNoid dhe phil65. Falënderim i veçantë për Mr. V. Të gjitha meritat shkojnë për krijuesit e këtyre temave dhe modifikimeve.</disclaimer>
+		<disclaimer lang="sr_rs">Madnox је наследник Aeon Madnox-а од аутора Mike_Doc, schimi2k и MeowMoo. То је маска (skin) заснована на дизајну Aeon-а од djh_ и Aeon Nox 4 од BigNoid-а и phil65. Посебно хвала Mr. V. Све заслуге иду творцима ових маски и модификација.</disclaimer>
+		<disclaimer lang="sr_rs@latin">Madnox je naslednik Aeon Madnox-a od autora Mike_Doc, schimi2k i MeowMoo. To je maska (skin) zasnovana na dizajnu Aeon-a od djh_ i Aeon Nox 4 od BigNoid-a i phil65. Posebno hvala Mr. V. Sve zasluge idu tvorcima ovih maski i modifikacija.</disclaimer>
+		<disclaimer lang="sv_se">Madnox är efterföljaren till Aeon Madnox av Mike_Doc, schimi2k och MeowMoo. Det är ett skal (skin) baserat på designen av Aeon av djh_ och Aeon Nox 4 av BigNoid och phil65. Särskilt tack till Mr. V. All heder till skaparna av dessa skal och moddar.</disclaimer>
+		<disclaimer lang="szl">Madnox to je nastympca Aeon Madnox ôd Mike_Doc, schimi2k i MeowMoo. To je skōra (skin) ôpartŏ na projekcie Aeon ôd djh_ i Aeon Nox 4 ôd BigNoid i phil65. Sebyclne podziynkowanie lo Mr. V. Cołke uznanie lo twōrcōw tych skōr i modyfikacyji.</disclaimer>
+		<disclaimer lang="ta_in">மேட்னாக்ஸ் (Madnox) என்பது மைக்_டாக் (Mike_Doc), ஷிமி2கே (schimi2k) மற்றும் மியாவ்மூ (MeowMoo) ஆகியோரால் உருவாக்கப்பட்ட இயான் மேட்னாக்ஸின் (Aeon Madnox) வாரிசு ஆகும். இது djh_ இன் இயான் (Aeon) மற்றும் பிக்னாய்டு (BigNoid) மற்றும் ஃபில்65 (phil65) இன் இயான் நாக்ஸ் 4 (Aeon Nox 4) வடிவமைப்பை அடிப்படையாகக் கொண்ட ஒரு ஸ்கின் (skin) ஆகும். மிஸ்டர் வி-க்கு (Mr. V) சிறப்பு நன்றிகள். இந்த ஸ்கின்கள் மற்றும் மாட்களை உருவாக்கியவர்களுக்கு அனைத்து பாராட்டுக்களும் சேரும்.</disclaimer>
+		<disclaimer lang="te_in">మ్యాడ్‌నాక్స్ (Madnox) అనేది మైక్_డాక్ (Mike_Doc), షిమి2కె (schimi2k) మరియు మీయావ్‌మూ (MeowMoo) లచే తయారు చేయబడిన ఏయాన్ మ్యాడ్‌నాక్స్ (Aeon Madnox) కు వారసుడు. ఇది djh_ యొక్క ఏయాన్ (Aeon) మరియు బిగ్‌నాయిడ్ (BigNoid) మరియు ఫిల్65 (phil65) ల ఏయాన్ నాక్స్ 4 (Aeon Nox 4) రూపకల్పనపై ఆధారపడిన స్కిన్ (skin). మిస్టర్ వి (Mr. V) కి ప్రత్యేక ధన్యవాదాలు. ఈ స్కిన్స్ మరియు మోడ్స్ సృష్టికర్తలకు పూర్తి గుర్తింపు దక్కుతుంది.</disclaimer>
+		<disclaimer lang="tg_tj">Madnox вориси Aeon Madnox аз ҷониби Mike_Doc, schimi2k ва MeowMoo мебошад. Ин пӯст (skin) дар асоси тарҳи Aeon аз ҷониби djh_ ва Aeon Nox 4 аз ҷониби BigNoid ва phil65 сохта шудааст. Ташаккури махсус ба Mr. V. Тамоми эҳтиром ба созандагони ин пӯстҳо ва модҳо.</disclaimer>
+		<disclaimer lang="th_th">Madnox คือผู้สืบทอดของ Aeon Madnox โดย Mike_Doc, schimi2k และ MeowMoo เป็นสกิน (skin) ที่อิงตามการออกแบบของ Aeon โดย djh_ และ Aeon Nox 4 โดย BigNoid และ phil65 ขอขอบคุณเป็นพิเศษสำหรับ Mr. V เครดิตทั้งหมดขอมอบให้แก่ผู้สร้างสกินและม็อดเหล่านี้</disclaimer>
+		<disclaimer lang="tr_tr">Madnox; Mike_Doc, schimi2k ve MeowMoo tarafından geliştirilen Aeon Madnox'un halefidir. djh_ tasarımı Aeon ve BigNoid ile phil65 tasarımı Aeon Nox 4 tabanlı bir arayüzdür (skin). Mr. V'ye özel teşekkürler. Tüm haklar ve emekler bu arayüzlerin ve modların yapımcılarına aittir.</disclaimer>
+		<disclaimer lang="uk_ua">Madnox — це наступник Aeon Madnox від Mike_Doc, schimi2k та MeowMoo. Це обкладинка (skin), створена на основі дизайну Aeon від djh_ та Aeon Nox 4 від BigNoid та phil65. Особлива подяка Mr. V. Усі права та вдячність належать авторам цих обкладинок та модифікацій.</disclaimer>
+		<disclaimer lang="uz_uz">Madnox – Mike_Doc, schimi2k va MeowMoo tomonidan yaratilgan Aeon Madnox-ning davomchisidir. Bu djh_ tomonidan yaratilgan Aeon va BigNoid hamda phil65 tomonidan yaratilgan Aeon Nox 4 dizayniga asoslangan muqova (skin). Mr. V-ga alohida rahmat. Ushbu muqovalar va modlar yaratuvchilariga minnatdorchilik bildiramiz.</disclaimer>
+		<disclaimer lang="vi_vn">Madnox là phiên bản kế thừa của Aeon Madnox bởi Mike_Doc, schimi2k và MeowMoo. Đây là một giao diện (skin) dựa trên thiết kế của Aeon bởi djh_ và Aeon Nox 4 bởi BigNoid và phil65. Đặc biệt cảm ơn Mr. V. Mọi đóng góp xin dành cho những người tạo ra các giao diện và bản mod này.</disclaimer>
+		<disclaimer lang="zh_cn">Madnox 是由 Mike_Doc、schimi2k 和 MeowMoo 开发的 Aeon Madnox 的继承者。这是一款基于 djh_ 的 Aeon 以及 BigNoid 和 phil65 的 Aeon Nox 4 设计的皮肤。特别鸣谢 Mr. V。所有功劳归于这些皮肤和模组的创作者。</disclaimer>
+		<disclaimer lang="zh_hk">Madnox 是由 Mike_Doc、schimi2k 和 MeowMoo 開發的 Aeon Madnox 的繼承者。這是一款基於 djh_ 的 Aeon 以及 BigNoid 和 phil65 的 Aeon Nox 4 設計的面板（Skin）。特別鳴謝 Mr. V。所有功勞歸於這些面板和模組的創作者。</disclaimer>
+		<disclaimer lang="zh_tw">Madnox 是由 Mike_Doc、schimi2k 和 MeowMoo 開發的 Aeon Madnox 的繼承者。這是一款基於 djh_ 的 Aeon 以及 BigNoid 和 phil65 的 Aeon Nox 4 設計的面板（Skin）。特別鳴謝 Mr. V。所有功勞歸於這些面板和模組的創作者。</disclaimer>
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>https://forum.kodi.tv/forumdisplay.php?fid=314</forum>
@@ -63,9 +270,32 @@
 			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>
-<news>
+		<news>
+v21.10.09
+- Cleanup: Multiple includes, code fixes &amp; corrections, report any issues in forum, thanks.
+- Bug: Showcase 2thumb, 4thumb not working for tvshows, repaired old path method to updated version
+- Bug: Replaced entry point control for manage preset dialog as default with no preset locks out navigation
+- Bug: Removed redundant scrollbar from SquareIcon (521) view from refactor (seen in favorites and music)
+- Bug: Color picker selection label clipping repaired, centered labels in guidelines
+- Installation Bug: Fallback fonts for addons added to font.xml. (Fixes Trakt.tv authorize dialog missing text and others)
+- Bug: Fixed grid widget launcher to ensure cast and studio icon shows up due to empty list entry
+- Correction: Incrementally removing all hardcoded colors and moving to skin theme control in admin for all widget info panels
+- Bug: Repaired widget grid panel viewer for non library items blocking recursive views like bio, cast, and other externals
+- Additions: all supported languages now included. Report any syntax issues in the forums.
+- Layout: Grid widget view crawler with right side mouse target zone fixed, you can now properly select all movies in crawler
+- Layout: Grid widget in Home, if all are set to medium, all 6 will be selectable via mouse, previously, scroll was needed to select 6th widget
+- Layout: Weather section; enhanced remote/keyboard navigation, added escapes to menu, fixed panel selection highlighter when selected.
+- Color Picker: Additional color hardcodes removed to follow theming, localize missed strings for compliance
+- Bug: Main menu background shadow in sideblade, pointed to style, repaired to shadow
+- Complete: Custom video codec flag changer is now operational and no longer W.I.P.
+- Dashboard widget panel: Fixed broken system localize value for text string, now shows "System Status"
+- QOL: Changed default control to scrollbar for what's new dialog on entry
+- Layout: Grid widget 1130 layout view scrollbar to hide under 9 items, show with 10 or greater
+- Bug: Fixed moon image(s) display in weather which was not rendering due to addon issue and repair
+- Install: Updated TMDb helper to 6.15.2
+- Install: Updated Wikipedia addon to 0.2.0
 v21.10.08
-- New feature: Vertical menu! Trigger via the sideblade in skin settings > Themes > Vertical menu
+- New feature: Vertical menu! Trigger via the sideblade or inside Skin settings > Themes > Vertical menu
 - New feature: Save user skin settings, import, export settings (sharing/collaboration)
 - New feature: 6 new view modes; Showcase Hero, Spotlight, Cinematic Shelf, Editorial, Immersive, Stage
 - Expanded feature: Open case. Portrait views animate case opening to display disc if video case is active
@@ -82,7 +312,7 @@ v21.10.08
 - BUG: Removed unwired, non functional visualization button in music mode
 - Fixed 55 low list falling off the bottom of the screen after episode thumb was added for tvshows
 - QOL: Collections view (only) follows last collection view globally. If collections are set to info2, all collections views are set to info2
-- QOL: Reordered all views in sideblade to follow consistent patterns for all views, music is still todo, but main video is complete
+- QOL: Reordered all views in sideblade to follow consistent patterns for all views
 - BUG: Multiple views repaired for image framing being drawn out of order
 - QOL: Removed "Enable/Disable" from sideblade and converted to easy on the eye Check/X symbols following admin controls
 v21.10.07

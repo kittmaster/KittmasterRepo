@@ -158,8 +158,6 @@
 						<left>170</left>
 						<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
 						<label>$INFO[Control.Getlabel(3015),,]</label>
-						<onunfocus>SetProperty(Def_Percent_To_Hex_Alpha, $INFO[Control.GetLabel(3015)])</onunfocus>
-						<label>$INFO($VAR[Def_Percent_To_Hex_Alpha])</label>
 					</control>
 					<control type="label">
 						<visible>!Control.HasFocus(3015)</visible>
@@ -300,7 +298,7 @@
 							<height>45</height>
 							<font>Font25_Cond</font>
 							<align>left</align>
-							<label>#$INFO[Container(6).ListItem.Label2]</label>
+							<label>[COLOR $VAR[PanelTextColorVar]][UPPERCASE]#$INFO[Container(6).ListItem.Label2][/UPPERCASE][/COLOR]</label>
 						</control>
 					</control>
 
@@ -321,7 +319,7 @@
 							<height>45</height>
 							<font>Font25_Cond</font>
 							<align>left</align>
-							<label>#$VAR[Def_Percent_To_Hex_Color]</label>
+							<label>[COLOR $VAR[PanelTextColorVar]]#$VAR[Def_Percent_To_Hex_Color][/COLOR]</label>
 						</control>
 					</control>
 				</control>
@@ -351,7 +349,7 @@
 						<height>45</height>
 						<font>Font25_Cond</font>
 						<align>left</align>
-						<label>#$INFO[Window.Property(ColorSelectedPicker)]</label>
+						<label>[COLOR $VAR[PanelTextColorVar]]#$INFO[Window.Property(ColorSelectedPicker)][/COLOR]</label>
 					</control>
 				</control>
 			</control>
@@ -410,7 +408,7 @@
 
 			<control type="label">
 				<description>Color palette filename and page counter</description>
-				<bottom>66</bottom>
+				<bottom>70</bottom>
 				<right>60</right>
 				<width>460</width>
 				<height>50</height>
@@ -422,13 +420,12 @@
 
 			<control type="label">
 				<description>Selected color label</description>
-				<bottom>68</bottom>
+				<bottom>70</bottom>
 				<left>60</left>
 				<width>900</width>
 				<height>50</height>
 				<font>Font25_Cond</font>
-				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-				<label>$VAR[ColorSelectedPicker]</label>
+				<label>$LOCALIZE[31044]: [COLOR $VAR[PanelTextColorVar]]$VAR[ColorSelectedPicker][/COLOR]</label>
 			</control>
 
 			<control type="image">
@@ -451,11 +448,11 @@
 				<description>Palette selected filename and path label</description>
 				<bottom>20</bottom>
 				<left>60</left>
-				<width>900</width>
+				<width>1253</width>
 				<height>50</height>
 				<font>Font25_Cond</font>
 				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-				<label>$LOCALIZE[31048]: $INFO[Skin.String(mycolorfile)]</label>
+				<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31048]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Skin.String(mycolorfile)][/COLOR]</label>
 			</control>
 
 			<control type="scrollbar" id="60">

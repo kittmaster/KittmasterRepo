@@ -252,7 +252,7 @@
 					<include>VideoOSDProcessInfo</include>
 				</control>
 				<control type="label">
-					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[31022]: [/COLOR][COLOR $INFO[Skin.String(PanelTextPlayerOSD.color)]]$INFO[System.CpuUsage][/COLOR]</label>
+					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[31486]: [/COLOR][COLOR $INFO[Skin.String(PanelTextPlayerOSD.color)]]$INFO[System.CpuUsage][/COLOR]</label>
 					<include>VideoOSDProcessInfo</include>
 				</control>
 				<control type="label">
@@ -265,7 +265,7 @@
 					<height>12</height>
 				</control>
 				<control type="label">
-					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[31023]: [/COLOR][COLOR $INFO[Skin.String(PanelTextPlayerOSD.color)]]$INFO[System.Memory(used.percent)][/COLOR]</label>
+					<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[31497]: [/COLOR][COLOR $INFO[Skin.String(PanelTextPlayerOSD.color)]]$INFO[System.Memory(used.percent)][/COLOR]</label>
 					<include>VideoOSDProcessInfo</include>
 				</control>
 				<control type="label">

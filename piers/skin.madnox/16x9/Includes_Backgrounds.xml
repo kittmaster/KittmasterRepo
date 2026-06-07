@@ -215,7 +215,7 @@
 		<control type="image">
 			<visible>$PARAM[casevisible] + [String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,season)]</visible>
 			<bordersize>-5,-36,-5,-10</bordersize>
-			<texture background="true" border="15">thumbs\case\portrait\tvshow.png</texture>
+			<texture background="true" border="15">thumbs/case/portrait/tvshow.png</texture>
 		</control>
 		<control type="image">
 			<visible>$PARAM[casevisible] + !Skin.HasSetting(MediaFlagsColored) + [String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBTYPE,season)]</visible>
@@ -254,7 +254,7 @@
 		<control type="image">
 			<visible>$PARAM[casevisible]</visible>
 			<bordersize>-34,-4,-4,-4</bordersize>
-			<texture background="true" border="15">thumbs\case\cd.png</texture>
+			<texture background="true" border="15">thumbs/case/cd.png</texture>
 		</control>
 	</include>
 

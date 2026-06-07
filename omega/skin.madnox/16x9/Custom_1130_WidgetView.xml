@@ -34,13 +34,25 @@
 			</include>
 
 			<!-- Header Title (Dynamic Widget Name) -->
-			<control type="label">
+			<!-- <control type="label">
 				<top>30</top>
 				<left>40</left>
 				<right>260</right>
 				<height>50</height>
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				<label>$INFO[Window(Home).Property(MadnoxWidgetName)]</label>
+				<align>left</align>
+				<include>SettingsLeftLabelWidgetsShortcut</include>
+			</control> -->
+
+			<control type="label">
+				<top>30</top>
+				<left>40</left>
+				<!-- <right>260</right> -->
+				<height>50</height>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<!-- Appends the selected item label dynamically to header -->
+				<label>$INFO[Window(Home).Property(MadnoxWidgetName)][COLOR $VAR[PanelTextColorVar]]$INFO[ListItem.Label, - ,][/COLOR]</label>
 				<align>left</align>
 				<include>SettingsLeftLabelWidgetsShortcut</include>
 			</control>
@@ -58,19 +70,22 @@
 			<control type="group">
 				<left>40</left>
 				<top>100</top>
-				<width>1600</width>
+				<width>1620</width>
 				<height>270</height>
 
 				<!-- Videos List (Horizontal) - Portrait -->
 				<control type="list" id="50">
-					<width>100%</width>
+					<!-- <width>100%</width> -->
+					<width>1602</width>
 					<height>100%</height>
 					<onleft>50</onleft>
 					<onright>50</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
 					<onclick condition="ListItem.IsFolder">ActivateWindow(Videos,$INFO[ListItem.FolderPath],return)</onclick>
+					<!-- Non-folder items (movies, episodes, etc): open info dialog over 1130 -->
+					<onclick condition="!ListItem.IsFolder">Action(Info)</onclick>
 					<viewtype label="536">icon</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="cubic" easing="inout">500</scrolltime>
@@ -157,7 +172,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="178">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -249,9 +264,11 @@
 					<onleft>501</onleft>
 					<onright>501</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
 					<onclick condition="ListItem.IsFolder">ActivateWindow(Videos,$INFO[ListItem.FolderPath],return)</onclick>
+					<!-- Non-folder items: open info dialog over 1130 -->
+					<onclick condition="!ListItem.IsFolder">Action(Info)</onclick>
 					<viewtype label="536">icon</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="cubic" easing="inout">500</scrolltime>
@@ -331,7 +348,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="450">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -416,9 +433,11 @@
 					<onleft>51</onleft>
 					<onright>51</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
 					<onclick condition="ListItem.IsFolder">ActivateWindow(Music,$INFO[ListItem.FolderPath],return)</onclick>
+					<!-- Non-folder items: open info dialog over 1130 -->
+					<onclick condition="!ListItem.IsFolder">Action(Info)</onclick>
 					<viewtype label="536">icon</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="cubic" easing="inout">500</scrolltime>
@@ -500,7 +519,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="270">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -586,7 +605,7 @@
 					<onleft>52</onleft>
 					<onright>52</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
 					<onclick condition="ListItem.IsFolder">ActivateWindow(Pictures,$INFO[ListItem.FolderPath],return)</onclick>
 					<viewtype label="536">icon</viewtype>
@@ -605,7 +624,7 @@
 							</control>
 							<control type="image">
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPictures.png">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="image">
 								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
@@ -643,7 +662,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="270">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -657,7 +676,7 @@
 								</control>
 								<control type="image">
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPictures.png">$INFO[ListItem.Icon]</texture>
 								</control>
 								<control type="image">
 									<texture border="20">thumbs/overlay.png</texture>
@@ -704,7 +723,7 @@
 					<onleft>53</onleft>
 					<onright>53</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
 					<onclick condition="ListItem.IsFolder">ActivateWindow(Games,$INFO[ListItem.FolderPath],return)</onclick>
 					<viewtype label="536">icon</viewtype>
@@ -723,7 +742,7 @@
 							</control>
 							<control type="image">
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultGame.png">$INFO[ListItem.Icon]</texture>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultGames.png">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="image">
 								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
@@ -761,7 +780,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="270">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -775,7 +794,7 @@
 								</control>
 								<control type="image">
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultGame.png">$INFO[ListItem.Icon]</texture>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultGames.png">$INFO[ListItem.Icon]</texture>
 								</control>
 								<control type="image">
 									<texture border="20">thumbs/overlay.png</texture>
@@ -822,7 +841,7 @@
 					<onleft>54</onleft>
 					<onright>54</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick>Dialog.Close(1130)</onclick>
 					<onclick>Select</onclick>
 					<viewtype label="536">icon</viewtype>
@@ -841,7 +860,7 @@
 							</control>
 							<control type="image">
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPVRChannel.png">$INFO[ListItem.Icon]</texture>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPVRChannels.png">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="image">
 								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
@@ -888,7 +907,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="270">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -902,7 +921,7 @@
 								</control>
 								<control type="image">
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPVRChannel.png">$INFO[ListItem.Icon]</texture>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultPVRChannels.png">$INFO[ListItem.Icon]</texture>
 								</control>
 								<control type="image">
 									<texture border="20">thumbs/overlay.png</texture>
@@ -958,9 +977,11 @@
 					<onleft>55</onleft>
 					<onright>55</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick condition="ListItem.IsFolder">Dialog.Close(1130)</onclick>
 					<onclick condition="ListItem.IsFolder">ActivateWindow(Programs,$INFO[ListItem.FolderPath],return)</onclick>
+					<!-- Non-folder items: open info dialog over 1130 -->
+					<onclick condition="!ListItem.IsFolder">Action(Info)</onclick>
 					<viewtype label="536">icon</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="cubic" easing="inout">500</scrolltime>
@@ -1015,7 +1036,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="270">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -1076,7 +1097,7 @@
 					<onleft>56</onleft>
 					<onright>56</onright>
 					<onup>9009</onup>
-					<ondown>9009</ondown>
+					<ondown>60</ondown>
 					<onclick>Dialog.Close(1130)</onclick>
 					<onclick>Select</onclick>
 					<viewtype label="536">icon</viewtype>
@@ -1095,7 +1116,7 @@
 							</control>
 							<control type="image">
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultFavourite.png">$INFO[ListItem.Icon]</texture>
+								<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultFavourites.png">$INFO[ListItem.Icon]</texture>
 							</control>
 							<control type="image">
 								<texture border="20" colordiffuse="$VAR[MainMenuWidgetColorVar]">thumbs/overlay.png</texture>
@@ -1133,7 +1154,7 @@
 					</itemlayout>
 					<focusedlayout height="260" width="270">
 						<control type="group">
-							<animation effect="zoom" start="100" end="110" center="auto" time="200">Focus</animation>
+							<animation effect="zoom" start="100" end="106" center="auto" time="200">Focus</animation>
 							<control type="image">
 								<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/thumb-select-focus.png</texture>
 							</control>
@@ -1147,7 +1168,7 @@
 								</control>
 								<control type="image">
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultFavourite.png">$INFO[ListItem.Icon]</texture>
+									<texture diffuse="diffuse/rounded5-290x290.png" fallback="DefaultFavourites.png">$INFO[ListItem.Icon]</texture>
 								</control>
 								<control type="image">
 									<texture border="20">thumbs/overlay.png</texture>
@@ -1209,8 +1230,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(50).CurrentItem,, / ]$INFO[Container(50).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(50).CurrentItem,, / ]$INFO[Container(50).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(50)</visible>
 				</control>
 				<control type="label">
@@ -1218,8 +1238,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(501).CurrentItem,, / ]$INFO[Container(501).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(501).CurrentItem,, / ]$INFO[Container(501).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(501)</visible>
 				</control>
 				<control type="label">
@@ -1227,8 +1246,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(51).CurrentItem,, / ]$INFO[Container(51).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(51).CurrentItem,, / ]$INFO[Container(51).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(51)</visible>
 				</control>
 				<control type="label">
@@ -1236,8 +1254,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(52).CurrentItem,, / ]$INFO[Container(52).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(52).CurrentItem,, / ]$INFO[Container(52).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(52)</visible>
 				</control>
 				<control type="label">
@@ -1245,8 +1262,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(53).CurrentItem,, / ]$INFO[Container(53).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(53).CurrentItem,, / ]$INFO[Container(53).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(53)</visible>
 				</control>
 				<control type="label">
@@ -1254,8 +1270,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(54).CurrentItem,, / ]$INFO[Container(54).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(54).CurrentItem,, / ]$INFO[Container(54).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(54)</visible>
 				</control>
 				<control type="label">
@@ -1263,8 +1278,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(55).CurrentItem,, / ]$INFO[Container(55).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(55).CurrentItem,, / ]$INFO[Container(55).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(55)</visible>
 				</control>
 				<control type="label">
@@ -1272,8 +1286,7 @@
 					<height>100%</height>
 					<align>left</align>
 					<font>Font25_Cond</font>
-					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31001]:[/COLOR] $INFO[Container(56).CurrentItem,, / ]$INFO[Container(56).NumItems]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31001]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$INFO[Container(56).CurrentItem,, / ]$INFO[Container(56).NumItems][/COLOR]</label>
 					<visible>Control.IsVisible(56)</visible>
 				</control>
 			</control>
@@ -1287,11 +1300,10 @@
 				<height>50</height>
 				<align>left</align>
 				<font>Font25_Cond</font>
-				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-				<label>[COLOR FF6db9e5]$LOCALIZE[21483]:[/COLOR] [CAPITALIZE]$INFO[Window(Home).Property(MadnoxWidgetArtwork)][/CAPITALIZE]</label>
+				<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[21483]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][CAPITALIZE]$INFO[Window(Home).Property(MadnoxWidgetArtwork)][/CAPITALIZE][/COLOR]</label>
 			</control>
 
-			<!-- Style Notice -->
+			<!-- Style Notice (Keeps hardcoded alert color for active warning notice) -->
 			<control type="label">
 				<top>180</top>
 				<left>1672</left>
@@ -1299,7 +1311,7 @@
 				<height>50</height>
 				<font>Font25_Cond</font>
 				<align>left</align>
-				<label>[COLOR FF6db9e5]$LOCALIZE[736]:[/COLOR] [COLOR ffd44424][B]$LOCALIZE[1438] [LOWERCASE]$LOCALIZE[31482][/LOWERCASE][/B][/COLOR]</label>
+				<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[736]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$LOCALIZE[1438] [LOWERCASE]$LOCALIZE[31482][/LOWERCASE][/B][/COLOR]</label>
 			</control>
 
 			<!-- Close Button -->
@@ -1317,9 +1329,9 @@
 				<onup>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onup>
 				<onleft>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onleft>
 				<onright>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</onright>
+				<ondown>SetFocus($INFO[Window(Home).Property(MadnoxFocusControlId)])</ondown>
 				<include>DialogButtonAlwaysFocused</include>
 				<onclick>Action(Close)</onclick>
-				<ondown>Action(Close)</ondown>
 			</control>
 
 			<control type="image">
@@ -1342,7 +1354,7 @@
 				<orientation>horizontal</orientation>
 				<textureslidernib colordiffuse="$VAR[PanelHighlightColorVar]">buttons/scrollbar-nib-focus.png</textureslidernib>
 				<texturesliderbackground border="2">buttons/scrollbar-nib-back.png</texturesliderbackground>
-				<visible>Control.IsVisible(50) | Control.IsVisible(501) | Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56)</visible>
+				<visible>Integer.IsGreater(Container(50).NumItems,10) | Integer.IsGreater(Container(501).NumItems,10) | Integer.IsGreater(Container(51).NumItems,10) | Integer.IsGreater(Container(52).NumItems,10) | Integer.IsGreater(Container(53).NumItems,10) | Integer.IsGreater(Container(54).NumItems,10) | Integer.IsGreater(Container(55).NumItems,10) | Integer.IsGreater(Container(56).NumItems,10)</visible>
 				<include>DialogScrollBar</include>
 			</control>
 		</control>

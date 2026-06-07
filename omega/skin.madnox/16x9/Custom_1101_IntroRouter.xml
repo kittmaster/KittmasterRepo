@@ -17,6 +17,11 @@
 	<!-- Unconditional fallback: if not initialized yet, go straight to 1103 -->
 	<onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ReplaceWindow(1103)</onload>
 
+	<!-- Escape hatch: if still on this window after 2s (intro path failed silently), force to 1103 -->
+	<!-- AlarmClock replaces the invalid onend animation attribute approach -->
+	<onload>AlarmClock(IntroEscapeHatch,ReplaceWindow(1103),00:00:02,true,false)</onload>
+
+	<onunload>CancelAlarm(IntroEscapeHatch,true)</onunload>
 	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
 	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>
 
@@ -32,12 +37,6 @@
 			<width>1920</width>
 			<height>1080</height>
 			<texture>colors/black.png</texture>
-		</control>
-
-		<!-- Escape hatch: if still here after 1.5s, force to 1103 -->
-		<control type="image">
-			<include>HiddenObject</include>
-			<animation effect="fade" start="100" end="100" time="1" delay="1500" onend="ReplaceWindow(1103)" condition="Window.IsVisible(1101)">WindowOpen</animation>
 		</control>
 
 		<!-- Intro trigger: onfocus fires post-render, safe for PlayMedia -->

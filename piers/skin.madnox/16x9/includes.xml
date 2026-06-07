@@ -1373,8 +1373,9 @@
 	</variable>
 
 	<variable name="ColorSelectedPicker">
-		<value condition="Window.IsActive(Custom_1104_DialogOverlayColorPicker.xml) + Control.HasFocus(6)">$LOCALIZE[31044]: $INFO[ListItem.Label] - [UPPERCASE]$INFO[ListItem.Label2,#][/UPPERCASE]</value>
-		<value>$LOCALIZE[31044]: Select a color from palette</value>
+		<value condition="Window.IsActive(Custom_1104_DialogOverlayColorPicker.xml) + Control.HasFocus(6)">$INFO[ListItem.Label] - [UPPERCASE]$INFO[ListItem.Label2,#][/UPPERCASE]</value>
+		<!-- <value>Select a color from palette</value> DEPRECATED-->
+		<value>$LOCALIZE[21480] [LOWERCASE]$LOCALIZE[1406] $LOCALIZE[31025] $LOCALIZE[19160] $LOCALIZE[424] &amp; $LOCALIZE[31305] $LOCALIZE[1406] $LOCALIZE[31440][/LOWERCASE].</value>
 	</variable>
 
 	<variable name="Def_Percent_To_Hex_Alpha">
@@ -2290,14 +2291,24 @@
 
 	<!-- Display Label -->
 	<variable name="Var_1105_DisplayLabel">
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">[COLOR dd00ff00]4K / UHD[/COLOR]</value>
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">[COLOR dd00ff00]WebDL[/COLOR]</value>
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">[COLOR dd00ff00]1080p[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">4K / UHD</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">WebDL</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">1080p</value>
 		<!-- Added 720p Logic -->
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">[COLOR dd00ff00]720p[/COLOR]</value>
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">[COLOR dd00ff00]DVD / SD[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">720p</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">DVD / SD</value>
 		<value>General</value>
 	</variable>
+
+	<!-- <variable name="Var_1105_DisplayLabel">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">[COLOR dd00ff00]4K / UHD[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">[COLOR dd00ff00]WebDL[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">[COLOR dd00ff00]1080p[/COLOR]</value> -->
+	<!-- Added 720p Logic -->
+	<!-- <value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">[COLOR dd00ff00]720p[/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">[COLOR dd00ff00]DVD / SD[/COLOR]</value>
+		<value>General</value>
+	</variable> -->
 
 	<!-- Preview Filename -->
 	<variable name="Var_1105_PreviewFile">
@@ -2321,15 +2332,33 @@
 		<value>Icons: White</value>
 	</variable>
 
-	<!-- Current Filename -->
+	<!-- =============================================================== -->
+	<!--  1105 Dialog Variables: Current Filename with Fallbacks         -->
+	<!-- =============================================================== -->
 	<variable name="Var_1105_CurrentFile">
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">$INFO[Skin.String(UserSel_Flag_4K)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">$INFO[Skin.String(UserSel_Flag_WebDL)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">$INFO[Skin.String(UserSel_Flag_1080p)]</value>
-		<!-- Added 720p Logic -->
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">$INFO[Skin.String(UserSel_Flag_720p)]</value>
-		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">$INFO[Skin.String(UserSel_Flag_DVD)]</value>
-		<value>$INFO[Skin.String(UserSel_Flag_General)]</value>
+		<!-- 4K / UHD Fallback Chain -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K) + !String.IsEmpty(Skin.String(UserSel_Flag_4K))">$INFO[Skin.String(UserSel_Flag_4K)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K)">4k.png</value>
+
+		<!-- WebDL Fallback Chain -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL) + !String.IsEmpty(Skin.String(UserSel_Flag_WebDL))">$INFO[Skin.String(UserSel_Flag_WebDL)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">webdl.png</value>
+
+		<!-- 1080p Fallback Chain -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p) + !String.IsEmpty(Skin.String(UserSel_Flag_1080p))">$INFO[Skin.String(UserSel_Flag_1080p)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">bluray.png</value>
+
+		<!-- 720p Fallback Chain -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p) + !String.IsEmpty(Skin.String(UserSel_Flag_720p))">$INFO[Skin.String(UserSel_Flag_720p)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">hdtv.png</value>
+
+		<!-- DVD / SD Fallback Chain -->
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD) + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">dvd.png</value>
+
+		<!-- General Fallback -->
+		<value condition="!String.IsEmpty(Skin.String(UserSel_Flag_General))">$INFO[Skin.String(UserSel_Flag_General)]</value>
+		<value>dvd.png</value>
 	</variable>
 
 	<!-- Current Icon Path: Uses The New Specific Path Variable -->
@@ -2338,14 +2367,98 @@
 	</variable>
 
 	<!-- =============================================================== -->
+	<!--  1105 Dialog Variables: Focus-Based Tooltips                    -->
+	<!-- =============================================================== -->
+	<variable name="Var_1105_TooltipText">
+		<!-- Color markup is applied here at the skin level; $LOCALIZE strings contain plain text only.      -->
+		<!-- Prefix strings (#31559–31566) are the colored labels; body strings (#31567–31583) are the rest. -->
+		<!-- "Palette Filter:" (#31564) is shared across all 7 category buttons (91–97).                    -->
+
+		<!-- Top Row Category Selectors -->
+		<value condition="Control.HasFocus(901)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31559][/COLOR] $LOCALIZE[31567]</value>
+		<value condition="Control.HasFocus(902)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31560][/COLOR] $LOCALIZE[31568]</value>
+		<value condition="Control.HasFocus(903)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31561][/COLOR] $LOCALIZE[31569]</value>
+		<value condition="Control.HasFocus(905)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31562][/COLOR] $LOCALIZE[31570]</value>
+		<value condition="Control.HasFocus(904)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31563][/COLOR] $LOCALIZE[31571]</value>
+
+		<!-- Left Menu Category Buttons (31564 "Palette Filter:" shared across all seven) -->
+		<value condition="Control.HasFocus(91)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31564][/COLOR] $LOCALIZE[31572]</value>
+		<value condition="Control.HasFocus(92)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31564][/COLOR] $LOCALIZE[31573]</value>
+		<value condition="Control.HasFocus(93)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31564][/COLOR] $LOCALIZE[31574]</value>
+		<value condition="Control.HasFocus(94)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31564][/COLOR] $LOCALIZE[31575]</value>
+		<value condition="Control.HasFocus(95)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31564][/COLOR] $LOCALIZE[31576]</value>
+		<value condition="Control.HasFocus(96)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31564][/COLOR] $LOCALIZE[31577]</value>
+		<value condition="Control.HasFocus(97)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31564][/COLOR] $LOCALIZE[31578]</value>
+		<value condition="Control.HasFocus(99)">$LOCALIZE[31579]</value>
+
+		<!-- Center Palette Grids -->
+		<value condition="ControlGroup(250).HasFocus">$LOCALIZE[31580]</value>
+
+		<!-- Right Actions -->
+		<value condition="Control.HasFocus(801)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31565][/COLOR] $LOCALIZE[31581]</value>
+		<value condition="Control.HasFocus(98)">[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[31566][/COLOR] $LOCALIZE[31582]</value>
+
+		<!-- Default / Idle State -->
+		<value>$LOCALIZE[31583]</value>
+	</variable>
+
+	<!-- =============================================================== -->
+	<!--  1105 Dialog Variables: Active Target Button Colors             -->
+	<!-- =============================================================== -->
+	<!-- Text Colors: White when active/selected, Grey when inactive -->
+	<variable name="Var_1105_Btn901_Color">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K) | [Window.IsActive(1105) + String.IsEmpty(Window(Home).Property(FlagEditMode))]">$VAR[PanelFocusTextColorVar]</value>
+		<value>$VAR[PanelSubTextColorVar]</value>
+	</variable>
+	<variable name="Var_1105_Btn902_Color">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">$VAR[PanelFocusTextColorVar]</value>
+		<value>$VAR[PanelSubTextColorVar]</value>
+	</variable>
+	<variable name="Var_1105_Btn903_Color">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">$VAR[PanelFocusTextColorVar]</value>
+		<value>$VAR[PanelSubTextColorVar]</value>
+	</variable>
+	<variable name="Var_1105_Btn905_Color">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">$VAR[PanelFocusTextColorVar]</value>
+		<value>$VAR[PanelSubTextColorVar]</value>
+	</variable>
+	<variable name="Var_1105_Btn904_Color">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">$VAR[PanelFocusTextColorVar]</value>
+		<value>$VAR[PanelSubTextColorVar]</value>
+	</variable>
+
+	<!-- Background Colors: Accent Color when active/selected, Dark Grey when inactive -->
+	<variable name="Var_1105_Btn901_BgColor">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),4K) | [Window.IsActive(1105) + String.IsEmpty(Window(Home).Property(FlagEditMode))]">$VAR[PanelHighlightColorVar]</value>
+		<value>FF161515</value>
+		<!-- Matches native Madnox dark button background -->
+	</variable>
+	<variable name="Var_1105_Btn902_BgColor">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)">$VAR[PanelHighlightColorVar]</value>
+		<value>FF161515</value>
+	</variable>
+	<variable name="Var_1105_Btn903_BgColor">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),1080p)">$VAR[PanelHighlightColorVar]</value>
+		<value>FF161515</value>
+	</variable>
+	<variable name="Var_1105_Btn905_BgColor">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),720p)">$VAR[PanelHighlightColorVar]</value>
+		<value>FF161515</value>
+	</variable>
+	<variable name="Var_1105_Btn904_BgColor">
+		<value condition="String.IsEqual(Window(Home).Property(FlagEditMode),DVD)">$VAR[PanelHighlightColorVar]</value>
+		<value>FF161515</value>
+	</variable>
+
+	<!-- =============================================================== -->
 	<!--  Cinema Mode Variables                                          -->
 	<!-- =============================================================== -->
 
 	<variable name="CinemaAssetsStatusIcon">
 		<!-- Valid: Green "OK" -->
-		<value condition="String.IsEqual(Skin.String(CinemaAssetsStatus),Valid)">[COLOR FF66BB66]OK[/COLOR]</value>
+		<value condition="String.IsEqual(Skin.String(CinemaAssetsStatus),Valid)">[COLOR FF66BB66]OK  ✓[/COLOR]</value>
 		<!-- Invalid: Red "REPAIR" -->
-		<value condition="String.IsEqual(Skin.String(CinemaAssetsStatus),Invalid)">[COLOR FFCC4444]REPAIR[/COLOR]</value>
+		<value condition="String.IsEqual(Skin.String(CinemaAssetsStatus),Invalid)">[COLOR FFCC4444]REPAIR  ✕[/COLOR]</value>
 		<!-- Default: Empty -->
 		<value />
 	</variable>
@@ -2431,6 +2544,11 @@
 		<value>FF161515</value>
 	</variable>
 
+	<include name="SettingsLabelNoOffset">
+		<textoffsetx>0</textoffsetx>
+		<textoffsety>0</textoffsety>
+	</include>
+
 	<variable name="OSDHelpTextVar">
 		<!-- ========================================== -->
 		<!-- 1. MUSIC OSD SPECIFIC CONTROLS             -->
@@ -2508,46 +2626,13 @@
 		<value condition="Control.HasFocus(210) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[264]</value>
 	</variable>
 
-	<!-- <variable name="VideoOSDHelpTextVar">
-		<value condition="Control.HasFocus(101)">$LOCALIZE[13395]</value>
-		<value condition="Control.HasFocus(102)">$LOCALIZE[157] [LOWERCASE]$LOCALIZE[21483] $LOCALIZE[5][/LOWERCASE]</value>
-
-		<value condition="Control.HasFocus(201) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[19029] $LOCALIZE[31452]</value>
-		<value condition="Control.HasFocus(202) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[19029] $LOCALIZE[31539]</value>
-		<value condition="Control.HasFocus(203) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[210]</value>
-		<value condition="Control.HasFocus(204) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31199]</value>
-		<value condition="Control.HasFocus(205) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31536]</value>
-		<value condition="Control.HasFocus(206) + Player.Paused + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[208]</value>
-		<value condition="Control.HasFocus(206) + !Player.Paused + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31535]</value>
-		<value condition="Control.HasFocus(208) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[31198]</value>
-		<value condition="Control.HasFocus(209) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[209]</value>
-		<value condition="Control.HasFocus(210) + Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)">$LOCALIZE[264]</value>
-
-		<value condition="Control.HasFocus(301) + Playlist.IsRepeatOne">$LOCALIZE[596]</value>
-		<value condition="Control.HasFocus(301) + Playlist.IsRepeat">$LOCALIZE[597]</value>
-		<value condition="Control.HasFocus(301)">$LOCALIZE[595]</value>
-		<value condition="Control.HasFocus(303)">$LOCALIZE[590]</value>
-		<value condition="Control.HasFocus(305)">$LOCALIZE[19033]</value>
-		<value condition="Control.HasFocus(306)">$LOCALIZE[298]</value>
-		<value condition="Control.HasFocus(307)">$LOCALIZE[460]</value>
-		<value condition="Control.HasFocus(308)">$LOCALIZE[24012]</value>
-		<value condition="Control.HasFocus(309)">$LOCALIZE[19287]</value>
-		<value condition="Control.HasFocus(310)">$LOCALIZE[19069]</value>
-
-		Old imported trash, delete upon completion
-		<value condition="Control.HasFocus(87) + !Player.Paused">$LOCALIZE[31054]</value>
-		<value condition="Control.HasFocus(87) + [Player.Paused + Window.IsVisible(videoosd)]">$LOCALIZE[31055]</value>
-		<value condition="Control.HasFocus(608)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
-		<value condition="Control.HasFocus(804)">$LOCALIZE[33061]</value>
-		<value condition="Control.HasFocus(70040)">$LOCALIZE[19019]</value>
-		<value condition="Control.HasFocus(70042)">$LOCALIZE[31065]</value>
-		<value condition="Control.HasFocus(70047)">$LOCALIZE[36501]</value>
-		<value condition="Control.HasFocus(70050)">$LOCALIZE[29900]</value>
-		<value condition="Control.HasFocus(70051)">$LOCALIZE[31066]</value>
-		<value condition="Control.HasFocus(70052)">$LOCALIZE[31033]$INFO[MusicPlayer.UserRating, : ]</value>
-		<value condition="Control.HasFocus(70053)">$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</value>
-		<value condition="Control.HasFocus(70054) + Playlist.IsRandom">$LOCALIZE[590]: $LOCALIZE[16041]</value>
-		<value condition="Control.HasFocus(70054)">$LOCALIZE[590]: $LOCALIZE[16039]</value>
-		<value condition="Control.HasFocus(70055)">$LOCALIZE[24013]</value>
-	</variable> -->
+	<!-- =============================================================== -->
+	<!--  Madnox moon variable                                  -->
+	<!-- =============================================================== -->
+	<variable name="MadnoxMoonPhaseIconVar">
+		<!-- Route to the resource addon folder when the property is present -->
+		<value condition="!String.IsEmpty(Window(weather).Property(Today.MoonPhaseIcon))">resource://resource.images.skin.madnox/weather/moon/$INFO[Window(weather).Property(Today.MoonPhaseIcon)].png</value>
+		<!-- Fallback if the property is missing -->
+		<value>resource://resource.images.skin.madnox/weather/moon/default.png</value>
+	</variable>
 </includes>

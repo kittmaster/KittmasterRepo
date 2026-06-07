@@ -4654,7 +4654,7 @@
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>
 			<item>
-				<label>31023</label>
+				<label>31497</label>
 				<label2>$INFO[System.Memory(total)] $LOCALIZE[20161]</label2>
 				<icon>icons/systeminfo/icons/memory.png</icon>
 				<property name="fanart">icons/systeminfo/fanart/memory.jpg</property>
@@ -4910,7 +4910,7 @@
 		<match>any</match>
 		<controls>
 			<item>
-				<label>31023</label>
+				<label>31497</label>
 				<label2>$INFO[System.Memory(total)] $LOCALIZE[20161]</label2>
 				<icon>icons/systeminfo/icons/memory.png</icon>
 				<property name="fanart">icons/systeminfo/fanart/memory.jpg</property>

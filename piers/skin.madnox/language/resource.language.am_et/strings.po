@@ -1,0 +1,2842 @@
+# Kodi Media Center language file
+# Addon Name: Madnox Redux
+# Addon id: skin.madnox.redux
+# Addon Provider: Team Madnox
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Amharic (Ethiopia)\n"
+"Language: am_et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /16x9/DialogAddonSettings.xml /16x9/Variables.xml /16x9/DialogTextViewer.xml /16x9/Custom_1100_TextViewer.xml /16x9/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31000"
+msgid "Page"
+msgstr "ገጽ"
+
+#: /16x9/DialogAddonSettings.xml /16x9/DialogMediaSource.xml /16x9/Includes_CommonObjects.xml /16x9/Variables.xml /16x9/DialogFavourites.xml /16x9/Includes_Dialogs.xml /16x9/Custom_1110_CustomSelectContainer.xml /16x9/DialogSettings.xml /16x9/DialogSubtitles.xml
+msgctxt "#31001"
+msgid "Items"
+msgstr "ንጥሎች"
+
+#: /16x9/Home.xml /16x9/Variables.xml /16x9/Custom_1111_Topbar.xml
+msgctxt "#31002"
+msgid "Now playing"
+msgstr "አሁን በመጫወት ላይ"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31003"
+msgid "Order"
+msgstr "ቅደም ተከተል"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31004"
+msgid "Weather background"
+msgstr "የአየር ሁኔታ ዳራ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31007"
+msgid "Single image"
+msgstr "ነጠላ ምስል"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31008"
+msgid "Multi image"
+msgstr "ብዙ ምስል"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31009"
+msgid "Music discart fallback"
+msgstr "የሙዚቃ ሲዲ ምስል አማራጭ"
+
+#: /16x9/SmartPlaylistEditor.xml
+msgctxt "#31010"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "ስማርት የጨዋታ ዝርዝር ለመፍጠር ዓይነት ይምረጡ እና ደንቦችን ያክሉ። እነዚህ የጨዋታ ዝርዝሮች ተለዋዋጭ ሲሆኑ ከመረጧቸው ደንቦች ጋር የሚስማሙ ሁሉንም የሚዲያ ንጥሎች ከመረጃ ቋትዎ ያካትታሉ።"
+
+#: /16x9/Variables.xml
+msgctxt "#31011"
+msgid "Returning"
+msgstr "ተመላሽ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31016"
+msgid "Smaller pop-up notifications"
+msgstr "አነስተኛ ብቅ ባይ ማሳወቂያዎች"
+
+#: /16x9/Home.xml /16x9/SkinSettings.xml
+msgctxt "#31017"
+msgid "Edit main menu"
+msgstr "ዋናውን ማውጫ አርትዕ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31019"
+msgid "Show scroll letter"
+msgstr "የማሸብለያ ፊደል አሳይ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31020"
+msgid "Dim screen on dialog popup"
+msgstr "በንግግር ሳጥን ብቅ ባይ ወቅት ማያ ገጹን አደብዝዝ"
+
+#: /16x9/Home.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31021"
+msgid "Area"
+msgstr "አካባቢ"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31025"
+msgid "Palette"
+msgstr "ፓሌት"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31028"
+msgid "Manage"
+msgstr "አስተዳድር"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31030"
+msgid "Music now playing background"
+msgstr "አሁን የሚጫወት የሙዚቃ ዳራ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31034"
+msgid "Weather icons"
+msgstr "የአየር ሁኔታ ምልክቶች"
+
+#: /16x9/Variables.xml
+msgctxt "#31035"
+msgid "Extra fanart"
+msgstr "ተጨማሪ የደጋፊ ስነ-ጥበብ"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31036"
+msgid "Fallback"
+msgstr "አማራጭ"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31038"
+msgid "Animated background"
+msgstr "ተንቀሳቃሽ ዳራ"
+
+#: /16x9/Home.xml /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml
+msgctxt "#31039"
+msgid "Widgets"
+msgstr "ዊድጄቶች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31040"
+msgid "Settings menu"
+msgstr "የቅንብሮች ማውጫ"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31041"
+msgid "Main menu"
+msgstr "ዋና ማውጫ"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31042"
+msgid "Top bar"
+msgstr "የላይኛው አሞሌ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31043"
+msgid "Fixed list"
+msgstr "የተስተካከለ ዝርዝር"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31044"
+msgid "Palette color selected"
+msgstr "የተመረጠው የፓሌት ቀለም"
+
+#: /16x9/Custom_1111_Topbar.xml
+msgctxt "#31046"
+msgid "Item Count"
+msgstr "የንጥሎች ብዛት"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_Colors.xml
+msgctxt "#31047"
+msgid "Floor"
+msgstr "ወለል"
+
+#: /16x9/SkinSettings.xml /16x9/DialogColorPicker.xml
+msgctxt "#31048"
+msgid "Palette selected"
+msgstr "ፓሌት ተመርጧል"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31049"
+msgid "Highlight"
+msgstr "አጉላ"
+
+#: /16x9/script-skinshortcuts.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31050"
+msgid "Info line"
+msgstr "የመረጃ መስመር"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/SkinSettings.xml
+msgctxt "#31051"
+msgid "Texture"
+msgstr "ሸካራነት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31052"
+msgid "Coloured"
+msgstr "ቀለም ያለው"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31053"
+msgid "Country icons"
+msgstr "የሀገር ምልክቶች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31055"
+msgid "Weather fanart"
+msgstr "የአየር ሁኔታ ደጋፊ ስነ-ጥበብ"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31056"
+msgid "Panel"
+msgstr "ፓነል"
+
+#: /16x9/Variables.xml /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31057"
+msgid "Seasons"
+msgstr "ወቅቶች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31059"
+msgid "Layout"
+msgstr "አቀማመጥ"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31060"
+msgid "Language flags"
+msgstr "የቋንቋ ሰንደቅ ዓላማዎች"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml /16x9/script-skinshortcuts.xml
+msgctxt "#31061"
+msgid "Icon"
+msgstr "ምልክት"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31063"
+msgid "On air"
+msgstr "በአየር ላይ"
+
+#: /16x9/Includes_MediaFlags.xml
+msgctxt "#31064"
+msgid "Last aired"
+msgstr "ለመጨረሻ ጊዜ የተላለፈው"
+
+#: /16x9/Custom_1117_MusicVisSettings.xml
+msgctxt "#31069"
+msgid "Lyrics add-on settings"
+msgstr "የግጥም ተጨማሪ ቅንብሮች"
+
+#: /16x9/View_700_RightList.xml
+msgctxt "#31071"
+msgid "Right list"
+msgstr "የቀኝ ዝርዝር"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31072"
+msgid "Artisans behind the scenes"
+msgstr "ከጀርባ ያሉ ባለሙያዎች"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31073"
+msgid "Video decoder"
+msgstr "የቪዲዮ ዲኮደር"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31074"
+msgid "Pixel format"
+msgstr "የፒክሰል ቅርጸት"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31075"
+msgid "Decoding"
+msgstr "መፍታት"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31076"
+msgid "Movie set cover background"
+msgstr "የፊልም ስብስብ ሽፋን ዳራ"
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31077"
+msgid "Signal"
+msgstr "ሲግናል"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31078"
+msgid "Furniture"
+msgstr "ዕቃዎች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31081"
+msgid "Media menu buttons"
+msgstr "የሚዲያ ማውጫ አዝራሮች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31082"
+msgid "Info dialogs"
+msgstr "የመረጃ ንግግር ሳጥኖች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31083"
+msgid "Favourites script"
+msgstr "የተመረጡ ስክሪፕቶች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31084"
+msgid "Case"
+msgstr "ሳጥን"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31086"
+msgid "Video playlist"
+msgstr "የቪዲዮ አጫዋች ዝርዝር"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31088"
+msgid "Trakt"
+msgstr "ትራክት"
+
+#: /16x9/MyVideoNav.xml
+msgctxt "#31089"
+msgid "Add node"
+msgstr "ኖድ ያክሉ"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31090"
+msgid "Daily"
+msgstr "ዕለታዊ"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31091"
+msgid "Map"
+msgstr "ካርታ"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31092"
+msgid "Overview"
+msgstr "አጠቃላይ እይታ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31094"
+msgid "Restore"
+msgstr "ወደ ነበረበት መልስ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31098"
+msgid "Kiosk mode"
+msgstr "የኪዮስክ ሁነታ"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31100"
+msgid "Screen ensemble"
+msgstr "የማያ ገጽ ስብስብ"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31101"
+msgid "YouTube"
+msgstr "ዩቲዩብ"
+
+#: /16x9/script-skinshortcuts.xml /16x9/SkinSettings.xml /16x9/variables.xml
+msgctxt "#31103"
+msgid "Live background"
+msgstr "የቀጥታ ስርጭት ዳራ"
+
+#: /16x9/DialogSubtitles.xml
+msgctxt "#31104"
+msgid "Local subtitles available"
+msgstr "የአገር ውስጥ ንዑስ ርዕሶች አሉ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31106"
+msgid "Global"
+msgstr "አለምአቀፍ"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31107"
+msgid "background"
+msgstr "ዳራ"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31108"
+msgid "Disc art"
+msgstr "የሲዲ ስነ-ጥበብ"
+
+#: /16x9/DialogVideoInfo.xml
+msgctxt "#31110"
+msgid "Similar"
+msgstr "ተመሳሳይ"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31111"
+msgid "Production details"
+msgstr "የምርት ዝርዝሮች"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31112"
+msgid "Movie Roles"
+msgstr "የፊልም ሚናዎች"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31113"
+msgid "TV Roles"
+msgstr "የቴሌቪዥን ሚናዎች"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31114"
+msgid "Carbon"
+msgstr "ካርቦን"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31115"
+msgid "Pixels"
+msgstr "ፒክሰሎች"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31116"
+msgid "Steel plate"
+msgstr "የብረት ሳህን"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31117"
+msgid "Wallpaper"
+msgstr "የግድግዳ ወረቀት"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31118"
+msgid "Wood"
+msgstr "እንጨት"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31119"
+msgid "Wrinkles"
+msgstr "ሽብሽባቶች"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31120"
+msgid "Facebook"
+msgstr "ፌስቡክ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31121"
+msgid "Icons wide"
+msgstr "ሰፊ ምልክቶች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31122"
+msgid "Big icons wide"
+msgstr "ትላልቅ ሰፊ ምልክቶች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31123"
+msgid "Clearlogo"
+msgstr "ግልጽ ሎጎ"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31124"
+msgid "Required"
+msgstr "አስፈላጊ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31125"
+msgid "Instagram"
+msgstr "ኢንስታግራም"
+
+#: /16x9/Custom_1114_Addons.xml
+msgctxt "#31126"
+msgid "Optional"
+msgstr "ከተፈለገ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31127"
+msgid "RSS"
+msgstr "አርኤስኤስ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31128"
+msgid "Dialog"
+msgstr "ንግግር"
+
+#: /16x9/Variables.xml /16x9/SkinSettings.xml
+msgctxt "#31130"
+msgid "Square"
+msgstr "ካሬ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31131"
+msgid "Emboss"
+msgstr "ቅርጽ ማውጣት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31132"
+msgid "texture"
+msgstr "ሸካራነት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31133"
+msgid "Pattern"
+msgstr "ንድፍ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31134"
+msgid "Gradient"
+msgstr "ቀስ በቀስ ቀለም"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31135"
+msgid "Brushed"
+msgstr "የተቦረሸ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31136"
+msgid "Text"
+msgstr "ጽሑፍ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31137"
+msgid "Subtext"
+msgstr "ንዑስ ጽሑፍ"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31138"
+msgid "Focus text"
+msgstr "ትኩረት ጽሑፍ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31139"
+msgid "List separator"
+msgstr "የዝርዝር መለያ"
+
+#: 31140 /16x9/SkinSettings.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31141"
+msgid "System bar"
+msgstr "የስርዓት አሞሌ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31142"
+msgid "Submenu bar"
+msgstr "የንዑስ ማውጫ አሞሌ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31143"
+msgid "RSS bar"
+msgstr "የአርኤስኤስ አሞሌ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31145"
+msgid "Effects"
+msgstr "ውጤቶች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31146"
+msgid "Leaves"
+msgstr "ቅጠሎች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31147"
+msgid "Confetti"
+msgstr "ኮንፈቲ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31148"
+msgid "Valentine"
+msgstr "ቫለንታይን"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31149"
+msgid "Easter"
+msgstr "ፋሲካ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables_Themes.xml
+msgctxt "#31150"
+msgid "Concrete"
+msgstr "ኮንክሪት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31151"
+msgid "Media menu"
+msgstr "የሚዲያ ማውጫ"
+
+#: /16x9/Variables.xml
+msgctxt "#31153"
+msgid "PVR channels"
+msgstr "የPVR ጣቢያዎች"
+
+#: /16x9/Variables.xml /shortcuts/overrides.xml
+msgctxt "#31154"
+msgid "Movies and TV shows"
+msgstr "ፊልሞች እና የቴሌቪዥን ትዕይንቶች"
+
+#: /16x9/SkinSettings.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31159"
+msgid "Now playing progress"
+msgstr "አሁን በመጫወት ላይ ያለ እድገት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31160"
+msgid "Top bar / Main menu bars"
+msgstr "የላይኛው አሞሌ / ዋና ማውጫ አሞሌዎች"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31162"
+msgid "Character art"
+msgstr "የባህሪ ስነ-ጥበብ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31164"
+msgid "Blur background"
+msgstr "የደበዘዘ ዳራ"
+
+#: /16x9/Variables.xml /16x9/Includes_CustomSelect.xml
+msgctxt "#31165"
+msgid "Clear art"
+msgstr "ግልጽ ስነ-ጥበብ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31166"
+msgid "Replace play with cinema mode"
+msgstr "በሲኒማ ሁነታ ማጫወትን ይተኩ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31169"
+msgid "X (Twitter)"
+msgstr "ኤክስ (ትዊተር)"
+
+#: /16x9/Includes_MediaMenu.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31170"
+msgid "Audio info"
+msgstr "የድምጽ መረጃ"
+
+#: /16x9/Variables.xml /shortcuts/mainmenu.DATA.xml /shortcuts/overrides.xml
+msgctxt "#31173"
+msgid "Live TV"
+msgstr "ቀጥታ ቴሌቪዥን"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31174"
+msgid "Disabled text"
+msgstr "የጠፋ ጽሑፍ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31175"
+msgid "Default texture"
+msgstr "ነባሪ ሸካራነት"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31181"
+msgid "Video background"
+msgstr "የቪዲዮ ዳራ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31182"
+msgid "Vinyl"
+msgstr "ቪኒል"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31183"
+msgid "TikTok"
+msgstr "ቲክቶክ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31184"
+msgid "Show Madnox logo at startup"
+msgstr "በጅማሬ ላይ የMadnox አርማ አሳይ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31185"
+msgid "Filename"
+msgstr "የፋይል ስም"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31186"
+msgid "Golden"
+msgstr "ወርቃማ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31187"
+msgid "Skin Variables helps skinners to construct variables and expressions for multiple containers and listitems using a template."
+msgstr "የቆዳ ተለዋዋጮች የቆዳ አዘጋጆች ለአንድሮይድ እና ለሌሎች ኮንቴይነሮች ተለዋዋጮችን እንዲገነቡ ይረዳል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31188"
+msgid "Creator"
+msgstr "ፈጣሪ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31189"
+msgid "Select this option if you want to disable showing the Madnox logo when Kodi is loading the skin on startup. You will still see the spinning blue circle to show loading progress."
+msgstr "Kodi በጅማሬ ላይ ቆዳውን ሲጭን የMadnox አርማ እንዳይታይ ለማድረግ ይህንን አማራጭ ይምረጡ። የመጫን ሂደቱን ለማሳየት የሚሽከረከረውን ሰማያዊ ክብ አሁንም ያያሉ።"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31190"
+msgid "Purple"
+msgstr "ሐምራዊ"
+
+#: /16x9/Includes_SkinSettings.xml
+msgctxt "#31191"
+msgid "Movies & TV shows / Seasons-Episode display"
+msgstr "ፊልሞች እና የቴሌቪዥን ትዕይንቶች / ወቅቶች-ክፍሎች ማሳያ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31193"
+msgid "On info"
+msgstr "በመረጃ ላይ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Variables.xml
+msgctxt "#31194"
+msgid "Persistant"
+msgstr "ቀጣይነት ያለው"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31195"
+msgid "Animated"
+msgstr "ተንቀሳቃሽ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31196"
+msgid "Background now playing info"
+msgstr "አሁን በመጫወት ላይ ያለ የመረጃ ዳራ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31197"
+msgid "Most recognized as"
+msgstr "በይበልጥ የሚታወቀው በ"
+
+#: /16x9/Variables.xml
+msgctxt "#31198"
+msgid "Forward"
+msgstr "ወደ ፊት"
+
+#: /16x9/Variables.xml
+msgctxt "#31199"
+msgid "Rewind"
+msgstr "ወደ ኋላ"
+
+#: /16x9/Variables.xml
+msgctxt "#31200"
+msgid "Internet stream"
+msgstr "የበይነመረብ ፍሰት"
+
+#: /16x9/Variables.xml
+msgctxt "#31201"
+msgid "Landscape"
+msgstr "አግድም"
+
+#: /16x9/Variables.xml
+msgctxt "#31202"
+msgid "Clear logo"
+msgstr "ግልጽ አርማ"
+
+#: /16x9/Variables.xml
+msgctxt "#31203"
+msgid "Portrait"
+msgstr "ቁም"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31204"
+msgid "Recently released"
+msgstr "በቅርቡ የወጣ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31205"
+msgid "Recommended"
+msgstr "የተመከረ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31206"
+msgid "Most played"
+msgstr "በብዛት የተጫወተ"
+
+#: /16x9/Variables.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31210"
+msgid "Big"
+msgstr "ትልቅ"
+
+#: /16x9/Includes_CustomSelect.xml /16x9/Includes_MediaMenu.xml
+msgctxt "#31211"
+msgid "Movie/TV show info"
+msgstr "የፊልም/የቲቪ ትዕይንት መረጃ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31212"
+msgid "Select how long, in seconds, before the movie rows metadata grid slides left or right (If greater than 8 items)."
+msgstr "የፊልም ረድፎች ዲጂታል መረጃ ወደ ግራ ወይም ወደ ቀኝ ከመንሸራተቱ በፊት ስንት ሰከንዶች እንደሚቆይ ይምረጡ (ከ8 ንጥሎች በላይ ከሆነ)።"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31214"
+msgid "Reflect"
+msgstr "ማንጸባረቅ"
+
+#: /16x9/View_051_SimpleList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31215"
+msgid "Simple list"
+msgstr "ቀላል ዝርዝር"
+
+#: /16x9/View_053_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31219"
+msgid "Info list 1"
+msgstr "የመረጃ ዝርዝር 1"
+
+#: /16x9/View_054_InfoList1.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31221"
+msgid "Info list 2"
+msgstr "የመረጃ ዝርዝር 2"
+
+#: /16x9/View_55_LowList.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31223"
+msgid "Low list"
+msgstr "ዝቅተኛ ዝርዝር"
+
+#: /16x9/View_56_3Panel.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31225"
+msgid "3 panel"
+msgstr "ባለ 3 ፓነል"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31227"
+msgid "Select how long, in seconds, before the persons row metadata grid slides left or right (If greater than 8 items)."
+msgstr "የሰዎች ረድፍ ዲጂታል መረጃ ወደ ግራ ወይም ወደ ቀኝ ከመንሸራተቱ በፊት ስንት ሰከንዶች እንደሚቆይ ይምረጡ (ከ8 ንጥሎች በላይ ከሆነ)።"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31228"
+msgid "Trailer preview"
+msgstr "የፊልም ማስታወቂያ ቅድመ-እይታ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31229"
+msgid "Icon size"
+msgstr "የምልክት መጠን"
+
+#: /16x9/View_553_ShowCase.xml
+msgctxt "#31230"
+msgid "Showcase"
+msgstr "ማሳያ ሳጥን"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31231"
+msgid "2 thumbs"
+msgstr "2 ጥፍር አውራ ጣቶች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31232"
+msgid "4 thumbs"
+msgstr "4 ጥፍር አውራ ጣቶች"
+
+#: /16x9/View_57_3PanelSquare.xml /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31233"
+msgid "3 panel square"
+msgstr "ባለ 3 ፓነል ካሬ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31234"
+msgid "Media flags"
+msgstr "የሚዲያ ምልክቶች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31235"
+msgid "Small icons"
+msgstr "ትናንሽ ምልክቶች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31236"
+msgid "Album case"
+msgstr "የአልበም ሳጥን"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31237"
+msgid "Video case"
+msgstr "የቪዲዮ ሳጥን"
+
+#: /16x9/View_051_SimpleList.xml
+msgctxt "#31238"
+msgid "Cover list"
+msgstr "የሽፋን ዝርዝር"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31239"
+msgid "Cover flow portrait"
+msgstr "የሽፋን ፍሰት ቁም"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31241"
+msgid "Cover flow square"
+msgstr "የሽፋን ፍሰት ካሬ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31242"
+msgid "Cover flow banner"
+msgstr "የሽፋን ፍሰት ባነር"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31243"
+msgid "Cover flow landscape"
+msgstr "የሽፋን ፍሰት አግድም"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31244"
+msgid "Open case"
+msgstr "ክፍት ሳጥን"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31245"
+msgid "Focus"
+msgstr "ትኩረት"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31246"
+msgid "Cascade"
+msgstr "ደረጃ በደረጃ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31247"
+msgid "Kodiflix"
+msgstr "ኮዲፍሊክስ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31248"
+msgid "Portrait icon"
+msgstr "የቁም ምልክት"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31249"
+msgid "Banner icon"
+msgstr "የባነር ምልክት"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31250"
+msgid "Landscape icon"
+msgstr "የአግድም ምልክት"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31251"
+msgid "Portrait icon info"
+msgstr "የቁም ምልክት መረጃ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31252"
+msgid "Banner icon info"
+msgstr "የባነር ምልክት መረጃ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31253"
+msgid "Landscape icon info"
+msgstr "የአግድም ምልክት መረጃ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31254"
+msgid "Portrait wall"
+msgstr "የቁም ግድግዳ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31255"
+msgid "Square wall"
+msgstr "የካሬ ግድግዳ"
+
+#: /16x9/View_542_BannerWall.xml
+msgctxt "#31256"
+msgid "Banner wall"
+msgstr "የባነር ግድግዳ"
+
+#: /16x9/View_543_LandscapeWall.xml
+msgctxt "#31257"
+msgid "Landscape wall"
+msgstr "የአግድም ግድግዳ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31258"
+msgid "Focus square"
+msgstr "የትኩረት ካሬ"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31259"
+msgid "Cover"
+msgstr "ሽፋን"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31260"
+msgid "Square icon"
+msgstr "የካሬ ምልክት"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31261"
+msgid "Square icon info"
+msgstr "የካሬ ምልክት መረጃ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31262"
+msgid "Kodiflix square"
+msgstr "ኮዲፍሊክስ ካሬ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31263"
+msgid "Cascade square"
+msgstr "ደረጃ በደረጃ ካሬ"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31264"
+msgid "Showcase square"
+msgstr "ማሳያ ሳጥን ካሬ"
+
+#: /16x9/Custom_1115_ViewSettings.xml
+msgctxt "#31265"
+msgid "Kodiflix landscape"
+msgstr "ኮዲፍሊክስ አግድም"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31266"
+msgid "Simple"
+msgstr "ቀላል"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31267"
+msgid "Info 1"
+msgstr "መረጃ 1"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31268"
+msgid "Info 2"
+msgstr "መረጃ 2"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31269"
+msgid "Cover flow"
+msgstr "የሽፋን ፍሰት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31270"
+msgid "Enable/Disable views"
+msgstr "ዕይታዎችን አግብር/አጥፋ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31271"
+msgid "Icon info"
+msgstr "የምልክት መረጃ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31272"
+msgid "Wall"
+msgstr "ግድግዳ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31273"
+msgid "Info delay"
+msgstr "የመረጃ መዘግየት"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31274"
+msgid "Install genre icons"
+msgstr "የዘውግ ምልክቶችን ይጫኑ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31275"
+msgid "B/W genre icons"
+msgstr "ጥቁር እና ነጭ የዘውግ ምልክቶች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31276"
+msgid "Install colour genre icons"
+msgstr "ባለቀለም የዘውግ ምልክቶችን ይጫኑ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31277"
+msgid "Install B/W genre icons"
+msgstr "ጥቁር እና ነጭ የዘውግ ምልክቶችን ይጫኑ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31279"
+msgid "TV shows season & returning text"
+msgstr "የቲቪ ትዕይንቶች ወቅት እና ተመላሽ ጽሑፍ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31280"
+msgid "Next aired"
+msgstr "በመቀጠል የሚተላለፈው"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31281"
+msgid "Panels"
+msgstr "ፓነሎች"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31282"
+msgid "Mud"
+msgstr "ጭቃ"
+
+#: /16x9/Variables_Themes.xml
+msgctxt "#31283"
+msgid "Plain"
+msgstr "ቀላል"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31284"
+msgid "Shadow texture"
+msgstr "የጥላ ሸካራነት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31285"
+msgid "Themes & Colours"
+msgstr "ጭብጦች እና ቀለሞች"
+
+#: /16x9/Home.xml
+msgctxt "#31286"
+msgid "Menus"
+msgstr "ማውጫዎች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31287"
+msgid "Shortcut menu"
+msgstr "የአቋራጭ ማውጫ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31288"
+msgid "Hide"
+msgstr "ደብቅ"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31289"
+msgid "Widget"
+msgstr "ዊድጄት"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31291"
+msgid "Music case"
+msgstr "የሙዚቃ ሳጥን"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31292"
+msgid "Custom favourites"
+msgstr "የተበጁ ተወዳጆች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31293"
+msgid "Favourite"
+msgstr "ተወዳጅ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31294"
+msgid "Custom favourite addons"
+msgstr "የተበጁ ተወዳጅ ተጨማሪዎች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31295"
+msgid "Cinema mode"
+msgstr "የሲኒማ ሁነታ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31296"
+msgid "Trailer count"
+msgstr "የፊልም ማስታወቂያ ብዛት"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31297"
+msgid "Intro path"
+msgstr "የመግቢያ መንገድ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31298"
+msgid "Select theme"
+msgstr "ጭብጥ ይምረጡ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31299"
+msgid "Video discart fallback"
+msgstr "የቪዲዮ ሲዲ ምስል አማራጭ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31300"
+msgid "Customise"
+msgstr "አብጅ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31301"
+msgid "Channel number"
+msgstr "የጣቢያ ቁጥር"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31302"
+msgid "Channel name"
+msgstr "የጣቢያ ስም"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31303"
+msgid "Repository"
+msgstr "ማከማቻ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31304"
+msgid "Progress bar"
+msgstr "የእድገት አሞሌ"
+
+#: /16x9/DialogPVRChannelManager.xml
+msgctxt "#31305"
+msgid "Apply"
+msgstr "ተግብር"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31306"
+msgid "TV Show season cover background"
+msgstr "የቲቪ ትዕይንት ወቅት ሽፋን ዳራ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31307"
+msgid "Genre cover background"
+msgstr "የዘውግ ሽፋን ዳራ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31308"
+msgid "Artist album cover background"
+msgstr "የአርቲስት አልበም ሽፋን ዳራ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31310"
+msgid "Fanart rotation speed"
+msgstr "የደጋፊ ስነ-ጥበብ ማሽከርከሪያ ፍጥነት"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31311"
+msgid "seconds"
+msgstr "ሰከንዶች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31312"
+msgid "Fullscreen audio"
+msgstr "ሙሉ ማያ ገጽ ድምጽ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31313"
+msgid "Jump to letter"
+msgstr "ወደ ፊደል ዝለል"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31314"
+msgid "Disable library fanart"
+msgstr "የቤተ-መጽሐፍት ደጋፊ ስነ-ጥበብን አሰናክል"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31315"
+msgid "Music background"
+msgstr "የሙዚቃ ዳራ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31317"
+msgid "PVR status"
+msgstr "የPVR ሁኔታ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31318"
+msgid "TV status"
+msgstr "የቲቪ ሁኔታ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31319"
+msgid "Radio status"
+msgstr "የራዲዮ ሁኔታ"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31322"
+msgid "PVR widget"
+msgstr "የPVR ዊድጄት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31323"
+msgid "Movie & TV shows meta countdown timer text"
+msgstr "የፊልም እና የቲቪ ትዕይንቶች የኋላ ቆጠራ ጽሑፍ"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31324"
+msgid "Movie/Episode case"
+msgstr "የፊልም/የክፍል ሳጥን"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31325"
+msgid "Movie/TV show case"
+msgstr "የፊልም/የቲቪ ትዕይንት ሳጥን"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31326"
+msgid "Music video case"
+msgstr "የሙዚቃ ቪዲዮ ሳጥን"
+
+#: /16x9/Includes_NowPlaying.xml
+msgctxt "#31327"
+msgid "Special"
+msgstr "ልዩ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31328"
+msgid "Show media flags"
+msgstr "የሚዲያ ምልክቶችን አሳይ"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31330"
+msgid "Video info settings"
+msgstr "የቪዲዮ መረጃ ቅንብሮች"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31331"
+msgid "Create"
+msgstr "ፍጠር"
+
+#: /16x9/VideoOSDBookmarks.xml
+msgctxt "#31332"
+msgid "Set episode"
+msgstr "ክፍል ይወስኑ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31333"
+msgid "Seek icon"
+msgstr "የመፈለጊያ ምልክት"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31334"
+msgid "Visualisation presets"
+msgstr "የዕይታ ቅድመ-ቅንብሮች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31335"
+msgid "Visualisation options"
+msgstr "የዕይታ አማራጮች"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31336"
+msgid "Music settings"
+msgstr "የሙዚቃ ቅንብሮች"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31337"
+msgid "Audio view settings"
+msgstr "የድምጽ ዕይታ ቅንብሮች"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31338"
+msgid "Video view settings"
+msgstr "የቪዲዮ ዕይታ ቅንብሮች"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31339"
+msgid "Contributors"
+msgstr "አስተዋጽዖ አበርካቾች"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31340"
+msgid "Rate"
+msgstr "ደረጃ ይስጡ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31341"
+msgid "Next episode"
+msgstr "ቀጣይ ክፍል"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31342"
+msgid "Movies and TV Shows starring"
+msgstr "ፊልሞች እና የቲቪ ትዕይንቶች ተዋናዮች"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31343"
+msgid "Directed by"
+msgstr "ዳይሬክት የተደረገው በ"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31344"
+msgid "More movies directed by"
+msgstr "በእሱ ዳይሬክት የተደረጉ ተጨማሪ ፊልሞች"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31345"
+msgid "Written by"
+msgstr "የተጻፈው በ"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31346"
+msgid "More movies written by"
+msgstr "በእሱ የተጻፉ ተጨማሪ ፊልሞች"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31347"
+msgid "More like this"
+msgstr "ይህን የሚመስሉ ተጨማሪ"
+
+#: /16x9/Includes_Temp.xml
+msgctxt "#31348"
+msgid "No information available."
+msgstr "ምንም መረጃ የለም።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31350"
+msgid "Music info settings"
+msgstr "የሙዚቃ መረጃ ቅንብሮች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31351"
+msgid "TMDb info"
+msgstr "የTMDb መረጃ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31352"
+msgid "TMDb actor info"
+msgstr "የTMDb ተዋናይ መረጃ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31353"
+msgid "Artist slideshow"
+msgstr "የአርቲስት ስላይድ ትዕይንት"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31354"
+msgid "Artist slideshow settings"
+msgstr "የአርቲስት ስላይድ ትዕይንት ቅንብሮች"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31356"
+msgid "Global now playing"
+msgstr "አለምአቀፍ አሁን በመጫወት ላይ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31357"
+msgid "Panel texture"
+msgstr "የፓነል ሸካራነት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31358"
+msgid "Background texture"
+msgstr "የዳራ ሸካራነት"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31359"
+msgid "Main menu texture"
+msgstr "የዋና ማውጫ ሸካራነት"
+
+#: /16x9/Includes_Topbar.xml
+msgctxt "#31360"
+msgid "Filtered"
+msgstr "የተጣራ"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31361"
+msgid "Now playing music discart fallback"
+msgstr "አሁን በመጫወት ላይ ያለ የሙዚቃ ሲዲ ምስል አማራጭ"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31362"
+msgid "Now playing video discart fallback"
+msgstr "አሁን በመጫወት ላይ ያለ የቪዲዮ ሲዲ ምስል አማራጭ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31363"
+msgid "Watched status"
+msgstr "የታየ ሁኔታ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31364"
+msgid "Unwatched episode count"
+msgstr "ያልታዩ ክፍሎች ብዛት"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31365"
+msgid "Widget watched status"
+msgstr "የዊድጄት የታየ ሁኔታ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31366"
+msgid "Movies starring"
+msgstr "በዋና ተዋናይነት የተሳተፈባቸው ፊልሞች"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31367"
+msgid "TV Shows starring"
+msgstr "በዋና ተዋናይነት የተሳተፈባቸው የቲቪ ትዕይንቶች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31368"
+msgid "Movie & TV shows slider countdown enable"
+msgstr "የፊልም እና የቲቪ ትዕይንቶች የኋላ ቆጠራን አግብር"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31369"
+msgid "Turns the digital countdown timer on/off under the info meta arrow sliders. Enable to display when the slider will shift left/right when it hits 0. Autoscrolling for Movies or Person must be enabled to activate this feature."
+msgstr "በመረጃ ቀስቶች ስር ያለውን የኋላ ቆጠራ ሰዓት ያበራል/ያጠፋል። በ0 ሲደርስ ተንሸራታቹ ወደ ግራ/ቀኝ መቼ እንደሚንቀሳቀስ ለማሳየት ያግብሩ። ይህንን ባህሪ ለመጠቀም የፊልሞች ወይም የሰዎች አውቶማቲክ ማሸብለል መብራት አለበት።"
+
+#: /16x9/Custom_1112_Search.xml
+msgctxt "#31370"
+msgid "Search results for"
+msgstr "የፍለጋ ውጤቶች ለ"
+
+#: /16x9/Custom_1112_Search.xml
+msgctxt "#31371"
+msgid "Music video artists"
+msgstr "የሙዚቃ ቪዲዮ አርቲስቶች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31372"
+msgid "Time remaining"
+msgstr "የቀረው ጊዜ"
+
+#: /16x9/script-skinshortcuts.xml
+msgctxt "#31374"
+msgid "Cover background settings"
+msgstr "የሽፋን ዳራ ቅንብሮች"
+
+#: /16x9/Settings.xml
+msgctxt "#31375"
+msgid "Management"
+msgstr "አስተዳደር"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31376"
+msgid "Next button"
+msgstr "የሚቀጥለው አዝራር"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31377"
+msgid "HDR/SDR"
+msgstr "HDR/SDR"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31378"
+msgid "Bit depth"
+msgstr "የቢት ጥልቀት"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31379"
+msgid "Dim background"
+msgstr "የደበዘዘ ዳራ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31380"
+msgid "Now playing dim background"
+msgstr "አሁን በመጫወት ላይ ያለ የደበዘዘ ዳራ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31381"
+msgid "Appeared in"
+msgstr "የታየበት"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31382"
+msgid "Press up for actor info"
+msgstr "የተዋናይ መረጃ ለማግኘት ወደ ላይ ይጫኑ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31383"
+msgid "Press up for library items by actor"
+msgstr "በተዋናዩ የተሰሩ ነገሮችን ለማየት ወደ ላይ ይጫኑ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31384"
+msgid "Source flags"
+msgstr "የምንጭ ምልክቶች"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31385"
+msgid "Limit"
+msgstr "ገደብ"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31386"
+msgid "Recently added (include watched)"
+msgstr "በቅርቡ የተጨመሩ (የታዩትን ጨምሮ)"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31387"
+msgid "Recently released (include watched)"
+msgstr "በቅርቡ የወጡ (የታዩትን ጨምሮ)"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31388"
+msgid "Character"
+msgstr "ባህሪ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31390"
+msgid "Job"
+msgstr "ስራ"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31391"
+msgid "Budget"
+msgstr "በጀት"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31392"
+msgid "Years Old"
+msgstr "እድሜው"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31393"
+msgid "Revenue"
+msgstr "ገቢ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31394"
+msgid "Color icons"
+msgstr "ባለቀለም ምልክቶች"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31395"
+msgid "Resolution icon color"
+msgstr "የጥራት ምልክት ቀለም"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31396"
+msgid "Violet"
+msgstr "ቫዮሌት"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31397"
+msgid "Magenta"
+msgstr "ማጀንታ"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31398"
+msgid "Turquoise"
+msgstr "ቱርኮይስ"
+
+#: /16x9/Includes_CustomSelect /16x9/Includes_Themes.xml /16x9/ViewsVariables.xml
+msgctxt "#31399"
+msgid "Brown"
+msgstr "ቡናማ"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31401"
+msgid "Aspect ratio icon color"
+msgstr "የአስፔክት ሬሾ ምልክት ቀለም"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31402"
+msgid "Sets the color for the resolution flags."
+msgstr "ለጥራት ምልክቶች ቀለሙን ይወስናል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31403"
+msgid "Sets the color for the aspect ratio flags."
+msgstr "ለአስፔክት ሬሾ ምልክቶች ቀለሙን ይወስናል።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31404"
+msgid "Large splash screen Madnox logo on startup"
+msgstr "በትልቅ ማያ ገጽ የMadnox አርማ በጅማሬ ላይ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31405"
+msgid "Image gallery for"
+msgstr "የምስል ማዕከለ-ስዕላት ለ"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31406"
+msgid "Image Gallery"
+msgstr "የምስል ማዕከለ-ስዕላት"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31407"
+msgid "Not Available or Listed"
+msgstr "አልተገኘም ወይም አልተዘረዘረም"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31408"
+msgid "Awards"
+msgstr "ሽልማቶች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31409"
+msgid "Enable auto scrolling for movie's meta data"
+msgstr "ለፊልም ዲጂታል መረጃ አውቶማቲክ ማሸብለልን ያግብሩ"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31410"
+msgid "Movie meta rotation delay time"
+msgstr "የፊልም መረጃ ሽግግር መዘግየት ጊዜ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31411"
+msgid "Enable auto scrolling for person's meta data"
+msgstr "ለሰው ዲጂታል መረጃ አውቶማቲክ ማሸብለልን ያግብሩ"
+
+#: /16x9/SkinSettings.xml /16x9/SkinSettings.xml
+msgctxt "#31412"
+msgid "Person meta rotation delay time"
+msgstr "የሰው መረጃ ሽግግር መዘግየት ጊዜ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31413"
+msgid "Automatically scroll movie's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "ከ8 በላይ ንጥሎች በሚታዩበት ጊዜ የፊልም መረጃን በራሱ ያሸበልላል። ሁሉንም መረጃዎች ባለው መረጃ መሠረት ያሸበልላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31414"
+msgid "Automatically scroll person's metadata when there are greater than 8 items visible. Scrolls all data based on visibility of data that is available."
+msgstr "ከ8 በላይ ንጥሎች በሚታዩበት ጊዜ የሰዎች መረጃን በራሱ ያሸበልላል። ሁሉንም መረጃዎች ባለው መረጃ መሠረት ያሸበልላል።"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31415"
+msgid "Crew"
+msgstr "የስራ ባልደረቦች"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31416"
+msgid "TMDb"
+msgstr "TMDb"
+
+#: /16x9/Includes_InfoDialogs.xml
+msgctxt "#31417"
+msgid "TVDb"
+msgstr "TVDb"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31418"
+msgid "Recommendations"
+msgstr "የቀረቡ ምክሮች"
+
+#: /16x9/script-tmdbhelper-recommendations.xml
+msgctxt "#31419"
+msgid "Guest stars"
+msgstr "እንግዳ ተዋናዮች"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31420"
+msgid "Display larger DPI scaled logo when Kodi first loads. Large logo: 1600x520px, Small logo: 800x260px. Kodi will auto-scale in windowed view."
+msgstr "Kodi መጀመሪያ ሲጫን ትልቅ የDPI አርማ ያሳያል። ትልቅ አርማ፡ 1600x520 ፒክሰል፣ ትንሽ አርማ፡ 800x260 ፒክሰል ኮዲ በራሱ ይስተካከላል።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31421"
+msgid "Turn on skin debugging to log"
+msgstr "የቆዳ ስህተት መፈለጊያን ወደ ሎግ ያብሩ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31422"
+msgid "Off by default, leave this setting off unless troubleshooting is needed. This will cause your debug log and device cache to increase rapidly and could cause instability if left unchecked. You have been notified."
+msgstr "በነባሪነት የጠፋ ነው፣ ችግር ለመፍታት ካልሆነ በስተቀር አያብሩት። ይህ የሎግ ፋይልዎን እና የመሣሪያዎን መሸጎጫ በፍጥነት ስለሚጨምር መሣሪያዎ እንዳይረጋጋ ሊያደርግ ይችላል። አስቀድመን አሳውቀናል።"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31423"
+msgid "Fanart background size ratio"
+msgstr "የደጋፊ ስነ-ጥበብ የዳራ መጠን ጥምርታ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31424"
+msgid "Sets the size ratio of the fanart background. Scale/Keep/Center: Aspect ratio is kept. Stretch: Aspect ratio is not kept."
+msgstr "የደጋፊ ስነ-ጥበብ የዳራ መጠን ጥምርታን ይወስናል። ማሳደግ/ማቆየት/ማዕከል፡ የአስፔክት ሬሾ ይጠበቃል። መዘርጋት፡ የአስፔክት ሬሾ አይጠበቅም።"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31425"
+msgid "Custom colour"
+msgstr "የተበጀ ቀለም"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31426"
+msgid "Alpha"
+msgstr "አልፋ"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31427"
+msgid "Applied"
+msgstr "ተተግብሯል"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31428"
+msgid "Preview"
+msgstr "ቅድመ-እይታ"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31429"
+msgid "Feature"
+msgstr "ባህሪ"
+
+#: /16x9/Custom_1104_DialogOverlayColorPicker.xml
+msgctxt "#31430"
+msgid "Sliders"
+msgstr "ተንሸራታቾች"
+
+#: /16x9/DialogColorPicker.xml
+msgctxt "#31431"
+msgid "Core mode (Palette locked)"
+msgstr "ዋና ሁነታ (ፓሌት የተቆለፈ)"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31432"
+msgid "Scale"
+msgstr "ማሳደግ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31433"
+msgid "Stretch"
+msgstr "መዘርጋት"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31434"
+msgid "Image"
+msgstr "ምስል"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31435"
+msgid "Navigation"
+msgstr "አሰሳ"
+
+#: /16x9/SkinSettings.xml /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31436"
+msgid "Media flags data style"
+msgstr "የሚዲያ ምልክቶች የመረጃ ዘይቤ"
+
+#: /16x9/Custom_1111_CustomSelectContainer.xml
+msgctxt "#31437"
+msgid "TMDB Info Settings"
+msgstr "የTMDB መረጃ ቅንብሮች"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31438"
+msgid "Displays icons in each row when the metadata is shown in Movies, TVShows, Biographies, & TMDb display modes."
+msgstr "የዲጂታል መረጃ በፊልሞች፣ በቲቪ ትዕይንቶች፣ በህይወት ታሪኮች እና በTMDb ማሳያ ሁነታዎች ላይ ሲታይ በእያንዳንዱ ረድፍ ላይ ምልክቶችን ያሳያል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31439"
+msgid "Wiki"
+msgstr "ዊኪ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31440"
+msgid "Color selection"
+msgstr "የቀለም ምርጫ"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31441"
+msgid "Flags"
+msgstr "ምልክቶች"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31442"
+msgid "Intro"
+msgstr "መግቢያ"
+
+#: /16x9/Custom_1111_CustomSelectGrouplist.xml
+msgctxt "#31443"
+msgid "Outro"
+msgstr "ማጠቃለያ"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31444"
+msgid "Colored"
+msgstr "ባለቀለም"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31445"
+msgid "Addon"
+msgstr "ተጨማሪ"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31447"
+msgid "Resource"
+msgstr "ሃብት"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31448"
+msgid "Codec"
+msgstr "ኮዴክ"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31449"
+msgid "Node"
+msgstr "ኖድ"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31450"
+msgid "Artwork dump"
+msgstr "የስነ-ጥበብ ክምችት"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31451"
+msgid "PreShow Experience"
+msgstr "ከፊልም በፊት ማሳያ ልምድ"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31452"
+msgid "Up"
+msgstr "ወደ ላይ"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31453"
+msgid "Current"
+msgstr "የአሁኑ"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31454"
+msgid "Editing"
+msgstr "ማስተካከል"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31455"
+msgid "Container"
+msgstr "ኮንቴይነር"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31456"
+msgid "Legacy"
+msgstr "የቆየ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31457"
+msgid "Bumpers"
+msgstr "ማስታወቂያዎች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31458"
+msgid "Accent color"
+msgstr "ተስማሚ ቀለም"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31459"
+msgid "overlay dimming"
+msgstr "ተደራቢ ማደብዘዝ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31460"
+msgid "Countdown"
+msgstr "የኋላ ቆጠራ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31461"
+msgid "Courtesy"
+msgstr "ትህትና"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31462"
+msgid "Show Error Notifications"
+msgstr "የስህተት ማሳወቂያዎችን አሳይ"
+
+#: /16x9/Skin_Settings.xml
+msgctxt "#31465"
+msgid "Master reset"
+msgstr "ዋና ዳግም ማስጀመር"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31466"
+msgid "Confirm factory reset"
+msgstr "ወደ ፋብሪካ ቅንብሮች መመለስን ያረጋግጡ"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31467"
+msgid "Welcome to Madnox! For the best experience, we recommend applying the default settings. This will configure all visual options and features. Would you like to apply the Madnox recommended settings now?"
+msgstr "ወደ Madnox እንኳን በደህና መጡ! ለበለጠ ምርጥ ተሞክሮ ነባሪ ቅንብሮችን እንዲጠቀሙ እንመክራለን። ይህ ሁሉንም የእይታ አማራጮችን እና ባህሪያትን ያዘጋጃል። አሁን የMadnox ምክረ-ቅንብሮችን መተግበር ይፈልጋሉ?"
+
+#: /16x9/Custom_1107_DialogConfirmFactoryReset.xml
+msgctxt "#31468"
+msgid "This will restore all skin settings to their original defaults.[CR][CR]Your current customizations will be lost.[CR]Are you sure you want to continue?"
+msgstr "ይህ ሁሉንም የቆዳ ቅንብሮች ወደ መጀመሪያው ነባሪ ይመልሳል።[CR][CR]አሁን ያደረጓቸው ማሻሻያዎች ይጠፋሉ።[CR]ለመቀጠል እርግጠኛ ነዎት?"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31470"
+msgid "Restore Madnox skin settings to day 1 out of the box startup values. Only affects skin settings, does not alter or change anything else like scripts or plugins."
+msgstr "የMadnox ቆዳ ቅንብሮችን ወደ መጀመሪያው ቀን የጅማሬ እሴቶች ይመልሳል። ይህ የሚነካው የቆዳ ቅንብሮችን ብቻ ነው፣ ሌላ ምንም አይነት ስክሪፕቶችን ወይም ተጨማሪዎችን አይቀይርም።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31471"
+msgid "Allows customization of default media flags without requiring outside hacks to the skin. This allows you to custom select which video container icons will be displayed for WebDL, 1080p, 720p etc. This can be reset at any time."
+msgstr "ውጫዊ ማሻሻያዎችን ሳያስፈልግ ነባሪ የሚዲያ ምልክቶችን ለማበጀት ይረዳል። ይህ ለWebDL፣ 1080p፣ 720p ወዘተ የትኞቹ የቪዲዮ ምልክቶች እንደሚታዩ እንዲመርጡ ያስችልዎታል። ይህ በማንኛውም ጊዜ ዳግም ሊጀመር ይችላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31472"
+msgid "Enables setting of the color of \"In-Progress\" bar feature."
+msgstr "የ\"በመሻሻል ላይ\" አሞሌን ቀለም ለመወሰን ያስችላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31473"
+msgid "Sets of the color of \"In-Progress\" bar feature globally when enabled."
+msgstr "ሲበራ የ\"በመሻሻል ላይ\" አሞሌን ቀለም በዓለም አቀፍ ደረጃ ይወስናል።"
+
+#: /16x9/Custom_1110_CustomSelectContainer.xml
+msgctxt "#31474"
+msgid "Startup intro video"
+msgstr "የጅማሬ መግቢያ ቪዲዮ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31475"
+msgid "Turn on trailer debugging to log"
+msgstr "የፊልም ማስታወቂያ ስህተት መፈለጊያን ወደ ሎግ ያብሩ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31476"
+msgid "Off by default, leave this setting off unless troubleshooting auto preview trailer rolling is needed."
+msgstr "በነባሪነት የጠፋ ነው፣ የፊልም ማስታወቂያ ቅድመ-እይታን ችግር ለመፍታት ካልሆነ በስተቀር እንዳጠፋ ይተዉት።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31477"
+msgid "When enabled, Kodi will remember the last context menu position. Example: TV Shows seasons || \"Marked as watched\": Will remain highlighted as each season is marked as watched."
+msgstr "ሲበራ ኮዲ የመጨረሻውን የማውጫ ቦታ ያስታውሳል። ለምሳሌ፡ የቲቪ ትዕይንቶች ወቅቶች || \"እንደታየ ምልክት የተደረገበት\"፡ እያንዳንዱ ወቅት የታየ ምልክት ሲደረግበት እንደደመቀ ይቆያል።"
+
+#: /16x9/Includes.xml
+msgctxt "#31478"
+msgid "Local"
+msgstr "የአገር ውስጥ"
+
+#: /16x9/Includes.xml
+msgctxt "#31479"
+msgid "Upcoming"
+msgstr "የሚመጡ"
+
+#: /16x9/Includes.xml
+msgctxt "#31480"
+msgid "Modify"
+msgstr "ማሻሻል"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31481"
+msgid "Madnox script skin helper addon"
+msgstr "የMadnox ስክሪፕት ቆዳ ረዳት ተጨማሪ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31482"
+msgid "Only"
+msgstr "ብቻ"
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31483"
+msgid "Battery"
+msgstr "ባትሪ"
+
+#: /16x9/Custom_1126_Battery.xml
+msgctxt "#31485"
+msgid "PVR"
+msgstr "PVR"
+
+#: /16x9/.xml
+msgctxt "#31486"
+msgid "CPU"
+msgstr "CPU"
+
+#: /16x9/.xml
+msgctxt "#31487"
+msgid "GPU"
+msgstr "GPU"
+
+#: /16x9/.xml
+msgctxt "#31488"
+msgid "Frequency"
+msgstr "ድግግሞሽ"
+
+#: /16x9/.xml
+msgctxt "#31489"
+msgid "Bytes"
+msgstr "ባይቶች"
+
+#: /16x9/.xml
+msgctxt "#31490"
+msgid "Uptime"
+msgstr "የስራ ጊዜ"
+
+#: /16x9/.xml
+msgctxt "#31491"
+msgid "Screen"
+msgstr "ማያ ገጽ"
+
+#: /16x9/.xml
+msgctxt "#31492"
+msgid "Build"
+msgstr "ስሪት"
+
+#: /16x9/.xml
+msgctxt "#31493"
+msgid "Locale"
+msgstr "አካባቢያዊ"
+
+#: /16x9/Custom_1120_Dashboard.xml /16x9/Custom_1129_Version.xml
+msgctxt "#31494"
+msgid "Kodi"
+msgstr "ኮዲ"
+
+#: /16x9/.xml
+msgctxt "#31495"
+msgid "Cores"
+msgstr "ኮሮች"
+
+#: /16x9/.xml
+msgctxt "#31496"
+msgid "Frames per second"
+msgstr "ክፈፎች በሰከንድ"
+
+#: /16x9/.xml
+msgctxt "#31497"
+msgid "Memory"
+msgstr "ማህደረ ትውስታ"
+
+#: /16x9/.xml
+msgctxt "#31498"
+msgid "Freeable"
+msgstr "ሊለቀቅ የሚችል"
+
+#: /16x9/.xml
+msgctxt "#31499"
+msgid "Full"
+msgstr "ሙሉ"
+
+#: /16x9/.xml
+msgctxt "#31500"
+msgid "Code"
+msgstr "ኮድ"
+
+#: /16x9/.xml
+msgctxt "#31501"
+msgid "Host"
+msgstr "አስተናጋጅ"
+
+#: /16x9/.xml
+msgctxt "#31502"
+msgid "Remaining"
+msgstr "የቀረ"
+
+#: /16x9/.xml
+msgctxt "#31503"
+msgid "Dashboard"
+msgstr "ዳሽቦርድ"
+
+#: /16x9/.xml
+msgctxt "#31504"
+msgid "Slot Available"
+msgstr "ክፍት ቦታ አለ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31505"
+msgid "Enables widgets \"In-Progress\" bar feature in the popup dialog."
+msgstr "በብቅ ባይ ንግግር ሳጥን ውስጥ የዊድጄቶችን \"በመሻሻል ላይ\" አሞሌ ባህሪ ያበራል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31506"
+msgid "Current built-in revision level of the default Madnox values to reset / initialize the skin."
+msgstr "ቆዳውን ዳግም ለማስጀመር አሁን ያለው አብሮ የተሰራው የMadnox ነባሪ እሴቶች ደረጃ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31507"
+msgid "Select if an intro video will play when Kodi is first started. None: No video, Built-In: Kodi's release level intro video, Custom: Pick video of your choice to display."
+msgstr "Kodi መጀመሪያ ሲነሳ የመግቢያ ቪዲዮ እንዲጫወት መፈለግዎን ይምረጡ። ምንም፡ ቪዲዮ የለም፣ አብሮ የተሰራ፡ የኮዲ መደበኛ መግቢያ ቪዲዮ፣ የተበጀ፡ የፈለጉትን ቪዲዮ ይምረጡ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31508"
+msgid "This setting forces the media flag to resolution flag as 4K or 2160p providing user icon control without skin modifcations."
+msgstr "ይህ ቅንብር ያለ ምንም የቆዳ ማሻሻያ የሚዲያ ምልክቱን ወደ 4K ወይም 2160p ጥራት እንዲቀየር ያስገድደዋል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31509"
+msgid "Change the stars color displayed in the video info line. Click to cycle through fixed colors or select a custom color."
+msgstr "በቪዲዮው መረጃ መስመር ላይ የሚታዩትን የኮከቦች ቀለም ይቀይሩ። በቋሚ ቀለሞች ውስጥ ለማለፍ ጠቅ ያድርጉ ወይም የተበጀ ቀለም ይምረጡ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31510"
+msgid "Allows star ratings style to use a custom color when it is set to \"Custom\"."
+msgstr "የኮከቦች ደረጃ አሰጣጥ ወደ \"የተበጀ\" ሲዋቀር የራስዎን ቀለም እንዲጠቀሙ ያስችላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31511"
+msgid "Dedicated addon for Madnox required for Piers+. Moves all free running scripts to a dedicated addon for security purposes."
+msgstr "ለMadnox የተዘጋጀ ልዩ ተጨማሪ ለPiers+ ያስፈልጋል። ለደህንነት ሲባል ሁሉንም ነጻ ስክሪፕቶች ወደ ተለየ ተጨማሪ ያንቀሳቅሳል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31512"
+msgid "TMDbHelper provides several tools to assist skinners with retrieving information from TMDb, OMDb and Trakt APIs."
+msgstr "TMDbHelper የቆዳ አዘጋጆች መረጃዎችን ከTMDb፣ OMDb እና Trakt ኤፒአይዎች እንዲያወጡ ይረዳል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31513"
+msgid "Wikipedia addon for Kodi."
+msgstr "የዊኪፔዲያ ተጨማሪ ለኮዲ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31514"
+msgid "Advanced CinemaVision replacement that can be enabled to replace Madnox's built in simpler CinemaMode. Allows the ultimate CinemaMode experience and customisation."
+msgstr "የMadnoxን ቀላል የሲኒማ ሁነታ ለመተካት የሚያገለግል የላቀ የCinemaVision ምትክ። የተሻለ የሲኒማ ልምድ እና ማሻሻያ እንዲያደርጉ ያስችላል።"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31515"
+msgid "Blur with color"
+msgstr "በቀለም ማደብዘዝ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31516"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard)."
+msgstr "በዋናው ማውጫ ውስጥ (በቁልፍ ሰሌዳው ላይ S ሲጫን) የማውጫ ንጥሉን ያሳያል ወይም ይደብቃል።"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31517"
+msgid "Displays or hides the menu item in the main context menu (S on the keyboard). NOTE: This menu item is visible ONLY on the home screen only regardless of this setting."
+msgstr "በዋናው ማውጫ ውስጥ (በቁልፍ ሰሌዳው ላይ S ሲጫን) የማውጫ ንጥሉን ያሳያል ወይም ይደብቃል። ማሳሰቢያ፡ ይህ ማውጫ ምንም አይነት ቅንብር ቢኖር በዋናው ማያ ገጽ ላይ ብቻ ነው የሚታየው።"
+
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr "ተጨማሪ ነገሮች መጫኛውን እንደገና ያሂዱ"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr "ተጨማሪ ነገሮች መጫኛ"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr "ይህ ተጨማሪ ነገሮች መጫኛውን እንደገና ያሂዳል። ሁሉም ተጨማሪዎች ይወርዳሉ ነገር ግን በጠፋ ሁኔታ ይጫናሉ። የሚፈልጉትን ብቻ በቅንብሮች > የቆዳ ቅንብሮች > ተጨማሪዎች ውስጥ ያብሩ።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31521"
+msgid "Madnox image resource addon"
+msgstr "የMadnox የምስል ሃብት ተጨማሪ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31522"
+msgid "Images"
+msgstr "ምስሎች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31523"
+msgid "Display ratings as 10-point numbers"
+msgstr "ደረጃዎችን በ10-ነጥብ ቁጥሮች አሳይ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31524"
+msgid "Allows changes to the ratings to convert between floating numbers or as a percentage. Affects TMDb & IMDb, all others remain as their default display."
+msgstr "ደረጃዎቹን ወደ አስርዮሽ ቁጥር ወይም ወደ መቶኛ ለመቀየር ያስችላል። ይህ በTMDb እና IMDb ላይ ተጽዕኖ ያሳድራል፣ ሌሎቹ ግን በነባሪ እይታቸው ይቀጥላሉ።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31525"
+msgid "Re-run skin shortcuts migrator"
+msgstr "የቆዳ አቋራጮች ማስተካከያውን እንደገና ያሂዱ"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31526"
+msgid "This will rewrite the skin shortcuts .properties file to the current 3 module addon structure. Only run if there are issues with background images or playlists are not working."
+msgstr "ይህ የቆዳ አቋራጮችን ፋይል ወደ አዲሱ ባለ 3 ሞጁል መዋቅር ይቀይረዋል። ይህንን የሚያደርጉት በጀርባ ምስሎች ላይ ችግር ካለ ወይም የጨዋታ ዝርዝሮች ካልሰሩ ብቻ ነው።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31527"
+msgid "This will reactivate the addons installer. Only run if addons were not installed when skin was first installed."
+msgstr "ይህ የተጨማሪዎች መጫኛውን እንደገና ያነቃቃል። ይህንን የሚያደርጉት ቆዳው መጀመሪያ ሲጫን ተጨማሪዎቹ ካልተጫኑ ብቻ ነው።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31528"
+msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
+msgstr "ለMadnox የተዘጋጀ ልዩ ተጨማሪ ለPiers+ ያስፈልጋል። ለደህንነት ሲባል የቆዳ ምስሎችን ወደ ተለየ ተጨማሪ ያንቀሳቅሳል።"
+
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase hero"
+msgstr "ዋና ማሳያ ሳጥን"
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr "አትኩሮት"
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic shelf"
+msgstr "የሲኒማ መደርደሪያ"
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr "ኤዲቶሪያል"
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr "መሳጭ"
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr "መድረክ"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr "አቁም"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr "አቁም"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr "ቁም"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr "አሳይ"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr "ወደ ታች"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31540"
+msgid "Save Madnox current settings to the preset folder."
+msgstr "የአሁኑን የMadnox ቅንብሮች ወደ ማከማቻው አቃፊ ያስቀምጡ።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31541"
+msgid "Load Madnox previously saved settings from the preset folder."
+msgstr "ቀደም ሲል የተቀመጡ የMadnox ቅንብሮችን ከማከማቻው አቃፊ ይጫኑ።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31542"
+msgid "Export current settings to an external file (Used for sharing or collaboration)."
+msgstr "የአሁኑን ቅንብሮች ወደ ውጫዊ ፋይል ይላኩ (ለማጋራት ወይም ለጋራ ስራ የሚያገለግል)።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31543"
+msgid "Import settings from an external file (Used for sharing or collaboration). Invalid files/format will not be loaded."
+msgstr "ቅንብሮችን ከውጫዊ ፋይል ያስገቡ። የተሳሳቱ ፋይሎች ወይም ቅርጸቶች አይጫኑም።"
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31544"
+msgid "Widget Layout"
+msgstr "የዊድጄት አቀማመጥ"
+
+#: /16x9/Custom_1116_ViewMode.xml
+msgctxt "#31545"
+msgid "Prefer"
+msgstr "መርጥ"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31546"
+msgid "Manager"
+msgstr "አስተዳዳሪ"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31547"
+msgid "Import from file (Ext)"
+msgstr "ከፋይል አስገቡ (ውጫዊ)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31548"
+msgid "Export to folder (Ext)"
+msgstr "ወደ አቃፊ ይላኩ (ውጫዊ)"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31549"
+msgid "Presets"
+msgstr "ቅድመ-ቅንብሮች"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31550"
+msgid "Load"
+msgstr "ጫን"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31551"
+msgid "Actions for selected file"
+msgstr "ለተመረጠው ፋይል የሚደረጉ እርምጃዎች"
+
+#: /16x9/Custom_1132_PresetManager.xml
+msgctxt "#31552"
+msgid "Found"
+msgstr "ተገኝቷል"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31553"
+msgid "Show all"
+msgstr "ሁሉንም አሳይ"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31554"
+msgid "Tooltips"
+msgstr "አጋዥ ምክሮች"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31555"
+msgid "Transport"
+msgstr "ማጓጓዣ"
+
+#: /16x9/MyWeather.xml
+msgctxt "#31556"
+msgid "Visibility"
+msgstr "ታይነት"
+
+#: /16x9/Custom_1105_DialogVideoCodecFlagPicker.xml
+msgctxt "#31557"
+msgid "Categories"
+msgstr "ምድቦች"
+
+# --- Colored prefix labels ---
+
+#: /16x9/includes.xml
+msgctxt "#31559"
+msgid "Customise 4K / UHD flag:"
+msgstr "የ4K / UHD ምልክትን ያብጁ፦"
+
+#: /16x9/includes.xml
+msgctxt "#31560"
+msgid "Customise WebDL flag:"
+msgstr "የWebDL ምልክትን ያብጁ፦"
+
+#: /16x9/includes.xml
+msgctxt "#31561"
+msgid "Customise 1080p flag:"
+msgstr "የ1080p ምልክትን ያብጁ፦"
+
+#: /16x9/includes.xml
+msgctxt "#31562"
+msgid "Customise 720p flag:"
+msgstr "የ720p ምልክትን ያብጁ፦"
+
+#: /16x9/includes.xml
+msgctxt "#31563"
+msgid "Customise DVD / SD flag:"
+msgstr "የDVD / SD ምልክትን ያብጁ፦"
+
+#: /16x9/includes.xml
+msgctxt "#31564"
+msgid "Category filter:"
+msgstr "የምድብ ማጣሪያ፦"
+
+#: /16x9/includes.xml
+msgctxt "#31565"
+msgid "Restore default:"
+msgstr "ነባሪውን ይመልሱ፦"
+
+#: /16x9/includes.xml
+msgctxt "#31566"
+msgid "Toggle Color Scheme:"
+msgstr "የቀለም ቅንብሩን ይቀይሩ፦"
+
+# --- Body texts: top row category selectors (controls 901–904, 905) ---
+
+#: /16x9/includes.xml
+msgctxt "#31567"
+msgid "Highlight a logo from the palette below and click to assign it to 4K / UHD video files."
+msgstr "ከታች ካለው ፓሌት ውስጥ አርማ ይምረጡና ለ4K / UHD ቪዲዮ ፋይሎች ለመመደብ ጠቅ ያድርጉ።"
+
+#: /16x9/includes.xml
+msgctxt "#31568"
+msgid "Highlight a logo from the palette below and click to assign it to WebDL and streaming video sources."
+msgstr "ከታች ካለው ፓሌት ውስጥ አርማ ይምረጡና ለWebDL እና ለቀጥታ ስርጭት ቪዲዮዎች ለመመደብ ጠቅ ያድርጉ።"
+
+#: /16x9/includes.xml
+msgctxt "#31569"
+msgid "Highlight a logo from the palette below and click to assign it to 1080p Full HD video files."
+msgstr "ከታች ካለው ፓሌት ውስጥ አርማ ይምረጡና ለ1080p Full HD ቪዲዮ ፋይሎች ለመመደብ ጠቅ ያድርጉ።"
+
+#: /16x9/includes.xml
+msgctxt "#31570"
+msgid "Highlight a logo from the palette below and click to assign it to 720p HD video files."
+msgstr "ከታች ካለው ፓሌት ውስጥ አርማ ይምረጡና ለ720p HD ቪዲዮ ፋይሎች ለመመደብ ጠቅ ያድርጉ።"
+
+#: /16x9/includes.xml
+msgctxt "#31571"
+msgid "Highlight a logo from the palette below and click to assign it to DVD and standard-definition video files."
+msgstr "ከታች ካለው ፓሌት ውስጥ አርማ ይምረጡና ለDVD እና ለተለመደ ጥራት ቪዲዮ ፋይሎች ለመመደብ ጠቅ ያድርጉ።"
+
+# --- Body texts: left menu category buttons (controls 91–97) ---
+
+#: /16x9/includes.xml
+msgctxt "#31572"
+msgid "View only ultra-high-definition and 4K logo designs in the palette grid."
+msgstr "በፓሌት ሰሌዳው ላይ የ4K እና እጅግ ከፍተኛ ጥራት አርማዎችን ብቻ ያሳዩ።"
+
+#: /16x9/includes.xml
+msgctxt "#31573"
+msgid "View only HEVC and H.265 codec logo designs in the palette grid."
+msgstr "በፓሌት ሰሌዳው ላይ የHEVC እና H.265 ኮዴክ አርማዎችን ብቻ ያሳዩ።"
+
+#: /16x9/includes.xml
+msgctxt "#31574"
+msgid "View only AVC and H.264 codec logo designs in the palette grid."
+msgstr "በፓሌት ሰሌዳው ላይ የAVC እና H.264 ኮዴክ አርማዎችን ብቻ ያሳዩ።"
+
+#: /16x9/includes.xml
+msgctxt "#31575"
+msgid "View only DivX, XviD, and legacy MPEG-4 format logo designs in the palette grid."
+msgstr "በፓሌት ሰሌዳው ላይ የDivX፣ XviD እና የቆዩ MPEG-4 ቅርጸት አርማዎችን ብቻ ያሳዩ።"
+
+#: /16x9/includes.xml
+msgctxt "#31576"
+msgid "View classic MPEG, DVD, and standard TV broadcast logo designs in the palette grid."
+msgstr "በፓሌት ሰሌዳው ላይ የተለመዱ የMPEG፣ DVD እና የቴሌቪዥን አርማዎችን ብቻ ያሳዩ።"
+
+#: /16x9/includes.xml
+msgctxt "#31577"
+msgid "View Windows Media Video and VC-1 codec logo designs in the palette grid."
+msgstr "በፓሌት ሰሌዳው ላይ የWindows Media Video እና VC-1 አርማዎችን ብቻ ያሳዩ።"
+
+#: /16x9/includes.xml
+msgctxt "#31578"
+msgid "View container wrappers, disk formats, and other miscellaneous logo designs in the palette grid."
+msgstr "በፓሌት ሰሌዳው ላይ የተለያዩ የቪዲዮ ቅርጸቶች፣ የዲስክ አይነቶች እና ሌሎች አርማዎችን ያሳዩ።"
+
+# --- Standalone entries (no colored prefix) ---
+
+#: /16x9/includes.xml
+msgctxt "#31579"
+msgid "Close this flag customization dialog and return to settings."
+msgstr "ይህንን የምልክት ማበጃ ሳጥን ዘግተው ወደ ቅንብሮች ይመለሱ።"
+
+#: /16x9/includes.xml
+msgctxt "#31580"
+msgid "Highlight any logo design in the center grid and click to save it as your custom flag for the active category."
+msgstr "ከመካከለኛው ሰሌዳ ላይ ማንኛውንም አርማ ይምረጡና ለዚህ ምድብ እንደ ልዩ ምልክትዎ ለማስቀመጥ ጠቅ ያድርጉ።"
+
+# --- Body texts: right panel actions (controls 801, 98) ---
+
+#: /16x9/includes.xml
+msgctxt "#31581"
+msgid "Clear your custom flag choice and restore this category to the skin's automatic default flag logic."
+msgstr "የመረጡትን ልዩ ምልክት ያጥፉና ይህንን ምድብ ወደ ቆዳው መደበኛ አሰራር ይመልሱት።"
+
+#: /16x9/includes.xml
+msgctxt "#31582"
+msgid "Toggle global flag artwork between colored designs and monochromatic default white."
+msgstr "የምልክት ስራዎችን በባለቀለም እና በተራ ነጭ ቀለም መካከል ይቀይሩ።"
+
+# --- Default / idle state ---
+
+#: /16x9/includes.xml
+msgctxt "#31583"
+msgid "Use your directional keys to navigate options. Press Back or select Exit at any time to close without changes."
+msgstr "አማራጮችን ለማሰስ የቀስት ቁልፎችን ይጠቀሙ። ያለ ምንም ለውጥ ለመዝጋት በማንኛውም ጊዜ ወደ ኋላ ይመለሱ ወይም መውጫውን ይጫኑ።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31584"
+msgid "Select to modify"
+msgstr "ለማስተካከል ይምረጡ"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31901"
+msgid "Customisation of the home screen, widgets and shortcuts menu."
+msgstr "የዋናው ማያ ገጽ፣ የዊድጄቶች እና የአቋራጭ ማውጫ ማበጃ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31904"
+msgid "Script for skinners to let users select an image resource addon."
+msgstr "ተጠቃሚዎች የምስል ሃብት እንዲመርጡ የሚያስችል የስክሪፕት ረዳት።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31905"
+msgid "Automatically adds extra artwork for media in your media libraries."
+msgstr "በሚዲያ ቤተ-መጻሕፍትዎ ውስጥ ላሉት ፋይሎች ተጨማሪ የስነ-ጥበብ ስራዎችን በራሱ ያክላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31907"
+msgid "Lyrics for music. Required to enable animated lyrics."
+msgstr "የሙዚቃ ግጥሞች። ተንቀሳቃሽ ግጥሞችን ለማጫወት ያስፈልጋል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31908"
+msgid "Sync your collection and watched status with trakt.tv."
+msgstr "የእርስዎን ፋይሎች እና የታዩ ሁኔታዎች ከ trakt.tv ጋር ያመሳስላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31910"
+msgid "Create a custom favourite from selected kodi favourites."
+msgstr "ከተመረጡት የኮዲ ተወዳጆች ውስጥ የእራስዎን ልዩ ተወዳጅ ይፍጠሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31911"
+msgid "Edit the home screen menu, widgets, backgrounds and infolines."
+msgstr "የዋናውን ማያ ገጽ ማውጫ፣ ዊድጄቶች፣ የጀርባ ምስሎች እና የመረጃ መስመሮች ያስተካክሉ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31912"
+msgid "Reset the home screen menu, widgets, backgrounds and infolines to default."
+msgstr "የዋናውን ማያ ገጽ ማውጫ፣ ዊድጄቶች፣ የጀርባ ምስሎች እና የመረጃ መስመሮች ወደ ነባሪ ይመልሱ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31913"
+msgid "Create a custom favourite from selected kodi favourites. For use in main menu widgets. Requires script favourites to be installed."
+msgstr "ከተመረጡ የኮዲ ተወዳጆች ውስጥ ልዩ ተወዳጅ ይፍጠሩ። በዋናው ማውጫ ዊድጄቶች ላይ ለመጠቀም ያገለግላል። የስክሪፕት ተወዳጆች መጫን አለበት።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31914"
+msgid "Create a custom addon favourite from installed addons. For use in main menu widgets."
+msgstr "ከተጫኑ ተጨማሪዎች ውስጥ ልዩ ተወዳጅ ይፍጠሩ። በዋናው ማውጫ ዊድጄቶች ላይ ለመጠቀም ያገለግላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31915"
+msgid "Reset the skin theme and colours to default."
+msgstr "የቆዳውን ጭብጥ እና ቀለሞች ወደ ነባሪ ይመልሱ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31916"
+msgid "Select from a list of pre-defined themes."
+msgstr "ቀደም ሲል ከተዘጋጁ የጭብጥ ዝርዝሮች ውስጥ ይምረጡ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31917"
+msgid "Lock preferences to disable view mode, view options, info dialog and fullscreen settings."
+msgstr "የእይታ ሁነታን፣ የእይታ አማራጮችን እና የሙሉ ማያ ገጽ ቅንብሮችን ለማሰናከል ምርጫዎችን ይቆልፉ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31918"
+msgid "Customise the home screen, favourites, predefined themes and kiosk mode."
+msgstr "ዋናውን ማያ ገጽ፣ ተወዳጆችን፣ ቀደም ሲል የተዘጋጁ ጭብጦችን እና የኪዮስክ ሁነታን ያብጁ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31919"
+msgid "Change skin theme textures."
+msgstr "የቆዳ ጭብጥ ሸካራነቶችን ይቀይሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31920"
+msgid "Customise the skin texture colours."
+msgstr "የቆዳ ሸካራነት ቀለሞችን ያብጁ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31921"
+msgid "Customise the background and fallbacks for specific skin areas."
+msgstr "ለተወሰኑ የቆዳ ክፍሎች የጀርባ ምስሎችን እና አማራጮችን ያብጁ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31922"
+msgid "Enable or disable various skin features."
+msgstr "የተለያዩ የቆዳ ባህሪያትን ያብሩ ወይም ያጥፉ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31923"
+msgid "Customise artwork and install supported artwork packs."
+msgstr "የስነ-ጥበብ ስራዎችን ያብጁ እና የሚደገፉ ጥቅሎችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31924"
+msgid "Install and configure supported addons."
+msgstr "የሚደገፉ ተጨማሪዎችን ይጫኑ እና ያዋቅሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31925"
+msgid "Enable and disable library views. Disabling library views on low spec systems may improve performance."
+msgstr "የቤተ-መጽሐፍት እይታዎችን ያብሩ ወይም ያጥፉ። ዝቅተኛ አቅም ባላቸው መሣሪያዎች ላይ እይታዎችን ማጥፋት ፍጥነትን ይጨምራል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31926"
+msgid "Shows scroll letter when scrolling in library views."
+msgstr "በቤተ-መጽሐፍት እይታዎች ውስጥ ሲያሸበልሉ የማሸብለያ ፊደል ያሳያል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31927"
+msgid "Shows the alphabet to jump to a position of the container. Will only work for default sorting methods (A-Z)."
+msgstr "በቀጥታ ወደሚፈልጉት ቦታ ለመዝለል ፊደላትን ያሳያል። የሚሰራው በመደበኛ የፊደል ቅደም ተከተል (A-Z) ሲደረደር ብቻ ነው።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31928"
+msgid "Shows plot outline for tv shows and movies if available, otherwise will display the default plot."
+msgstr "ካለ ለቲቪ ትዕይንቶች እና ፊልሞች አጭር ታሪክ ያሳያል፣ ካልሆነ ግን መደበኛውን ታሪክ ያሳያል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31929"
+msgid "Auto scroll the plot if it does not fit the control dimensions."
+msgstr "ታሪኩ ከማሳያው መጠን በላይ ከሆነ በራሱ እንዲሸበለል ያደርጋል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31930"
+msgid "Enable the shortcut menu for instant access to specific skin areas. In the media menu click left to open or click on the shortcut icon."
+msgstr "ለተወሰኑ የቆዳ ክፍሎች ፈጣን መዳረሻ ለማግኘት የአቋራጭ ማውጫውን ያብሩ። በሚዲያ ማውጫው ላይ ወደ ግራ በመጫን ወይም በአቋራጭ ምልክቱ ላይ ጠቅ በማድረግ ይክፈቱ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31931"
+msgid "Edit the shortcut menu."
+msgstr "የአቋራጭ ማውጫውን ያስተካክሉ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31932"
+msgid "Enable and disable the topbar elements."
+msgstr "የላይኛው አሞሌ አካላትን ያብሩ ወይም ያጥፉ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31933"
+msgid "Change video info settings."
+msgstr "የቪዲዮ መረጃ ቅንብሮችን ይቀይሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31934"
+msgid "Change music info settings."
+msgstr "የሙዚቃ መረጃ ቅንብሮችን ይቀይሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31935"
+msgid "Change fullscreen video settings."
+msgstr "የሙሉ ማያ ቪዲዮ ቅንብሮችን ይቀይሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31936"
+msgid "Change fullscreen audio settings."
+msgstr "የሙሉ ማያ ድምጽ ቅንብሮችን ይቀይሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31937"
+msgid "Reduce the size of pop up notifications."
+msgstr "የብቅ ባይ ማሳወቂያዎችን መጠን ይቀንሱ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31938"
+msgid "Darkens the screen behind dialog popups. Not applicable for fullscreen video or audio."
+msgstr "በብቅ ባይ ንግግሮች ወቅት ከጀርባ ያለውን ማያ ገጽ ያጨልማል። በሙሉ ማያ ቪዲዮ ወይም ድምጽ ላይ አይሰራም።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31940"
+msgid "Enable coloured icons for the topbar, media information and library views."
+msgstr "ለላይኛው አሞሌ፣ ለማውጫ መረጃዎች እና ለቤተ-መጽሐፍት እይታዎች ባለቀለም ምልክቶችን ያብሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31941"
+msgid "Enable coloured, HDR, bit depth and language media flags."
+msgstr "ባለቀለም፣ HDR፣ የቢት ጥልቀት እና የቋንቋ ምልክቶችን ያብሩ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31943"
+msgid "Audio cd art fallback skin wide."
+msgstr "የድምጽ ሲዲ ምስል አማራጭ በሁሉም ቦታ ይተገበራል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31944"
+msgid "Video cd art fallback skin wide."
+msgstr "የቪዲዮ ሲዲ ምስል አማራጭ በሁሉም ቦታ ይተገበራል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31945"
+msgid "Select and install a weather icon pack for the topbar, widgets and weather."
+msgstr "ለላይኛው አሞሌ፣ ለዊድጄቶች እና ለአየር ሁኔታ የአየር ሁኔታ ምልክቶች ጥቅል ይምረጡ እና ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31946"
+msgid "Select and install a weather fanart pack for the backgrounds, widgets and weather."
+msgstr "ለጀርባ ምስሎች፣ ለዊድጄቶች እና ለአየር ሁኔታ የአየር ሁኔታ ስነ-ጥበብ ጥቅል ይምረጡ እና ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31948"
+msgid "Install coloured studio icons for use throughout the skin."
+msgstr "በሁሉም ቦታ ጥቅም ላይ የሚውሉ ባለቀለም የፊልም ስቱዲዮ ምልክቶችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31949"
+msgid "Install record label icons for use throughout the skin."
+msgstr "በሁሉም ቦታ ጥቅም ላይ የሚውሉ የሙዚቃ አሳታሚ ምልክቶችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31950"
+msgid "Install language flags for library views and subtitle selection."
+msgstr "ለቤተ-መጽሐፍት እይታዎች እና ለንዑስ ርዕስ መረጣ የቋንቋ ምልክቶችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31951"
+msgid "Install music genre icons for music and music videos."
+msgstr "ለሙዚቃ እና ለሙዚቃ ቪዲዮዎች የሙዚቃ ዘውግ ምልክቶችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31952"
+msgid "Install coloured movie genre icons for movies and tv shows."
+msgstr "ለፊልሞች እና ለቲቪ ትዕይንቶች ባለቀለም የዘውግ ምልክቶችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31953"
+msgid "Install black and white movie genre icons for movies and tv shows."
+msgstr "ለፊልሞች እና ለቲቪ ትዕይንቶች ጥቁር እና ነጭ የዘውግ ምልክቶችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31954"
+msgid "Install country icons for movies country node."
+msgstr "ለፊልሞች ሀገር መለያ የሀገር ምልክቶችን ይጫኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31955"
+msgid "Set the delay between fanart transitions skin wide."
+msgstr "የጀርባ ምስሎች ሽግግር መዘግየትን በሁሉም ቦታ ይወስኑ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31956"
+msgid "Falling background effects. Snow, Leaves etc."
+msgstr "የሚወድቁ የጀርባ ተፅእኖዎች (በረዶ፣ ቅጠሎች ወዘተ)።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31957"
+msgid "Show music fanart of currently playing item skin wide. Overrides library fanart."
+msgstr "አሁን የሚጫወተውን ሙዚቃ የጀርባ ምስል በሁሉም ቦታ ያሳያል። የቤተ-መጽሐፍቱን ምስል ይተካል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31958"
+msgid "Enables music visualisation in background while playing music. Requires visualisation to be enabled in settings - Player settings/Music."
+msgstr "ሙዚቃ በሚጫወትበት ጊዜ የድምጽ ዕይታን ከጀርባ ያበራል። ይህ እንዲሰራ በስራ ማስጀመሪያው ቅንብሮች ውስጥ መብራት አለበት።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31959"
+msgid "Show now playing video in background while browsing library. Overrides library fanart."
+msgstr "ቤተ-መጽሐፍቱን እያሰሱ አሁን የሚጫወተውን ቪዲዮ ከጀርባ ያሳያል። የቤተ-መጽሐፍቱን ምስል ይተካል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31960"
+msgid "Download images and additional information from fanart.tv and theaudiodb.com of the currently playing artist. For fullscreen music, internet streams and radio."
+msgstr "አሁን የሚጫወተውን አርቲስት ፎቶዎች እና ተጨማሪ መረጃዎች ከ fanart.tv እና theaudiodb.com ያወርዳል። ለሙሉ ማያ ሙዚቃ፣ ለኢንተርኔት ስርጭቶች እና ለራዲዮ ያገለግላል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31962"
+msgid "Artist slideshow script settings."
+msgstr "የአርቲስት ምስል ማሳያ ስክሪፕት ቅንብሮች።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31963"
+msgid "A shortcut to the video playlist if not empty."
+msgstr "ባዶ ካልሆነ ወደ ቪዲዮ ማጫወቻ ዝርዝር የሚወስድ አቋራጭ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31964"
+msgid "A shortcut to the music playlist if not empty."
+msgstr "ባዶ ካልሆነ ወደ ሙዚቃ ማጫወቻ ዝርዝር የሚወስድ አቋራጭ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31965"
+msgid "Shortcut to fullscreen when media is playing."
+msgstr "ሚዲያ በሚጫወትበት ጊዜ ወደ ሙሉ ማያ ገጽ የሚወስድ አቋራጭ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31966"
+msgid "Click to open shortcut menu."
+msgstr "የአቋራጭ ማውጫውን ለመክፈት እዚህ ጠቅ ያድርጉ።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31967"
+msgid "Player controls when media is playing."
+msgstr "ሚዲያ በሚጫወትበት ጊዜ የማጫወቻ መቆጣጠሪያዎች።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31968"
+msgid "Play the next TV show episode automatically."
+msgstr "የሚቀጥለውን የቲቪ ትዕይንት ክፍል በራሱ ያጫውታል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31969"
+msgid "Play themes while navigating TV Shows, Movies and Music Videos."
+msgstr "በቲቪ ትዕይንቶች፣ ፊልሞች እና ሙዚቃ ቪዲዮዎች ውስጥ ሲዘዋወሩ የጀርባ ሙዚቃዎችን ያጫውታል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31970"
+msgid "The Library Node Editor allows you to create and customise custom video nodes and music nodes within Kodi."
+msgstr "የቤተ-መጽሐፍት ኖድ አርታዒ በኮዲ ውስጥ የራስዎን የቪዲዮ እና የሙዚቃ ክፍሎች እንዲፈጥሩ እና እንዲያበጁ ያስችልዎታል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31971"
+msgid "Show overlay marker information for watched, unwatched, and in progress media items."
+msgstr "ለታዩ፣ ላልታዩ እና በመታየት ላይ ላሉ ፋይሎች የሁኔታ ምልክት ያሳያል።"
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31972"
+msgid "A script for editing Kodi's built in RSS Ticker."
+msgstr "የኮዲ አብሮ የተሰራውን የዜና ማንበቢያ ለማስተካከል የሚያገለግል ስክሪፕት።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "የቆዳ ስሪት እና የመልሶ ማግኛ አማራጮች። ሁሉንም ወደ መጀመሪያው ቀን ነባሪ ሁኔታ ይመልሳል።"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31974"
+msgid "Addons"
+msgstr "ተጨማሪዎች"

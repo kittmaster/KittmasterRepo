@@ -949,7 +949,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="button" id="202">
-			<label>$LOCALIZE[736]</label>
+			<label>$LOCALIZE[39166]</label>
 			<label2>[COLOR $VAR[MainMenuShadowColorVar]]$VAR[MainMenuShadowColorLabelVar][/COLOR]</label2>
 			<onclick>SetProperty(Reset.Color,MainMenuShadow.color,Home)</onclick>
 			<onclick>SetProperty(ActiveControlPanelName,MainMenuShadow.color,Home)</onclick>

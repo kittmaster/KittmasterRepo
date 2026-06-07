@@ -359,6 +359,9 @@
 				<left>100</left>
 				<width>1720</width>
 				<height>396</height>
+				<!-- Resolve artist filesystem path for fanart thumb slots; poll loop in script handles timing -->
+				<onfocus condition="Container.Content(artists)">RunScript(script.skin.madnox,action=artist_fanart_path)</onfocus>
+				<onscrollfinish condition="Container.Content(artists)">RunScript(script.skin.madnox,action=artist_fanart_path)</onscrollfinish>
 				<onup condition="!Skin.String(View509InfoDelay,manual) | ListItem.IsParentFolder | String.Startswith(ListItem.Label,*)">9050</onup>
 				<onup condition="Skin.String(View509InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">9999</onup>
 				<ondown>60509</ondown>

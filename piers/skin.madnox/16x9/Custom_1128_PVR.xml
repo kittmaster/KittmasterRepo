@@ -66,47 +66,48 @@
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
 				<onright>60</onright>
+
 				<!-- Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[31317]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[31317]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[551][/LOWERCASE]:[/COLOR] [B]$INFO[PVR.BackendName][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[551][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[PVR.BackendName][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[19114][/LOWERCASE]:[/COLOR] [B]v$INFO[PVR.BackendVersion][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[19114][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]v$INFO[PVR.BackendVersion][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[19012]:[/COLOR] [B]v$INFO[PVR.BackendHost][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[19012]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]v$INFO[PVR.BackendHost][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[20161] $LOCALIZE[427] $LOCALIZE[20182][/LOWERCASE]:[/COLOR] [B]$INFO[PVR.TotalDiscSpace][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[20161] $LOCALIZE[427] $LOCALIZE[20182][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[PVR.TotalDiscSpace][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31153]:[/COLOR] [B]$INFO[PVR.BackendChannels][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31153]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[PVR.BackendChannels][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[19040][/LOWERCASE]:[/COLOR] [B]$INFO[PVR.BackendTimers][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[19040][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[PVR.BackendTimers][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31485] #:[/COLOR] [B]$INFO[PVR.BackendNumber][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31485] #:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[PVR.BackendNumber][/B][/COLOR]</label>
 				</control>
 			</control>
 			<!-- Scrollbar for the Stats Group -->

@@ -1191,16 +1191,6 @@
 					</control>
 				</control>
 			</control>
-			<!-- <control type="group">
-				<top>297</top>
-				<control type="scrollbar" id="60$PARAM[id]1">
-					<top>$PARAM[height]</top>
-					<right>80</right>
-					<height>$PARAM[textboxheight]</height>
-					<onleft>60$PARAM[id]</onleft>
-					<onright condition="Control.IsVisible(61300)">61300</onright>
-				</control>
-			</control> -->
 			<control type="group">
 				<top>297</top>
 				<control type="scrollbar" id="60$PARAM[id]1">
@@ -1209,7 +1199,6 @@
 					<right>80</right>
 					<height>$PARAM[textboxheight]</height>
 					<onleft>60$PARAM[id]</onleft>
-					<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 					<onright condition="Control.IsVisible(61301)">61301</onright>
 					<showonepage>false</showonepage>
 				</control>
@@ -1853,7 +1842,8 @@
 									<width>403</width>
 									<height>235</height>
 									<include content="ViewArtwork">
-										<param name="art">$INFO[ListItem.Art(fanart1)]</param>
+										<!-- <param name="art">$INFO[ListItem.Art(fanart1)]</param> -->
+										<param name="art">$VAR[Fanart1Var]</param>
 										<param name="fallback">DefaultAddonImages.png</param>
 										<param name="diffuse">diffuse/rounded5-383x215.png</param>
 									</include>
@@ -1885,7 +1875,8 @@
 									<width>403</width>
 									<height>235</height>
 									<include content="ViewArtwork">
-										<param name="art">$INFO[ListItem.Art(fanart1)]</param>
+										<!-- <param name="art">$INFO[ListItem.Art(fanart1)]</param> -->
+										<param name="art">$VAR[Fanart1Var]</param>
 										<param name="fallback">DefaultFile.png</param>
 										<param name="diffuse">diffuse/rounded5-383x215.png</param>
 									</include>
@@ -1896,7 +1887,8 @@
 									<width>403</width>
 									<height>235</height>
 									<include content="ViewArtwork">
-										<param name="art">$INFO[ListItem.Art(fanart2)]</param>
+										<!-- <param name="art">$INFO[ListItem.Art(fanart2)]</param> -->
+										<param name="art">$VAR[Fanart2Var]</param>
 										<param name="fallback">DefaultFile.png</param>
 										<param name="diffuse">diffuse/rounded5-383x215.png</param>
 									</include>
@@ -1907,7 +1899,8 @@
 									<width>403</width>
 									<height>235</height>
 									<include content="ViewArtwork">
-										<param name="art">$INFO[ListItem.Art(fanart3)]</param>
+										<!-- <param name="art">$INFO[ListItem.Art(fanart3)]</param> -->
+										<param name="art">$VAR[Fanart3Var]</param>
 										<param name="fallback">DefaultFile.png</param>
 										<param name="diffuse">diffuse/rounded5-383x215.png</param>
 									</include>
@@ -1918,7 +1911,8 @@
 									<width>403</width>
 									<height>235</height>
 									<include content="ViewArtwork">
-										<param name="art">$INFO[ListItem.Art(fanart4)]</param>
+										<!-- <param name="art">$INFO[ListItem.Art(fanart4)]</param> -->
+										<param name="art">$VAR[Fanart4Var]</param>
 										<param name="fallback">DefaultFile.png</param>
 										<param name="diffuse">diffuse/rounded5-383x215.png</param>
 									</include>

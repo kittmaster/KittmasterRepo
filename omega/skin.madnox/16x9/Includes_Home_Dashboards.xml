@@ -1560,15 +1560,32 @@
 				<visible>!String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent)</visible>
 			</control>
 
-			<!-- ICON (Weather) -->
-			<control type="image">
+			<!-- ICON (Weather - Daily) -->
+			<!-- Must be a <multiimage> + <imagepath> (not <image>/<texture>): the      -->
+			<!-- Madnox weather icon set is ANIMATED — each code is a FOLDER of frames   -->
+			<!-- (e.g. resource://.../28/weather-28_01.png). A static <texture> pointed  -->
+			<!-- at the folder fails to load. This mirrors the panel/MyWeather.xml.      -->
+			<control type="multiimage">
 				<left>85</left>
 				<top>65</top>
 				<width>140</width>
 				<height>140</height>
 				<aspectratio>keep</aspectratio>
-				<texture>$VAR[$PARAM[iconvar]]</texture>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent)</visible>
+				<include>WeatherIconAnimation</include>
+				<imagepath background="true">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</imagepath>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + ![String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)]</visible>
+			</control>
+
+			<!-- ICON (Weather - Hourly) -->
+			<control type="multiimage">
+				<left>85</left>
+				<top>65</top>
+				<width>140</width>
+				<height>140</height>
+				<aspectratio>keep</aspectratio>
+				<include>WeatherIconAnimation</include>
+				<imagepath background="true">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</imagepath>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)]</visible>
 			</control>
 
 			<!-- Text Gradient Shadow -->

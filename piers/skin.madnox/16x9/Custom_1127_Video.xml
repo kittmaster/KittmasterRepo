@@ -66,40 +66,42 @@
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
 				<onright>60</onright>
+
 				<!-- Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[157] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[157] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31491] [LOWERCASE]$LOCALIZE[169][/LOWERCASE]:[/COLOR] [B]$INFO[System.ScreenResolution][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31491] [LOWERCASE]$LOCALIZE[169][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.ScreenResolution][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31491] [LOWERCASE]$LOCALIZE[456][/LOWERCASE]:[/COLOR] [B]$INFO[System.ScreenMode][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31491] [LOWERCASE]$LOCALIZE[456][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.ScreenMode][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[22010]:[/COLOR] [B]$INFO[System.GPUTemperature][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[22010]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.GPUTemperature][/B][/COLOR]</label>
 					<visible>Integer.IsGreater(System.GPUTemperature,1)</visible>
 				</control>
 				<control type="label">
 					<height>40</height>
-					<wrapmultiline>true</wrapmultiline>
+					<!-- <wrapmultiline>true</wrapmultiline> -->
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31487] [LOWERCASE]$LOCALIZE[31496][/LOWERCASE]:[/COLOR] [B]$INFO[System.FPS] FPS[/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31487] [LOWERCASE]$LOCALIZE[31496][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.FPS] FPS[/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>80</height>
 					<font>Font30_Reg</font>
+					<aligny>top</aligny>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[13286][/COLOR] [B]$INFO[System.VideoEncoderInfo][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[13286]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.VideoEncoderInfo][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(System.VideoEncoderInfo)</visible>
 				</control>
 			</control>

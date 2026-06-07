@@ -1298,7 +1298,7 @@
 						<top>58</top>
 						<width>320</width>
 						<height>1</height>
-						<texture colordiffuse="$VAR[PanelHighlightColorVar]">white.png</texture>
+						<texture colordiffuse="$VAR[PanelHighlightColorVar]">colors/white.png</texture>
 					</control>
 
 					<!-- Submenu list — below header -->
@@ -2498,7 +2498,7 @@
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),weather)">[COLOR $VAR[PanelSubTextColorVar]]$INFO[Weather.Location][/COLOR]  $INFO[Weather.Conditions]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),disc) + System.HasMediadvd">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[427]: [/COLOR]$INFO[System.DVDLabel]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),disc) + !System.HasMediadvd">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[427]: [/COLOR]$LOCALIZE[504]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),systeminfo)">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31023]: [/COLOR]$INFO[System.memory(used.percent)]  [COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31022]: [/COLOR]$INFO[System.CPUUsage]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(InfoLine),systeminfo)">[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31497]: [/COLOR]$INFO[System.memory(used.percent)]  [COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31486]: [/COLOR]$INFO[System.CPUUsage]</value>
 	</variable>
 
 	<variable name="InfoLineLabelVar">

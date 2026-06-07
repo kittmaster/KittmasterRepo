@@ -17,7 +17,7 @@
 	<visibleoverride group="movies" condition="Library.HasContent(Movies)">ActivateWindow(Videos,sources://video/,return)</visibleoverride>
 	<visibleoverride group="movies" condition="Library.HasContent(MovieSets)">ActivateWindow(Videos,sources://video/,return)</visibleoverride>
 	<visibleoverride group="tvshows" condition="Library.HasContent(TVShows)">ActivateWindow(Videos,sources://video/,return)</visibleoverride>
-	<visibleoverride group="2" condition="Library.HasContent(Music)">ActivateWindow(MusicLibrary,sources://music/,return)</visibleoverride>
+	<visibleoverride group="music" condition="Library.HasContent(Music)">ActivateWindow(MusicLibrary,sources://music/,return)</visibleoverride>
 	<visibleoverride group="musicvideos" condition="Library.HasContent(MusicVideos)">ActivateWindow(Videos,sources://video/,return)</visibleoverride>
 	<!-- Home background defaults -->
 	<backgrounddefault labelID="pictures">special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg</backgrounddefault>

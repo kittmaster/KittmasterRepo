@@ -298,14 +298,14 @@
 
 						<focusedlayout width="189">
 							<control type="group">
-								<animation effect="zoom" start="100" end="105" center="auto" time="200" reversible="true">Focus</animation>
+								<animation effect="zoom" start="100" end="104" center="auto" time="200" reversible="true">Focus</animation>
 								<control type="image">
 									<bordersize>5</bordersize>
 									<texture colordiffuse="D0000000" border="10">buttons/panel-select-focus.png</texture>
 								</control>
 								<control type="image">
 									<bordersize>5</bordersize>
-									<texture colordiffuse="55$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
+									<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
 								</control>
 								<control type="label">
 									<top>15</top>
@@ -473,7 +473,7 @@
 								<width>189</width>
 								<height>40</height>
 								<align>center</align>
-								<font>Font28_Bold_Caps</font>
+								<font>Font23_Bold_Caps</font>
 								<textcolor>$VAR[PanelTextColorVar]</textcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
@@ -516,14 +516,14 @@
 								</control>
 								<control type="image">
 									<bordersize>5</bordersize>
-									<texture colordiffuse="55$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
+									<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
 								</control>
 								<control type="label">
 									<top>15</top>
 									<width>189</width>
 									<height>40</height>
 									<align>center</align>
-									<font>Font28_Bold_Caps</font>
+									<font>Font23_Bold_Caps</font>
 									<textcolor>$VAR[PanelTextColorVar]</textcolor>
 									<label>$INFO[ListItem.Label]</label>
 								</control>
@@ -655,7 +655,7 @@
 					<top>66</top>
 					<width>570</width>
 					<height>2</height>
-					<texture colordiffuse="$VAR[PanelHighlightColorVar]">white.png</texture>
+					<texture colordiffuse="$VAR[PanelHighlightColorVar]">colors/white.png</texture>
 				</control>
 
 				<!-- Outlook -->
@@ -676,7 +676,7 @@
 					<top>82</top>
 					<width>2</width>
 					<height>330</height>
-					<texture colordiffuse="22FFFFFF">white.png</texture>
+					<texture colordiffuse="22FFFFFF">colors/white.png</texture>
 				</control>
 
 				<!-- WIND label -->
@@ -816,11 +816,11 @@
 				<control type="image">
 					<visible>!String.IsEmpty(Window(weather).Property(Today.MoonPhase))</visible>
 					<left>467</left>
-					<top>86</top>
-					<width>68</width>
-					<height>68</height>
+					<top>58</top>
+					<width>125</width>
+					<height>125</height>
 					<aspectratio>keep</aspectratio>
-					<texture fallback="weather/moon/default.png">$INFO[Skin.String(WeatherIcons.path)]moon/$INFO[Window(weather).Property(Today.MoonPhaseIcon)].png</texture>
+					<texture fallback="resource://resource.images.skin.madnox/weather/moon/default.png">$VAR[MadnoxMoonPhaseIconVar]</texture>
 				</control>
 				<!-- MOON phase name -->
 				<control type="label">
@@ -928,7 +928,7 @@
 					<top>66</top>
 					<width>570</width>
 					<height>2</height>
-					<texture colordiffuse="$VAR[PanelHighlightColorVar]">white.png</texture>
+					<texture colordiffuse="$VAR[PanelHighlightColorVar]">colors/white.png</texture>
 				</control>
 
 				<!-- Outlook -->
@@ -949,7 +949,7 @@
 					<top>82</top>
 					<width>2</width>
 					<height>300</height>
-					<texture colordiffuse="22FFFFFF">white.png</texture>
+					<texture colordiffuse="22FFFFFF">colors/white.png</texture>
 				</control>
 
 				<!-- WIND label -->
@@ -1161,6 +1161,28 @@
 				<width>1350</width>
 				<height>780</height>
 				<onleft>8000</onleft>
+				<!-- Chronological Flow: Step forward to next column on Down -->
+				<ondown condition="Integer.IsEqual(Container(8002).CurrentItem,4)">SetFocus(8002,4)</ondown>
+				<ondown condition="Integer.IsEqual(Container(8002).CurrentItem,8)">SetFocus(8002,8)</ondown>
+				<ondown condition="Integer.IsEqual(Container(8002).CurrentItem,12)">SetFocus(8002,12)</ondown>
+
+				<!-- Loop Down from the end of the list back to Thursday (Index 0) -->
+				<ondown condition="Integer.IsEqual(Container(8002).CurrentItem,7) + Integer.IsEqual(Container(8002).NumItems,7)">SetFocus(8002,0)</ondown>
+				<ondown condition="Integer.IsEqual(Container(8002).CurrentItem,10) + Integer.IsEqual(Container(8002).NumItems,10)">SetFocus(8002,0)</ondown>
+				<ondown condition="Integer.IsEqual(Container(8002).CurrentItem,14) + Integer.IsEqual(Container(8002).NumItems,14)">SetFocus(8002,0)</ondown>
+				<ondown condition="Integer.IsEqual(Container(8002).CurrentItem,16)">SetFocus(8002,0)</ondown>
+
+				<!-- Chronological Flow: Step backward to previous column on Up -->
+				<onup condition="Integer.IsEqual(Container(8002).CurrentItem,5)">SetFocus(8002,3)</onup>
+				<onup condition="Integer.IsEqual(Container(8002).CurrentItem,9)">SetFocus(8002,7)</onup>
+				<onup condition="Integer.IsEqual(Container(8002).CurrentItem,13)">SetFocus(8002,11)</onup>
+
+				<!-- Loop Up from Thursday (CurrentItem 1) back to the end of the list -->
+				<onup condition="Integer.IsEqual(Container(8002).CurrentItem,1) + Integer.IsEqual(Container(8002).NumItems,7)">SetFocus(8002,6)</onup>
+				<onup condition="Integer.IsEqual(Container(8002).CurrentItem,1) + Integer.IsEqual(Container(8002).NumItems,10)">SetFocus(8002,9)</onup>
+				<onup condition="Integer.IsEqual(Container(8002).CurrentItem,1) + Integer.IsEqual(Container(8002).NumItems,14)">SetFocus(8002,13)</onup>
+				<onup condition="Integer.IsEqual(Container(8002).CurrentItem,1) + Integer.IsEqual(Container(8002).NumItems,16)">SetFocus(8002,15)</onup>
+
 				<!-- Changed to horizontal so days flow chronologically (Day 1 Left, Day 2 Right, etc.) -->
 				<orientation>horizontal</orientation>
 
@@ -1227,7 +1249,7 @@
 
 				<focusedlayout width="675" height="195">
 					<control type="group">
-						<animation effect="zoom" start="100" end="102" center="auto" time="200" reversible="true">Focus</animation>
+						<animation effect="zoom" start="100" end="105" center="auto" time="200" reversible="true">Focus</animation>
 						<!-- Dark glass base -->
 						<control type="image">
 							<left>5</left>
@@ -1242,7 +1264,7 @@
 							<top>5</top>
 							<width>665</width>
 							<height>185</height>
-							<texture colordiffuse="55$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
 						</control>
 						<!-- Enlarged Icon -->
 						<control type="multiimage">
@@ -1397,7 +1419,9 @@
 				<width>1344</width>
 				<height>360</height>
 				<onleft>8000</onleft>
+				<onup>8000</onup>
 				<ondown>8006</ondown>
+				<onright condition="Integer.IsEqual(Container(8005).CurrentItem,7)">SetFocus(8006,0)</onright>
 				<orientation>horizontal</orientation>
 				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 				<animation effect="slide" start="100,0" end="0,0" time="400" tween="cubic" easing="out">Visible</animation>
@@ -1462,7 +1486,7 @@
 
 				<focusedlayout width="192" height="360">
 					<control type="group">
-						<animation effect="zoom" start="100" end="106" center="auto" time="200" reversible="true">Focus</animation>
+						<animation effect="zoom" start="100" end="108" center="auto" time="200" reversible="true">Focus</animation>
 						<control type="image">
 							<left>4</left>
 							<top>4</top>
@@ -1475,7 +1499,7 @@
 							<top>4</top>
 							<width>184</width>
 							<height>352</height>
-							<texture colordiffuse="55$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
 						</control>
 						<control type="label">
 							<top>14</top>
@@ -1554,8 +1578,11 @@
 				<top>508</top>
 				<width>1344</width>
 				<height>360</height>
-				<onleft>8000</onleft>
+				<!-- <onleft>8000</onleft> -->
+				<onleft condition="Integer.IsEqual(Container(8006).CurrentItem,1)">SetFocus(8005,7)</onleft>
+				<onright condition="Integer.IsEqual(Container(8006).CurrentItem,7)">SetFocus(8005,0)</onright>
 				<onup>8005</onup>
+				<ondown>8000</ondown>
 				<orientation>horizontal</orientation>
 				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 				<animation effect="slide" start="100,0" end="0,0" time="400" tween="cubic" easing="out">Visible</animation>
@@ -1620,7 +1647,7 @@
 
 				<focusedlayout width="192" height="360">
 					<control type="group">
-						<animation effect="zoom" start="100" end="106" center="auto" time="200" reversible="true">Focus</animation>
+						<animation effect="zoom" start="100" end="108" center="auto" time="200" reversible="true">Focus</animation>
 						<control type="image">
 							<left>4</left>
 							<top>4</top>
@@ -1633,7 +1660,7 @@
 							<top>4</top>
 							<width>184</width>
 							<height>352</height>
-							<texture colordiffuse="55$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
+							<texture colordiffuse="$VAR[PanelHighlightColorVar]" border="10">buttons/panel-select-focus.png</texture>
 						</control>
 						<control type="label">
 							<top>14</top>

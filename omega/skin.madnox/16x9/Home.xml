@@ -1090,8 +1090,9 @@
 
 				<left>30</left>
 				<bottom>285</bottom>
-				<width condition="Skin.HasSetting(MainMenuVertical)">1850</width>
-				<width condition="!Skin.HasSetting(MainMenuVertical)">1900</width>
+				<!-- Added 30px to both to fix 1-6 medium selection issue -->
+				<width condition="Skin.HasSetting(MainMenuVertical)">1880</width>
+				<width condition="!Skin.HasSetting(MainMenuVertical)">1930</width>
 				<height>470</height>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>

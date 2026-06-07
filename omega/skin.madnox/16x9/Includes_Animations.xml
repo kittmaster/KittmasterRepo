@@ -105,17 +105,6 @@
 		</animation>
 	</include>
 
-	<!-- <include name="AnimationZoomWindow">
-		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="120" end="100" center="50%,50%" time="480" tween="cubic" easing="out" />
-			<effect type="fade" start="0" end="100" time="480" />
-		</animation>
-		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" start="100" end="120" center="50%,50%" time="480" tween="cubic" easing="out" />
-			<effect type="fade" start="100" end="0" time="480" />
-		</animation>
-	</include> -->
-
 	<include name="AnimationZoomWindow">
 		<animation type="WindowOpen" reversible="false">
 			<effect type="zoom" start="120" end="100" center="50%,50%" time="480" tween="cubic" easing="out" />
@@ -126,17 +115,6 @@
 			<effect type="fade" start="100" end="0" time="480" />
 		</animation>
 	</include>
-
-	<!-- <include name="AnimationZoomVisible">
-		<animation type="Visible" reversible="false">
-			<effect type="zoom" start="120" end="100" center="50%,50%" time="480" tween="cubic" easing="out" />
-			<effect type="fade" start="0" end="100" time="480" />
-		</animation>
-		<animation type="Hidden" reversible="false">
-			<effect type="zoom" start="100" end="120" center="50%,50%" time="480" tween="cubic" easing="out" />
-			<effect type="fade" start="100" end="0" time="480" />
-		</animation>
-	</include> -->
 
 	<include name="AnimationZoomVisible">
 		<animation type="Visible" reversible="false">
@@ -375,16 +353,5 @@
 	<include name="AnimationVideoPreviewPopup400">
 		<animation effect="slide" start="800,0" end="0,0" time="400" tween="cubic" easing="out">Visible</animation>
 		<animation effect="slide" start="0,0" end="800,0" time="400" tween="cubic" easing="in">Hidden</animation>
-	</include>
-
-	<include name="DialogOpenCloseAnimation">
-		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="150" end="100" center="960,640" time="250" tween="cubic" easing="out" />
-			<effect type="fade" end="100" time="100" />
-		</animation>
-		<animation type="WindowClose" reversible="false">
-			<effect type="fade" start="100" end="0" time="100" delay="100" />
-			<effect type="zoom" start="100" end="130" center="960,640" time="250" tween="cubic" easing="in" />
-		</animation>
 	</include>
 </includes>

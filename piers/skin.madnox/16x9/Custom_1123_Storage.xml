@@ -73,20 +73,22 @@
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[154] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[154] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
 
+				<!-- Used Space Percent -->
 				<control type="label">
 					<height>40</height>
 					<font>Font28_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[20182] [LOWERCASE]$LOCALIZE[20162][/LOWERCASE]:[/COLOR] [LOWERCASE][B]$INFO[System.UsedSpacePercent][/LOWERCASE][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[20182] [LOWERCASE]$LOCALIZE[20162][/LOWERCASE]:[/COLOR] [LOWERCASE][COLOR $VAR[PanelTextColorVar]][B]$INFO[System.UsedSpacePercent][/B][/COLOR][/LOWERCASE]</label>
 				</control>
 
+				<!-- Used Space GB -->
 				<control type="label">
 					<height>40</height>
 					<font>Font28_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31489] [LOWERCASE]$LOCALIZE[20162][/LOWERCASE]:[/COLOR] [LOWERCASE][B]$INFO[System.UsedSpace][/LOWERCASE][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31489] [LOWERCASE]$LOCALIZE[20162][/LOWERCASE]:[/COLOR] [LOWERCASE][COLOR $VAR[PanelTextColorVar]][B]$INFO[System.UsedSpace][/B][/COLOR][/LOWERCASE]</label>
 				</control>
 
 				<control type="progress">
@@ -99,16 +101,18 @@
 					<height>10</height>
 				</control>
 
+				<!-- Free Space Percent -->
 				<control type="label">
 					<height>40</height>
 					<font>Font28_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[20182] [LOWERCASE]$LOCALIZE[31502][/LOWERCASE]:[/COLOR] [LOWERCASE][B]$INFO[System.FreeSpacePercent][/LOWERCASE][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[20182] [LOWERCASE]$LOCALIZE[31502][/LOWERCASE]:[/COLOR] [LOWERCASE][COLOR $VAR[PanelTextColorVar]][B]$INFO[System.FreeSpacePercent][/B][/COLOR][/LOWERCASE]</label>
 				</control>
 
+				<!-- Free Space GB -->
 				<control type="label">
 					<height>40</height>
 					<font>Font28_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31489] [LOWERCASE]$LOCALIZE[31502][/LOWERCASE]:[/COLOR] [LOWERCASE][B]$INFO[System.FreeSpace][/LOWERCASE][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31489] [LOWERCASE]$LOCALIZE[31502][/LOWERCASE]:[/COLOR] [LOWERCASE][COLOR $VAR[PanelTextColorVar]][B]$INFO[System.FreeSpace][/B][/COLOR][/LOWERCASE]</label>
 				</control>
 
 				<control type="progress">
@@ -125,7 +129,7 @@
 				<control type="label">
 					<height>40</height>
 					<font>Font28_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[19116] [LOWERCASE]$LOCALIZE[20161][/LOWERCASE]:[/COLOR] [B]$INFO[System.TotalSpace][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[19116] [LOWERCASE]$LOCALIZE[20161][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.TotalSpace][/B][/COLOR]</label>
 				</control>
 			</control>
 

@@ -67,30 +67,34 @@
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
 				<onright>60</onright>
+
 				<!-- Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[31483] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[31483] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[12395]:[/COLOR] [B]$INFO[System.BatteryLevel][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[12395]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BatteryLevel][/B][/COLOR]</label>
 				</control>
+
 				<!-- Spacer -->
 				<control type="label">
 					<height>20</height>
 					<label />
 				</control>
+
 				<!-- Legend Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[536] $LOCALIZE[19033]:[/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]]$LOCALIZE[536] $LOCALIZE[19033]:[/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
+
 				<!-- Legend Item: Green -->
 				<control type="group">
 					<height>60</height>
@@ -108,9 +112,10 @@
 						<height>60</height>
 						<aligny>center</aligny>
 						<font>Font30_Reg</font>
-						<label>$LOCALIZE[393]: (60% - 100%)</label>
+						<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[393]: (60% - 100%)[/COLOR]</label>
 					</control>
 				</control>
+
 				<!-- Legend Item: Yellow -->
 				<control type="group">
 					<height>60</height>
@@ -128,9 +133,10 @@
 						<height>60</height>
 						<aligny>center</aligny>
 						<font>Font30_Reg</font>
-						<label>$LOCALIZE[392]: (11% - 59%)</label>
+						<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[392]: (11% - 59%)[/COLOR]</label>
 					</control>
 				</control>
+
 				<!-- Legend Item: Red -->
 				<control type="group">
 					<height>60</height>
@@ -148,9 +154,10 @@
 						<height>60</height>
 						<aligny>center</aligny>
 						<font>Font30_Reg</font>
-						<label>$LOCALIZE[391]: (6% - 10%)</label>
+						<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[391]: (6% - 10%)[/COLOR]</label>
 					</control>
 				</control>
+
 				<!-- Legend Item: Critical -->
 				<control type="group">
 					<height>60</height>
@@ -168,10 +175,11 @@
 						<height>60</height>
 						<aligny>center</aligny>
 						<font>Font30_Reg</font>
-						<label>$LOCALIZE[1394]: (0% - 5%)</label>
+						<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[1394]: (0% - 5%)[/COLOR]</label>
 					</control>
 				</control>
 			</control>
+
 			<!-- Scrollbar for the Stats Group -->
 			<control type="scrollbar" id="60">
 				<right>40</right>

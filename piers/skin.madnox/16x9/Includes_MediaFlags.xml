@@ -1783,41 +1783,117 @@
 		<value>DefaultStudios.png</value>
 	</variable>
 
+	<variable name="CleanStudioNameVar">
+		<!-- 1. Check TMDb Helper Details Container (7005) Properties (with lowercase check) -->
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(studio.1.name))">$INFO[Container(7005).ListItem.Property(studio.1.name)]</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Studio.1.Name))">$INFO[Container(7005).ListItem.Property(Studio.1.Name)]</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(network.1.name))">$INFO[Container(7005).ListItem.Property(network.1.name)]</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Network.1.Name))">$INFO[Container(7005).ListItem.Property(Network.1.Name)]</value>
+
+		<!-- 2. Check main ListItem properties (local library or plugin items) -->
+		<value condition="!String.IsEmpty(ListItem.Property(studio.1.name))">$INFO[ListItem.Property(studio.1.name)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Studio.1.Name))">$INFO[ListItem.Property(Studio.1.Name)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(network.1.name))">$INFO[ListItem.Property(network.1.name)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Network.1.Name))">$INFO[ListItem.Property(Network.1.Name)]</value>
+
+		<!-- 3. Check Window(Home) monitor cache -->
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.studio.1.name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.studio.1.name)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.network.1.name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.network.1.name)]</value>
+
+		<!-- 4. Common Concatenated String Catch-Net (Intercepts lists like "A / B") -->
+		<!-- Wrapping all second-parameter strings containing spaces in single quotes -->
+		<value condition="String.Contains(ListItem.Studio,'20th Century Studios') | String.Contains(Container(7005).ListItem.Studio,'20th Century Studios') | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),'20th Century Studios')">20th Century Studios</value>
+		<value condition="String.Contains(ListItem.Studio,'20th Century') | String.Contains(Container(7005).ListItem.Studio,'20th Century') | String.Contains(ListItem.Studio,'Twentieth Century') | String.Contains(Container(7005).ListItem.Studio,'Twentieth Century') | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),'20th Century')">20th Century Fox</value>
+		<value condition="String.Contains(ListItem.Studio,Marvel) | String.Contains(Container(7005).ListItem.Studio,Marvel) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Marvel)">Marvel Studios</value>
+		<value condition="String.Contains(ListItem.Studio,Lucasfilm) | String.Contains(Container(7005).ListItem.Studio,Lucasfilm) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Lucasfilm)">Lucasfilm</value>
+		<value condition="String.Contains(ListItem.Studio,Pixar) | String.Contains(Container(7005).ListItem.Studio,Pixar) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Pixar)">Pixar</value>
+		<value condition="String.Contains(ListItem.Studio,Disney) | String.Contains(Container(7005).ListItem.Studio,Disney) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Disney)">Walt Disney Pictures</value>
+		<value condition="String.Contains(ListItem.Studio,Warner) | String.Contains(Container(7005).ListItem.Studio,Warner) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Warner)">Warner Bros. Pictures</value>
+		<value condition="String.Contains(ListItem.Studio,Universal) | String.Contains(Container(7005).ListItem.Studio,Universal) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Universal)">Universal Pictures</value>
+		<value condition="String.Contains(ListItem.Studio,Paramount) | String.Contains(Container(7005).ListItem.Studio,Paramount) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Paramount)">Paramount</value>
+		<value condition="String.Contains(ListItem.Studio,Columbia) | String.Contains(Container(7005).ListItem.Studio,Columbia) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Columbia)">Columbia Pictures</value>
+		<value condition="String.Contains(ListItem.Studio,Sony) | String.Contains(Container(7005).ListItem.Studio,Sony) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Sony)">Sony Pictures</value>
+		<value condition="String.Contains(ListItem.Studio,DreamWorks) | String.Contains(Container(7005).ListItem.Studio,DreamWorks) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),DreamWorks)">DreamWorks</value>
+		<value condition="String.Contains(ListItem.Studio,Lionsgate) | String.Contains(Container(7005).ListItem.Studio,Lionsgate) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Lionsgate)">Lionsgate</value>
+		<value condition="String.Contains(ListItem.Studio,'New Line') | String.Contains(Container(7005).ListItem.Studio,'New Line') | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),'New Line')">New Line Cinema</value>
+		<value condition="String.Contains(ListItem.Studio,MGM) | String.Contains(Container(7005).ListItem.Studio,MGM) | String.Contains(ListItem.Studio,'Metro-Goldwyn-Mayer') | String.Contains(Container(7005).ListItem.Studio,'Metro-Goldwyn-Mayer')">Metro-Goldwyn-Mayer</value>
+		<value condition="String.Contains(ListItem.Studio,A24) | String.Contains(Container(7005).ListItem.Studio,A24) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),A24)">A24</value>
+		<value condition="String.Contains(ListItem.Studio,Apple) | String.Contains(Container(7005).ListItem.Studio,Apple) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Apple)">Apple TV+</value>
+		<value condition="String.Contains(ListItem.Studio,Netflix) | String.Contains(Container(7005).ListItem.Studio,Netflix) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Netflix)">Netflix</value>
+		<value condition="String.Contains(ListItem.Studio,Amazon) | String.Contains(Container(7005).ListItem.Studio,Amazon) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Amazon)">Amazon</value>
+		<value condition="String.Contains(ListItem.Studio,Hulu) | String.Contains(Container(7005).ListItem.Studio,Hulu) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Hulu)">Hulu</value>
+		<value condition="String.Contains(ListItem.Studio,HBO) | String.Contains(Container(7005).ListItem.Studio,HBO) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),HBO)">HBO</value>
+		<value condition="String.Contains(ListItem.Studio,Showtime) | String.Contains(Container(7005).ListItem.Studio,Showtime) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Showtime)">Showtime</value>
+		<value condition="String.Contains(ListItem.Studio,Starz) | String.Contains(Container(7005).ListItem.Studio,Starz) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Starz)">STARZ</value>
+		<value condition="String.Contains(ListItem.Studio,AMC) | String.Contains(Container(7005).ListItem.Studio,AMC) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),AMC)">AMC</value>
+		<value condition="String.Contains(ListItem.Studio,FX) | String.Contains(Container(7005).ListItem.Studio,FX) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),FX)">FX</value>
+		<value condition="String.Contains(ListItem.Studio,CW) | String.Contains(Container(7005).ListItem.Studio,CW) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),CW)">The CW</value>
+		<value condition="String.Contains(ListItem.Studio,ABC) | String.Contains(Container(7005).ListItem.Studio,ABC) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),ABC)">ABC</value>
+		<value condition="String.Contains(ListItem.Studio,NBC) | String.Contains(Container(7005).ListItem.Studio,NBC) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),NBC)">NBC</value>
+		<value condition="String.Contains(ListItem.Studio,CBS) | String.Contains(Container(7005).ListItem.Studio,CBS) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),CBS)">CBS</value>
+		<value condition="String.Contains(ListItem.Studio,FOX) | String.Contains(Container(7005).ListItem.Studio,FOX) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),FOX)">FOX</value>
+		<value condition="String.Contains(ListItem.Studio,BBC) | String.Contains(Container(7005).ListItem.Studio,BBC) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),BBC)">BBC</value>
+		<value condition="String.Contains(ListItem.Studio,Syfy) | String.Contains(Container(7005).ListItem.Studio,Syfy) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Syfy)">Syfy</value>
+		<value condition="String.Contains(ListItem.Studio,'Adult Swim') | String.Contains(Container(7005).ListItem.Studio,'Adult Swim') | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),'Adult Swim')">Adult Swim</value>
+		<value condition="String.Contains(ListItem.Studio,'Cartoon Network') | String.Contains(Container(7005).ListItem.Studio,'Cartoon Network') | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),'Cartoon Network')">Cartoon Network</value>
+		<value condition="String.Contains(ListItem.Studio,Nickelodeon) | String.Contains(Container(7005).ListItem.Studio,Nickelodeon) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Nickelodeon)">Nickelodeon</value>
+		<value condition="String.Contains(ListItem.Studio,'Comedy Central') | String.Contains(Container(7005).ListItem.Studio,'Comedy Central') | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),'Comedy Central')">Comedy Central</value>
+		<value condition="String.Contains(ListItem.Studio,MTV) | String.Contains(Container(7005).ListItem.Studio,MTV) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),MTV)">MTV</value>
+		<value condition="String.Contains(ListItem.Studio,Peacock) | String.Contains(Container(7005).ListItem.Studio,Peacock) | String.Contains(Window(Home).Property(TMDbHelper.ListItem.Studio),Peacock)">Peacock</value>
+
+		<!-- 5. Raw Properties Fallback -->
+		<value condition="!String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio]</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Studio)">$INFO[Container(7005).ListItem.Studio]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio)]</value>
+		<value />
+	</variable>
+
 	<variable name="VideoInfoStudioIconsVar">
 		<value condition="String.IsEqual(ListItem.DBTYPE,set) + !Skin.HasSetting(MediaFlagsColored)">flags/default/set.png</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,set) + Skin.HasSetting(MediaFlagsColored)">flags/colored/set.png</value>
 
-		<!-- Native ListItem properties (Primary source) -->
-		<value condition="!String.IsEmpty(ListItem.Property(Studio.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[ListItem.Property(Studio.1.Name),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(ListItem.Property(Studio.1.Name)) + Skin.HasSetting(MediaFlagsColored)">$INFO[ListItem.Property(Studio.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(ListItem.Property(Network.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[ListItem.Property(Network.1.Name),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(ListItem.Property(Network.1.Name)) + Skin.HasSetting(MediaFlagsColored)">$INFO[ListItem.Property(Network.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(ListItem.Studio) + !Skin.HasSetting(MediaFlagsColored)">$INFO[ListItem.Studio,resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(ListItem.Studio) + Skin.HasSetting(MediaFlagsColored)">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
+		<!-- Use Cleaned Studio Name: conditions mirror CleanStudioNameVar sources (1-4) -->
+		<!-- $VAR[] in condition="" is not evaluated by Kodi; check the real sources instead -->
+		<!-- Source 1: TMDb Helper Details Container (7005) -->
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(studio.1.name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(studio.1.name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Studio.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Studio.1.Name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(network.1.name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(network.1.name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Network.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Network.1.Name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<!-- Source 2: Main ListItem -->
+		<value condition="!String.IsEmpty(ListItem.Property(studio.1.name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Property(studio.1.name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Studio.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Studio.1.Name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Property(network.1.name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Property(network.1.name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Network.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Network.1.Name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<!-- Source 3: Window(Home) TMDbHelper monitor cache -->
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.studio.1.name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.studio.1.name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.network.1.name)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.network.1.name)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<!-- Source 4: Concatenated string catch-net (ListItem.Studio / Container(7005) / Window(Home) studio string) -->
+		<value condition="!String.IsEmpty(ListItem.Studio) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(ListItem.Studio) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Studio) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Container(7005).ListItem.Studio) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio)) + !Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.white/$VAR[CleanStudioNameVar].png</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio)) + Skin.HasSetting(MediaFlagsColored)">resource://resource.images.studios.coloured/$VAR[CleanStudioNameVar].png</value>
 
-		<!-- TMDb Helper Window Cache (Survives NATIVE return trip wipes) -->
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name)) + Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio)) + Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network.1.Name),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)) + Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network)) + Skin.HasSetting(MediaFlagsColored)">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network),resource://resource.images.studios.coloured/,.png]</value>
-
-		<!-- TMDb Helper Extended Info Panel (10051) -->
-		<value condition="!String.IsEmpty(Container(10051).ListItem.Property(Studio.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Container(10051).ListItem.Property(Studio.1.Name),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Container(10051).ListItem.Property(Studio.1.Name)) + Skin.HasSetting(MediaFlagsColored)">$INFO[Container(10051).ListItem.Property(Studio.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(Container(10051).ListItem.Property(Network.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Container(10051).ListItem.Property(Network.1.Name),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Container(10051).ListItem.Property(Network.1.Name)) + Skin.HasSetting(MediaFlagsColored)">$INFO[Container(10051).ListItem.Property(Network.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(Container(10051).ListItem.Studio) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Container(10051).ListItem.Studio,resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Container(10051).ListItem.Studio) + Skin.HasSetting(MediaFlagsColored)">$INFO[Container(10051).ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
-
-		<!-- Deep NATIVE details container (7005) -->
-		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Studio.1.Name)) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Container(7005).ListItem.Property(Studio.1.Name),resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Container(7005).ListItem.Property(Studio.1.Name)) + Skin.HasSetting(MediaFlagsColored)">$INFO[Container(7005).ListItem.Property(Studio.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-		<value condition="!String.IsEmpty(Container(7005).ListItem.Studio) + !Skin.HasSetting(MediaFlagsColored)">$INFO[Container(7005).ListItem.Studio,resource://resource.images.studios.white/,.png]</value>
-		<value condition="!String.IsEmpty(Container(7005).ListItem.Studio) + Skin.HasSetting(MediaFlagsColored)">$INFO[Container(7005).ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
+		<!-- Fallback -->
+		<value condition="Skin.HasSetting(MediaFlagsColored)">DefaultStudios.png</value>
+		<value>DefaultStudios.png</value>
 	</variable>
 
 	<variable name="TMDBHelperStudioIconsVar">
@@ -1832,58 +1908,195 @@
 	<!-- Synchronized With All Rating Types, Including Tv Ratings. -->
 	<!-- ================================================================================================================================== -->
 	<variable name="RatingFlagVar">
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- MPAA (US) — Tier 1: Primary cert assets (most specific) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- NR / Not Rated -->
 		<value condition="String.Contains(ListItem.MPAA,NR) | String.IsEqual(ListItem.MPAA,Rated) | String.IsEqual(ListItem.MPAA,Rated ) | String.IsEqual(ListItem.MPAA,Not Rated) | String.IsEqual(ListItem.MPAA,Unrated) | String.IsEqual(ListItem.MPAA,Rated Unrated)">NR.png</value>
+		<!-- NR — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,US:NR) | String.IsEqual(ListItem.MPAA,USA:NR)">MPAA_NR_Certificate_US.png</value>
+		<!-- G -->
 		<value condition="String.Contains(ListItem.MPAA,US:G) | String.Contains(ListItem.MPAA,USA:G) | String.Contains(ListItem.MPAA,Rated G) | String.Contains(ListItem.MPAA,Rated Approved) | String.Contains(ListItem.MPAA,Rated Passed)">G.png</value>
+		<!-- G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,G)">MPAA_G_Certificate_US.png</value>
+		<!-- G — Tier 2 deprecated fallback (Rated G.png) -->
+		<value condition="String.Contains(ListItem.MPAA,G) + !String.Contains(ListItem.MPAA,PG) + !String.Contains(ListItem.MPAA,NR) + !String.Contains(ListItem.MPAA,NC) + !String.Contains(ListItem.MPAA,TV)">Rated G.png</value>
+		<!-- PG-13 (before PG to avoid substring collision) -->
 		<value condition="String.Contains(ListItem.MPAA,PG-13) | String.Contains(ListItem.MPAA,Rated PG-13)">PG-13.png</value>
+		<!-- PG-13 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,US:PG-13) | String.IsEqual(ListItem.MPAA,USA:PG-13)">MPAA_PG-13_Certificate_US.png</value>
+		<!-- PG-13 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,PG-13) + !String.Contains(ListItem.MPAA,Rated PG-13)">Rated PG-13.png</value>
+		<!-- PG -->
 		<value condition="String.Contains(ListItem.MPAA,Rated PG) | String.IsEqual(ListItem.MPAA,PG)">PG.png</value>
+		<!-- PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,US:PG) | String.IsEqual(ListItem.MPAA,USA:PG)">MPAA_PG_Certificate_US.png</value>
+		<!-- PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,PG) + !String.Contains(ListItem.MPAA,PG-13) + !String.Contains(ListItem.MPAA,TV-PG)">Rated PG.png</value>
+		<!-- R (before NC-17 to avoid NC substring) -->
 		<value condition="String.Contains(ListItem.MPAA,US:R) | String.Contains(ListItem.MPAA,USA:R) | String.Contains(ListItem.MPAA,Rated R) | String.IsEqual(ListItem.MPAA,R)">R.png</value>
+		<!-- R — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,US:R) | String.IsEqual(ListItem.MPAA,USA:R)">MPAA_R_Certificate_US.png</value>
+		<!-- R — Tier 2 deprecated fallback (exclude PG / NC / Unrated false positives) -->
+		<value condition="String.Contains(ListItem.MPAA,R) + !String.Contains(ListItem.MPAA,PG) + !String.Contains(ListItem.MPAA,NC) + !String.Contains(ListItem.MPAA,NR) + !String.Contains(ListItem.MPAA,Unrated) + !String.Contains(ListItem.MPAA,TV) + !String.Contains(ListItem.MPAA,Korea) + !String.Contains(ListItem.MPAA,KR) + !String.Contains(ListItem.MPAA,18)">Rated R.png</value>
+		<!-- NC-17 -->
 		<value condition="String.Contains(ListItem.MPAA,US:NC-17) | String.Contains(ListItem.MPAA,USA:NC-17) | String.Contains(ListItem.MPAA,Rated NC-17)">NC-17.png</value>
-		<value condition="String.Contains(ListItem.MPAA,UK:U)">BBFC_U_Certificate_UK.png</value>
-		<value condition="String.Contains(ListItem.MPAA,UK:PG)">BBFC_PG_Certificate_UK.png</value>
-		<value condition="String.Contains(ListItem.MPAA,UK:12A)">BBFC_12A_Certificate_UK.png</value>
-		<value condition="String.Contains(ListItem.MPAA,UK:12)">BBFC_12_Certificate_UK.png</value>
-		<value condition="String.Contains(ListItem.MPAA,UK:15)">BBFC_15_Certificate_UK.png</value>
-		<value condition="String.Contains(ListItem.MPAA,UK:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- NC-17 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,US:NC-17) | String.IsEqual(ListItem.MPAA,USA:NC-17) | String.IsEqual(ListItem.MPAA,NC-17)">MPAA_NC-17_Certificate_US.png</value>
+		<!-- NC-17 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,NC-17)">Rated NC-17.png</value>
+		<!-- X — explicitly rated X (distinct from NC-17) -->
+		<value condition="String.IsEqual(ListItem.MPAA,X) | String.IsEqual(ListItem.MPAA,Rated X) | String.IsEqual(ListItem.MPAA,US:X) | String.IsEqual(ListItem.MPAA,USA:X)">X.png</value>
+		<!-- X — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,X) | String.IsEqual(ListItem.MPAA,US:X)">MPAA_X_Certificate_US.png</value>
+		<!-- X — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,Rated X) + !String.Contains(ListItem.MPAA,NC-17)">Rated X.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- UK (BBFC) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(ListItem.MPAA,UK:U) | String.IsEqual(ListItem.MPAA,BBFC:U) | String.Contains(ListItem.MPAA,BBFC U)">BBFC_U_Certificate_UK.png</value>
+		<value condition="String.Contains(ListItem.MPAA,UK:PG) | String.IsEqual(ListItem.MPAA,BBFC:PG) | String.Contains(ListItem.MPAA,BBFC PG)">BBFC_PG_Certificate_UK.png</value>
+		<value condition="String.Contains(ListItem.MPAA,UK:12A) | String.IsEqual(ListItem.MPAA,BBFC:12A) | String.IsEqual(ListItem.MPAA,12A)">BBFC_12A_Certificate_UK.png</value>
+		<value condition="String.Contains(ListItem.MPAA,UK:12) | String.IsEqual(ListItem.MPAA,BBFC:12)">BBFC_12_Certificate_UK.png</value>
+		<value condition="String.Contains(ListItem.MPAA,UK:15) | String.IsEqual(ListItem.MPAA,BBFC:15) | String.IsEqual(ListItem.MPAA,15)">BBFC_15_Certificate_UK.png</value>
+		<value condition="String.Contains(ListItem.MPAA,UK:18) | String.IsEqual(ListItem.MPAA,BBFC:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Germany (FSK) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(ListItem.MPAA,Germany:16) | String.Contains(ListItem.MPAA,ab 16) | String.IsEqual(ListItem.MPAA,16) | String.Contains(ListItem.MPAA,FSK 16) | String.Contains(ListItem.MPAA,Rated 16)">FSK-16.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Germany:0) | String.Contains(ListItem.MPAA,ab 0) | String.IsEqual(ListItem.MPAA,0) | String.Contains(ListItem.MPAA,FSK 0) | String.Contains(ListItem.MPAA,Rated 0)">FSK-0.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Germany:6) | String.Contains(ListItem.MPAA,ab 6) | String.IsEqual(ListItem.MPAA,6) | String.Contains(ListItem.MPAA,FSK 6) | String.Contains(ListItem.MPAA,Rated 6)">FSK-6.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Germany:12) | String.Contains(ListItem.MPAA,ab 12) | String.IsEqual(ListItem.MPAA,12) | String.Contains(ListItem.MPAA,FSK 12) | String.Contains(ListItem.MPAA,Rated 12)">FSK-12.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Germany:18) | String.Contains(ListItem.MPAA,ab 18) | String.IsEqual(ListItem.MPAA,18) | String.Contains(ListItem.MPAA,FSK 18) | String.Contains(ListItem.MPAA,Rated 18)">FSK-18.png</value>
+		<!-- FSK generic fallback (o.A. = ohne Altersbeschränkung = all ages) -->
 		<value condition="String.Contains(ListItem.MPAA,Germany) |String.Contains(ListItem.MPAA,FSK) | String.Contains(ListItem.MPAA,o.A) | String.Contains(ListItem.MPAA,Rated 0)">FSK-0.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary shorthand prefix variants (scrapers may use these) -->
+		<value condition="String.IsEqual(ListItem.MPAA,Hungary:BA) | String.IsEqual(ListItem.MPAA,HU:BA)">HU_BA.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Hungary:KN) | String.IsEqual(ListItem.MPAA,HU:KN)">HU_KN.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Hungary:12) | String.IsEqual(ListItem.MPAA,HU:12)">HU_12.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Hungary:16) | String.IsEqual(ListItem.MPAA,HU:16)">HU_16.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Hungary:18) | String.IsEqual(ListItem.MPAA,HU:18)">HU_18.png</value>
+		<!-- Hungary full Hungarian text strings (existing) -->
 		<value condition="String.Contains(ListItem.MPAA,besorolás alatt)">HU_BA.png</value>
 		<value condition="String.Contains(ListItem.MPAA,korhatárra való tekintett nélkül megtekintetheto)">HU_KN.png</value>
 		<value condition="String.Contains(ListItem.MPAA,12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">HU_12.png</value>
 		<value condition="String.Contains(ListItem.MPAA,16 éven aluliak számára nem ajánlott)">HU_16.png</value>
 		<value condition="String.Contains(ListItem.MPAA,18 éven aluliak számára nem ajánlott)">HU_18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- France (CSA) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(ListItem.MPAA,France:U) | String.Contains(ListItem.MPAA,Tout public) | String.Contains(ListItem.MPAA,partir de 3 ans) | String.Contains(ListItem.MPAA,partir de 6 ans)">csaU.png</value>
-		<value condition="String.Contains(ListItem.MPAA,France:-10) | String.Contains(ListItem.MPAA,Interdit aux moins de 10 ans) | String.Contains(ListItem.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
-		<value condition="String.Contains(ListItem.MPAA,France:-12) | String.Contains(ListItem.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
-		<value condition="String.Contains(ListItem.MPAA,France:-16) | String.Contains(ListItem.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
-		<value condition="String.Contains(ListItem.MPAA,France:-18) | String.Contains(ListItem.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<value condition="String.Contains(ListItem.MPAA,France:-10) | String.Contains(ListItem.MPAA,France:10) | String.Contains(ListItem.MPAA,Interdit aux moins de 10 ans) | String.Contains(ListItem.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
+		<value condition="String.Contains(ListItem.MPAA,France:-12) | String.Contains(ListItem.MPAA,France:12) | String.Contains(ListItem.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
+		<value condition="String.Contains(ListItem.MPAA,France:-16) | String.Contains(ListItem.MPAA,France:16) | String.Contains(ListItem.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
+		<value condition="String.Contains(ListItem.MPAA,France:-18) | String.Contains(ListItem.MPAA,France:18) | String.Contains(ListItem.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea (KR) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea shorthand prefix variants -->
+		<value condition="String.IsEqual(ListItem.MPAA,Korea:All) | String.IsEqual(ListItem.MPAA,KR:All) | String.Contains(ListItem.MPAA,전체관람가)">KR_Certificate_All.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Korea:12) | String.IsEqual(ListItem.MPAA,KR:12)">KR_Certificate_12.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Korea:15) | String.IsEqual(ListItem.MPAA,KR:15)">KR_Certificate_15.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Korea:18) | String.IsEqual(ListItem.MPAA,KR:18)">KR_Certificate_18.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Korea:R) | String.IsEqual(ListItem.MPAA,KR:R)">KR_Certificate_R.png</value>
+		<!-- Korea Korean-text strings (existing) -->
 		<value condition="String.Contains(ListItem.MPAA,전체)">KR_Certificate_All.png</value>
 		<value condition="String.Contains(ListItem.MPAA,12세)">KR_Certificate_12.png</value>
 		<value condition="String.Contains(ListItem.MPAA,15세)">KR_Certificate_15.png</value>
 		<value condition="String.Contains(ListItem.MPAA,불가)">KR_Certificate_18.png</value>
 		<value condition="String.Contains(ListItem.MPAA,제한)">KR_Certificate_R.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Brazil (MPAA Brazil) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(ListItem.MPAA,Brazil:Livre) | String.Contains(ListItem.MPAA,Livre)">MPAA_Brazil_Livre.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Brazil:10) | String.Contains(ListItem.MPAA,10 anos)">MPAA_Brazil_10.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Brazil:12) | String.Contains(ListItem.MPAA,12 anos)">MPAA_Brazil_12.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Brazil:14) | String.Contains(ListItem.MPAA,14 anos)">MPAA_Brazil_14.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Brazil:16) | String.Contains(ListItem.MPAA,16 anos)">MPAA_Brazil_16.png</value>
 		<value condition="String.Contains(ListItem.MPAA,Brazil:18) | String.Contains(ListItem.MPAA,18 anos)">MPAA_Brazil_18.png</value>
-		<value condition="String.Contains(ListItem.MPAA,Australia:)">$INFO[ListItem.MPAA,australia_,.png]</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Australia — explicit per-rating conditionals (replaces dynamic $INFO line) -->
+		<!-- NOTE: australia_MA.png covers MA15+ bare, australia_ma15+ covers R18+ branding -->
+		<!-- Flag if scraper returns non-standard tokens (e.g. "Aus:MA 15+") for tuning -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(ListItem.MPAA,Australia:R18) | String.Contains(ListItem.MPAA,Aus:R18) | String.Contains(ListItem.MPAA,R18)">australia_r18+.png</value>
+		<value condition="String.Contains(ListItem.MPAA,Australia:MA15) | String.Contains(ListItem.MPAA,Aus:MA15) | String.Contains(ListItem.MPAA,MA15)">australia_ma15+.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Australia:MA) | String.IsEqual(ListItem.MPAA,Aus:MA) | String.Contains(ListItem.MPAA,Australia:MA) | String.Contains(ListItem.MPAA,Aus:MA)">australia_MA.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Australia:R) | String.IsEqual(ListItem.MPAA,Aus:R)">australia_R.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Australia:M) | String.IsEqual(ListItem.MPAA,Aus:M) | String.IsEqual(ListItem.MPAA,Australia M)">australia_M.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Australia:PG) | String.IsEqual(ListItem.MPAA,Aus:PG)">australia_PG.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Australia:G) | String.IsEqual(ListItem.MPAA,Aus:G) | String.IsEqual(ListItem.MPAA,Australia Approved)">australia_G.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Netherlands (Kijkwijzer / NICAM) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(ListItem.MPAA,NL-AL)">NL-AL.png</value>
+		<value condition="String.Contains(ListItem.MPAA,NL-MG6)">NL-MG6.png</value>
 		<value condition="String.Contains(ListItem.MPAA,NL-6)">NL-6.png</value>
 		<value condition="String.Contains(ListItem.MPAA,NL-9)">NL-9.png</value>
 		<value condition="String.Contains(ListItem.MPAA,NL-12)">NL-12.png</value>
+		<value condition="String.Contains(ListItem.MPAA,NL-14)">NL-14.png</value>
 		<value condition="String.Contains(ListItem.MPAA,NL-16)">NL-16.png</value>
 		<value condition="String.Contains(ListItem.MPAA,NL-18)">NL-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Greece (GRSC) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(ListItem.MPAA,Greece:K) | String.Contains(ListItem.MPAA,gr-k) | String.Contains(ListItem.MPAA,Greece:K) | String.Contains(ListItem.MPAA,GR:K)">gr-k.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Greece:8) | String.Contains(ListItem.MPAA,gr-8) | String.Contains(ListItem.MPAA,Greece:8) | String.Contains(ListItem.MPAA,GR:8) | String.Contains(ListItem.MPAA,8 έτη)">gr-8.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Greece:12) | String.Contains(ListItem.MPAA,gr-12) | String.Contains(ListItem.MPAA,Greece:12) | String.Contains(ListItem.MPAA,GR:12) | String.Contains(ListItem.MPAA,12 έτη)">gr-12.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Greece:16) | String.Contains(ListItem.MPAA,gr-16) | String.Contains(ListItem.MPAA,Greece:16) | String.Contains(ListItem.MPAA,GR:16) | String.Contains(ListItem.MPAA,16 έτη)">gr-16.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Greece:18) | String.Contains(ListItem.MPAA,gr-18) | String.Contains(ListItem.MPAA,Greece:18) | String.Contains(ListItem.MPAA,GR:18) | String.Contains(ListItem.MPAA,18 έτη)">gr-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Denmark (Medierådet / mccyp) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(ListItem.MPAA,Denmark:A) | String.Contains(ListItem.MPAA,mccyp_denmark-a) | String.Contains(ListItem.MPAA,Denmark:A) | String.Contains(ListItem.MPAA,Tilladt for alle)">mccyp_denmark-a.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Denmark:7) | String.Contains(ListItem.MPAA,mccyp_denmark-7) | String.Contains(ListItem.MPAA,Denmark:7) | String.Contains(ListItem.MPAA,7 år)">mccyp_denmark-7.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Denmark:11) | String.Contains(ListItem.MPAA,mccyp_denmark-11) | String.Contains(ListItem.MPAA,Denmark:11) | String.Contains(ListItem.MPAA,11 år)">mccyp_denmark-11.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,Denmark:15) | String.Contains(ListItem.MPAA,mccyp_denmark-15) | String.Contains(ListItem.MPAA,Denmark:15) | String.Contains(ListItem.MPAA,15 år)">mccyp_denmark-15.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Unknown dm-prefix ratings (disc assets exist; token origin unconfirmed) -->
+		<!-- Flag if your scraper generates these so we can tighten the condition -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(ListItem.MPAA,dm10) | String.Contains(ListItem.MPAA,dm:10)">dm10.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,dm12) | String.Contains(ListItem.MPAA,dm:12)">dm12.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,dm16) | String.Contains(ListItem.MPAA,dm:16)">dm16.png</value>
+		<value condition="String.IsEqual(ListItem.MPAA,dm18) | String.Contains(ListItem.MPAA,dm:18)">dm18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- US TV Ratings — Tier 1 cert assets, Tier 2 deprecated fallbacks -->
+		<!-- TV-14 before TV-PG to avoid PG substring collision -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(ListItem.MPAA,TV-14)">TV-14.png</value>
+		<!-- TV-14 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,TV-14)">TV-14_Certificate_US.png</value>
+		<!-- TV-14 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,TV-14)">Rated TV-14.png</value>
 		<value condition="String.Contains(ListItem.MPAA,TV-MA)">TV-MA.png</value>
+		<!-- TV-MA — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,TV-MA)">TV-MA_Certificate_US.png</value>
+		<!-- TV-MA — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,TV-MA)">Rated TV-MA.png</value>
 		<value condition="String.Contains(ListItem.MPAA,TV-PG)">TV-PG.png</value>
+		<!-- TV-PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,TV-PG)">TV-PG_Certificate_US.png</value>
+		<!-- TV-PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,TV-PG)">Rated TV-PG.png</value>
 		<value condition="String.Contains(ListItem.MPAA,TV-G)">TV-G.png</value>
-		<value condition="String.Contains(ListItem.MPAA,TV-Y7)">TV-Y7.png</value>
-		<value condition="String.Contains(ListItem.MPAA,TV-Y)">TV-Y.png</value>
+		<!-- TV-G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(ListItem.MPAA,TV-G)">TV-G_Certificate_US.png</value>
+		<!-- TV-G — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,TV-G)">Rated TV-G.png</value>
+		<!-- TV-Y7 before TV-Y to avoid Y substring collision -->
+		<value condition="String.Contains(ListItem.MPAA,TV-Y7)">tv-y7.png</value>
+		<!-- TV-Y7 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,TV-Y7)">Rated tv-y7.png</value>
+		<value condition="String.Contains(ListItem.MPAA,TV-Y)">tv-y.png</value>
+		<!-- TV-Y — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(ListItem.MPAA,TV-Y) + !String.Contains(ListItem.MPAA,TV-Y7)">Rated tv-y.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Tier 3 default: pass-through to $INFO dynamic filename -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value>$INFO[ListItem.MPAA,,.png]</value>
 	</variable>
 
@@ -1893,58 +2106,191 @@
 	<!-- ================================================================================================================================== -->
 	<variable name="Container7005RatingFlagVar">
 		<!-- <value condition="String.Contains(Container(7005).ListItem.MPAA,NR)">NR.png</value> -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- MPAA (US) — Tier 1: Primary cert assets (most specific) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- NR / Not Rated -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,NR) | String.IsEqual(Container(7005).ListItem.MPAA,Rated) | String.IsEqual(Container(7005).ListItem.MPAA,Rated ) | String.IsEqual(Container(7005).ListItem.MPAA,Not Rated) | String.IsEqual(Container(7005).ListItem.MPAA,Unrated) | String.IsEqual(Container(7005).ListItem.MPAA,Rated Unrated)">NR.png</value>
+		<!-- NR — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,US:NR) | String.IsEqual(Container(7005).ListItem.MPAA,USA:NR)">MPAA_NR_Certificate_US.png</value>
+		<!-- G -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,US:G) | String.Contains(Container(7005).ListItem.MPAA,USA:G) | String.Contains(Container(7005).ListItem.MPAA,Rated G) | String.Contains(Container(7005).ListItem.MPAA,Rated Approved) | String.Contains(Container(7005).ListItem.MPAA,Rated Passed)">G.png</value>
+		<!-- G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,G)">MPAA_G_Certificate_US.png</value>
+		<!-- G — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,G) + !String.Contains(Container(7005).ListItem.MPAA,PG) + !String.Contains(Container(7005).ListItem.MPAA,NR) + !String.Contains(Container(7005).ListItem.MPAA,NC) + !String.Contains(Container(7005).ListItem.MPAA,TV)">Rated G.png</value>
+		<!-- PG-13 (before PG to avoid substring collision) -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,PG-13) | String.Contains(Container(7005).ListItem.MPAA,Rated PG-13)">PG-13.png</value>
+		<!-- PG-13 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,US:PG-13) | String.IsEqual(Container(7005).ListItem.MPAA,USA:PG-13)">MPAA_PG-13_Certificate_US.png</value>
+		<!-- PG-13 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,PG-13) + !String.Contains(Container(7005).ListItem.MPAA,Rated PG-13)">Rated PG-13.png</value>
+		<!-- PG -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Rated PG) | String.IsEqual(Container(7005).ListItem.MPAA,PG)">PG.png</value>
+		<!-- PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,US:PG) | String.IsEqual(Container(7005).ListItem.MPAA,USA:PG)">MPAA_PG_Certificate_US.png</value>
+		<!-- PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,PG) + !String.Contains(Container(7005).ListItem.MPAA,PG-13) + !String.Contains(Container(7005).ListItem.MPAA,TV-PG)">Rated PG.png</value>
+		<!-- R (before NC-17 to avoid NC substring) -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,US:R) | String.Contains(Container(7005).ListItem.MPAA,USA:R) | String.Contains(Container(7005).ListItem.MPAA,Rated R) | String.IsEqual(Container(7005).ListItem.MPAA,R)">R.png</value>
+		<!-- R — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,US:R) | String.IsEqual(Container(7005).ListItem.MPAA,USA:R)">MPAA_R_Certificate_US.png</value>
+		<!-- R — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,R) + !String.Contains(Container(7005).ListItem.MPAA,PG) + !String.Contains(Container(7005).ListItem.MPAA,NC) + !String.Contains(Container(7005).ListItem.MPAA,NR) + !String.Contains(Container(7005).ListItem.MPAA,Unrated) + !String.Contains(Container(7005).ListItem.MPAA,TV) + !String.Contains(Container(7005).ListItem.MPAA,Korea) + !String.Contains(Container(7005).ListItem.MPAA,KR) + !String.Contains(Container(7005).ListItem.MPAA,18)">Rated R.png</value>
+		<!-- NC-17 -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,US:NC-17) | String.Contains(Container(7005).ListItem.MPAA,USA:NC-17) | String.Contains(Container(7005).ListItem.MPAA,Rated NC-17)">NC-17.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:U)">BBFC_U_Certificate_UK.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:PG)">BBFC_PG_Certificate_UK.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:12A)">BBFC_12A_Certificate_UK.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:12)">BBFC_12_Certificate_UK.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:15)">BBFC_15_Certificate_UK.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- NC-17 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,US:NC-17) | String.IsEqual(Container(7005).ListItem.MPAA,USA:NC-17) | String.IsEqual(Container(7005).ListItem.MPAA,NC-17)">MPAA_NC-17_Certificate_US.png</value>
+		<!-- NC-17 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,NC-17)">Rated NC-17.png</value>
+		<!-- X — explicitly rated X (distinct from NC-17) -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,X) | String.IsEqual(Container(7005).ListItem.MPAA,Rated X) | String.IsEqual(Container(7005).ListItem.MPAA,US:X) | String.IsEqual(Container(7005).ListItem.MPAA,USA:X)">X.png</value>
+		<!-- X — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,X) | String.IsEqual(Container(7005).ListItem.MPAA,US:X)">MPAA_X_Certificate_US.png</value>
+		<!-- X — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,Rated X) + !String.Contains(Container(7005).ListItem.MPAA,NC-17)">Rated X.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- UK (BBFC) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:U) | String.IsEqual(Container(7005).ListItem.MPAA,BBFC:U) | String.Contains(Container(7005).ListItem.MPAA,BBFC U)">BBFC_U_Certificate_UK.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:PG) | String.IsEqual(Container(7005).ListItem.MPAA,BBFC:PG) | String.Contains(Container(7005).ListItem.MPAA,BBFC PG)">BBFC_PG_Certificate_UK.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:12A) | String.IsEqual(Container(7005).ListItem.MPAA,BBFC:12A) | String.IsEqual(Container(7005).ListItem.MPAA,12A)">BBFC_12A_Certificate_UK.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:12) | String.IsEqual(Container(7005).ListItem.MPAA,BBFC:12)">BBFC_12_Certificate_UK.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:15) | String.IsEqual(Container(7005).ListItem.MPAA,BBFC:15) | String.IsEqual(Container(7005).ListItem.MPAA,15)">BBFC_15_Certificate_UK.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,UK:18) | String.IsEqual(Container(7005).ListItem.MPAA,BBFC:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Germany (FSK) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Germany:16) | String.Contains(Container(7005).ListItem.MPAA,ab 16) | String.IsEqual(Container(7005).ListItem.MPAA,16) | String.Contains(Container(7005).ListItem.MPAA,FSK 16) | String.Contains(Container(7005).ListItem.MPAA,Rated 16)">FSK-16.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Germany:0) | String.Contains(Container(7005).ListItem.MPAA,ab 0) | String.IsEqual(Container(7005).ListItem.MPAA,0) | String.Contains(Container(7005).ListItem.MPAA,FSK 0) | String.Contains(Container(7005).ListItem.MPAA,Rated 0)">FSK-0.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Germany:6) | String.Contains(Container(7005).ListItem.MPAA,ab 6) | String.IsEqual(Container(7005).ListItem.MPAA,6) | String.Contains(Container(7005).ListItem.MPAA,FSK 6) | String.Contains(Container(7005).ListItem.MPAA,Rated 6)">FSK-6.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Germany:12) | String.Contains(Container(7005).ListItem.MPAA,ab 12) | String.IsEqual(Container(7005).ListItem.MPAA,12) | String.Contains(Container(7005).ListItem.MPAA,FSK 12) | String.Contains(Container(7005).ListItem.MPAA,Rated 12)">FSK-12.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Germany:18) | String.Contains(Container(7005).ListItem.MPAA,ab 18) | String.IsEqual(Container(7005).ListItem.MPAA,18) | String.Contains(Container(7005).ListItem.MPAA,FSK 18) | String.Contains(Container(7005).ListItem.MPAA,Rated 18)">FSK-18.png</value>
+		<!-- FSK generic fallback -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Germany) |String.Contains(Container(7005).ListItem.MPAA,FSK) | String.Contains(Container(7005).ListItem.MPAA,o.A) | String.Contains(Container(7005).ListItem.MPAA,Rated 0)">FSK-0.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary shorthand prefix variants -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Hungary:BA) | String.IsEqual(Container(7005).ListItem.MPAA,HU:BA)">HU_BA.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Hungary:KN) | String.IsEqual(Container(7005).ListItem.MPAA,HU:KN)">HU_KN.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Hungary:12) | String.IsEqual(Container(7005).ListItem.MPAA,HU:12)">HU_12.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Hungary:16) | String.IsEqual(Container(7005).ListItem.MPAA,HU:16)">HU_16.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Hungary:18) | String.IsEqual(Container(7005).ListItem.MPAA,HU:18)">HU_18.png</value>
+		<!-- Hungary full Hungarian text strings (existing) -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,besorolás alatt)">HU_BA.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,korhatárra való tekintett nélkül megtekintetheto)">HU_KN.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">HU_12.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,16 éven aluliak számára nem ajánlott)">HU_16.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,18 éven aluliak számára nem ajánlott)">HU_18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- France (CSA) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:U) | String.Contains(Container(7005).ListItem.MPAA,Tout public) | String.Contains(Container(7005).ListItem.MPAA,partir de 3 ans) | String.Contains(Container(7005).ListItem.MPAA,partir de 6 ans)">csaU.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-10) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 10 ans) | String.Contains(Container(7005).ListItem.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-12) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-16) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-18) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-10) | String.Contains(Container(7005).ListItem.MPAA,France:10) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 10 ans) | String.Contains(Container(7005).ListItem.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-12) | String.Contains(Container(7005).ListItem.MPAA,France:12) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-16) | String.Contains(Container(7005).ListItem.MPAA,France:16) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,France:-18) | String.Contains(Container(7005).ListItem.MPAA,France:18) | String.Contains(Container(7005).ListItem.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea (KR) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea shorthand prefix variants -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Korea:All) | String.IsEqual(Container(7005).ListItem.MPAA,KR:All) | String.Contains(Container(7005).ListItem.MPAA,전체관람가)">KR_Certificate_All.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Korea:12) | String.IsEqual(Container(7005).ListItem.MPAA,KR:12)">KR_Certificate_12.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Korea:15) | String.IsEqual(Container(7005).ListItem.MPAA,KR:15)">KR_Certificate_15.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Korea:18) | String.IsEqual(Container(7005).ListItem.MPAA,KR:18)">KR_Certificate_18.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Korea:R) | String.IsEqual(Container(7005).ListItem.MPAA,KR:R)">KR_Certificate_R.png</value>
+		<!-- Korea Korean-text strings (existing) -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,전체)">KR_Certificate_All.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,12세)">KR_Certificate_12.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,15세)">KR_Certificate_15.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,불가)">KR_Certificate_18.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,제한)">KR_Certificate_R.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Brazil (MPAA Brazil) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Brazil:Livre) | String.Contains(Container(7005).ListItem.MPAA,Livre)">MPAA_Brazil_Livre.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Brazil:10) | String.Contains(Container(7005).ListItem.MPAA,10 anos)">MPAA_Brazil_10.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Brazil:12) | String.Contains(Container(7005).ListItem.MPAA,12 anos)">MPAA_Brazil_12.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Brazil:14) | String.Contains(Container(7005).ListItem.MPAA,14 anos)">MPAA_Brazil_14.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Brazil:16) | String.Contains(Container(7005).ListItem.MPAA,16 anos)">MPAA_Brazil_16.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,Brazil:18) | String.Contains(Container(7005).ListItem.MPAA,18 anos)">MPAA_Brazil_18.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,Australia:)">$INFO[Container(7005).ListItem.MPAA,australia_,.png]</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Australia — explicit per-rating conditionals (replaces dynamic $INFO line) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,Australia:R18) | String.Contains(Container(7005).ListItem.MPAA,Aus:R18) | String.Contains(Container(7005).ListItem.MPAA,R18)">australia_r18+.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,Australia:MA15) | String.Contains(Container(7005).ListItem.MPAA,Aus:MA15) | String.Contains(Container(7005).ListItem.MPAA,MA15)">australia_ma15+.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Australia:MA) | String.IsEqual(Container(7005).ListItem.MPAA,Aus:MA) | String.Contains(Container(7005).ListItem.MPAA,Australia:MA) | String.Contains(Container(7005).ListItem.MPAA,Aus:MA)">australia_MA.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Australia:R) | String.IsEqual(Container(7005).ListItem.MPAA,Aus:R)">australia_R.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Australia:M) | String.IsEqual(Container(7005).ListItem.MPAA,Aus:M) | String.IsEqual(Container(7005).ListItem.MPAA,Australia M)">australia_M.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Australia:PG) | String.IsEqual(Container(7005).ListItem.MPAA,Aus:PG)">australia_PG.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Australia:G) | String.IsEqual(Container(7005).ListItem.MPAA,Aus:G) | String.IsEqual(Container(7005).ListItem.MPAA,Australia Approved)">australia_G.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Netherlands (Kijkwijzer / NICAM) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-AL)">NL-AL.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-MG6)">NL-MG6.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-6)">NL-6.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-9)">NL-9.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-12)">NL-12.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-14)">NL-14.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-16)">NL-16.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,NL-18)">NL-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Greece (GRSC) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Greece:K) | String.Contains(Container(7005).ListItem.MPAA,gr-k) | String.Contains(Container(7005).ListItem.MPAA,Greece:K) | String.Contains(Container(7005).ListItem.MPAA,GR:K)">gr-k.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Greece:8) | String.Contains(Container(7005).ListItem.MPAA,gr-8) | String.Contains(Container(7005).ListItem.MPAA,Greece:8) | String.Contains(Container(7005).ListItem.MPAA,GR:8) | String.Contains(Container(7005).ListItem.MPAA,8 έτη)">gr-8.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Greece:12) | String.Contains(Container(7005).ListItem.MPAA,gr-12) | String.Contains(Container(7005).ListItem.MPAA,Greece:12) | String.Contains(Container(7005).ListItem.MPAA,GR:12) | String.Contains(Container(7005).ListItem.MPAA,12 έτη)">gr-12.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Greece:16) | String.Contains(Container(7005).ListItem.MPAA,gr-16) | String.Contains(Container(7005).ListItem.MPAA,Greece:16) | String.Contains(Container(7005).ListItem.MPAA,GR:16) | String.Contains(Container(7005).ListItem.MPAA,16 έτη)">gr-16.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Greece:18) | String.Contains(Container(7005).ListItem.MPAA,gr-18) | String.Contains(Container(7005).ListItem.MPAA,Greece:18) | String.Contains(Container(7005).ListItem.MPAA,GR:18) | String.Contains(Container(7005).ListItem.MPAA,18 έτη)">gr-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Denmark (Medierådet / mccyp) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Denmark:A) | String.Contains(Container(7005).ListItem.MPAA,mccyp_denmark-a) | String.Contains(Container(7005).ListItem.MPAA,Denmark:A) | String.Contains(Container(7005).ListItem.MPAA,Tilladt for alle)">mccyp_denmark-a.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Denmark:7) | String.Contains(Container(7005).ListItem.MPAA,mccyp_denmark-7) | String.Contains(Container(7005).ListItem.MPAA,Denmark:7) | String.Contains(Container(7005).ListItem.MPAA,7 år)">mccyp_denmark-7.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Denmark:11) | String.Contains(Container(7005).ListItem.MPAA,mccyp_denmark-11) | String.Contains(Container(7005).ListItem.MPAA,Denmark:11) | String.Contains(Container(7005).ListItem.MPAA,11 år)">mccyp_denmark-11.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,Denmark:15) | String.Contains(Container(7005).ListItem.MPAA,mccyp_denmark-15) | String.Contains(Container(7005).ListItem.MPAA,Denmark:15) | String.Contains(Container(7005).ListItem.MPAA,15 år)">mccyp_denmark-15.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Unknown dm-prefix ratings (disc assets exist; token origin unconfirmed) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,dm10) | String.Contains(Container(7005).ListItem.MPAA,dm:10)">dm10.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,dm12) | String.Contains(Container(7005).ListItem.MPAA,dm:12)">dm12.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,dm16) | String.Contains(Container(7005).ListItem.MPAA,dm:16)">dm16.png</value>
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,dm18) | String.Contains(Container(7005).ListItem.MPAA,dm:18)">dm18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- US TV Ratings — Tier 1 cert assets, Tier 2 deprecated fallbacks -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-14)">TV-14.png</value>
+		<!-- TV-14 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,TV-14)">TV-14_Certificate_US.png</value>
+		<!-- TV-14 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-14)">Rated TV-14.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-MA)">TV-MA.png</value>
+		<!-- TV-MA — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,TV-MA)">TV-MA_Certificate_US.png</value>
+		<!-- TV-MA — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-MA)">Rated TV-MA.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-PG)">TV-PG.png</value>
+		<!-- TV-PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,TV-PG)">TV-PG_Certificate_US.png</value>
+		<!-- TV-PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-PG)">Rated TV-PG.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-G)">TV-G.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-Y7)">TV-Y7.png</value>
-		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-Y)">TV-Y.png</value>
+		<!-- TV-G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container(7005).ListItem.MPAA,TV-G)">TV-G_Certificate_US.png</value>
+		<!-- TV-G — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-G)">Rated TV-G.png</value>
+		<!-- TV-Y7 before TV-Y to avoid Y substring collision -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-Y7)">tv-y7.png</value>
+		<!-- TV-Y7 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-Y7)">Rated tv-y7.png</value>
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-Y)">tv-y.png</value>
+		<!-- TV-Y — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container(7005).ListItem.MPAA,TV-Y) + !String.Contains(Container(7005).ListItem.MPAA,TV-Y7)">Rated tv-y.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Tier 3 default: pass-through to $INFO dynamic filename -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value>$INFO[Container(7005).ListItem.MPAA,,.png]</value>
 	</variable>
 
@@ -1954,58 +2300,191 @@
 	<!-- ================================================================================================================================== -->
 	<variable name="VideoPlayerRatingFlagVar">
 		<!-- <value condition="String.Contains(VideoPlayer.MPAA,NR)">NR.png</value> -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- MPAA (US) — Tier 1: Primary cert assets (most specific) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- NR / Not Rated -->
 		<value condition="String.Contains(VideoPlayer.MPAA,NR) | String.IsEqual(VideoPlayer.MPAA,Rated) | String.IsEqual(VideoPlayer.MPAA,Rated ) | String.IsEqual(VideoPlayer.MPAA,Not Rated) | String.IsEqual(VideoPlayer.MPAA,Unrated) | String.IsEqual(VideoPlayer.MPAA,Rated Unrated)">NR.png</value>
+		<!-- NR — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,US:NR) | String.IsEqual(VideoPlayer.MPAA,USA:NR)">MPAA_NR_Certificate_US.png</value>
+		<!-- G -->
 		<value condition="String.Contains(VideoPlayer.MPAA,US:G) | String.Contains(VideoPlayer.MPAA,USA:G) | String.Contains(VideoPlayer.MPAA,Rated G) | String.Contains(VideoPlayer.MPAA,Rated Approved) | String.Contains(VideoPlayer.MPAA,Rated Passed)">G.png</value>
+		<!-- G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,G)">MPAA_G_Certificate_US.png</value>
+		<!-- G — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,G) + !String.Contains(VideoPlayer.MPAA,PG) + !String.Contains(VideoPlayer.MPAA,NR) + !String.Contains(VideoPlayer.MPAA,NC) + !String.Contains(VideoPlayer.MPAA,TV)">Rated G.png</value>
+		<!-- PG-13 (before PG to avoid substring collision) -->
 		<value condition="String.Contains(VideoPlayer.MPAA,PG-13) | String.Contains(VideoPlayer.MPAA,Rated PG-13)">PG-13.png</value>
+		<!-- PG-13 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,US:PG-13) | String.IsEqual(VideoPlayer.MPAA,USA:PG-13)">MPAA_PG-13_Certificate_US.png</value>
+		<!-- PG-13 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,PG-13) + !String.Contains(VideoPlayer.MPAA,Rated PG-13)">Rated PG-13.png</value>
+		<!-- PG -->
 		<value condition="String.Contains(VideoPlayer.MPAA,Rated PG) | String.IsEqual(VideoPlayer.MPAA,PG)">PG.png</value>
+		<!-- PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,US:PG) | String.IsEqual(VideoPlayer.MPAA,USA:PG)">MPAA_PG_Certificate_US.png</value>
+		<!-- PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,PG) + !String.Contains(VideoPlayer.MPAA,PG-13) + !String.Contains(VideoPlayer.MPAA,TV-PG)">Rated PG.png</value>
+		<!-- R (before NC-17 to avoid NC substring) -->
 		<value condition="String.Contains(VideoPlayer.MPAA,US:R) | String.Contains(VideoPlayer.MPAA,USA:R) | String.Contains(VideoPlayer.MPAA,Rated R) | String.IsEqual(VideoPlayer.MPAA,R)">R.png</value>
+		<!-- R — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,US:R) | String.IsEqual(VideoPlayer.MPAA,USA:R)">MPAA_R_Certificate_US.png</value>
+		<!-- R — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,R) + !String.Contains(VideoPlayer.MPAA,PG) + !String.Contains(VideoPlayer.MPAA,NC) + !String.Contains(VideoPlayer.MPAA,NR) + !String.Contains(VideoPlayer.MPAA,Unrated) + !String.Contains(VideoPlayer.MPAA,TV) + !String.Contains(VideoPlayer.MPAA,Korea) + !String.Contains(VideoPlayer.MPAA,KR) + !String.Contains(VideoPlayer.MPAA,18)">Rated R.png</value>
+		<!-- NC-17 -->
 		<value condition="String.Contains(VideoPlayer.MPAA,US:NC-17) | String.Contains(VideoPlayer.MPAA,USA:NC-17) | String.Contains(VideoPlayer.MPAA,Rated NC-17)">NC-17.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,UK:U)">BBFC_U_Certificate_UK.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,UK:PG)">BBFC_PG_Certificate_UK.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,UK:12A)">BBFC_12A_Certificate_UK.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,UK:12)">BBFC_12_Certificate_UK.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,UK:15)">BBFC_15_Certificate_UK.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,UK:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- NC-17 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,US:NC-17) | String.IsEqual(VideoPlayer.MPAA,USA:NC-17) | String.IsEqual(VideoPlayer.MPAA,NC-17)">MPAA_NC-17_Certificate_US.png</value>
+		<!-- NC-17 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,NC-17)">Rated NC-17.png</value>
+		<!-- X — explicitly rated X (distinct from NC-17) -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,X) | String.IsEqual(VideoPlayer.MPAA,Rated X) | String.IsEqual(VideoPlayer.MPAA,US:X) | String.IsEqual(VideoPlayer.MPAA,USA:X)">X.png</value>
+		<!-- X — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,X) | String.IsEqual(VideoPlayer.MPAA,US:X)">MPAA_X_Certificate_US.png</value>
+		<!-- X — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,Rated X) + !String.Contains(VideoPlayer.MPAA,NC-17)">Rated X.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- UK (BBFC) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(VideoPlayer.MPAA,UK:U) | String.IsEqual(VideoPlayer.MPAA,BBFC:U) | String.Contains(VideoPlayer.MPAA,BBFC U)">BBFC_U_Certificate_UK.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,UK:PG) | String.IsEqual(VideoPlayer.MPAA,BBFC:PG) | String.Contains(VideoPlayer.MPAA,BBFC PG)">BBFC_PG_Certificate_UK.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,UK:12A) | String.IsEqual(VideoPlayer.MPAA,BBFC:12A) | String.IsEqual(VideoPlayer.MPAA,12A)">BBFC_12A_Certificate_UK.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,UK:12) | String.IsEqual(VideoPlayer.MPAA,BBFC:12)">BBFC_12_Certificate_UK.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,UK:15) | String.IsEqual(VideoPlayer.MPAA,BBFC:15) | String.IsEqual(VideoPlayer.MPAA,15)">BBFC_15_Certificate_UK.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,UK:18) | String.IsEqual(VideoPlayer.MPAA,BBFC:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Germany (FSK) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(VideoPlayer.MPAA,Germany:16) | String.Contains(VideoPlayer.MPAA,ab 16) | String.IsEqual(VideoPlayer.MPAA,16) | String.Contains(VideoPlayer.MPAA,FSK 16) | String.Contains(VideoPlayer.MPAA,Rated 16)">FSK-16.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Germany:0) | String.Contains(VideoPlayer.MPAA,ab 0) | String.IsEqual(VideoPlayer.MPAA,0) | String.Contains(VideoPlayer.MPAA,FSK 0) | String.Contains(VideoPlayer.MPAA,Rated 0)">FSK-0.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Germany:6) | String.Contains(VideoPlayer.MPAA,ab 6) | String.IsEqual(VideoPlayer.MPAA,6) | String.Contains(VideoPlayer.MPAA,FSK 6) | String.Contains(VideoPlayer.MPAA,Rated 6)">FSK-6.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Germany:12) | String.Contains(VideoPlayer.MPAA,ab 12) | String.IsEqual(VideoPlayer.MPAA,12) | String.Contains(VideoPlayer.MPAA,FSK 12) | String.Contains(VideoPlayer.MPAA,Rated 12)">FSK-12.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Germany:18) | String.Contains(VideoPlayer.MPAA,ab 18) | String.IsEqual(VideoPlayer.MPAA,18) | String.Contains(VideoPlayer.MPAA,FSK 18) | String.Contains(VideoPlayer.MPAA,Rated 18)">FSK-18.png</value>
+		<!-- FSK generic fallback -->
 		<value condition="String.Contains(VideoPlayer.MPAA,Germany) |String.Contains(VideoPlayer.MPAA,FSK) | String.Contains(VideoPlayer.MPAA,o.A) | String.Contains(VideoPlayer.MPAA,Rated 0)">FSK-0.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary shorthand prefix variants -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Hungary:BA) | String.IsEqual(VideoPlayer.MPAA,HU:BA)">HU_BA.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Hungary:KN) | String.IsEqual(VideoPlayer.MPAA,HU:KN)">HU_KN.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Hungary:12) | String.IsEqual(VideoPlayer.MPAA,HU:12)">HU_12.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Hungary:16) | String.IsEqual(VideoPlayer.MPAA,HU:16)">HU_16.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Hungary:18) | String.IsEqual(VideoPlayer.MPAA,HU:18)">HU_18.png</value>
+		<!-- Hungary full Hungarian text strings (existing) -->
 		<value condition="String.Contains(VideoPlayer.MPAA,besorolás alatt)">HU_BA.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,korhatárra való tekintett nélkül megtekintetheto)">HU_KN.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">HU_12.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,16 éven aluliak számára nem ajánlott)">HU_16.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,18 éven aluliak számára nem ajánlott)">HU_18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- France (CSA) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(VideoPlayer.MPAA,France:U) | String.Contains(VideoPlayer.MPAA,Tout public) | String.Contains(VideoPlayer.MPAA,partir de 3 ans) | String.Contains(VideoPlayer.MPAA,partir de 6 ans)">csaU.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,France:-10) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 10 ans) | String.Contains(VideoPlayer.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,France:-12) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,France:-16) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,France:-18) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,France:-10) | String.Contains(VideoPlayer.MPAA,France:10) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 10 ans) | String.Contains(VideoPlayer.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,France:-12) | String.Contains(VideoPlayer.MPAA,France:12) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,France:-16) | String.Contains(VideoPlayer.MPAA,France:16) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,France:-18) | String.Contains(VideoPlayer.MPAA,France:18) | String.Contains(VideoPlayer.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea (KR) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea shorthand prefix variants -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Korea:All) | String.IsEqual(VideoPlayer.MPAA,KR:All) | String.Contains(VideoPlayer.MPAA,전체관람가)">KR_Certificate_All.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Korea:12) | String.IsEqual(VideoPlayer.MPAA,KR:12)">KR_Certificate_12.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Korea:15) | String.IsEqual(VideoPlayer.MPAA,KR:15)">KR_Certificate_15.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Korea:18) | String.IsEqual(VideoPlayer.MPAA,KR:18)">KR_Certificate_18.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Korea:R) | String.IsEqual(VideoPlayer.MPAA,KR:R)">KR_Certificate_R.png</value>
+		<!-- Korea Korean-text strings (existing) -->
 		<value condition="String.Contains(VideoPlayer.MPAA,전체)">KR_Certificate_All.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,12세)">KR_Certificate_12.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,15세)">KR_Certificate_15.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,불가)">KR_Certificate_18.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,제한)">KR_Certificate_R.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Brazil (MPAA Brazil) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(VideoPlayer.MPAA,Brazil:Livre) | String.Contains(VideoPlayer.MPAA,Livre)">MPAA_Brazil_Livre.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Brazil:10) | String.Contains(VideoPlayer.MPAA,10 anos)">MPAA_Brazil_10.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Brazil:12) | String.Contains(VideoPlayer.MPAA,12 anos)">MPAA_Brazil_12.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Brazil:14) | String.Contains(VideoPlayer.MPAA,14 anos)">MPAA_Brazil_14.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Brazil:16) | String.Contains(VideoPlayer.MPAA,16 anos)">MPAA_Brazil_16.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,Brazil:18) | String.Contains(VideoPlayer.MPAA,18 anos)">MPAA_Brazil_18.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,Australia:)">$INFO[VideoPlayer.MPAA,australia_,.png]</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Australia — explicit per-rating conditionals (replaces dynamic $INFO line) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(VideoPlayer.MPAA,Australia:R18) | String.Contains(VideoPlayer.MPAA,Aus:R18) | String.Contains(VideoPlayer.MPAA,R18)">australia_r18+.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,Australia:MA15) | String.Contains(VideoPlayer.MPAA,Aus:MA15) | String.Contains(VideoPlayer.MPAA,MA15)">australia_ma15+.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Australia:MA) | String.IsEqual(VideoPlayer.MPAA,Aus:MA) | String.Contains(VideoPlayer.MPAA,Australia:MA) | String.Contains(VideoPlayer.MPAA,Aus:MA)">australia_MA.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Australia:R) | String.IsEqual(VideoPlayer.MPAA,Aus:R)">australia_R.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Australia:M) | String.IsEqual(VideoPlayer.MPAA,Aus:M) | String.IsEqual(VideoPlayer.MPAA,Australia M)">australia_M.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Australia:PG) | String.IsEqual(VideoPlayer.MPAA,Aus:PG)">australia_PG.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Australia:G) | String.IsEqual(VideoPlayer.MPAA,Aus:G) | String.IsEqual(VideoPlayer.MPAA,Australia Approved)">australia_G.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Netherlands (Kijkwijzer / NICAM) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(VideoPlayer.MPAA,NL-AL)">NL-AL.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,NL-MG6)">NL-MG6.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,NL-6)">NL-6.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,NL-9)">NL-9.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,NL-12)">NL-12.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,NL-14)">NL-14.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,NL-16)">NL-16.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,NL-18)">NL-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Greece (GRSC) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Greece:K) | String.Contains(VideoPlayer.MPAA,gr-k) | String.Contains(VideoPlayer.MPAA,Greece:K) | String.Contains(VideoPlayer.MPAA,GR:K)">gr-k.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Greece:8) | String.Contains(VideoPlayer.MPAA,gr-8) | String.Contains(VideoPlayer.MPAA,Greece:8) | String.Contains(VideoPlayer.MPAA,GR:8) | String.Contains(VideoPlayer.MPAA,8 έτη)">gr-8.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Greece:12) | String.Contains(VideoPlayer.MPAA,gr-12) | String.Contains(VideoPlayer.MPAA,Greece:12) | String.Contains(VideoPlayer.MPAA,GR:12) | String.Contains(VideoPlayer.MPAA,12 έτη)">gr-12.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Greece:16) | String.Contains(VideoPlayer.MPAA,gr-16) | String.Contains(VideoPlayer.MPAA,Greece:16) | String.Contains(VideoPlayer.MPAA,GR:16) | String.Contains(VideoPlayer.MPAA,16 έτη)">gr-16.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Greece:18) | String.Contains(VideoPlayer.MPAA,gr-18) | String.Contains(VideoPlayer.MPAA,Greece:18) | String.Contains(VideoPlayer.MPAA,GR:18) | String.Contains(VideoPlayer.MPAA,18 έτη)">gr-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Denmark (Medierådet / mccyp) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Denmark:A) | String.Contains(VideoPlayer.MPAA,mccyp_denmark-a) | String.Contains(VideoPlayer.MPAA,Denmark:A) | String.Contains(VideoPlayer.MPAA,Tilladt for alle)">mccyp_denmark-a.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Denmark:7) | String.Contains(VideoPlayer.MPAA,mccyp_denmark-7) | String.Contains(VideoPlayer.MPAA,Denmark:7) | String.Contains(VideoPlayer.MPAA,7 år)">mccyp_denmark-7.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Denmark:11) | String.Contains(VideoPlayer.MPAA,mccyp_denmark-11) | String.Contains(VideoPlayer.MPAA,Denmark:11) | String.Contains(VideoPlayer.MPAA,11 år)">mccyp_denmark-11.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,Denmark:15) | String.Contains(VideoPlayer.MPAA,mccyp_denmark-15) | String.Contains(VideoPlayer.MPAA,Denmark:15) | String.Contains(VideoPlayer.MPAA,15 år)">mccyp_denmark-15.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Unknown dm-prefix ratings (disc assets exist; token origin unconfirmed) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,dm10) | String.Contains(VideoPlayer.MPAA,dm:10)">dm10.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,dm12) | String.Contains(VideoPlayer.MPAA,dm:12)">dm12.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,dm16) | String.Contains(VideoPlayer.MPAA,dm:16)">dm16.png</value>
+		<value condition="String.IsEqual(VideoPlayer.MPAA,dm18) | String.Contains(VideoPlayer.MPAA,dm:18)">dm18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- US TV Ratings — Tier 1 cert assets, Tier 2 deprecated fallbacks -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(VideoPlayer.MPAA,TV-14)">TV-14.png</value>
+		<!-- TV-14 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,TV-14)">TV-14_Certificate_US.png</value>
+		<!-- TV-14 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-14)">Rated TV-14.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,TV-MA)">TV-MA.png</value>
+		<!-- TV-MA — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,TV-MA)">TV-MA_Certificate_US.png</value>
+		<!-- TV-MA — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-MA)">Rated TV-MA.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,TV-PG)">TV-PG.png</value>
+		<!-- TV-PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,TV-PG)">TV-PG_Certificate_US.png</value>
+		<!-- TV-PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-PG)">Rated TV-PG.png</value>
 		<value condition="String.Contains(VideoPlayer.MPAA,TV-G)">TV-G.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,TV-Y7)">TV-Y7.png</value>
-		<value condition="String.Contains(VideoPlayer.MPAA,TV-Y)">TV-Y.png</value>
+		<!-- TV-G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(VideoPlayer.MPAA,TV-G)">TV-G_Certificate_US.png</value>
+		<!-- TV-G — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-G)">Rated TV-G.png</value>
+		<!-- TV-Y7 before TV-Y to avoid Y substring collision -->
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-Y7)">tv-y7.png</value>
+		<!-- TV-Y7 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-Y7)">Rated tv-y7.png</value>
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-Y)">tv-y.png</value>
+		<!-- TV-Y — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(VideoPlayer.MPAA,TV-Y) + !String.Contains(VideoPlayer.MPAA,TV-Y7)">Rated tv-y.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Tier 3 default: pass-through to $INFO dynamic filename -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value>$INFO[VideoPlayer.MPAA,,.png]</value>
 	</variable>
 
@@ -2014,58 +2493,191 @@
 	<!-- ============================================================================ -->
 
 	<variable name="ContainerItemRatingFlagVar">
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- MPAA (US) — Tier 1: Primary cert assets (most specific) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- NR / Not Rated -->
 		<value condition="String.Contains(Container.ListItem.MPAA,NR) | String.IsEqual(Container.ListItem.MPAA,Rated) | String.IsEqual(Container.ListItem.MPAA,Rated ) | String.IsEqual(Container.ListItem.MPAA,Not Rated) | String.IsEqual(Container.ListItem.MPAA,Unrated) | String.IsEqual(Container.ListItem.MPAA,Rated Unrated)">NR.png</value>
+		<!-- NR — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,US:NR) | String.IsEqual(Container.ListItem.MPAA,USA:NR)">MPAA_NR_Certificate_US.png</value>
+		<!-- G -->
 		<value condition="String.Contains(Container.ListItem.MPAA,US:G) | String.Contains(Container.ListItem.MPAA,USA:G) | String.Contains(Container.ListItem.MPAA,Rated G) | String.Contains(Container.ListItem.MPAA,Rated Approved) | String.Contains(Container.ListItem.MPAA,Rated Passed)">G.png</value>
+		<!-- G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,G)">MPAA_G_Certificate_US.png</value>
+		<!-- G — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,G) + !String.Contains(Container.ListItem.MPAA,PG) + !String.Contains(Container.ListItem.MPAA,NR) + !String.Contains(Container.ListItem.MPAA,NC) + !String.Contains(Container.ListItem.MPAA,TV)">Rated G.png</value>
+		<!-- PG-13 (before PG to avoid substring collision) -->
 		<value condition="String.Contains(Container.ListItem.MPAA,PG-13) | String.Contains(Container.ListItem.MPAA,Rated PG-13)">PG-13.png</value>
+		<!-- PG-13 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,US:PG-13) | String.IsEqual(Container.ListItem.MPAA,USA:PG-13)">MPAA_PG-13_Certificate_US.png</value>
+		<!-- PG-13 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,PG-13) + !String.Contains(Container.ListItem.MPAA,Rated PG-13)">Rated PG-13.png</value>
+		<!-- PG -->
 		<value condition="String.Contains(Container.ListItem.MPAA,Rated PG) | String.IsEqual(Container.ListItem.MPAA,PG)">PG.png</value>
+		<!-- PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,US:PG) | String.IsEqual(Container.ListItem.MPAA,USA:PG)">MPAA_PG_Certificate_US.png</value>
+		<!-- PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,PG) + !String.Contains(Container.ListItem.MPAA,PG-13) + !String.Contains(Container.ListItem.MPAA,TV-PG)">Rated PG.png</value>
+		<!-- R (before NC-17 to avoid NC substring) -->
 		<value condition="String.Contains(Container.ListItem.MPAA,US:R) | String.Contains(Container.ListItem.MPAA,USA:R) | String.Contains(Container.ListItem.MPAA,Rated R) | String.IsEqual(Container.ListItem.MPAA,R)">R.png</value>
+		<!-- R — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,US:R) | String.IsEqual(Container.ListItem.MPAA,USA:R)">MPAA_R_Certificate_US.png</value>
+		<!-- R — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,R) + !String.Contains(Container.ListItem.MPAA,PG) + !String.Contains(Container.ListItem.MPAA,NC) + !String.Contains(Container.ListItem.MPAA,NR) + !String.Contains(Container.ListItem.MPAA,Unrated) + !String.Contains(Container.ListItem.MPAA,TV) + !String.Contains(Container.ListItem.MPAA,Korea) + !String.Contains(Container.ListItem.MPAA,KR) + !String.Contains(Container.ListItem.MPAA,18)">Rated R.png</value>
+		<!-- NC-17 -->
 		<value condition="String.Contains(Container.ListItem.MPAA,US:NC-17) | String.Contains(Container.ListItem.MPAA,USA:NC-17) | String.Contains(Container.ListItem.MPAA,Rated NC-17)">NC-17.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,UK:U)">BBFC_U_Certificate_UK.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,UK:PG)">BBFC_PG_Certificate_UK.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,UK:12A)">BBFC_12A_Certificate_UK.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,UK:12)">BBFC_12_Certificate_UK.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,UK:15)">BBFC_15_Certificate_UK.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,UK:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- NC-17 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,US:NC-17) | String.IsEqual(Container.ListItem.MPAA,USA:NC-17) | String.IsEqual(Container.ListItem.MPAA,NC-17)">MPAA_NC-17_Certificate_US.png</value>
+		<!-- NC-17 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,NC-17)">Rated NC-17.png</value>
+		<!-- X — explicitly rated X (distinct from NC-17) -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,X) | String.IsEqual(Container.ListItem.MPAA,Rated X) | String.IsEqual(Container.ListItem.MPAA,US:X) | String.IsEqual(Container.ListItem.MPAA,USA:X)">X.png</value>
+		<!-- X — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,X) | String.IsEqual(Container.ListItem.MPAA,US:X)">MPAA_X_Certificate_US.png</value>
+		<!-- X — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,Rated X) + !String.Contains(Container.ListItem.MPAA,NC-17)">Rated X.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- UK (BBFC) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(Container.ListItem.MPAA,UK:U) | String.IsEqual(Container.ListItem.MPAA,BBFC:U) | String.Contains(Container.ListItem.MPAA,BBFC U)">BBFC_U_Certificate_UK.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,UK:PG) | String.IsEqual(Container.ListItem.MPAA,BBFC:PG) | String.Contains(Container.ListItem.MPAA,BBFC PG)">BBFC_PG_Certificate_UK.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,UK:12A) | String.IsEqual(Container.ListItem.MPAA,BBFC:12A) | String.IsEqual(Container.ListItem.MPAA,12A)">BBFC_12A_Certificate_UK.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,UK:12) | String.IsEqual(Container.ListItem.MPAA,BBFC:12)">BBFC_12_Certificate_UK.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,UK:15) | String.IsEqual(Container.ListItem.MPAA,BBFC:15) | String.IsEqual(Container.ListItem.MPAA,15)">BBFC_15_Certificate_UK.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,UK:18) | String.IsEqual(Container.ListItem.MPAA,BBFC:18)">BBFC_18_Certificate_UK.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Germany (FSK) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container.ListItem.MPAA,Germany:16) | String.Contains(Container.ListItem.MPAA,ab 16) | String.IsEqual(Container.ListItem.MPAA,16) | String.Contains(Container.ListItem.MPAA,FSK 16) | String.Contains(Container.ListItem.MPAA,Rated 16)">FSK-16.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Germany:0) | String.Contains(Container.ListItem.MPAA,ab 0) | String.IsEqual(Container.ListItem.MPAA,0) | String.Contains(Container.ListItem.MPAA,FSK 0) | String.Contains(Container.ListItem.MPAA,Rated 0)">FSK-0.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Germany:6) | String.Contains(Container.ListItem.MPAA,ab 6) | String.IsEqual(Container.ListItem.MPAA,6) | String.Contains(Container.ListItem.MPAA,FSK 6) | String.Contains(Container.ListItem.MPAA,Rated 6)">FSK-6.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Germany:12) | String.Contains(Container.ListItem.MPAA,ab 12) | String.IsEqual(Container.ListItem.MPAA,12) | String.Contains(Container.ListItem.MPAA,FSK 12) | String.Contains(Container.ListItem.MPAA,Rated 12)">FSK-12.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Germany:18) | String.Contains(Container.ListItem.MPAA,ab 18) | String.IsEqual(Container.ListItem.MPAA,18) | String.Contains(Container.ListItem.MPAA,FSK 18) | String.Contains(Container.ListItem.MPAA,Rated 18)">FSK-18.png</value>
+		<!-- FSK generic fallback -->
 		<value condition="String.Contains(Container.ListItem.MPAA,Germany) |String.Contains(Container.ListItem.MPAA,FSK) | String.Contains(Container.ListItem.MPAA,o.A) | String.Contains(Container.ListItem.MPAA,Rated 0)">FSK-0.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Hungary shorthand prefix variants -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Hungary:BA) | String.IsEqual(Container.ListItem.MPAA,HU:BA)">HU_BA.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Hungary:KN) | String.IsEqual(Container.ListItem.MPAA,HU:KN)">HU_KN.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Hungary:12) | String.IsEqual(Container.ListItem.MPAA,HU:12)">HU_12.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Hungary:16) | String.IsEqual(Container.ListItem.MPAA,HU:16)">HU_16.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Hungary:18) | String.IsEqual(Container.ListItem.MPAA,HU:18)">HU_18.png</value>
+		<!-- Hungary full Hungarian text strings (existing) -->
 		<value condition="String.Contains(Container.ListItem.MPAA,besorolás alatt)">HU_BA.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,korhatárra való tekintett nélkül megtekintetheto)">HU_KN.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">HU_12.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,16 éven aluliak számára nem ajánlott)">HU_16.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,18 éven aluliak számára nem ajánlott)">HU_18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- France (CSA) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container.ListItem.MPAA,France:U) | String.Contains(Container.ListItem.MPAA,Tout public) | String.Contains(Container.ListItem.MPAA,partir de 3 ans) | String.Contains(Container.ListItem.MPAA,partir de 6 ans)">csaU.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,France:-10) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 10 ans) | String.Contains(Container.ListItem.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,France:-12) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,France:-16) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,France:-18) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,France:-10) | String.Contains(Container.ListItem.MPAA,France:10) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 10 ans) | String.Contains(Container.ListItem.MPAA,des propos ou des images peuvent heurter)">csa10.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,France:-12) | String.Contains(Container.ListItem.MPAA,France:12) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 12 ans)">csa12.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,France:-16) | String.Contains(Container.ListItem.MPAA,France:16) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 16 ans)">csa16.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,France:-18) | String.Contains(Container.ListItem.MPAA,France:18) | String.Contains(Container.ListItem.MPAA,Interdit aux moins de 18 ans)">csa18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea (KR) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Korea shorthand prefix variants -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Korea:All) | String.IsEqual(Container.ListItem.MPAA,KR:All) | String.Contains(Container.ListItem.MPAA,전체관람가)">KR_Certificate_All.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Korea:12) | String.IsEqual(Container.ListItem.MPAA,KR:12)">KR_Certificate_12.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Korea:15) | String.IsEqual(Container.ListItem.MPAA,KR:15)">KR_Certificate_15.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Korea:18) | String.IsEqual(Container.ListItem.MPAA,KR:18)">KR_Certificate_18.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Korea:R) | String.IsEqual(Container.ListItem.MPAA,KR:R)">KR_Certificate_R.png</value>
+		<!-- Korea Korean-text strings (existing) -->
 		<value condition="String.Contains(Container.ListItem.MPAA,전체)">KR_Certificate_All.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,12세)">KR_Certificate_12.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,15세)">KR_Certificate_15.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,불가)">KR_Certificate_18.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,제한)">KR_Certificate_R.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Brazil (MPAA Brazil) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container.ListItem.MPAA,Brazil:Livre) | String.Contains(Container.ListItem.MPAA,Livre)">MPAA_Brazil_Livre.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Brazil:10) | String.Contains(Container.ListItem.MPAA,10 anos)">MPAA_Brazil_10.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Brazil:12) | String.Contains(Container.ListItem.MPAA,12 anos)">MPAA_Brazil_12.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Brazil:14) | String.Contains(Container.ListItem.MPAA,14 anos)">MPAA_Brazil_14.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Brazil:16) | String.Contains(Container.ListItem.MPAA,16 anos)">MPAA_Brazil_16.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,Brazil:18) | String.Contains(Container.ListItem.MPAA,18 anos)">MPAA_Brazil_18.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,Australia:)">$INFO[Container.ListItem.MPAA,australia_,.png]</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Australia — explicit per-rating conditionals (replaces dynamic $INFO line) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.Contains(Container.ListItem.MPAA,Australia:R18) | String.Contains(Container.ListItem.MPAA,Aus:R18) | String.Contains(Container.ListItem.MPAA,R18)">australia_r18+.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,Australia:MA15) | String.Contains(Container.ListItem.MPAA,Aus:MA15) | String.Contains(Container.ListItem.MPAA,MA15)">australia_ma15+.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Australia:MA) | String.IsEqual(Container.ListItem.MPAA,Aus:MA) | String.Contains(Container.ListItem.MPAA,Australia:MA) | String.Contains(Container.ListItem.MPAA,Aus:MA)">australia_MA.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Australia:R) | String.IsEqual(Container.ListItem.MPAA,Aus:R)">australia_R.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Australia:M) | String.IsEqual(Container.ListItem.MPAA,Aus:M) | String.IsEqual(Container.ListItem.MPAA,Australia M)">australia_M.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Australia:PG) | String.IsEqual(Container.ListItem.MPAA,Aus:PG)">australia_PG.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Australia:G) | String.IsEqual(Container.ListItem.MPAA,Aus:G) | String.IsEqual(Container.ListItem.MPAA,Australia Approved)">australia_G.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Netherlands (Kijkwijzer / NICAM) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container.ListItem.MPAA,NL-AL)">NL-AL.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,NL-MG6)">NL-MG6.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,NL-6)">NL-6.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,NL-9)">NL-9.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,NL-12)">NL-12.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,NL-14)">NL-14.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,NL-16)">NL-16.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,NL-18)">NL-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Greece (GRSC) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Greece:K) | String.Contains(Container.ListItem.MPAA,gr-k) | String.Contains(Container.ListItem.MPAA,Greece:K) | String.Contains(Container.ListItem.MPAA,GR:K)">gr-k.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Greece:8) | String.Contains(Container.ListItem.MPAA,gr-8) | String.Contains(Container.ListItem.MPAA,Greece:8) | String.Contains(Container.ListItem.MPAA,GR:8) | String.Contains(Container.ListItem.MPAA,8 έτη)">gr-8.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Greece:12) | String.Contains(Container.ListItem.MPAA,gr-12) | String.Contains(Container.ListItem.MPAA,Greece:12) | String.Contains(Container.ListItem.MPAA,GR:12) | String.Contains(Container.ListItem.MPAA,12 έτη)">gr-12.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Greece:16) | String.Contains(Container.ListItem.MPAA,gr-16) | String.Contains(Container.ListItem.MPAA,Greece:16) | String.Contains(Container.ListItem.MPAA,GR:16) | String.Contains(Container.ListItem.MPAA,16 έτη)">gr-16.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Greece:18) | String.Contains(Container.ListItem.MPAA,gr-18) | String.Contains(Container.ListItem.MPAA,Greece:18) | String.Contains(Container.ListItem.MPAA,GR:18) | String.Contains(Container.ListItem.MPAA,18 έτη)">gr-18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Denmark (Medierådet / mccyp) — educated-guess token mapping; flag if scraper differs -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Denmark:A) | String.Contains(Container.ListItem.MPAA,mccyp_denmark-a) | String.Contains(Container.ListItem.MPAA,Denmark:A) | String.Contains(Container.ListItem.MPAA,Tilladt for alle)">mccyp_denmark-a.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Denmark:7) | String.Contains(Container.ListItem.MPAA,mccyp_denmark-7) | String.Contains(Container.ListItem.MPAA,Denmark:7) | String.Contains(Container.ListItem.MPAA,7 år)">mccyp_denmark-7.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Denmark:11) | String.Contains(Container.ListItem.MPAA,mccyp_denmark-11) | String.Contains(Container.ListItem.MPAA,Denmark:11) | String.Contains(Container.ListItem.MPAA,11 år)">mccyp_denmark-11.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,Denmark:15) | String.Contains(Container.ListItem.MPAA,mccyp_denmark-15) | String.Contains(Container.ListItem.MPAA,Denmark:15) | String.Contains(Container.ListItem.MPAA,15 år)">mccyp_denmark-15.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Unknown dm-prefix ratings (disc assets exist; token origin unconfirmed) -->
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,dm10) | String.Contains(Container.ListItem.MPAA,dm:10)">dm10.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,dm12) | String.Contains(Container.ListItem.MPAA,dm:12)">dm12.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,dm16) | String.Contains(Container.ListItem.MPAA,dm:16)">dm16.png</value>
+		<value condition="String.IsEqual(Container.ListItem.MPAA,dm18) | String.Contains(Container.ListItem.MPAA,dm:18)">dm18.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- US TV Ratings — Tier 1 cert assets, Tier 2 deprecated fallbacks -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value condition="String.Contains(Container.ListItem.MPAA,TV-14)">TV-14.png</value>
+		<!-- TV-14 — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,TV-14)">TV-14_Certificate_US.png</value>
+		<!-- TV-14 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-14)">Rated TV-14.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,TV-MA)">TV-MA.png</value>
+		<!-- TV-MA — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,TV-MA)">TV-MA_Certificate_US.png</value>
+		<!-- TV-MA — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-MA)">Rated TV-MA.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,TV-PG)">TV-PG.png</value>
+		<!-- TV-PG — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,TV-PG)">TV-PG_Certificate_US.png</value>
+		<!-- TV-PG — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-PG)">Rated TV-PG.png</value>
 		<value condition="String.Contains(Container.ListItem.MPAA,TV-G)">TV-G.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,TV-Y7)">TV-Y7.png</value>
-		<value condition="String.Contains(Container.ListItem.MPAA,TV-Y)">TV-Y.png</value>
+		<!-- TV-G — Tier 1 cert asset -->
+		<value condition="String.IsEqual(Container.ListItem.MPAA,TV-G)">TV-G_Certificate_US.png</value>
+		<!-- TV-G — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-G)">Rated TV-G.png</value>
+		<!-- TV-Y7 before TV-Y to avoid Y substring collision -->
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-Y7)">tv-y7.png</value>
+		<!-- TV-Y7 — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-Y7)">Rated tv-y7.png</value>
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-Y)">tv-y.png</value>
+		<!-- TV-Y — Tier 2 deprecated fallback -->
+		<value condition="String.Contains(Container.ListItem.MPAA,TV-Y) + !String.Contains(Container.ListItem.MPAA,TV-Y7)">Rated tv-y.png</value>
+		<!-- ═══════════════════════════════════════════════════════ -->
+		<!-- Tier 3 default: pass-through to $INFO dynamic filename -->
+		<!-- ═══════════════════════════════════════════════════════ -->
 		<value>$INFO[Container.ListItem.MPAA,,.png]</value>
 	</variable>
 
@@ -2144,6 +2756,15 @@
 		<!-- Broadcast sources -->
 		<value condition="String.Contains(ListItem.FileName,pdtv) | String.Contains(ListItem.FileName,sdtv) | String.Contains(ListItem.FileName,sd tv)">$VAR[MediaFlagsPathVar]format/sdtv.png</value>
 		<value condition="String.Contains(ListItem.FileName,uhdtv) | String.Contains(ListItem.FileName,hdtv) | String.Contains(ListItem.FileName,hd tv)">$VAR[MediaFlagsPathVar]format/hdtv.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105)                                     -->
+		<!-- ================================================================================== -->
+		<!-- Custom Web-DL Override -->
+		<value condition="[String.Contains(ListItem.FileName,web-dl) | String.Contains(ListItem.FileName,webdl) | String.Contains(ListItem.FileName,webrip)] + !String.IsEmpty(Skin.String(UserSel_Flag_WebDL))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_WebDL)]</value>
+		<!-- Custom DVD Override -->
+		<value condition="[String.Contains(ListItem.FileName,dvd) | String.Contains(ListItem.FileName,.ifo)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
 		<!-- Disc formats -->
 		<value condition="String.Contains(ListItem.FileName,hddvd) | String.Contains(ListItem.FileName,hd-dvd)">$VAR[MediaFlagsPathVar]format/hddvd.png</value>
 		<value condition="String.Contains(ListItem.FileName,dvb)">$VAR[MediaFlagsPathVar]format/dvb.png</value>
@@ -2175,6 +2796,15 @@
 		<!-- Broadcast sources -->
 		<value condition="String.Contains(Container(7005).ListItem.FileNameAndPath,pdtv) | String.Contains(Container(7005).ListItem.FileNameAndPath,sdtv) | String.Contains(Container(7005).ListItem.FileNameAndPath,sd tv)">$VAR[MediaFlagsPathVar]format/sdtv.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.FileNameAndPath,uhdtv) | String.Contains(Container(7005).ListItem.FileNameAndPath,hdtv) | String.Contains(Container(7005).ListItem.FileNameAndPath,hd tv)">$VAR[MediaFlagsPathVar]format/hdtv.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105)                                     -->
+		<!-- ================================================================================== -->
+		<!-- Custom Web-DL Override -->
+		<value condition="[String.Contains(Container(7005).ListItem.FileNameAndPath,web-dl) | String.Contains(Container(7005).ListItem.FileNameAndPath,webdl) | String.Contains(Container(7005).ListItem.FileNameAndPath,webrip)] + !String.IsEmpty(Skin.String(UserSel_Flag_WebDL))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_WebDL)]</value>
+		<!-- Custom DVD Override -->
+		<value condition="[String.Contains(Container(7005).ListItem.FileNameAndPath,dvd) | String.Contains(Container(7005).ListItem.FileNameAndPath,.ifo)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
 		<!-- Disc formats -->
 		<value condition="String.Contains(Container(7005).ListItem.FileNameAndPath,hddvd) | String.Contains(Container(7005).ListItem.FileNameAndPath,hd-dvd)">$VAR[MediaFlagsPathVar]format/hddvd.png</value>
 		<value condition="String.Contains(Container(7005).ListItem.FileNameAndPath,dvb)">$VAR[MediaFlagsPathVar]format/dvb.png</value>
@@ -2206,6 +2836,15 @@
 		<!-- Broadcast sources -->
 		<value condition="String.Contains(Player.Filenameandpath,pdtv) | String.Contains(Player.Filenameandpath,sdtv) | String.Contains(Player.Filenameandpath,sd tv)">$VAR[MediaFlagsPathVar]format/sdtv.png</value>
 		<value condition="String.Contains(Player.Filenameandpath,uhdtv) | String.Contains(Player.Filenameandpath,hdtv) | String.Contains(Player.Filenameandpath,hd tv)">$VAR[MediaFlagsPathVar]format/hdtv.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105)                                     -->
+		<!-- ================================================================================== -->
+		<!-- Custom Web-DL Override -->
+		<value condition="[String.Contains(Player.Filenameandpath,web-dl) | String.Contains(Player.Filenameandpath,webdl) | String.Contains(Player.Filenameandpath,webrip)] + !String.IsEmpty(Skin.String(UserSel_Flag_WebDL))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_WebDL)]</value>
+		<!-- Custom DVD Override -->
+		<value condition="[String.Contains(Player.Filenameandpath,dvd) | String.Contains(Player.Filenameandpath,.ifo)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
 		<!-- Disc formats -->
 		<value condition="String.Contains(Player.Filenameandpath,hddvd) | String.Contains(Player.Filenameandpath,hd-dvd)">$VAR[MediaFlagsPathVar]format/hddvd.png</value>
 		<value condition="String.Contains(Player.Filenameandpath,dvb)">$VAR[MediaFlagsPathVar]format/dvb.png</value>
@@ -2226,7 +2865,6 @@
 		<!-- file was misleading. Show codec instead so the user sees the actual stream info.    -->
 		<!-- =================================================================================== -->
 		<value>$VAR[MediaFlagsPathVar]$INFO[VideoPlayer.VideoCodec,videocodec/,.png]</value>
-		<!-- <value>none</value> -->
 	</variable>
 
 	<!-- ============================================================================ -->
@@ -2243,6 +2881,19 @@
 		<value condition="[String.IsEqual(ListItem.VideoResolution,1080) | String.IsEqual(ListItem.VideoResolution,720)] + String.Contains(ListItem.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]hdremux.png</value>
 		<!-- SD Remux fallback -->
 		<value condition="String.Contains(ListItem.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]sdremux.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105)                                     -->
+		<!-- ================================================================================== -->
+		<!-- Custom 4K Override -->
+		<value condition="String.IsEqual(ListItem.VideoResolution,4K) + [String.Contains(ListItem.Filename,UHD) | String.Contains(ListItem.Filename,2160p)] + !String.IsEmpty(Skin.String(UserSel_Flag_4K))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_4K)]</value>
+		<!-- Custom 1080p Override -->
+		<value condition="String.IsEqual(ListItem.VideoResolution,1080) + !String.IsEmpty(Skin.String(UserSel_Flag_1080p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_1080p)]</value>
+		<!-- Custom 720p Override -->
+		<value condition="String.IsEqual(ListItem.VideoResolution,720) + !String.IsEmpty(Skin.String(UserSel_Flag_720p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_720p)]</value>
+		<!-- Custom DVD / SD Override -->
+		<value condition="[String.StartsWith(ListItem.VideoResolution,5) | String.StartsWith(ListItem.VideoResolution,4)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
 		<!-- ================================================================================== -->
 		<!-- USER CHOICE: 4K label (UHD or 2160p in filename) — after remux so remux wins.     -->
 		<!-- Skin setting: 4K badge vs 2160p badge.                                             -->
@@ -2267,6 +2918,19 @@
 		<value condition="[String.IsEqual(Container(7005).ListItem.VideoResolution,1080) | String.IsEqual(Container(7005).ListItem.VideoResolution,720)] + String.Contains(Container(7005).ListItem.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]hdremux.png</value>
 		<!-- SD Remux fallback -->
 		<value condition="String.Contains(Container(7005).ListItem.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]sdremux.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105)                                     -->
+		<!-- ================================================================================== -->
+		<!-- Custom 4K Override -->
+		<value condition="String.IsEqual(Container(7005).ListItem.VideoResolution,4K) + [String.Contains(Container(7005).ListItem.Filename,UHD) | String.Contains(Container(7005).ListItem.Filename,2160p)] + !String.IsEmpty(Skin.String(UserSel_Flag_4K))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_4K)]</value>
+		<!-- Custom 1080p Override -->
+		<value condition="String.IsEqual(Container(7005).ListItem.VideoResolution,1080) + !String.IsEmpty(Skin.String(UserSel_Flag_1080p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_1080p)]</value>
+		<!-- Custom 720p Override -->
+		<value condition="String.IsEqual(Container(7005).ListItem.VideoResolution,720) + !String.IsEmpty(Skin.String(UserSel_Flag_720p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_720p)]</value>
+		<!-- Custom DVD / SD Override -->
+		<value condition="[String.StartsWith(Container(7005).ListItem.VideoResolution,5) | String.StartsWith(Container(7005).ListItem.VideoResolution,4)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
 		<!-- ================================================================================== -->
 		<!-- USER CHOICE: 4K label — after remux so remux wins.                                -->
 		<!-- ================================================================================== -->
@@ -2281,8 +2945,12 @@
 	</variable>
 
 	<variable name="PlayerVideoResolutionFlagVar">
-		<value condition="String.IsEqual(VideoPlayer.VideoResolution,4K) + String.Contains(Player.Filename,UHD) + Skin.HasSetting(MediaFlagDataStyleValue)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]4k.png</value>
-		<value condition="String.IsEqual(VideoPlayer.VideoResolution,4K) + String.Contains(Player.Filename,UHD) + !Skin.HasSetting(MediaFlagDataStyleValue)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]2160.png</value>
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105) - PRE-EMBEDDED HIGHEST PRIORITY      -->
+		<!-- ================================================================================== -->
+		<value condition="String.IsEqual(VideoPlayer.VideoResolution,4K) + String.Contains(Player.Filename,UHD) + Skin.HasSetting(MediaFlagDataStyleValue) + !String.IsEmpty(Skin.String(UserSel_Flag_4K))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_4K)]</value>
+		<value condition="String.IsEqual(VideoPlayer.VideoResolution,4K) + String.Contains(Player.Filename,UHD) + !Skin.HasSetting(MediaFlagDataStyleValue) + !String.IsEmpty(Skin.String(UserSel_Flag_4K))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_4K)]</value>
+
 		<!-- ================================================================================== -->
 		<!-- REMUX CHECKS - MUST BE ORDERED FROM HIGHEST QUALITY TO LOWEST                      -->
 		<!-- ================================================================================== -->
@@ -2292,6 +2960,21 @@
 		<value condition="[String.IsEqual(VideoPlayer.VideoResolution,1080) | String.IsEqual(VideoPlayer.VideoResolution,720)] + String.Contains(Player.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]hdremux.png</value>
 		<!-- Finally, if the filename contains "remux" but it's NOT 4K or HD, it must be an SD Remux. This is a simple fallback. -->
 		<value condition="String.Contains(Player.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]sdremux.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105 - STANDARD FALLBACK CONTEXT)         -->
+		<!-- ================================================================================== -->
+		<!-- Custom 4K Override -->
+		<value condition="String.IsEqual(VideoPlayer.VideoResolution,4K) + !String.IsEmpty(Skin.String(UserSel_Flag_4K))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_4K)]</value>
+		<!-- Custom 1080p Override -->
+		<value condition="String.IsEqual(VideoPlayer.VideoResolution,1080) + !String.IsEmpty(Skin.String(UserSel_Flag_1080p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_1080p)]</value>
+		<!-- Custom 720p Override -->
+		<value condition="String.IsEqual(VideoPlayer.VideoResolution,720) + !String.IsEmpty(Skin.String(UserSel_Flag_720p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_720p)]</value>
+		<!-- Custom DVD / SD Override -->
+		<value condition="[String.StartsWith(VideoPlayer.VideoResolution,5) | String.StartsWith(VideoPlayer.VideoResolution,4)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
+		<value condition="String.IsEqual(VideoPlayer.VideoResolution,4K) + String.Contains(Player.Filename,UHD) + Skin.HasSetting(MediaFlagDataStyleValue)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]4k.png</value>
+		<value condition="String.IsEqual(VideoPlayer.VideoResolution,4K) + String.Contains(Player.Filename,UHD) + !Skin.HasSetting(MediaFlagDataStyleValue)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]2160.png</value>
 		<value condition="String.Contains(Player.Filename,360)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]360.png</value>
 		<value condition="String.Contains(Player.Filename,288)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]288.png</value>
 		<value condition="String.Contains(Player.Filename,144)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]144.png</value>
@@ -2723,23 +3406,51 @@
 
 	<!-- Local Movie Flags (20052) -->
 	<variable name="Container20052VideoFormatFlagVar">
+		<!-- 3D Blu-ray -->
 		<value condition="Container(20052).ListItem.IsStereoscopic | String.Contains(Container(20052).ListItem.FileNameAndPath,3D)">$VAR[MediaFlagsPathVar]format/bluray3d.png</value>
+		<!-- Broadcast/UHD markers -->
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,uhd) | String.Contains(Container(20052).ListItem.FileNameAndPath,2160p)">$VAR[MediaFlagsPathVar]format/uhd.png</value>
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,pdtv) | String.Contains(Container(20052).ListItem.FileNameAndPath,sdtv)">$VAR[MediaFlagsPathVar]format/sdtv.png</value>
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,hdtv)">$VAR[MediaFlagsPathVar]format/hdtv.png</value>
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,hddvd)">$VAR[MediaFlagsPathVar]format/hddvd.png</value>
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,dvb)">$VAR[MediaFlagsPathVar]format/dvb.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105)                                     -->
+		<!-- ================================================================================== -->
+		<!-- Custom Web-DL Override -->
+		<value condition="[String.Contains(Container(20052).ListItem.FileNameAndPath,web-dl) | String.Contains(Container(20052).ListItem.FileNameAndPath,webdl) | String.Contains(Container(20052).ListItem.FileNameAndPath,webrip)] + !String.IsEmpty(Skin.String(UserSel_Flag_WebDL))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_WebDL)]</value>
+		<!-- Custom DVD Override -->
+		<value condition="[String.Contains(Container(20052).ListItem.FileNameAndPath,dvd) | String.Contains(Container(20052).ListItem.FileNameAndPath,.ifo)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
+		<!-- Standard Fallbacks -->
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,web-dl) | String.Contains(Container(20052).ListItem.FileNameAndPath,webdl) | String.Contains(Container(20052).ListItem.FileNameAndPath,webrip)">$VAR[MediaFlagsPathVar]format/webdl.png</value>
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,dvd) | String.Contains(Container(20052).ListItem.FileNameAndPath,.ifo)">$VAR[MediaFlagsPathVar]format/dvd.png</value>
 		<value condition="String.Contains(Container(20052).ListItem.FileNameAndPath,bluray) | String.Contains(Container(20052).ListItem.FileNameAndPath,remux)">$VAR[MediaFlagsPathVar]format/bluray.png</value>
 		<value>$VAR[MediaFlagsPathVar]$INFO[Container(20052).ListItem.VideoCodec,videocodec/,.png]</value>
 	</variable>
 	<variable name="Container20052VideoResolutionFlagVar">
+		<!-- ================================================================================== -->
+		<!-- REMUX CHECKS - MUST COME FIRST so a 4K UHD Remux gets 4kremux, not 4k/2160.       -->
+		<!-- ================================================================================== -->
 		<value condition="String.IsEqual(Container(20052).ListItem.VideoResolution,4K) + String.Contains(Container(20052).ListItem.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]4kremux.png</value>
 		<value condition="String.IsEqual(Container(20052).ListItem.VideoResolution,4K) + String.Contains(Container(20052).ListItem.Filename,UHD) + Skin.HasSetting(MediaFlagDataStyleValue)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]4k.png</value>
 		<value condition="String.IsEqual(Container(20052).ListItem.VideoResolution,4K) + String.Contains(Container(20052).ListItem.Filename,UHD) + !Skin.HasSetting(MediaFlagDataStyleValue)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]2160.png</value>
 		<value condition="[String.IsEqual(Container(20052).ListItem.VideoResolution,1080) | String.IsEqual(Container(20052).ListItem.VideoResolution,720)] + String.Contains(Container(20052).ListItem.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]hdremux.png</value>
 		<value condition="String.Contains(Container(20052).ListItem.Filename,remux)">$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]sdremux.png</value>
+
+		<!-- ================================================================================== -->
+		<!-- INJECTED CUSTOMIZATION OVERRIDES (DIALOG 1105)                                     -->
+		<!-- ================================================================================== -->
+		<!-- Custom 4K Override -->
+		<value condition="String.IsEqual(Container(20052).ListItem.VideoResolution,4K) + [String.Contains(Container(20052).ListItem.Filename,UHD) | String.Contains(Container(20052).ListItem.Filename,2160p)] + !String.IsEmpty(Skin.String(UserSel_Flag_4K))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_4K)]</value>
+		<!-- Custom 1080p Override -->
+		<value condition="String.IsEqual(Container(20052).ListItem.VideoResolution,1080) + !String.IsEmpty(Skin.String(UserSel_Flag_1080p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_1080p)]</value>
+		<!-- Custom 720p Override -->
+		<value condition="String.IsEqual(Container(20052).ListItem.VideoResolution,720) + !String.IsEmpty(Skin.String(UserSel_Flag_720p))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_720p)]</value>
+		<!-- Custom DVD / SD Override -->
+		<value condition="[String.StartsWith(Container(20052).ListItem.VideoResolution,5) | String.StartsWith(Container(20052).ListItem.VideoResolution,4)] + !String.IsEmpty(Skin.String(UserSel_Flag_DVD))">$VAR[MediaFlagsPathVar]videocodec/$INFO[Skin.String(UserSel_Flag_DVD)]</value>
+
 		<value>$VAR[MediaFlagsPathVar]videoresolution/$VAR[MediaFlagsPathExpandedResolutionVar]$INFO[Container(20052).ListItem.VideoResolution,,.png]</value>
 	</variable>
 	<variable name="Container20052HDRFlagVar">

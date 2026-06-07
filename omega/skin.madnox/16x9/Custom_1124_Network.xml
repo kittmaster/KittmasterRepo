@@ -69,60 +69,68 @@
 				<height>540</height>
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
+
 				<!-- Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[705] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[705] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
+
 				<!-- IP Address -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[150]:[/COLOR] [B]$INFO[Network.IPAddress][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[150]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[Network.IPAddress][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(Network.IPAddress)</visible>
 				</control>
+
 				<!-- Subnet Mask -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[13159]:[/COLOR] [B]$INFO[Network.SubnetMask][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[13159]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[Network.SubnetMask][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(Network.SubnetMask)</visible>
 				</control>
+
 				<!-- Gateway -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[13160]:[/COLOR] [B]$INFO[Network.GatewayAddress][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[13160]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[Network.GatewayAddress][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(Network.GatewayAddress)</visible>
 				</control>
+
 				<!-- MAC Address -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[149]:[/COLOR] [B]$INFO[Network.MacAddress][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[149]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[Network.MacAddress][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(Network.MacAddress)</visible>
 				</control>
+
 				<!-- DNS Server 1 -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[13161]:[/COLOR] [B]$INFO[Network.DNS1Address][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[13161]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[Network.DNS1Address][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(Network.DNS1Address)</visible>
 				</control>
+
 				<!-- DNS Server 2 -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[20307]:[/COLOR] [B]$INFO[Network.DNS2Address][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[20307]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[Network.DNS2Address][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(Network.DNS2Address)</visible>
 				</control>
+
 				<!-- Internet / Link State -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[443]:[/COLOR] [B]$INFO[Network.LinkState][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[443]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[Network.LinkState][/B][/COLOR]</label>
 					<visible>!String.IsEmpty(Network.LinkState)</visible>
 				</control>
 			</control>

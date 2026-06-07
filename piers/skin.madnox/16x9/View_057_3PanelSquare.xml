@@ -60,40 +60,12 @@
 					<include>AutoScrollPlot</include>
 				</control>
 			</control>
-			<!-- <control type="scrollbar" id="60571">
-				<visible>!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303))</visible>
-				<right>80</right>
-				<top>667</top>
-				<bottom>225</bottom>
-				<onleft>6057</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
-				<onright condition="Control.IsVisible(61301)">61301</onright>
-			</control>
-			<control type="scrollbar" id="60572">
-				<visible>!Container.Content(artists) + String.IsEmpty(Control.GetLabel(5303))</visible>
-				<right>80</right>
-				<top>629</top>
-				<bottom>225</bottom>
-				<onleft>6057</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
-				<onright condition="Control.IsVisible(61301)">61301</onright>
-			</control>
-			<control type="scrollbar" id="60573">
-				<visible>Container.Content(artists)</visible>
-				<right>80</right>
-				<top>590</top>
-				<bottom>225</bottom>
-				<onleft>6057</onleft>
-				<onright condition="Control.IsVisible(61300)">61300</onright>
-				<onright condition="Control.IsVisible(61301)">61301</onright>
-			</control> -->
 			<control type="scrollbar" id="60571">
 				<visible>!Container.Content(artists) + !String.IsEmpty(Control.GetLabel(5303)) + [!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description))]</visible>
 				<right>80</right>
 				<top>667</top>
 				<bottom>225</bottom>
 				<onleft>6057</onleft>
-				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 				<showonepage>false</showonepage>
 			</control>
@@ -103,7 +75,6 @@
 				<top>629</top>
 				<bottom>225</bottom>
 				<onleft>6057</onleft>
-				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 				<showonepage>false</showonepage>
 			</control>
@@ -113,7 +84,6 @@
 				<top>590</top>
 				<bottom>225</bottom>
 				<onleft>6057</onleft>
-				<!-- <onright condition="Control.IsVisible(61300)">61300</onright> -->
 				<onright condition="Control.IsVisible(61301)">61301</onright>
 				<showonepage>false</showonepage>
 			</control>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<defaultcontrol>11</defaultcontrol>
 	<controls>
@@ -21,7 +21,7 @@
 				<right>20</right>
 				<bottom>20</bottom>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture diffuse="diffusetexture">diffuse/rounded10-660x156.png" colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
+				<texture diffuse="diffuse/rounded10-660x156.png" colordiffuse="$VAR[PanelTextureColorVar]">$INFO[Skin.String(PanelTexture.texture)]</texture>
 			</control>
 			<control type="image">
 				<visible>Skin.HasSetting(PanelSquare.texture)</visible>

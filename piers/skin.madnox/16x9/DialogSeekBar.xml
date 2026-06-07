@@ -352,7 +352,7 @@
 		<!-- Studio Logo Check If Image Exists -->
 		<control type="image" id="811112">
 			<include>HiddenObject</include>
-			<texture fallback="none">$VAR[StudioIconsVar]</texture>
+			<texture fallback="DefaultStudios.png">$VAR[StudioIconsVar]</texture>
 		</control>
 	</controls>
 </window>

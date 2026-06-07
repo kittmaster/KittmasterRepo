@@ -244,7 +244,7 @@
 		<!-- Studio Logo Check If Image Exists -->
 		<control type="image" id="811113">
 			<include>HiddenObject</include>
-			<texture fallback="none">$VAR[StudioIconNextAiredVar]</texture>
+			<texture fallback="DefaultStudios.png">$VAR[StudioIconNextAiredVar]</texture>
 		</control>
 		<control type="group">
 			<visible>Container(8000).IsUpdating</visible>

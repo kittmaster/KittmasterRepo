@@ -68,37 +68,48 @@
 				<height>540</height>
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
+
 				<!-- Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[31497] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[31497] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
+
+				<!-- Memory Used Percent -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31497] [LOWERCASE]$LOCALIZE[565][/LOWERCASE]:[/COLOR] [B]$INFO[System.Memory(used.percent)][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31497] [LOWERCASE]$LOCALIZE[565][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.Memory(used.percent)][/B][/COLOR]</label>
 				</control>
+
+				<!-- Active Memory Used -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[20162] [LOWERCASE]$LOCALIZE[31497][/LOWERCASE]:[/COLOR] [B]$INFO[System.Memory(used)][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[20162] [LOWERCASE]$LOCALIZE[31497][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.Memory(used)][/B][/COLOR]</label>
 				</control>
+
+				<!-- Memory Total -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[22012]:[/COLOR] [B]$INFO[System.Memory(total)][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[22012]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.Memory(total)][/B][/COLOR]</label>
 				</control>
+
+				<!-- Memory Free -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[158]:[/COLOR] [B]$INFO[System.Memory(free)][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[158]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.Memory(free)][/B][/COLOR]</label>
 				</control>
+
+				<!-- Free Memory -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31498] [LOWERCASE]$LOCALIZE[31497][/LOWERCASE]:[/COLOR] [B]$INFO[System.FreeMemory][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31498] [LOWERCASE]$LOCALIZE[31497][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.FreeMemory][/B][/COLOR]</label>
 				</control>
 			</control>
 

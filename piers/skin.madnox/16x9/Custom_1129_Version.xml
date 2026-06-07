@@ -44,7 +44,7 @@
 				<right>40</right>
 				<height>50</height>
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
-				<label>$LOCALIZE[157] $LOCALIZE[14116]...</label>
+				<label>Kodi $LOCALIZE[14116]...</label>
 				<align>left</align>
 				<include>SettingsLeftLabelWidgetsShortcut</include>
 			</control>
@@ -66,48 +66,49 @@
 				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
 				<onright>60</onright>
+
 				<!-- Header -->
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
-					<label>[COLOR FF6db9e5][B]$LOCALIZE[19114] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
+					<label>[COLOR $VAR[PanelHighlightColorVar]][B]$LOCALIZE[19114] [LOWERCASE]$LOCALIZE[126][/LOWERCASE]:[/B][/COLOR]</label>
 					<include>SettingsLabelNoOffset</include>
 				</control>
 				<control type="label">
 					<height>80</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[31492] $LOCALIZE[31499] $LOCALIZE[19114][/LOWERCASE]:[/COLOR] [B]$INFO[System.BuildVersion][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[31492] $LOCALIZE[31499] $LOCALIZE[19114][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BuildVersion][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[31492] $LOCALIZE[33012] $LOCALIZE[19114][/LOWERCASE]:[/COLOR] [B]$INFO[System.BuildVersionShort][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[31492] $LOCALIZE[33012] $LOCALIZE[19114][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BuildVersionShort][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[31492] $LOCALIZE[552][/LOWERCASE]:[/COLOR] [B]$INFO[System.BuildDate][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[31492] $LOCALIZE[552][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BuildDate][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[19114] $LOCALIZE[31500][/LOWERCASE]:[/COLOR] [B]$INFO[System.BuildVersionCode][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31494] [LOWERCASE]$LOCALIZE[19114] $LOCALIZE[31500][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BuildVersionCode][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[6] [LOWERCASE]$LOCALIZE[31484] $LOCALIZE[19114][/LOWERCASE]:[/COLOR] [B]$INFO[System.BuildVersionGit][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[6] [LOWERCASE]$LOCALIZE[31492] $LOCALIZE[19114][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.BuildVersionGit][/B][/COLOR]</label>
 				</control>
 				<control type="label">
 					<height>40</height>
 					<font>Font30_Reg</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label>[COLOR FF6db9e5]$LOCALIZE[31501] [LOWERCASE]$LOCALIZE[551][/LOWERCASE]:[/COLOR] [B]$INFO[System.FriendlyName][/B]</label>
+					<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31501] [LOWERCASE]$LOCALIZE[551][/LOWERCASE]:[/COLOR] [COLOR $VAR[PanelTextColorVar]][B]$INFO[System.FriendlyName][/B][/COLOR]</label>
 				</control>
 			</control>
 			<!-- Scrollbar for the Stats Group -->

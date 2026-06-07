@@ -69,7 +69,7 @@
 		<!-- Check if Studio Image exists -->
 		<control type="image" id="811115">
 			<include>HiddenObject</include>
-			<texture fallback="none">$VAR[ContainerStudioIconsVar]</texture>
+			<texture fallback="DefaultStudios.png">$VAR[ContainerStudioIconsVar]</texture>
 		</control>
 		<!-- Artwork -->
 		<control type="group">
@@ -333,8 +333,21 @@
 			<control type="group" id="9001">
 				<top>211</top>
 				<!-- NATIVE Cast (Instant load for Movies, TV Shows, Episodes) -->
-				<control type="panel" id="50">
+				<!-- <control type="panel" id="50">
 					<visible>!String.IsEqual(ListItem.DBTYPE,season)</visible>
+					<onfocus>RunScript(script.skin.madnox, action=process_ratings, output_tmdb=InfoDialog.TMDb.Percent, output_imdb=InfoDialog.IMDb.Percent, output_user=InfoDialog.User.Formatted, output_star=InfoDialog.User.StarValue, output_ready=InfoDialog.Ratings.Ready)</onfocus>
+					<onup condition="!Skin.HasSetting(VideoInfoTMDbActor)">1020</onup>
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$VAR[TMDbOriginTypeVar],origin_tmdb_id=$INFO[ListItem.UniqueID(tmdb)],origin_dbid=$INFO[ListItem.DBID],call_auto=1190)</onup>
+					<include content="DialogExtraInfo">
+						<param name="visible">[!Control.HasFocus(1020) + Container(9000).HasFocus(101)] | Control.HasFocus(50)</param>
+						<param name="aspect">scale</param>
+						<param name="labelvisible">true</param>
+					</include>
+				</control> -->
+
+				<!-- NATIVE Cast (Instant load for Movies, TV Shows, Episodes - Library Only) -->
+				<control type="panel" id="50">
+					<visible>!String.IsEqual(ListItem.DBTYPE,season) + Integer.IsGreater(ListItem.DBID,0)</visible>
 					<onfocus>RunScript(script.skin.madnox, action=process_ratings, output_tmdb=InfoDialog.TMDb.Percent, output_imdb=InfoDialog.IMDb.Percent, output_user=InfoDialog.User.Formatted, output_star=InfoDialog.User.StarValue, output_ready=InfoDialog.Ratings.Ready)</onfocus>
 					<onup condition="!Skin.HasSetting(VideoInfoTMDbActor)">1020</onup>
 					<onup condition="Skin.HasSetting(VideoInfoTMDbActor)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$VAR[TMDbOriginTypeVar],origin_tmdb_id=$INFO[ListItem.UniqueID(tmdb)],origin_dbid=$INFO[ListItem.DBID],call_auto=1190)</onup>
@@ -345,12 +358,35 @@
 					</include>
 				</control>
 
+				<!-- TMDB HELPER Cast (For Movies, TV Shows, Episodes - Non-Library/Online Listings) -->
+				<control type="panel" id="50">
+					<visible>!String.IsEqual(ListItem.DBTYPE,season) + !Integer.IsGreater(ListItem.DBID,0)</visible>
+					<onfocus>RunScript(script.skin.madnox, action=process_ratings, output_tmdb=InfoDialog.TMDb.Percent, output_imdb=InfoDialog.IMDb.Percent, output_user=InfoDialog.User.Formatted, output_star=InfoDialog.User.StarValue, output_ready=InfoDialog.Ratings.Ready)</onfocus>
+					<onup condition="!Skin.HasSetting(VideoInfoTMDbActor)">1020</onup>
+					<!-- If we came in via 1130 widget, close it first so TMDb Helper's ActivateWindow(1190) lands on a clean stack -->
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor) + Window.IsActive(1130)">Dialog.Close(1130,true)</onup>
+					<!-- Online items (plugin/TMDb): use Property(tmdb_id/tmdb_type) since UniqueID/DBTYPE are empty for them -->
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor) + !String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$INFO[ListItem.Property(tmdb_type)],origin_tmdb_id=$INFO[ListItem.Property(tmdb_id)],call_auto=1190)</onup>
+					<!-- Fallback: if Property(tmdb_id) empty, try UniqueID/DBID (library-like edge case) -->
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor) + String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$VAR[TMDbOriginTypeVar],origin_tmdb_id=$INFO[ListItem.UniqueID(tmdb)],origin_dbid=$INFO[ListItem.DBID],call_auto=1190)</onup>
+					<include content="DialogExtraInfo">
+						<param name="visible">[!Control.HasFocus(1020) + Container(9000).HasFocus(101)] | Control.HasFocus(50)</param>
+						<param name="aspect">scale</param>
+						<param name="labelvisible">true</param>
+					</include>
+					<content>plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[TMDbHelperTypeVar]&amp;$VAR[TMDbHelperIDVar]$VAR[TMDbHelper_SeasonParams_Var]</content>
+				</control>
+
 				<!-- TMDB HELPER Cast (Only for Seasons to fix the missing cast gap) -->
 				<control type="panel" id="50">
 					<visible>String.IsEqual(ListItem.DBTYPE,season)</visible>
 					<onfocus>RunScript(script.skin.madnox, action=process_ratings, output_tmdb=InfoDialog.TMDb.Percent, output_imdb=InfoDialog.IMDb.Percent, output_user=InfoDialog.User.Formatted, output_star=InfoDialog.User.StarValue, output_ready=InfoDialog.Ratings.Ready)</onfocus>
 					<onup condition="!Skin.HasSetting(VideoInfoTMDbActor)">1020</onup>
-					<onup condition="Skin.HasSetting(VideoInfoTMDbActor)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$VAR[TMDbOriginTypeVar],origin_tmdb_id=$INFO[ListItem.UniqueID(tmdb)],origin_dbid=$INFO[ListItem.DBID],call_auto=1190)</onup>
+					<!-- If we came in via 1130 widget, close it first so TMDb Helper's ActivateWindow(1190) lands on a clean stack -->
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor) + Window.IsActive(1130)">Dialog.Close(1130,true)</onup>
+					<!-- Online items: use Property(tmdb_id/tmdb_type) for plugin items; fallback to UniqueID for library seasons -->
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor) + !String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$INFO[ListItem.Property(tmdb_type)],origin_tmdb_id=$INFO[ListItem.Property(tmdb_id)],call_auto=1190)</onup>
+					<onup condition="Skin.HasSetting(VideoInfoTMDbActor) + String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],tmdb_type=person,origin_tmdb_type=$VAR[TMDbOriginTypeVar],origin_tmdb_id=$INFO[ListItem.UniqueID(tmdb)],origin_dbid=$INFO[ListItem.DBID],call_auto=1190)</onup>
 					<include content="DialogExtraInfo">
 						<param name="visible">[!Control.HasFocus(1020) + Container(9000).HasFocus(101)] | Control.HasFocus(50)</param>
 						<param name="aspect">scale</param>
@@ -613,7 +649,7 @@
 		<!-- Check if Studio Image exists for Actor Panel to prevent "Bucktooth Holes" -->
 		<control type="image" id="811116">
 			<include>HiddenObject</include>
-			<texture fallback="none">$VAR[ActorPanel_StudioVar]</texture>
+			<texture fallback="DefaultStudios.png">$VAR[ActorPanel_StudioVar]</texture>
 		</control>
 		<!-- Actor Artwork (Poster/Thumb) -->
 		<control type="group">
@@ -987,7 +1023,7 @@
 		</control>
 
 		<!-- ========================================================================= -->
-		<!-- Debug must be active to see these labels, DEV only use                    -->
+		<!-- Debug (F7) must be active to see these labels, DEV only use               -->
 		<!-- X-RAY HUD FOR ACTOR METADATA (To map Studio/MPAA filenames)               -->
 		<!-- ========================================================================= -->
 		<control type="grouplist">
@@ -1002,7 +1038,8 @@
 				<font>Font18_Cond_Bold</font>
 				<textcolor>ff00eaff</textcolor>
 				<shadowcolor>FF000000</shadowcolor>
-				<label>--- NATIVE Actor Panel: Live Data ---</label>
+				<!-- <label>*** NATIVE Actor Panel: Live Data ***</label> -->
+				<label>$LOCALIZE[20191]: [LOWERCASE]$LOCALIZE[19074][/LOWERCASE]</label>
 			</control>
 			<!-- 20052 - MOVIES -->
 			<control type="label">
@@ -1095,7 +1132,7 @@
 		<!-- Studio Logo Check If Image Exists -->
 		<control type="image" id="811115">
 			<include>HiddenObject</include>
-			<texture fallback="none">$VAR[ContainerAlbumLabelVar]</texture>
+			<texture fallback="icons/addons/recordlabel.png">$VAR[ContainerAlbumLabelVar]</texture>
 		</control>
 		<!-- Get Album Details -->
 		<control type="list" id="7004">
@@ -2260,7 +2297,7 @@
 					<texture border="0,0,220,0" colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
 				</control>
 				<!-- Container Info -->
-				<control type="grouplist">
+				<!-- <control type="grouplist">
 					<top>162</top>
 					<height>40</height>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -2275,6 +2312,26 @@
 						<width>auto</width>
 						<font>Font30_Reg</font>
 						<label>$VAR[EmbuaryInfoPersonContainerLabel, ]</label>
+						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					</control>
+				</control> -->
+
+				<!-- Container Info -->
+				<control type="grouplist">
+					<top>162</top>
+					<height>40</height>
+					<usecontrolcoords>true</usecontrolcoords>
+					<orientation>horizontal</orientation>
+					<control type="image">
+						<top>3</top>
+						<width>30</width>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[TMDBHelperInfoPersonContainerIcon]</texture>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<font>Font30_Reg</font>
+						<label>$VAR[TMDBHelperInfoPersonContainerLabel, ]</label>
 						<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 					</control>
 				</control>
@@ -2586,7 +2643,7 @@
 						<texture border="0,0,220,0" colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/separator.png</texture>
 					</control>
 				</focusedlayout>
-				<include>$PARAM[infocontent]</include>
+				<include>AddonInfoContent</include>
 			</control>
 			<control type="image">
 				<bottom>50</bottom>
@@ -3576,17 +3633,27 @@
 	</variable>
 
 	<variable name="TMDBHelperInfoPersonContainerIcon">
+		<!-- Native Person Focus States -->
 		<value condition="Container(9000).HasFocus(100002) | Control.HasFocus(20052)">$VAR[IconPathVar]movies.png</value>
 		<value condition="Container(9000).HasFocus(100003) | Control.HasFocus(20053)">$VAR[IconPathVar]tvshows.png</value>
 		<value condition="Container(9000).HasFocus(100004) | Control.HasFocus(20054)">$VAR[IconPathVar]pictures.png</value>
+		<!-- External TMDb Person Focus States -->
+		<value condition="Container(9000).HasFocus(101) | Control.HasFocus(10052)">$VAR[IconPathVar]movies.png</value>
+		<value condition="Container(9000).HasFocus(102) | Control.HasFocus(10053)">$VAR[IconPathVar]tvshows.png</value>
+		<value condition="Container(9000).HasFocus(103) | Control.HasFocus(10054)">$VAR[IconPathVar]pictures.png</value>
 	</variable>
 
 	<variable name="TMDBHelperInfoPersonContainerLabel">
+		<!-- Native Person Focus States -->
 		<value condition="Container(9000).HasFocus(100002)">$INFO[ListItem.Title,, ]$INFO[Container(20052).ListItem.Property(Role),$LOCALIZE[20347] ]</value>
 		<value condition="Container(9000).HasFocus(100002)">$INFO[ListItem.Title,$LOCALIZE[31366] ]</value>
 		<value condition="Container(9000).HasFocus(100003)">$INFO[ListItem.Title,, ]$INFO[Container(20053).ListItem.Property(Role),$LOCALIZE[20347] ]</value>
 		<value condition="Container(9000).HasFocus(100003)">$INFO[ListItem.Title,$LOCALIZE[31367] ]</value>
 		<value condition="Container(9000).HasFocus(100004) | Control.HasFocus(20054)">$LOCALIZE[31405] $INFO[ListItem.Title]</value>
+		<!-- External TMDb Person Focus States -->
+		<value condition="Container(9000).HasFocus(101) | Control.HasFocus(10052)">$INFO[Container(10052).ListItem.Label]$INFO[Container(10052).ListItem.Year, (,)]</value>
+		<value condition="Container(9000).HasFocus(102) | Control.HasFocus(10053)">$INFO[Container(10053).ListItem.Label]$INFO[Container(10053).ListItem.Year, (,)]</value>
+		<value condition="Container(9000).HasFocus(103) | Control.HasFocus(10054)">$LOCALIZE[31405] $INFO[ListItem.Title]</value>
 	</variable>
 
 	<variable name="TMDbPersonPlotVar">

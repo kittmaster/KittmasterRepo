@@ -51,7 +51,8 @@
 	<include name="SettingsLeftLabelWidgetsShortcut">
 		<top>132</top>
 		<left>100</left>
-		<width>580</width>
+		<!-- <width>580</width> -->
+		<width>1700</width>
 		<height>67</height>
 		<textoffsetx>25</textoffsetx>
 		<font>Font33_Bold_Caps</font>
@@ -303,7 +304,7 @@
 		<value condition="Control.HasFocus(403)">$LOCALIZE[31424]</value>
 		<value condition="Control.HasFocus(404)">$LOCALIZE[31956]</value>
 		<value condition="Control.HasFocus(411)">$LOCALIZE[31957]</value>
-		<!-- <value condition="Control.HasFocus(412)">$LOCALIZE[31961]</value> -->
+		<!-- <value condition="Control.HasFocus(412)"></value> -->
 		<value condition="Control.HasFocus(413)">$LOCALIZE[31962]</value>
 		<value condition="Control.HasFocus(414)">$LOCALIZE[31958]</value>
 		<value condition="Control.HasFocus(415)">$LOCALIZE[31959]</value>

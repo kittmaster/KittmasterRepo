@@ -8,7 +8,7 @@
 			<!-- Solid Background To Prevent Text Bleed-Through -->
 			<control type="image">
 				<width>1253</width>
-				<height>940</height>
+				<height>900</height>
 				<!-- Use the skin's native dialog shape with an opaque color to block bleed-through perfectly -->
 				<texture colordiffuse="FF080808" border="40">$VAR[DialogStyleVar]</texture>
 				<animation effect="fade" time="400">WindowOpen</animation>
@@ -16,7 +16,7 @@
 			<include content="DialogBackground">
 				<description>Window Header Label</description>
 				<param name="width" value="1253" />
-				<param name="height" value="940" />
+				<param name="height" value="900" />
 				<param name="id">1</param>
 				<param name="diffusetexture">diffuse/rounded10-877x470.png</param>
 			</include>
@@ -39,12 +39,11 @@
 			</control>
 			<control type="label">
 				<top>86</top>
-				<left>85</left>
-				<width>100</width>
+				<left>35</left>
+				<width>170</width>
 				<height>60</height>
 				<aligny>center</aligny>
-				<label>[COLOR dd00ff00]$LOCALIZE[424]:[/COLOR]</label>
-				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>[COLOR $VAR[PanelTextColorVar]]$LOCALIZE[31300]:[/COLOR]</label>
 			</control>
 			<control type="label">
 				<top>92</top>
@@ -52,11 +51,10 @@
 				<width>550</width>
 				<height>50</height>
 				<align>left</align>
-				<label>$LOCALIZE[31454]: $VAR[Var_1105_DisplayLabel]</label>
-				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
 				<font>Font25_Cond</font>
+				<label>[COLOR $VAR[PanelSubTextColorVar]]$LOCALIZE[31454]:[/COLOR] [COLOR $VAR[PanelTextColorVar]]$VAR[Var_1105_DisplayLabel][/COLOR]</label>
 			</control>
-			<!-- Top Bar -->
+			<!-- Top Bar: Regular Buttons with Dynamic Color and Background glow -->
 			<control type="grouplist" id="900">
 				<left>190</left>
 				<top>88</top>
@@ -70,7 +68,10 @@
 				<control type="togglebutton" id="901">
 					<width>170</width>
 					<height>60</height>
-					<include>DialogKeyboardToggleButton</include>
+					<!-- Active-button label stays highlighted when focus moves away (placed before include so it wins). -->
+					<textcolor>$VAR[Var_1105_Btn901_Color]</textcolor>
+					<!-- Dedicated include keeps the active button's background blue when unfocused. -->
+					<include>DialogKeyboardToggleButtonFlag</include>
 					<label>4K / UHD</label>
 					<onclick>SetProperty(FlagEditMode,4K,Home)</onclick>
 					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),4K)</selected>
@@ -78,7 +79,10 @@
 				<control type="togglebutton" id="902">
 					<width>170</width>
 					<height>60</height>
-					<include>DialogKeyboardToggleButton</include>
+					<!-- Active-button label stays highlighted when focus moves away (placed before include so it wins). -->
+					<textcolor>$VAR[Var_1105_Btn902_Color]</textcolor>
+					<!-- Dedicated include keeps the active button's background blue when unfocused. -->
+					<include>DialogKeyboardToggleButtonFlag</include>
 					<label>WebDL</label>
 					<onclick>SetProperty(FlagEditMode,WebDL,Home)</onclick>
 					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),WebDL)</selected>
@@ -86,7 +90,10 @@
 				<control type="togglebutton" id="903">
 					<width>170</width>
 					<height>60</height>
-					<include>DialogKeyboardToggleButton</include>
+					<!-- Active-button label stays highlighted when focus moves away (placed before include so it wins). -->
+					<textcolor>$VAR[Var_1105_Btn903_Color]</textcolor>
+					<!-- Dedicated include keeps the active button's background blue when unfocused. -->
+					<include>DialogKeyboardToggleButtonFlag</include>
 					<label>1080p</label>
 					<onclick>SetProperty(FlagEditMode,1080p,Home)</onclick>
 					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),1080p)</selected>
@@ -94,7 +101,10 @@
 				<control type="togglebutton" id="905">
 					<width>170</width>
 					<height>60</height>
-					<include>DialogKeyboardToggleButton</include>
+					<!-- Active-button label stays highlighted when focus moves away (placed before include so it wins). -->
+					<textcolor>$VAR[Var_1105_Btn905_Color]</textcolor>
+					<!-- Dedicated include keeps the active button's background blue when unfocused. -->
+					<include>DialogKeyboardToggleButtonFlag</include>
 					<label>720p</label>
 					<onclick>SetProperty(FlagEditMode,720p,Home)</onclick>
 					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),720p)</selected>
@@ -102,7 +112,10 @@
 				<control type="togglebutton" id="904">
 					<width>170</width>
 					<height>60</height>
-					<include>DialogKeyboardToggleButton</include>
+					<!-- Active-button label stays highlighted when focus moves away (placed before include so it wins). -->
+					<textcolor>$VAR[Var_1105_Btn904_Color]</textcolor>
+					<!-- Dedicated include keeps the active button's background blue when unfocused. -->
+					<include>DialogKeyboardToggleButtonFlag</include>
 					<label>DVD / SD</label>
 					<onclick>SetProperty(FlagEditMode,DVD,Home)</onclick>
 					<selected>String.IsEqual(Window(Home).Property(FlagEditMode),DVD)</selected>
@@ -119,15 +132,15 @@
 			<control type="group" id="9">
 				<control type="label">
 					<left>20</left>
-					<top>155</top>
+					<top>165</top>
 					<width>350</width>
 					<height>40</height>
-					<label>$LOCALIZE[31025]</label>
+					<label>[UPPERCASE]$LOCALIZE[31557][/UPPERCASE]</label>
 					<align>center</align>
-					<font>Font30_Cond_Bold</font>
+					<font>Font26_Bold_Caps</font>
 					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				</control>
-				<control type="button" id="91">
+				<control type="togglebutton" id="91">
 					<left>20</left>
 					<top>215</top>
 					<width>350</width>
@@ -139,7 +152,7 @@
 					<ondown>92</ondown>
 					<onright>50</onright>
 				</control>
-				<control type="button" id="92">
+				<control type="togglebutton" id="92">
 					<left>20</left>
 					<top>290</top>
 					<width>350</width>
@@ -151,7 +164,7 @@
 					<ondown>93</ondown>
 					<onright>51</onright>
 				</control>
-				<control type="button" id="93">
+				<control type="togglebutton" id="93">
 					<left>20</left>
 					<top>365</top>
 					<width>350</width>
@@ -163,7 +176,7 @@
 					<ondown>94</ondown>
 					<onright>52</onright>
 				</control>
-				<control type="button" id="94">
+				<control type="togglebutton" id="94">
 					<left>20</left>
 					<top>440</top>
 					<width>350</width>
@@ -175,7 +188,7 @@
 					<ondown>95</ondown>
 					<onright>53</onright>
 				</control>
-				<control type="button" id="95">
+				<control type="togglebutton" id="95">
 					<left>20</left>
 					<top>515</top>
 					<width>350</width>
@@ -187,7 +200,7 @@
 					<ondown>96</ondown>
 					<onright>54</onright>
 				</control>
-				<control type="button" id="96">
+				<control type="togglebutton" id="96">
 					<left>20</left>
 					<top>590</top>
 					<width>350</width>
@@ -199,14 +212,14 @@
 					<ondown>97</ondown>
 					<onright>55</onright>
 				</control>
-				<control type="button" id="97">
+				<control type="togglebutton" id="97">
 					<left>20</left>
 					<top>665</top>
 					<width>350</width>
 					<include>DialogButton</include>
 					<label>$LOCALIZE[31455] / $LOCALIZE[29921]</label>
 					<onfocus>SetProperty(BinCategory,OTHER)</onfocus>
-					<selected>String.IsEqual(Window.Property(BinCategory),OTHER)</selected>31455
+					<selected>String.IsEqual(Window.Property(BinCategory),OTHER)</selected>
 					<onup>96</onup>
 					<ondown>99</ondown>
 					<onright>56</onright>
@@ -216,7 +229,7 @@
 					<top>740</top>
 					<width>350</width>
 					<include>DialogButton</include>
-					<label>$LOCALIZE[222]</label>
+					<label>$LOCALIZE[13012]</label>
 					<onclick>close</onclick>
 					<onup>97</onup>
 					<ondown>91</ondown>
@@ -224,10 +237,11 @@
 					<onright>801</onright>
 				</control>
 			</control>
+			<!-- Shortened Left Vertical Separator to make room for bottom footer -->
 			<control type="image">
-				<top>160</top>
+				<top>146</top>
 				<left>370</left>
-				<bottom>50</bottom>
+				<bottom>86</bottom>
 				<width>4</width>
 				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
 			</control>
@@ -856,18 +870,11 @@
 					</content>
 				</control>
 			</control>
-			<!-- <control type="scrollbar" id="60">
-                <left>930</left>
-                <top>160</top>
-                <height>640</height>
-                <onleft>50</onleft>
-                <onright>800</onright>
-                <include>DialogScrollBar</include>
-            </control> -->
+			<!-- Shortened Right Vertical Separator to make room for bottom footer -->
 			<control type="image">
-				<top>160</top>
+				<top>146</top>
 				<left>930</left>
-				<bottom>50</bottom>
+				<bottom>86</bottom>
 				<width>4</width>
 				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-vertical.png</texture>
 			</control>
@@ -892,6 +899,12 @@
 					<top>190</top>
 					<width>280</width>
 					<height>150</height>
+					<!-- Layer 1 (bottom): black shadow underlay — same pattern as ViewArtwork movie/tvshow sandwich -->
+					<control type="image">
+						<bordersize>10</bordersize>
+						<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+					</control>
+					<!-- Layer 2: flag artwork -->
 					<control type="image">
 						<width>280</width>
 						<height>150</height>
@@ -906,6 +919,10 @@
 						<texture>flags/default/videocodec/$VAR[Var_1105_PreviewFile]</texture>
 						<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
 					</control>
+					<!-- Layer 3 (top): inset bevel/gloss overlay — same pattern as ViewArtwork movie/tvshow sandwich -->
+					<control type="image">
+						<texture border="20">thumbs/overlay.png</texture>
+					</control>
 				</control>
 				<control type="label">
 					<left>940</left>
@@ -913,7 +930,7 @@
 					<width>280</width>
 					<height>30</height>
 					<align>center</align>
-					<label>[UPPERCASE][COLOR dd00ff00]$VAR[Var_1105_PreviewFile][/COLOR][/UPPERCASE]</label>
+					<label>[UPPERCASE][COLOR PanelTextColorVar]$VAR[Var_1105_PreviewFile][/COLOR][/UPPERCASE]</label>
 					<font>Font25_Cond</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
@@ -922,8 +939,7 @@
 					<top>380</top>
 					<width>280</width>
 					<height>4</height>
-					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">
-                        panels/line-horizontal.png</texture>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-horizontal.png</texture>
 				</control>
 				<!-- ============================================= -->
 				<!-- Current Section (Reads Saved Setting)         -->
@@ -944,6 +960,12 @@
 					<top>430</top>
 					<width>280</width>
 					<height>150</height>
+					<!-- Layer 1 (bottom): black shadow underlay — same pattern as ViewArtwork movie/tvshow sandwich -->
+					<control type="image">
+						<bordersize>10</bordersize>
+						<texture colordiffuse="ff000000" border="10">buttons/thumb-select-focus.png</texture>
+					</control>
+					<!-- Layer 2: flag artwork -->
 					<control type="image">
 						<width>280</width>
 						<height>150</height>
@@ -958,6 +980,10 @@
 						<texture>flags/default/videocodec/$VAR[Var_1105_CurrentFile]</texture>
 						<visible>!Skin.HasSetting(MediaFlagsVideoCodecColored)</visible>
 					</control>
+					<!-- Layer 3 (top): inset bevel/gloss overlay — same pattern as ViewArtwork movie/tvshow sandwich -->
+					<control type="image">
+						<texture border="20">thumbs/overlay.png</texture>
+					</control>
 				</control>
 				<control type="label">
 					<left>940</left>
@@ -965,7 +991,7 @@
 					<width>280</width>
 					<height>30</height>
 					<align>center</align>
-					<label>[UPPERCASE][COLOR dd00ff00]$VAR[Var_1105_CurrentFile][/COLOR][/UPPERCASE]</label>
+					<label>[UPPERCASE][COLOR PanelTextColorVar]$VAR[Var_1105_CurrentFile][/COLOR][/UPPERCASE]</label>
 					<font>Font25_Cond</font>
 					<wrapmultiline>true</wrapmultiline>
 				</control>
@@ -974,8 +1000,7 @@
 					<top>620</top>
 					<width>280</width>
 					<height>4</height>
-					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">
-                        panels/line-horizontal.png</texture>
+					<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-horizontal.png</texture>
 				</control>
 				<!-- ============================================= -->
 				<!-- Interactive Buttons With Manual Navigation    -->
@@ -986,7 +1011,7 @@
 					<width>280</width>
 					<height>60</height>
 					<include>DialogKeyboardToggleButton</include>
-					<label>$LOCALIZE[31094]</label>
+					<label>$LOCALIZE[31094] [LOWERCASE]$LOCALIZE[31061][/LOWERCASE]</label>
 					<onup>900</onup>
 					<!-- Manual Nav Up -->
 					<ondown>98</ondown>
@@ -1017,6 +1042,25 @@
 					<onclick>Skin.ToggleSetting(MediaFlagsVideoCodecColored)</onclick>
 					<selected>Skin.HasSetting(MediaFlagsVideoCodecColored)</selected>
 				</control>
+			</control>
+			<!-- ========================================================================= -->
+			<!-- Bottom Tooltip Section (Renders Focus-Based Helper Descriptions)          -->
+			<!-- ========================================================================= -->
+			<control type="image">
+				<top>813</top>
+				<left>20</left>
+				<right>20</right>
+				<height>4</height>
+				<texture colordiffuse="$VAR[PanelListSeparatorColorVar]">panels/line-horizontal.png</texture>
+			</control>
+			<control type="textbox">
+				<top>830</top>
+				<left>62</left>
+				<height>70</height>
+				<align>left</align>
+				<font>Font25_Cond</font>
+				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+				<label>$VAR[Var_1105_TooltipText]</label>
 			</control>
 		</control>
 	</controls>

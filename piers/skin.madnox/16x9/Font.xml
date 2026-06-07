@@ -133,6 +133,32 @@
 		</font>
 		<!-- Kodi Required Fonts (OpenSans-Regular.ttf) -->
 		<font>
+			<name>font12</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>24</size>
+		</font>
+		<font>
+			<name>font13</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>28</size>
+		</font>
+		<font>
+			<name>font14</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>30</size>
+		</font>
+		<font>
+			<name>font16</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>36</size>
+		</font>
+		<font>
+			<name>font12_title</name>
+			<filename>OpenSans-Bold.ttf</filename>
+			<style>bold</style>
+			<size>24</size>
+		</font>
+		<font>
 			<name>font13_Reg</name>
 			<filename>OpenSans-Regular.ttf</filename>
 			<size>13</size>
@@ -335,6 +361,12 @@
 			<size>80</size>
 		</font>
 		<!-- Bold Caps Fonts (OpenSans-Bold.ttf) -->
+		<font>
+			<name>Font23_Bold_Caps</name>
+			<filename>OpenSans-Bold.ttf</filename>
+			<style>uppercase bold</style>
+			<size>23</size>
+		</font>
 		<font>
 			<name>Font26_Bold_Caps</name>
 			<filename>OpenSans-Bold.ttf</filename>

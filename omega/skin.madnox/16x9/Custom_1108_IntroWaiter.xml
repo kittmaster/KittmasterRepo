@@ -3,6 +3,12 @@
 	<!-- always="true" forces Kodi to constantly seek focus, triggering the exit instantly when the conditions are met -->
 	<defaultcontrol always="true">10</defaultcontrol>
 
+	<!-- FAILSAFE: If 5 seconds pass and the video engine completely failed to start, force an exit to Home -->
+	<!-- AlarmClock replaces the invalid onend animation attribute approach -->
+	<onload>AlarmClock(IntroWaiterFailsafe,ReplaceWindow(1103),00:00:05,true,false)</onload>
+
+	<onunload>CancelAlarm(IntroWaiterFailsafe,true)</onunload>
+
 	<controls>
 		<!-- Black background -->
 		<control type="image">
@@ -31,16 +37,6 @@
 			<width>1</width>
 			<height>1</height>
 			<visible>String.IsEmpty(Window(Home).Property(IntroStarted)) | Window.IsActive(fullscreenvideo)</visible>
-		</control>
-
-		<!-- FAILSAFE: If 5 seconds pass and the video engine completely failed to start, force an exit to Home -->
-		<control type="image">
-			<left>-1000</left>
-			<top>-1000</top>
-			<width>1</width>
-			<height>1</height>
-			<visible>String.IsEmpty(Window(Home).Property(IntroStarted))</visible>
-			<animation effect="fade" start="100" end="100" time="5000" onend="ReplaceWindow(1103)">Visible</animation>
 		</control>
 	</controls>
 </window>
