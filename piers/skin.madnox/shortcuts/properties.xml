@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- properties.xml - Madnox v3 property schemas and dialog button mappings -->
+<properties>
+	<!-- REUSABLE ARTWORK OPTION SETS -->
+	<includes>
+		<include name="artwork_options">
+			<option value="portraiticon" label="$LOCALIZE[31248]">
+				<condition>!widget=info</condition>
+			</option>
+			<option value="squareicon" label="$LOCALIZE[31260]" />
+			<option value="landscapeicon" label="$LOCALIZE[31250]" />
+			<option value="fanart" label="$LOCALIZE[20445]">
+				<condition>!widgetType=favourites + !widgetType=picture + !widgetTarget=pvr</condition>
+			</option>
+			<option value="thumb" label="$LOCALIZE[39114]">
+				<condition>[widget=library | widget=playlist] + widgetType=episodes</condition>
+			</option>
+			<option value="landscape" label="$LOCALIZE[31201]">
+				<condition>[widget=library | widget=playlist] + [widgetType=movies | widgetType=episodes | widgetType=tvshows | widgetType=musicvideos | widgetType=artists]</condition>
+			</option>
+			<option value="clearart" label="$LOCALIZE[31165]">
+				<condition>[widget=library | widget=playlist] + [widgetType=movies | widgetType=episodes | widgetType=tvshows | widgetType=musicvideos | widgetType=artists]</condition>
+			</option>
+			<option value="clearlogo" label="$LOCALIZE[31202]">
+				<condition>[widget=library | widget=playlist] + [widgetType=movies | widgetType=episodes | widgetType=tvshows | widgetType=musicvideos | widgetType=artists]</condition>
+			</option>
+		</include>
+		<!-- Labels use $NUMBER[] so the addon's resolve_label() renders them as literal numbers.
+         A plain "10" label is auto-localized by Kodi (10->"Weather", 15->"Friday"); the value
+         attr is the raw number actually stored in widgetLimit.N. -->
+		<include name="limit_options">
+			<option value="1" label="$NUMBER[1]" />
+			<option value="2" label="$NUMBER[2]" />
+			<option value="3" label="$NUMBER[3]" />
+			<option value="4" label="$NUMBER[4]" />
+			<option value="5" label="$NUMBER[5]" />
+			<option value="6" label="$NUMBER[6]" />
+			<option value="7" label="$NUMBER[7]" />
+			<option value="8" label="$NUMBER[8]" />
+			<option value="9" label="$NUMBER[9]" />
+			<option value="10" label="$NUMBER[10]" />
+			<option value="15" label="$NUMBER[15]" />
+			<option value="20" label="$NUMBER[20]" />
+			<option value="25" label="$NUMBER[25]" />
+			<option value="50" label="$NUMBER[50]" />
+			<option value="100" label="$NUMBER[100]" />
+		</include>
+	</includes>
+
+	<!-- PROPERTY SCHEMAS -->
+	<property name="widget" type="widget" />
+	<property name="background" type="background" />
+	<property name="covercase" type="toggle" value="true" templateonly="true" />
+	<property name="widgetPath" type="text" />
+	<property name="widgetType" type="text" />
+	<property name="widgetTarget" type="text" />
+	<property name="widgetShowLabel" type="toggle" value="hidden" />
+	<property name="widgetIcon" type="text" />
+	<property name="widgetLabel" type="text" />
+
+	<property name="widgetStyle" type="options">
+		<options>
+			<option value="big" label="$LOCALIZE[31210]" />
+			<option value="medium" label="$LOCALIZE[601]" />
+			<option value="small" label="$LOCALIZE[1438]" />
+		</options>
+	</property>
+
+	<property name="widgetArtwork" type="options">
+		<options>
+			<include content="artwork_options" />
+		</options>
+	</property>
+
+	<property name="widgetLimit" type="options">
+		<options>
+			<include content="limit_options" />
+		</options>
+	</property>
+
+	<property name="widgetCaseMusic" type="toggle" value="true" />
+	<property name="widgetCaseVideo" type="toggle" value="true" />
+	<property name="widgetWatchedStatus" type="toggle" value="true" />
+
+	<!-- Global Cover Settings -->
+	<property name="coverBackground" type="options">
+		<options>
+			<option value="default" label="$LOCALIZE[571]" />
+			<option value="fanart" label="$LOCALIZE[20445]" />
+		</options>
+	</property>
+
+	<property name="coverSortBy" type="options" templateonly="true">
+		<options>
+			<option value="default" label="$LOCALIZE[571]" />
+			<option value="title" label="$LOCALIZE[369]" />
+			<option value="date" label="$LOCALIZE[552]" />
+			<option value="year" label="$LOCALIZE[345]" />
+			<option value="random" label="$LOCALIZE[590]" />
+		</options>
+	</property>
+
+	<property name="coverSortOrder" type="options" templateonly="true">
+		<options>
+			<option value="default" label="$LOCALIZE[571]" />
+			<option value="ascending" label="$LOCALIZE[584]" />
+			<option value="descending" label="$LOCALIZE[585]" />
+		</options>
+	</property>
+
+	<property name="InfoLine" type="options">
+		<options>
+			<option value="movies" label="$LOCALIZE[20342]" />
+			<option value="tvshows" label="$LOCALIZE[20343]" />
+			<option value="music" label="$LOCALIZE[2]" />
+			<option value="musicvideos" label="$LOCALIZE[20389]" />
+			<option value="videos" label="$LOCALIZE[3]" />
+			<option value="moviestvshows" label="$LOCALIZE[31154]" />
+			<option value="pvr" label="PVR" />
+			<option value="pvrstatus" label="$LOCALIZE[31317]" />
+			<option value="tvstatus" label="$LOCALIZE[31318]" />
+			<option value="radiostatus" label="$LOCALIZE[31319]" />
+			<option value="weather" label="$LOCALIZE[8]" />
+			<option value="disc" label="$LOCALIZE[427]" />
+			<option value="systeminfo" label="$LOCALIZE[130]" />
+		</options>
+	</property>
+
+	<!-- BUTTON MAPPINGS -->
+	<buttons suffix="true">
+		<group suffix="false">
+			<button id="310" property="background" />
+			<button id="500" property="InfoLine" title="$LOCALIZE[31050]" showNone="false" />
+			<button id="8092" property="covercase" />
+			<button id="8093" property="coverSortBy" title="$LOCALIZE[33068]" showNone="false" />
+			<button id="8095" property="coverSortOrder" title="$LOCALIZE[581]" showNone="false" />
+			<button id="8993" property="coverBackground" title="$LOCALIZE[571]" showNone="false" />
+		</group>
+
+		<!-- Widget slot 1 -->
+		<button id="8121" property="widget" />
+		<button id="8131" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8141" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8151" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8161" property="widgetShowLabel" />
+		<button id="8171" property="widgetCaseVideo" />
+		<button id="8181" property="widgetCaseMusic" />
+		<button id="8191" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 2 -->
+		<button id="8122" property="widget" />
+		<button id="8132" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8142" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8152" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8162" property="widgetShowLabel" />
+		<button id="8172" property="widgetCaseVideo" />
+		<button id="8182" property="widgetCaseMusic" />
+		<button id="8192" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 3 -->
+		<button id="8123" property="widget" />
+		<button id="8133" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8143" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8153" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8163" property="widgetShowLabel" />
+		<button id="8173" property="widgetCaseVideo" />
+		<button id="8183" property="widgetCaseMusic" />
+		<button id="8193" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 4 -->
+		<button id="8124" property="widget" />
+		<button id="8134" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8144" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8154" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8164" property="widgetShowLabel" />
+		<button id="8174" property="widgetCaseVideo" />
+		<button id="8184" property="widgetCaseMusic" />
+		<button id="8194" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 5 -->
+		<button id="8125" property="widget" />
+		<button id="8135" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8145" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8155" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8165" property="widgetShowLabel" />
+		<button id="8175" property="widgetCaseVideo" />
+		<button id="8185" property="widgetCaseMusic" />
+		<button id="8195" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 6 -->
+		<button id="8126" property="widget" />
+		<button id="8136" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8146" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8156" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8166" property="widgetShowLabel" />
+		<button id="8176" property="widgetCaseVideo" />
+		<button id="8186" property="widgetCaseMusic" />
+		<button id="8196" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 7 -->
+		<button id="8127" property="widget" />
+		<button id="8137" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8147" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8157" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8167" property="widgetShowLabel" />
+		<button id="8177" property="widgetCaseVideo" />
+		<button id="8187" property="widgetCaseMusic" />
+		<button id="8197" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 8 -->
+		<button id="8128" property="widget" />
+		<button id="8138" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8148" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8158" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8168" property="widgetShowLabel" />
+		<button id="8178" property="widgetCaseVideo" />
+		<button id="8188" property="widgetCaseMusic" />
+		<button id="8198" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 9 -->
+		<button id="8129" property="widget" />
+		<button id="8139" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="8149" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="8159" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="8169" property="widgetShowLabel" />
+		<button id="8179" property="widgetCaseVideo" />
+		<button id="8189" property="widgetCaseMusic" />
+		<button id="8199" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 10 -->
+		<button id="81210" property="widget" />
+		<button id="81310" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81410" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81510" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81610" property="widgetShowLabel" />
+		<button id="81710" property="widgetCaseVideo" />
+		<button id="81810" property="widgetCaseMusic" />
+		<button id="81910" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 11 -->
+		<button id="81211" property="widget" />
+		<button id="81311" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81411" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81511" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81611" property="widgetShowLabel" />
+		<button id="81711" property="widgetCaseVideo" />
+		<button id="81811" property="widgetCaseMusic" />
+		<button id="81911" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 12 -->
+		<button id="81212" property="widget" />
+		<button id="81312" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81412" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81512" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81612" property="widgetShowLabel" />
+		<button id="81712" property="widgetCaseVideo" />
+		<button id="81812" property="widgetCaseMusic" />
+		<button id="81912" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 13 -->
+		<button id="81213" property="widget" />
+		<button id="81313" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81413" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81513" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81613" property="widgetShowLabel" />
+		<button id="81713" property="widgetCaseVideo" />
+		<button id="81813" property="widgetCaseMusic" />
+		<button id="81913" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 14 -->
+		<button id="81214" property="widget" />
+		<button id="81314" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81414" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81514" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81614" property="widgetShowLabel" />
+		<button id="81714" property="widgetCaseVideo" />
+		<button id="81814" property="widgetCaseMusic" />
+		<button id="81914" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 15 -->
+		<button id="81215" property="widget" />
+		<button id="81315" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81415" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81515" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81615" property="widgetShowLabel" />
+		<button id="81715" property="widgetCaseVideo" />
+		<button id="81815" property="widgetCaseMusic" />
+		<button id="81915" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 16 -->
+		<button id="81216" property="widget" />
+		<button id="81316" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81416" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81516" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81616" property="widgetShowLabel" />
+		<button id="81716" property="widgetCaseVideo" />
+		<button id="81816" property="widgetCaseMusic" />
+		<button id="81916" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 17 -->
+		<button id="81217" property="widget" />
+		<button id="81317" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81417" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81517" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81617" property="widgetShowLabel" />
+		<button id="81717" property="widgetCaseVideo" />
+		<button id="81817" property="widgetCaseMusic" />
+		<button id="81917" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 18 -->
+		<button id="81218" property="widget" />
+		<button id="81318" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81418" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81518" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81618" property="widgetShowLabel" />
+		<button id="81718" property="widgetCaseVideo" />
+		<button id="81818" property="widgetCaseMusic" />
+		<button id="81918" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 19 -->
+		<button id="81219" property="widget" />
+		<button id="81319" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81419" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81519" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81619" property="widgetShowLabel" />
+		<button id="81719" property="widgetCaseVideo" />
+		<button id="81819" property="widgetCaseMusic" />
+		<button id="81919" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 20 -->
+		<button id="81220" property="widget" />
+		<button id="81320" property="widgetStyle" title="$LOCALIZE[29902]" showNone="false" />
+		<button id="81420" property="widgetArtwork" title="$LOCALIZE[39123]" showNone="false" />
+		<button id="81520" property="widgetLimit" title="$LOCALIZE[31385]" showNone="false" />
+		<button id="81620" property="widgetShowLabel" />
+		<button id="81720" property="widgetCaseVideo" />
+		<button id="81820" property="widgetCaseMusic" />
+		<button id="81920" property="widgetWatchedStatus" />
+
+		<!-- Widget slot 1 widgetLabel rename (hidden trigger) -->
+		<button id="8201" property="widgetLabel" />
+		<!-- Widget slot 2 widgetLabel rename (hidden trigger) -->
+		<button id="8202" property="widgetLabel" />
+		<!-- Widget slot 3 widgetLabel rename (hidden trigger) -->
+		<button id="8203" property="widgetLabel" />
+		<!-- Widget slot 4 widgetLabel rename (hidden trigger) -->
+		<button id="8204" property="widgetLabel" />
+		<!-- Widget slot 5 widgetLabel rename (hidden trigger) -->
+		<button id="8205" property="widgetLabel" />
+		<!-- Widget slot 6 widgetLabel rename (hidden trigger) -->
+		<button id="8206" property="widgetLabel" />
+		<!-- Widget slot 7 widgetLabel rename (hidden trigger) -->
+		<button id="8207" property="widgetLabel" />
+		<!-- Widget slot 8 widgetLabel rename (hidden trigger) -->
+		<button id="8208" property="widgetLabel" />
+		<!-- Widget slot 9 widgetLabel rename (hidden trigger) -->
+		<button id="8209" property="widgetLabel" />
+		<!-- Widget slot 10 widgetLabel rename (hidden trigger) -->
+		<button id="82010" property="widgetLabel" />
+		<!-- Widget slot 11 widgetLabel rename (hidden trigger) -->
+		<button id="82011" property="widgetLabel" />
+		<!-- Widget slot 12 widgetLabel rename (hidden trigger) -->
+		<button id="82012" property="widgetLabel" />
+		<!-- Widget slot 13 widgetLabel rename (hidden trigger) -->
+		<button id="82013" property="widgetLabel" />
+		<!-- Widget slot 14 widgetLabel rename (hidden trigger) -->
+		<button id="82014" property="widgetLabel" />
+		<!-- Widget slot 15 widgetLabel rename (hidden trigger) -->
+		<button id="82015" property="widgetLabel" />
+		<!-- Widget slot 16 widgetLabel rename (hidden trigger) -->
+		<button id="82016" property="widgetLabel" />
+		<!-- Widget slot 17 widgetLabel rename (hidden trigger) -->
+		<button id="82017" property="widgetLabel" />
+		<!-- Widget slot 18 widgetLabel rename (hidden trigger) -->
+		<button id="82018" property="widgetLabel" />
+		<!-- Widget slot 19 widgetLabel rename (hidden trigger) -->
+		<button id="82019" property="widgetLabel" />
+		<!-- Widget slot 20 widgetLabel rename (hidden trigger) -->
+		<button id="82020" property="widgetLabel" />
+	</buttons>
+
+	<!-- FALLBACK DEFINITIONS (Mapped per slot to secure Python executions) -->
+	<fallbacks>
+		<!-- Default property mappings -->
+		<fallback property="widgetType">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetCaseMusic">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetWatchedStatus">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetStyle">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetLimit">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetArtwork">
+			<when condition="widgetType=albums | artists | songs | system | weather | pvr">squareicon</when>
+			<default>portraiticon</default>
+		</fallback>
+
+		<!-- Slot 1 to 20 Explicit Defaults -->
+		<fallback property="widgetType.1">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.2">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.3">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.4">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.5">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.6">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.7">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.8">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.9">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.10">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.11">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.12">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.13">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.14">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.15">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.16">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.17">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.18">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.19">
+			<default>none</default>
+		</fallback>
+		<fallback property="widgetType.20">
+			<default>none</default>
+		</fallback>
+
+		<fallback property="widgetCaseMusic.1">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.2">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.3">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.4">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.5">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.6">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.7">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.8">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.9">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.10">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.11">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.12">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.13">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.14">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.15">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.16">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.17">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.18">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.19">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseMusic.20">
+			<default>false</default>
+		</fallback>
+
+		<fallback property="widgetCaseVideo.1">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.2">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.3">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.4">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.5">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.6">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.7">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.8">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.9">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.10">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.11">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.12">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.13">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.14">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.15">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.16">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.17">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.18">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.19">
+			<default>false</default>
+		</fallback>
+		<fallback property="widgetCaseVideo.20">
+			<default>false</default>
+		</fallback>
+
+		<fallback property="widgetArtwork.1">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.2">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.3">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.4">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.5">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.6">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.7">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.8">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.9">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.10">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.11">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.12">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.13">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.14">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.15">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.16">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.17">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.18">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.19">
+			<default>portraiticon</default>
+		</fallback>
+		<fallback property="widgetArtwork.20">
+			<default>portraiticon</default>
+		</fallback>
+
+		<fallback property="widgetStyle.1">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.2">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.3">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.4">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.5">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.6">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.7">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.8">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.9">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.10">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.11">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.12">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.13">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.14">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.15">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.16">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.17">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.18">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.19">
+			<default>medium</default>
+		</fallback>
+		<fallback property="widgetStyle.20">
+			<default>medium</default>
+		</fallback>
+
+		<fallback property="widgetLimit.1">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.2">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.3">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.4">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.5">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.6">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.7">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.8">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.9">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.10">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.11">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.12">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.13">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.14">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.15">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.16">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.17">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.18">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.19">
+			<default>20</default>
+		</fallback>
+		<fallback property="widgetLimit.20">
+			<default>20</default>
+		</fallback>
+	</fallbacks>
+</properties>

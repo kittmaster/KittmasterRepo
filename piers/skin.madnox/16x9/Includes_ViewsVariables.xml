@@ -1341,104 +1341,106 @@
 	</variable>
 
 	<!-- Widget 1-20 Label2 With Fallback -->
+	<!-- V3: widgetLabel.N holds the widget display name, auto-populated by the v3 picker -->
+	<!--     and read by the home screen. (widget.N is the internal source id, e.g. tmdb.) -->
 	<variable name="Widget1LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.1))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.1)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.1))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.1)]</value>
 	</variable>
 
 	<variable name="Widget2LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.2))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.2)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.2))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.2)]</value>
 	</variable>
 
 	<variable name="Widget3LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.3))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.3)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.3))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.3)]</value>
 	</variable>
 
 	<variable name="Widget4LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.4))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.4)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.4))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.4)]</value>
 	</variable>
 
 	<variable name="Widget5LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.5))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.5)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.5))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.5)]</value>
 	</variable>
 
 	<variable name="Widget6LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.6))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.6)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.6))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.6)]</value>
 	</variable>
 
 	<variable name="Widget7LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.7))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.7)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.7))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.7)]</value>
 	</variable>
 
 	<variable name="Widget8LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.8))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.8)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.8))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.8)]</value>
 	</variable>
 
 	<variable name="Widget9LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.9))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.9)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.9))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.9)]</value>
 	</variable>
 
 	<variable name="Widget10LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.10))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.10)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.10))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.10)]</value>
 	</variable>
 
 	<variable name="Widget11LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.11))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.11)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.11))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.11)]</value>
 	</variable>
 
 	<variable name="Widget12LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.12))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.12)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.12))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.12)]</value>
 	</variable>
 
 	<variable name="Widget13LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.13))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.13)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.13))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.13)]</value>
 	</variable>
 
 	<variable name="Widget14LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.14))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.14)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.14))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.14)]</value>
 	</variable>
 
 	<variable name="Widget15LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.15))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.15)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.15))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.15)]</value>
 	</variable>
 
 	<variable name="Widget16LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.16))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.16)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.16))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.16)]</value>
 	</variable>
 
 	<variable name="Widget17LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.17))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.17)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.17))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.17)]</value>
 	</variable>
 
 	<variable name="Widget18LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.18))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.18)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.18))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.18)]</value>
 	</variable>
 
 	<variable name="Widget19LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.19))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.19)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.19))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.19)]</value>
 	</variable>
 
 	<variable name="Widget20LabelFallback">
-		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetName.20))">Slot available </value>
-		<value>$INFO[Container(211).ListItem.Property(widgetName.20)]</value>
+		<value condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.20))">Slot available </value>
+		<value>$INFO[Container(211).ListItem.Property(widgetLabel.20)]</value>
 	</variable>
 
 	<variable name="MediaFlagDataStyleVar">

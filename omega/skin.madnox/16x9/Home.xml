@@ -953,6 +953,12 @@
 				<include>skinshortcuts-template-widget20</include>
 			</control>
 
+			<!-- Chevron button: top=40/right=30 in WidgetNextButton places this at the
+			     top-right corner of the screen. Outside 90010 so its slide offset doesn't apply. -->
+			<control type="button" id="1607">
+				<include>WidgetNextButton</include>
+			</control>
+
 			<!-- New Grid Widgets -->
 
 			<!-- Hidden Lists: one per slot, outside the grouplist so HiddenList offscreen -->
@@ -2615,7 +2621,9 @@
 			<param name="contentvisible">true</param>
 			<param name="commontopvisible">false</param>
 			<param name="content">MediaMenuHome</param>
-			<param name="navigationid">9000</param>
+			<!-- LEFT mirrors the chain (9018 = step back one level); RIGHT/BACK collapse via 9011 -->
+			<param name="navigationid">9011</param>
+			<param name="leftnav">9018</param>
 		</include>
 	</controls>
 </window>

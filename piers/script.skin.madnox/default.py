@@ -16,6 +16,8 @@ from resources.lib import play_trailer
 from resources.lib import preset_manager
 from resources.lib import process_ratings
 from resources.lib import migrate_bgs
+from resources.lib import deploy_default_widgets
+from resources.lib import check_widgets
 from resources.lib import script_decrement_movie as decrement_movie
 from resources.lib import script_decrement_person as decrement_person
 from resources.lib import set_intro_label
@@ -23,6 +25,7 @@ from resources.lib import tmdb_helper_settingswriter as TMDb_Helper_SettingsWrit
 from resources.lib import tmdb_installed_validation
 from resources.lib import trailer_rolling
 from resources.lib import collection_view_sync
+from resources.lib import widget_label_prompt
 
 
 def get_params():
@@ -82,6 +85,10 @@ def main():
             process_ratings.run(params)
         elif action == "migrate_bgs":
             migrate_bgs.run(params)
+        elif action == "deploy_default_widgets":
+            deploy_default_widgets.run(params)
+        elif action == "check_widgets":
+            check_widgets.run(params)
         elif action == "smsjump":
             jump_to_letter.run(params)
         elif action == 'install_extras':
@@ -90,7 +97,9 @@ def main():
         elif action == "manage_presets":
             preset_manager.run()
         elif action == "collection_view_sync":
-            collection_view_sync.run(params)          
+            collection_view_sync.run(params)
+        elif action == "widget_label_prompt":
+            widget_label_prompt.run(params)
 
     finally:
         home_window.clearProperty('scriptdialog')

@@ -255,7 +255,11 @@
 						<itemlayout width="189">
 							<control type="image">
 								<bordersize>5</bordersize>
-								<texture colordiffuse="AA000000" border="10">buttons/panel-select-focus.png</texture>
+								<texture colordiffuse="BB000000" border="10">buttons/panel-select-focus.png</texture>
+							</control>
+							<control type="image">
+								<bordersize>5</bordersize>
+								<texture colordiffuse="55FFFFFF" border="10">buttons/panel-select-focus.png</texture>
 							</control>
 							<control type="label">
 								<top>15</top>
@@ -466,7 +470,11 @@
 						<itemlayout width="189">
 							<control type="image">
 								<bordersize>5</bordersize>
-								<texture colordiffuse="AA000000" border="10">buttons/panel-select-focus.png</texture>
+								<texture colordiffuse="BB000000" border="10">buttons/panel-select-focus.png</texture>
+							</control>
+							<control type="image">
+								<bordersize>5</bordersize>
+								<texture colordiffuse="55FFFFFF" border="10">buttons/panel-select-focus.png</texture>
 							</control>
 							<control type="label">
 								<top>15</top>
@@ -1198,7 +1206,14 @@
 						<top>5</top>
 						<width>665</width>
 						<height>185</height>
-						<texture colordiffuse="A0000000" border="10">buttons/panel-select-focus.png</texture>
+						<texture colordiffuse="BB000000" border="10">buttons/panel-select-focus.png</texture>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>665</width>
+						<height>185</height>
+						<texture colordiffuse="25FFFFFF" border="10">buttons/panel-select-focus.png</texture>
 					</control>
 					<!-- Enlarged Icon -->
 					<control type="multiimage">
@@ -1434,7 +1449,14 @@
 						<top>4</top>
 						<width>184</width>
 						<height>352</height>
-						<texture colordiffuse="A0000000" border="10">buttons/panel-select-focus.png</texture>
+						<texture colordiffuse="BB000000" border="10">buttons/panel-select-focus.png</texture>
+					</control>
+					<control type="image">
+						<left>4</left>
+						<top>4</top>
+						<width>184</width>
+						<height>352</height>
+						<texture colordiffuse="25FFFFFF" border="10">buttons/panel-select-focus.png</texture>
 					</control>
 					<!-- Time label -->
 					<control type="label">
@@ -1595,7 +1617,14 @@
 						<top>4</top>
 						<width>184</width>
 						<height>352</height>
-						<texture colordiffuse="A0000000" border="10">buttons/panel-select-focus.png</texture>
+						<texture colordiffuse="BB000000" border="10">buttons/panel-select-focus.png</texture>
+					</control>
+					<control type="image">
+						<left>4</left>
+						<top>4</top>
+						<width>184</width>
+						<height>352</height>
+						<texture colordiffuse="25FFFFFF" border="10">buttons/panel-select-focus.png</texture>
 					</control>
 					<!-- Time label -->
 					<control type="label">

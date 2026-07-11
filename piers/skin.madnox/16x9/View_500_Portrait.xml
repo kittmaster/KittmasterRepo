@@ -121,10 +121,10 @@
 									<texture border="20">$VAR[ShowCaseBackVar]</texture>
 								</control>
 								<control type="image">
-									<left>38</left>
-									<top>102</top>
-									<width>150</width>
-									<height>150</height>
+									<left>41</left>
+									<top>106</top>
+									<width>142</width>
+									<height>142</height>
 									<texture background="true">$VAR[LibraryVideoDiscArtVar]</texture>
 									<aspectratio align="center" aligny="center">keep</aspectratio>
 								</control>

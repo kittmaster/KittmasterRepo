@@ -133,6 +133,7 @@
 		<param name="commontopvisible">false</param>
 		<param name="content" />
 		<param name="navigationid">50</param>
+		<param name="leftnav">50</param>
 		<definition>
 			<!-- Mouse overlay trigger strip — 50px at right screen edge -->
 			<control type="button" id="6130">
@@ -188,8 +189,8 @@
 				</control>
 				<control type="grouplist" id="9049">
 					<left>20</left>
-					<!-- Pressing LEFT or RIGHT closes the blade and returns to the menu -->
-					<onleft>$PARAM[navigationid]</onleft>
+					<!-- LEFT mirrors the right-chain (step back one level); RIGHT/BACK collapse to main -->
+					<onleft>$PARAM[leftnav]</onleft>
 					<onright condition="!Skin.HasSetting(DisableShortcuts) + !Window.IsActive(home)">9048</onright>
 					<onright condition="Skin.HasSetting(DisableShortcuts) | Window.IsActive(home)">$PARAM[navigationid]</onright>
 					<onback>$PARAM[navigationid]</onback>

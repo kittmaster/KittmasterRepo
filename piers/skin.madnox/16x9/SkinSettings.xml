@@ -1785,6 +1785,11 @@
 							<onclick>RunScript(script.skin.madnox, action=migrate_bgs)</onclick>
 							<include>SettingsButton</include>
 						</control>
+						<control type="button" id="810">
+							<label>$LOCALIZE[31976]</label>
+							<onclick>RunScript(script.skin.madnox, action=deploy_default_widgets)</onclick>
+							<include>SettingsButton</include>
+						</control>
 						<control type="button" id="809">
 							<label>$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE]</label>
 							<onclick>ActivateWindow(1107)</onclick>

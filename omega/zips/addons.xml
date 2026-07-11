@@ -378,13 +378,13 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.10.09" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.10.10" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.skin.madnox" version="1.0.6" />
 		<import addon="resource.images.skin.madnox" version="1.0.2" />
 		<import addon="script.skinshortcuts" version="1.0.17" />
-		<import addon="plugin.video.themoviedb.helper" version="6.15.6" />
+		<import addon="plugin.video.themoviedb.helper" version="6.11.5" />
 		<import addon="script.image.resource.select" version="2.0.4" />
 		<import addon="script.skinvariables" version="2.1.14" />
 		<import addon="script.favourites" version="8.1.2" />
@@ -650,6 +650,9 @@ v0.4.0 (2025-03-23)
 			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
 		</assets>
 		<news>
+v21.10.10
+- Added offset to dialog select so scrollbar appears on the right side for consistency
+- Adjusted all portrait icon views for open case mode to proper size/position in the case
 v21.10.09
 - Cleanup: Multiple includes, code fixes &amp; corrections, report any issues in forum, thanks.
 - Bug: Showcase 2thumb, 4thumb not working for tvshows, repaired old path method to updated version
@@ -671,8 +674,6 @@ v21.10.09
 - QOL: Changed default control to scrollbar for what's new dialog on entry
 - Layout: Grid widget 1130 layout view scrollbar to hide under 9 items, show with 10 or greater
 - Bug: Fixed moon image(s) display in weather which was not rendering due to addon issue and repair
-- Install: Updated TMDb helper to 6.15.2
-- Install: Updated Wikipedia addon to 0.2.0
 v21.10.08
 - New feature: Vertical menu! Trigger via the sideblade or inside Skin settings &gt; Themes &gt; Vertical menu
 - New feature: Save user skin settings, import, export settings (sharing/collaboration)

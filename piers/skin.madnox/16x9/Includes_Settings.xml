@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <includes>
 	<!-- Settings Includes -->
 	<include name="SettingsLabel">
@@ -163,7 +163,7 @@
 	<include name="WidgetSelect">
 		<param name="id">1</param>
 		<definition>
-			<!-- 810 = Background -->
+			<!-- 810 = Background (click to go back) -->
 			<control type="button" id="810$PARAM[id]">
 				<left>425</left>
 				<width>1395</width>
@@ -172,7 +172,7 @@
 				<texturefocus />
 				<texturenofocus />
 			</control>
-			<!-- 811 = Grouplist -->
+			<!-- 811 = Grouplist container -->
 			<control type="grouplist" id="811$PARAM[id]">
 				<top>200</top>
 				<left>425</left>
@@ -181,22 +181,30 @@
 				<onleft>211</onleft>
 				<onright>60</onright>
 				<pagecontrol>60</pagecontrol>
-				<!-- 812 = Label -->
+				<!-- 812 = Widget picker — V3: onClick(812N) → properties.xml type="widget" → widget browser dialog -->
+				<!-- label2 shows widgetLabel.N = the picker's auto-populated friendly name (matches home screen). -->
+				<!-- onclick sets widgetTitlePrompt so that onfocus auto-fires the title keyboard after widget selection. -->
 				<control type="button" id="812$PARAM[id]">
 					<label>$LOCALIZE[31289] $PARAM[id]</label>
-					<label2>$INFO[Container(211).ListItem.Property(widgetName.$PARAM[id])]</label2>
-					<onclick>SetProperty(customProperty,widgetArtwork.$PARAM[id])</onclick>
-					<onclick>SendClick(404)</onclick>
-					<onclick>SetProperty(widgetID,$PARAM[id])</onclick>
-					<onclick>SendClick(312)</onclick>
+					<label2>$INFO[Container(211).ListItem.Property(widgetLabel.$PARAM[id])]</label2>
+					<onclick>SetProperty(widgetTitlePrompt,$PARAM[id],Home)</onclick>
+					<onclick>RunScript(script.skin.madnox,action=widget_label_prompt,slot=$PARAM[id])</onclick>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(widgetTitlePrompt))">SendClick(820$PARAM[id])</onfocus>
+					<onfocus condition="!String.IsEmpty(Window(Home).Property(widgetTitlePrompt))">ClearProperty(widgetTitlePrompt,Home)</onfocus>
 					<include>SettingsButton</include>
+				</control>
+				<!-- 820 = Hidden widgetLabel rename trigger. SendClick(820N) → properties.xml type="text" widgetLabel → keyboard -->
+				<!-- Opens keyboard pre-filled with current widgetLabel.N value (set by picker). Not rendered. -->
+				<control type="button" id="820$PARAM[id]">
+					<visible>false</visible>
+					<texturefocus />
+					<texturenofocus />
 				</control>
 				<!-- 813 = Style -->
 				<control type="button" id="813$PARAM[id]">
 					<visible>!String.IsEmpty(Container(211).ListItem.Property(widgetPath.$PARAM[id]))</visible>
 					<label>$LOCALIZE[736] / $LOCALIZE[289]</label>
 					<label2>$INFO[Container(211).ListItem.Property(widgetStyle.$PARAM[id])]</label2>
-					<onclick>SendClick(404)</onclick>
 					<include>SettingsButton</include>
 				</control>
 				<!-- 814 = Artwork -->
@@ -213,50 +221,35 @@
 					<label2>$INFO[Container(211).ListItem.Property(widgetLimit.$PARAM[id])]</label2>
 					<include>SettingsButton</include>
 				</control>
-				<!-- 816 = Radio Label -->
+				<!-- 816 = Label toggle — V3: onClick(816N) → properties.xml type="toggle" widgetShowLabel value="hidden".
+				     NOTE: maps to widgetShowLabel (show/hide the title on the home widget), NOT widgetLabel
+				     (the widget display name managed by the picker). The v2 bug was wiring this to widgetLabel.
+				     This toggle defaults ON: empty = label shown, "hidden" = label hidden. The radio is therefore
+				     selected when the property is EMPTY (shown), and clears when it stores "hidden". -->
 				<control type="radiobutton" id="816$PARAM[id]">
-					<visible>!String.IsEmpty(Container(211).ListItem.Property(widgetPath.$PARAM[id])) + !String.IsEqual(Container(211).ListItem.Property(widget.$PARAM[id]),info)</visible>
-					<label>$LOCALIZE[21899]</label>
-					<onclick condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLabel.$PARAM[id]))">SetProperty(customProperty,widgetLabel.$PARAM[id])</onclick>
-					<onclick condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.$PARAM[id]))">SetProperty(customProperty,widgetLabel.$PARAM[id])</onclick>
-					<onclick condition="String.IsEmpty(Container(211).ListItem.Property(widgetLabel.$PARAM[id]))">SetProperty(customValue,true)</onclick>
-					<onclick>SendClick(404)</onclick>
-					<selected>!String.IsEmpty(Container(211).ListItem.Property(widgetLabel.$PARAM[id]))</selected>
+					<visible>!String.IsEmpty(Container(211).ListItem.Property(widgetPath.$PARAM[id]))</visible>
+					<label>$LOCALIZE[31975]</label>
+					<selected>!String.IsEqual(Container(211).ListItem.Property(widgetShowLabel.$PARAM[id]),hidden)</selected>
 					<include>SettingsRadioButton</include>
 				</control>
-				<!-- 817 = Video Case -->
+				<!-- 817 = Video case toggle — V3: onClick(817N) → properties.xml type="toggle" widgetCaseVideo -->
 				<control type="radiobutton" id="817$PARAM[id]">
 					<visible>!String.IsEmpty(Container(211).ListItem.Property(widgetPath.$PARAM[id])) + String.IsEqual(Container(211).ListItem.Property(widgetArtwork.$PARAM[id]),portraiticon) + [String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),tvshows)]</visible>
 					<label>$LOCALIZE[31237]</label>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseVideo.$PARAM[id]),false)">SetProperty(customProperty,widgetCaseVideo.$PARAM[id])</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseVideo.$PARAM[id]),false)">SetProperty(customValue,true)</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseVideo.$PARAM[id]),true)">SetProperty(customProperty,widgetCaseVideo.$PARAM[id])</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseVideo.$PARAM[id]),true)">SetProperty(customValue,false)</onclick>
-					<onclick>SendClick(404)</onclick>
 					<selected>String.IsEqual(Container(211).ListItem.Property(widgetCaseVideo.$PARAM[id]),true)</selected>
 					<include>SettingsRadioButton</include>
 				</control>
-				<!-- 818 = Music Case -->
+				<!-- 818 = Music case toggle — V3: onClick(818N) → properties.xml type="toggle" widgetCaseMusic -->
 				<control type="radiobutton" id="818$PARAM[id]">
 					<visible>!String.IsEmpty(Container(211).ListItem.Property(widgetPath.$PARAM[id])) + !String.IsEmpty(Container(211).ListItem.Property(widgetStyle.$PARAM[id])) + String.IsEqual(Container(211).ListItem.Property(widgetArtwork.$PARAM[id]),squareicon) + [String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),albums) | String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),songs) | String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),musicvideos)]</visible>
 					<label>$LOCALIZE[31291]</label>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseMusic.$PARAM[id]),false)">SetProperty(customProperty,widgetCaseMusic.$PARAM[id])</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseMusic.$PARAM[id]),false)">SetProperty(customValue,true)</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseMusic.$PARAM[id]),true)">SetProperty(customProperty,widgetCaseMusic.$PARAM[id])</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetCaseMusic.$PARAM[id]),true)">SetProperty(customValue,false)</onclick>
-					<onclick>SendClick(404)</onclick>
 					<selected>String.IsEqual(Container(211).ListItem.Property(widgetCaseMusic.$PARAM[id]),true)</selected>
 					<include>SettingsRadioButton</include>
 				</control>
-				<!-- 819 = Watched Status -->
+				<!-- 819 = Watched status toggle — V3: onClick(819N) → properties.xml type="toggle" widgetWatchedStatus -->
 				<control type="radiobutton" id="819$PARAM[id]">
 					<visible>!String.IsEmpty(Container(211).ListItem.Property(widgetPath.$PARAM[id])) + [String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),movies) | String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),episodes) | String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),tvshows) | String.IsEqual(Container(211).ListItem.Property(widgetType.$PARAM[id]),musicvideos)]</visible>
 					<label>$LOCALIZE[31363]</label>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetWatchedStatus.$PARAM[id]),false)">SetProperty(customProperty,widgetWatchedStatus.$PARAM[id])</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetWatchedStatus.$PARAM[id]),false)">SetProperty(customValue,true)</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetWatchedStatus.$PARAM[id]),true)">SetProperty(customProperty,widgetWatchedStatus.$PARAM[id])</onclick>
-					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetWatchedStatus.$PARAM[id]),true)">SetProperty(customValue,false)</onclick>
-					<onclick>SendClick(404)</onclick>
 					<selected>String.IsEqual(Container(211).ListItem.Property(widgetWatchedStatus.$PARAM[id]),true)</selected>
 					<include>SettingsRadioButton</include>
 				</control>
@@ -424,6 +417,7 @@
 		<value condition="Control.HasFocus(806)">$LOCALIZE[31543]</value>
 		<value condition="Control.HasFocus(807)">$LOCALIZE[31527]</value>
 		<value condition="Control.HasFocus(808)">$LOCALIZE[31526]</value>
+		<value condition="Control.HasFocus(810)">$LOCALIZE[31977]</value>
 		<value condition="Control.HasFocus(809)">$LOCALIZE[31470]</value>
 		<value condition="Container(7000).HasFocus(8)">$LOCALIZE[31973]</value>
 	</variable>

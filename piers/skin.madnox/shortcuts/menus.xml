@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	menus.xml - REQUIRED v3 file. Until this exists, the addon treats the skin as
+	un-migrated and both type=manage and type=buildxml abort.
+
+	SOURCES:
+	  - Main menu items ............ mainmenu_DATA.xml
+	  - Submenu items .............. {name}_DATA.xml (movies, tvshows, music, ...)
+	  - shortcuts (search) menu .... shortcuts_DATA.xml
+	  - overrides / icons / search / globaloverride / visibleoverride ... overrides.xml
+
+	MAPPING NOTES:
+	  - v2 <shortcut><defaultID>X</defaultID> ....... -> v3 <item name="X">
+	  - v2 <label> / <action> / <visible> ........... -> kept verbatim
+	  - empty <label2/> <icon/> <thumb/> placeholders -> omitted (no data)
+	  - v2 mainmenu item "X" had submenu file X_DATA.xml -> <item submenu="X"> + <submenu name="X">
+	  - v2 <visibleoverride group=.. condition=C>ACT</visibleoverride>
+	        the comment in overrides.xml ("...when library has no content") indicates C gates the
+	        NORMAL action and ACT is the empty-library fallback, so this becomes the documented v3
+	        complementary-conditional-action pattern:
+	            <action condition="C">{normal action}</action>
+	            <action condition="!C">{ACT}</action>
+	        Original v2 lines preserved as comments beside each affected item.
+
+	FLAGS / WATCH-POINTS:
+	  1. container="9000" on mainmenu is the v3 documented convention - VERIFY it matches the
+	     main-menu list control id in your Home.xml. The shortcuts menu container is unknown
+	     (no Home.xml provided) so it is omitted; add container="NNNN" if that menu uses one.
+	  2. SUBMENU-level visibleoverrides (groups movies/tvshows/music/musicvideos) are preserved
+	     as comments inside each submenu, NOT yet wired per-item, pending your confirmation of
+	     intended per-item behavior (see summary).
+	  3. <dialogs> (20 widget-slot subdialogs) - DONE. Buttons 501-520 each spawn a child dialog
+	     with the correct property_suffix (.1-.20) and setfocus on the widget picker button.
+	  4. Per-item background defaults (v2 backgrounddefault labelID=...) DEFERRED to after
+	     backgrounds.xml exists, since v3 item background="..." references a background NAME.
+	  5. <doNotShareMenu/> (v2) has no documented v3 equivalent; v3 stores per-skin userdata.json
+	     natively, so menu sharing is not a concern. Recorded here, no action needed.
+	  6. <groupings> below is NEWLY AUTHORED: your v2 overrides.xml had no shortcut-picker
+	     groupings (it relied on skinshortcuts v2 built-in defaults, which v3 does not provide).
+	     This is a functional starter derived from shortcuts_DATA.xml destinations - tune freely.
+-->
+<menus>
+
+	<!-- ============================================================ -->
+	<!-- MAIN MENU  (source: mainmenu_DATA.xml)                       -->
+	<!-- ============================================================ -->
+	<menu name="mainmenu" container="9000">
+		<allow widgets="true" backgrounds="true" submenus="true" />
+
+		<item name="pictures" submenu="pictures" background="pictures">
+			<label>1</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/pictures.png</icon>
+			<action>ActivateWindow(pictures)</action>
+		</item>
+
+		<item name="musicvideos" submenu="musicvideos" background="musicvideos">
+			<label>20389</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/musicvideos.png</icon>
+			<!-- v2 visibleoverride: condition="Library.HasContent(MusicVideos)" -> ActivateWindow(Videos,sources://video/,return) -->
+			<action condition="Library.HasContent(MusicVideos)">ActivateWindow(videos,videodb://musicvideos/titles/,return)</action>
+			<action condition="!Library.HasContent(MusicVideos)">ActivateWindow(Videos,sources://video/,return)</action>
+		</item>
+
+		<item name="music" submenu="music" background="music">
+			<label>2</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/music.png</icon>
+			<!-- v2 visibleoverride: condition="Library.HasContent(Music)" -> ActivateWindow(MusicLibrary,sources://music/,return) -->
+			<action condition="Library.HasContent(Music)">ActivateWindow(music,musicdb://artists/,return)</action>
+			<action condition="!Library.HasContent(Music)">ActivateWindow(MusicLibrary,sources://music/,return)</action>
+		</item>
+
+		<item name="movies" submenu="movies" background="movies">
+			<label>342</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/movies.png</icon>
+			<!-- v2 visibleoverride: condition="Library.HasContent(Movies)" -> ActivateWindow(Videos,sources://video/,return) -->
+			<action condition="Library.HasContent(Movies)">ActivateWindow(videos,videodb://movies/titles/,return)</action>
+			<action condition="!Library.HasContent(Movies)">ActivateWindow(Videos,sources://video/,return)</action>
+		</item>
+
+		<item name="tvshows" submenu="tvshows" background="tvshows">
+			<label>20343</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tvshows.png</icon>
+			<!-- v2 visibleoverride: condition="Library.HasContent(TVShows)" -> ActivateWindow(Videos,sources://video/,return) -->
+			<action condition="Library.HasContent(TVShows)">ActivateWindow(videos,videodb://tvshows/titles/,return)</action>
+			<action condition="!Library.HasContent(TVShows)">ActivateWindow(Videos,sources://video/,return)</action>
+		</item>
+
+		<item name="tv" submenu="tv" background="tv">
+			<label>31173</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tv.png</icon>
+			<action>ActivateWindow(tvchannels)</action>
+		</item>
+
+		<item name="radio" submenu="radio" background="radio">
+			<label>19021</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/radio.png</icon>
+			<action>ActivateWindow(radiochannels)</action>
+		</item>
+
+		<item name="videos" submenu="videos" background="videos">
+			<label>3</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/videos.png</icon>
+			<action>ActivateWindow(videos,root)</action>
+		</item>
+
+		<item name="games" submenu="games" background="games">
+			<label>15016</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/games.png</icon>
+			<action>ActivateWindow(games)</action>
+			<visible>System.GetBool(gamesgeneral.enable)</visible>
+		</item>
+
+		<item name="addons" submenu="addons" background="addons">
+			<label>24001</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/addons.png</icon>
+			<action>ActivateWindow(1114)</action>
+		</item>
+
+		<item name="system" submenu="system" background="system">
+			<label>13000</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/system.png</icon>
+			<action>ActivateWindow(settings)</action>
+		</item>
+
+		<item name="weather" submenu="weather" background="weather">
+			<label>8</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/weather.png</icon>
+			<!-- v2 visibleoverride: condition="!String.IsEmpty(Weather.Plugin)" -> ReplaceWindow(servicesettings,weather) -->
+			<action condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(weather)</action>
+			<action condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</action>
+		</item>
+	</menu>
+
+	<!-- ============================================================ -->
+	<!-- SHORTCUTS / SEARCH MENU  (source: shortcuts_DATA.xml)        -->
+	<!-- v2 globaloverride group="shortcuts": Action(Close) before each item action -->
+	<!-- ============================================================ -->
+	<menu name="shortcuts">
+		<defaults>
+			<action when="before">Action(Close)</action>
+		</defaults>
+
+		<item name="movies">
+			<label>342</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/movies.png</icon>
+			<action>ActivateWindow(videos,videodb://movies/titles/)</action>
+		</item>
+		<item name="tvshows">
+			<label>20343</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tvshows.png</icon>
+			<action>ActivateWindow(videos,videodb://tvshows/titles/)</action>
+		</item>
+		<item name="music">
+			<label>2</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/music.png</icon>
+			<action>ActivateWindow(music,musicdb://artists/)</action>
+		</item>
+		<item name="musicvideos">
+			<label>20389</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/musicvideos.png</icon>
+			<action>ActivateWindow(videos,videodb://musicvideos/titles/)</action>
+		</item>
+		<item name="tv">
+			<label>19020</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/tv.png</icon>
+			<action>ActivateWindow(tvchannels,return)</action>
+		</item>
+		<item name="games">
+			<label>15016</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/games.png</icon>
+			<action>ActivateWindow(games)</action>
+		</item>
+		<item name="addons">
+			<label>24001</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/addons.png</icon>
+			<action>ActivateWindow(addonbrowser,return)</action>
+		</item>
+		<!-- v2 search override (group="shortcuts", action="ActivateWindow(1112)"):
+		     clear SearchTerm, then open search window. Action(Close) from <defaults> runs first. -->
+		<item name="search">
+			<label>137</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/search.png</icon>
+			<action>Skin.SetString(SearchTerm)</action>
+			<action>ActivateWindow(1112)</action>
+		</item>
+		<item name="favourites">
+			<label>1036</label>
+			<icon>special://home/addons/resource.images.skin.madnox/resources/icons/favourites.png</icon>
+			<action>ActivateWindow(favouritesbrowser)</action>
+		</item>
+	</menu>
+
+	<!-- ============================================================ -->
+	<!-- SUBMENUS                                                     -->
+	<!-- ============================================================ -->
+
+	<!-- pictures (source: pictures_DATA.xml) -->
+	<submenu name="pictures">
+		<item name="24001">
+			<label>24001</label>
+			<action>ActivateWindow(pictures,addons,return)</action>
+		</item>
+	</submenu>
+
+	<!-- musicvideos (source: musicvideos_DATA.xml) -->
+	<!-- v2 submenu-level visibleoverride (PENDING per-item wiring, see summary):
+	       group="musicvideos" condition="Library.HasContent(MusicVideos)" -> ActivateWindow(Videos,sources://video/,return) -->
+	<submenu name="musicvideos">
+		<item name="135">
+			<label>135</label>
+			<action>ActivateWindow(videos,videodb://musicvideos/genres,return)</action>
+		</item>
+		<item name="20382">
+			<label>20382</label>
+			<action>ActivateWindow(videos,videodb://recentlyaddedmusicvideos/,return)</action>
+		</item>
+		<item name="589">
+			<label>589</label>
+			<action>PlayerControl(PartyMode(video))</action>
+		</item>
+		<item name="133">
+			<label>133</label>
+			<action>ActivateWindow(videos,videodb://musicvideos/artists,return)</action>
+		</item>
+		<item name="14022">
+			<label>14022</label>
+			<action>ActivateWindow(videos,library://video/musicvideos/,return)</action>
+		</item>
+	</submenu>
+
+	<!-- music (source: music_DATA.xml) -->
+	<!-- v2 submenu-level visibleoverride (PENDING per-item wiring, see summary):
+	       group="music" condition="Library.HasContent(Music)" -> ActivateWindow(MusicLibrary,sources://music/,return) -->
+	<submenu name="music">
+		<item name="135">
+			<label>135</label>
+			<action>ActivateWindow(music,musicdb://genres/,return)</action>
+		</item>
+		<item name="20382">
+			<label>20382</label>
+			<action>ActivateWindow(music,musicdb://recentlyaddedalbums/,return)</action>
+		</item>
+		<item name="589">
+			<label>589</label>
+			<action>PlayerControl(PartyMode(music))</action>
+		</item>
+		<item name="24001">
+			<label>24001</label>
+			<action>ActivateWindow(music,addons://sources/audio/,return)</action>
+		</item>
+		<item name="14022">
+			<label>14022</label>
+			<action>ActivateWindow(music,root)</action>
+		</item>
+	</submenu>
+
+	<!-- movies (source: movies_DATA.xml) -->
+	<!-- v2 submenu-level visibleoverrides (PENDING per-item wiring, see summary):
+	       group="movies" condition="Library.HasContent(Movies)"    -> ActivateWindow(Videos,sources://video/,return)
+	       group="movies" condition="Library.HasContent(MovieSets)" -> ActivateWindow(Videos,sources://video/,return) -->
+	<submenu name="movies">
+		<item name="135">
+			<label>135</label>
+			<action>ActivateWindow(videos,videodb://movies/genres/,return)</action>
+		</item>
+		<item name="20382">
+			<label>20382</label>
+			<action>ActivateWindow(videos,videodb://recentlyaddedmovies/,return)</action>
+		</item>
+		<item name="575">
+			<label>575</label>
+			<action>ActivateWindow(videos,special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp,return)</action>
+		</item>
+		<item name="20434">
+			<label>20434</label>
+			<action>ActivateWindow(videos,videodb://movies/sets/,return)</action>
+		</item>
+		<item name="14022">
+			<label>14022</label>
+			<action>ActivateWindow(videos,library://video/movies/,return)</action>
+		</item>
+	</submenu>
+
+	<!-- tvshows (source: tvshows_DATA.xml) -->
+	<!-- v2 submenu-level visibleoverride (PENDING per-item wiring, see summary):
+	       group="tvshows" condition="Library.HasContent(TVShows)" -> ActivateWindow(Videos,sources://video/,return) -->
+	<submenu name="tvshows">
+		<item name="135">
+			<label>135</label>
+			<action>ActivateWindow(videos,videodb://tvshows/genres/,return)</action>
+		</item>
+		<item name="20382">
+			<label>20382</label>
+			<action>ActivateWindow(videos,videodb://recentlyaddedepisodes/,return)</action>
+		</item>
+		<item name="575">
+			<label>575</label>
+			<action>ActivateWindow(videos,videodb://inprogresstvshows/,return)</action>
+		</item>
+		<item name="31280">
+			<label>31280</label>
+			<action condition="System.HasAddon(plugin.video.themoviedb.helper)">ActivateWindow(1102)</action>
+			<action condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</action>
+		</item>
+		<item name="14022">
+			<label>14022</label>
+			<action>ActivateWindow(videos,library://video/tvshows/,return)</action>
+		</item>
+	</submenu>
+
+	<!-- tv (source: tv_DATA.xml) -->
+	<submenu name="tv">
+		<item name="137">
+			<label>137</label>
+			<action>ActivateWindow(tvsearch)</action>
+		</item>
+		<item name="19163">
+			<label>19163</label>
+			<action>ActivateWindow(tvrecordings)</action>
+		</item>
+		<item name="19069">
+			<label>19069</label>
+			<action>ActivateWindow(tvguide)</action>
+		</item>
+		<item name="19040">
+			<label>19040</label>
+			<action>ActivateWindow(tvtimers)</action>
+		</item>
+		<item name="19138">
+			<label>19138</label>
+			<action>ActivateWindow(tvtimerrules)</action>
+		</item>
+	</submenu>
+
+	<!-- radio (source: radio_DATA.xml) -->
+	<submenu name="radio">
+		<item name="137">
+			<label>137</label>
+			<action>ActivateWindow(radiosearch)</action>
+		</item>
+		<item name="19163">
+			<label>19163</label>
+			<action>ActivateWindow(radiorecordings)</action>
+		</item>
+		<item name="19069">
+			<label>19069</label>
+			<action>ActivateWindow(radioguide)</action>
+		</item>
+		<item name="19040">
+			<label>19040</label>
+			<action>ActivateWindow(radiotimers)</action>
+		</item>
+		<item name="19138">
+			<label>19138</label>
+			<action>ActivateWindow(radiotimerrules)</action>
+		</item>
+	</submenu>
+
+	<!-- videos (source: videos_DATA.xml) -->
+	<submenu name="videos">
+		<item name="24001">
+			<label>24001</label>
+			<action>ActivateWindow(videos,addons,return)</action>
+		</item>
+		<item name="744">
+			<label>744</label>
+			<action>ActivateWindow(videos,files,return)</action>
+		</item>
+		<item name="136">
+			<label>136</label>
+			<action>ActivateWindow(videos,playlists,return)</action>
+		</item>
+	</submenu>
+
+	<!-- games (source: games_DATA.xml) -->
+	<submenu name="games">
+		<item name="Addons">
+			<label>24001</label>
+			<action>ActivateWindow(games,addons,return)</action>
+		</item>
+	</submenu>
+
+	<!-- addons (source: addons_DATA.xml) -->
+	<submenu name="addons">
+		<item name="1038">
+			<label>1038</label>
+			<action>ActivateWindow(Music,Addons,return)</action>
+		</item>
+		<item name="1037">
+			<label>1037</label>
+			<action>ActivateWindow(Videos,Addons,return)</action>
+		</item>
+		<item name="10040">
+			<label>10040</label>
+			<action>ActivateWindow(Addonbrowser)</action>
+		</item>
+		<item name="1043">
+			<label>1043</label>
+			<action>ActivateWindow(Programs,Addons,return)</action>
+		</item>
+		<item name="1039">
+			<label>1039</label>
+			<action>ActivateWindow(Pictures,Addons,return)</action>
+		</item>
+	</submenu>
+
+	<!-- system (source: system_DATA.xml) -->
+	<submenu name="system">
+		<item name="130">
+			<label>130</label>
+			<action>ActivateWindow(SystemInfo)</action>
+		</item>
+		<item name="7">
+			<label>7</label>
+			<action>ActivateWindow(FileManager)</action>
+		</item>
+		<item name="20077">
+			<label>20077</label>
+			<action>ActivateWindow(SkinSettings)</action>
+		</item>
+		<item name="10050">
+			<label>10050</label>
+			<action>ActivateWindow(Eventlog)</action>
+		</item>
+		<item name="13200">
+			<label>13200</label>
+			<action>ActivateWindow(Profiles)</action>
+		</item>
+	</submenu>
+
+	<!-- weather (source: weather_DATA.xml) -->
+	<submenu name="weather">
+		<item name="5">
+			<label>5</label>
+			<action>ActivateWindow(servicesettings,weather)</action>
+		</item>
+		<item name="209">
+			<label>209</label>
+			<action>Weather.LocationNext</action>
+		</item>
+		<item name="184">
+			<label>184</label>
+			<action>Weather.Refresh</action>
+		</item>
+	</submenu>
+
+	<!-- ============================================================ -->
+	<!-- SHORTCUT PICKER GROUPINGS  (NEWLY AUTHORED - see flag #6)    -->
+	<!-- v2 overrides.xml had no <groupings>; this is a functional   -->
+	<!-- starter derived from shortcuts_DATA.xml. Tune as desired.   -->
+	<!-- ============================================================ -->
+	<groupings>
+		<group name="common" label="$LOCALIZE[31390]" icon="DefaultShortcut.png">
+			<shortcut name="movies" label="342" icon="special://home/addons/resource.images.skin.madnox/resources/icons/movies.png" visible="Library.HasContent(movies)">
+				<action>ActivateWindow(videos,videodb://movies/titles/,return)</action>
+			</shortcut>
+			<shortcut name="tvshows" label="20343" icon="special://home/addons/resource.images.skin.madnox/resources/icons/tvshows.png" visible="Library.HasContent(tvshows)">
+				<action>ActivateWindow(videos,videodb://tvshows/titles/,return)</action>
+			</shortcut>
+			<shortcut name="music" label="2" icon="special://home/addons/resource.images.skin.madnox/resources/icons/music.png" visible="Library.HasContent(music)">
+				<action>ActivateWindow(music,musicdb://artists/,return)</action>
+			</shortcut>
+			<shortcut name="musicvideos" label="20389" icon="special://home/addons/resource.images.skin.madnox/resources/icons/musicvideos.png" visible="Library.HasContent(musicvideos)">
+				<action>ActivateWindow(videos,videodb://musicvideos/titles/,return)</action>
+			</shortcut>
+			<shortcut name="tv" label="31173" icon="special://home/addons/resource.images.skin.madnox/resources/icons/tv.png" visible="Pvr.HasTVChannels">
+				<action>ActivateWindow(tvchannels)</action>
+			</shortcut>
+			<shortcut name="radio" label="$LOCALIZE[19021]" icon="special://home/addons/resource.images.skin.madnox/resources/icons/radio.png" visible="Pvr.HasRadioChannels">
+				<action>ActivateWindow(radiochannels)</action>
+			</shortcut>
+			<shortcut name="pictures" label="1" icon="special://home/addons/resource.images.skin.madnox/resources/icons/pictures.png">
+				<action>ActivateWindow(pictures)</action>
+			</shortcut>
+			<shortcut name="videos" label="3" icon="special://home/addons/resource.images.skin.madnox/resources/icons/videos.png">
+				<action>ActivateWindow(videos,root)</action>
+			</shortcut>
+			<shortcut name="games" label="15016" icon="special://home/addons/resource.images.skin.madnox/resources/icons/games.png" visible="System.GetBool(gamesgeneral.enable)">
+				<action>ActivateWindow(games)</action>
+			</shortcut>
+			<shortcut name="addons" label="24001" icon="special://home/addons/resource.images.skin.madnox/resources/icons/addons.png">
+				<action>ActivateWindow(1114)</action>
+			</shortcut>
+			<shortcut name="weather" label="8" icon="special://home/addons/resource.images.skin.madnox/resources/icons/weather.png">
+				<action>ActivateWindow(weather)</action>
+			</shortcut>
+			<shortcut name="system" label="13000" icon="special://home/addons/resource.images.skin.madnox/resources/icons/system.png">
+				<action>ActivateWindow(settings)</action>
+			</shortcut>
+			<shortcut name="search" label="137" icon="special://home/addons/resource.images.skin.madnox/resources/icons/search.png">
+				<action>ActivateWindow(1112)</action>
+			</shortcut>
+			<shortcut name="favourites" label="1036" icon="special://home/addons/resource.images.skin.madnox/resources/icons/favourites.png">
+				<action>ActivateWindow(favouritesbrowser)</action>
+			</shortcut>
+		</group>
+		<group name="library" label="$LOCALIZE[14022]" icon="DefaultFolder.png">
+			<content source="nodes" target="videos" />
+			<content source="nodes" target="music" />
+			<content source="playlists" target="videos" folder="$LOCALIZE[136]" />
+			<content source="playlists" target="music" folder="$LOCALIZE[136]" />
+			<content source="favourites" />
+			<content source="addons" target="videos" folder="$LOCALIZE[1037]" />
+			<content source="addons" target="music" folder="$LOCALIZE[1038]" />
+			<content source="addons" target="pictures" folder="$LOCALIZE[1039]" />
+			<content source="addons" target="programs" folder="$LOCALIZE[1043]" />
+		</group>
+	</groupings>
+
+	<!-- ============================================================ -->
+	<!-- ICON PICKER SOURCES  (source: overrides.xml thumbnailBrowseDefault) -->
+	<!-- ============================================================ -->
+	<icons>
+		<source label="$LOCALIZE[31390]">special://home/addons/resource.images.skin.madnox/resources/icons/</source>
+		<source label="$LOCALIZE[1024]" icon="DefaultFolder.png">browse</source>
+	</icons>
+
+	<!-- ============================================================ -->
+	<!-- ACTION OVERRIDES  (source: overrides.xml <override>)         -->
+	<!-- ============================================================ -->
+	<overrides>
+		<!-- v2: <override action="ActivateWindow(Favourites)"> -> ActivateWindow(favouritesbrowser) -->
+		<action replace="ActivateWindow(Favourites)">ActivateWindow(favouritesbrowser)</action>
+	</overrides>
+
+	<!-- ============================================================ -->
+	<!-- WIDGET SLOT SUBDIALOGS  (20 slots, buttons 501-520)         -->
+	<!-- Resolves flag #3. Each click spawns a child dialog with     -->
+	<!-- property_suffix=".N" so property writes go to widgetX.N.   -->
+	<!-- ============================================================ -->
+	<dialogs>
+		<subdialog buttonID="501" mode="widget1"  suffix=".1"  setfocus="8121">
+			<onclose condition="widgetType.1=custom" action="menu" menu="{item}.customwidget.1" />
+		</subdialog>
+		<subdialog buttonID="502" mode="widget2"  suffix=".2"  setfocus="8122">
+			<onclose condition="widgetType.2=custom" action="menu" menu="{item}.customwidget.2" />
+		</subdialog>
+		<subdialog buttonID="503" mode="widget3"  suffix=".3"  setfocus="8123">
+			<onclose condition="widgetType.3=custom" action="menu" menu="{item}.customwidget.3" />
+		</subdialog>
+		<subdialog buttonID="504" mode="widget4"  suffix=".4"  setfocus="8124">
+			<onclose condition="widgetType.4=custom" action="menu" menu="{item}.customwidget.4" />
+		</subdialog>
+		<subdialog buttonID="505" mode="widget5"  suffix=".5"  setfocus="8125">
+			<onclose condition="widgetType.5=custom" action="menu" menu="{item}.customwidget.5" />
+		</subdialog>
+		<subdialog buttonID="506" mode="widget6"  suffix=".6"  setfocus="8126">
+			<onclose condition="widgetType.6=custom" action="menu" menu="{item}.customwidget.6" />
+		</subdialog>
+		<subdialog buttonID="507" mode="widget7"  suffix=".7"  setfocus="8127">
+			<onclose condition="widgetType.7=custom" action="menu" menu="{item}.customwidget.7" />
+		</subdialog>
+		<subdialog buttonID="508" mode="widget8"  suffix=".8"  setfocus="8128">
+			<onclose condition="widgetType.8=custom" action="menu" menu="{item}.customwidget.8" />
+		</subdialog>
+		<subdialog buttonID="509" mode="widget9"  suffix=".9"  setfocus="8129">
+			<onclose condition="widgetType.9=custom" action="menu" menu="{item}.customwidget.9" />
+		</subdialog>
+		<subdialog buttonID="510" mode="widget10" suffix=".10" setfocus="81210">
+			<onclose condition="widgetType.10=custom" action="menu" menu="{item}.customwidget.10" />
+		</subdialog>
+		<subdialog buttonID="511" mode="widget11" suffix=".11" setfocus="81211">
+			<onclose condition="widgetType.11=custom" action="menu" menu="{item}.customwidget.11" />
+		</subdialog>
+		<subdialog buttonID="512" mode="widget12" suffix=".12" setfocus="81212">
+			<onclose condition="widgetType.12=custom" action="menu" menu="{item}.customwidget.12" />
+		</subdialog>
+		<subdialog buttonID="513" mode="widget13" suffix=".13" setfocus="81213">
+			<onclose condition="widgetType.13=custom" action="menu" menu="{item}.customwidget.13" />
+		</subdialog>
+		<subdialog buttonID="514" mode="widget14" suffix=".14" setfocus="81214">
+			<onclose condition="widgetType.14=custom" action="menu" menu="{item}.customwidget.14" />
+		</subdialog>
+		<subdialog buttonID="515" mode="widget15" suffix=".15" setfocus="81215">
+			<onclose condition="widgetType.15=custom" action="menu" menu="{item}.customwidget.15" />
+		</subdialog>
+		<subdialog buttonID="516" mode="widget16" suffix=".16" setfocus="81216">
+			<onclose condition="widgetType.16=custom" action="menu" menu="{item}.customwidget.16" />
+		</subdialog>
+		<subdialog buttonID="517" mode="widget17" suffix=".17" setfocus="81217">
+			<onclose condition="widgetType.17=custom" action="menu" menu="{item}.customwidget.17" />
+		</subdialog>
+		<subdialog buttonID="518" mode="widget18" suffix=".18" setfocus="81218">
+			<onclose condition="widgetType.18=custom" action="menu" menu="{item}.customwidget.18" />
+		</subdialog>
+		<subdialog buttonID="519" mode="widget19" suffix=".19" setfocus="81219">
+			<onclose condition="widgetType.19=custom" action="menu" menu="{item}.customwidget.19" />
+		</subdialog>
+		<subdialog buttonID="520" mode="widget20" suffix=".20" setfocus="81220">
+			<onclose condition="widgetType.20=custom" action="menu" menu="{item}.customwidget.20" />
+		</subdialog>
+	</dialogs>
+
+	<!-- ============================================================ -->
+	<!-- CONTEXT MENU  (v2 default behavior: enabled)                 -->
+	<!-- ============================================================ -->
+	<contextmenu>true</contextmenu>
+
+
+</menus>

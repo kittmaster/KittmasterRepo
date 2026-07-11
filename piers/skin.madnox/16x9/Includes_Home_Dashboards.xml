@@ -5,11 +5,19 @@
 		<description>Empty fallback</description>
 	</include>
 
-	<!-- Basic Item Templates (Used by Carousel) -->
+	<!-- Guaranteed-empty include. The main widget template loads this as the include-content for every -->
+	<!-- NON-system widget (system widgets load their SystemX stub instead). Expands to zero items.      -->
+	<include name="skinshortcuts-empty-content" />
+
+	<!-- Single-item system widget stubs (Omega-faithful). The main widget template in templates.xml     -->
+	<!-- loads the matching one as a per-item panel's CONTENT for widgetType=system menu items, producing -->
+	<!-- one tile (label + icon) that opens the corresponding system dashboard window on click. These are -->
+	<!-- the sole definitions of these include names (templates.xml no longer generates SystemContent).   -->
 	<include name="skinshortcuts-template-SystemContent">
 		<item>
 			<label>$LOCALIZE[13000] [LOWERCASE]$LOCALIZE[128][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/system.png</icon>
+			<property name="subtitle">System overview</property>
 			<onclick>ActivateWindow(1120)</onclick>
 		</item>
 	</include>
@@ -17,6 +25,7 @@
 		<item>
 			<label>$LOCALIZE[31486] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/cpu.png</icon>
+			<property name="subtitle">Processor</property>
 			<onclick>ActivateWindow(1121)</onclick>
 		</item>
 	</include>
@@ -24,6 +33,7 @@
 		<item>
 			<label>$LOCALIZE[31497] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/memory.png</icon>
+			<property name="subtitle">RAM usage</property>
 			<onclick>ActivateWindow(1122)</onclick>
 		</item>
 	</include>
@@ -31,6 +41,7 @@
 		<item>
 			<label>$LOCALIZE[154] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/storage.png</icon>
+			<property name="subtitle">Disk space</property>
 			<onclick>ActivateWindow(1123)</onclick>
 		</item>
 	</include>
@@ -38,6 +49,7 @@
 		<item>
 			<label>$LOCALIZE[705] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/connected.png</icon>
+			<property name="subtitle">Network connectivity</property>
 			<onclick>ActivateWindow(1124)</onclick>
 		</item>
 	</include>
@@ -45,6 +57,7 @@
 		<item>
 			<label>$LOCALIZE[31490] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/uptime.png</icon>
+			<property name="subtitle">Session time</property>
 			<onclick>ActivateWindow(1125)</onclick>
 		</item>
 	</include>
@@ -52,6 +65,7 @@
 		<item>
 			<label>$LOCALIZE[31483] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/battery100.png</icon>
+			<property name="subtitle">Power level</property>
 			<onclick>ActivateWindow(1126)</onclick>
 		</item>
 	</include>
@@ -59,6 +73,7 @@
 		<item>
 			<label>$LOCALIZE[157] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/video.png</icon>
+			<property name="subtitle">Display and performance</property>
 			<onclick>ActivateWindow(1127)</onclick>
 		</item>
 	</include>
@@ -66,6 +81,7 @@
 		<item>
 			<label>$LOCALIZE[31485] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/pvr.png</icon>
+			<property name="subtitle">Live TV backend</property>
 			<onclick>ActivateWindow(1128)</onclick>
 		</item>
 	</include>
@@ -73,7 +89,160 @@
 		<item>
 			<label>$LOCALIZE[19114] [LOWERCASE]$LOCALIZE[29915][/LOWERCASE]</label>
 			<icon>icons/systeminfo/icons/system.png</icon>
+			<property name="subtitle">Kodi version info</property>
 			<onclick>ActivateWindow(1129)</onclick>
+		</item>
+	</include>
+
+	<!-- Weather content items: loaded by the mainmenu per-item carousel panels for weather slots.  -->
+	<!-- script-skinshortcuts-includes.xml no longer generates these names (standalone templates    -->
+	<!-- removed), so this Dashboards definition is the sole definition (no override conflict).     -->
+	<include name="skinshortcuts-template-WeatherHourlyContent">
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.1.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.1.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.1.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.1.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.2.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.2.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.2.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.2.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.2.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.2.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.3.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.3.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.3.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.3.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.3.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.3.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.4.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.4.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.4.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.4.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.4.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.4.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.5.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.5.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.5.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.5.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.5.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.5.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.6.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.6.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.6.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.6.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.6.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.6.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.7.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.7.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.7.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.7.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.7.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.7.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.8.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.8.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.8.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.8.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.8.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.8.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.9.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.9.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.9.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.9.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.9.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.9.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.10.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.10.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.10.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.10.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.10.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.10.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.11.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.11.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.11.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.11.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.11.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.11.Time))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.12.Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.12.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.12.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">$INFO[Window(weather).Property(Hourly.12.Temperature)]</property>
+			<property name="fanart">$INFO[Skin.String(WeatherFanart.path)]$INFO[Window(weather).Property(Hourly.12.FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+			<visible>!String.IsEmpty(Window(Weather).Property(Hourly.12.Time))</visible>
+		</item>
+	</include>
+
+	<include name="skinshortcuts-template-WeatherDailyContent">
+		<item>
+			<label>$INFO[Window(weather).Property(Day0.Title)]</label>
+			<label2>$INFO[Window(weather).Property(Day0.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Day1.Title)]</label>
+			<label2>$INFO[Window(weather).Property(Day1.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Day2.Title)]</label>
+			<label2>$INFO[Window(weather).Property(Day2.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day2.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Day3.Title)]</label>
+			<label2>$INFO[Window(weather).Property(Day3.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day3.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Day4.Title)]</label>
+			<label2>$INFO[Window(weather).Property(Day4.Outlook)]</label2>
+			<icon>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day4.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</icon>
+			<property name="label3">[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>
+			<onclick>ActivateWindow(weather)</onclick>
 		</item>
 	</include>
 
@@ -82,8 +251,8 @@
 	<!-- SLOT 1 -->
 	<variable name="GridSlot1Label">
 		<!-- Weather Fix -->
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.1),daily)]">$INFO[Window(weather).Property(Day0.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.1),hourly)]">$INFO[Window(weather).Property(Hourly.1.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Hourly.1.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.1),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.1),daily)]">$INFO[Window(weather).Property(Day0.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.1),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.1),hourly)]">$INFO[Window(weather).Property(Hourly.1.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Hourly.1.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent)">$INFO[Window(weather).Property(Day0.HighTemp)] / $INFO[Window(weather).Property(Day0.LowTemp)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemContent)">$LOCALIZE[13000] $LOCALIZE[128]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemCPU)">$LOCALIZE[31486] $LOCALIZE[29915]</value>
@@ -95,13 +264,13 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.1))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.1)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.1))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.1)]</value>
 	</variable>
 	<variable name="GridSlot1Icon">
 		<!-- Weather Fix -->
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.1),daily)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.1),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.1),hourly)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.1),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.1),daily)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.1),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.1),hourly)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="!String.IsEmpty(Container(9000).ListItem.Property(widgetIcon.1))">$INFO[Container(9000).ListItem.Property(widgetIcon.1)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.1),SystemContent)">icons/systeminfo/icons/system.png</value>
@@ -122,7 +291,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.1),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.1),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.1),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(981).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.1),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.1),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.1),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(981).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.1),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.1),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(981).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(981).ListItem.Art(tvshow.poster)]</value>
@@ -150,8 +319,8 @@
 
 	<!-- SLOT 2 -->
 	<variable name="GridSlot2Label">
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.2),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.2),daily)]">$INFO[Window(weather).Property(Day0.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.2),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.2),hourly)]">$INFO[Window(weather).Property(Hourly.1.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Hourly.1.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.2),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.2),daily)]">$INFO[Window(weather).Property(Day0.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.2),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.2),hourly)]">$INFO[Window(weather).Property(Hourly.1.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Hourly.1.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent)">$INFO[Window(weather).Property(Day0.HighTemp)] / $INFO[Window(weather).Property(Day0.LowTemp)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),SystemContent)">$LOCALIZE[13000] $LOCALIZE[128]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),SystemCPU)">$LOCALIZE[31486] $LOCALIZE[29915]</value>
@@ -163,12 +332,12 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.2))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.2)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.2))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.2)]</value>
 	</variable>
 	<variable name="GridSlot2Icon">
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.2),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.2),daily)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.2),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.2),hourly)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.2),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.2),daily)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.2),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.2),hourly)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="!String.IsEmpty(Container(9000).ListItem.Property(widgetIcon.2))">$INFO[Container(9000).ListItem.Property(widgetIcon.2)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.2),SystemContent)">icons/systeminfo/icons/system.png</value>
@@ -189,7 +358,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.2),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.2),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.2),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(982).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.2),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.2),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.2),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(982).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.2),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.2),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(982).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(982).ListItem.Art(tvshow.poster)]</value>
@@ -216,8 +385,8 @@
 
 	<!-- SLOT 3 -->
 	<variable name="GridSlot3Label">
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.3),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.3),daily)]">$INFO[Window(weather).Property(Day0.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.3),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.3),hourly)]">$INFO[Window(weather).Property(Hourly.1.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Hourly.1.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.3),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.3),daily)]">$INFO[Window(weather).Property(Day0.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.3),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.3),hourly)]">$INFO[Window(weather).Property(Hourly.1.Outlook)][CR][COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Hourly.1.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent)">$INFO[Window(weather).Property(Day0.HighTemp)] / $INFO[Window(weather).Property(Day0.LowTemp)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),SystemContent)">$LOCALIZE[13000] $LOCALIZE[128]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),SystemCPU)">$LOCALIZE[31486] $LOCALIZE[29915]</value>
@@ -229,12 +398,12 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.3))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.3)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.3))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.3)]</value>
 	</variable>
 	<variable name="GridSlot3Icon">
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.3),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.3),daily)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.3),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.3),hourly)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.3),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.3),daily)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.3),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.3),hourly)]">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
 		<value condition="!String.IsEmpty(Container(9000).ListItem.Property(widgetIcon.3))">$INFO[Container(9000).ListItem.Property(widgetIcon.3)]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.3),SystemContent)">icons/systeminfo/icons/system.png</value>
@@ -255,7 +424,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.3),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.3),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.3),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(983).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.3),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.3),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.3),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(983).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.3),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.3),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(983).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(983).ListItem.Art(tvshow.poster)]</value>
@@ -293,8 +462,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.4),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.4),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.4),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.4))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.4)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.4))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.4)]</value>
 	</variable>
 	<variable name="GridSlot4Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.4),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -317,7 +486,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.4),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.4),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.4),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(984).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.4),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.4),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.4),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(984).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.4),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.4),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(984).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(984).ListItem.Art(tvshow.poster)]</value>
@@ -355,8 +524,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.5),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.5),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.5),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.5))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.5)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.5))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.5)]</value>
 	</variable>
 	<variable name="GridSlot5Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.5),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -379,7 +548,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.5),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.5),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.5),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(985).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.5),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.5),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.5),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(985).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.5),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.5),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(985).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(985).ListItem.Art(tvshow.poster)]</value>
@@ -417,8 +586,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.6),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.6),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.6),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.6))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.6)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.6))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.6)]</value>
 	</variable>
 	<variable name="GridSlot6Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.6),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -441,7 +610,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.6),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.6),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.6),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(986).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.6),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.6),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.6),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(986).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.6),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.6),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(986).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(986).ListItem.Art(tvshow.poster)]</value>
@@ -479,8 +648,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.7),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.7),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.7),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.7))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.7)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.7))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.7)]</value>
 	</variable>
 	<variable name="GridSlot7Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.7),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -503,7 +672,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.7),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.7),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.7),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(987).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.7),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.7),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.7),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(987).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.7),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.7),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(987).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(987).ListItem.Art(tvshow.poster)]</value>
@@ -541,8 +710,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.8),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.8),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.8),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.8))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.8)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.8))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.8)]</value>
 	</variable>
 	<variable name="GridSlot8Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.8),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -565,7 +734,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.8),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.8),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.8),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(988).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.8),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.8),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.8),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(988).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.8),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.8),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(988).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(988).ListItem.Art(tvshow.poster)]</value>
@@ -603,8 +772,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.9),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.9),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.9),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.9))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.9)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.9))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.9)]</value>
 	</variable>
 	<variable name="GridSlot9Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.9),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -627,7 +796,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.9),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.9),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.9),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(989).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.9),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.9),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.9),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(989).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.9),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.9),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(989).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(989).ListItem.Art(tvshow.poster)]</value>
@@ -665,8 +834,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.10),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.10),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.10),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.10))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.10)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.10))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.10)]</value>
 	</variable>
 	<variable name="GridSlot10Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.10),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -689,7 +858,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.10),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.10),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.10),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9810).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.10),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.10),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.10),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9810).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.10),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.10),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9810).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9810).ListItem.Art(tvshow.poster)]</value>
@@ -727,8 +896,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.11),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.11),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.11),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.11))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.11)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.11))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.11)]</value>
 	</variable>
 	<variable name="GridSlot11Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.11),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -751,7 +920,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.11),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.11),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.11),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9811).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.11),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.11),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.11),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9811).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.11),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.11),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9811).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9811).ListItem.Art(tvshow.poster)]</value>
@@ -789,8 +958,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.12),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.12),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.12),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.12))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.12)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.12))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.12)]</value>
 	</variable>
 	<variable name="GridSlot12Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.12),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -813,7 +982,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.12),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.12),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.12),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9812).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.12),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.12),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.12),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9812).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.12),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.12),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9812).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9812).ListItem.Art(tvshow.poster)]</value>
@@ -851,8 +1020,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.13),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.13),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.13),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.13))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.13)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.13))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.13)]</value>
 	</variable>
 	<variable name="GridSlot13Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.13),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -875,7 +1044,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.13),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.13),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.13),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9813).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.13),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.13),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.13),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9813).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.13),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.13),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9813).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9813).ListItem.Art(tvshow.poster)]</value>
@@ -913,8 +1082,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.14),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.14),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.14),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.14))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.14)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.14))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.14)]</value>
 	</variable>
 	<variable name="GridSlot14Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.14),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -937,7 +1106,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.14),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.14),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.14),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9814).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.14),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.14),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.14),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9814).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.14),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.14),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9814).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9814).ListItem.Art(tvshow.poster)]</value>
@@ -975,8 +1144,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.15),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.15),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.15),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.15))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.15)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.15))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.15)]</value>
 	</variable>
 	<variable name="GridSlot15Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.15),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -999,7 +1168,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.15),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.15),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.15),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9815).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.15),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.15),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.15),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9815).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.15),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.15),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9815).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9815).ListItem.Art(tvshow.poster)]</value>
@@ -1037,8 +1206,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.16),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.16),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.16),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.16))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.16)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.16))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.16)]</value>
 	</variable>
 	<variable name="GridSlot16Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.16),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -1061,7 +1230,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.16),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.16),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.16),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9816).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.16),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.16),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.16),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9816).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.16),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.16),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9816).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9816).ListItem.Art(tvshow.poster)]</value>
@@ -1099,8 +1268,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.17),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.17),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.17),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.17))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.17)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.17))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.17)]</value>
 	</variable>
 	<variable name="GridSlot17Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.17),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -1123,7 +1292,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.17),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.17),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.17),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9817).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.17),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.17),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.17),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9817).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.17),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.17),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9817).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9817).ListItem.Art(tvshow.poster)]</value>
@@ -1161,8 +1330,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.18),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.18),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.18),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.18))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.18)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.18))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.18)]</value>
 	</variable>
 	<variable name="GridSlot18Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.18),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -1185,7 +1354,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.18),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.18),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.18),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9818).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.18),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.18),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.18),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9818).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.18),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.18),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9818).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9818).ListItem.Art(tvshow.poster)]</value>
@@ -1223,8 +1392,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.19),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.19),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.19),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.19))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.19)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.19))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.19)]</value>
 	</variable>
 	<variable name="GridSlot19Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.19),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -1247,7 +1416,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.19),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.19),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.19),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9819).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.19),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.19),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.19),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9819).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.19),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.19),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9819).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9819).ListItem.Art(tvshow.poster)]</value>
@@ -1285,8 +1454,8 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.20),SystemVideo)">$LOCALIZE[157] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.20),SystemPVR)">$LOCALIZE[31485] $LOCALIZE[29915]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.20),SystemVersion)">$LOCALIZE[19114] $LOCALIZE[29915]</value>
-		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetName.20))">$LOCALIZE[31504]</value>
-		<value>$INFO[Container(9000).ListItem.Property(widgetName.20)]</value>
+		<value condition="String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.20))">$LOCALIZE[31504]</value>
+		<value>$INFO[Container(9000).ListItem.Property(widgetLabel.20)]</value>
 	</variable>
 	<variable name="GridSlot20Icon">
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath.20),WeatherContent)">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</value>
@@ -1309,7 +1478,7 @@
 		<!-- Genres -->
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.20),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.20),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.20),info=genres)] + !Skin.HasSetting(BWGenreIcons) + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.colour)">$INFO[Container(9820).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.colour/,.jpg]</value>
 		<value condition="[String.Contains(Container(9000).ListItem.Property(widgetPath.20),query=genres) | String.EndsWith(Container(9000).ListItem.Property(widgetPath.20),/genres/) | String.Contains(Container(9000).ListItem.Property(widgetPath.20),info=genres)] + System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$INFO[Container(9820).ListItem.Label,resource://resource.images.moviegenreicons.filmstrip-hd.bw/,.jpg]</value>
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetName.20),Genre)">icons/addons/tmdb.png</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(widgetLabel.20),Genre)">icons/addons/tmdb.png</value>
 		<!-- Art Fallback -->
 		<value>$INFO[Container(9820).ListItem.Art(poster)]</value>
 		<value>$INFO[Container(9820).ListItem.Art(tvshow.poster)]</value>
@@ -1428,7 +1597,7 @@
 
 		<!-- The Title -->
 		<control type="label">
-			<top>2</top>
+			<top>12</top>
 			<left>10</left>
 			<width>$PARAM[titlewidth]</width>
 			<height>30</height>
@@ -1454,8 +1623,8 @@
 			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">$VAR[GridSlot$PARAM[slotnum]Action]</onclick>
 
 			<!-- Added For Weather: Set Tab Property and Trigger Action Natively -->
-			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)]">SetProperty(MadnoxWeatherTab,Daily,Home)</onclick>
-			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)]">SetProperty(MadnoxWeatherTab,Hourly,Home)</onclick>
+			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),daily)]">SetProperty(MadnoxWeatherTab,Daily,Home)</onclick>
+			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)]">SetProperty(MadnoxWeatherTab,Hourly,Home)</onclick>
 			<onclick condition="String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent)">$VAR[GridSlot$PARAM[slotnum]Action]</onclick>
 
 			<!-- Actions for all other widgets -->
@@ -1468,7 +1637,7 @@
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">ClearProperty(MadnoxWidgetCaseMusic,Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">ClearProperty(MadnoxWidgetWatchedStatus,Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">ClearProperty(MadnoxWidgetLabel,Home)</onclick>
-			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">SetProperty(MadnoxWidgetName,$INFO[Container(9000).ListItem.Property(widgetName.$PARAM[slotnum])],Home)</onclick>
+			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">SetProperty(MadnoxWidgetName,$INFO[Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum])],Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">ClearProperty(MadnoxWidgetArtwork,Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">SetProperty(MadnoxWidgetPath,$INFO[Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum])],Home)</onclick>
 			<onclick condition="!String.IsEqual(Container(9000).ListItem.Property(widgetType.$PARAM[slotnum]),system)">SetProperty(MadnoxWidgetTarget,$INFO[Container(9000).ListItem.Property(widgetTarget.$PARAM[slotnum])],Home)</onclick>
@@ -1535,7 +1704,7 @@
 				<textcolor>FFFFFFFF</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
 				<label>[B]$INFO[Window(weather).Property(Day0.Title)][/B]</label>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)]</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),daily)]</visible>
 			</control>
 			<control type="label">
 				<left>20</left>
@@ -1547,7 +1716,7 @@
 				<textcolor>FFFFFFFF</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
 				<label>[B]$INFO[Window(weather).Property(Hourly.1.Time)][/B]</label>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)]</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)]</visible>
 			</control>
 
 			<!-- Hidden list moved to Home.xml grouplist, one per slot, outside size variants -->
@@ -1573,7 +1742,7 @@
 				<aspectratio>keep</aspectratio>
 				<include>WeatherIconAnimation</include>
 				<imagepath background="true">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Day0.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</imagepath>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + ![String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)]</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + ![String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)]</visible>
 			</control>
 
 			<!-- ICON (Weather - Hourly) -->
@@ -1585,7 +1754,7 @@
 				<aspectratio>keep</aspectratio>
 				<include>WeatherIconAnimation</include>
 				<imagepath background="true">$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.1.FanartCode)]$INFO[Skin.String(WeatherIcons.ext)]</imagepath>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)]</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)]</visible>
 			</control>
 
 			<!-- Text Gradient Shadow -->
@@ -1618,7 +1787,7 @@
 				<label>$INFO[Window(weather).Property(Day0.Outlook)]</label>
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),daily)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Daily Condition (Outlook) - Unfocused -->
@@ -1632,7 +1801,7 @@
 				<label>$INFO[Window(weather).Property(Day0.Outlook)]</label>
 				<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + !Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),daily)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Hourly Condition (Current) - Focused -->
@@ -1646,7 +1815,7 @@
 				<label>$INFO[Window(weather).Property(Current.Condition)]</label>
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Hourly Condition (Current) - Unfocused -->
@@ -1660,7 +1829,7 @@
 				<label>$INFO[Window(weather).Property(Current.Condition)]</label>
 				<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + !Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Daily Temps - Focused -->
@@ -1674,7 +1843,7 @@
 				<label>[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</label>
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),daily)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Daily Temps - Unfocused -->
@@ -1688,7 +1857,7 @@
 				<label>[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits,,  ][/COLOR]$INFO[Window(weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</label>
 				<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),daily)] + !Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Daily) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),daily)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Hourly Temps (Current) - Focused -->
@@ -1702,7 +1871,7 @@
 				<label>[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</label>
 				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)] + Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Hourly Temps (Current) - Unfocused -->
@@ -1716,7 +1885,7 @@
 				<label>[COLOR $VAR[PanelHighlightColorVar]]$INFO[Window(weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][/COLOR]</label>
 				<textcolor>$VAR[PanelTextColorVar]</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
-				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetName.$PARAM[slotnum]),hourly)] + !Control.HasFocus($PARAM[id])</visible>
+				<visible>String.Contains(Container(9000).ListItem.Property(widgetPath.$PARAM[slotnum]),WeatherContent) + [String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),Hourly) | String.Contains(Container(9000).ListItem.Property(widgetLabel.$PARAM[slotnum]),hourly)] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 
 			<!-- Standard Label (Highlight Color on Focus) -->

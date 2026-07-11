@@ -679,6 +679,7 @@
 				<label>$INFO[Container(6).NumItems,, $LOCALIZE[31001]]$INFO[Container(6).CurrentPage, - ]$INFO[Container(6).NumPages,/]</label>
 			</control>
 			<control type="scrollbar" id="60">
+				<left>859</left>
 				<onright condition="Control.IsVisible(3)">3</onright>
 				<onright condition="Control.IsVisible(6)">6</onright>
 				<include>DialogScrollBar</include>

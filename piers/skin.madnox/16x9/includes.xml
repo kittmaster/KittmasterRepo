@@ -2627,12 +2627,62 @@
 	</variable>
 
 	<!-- =============================================================== -->
-	<!--  Madnox moon variable                                  -->
+	<!--  Madnox moon variable                                           -->
 	<!-- =============================================================== -->
 	<variable name="MadnoxMoonPhaseIconVar">
 		<!-- Route to the resource addon folder when the property is present -->
 		<value condition="!String.IsEmpty(Window(weather).Property(Today.MoonPhaseIcon))">resource://resource.images.skin.madnox/weather/moon/$INFO[Window(weather).Property(Today.MoonPhaseIcon)].png</value>
 		<!-- Fallback if the property is missing -->
 		<value>resource://resource.images.skin.madnox/weather/moon/default.png</value>
+	</variable>
+
+	<!-- =============================================================== -->
+	<!--  Skin shortcuts context menu icons                              -->
+	<!-- =============================================================== -->
+
+	<variable name="SelectDialogIconVar">
+		<!-- Portrait icon -->
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,Portrait icon)">icons/shortcutsmenu/Portrait.png</value>
+
+		<!-- Square icon -->
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,Square icon)">icons/shortcutsmenu/Square.png</value>
+
+		<!-- Landscape icon / Landscape -->
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,Landscape icon) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,Landscape)">icons/shortcutsmenu/Landscape.png</value>
+
+		<!-- Fanart -->
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,Fanart)">icons/shortcutsmenu/Fanart.png</value>
+
+		<!-- Episode thumb -->
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,Episode thumb)">icons/shortcutsmenu/EpisodeThumb.png</value>
+
+		<!-- Clearart -->
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,Clearart) | String.IsEqual(ListItem.Label,Clear art)">icons/shortcutsmenu/ClearArt.png</value>
+
+		<!-- Clearlogo -->
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | String.IsEqual(ListItem.Label,Clearlogo) | String.IsEqual(ListItem.Label,Clear logo)">icons/shortcutsmenu/ClearLogo.png</value>
+
+		<!-- Fall back to ListItem.Icon only when it is a real icon (not the Kodi "no addon" placeholder).
+		     Style (Big/Medium/Small) and Limit (1-100) options have no icon set, so Kodi gives them
+		     DefaultAddonNone.png. By skipping that value here and returning empty instead, the image
+		     control in DialogListImage renders nothing rather than the ghostbuster symbol. -->
+		<value condition="!String.IsEqual(ListItem.Icon,DefaultAddonNone.png)">$INFO[ListItem.Icon]</value>
+		<value></value>
+	</variable>
+
+	<!-- Mirror of SelectDialogIconVar returning true/false instead of a path.
+	     Used in DialogListImage <visible> conditions to shift label left from 140 to 40
+	     when no icon is present (Style, Limit dialogs), avoiding the blank gap. -->
+	<variable name="SelectDialogHasIconVar">
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,Portrait icon)">true</value>
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,Square icon)">true</value>
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,Landscape icon) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,Landscape)">true</value>
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,Fanart)">true</value>
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,Episode thumb)">true</value>
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,Clearart) | String.IsEqual(ListItem.Label,Clear art)">true</value>
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | String.IsEqual(ListItem.Label,Clearlogo) | String.IsEqual(ListItem.Label,Clear logo)">true</value>
+		<!-- Real file/addon icons (FileBrowser etc.) -->
+		<value condition="!String.IsEqual(ListItem.Icon,DefaultAddonNone.png)">true</value>
+		<value>false</value>
 	</variable>
 </includes>

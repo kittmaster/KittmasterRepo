@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- backgrounds.xml - Madnox v3 selection of selectable backdrop types -->
+<backgrounds>
+	<!-- Static Skin Backdrops -->
+	<background name="pictures" label="1" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg</icon>
+	</background>
+	<background name="musicvideos" label="20389" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg</icon>
+	</background>
+	<background name="music" label="2" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg</icon>
+	</background>
+	<background name="movies" label="342" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/movies.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/movies.jpg</icon>
+	</background>
+	<background name="tvshows" label="20343" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/tvshows.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/tvshows.jpg</icon>
+	</background>
+	<background name="tv" label="19020" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg</icon>
+	</background>
+	<background name="radio" label="19021" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg</icon>
+	</background>
+	<background name="videos" label="3" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg</icon>
+	</background>
+	<background name="games" label="15016" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg</icon>
+	</background>
+	<background name="addons" label="24001" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg</icon>
+	</background>
+	<background name="system" label="13000" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg</icon>
+	</background>
+	<background name="weather" label="8" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg</icon>
+	</background>
+	<background name="disc" label="427" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/disc.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/disc.jpg</icon>
+	</background>
+	<background name="favourites" label="1036" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/favourites.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/favourites.jpg</icon>
+	</background>
+	<background name="power" label="33060" type="static">
+		<path>special://home/addons/resource.images.skin.madnox/resources/backgrounds/power.jpg</path>
+		<icon>special://home/addons/resource.images.skin.madnox/resources/backgrounds/power.jpg</icon>
+	</background>
+
+	<!-- Weather Info Pack Fanart path -->
+	<background name="weatherfanart" label="31055" type="property">
+		<path>$INFO[Skin.String(WeatherFanart.path)]$INFO[Weather.fanartcode]$INFO[Skin.String(WeatherFanart.ext)]</path>
+	</background>
+
+	<!-- User Selectable Playlists -->
+	<background name="playlist" label="Playlist" type="playlist">
+		<icon>DefaultPlaylist.png</icon>
+		<source label="Skin Playlists">special://skin/extras/playlists/</source>
+		<source label="My Custom Playlists">special://videoplaylists/</source>
+	</background>
+
+	<background name="cover" label="Cover" type="playlist">
+		<icon>DefaultPlaylist.png</icon>
+		<source label="Skin Playlists">special://skin/extras/playlists/</source>
+		<source label="My Custom Playlists">special://videoplaylists/</source>
+	</background>
+</backgrounds>

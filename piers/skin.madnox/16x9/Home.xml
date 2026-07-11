@@ -15,8 +15,8 @@
 	<!-- Background Migration -->
 	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox,action=migrate_bgs)</onload>
 
-	<!-- Skin Shortcuts -->
-	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
+	<!-- Skin Shortcuts — V3: type=buildxml only, no mainmenuID/group params -->
+	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml)</onload>
 
 	<!-- Signal Home is ready -->
 	<onload>SetProperty(Madnox.SkinReady,True,Home)</onload>
@@ -26,16 +26,25 @@
 	<!-- Reset vertical submenu state on every Home load -->
 	<onload>ClearProperty(VertSubOpen,Home)</onload>
 
+	<!-- Default the carousel to widget slot 1 so it renders at rest (not just after entering widgets) -->
+	<onload>SetProperty(WidgetActiveSlot,.1,Home)</onload>
+	<!-- WidgetActiveSlotNum mirrors WidgetActiveSlot without the dot prefix so it can be used in -->
+	<!-- runtime SetFocus ID construction: "1600" + WidgetActiveSlotNum + mainmenuid = panel id.  -->
+	<onload>SetProperty(WidgetActiveSlotNum,1,Home)</onload>
+
 	<!-- TMDb validation: only on first Home load per session -->
 	<onload condition="System.HasAddon(script.skin.madnox) + !System.AddonIsEnabled(plugin.video.themoviedb.helper) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxTMDbCheck,RunScript(script.skin.madnox,action=validate_tmdb_helper),00:00:04,true,true)</onload>
 
 	<!-- Optional extras: only on first Home load per session -->
 	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxExtrasDelay,RunScript(script.skin.madnox,action=install_extras),00:00:05,true,true)</onload>
 
+	<!-- Widget setup: fires once if no v3 userdata.json found; last in sequence -->
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Widgets_Initialized) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxWidgetCheck,RunScript(script.skin.madnox,action=check_widgets),00:00:07,true,true)</onload>
+
 	<!-- Stamp this session so the above one-shot blocks don't re-fire on return -->
 	<onload>SetProperty(Madnox.HomeInitDone,true,Home)</onload>
 
-	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
+	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml)</onunload>
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
 
 	<controls>
@@ -49,13 +58,13 @@
 		<control type="wraplist" id="7001">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(background),playlist) | String.IsEqual(Container(9000).ListItem.Property(coverBackground),fanart)</visible>
 			<include>HiddenList</include>
-			<content limit="10">$INFO[Container(9000).ListItem.Property(backgroundPlaylist)]</content>
+			<content limit="10">$INFO[Container(9000).ListItem.Property(backgroundPath)]</content>
 		</control>
 
 		<control type="wraplist" id="7003">
 			<visible>String.IsEqual(Container(9001).ListItem.Property(background),playlist) | String.IsEqual(Container(9001).ListItem.Property(coverBackground),fanart)</visible>
 			<include>HiddenList</include>
-			<content limit="10">$INFO[Container(9001).ListItem.Property(backgroundPlaylist)]</content>
+			<content limit="10">$INFO[Container(9001).ListItem.Property(backgroundPath)]</content>
 		</control>
 
 		<control type="fadelabel" id="7002">
@@ -931,6 +940,18 @@
 
 				<!-- 3. Vertical Mode MEDIA: Stays at the bottom (0,0 relative to base) when media plays -->
 				<animation effect="slide" start="0,0" end="0,0" time="300" easing="out" tween="sine" condition="Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable) + Skin.HasSetting(MainMenuVertical)">Conditional</animation>
+
+				<!-- Widget info overlay: rendered BEFORE the panels so its gradient glow sits   -->
+				<!-- behind the poster art. The text group positions at the top of the screen    -->
+				<!-- and doesn't overlap the panels, so draw order doesn't affect readability.   -->
+				<!-- One instance covers all slots — $INFO[ListItem.*] follows the focused panel.-->
+				<include content="WidgetInfo">
+					<param name="label">$VAR[ActiveWidgetLabelVar]</param>
+					<param name="infoposition">490</param>
+					<param name="infovisible">true</param>
+					<param name="visible">true</param>
+				</include>
+
 				<include>skinshortcuts-template-widget1</include>
 				<include>skinshortcuts-template-widget2</include>
 				<include>skinshortcuts-template-widget3</include>
@@ -951,6 +972,15 @@
 				<include>skinshortcuts-template-widget18</include>
 				<include>skinshortcuts-template-widget19</include>
 				<include>skinshortcuts-template-widget20</include>
+				<!-- NOTE: System and weather widgets are now per-item panels (Omega-faithful) included  -->
+				<!-- via widget1-20 above. No standalone build="true" panel includes needed here.    -->
+			</control>
+
+			<!-- Chevron button: top=40/right=30 in WidgetNextButton places this at the        -->
+			<!-- top-right corner of the screen. Stays outside 90010 so SetFocus(90010)     -->
+			<!-- in onclick correctly restores the last-focused carousel panel.             -->
+			<control type="button" id="1607">
+				<include>WidgetNextButton</include>
 			</control>
 
 			<!-- New Grid Widgets -->
@@ -1118,7 +1148,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.1)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.1)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1126,7 +1156,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9901" />
 							<param name="slotnum" value="1" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.1)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.1)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),true)" />
 							<param name="labelvar" value="GridSlot1Label" />
@@ -1142,7 +1172,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.1)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.1)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1150,7 +1180,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9901" />
 							<param name="slotnum" value="1" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.1)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.1)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),true)" />
 							<param name="labelvar" value="GridSlot1Label" />
@@ -1166,7 +1196,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.1)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.1)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.1),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1174,7 +1204,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9901" />
 							<param name="slotnum" value="1" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.1)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.1)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.1),true)" />
 							<param name="labelvar" value="GridSlot1Label" />
@@ -1191,7 +1221,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.2)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.2)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1199,7 +1229,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9902" />
 							<param name="slotnum" value="2" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.2)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.2)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),true)" />
 							<param name="labelvar" value="GridSlot2Label" />
@@ -1215,7 +1245,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.2)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.2)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1223,7 +1253,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9902" />
 							<param name="slotnum" value="2" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.2)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.2)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),true)" />
 							<param name="labelvar" value="GridSlot2Label" />
@@ -1239,7 +1269,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.2)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.2)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.2),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1247,7 +1277,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9902" />
 							<param name="slotnum" value="2" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.2)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.2)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.2),true)" />
 							<param name="labelvar" value="GridSlot2Label" />
@@ -1264,7 +1294,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.3)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.3)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1272,7 +1302,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9903" />
 							<param name="slotnum" value="3" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.3)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.3)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),true)" />
 							<param name="labelvar" value="GridSlot3Label" />
@@ -1288,7 +1318,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.3)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.3)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1296,7 +1326,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9903" />
 							<param name="slotnum" value="3" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.3)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.3)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),true)" />
 							<param name="labelvar" value="GridSlot3Label" />
@@ -1312,7 +1342,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.3)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.3)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.3),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1320,7 +1350,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9903" />
 							<param name="slotnum" value="3" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.3)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.3)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.3),true)" />
 							<param name="labelvar" value="GridSlot3Label" />
@@ -1337,7 +1367,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.4)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.4)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1345,7 +1375,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9904" />
 							<param name="slotnum" value="4" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.4)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.4)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),true)" />
 							<param name="labelvar" value="GridSlot4Label" />
@@ -1361,7 +1391,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.4)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.4)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1369,7 +1399,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9904" />
 							<param name="slotnum" value="4" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.4)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.4)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),true)" />
 							<param name="labelvar" value="GridSlot4Label" />
@@ -1385,7 +1415,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.4)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.4)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.4),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1393,7 +1423,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9904" />
 							<param name="slotnum" value="4" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.4)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.4)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.4),true)" />
 							<param name="labelvar" value="GridSlot4Label" />
@@ -1410,7 +1440,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.5)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.5)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1418,7 +1448,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9905" />
 							<param name="slotnum" value="5" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.5)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.5)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),true)" />
 							<param name="labelvar" value="GridSlot5Label" />
@@ -1434,7 +1464,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.5)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.5)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1442,7 +1472,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9905" />
 							<param name="slotnum" value="5" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.5)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.5)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),true)" />
 							<param name="labelvar" value="GridSlot5Label" />
@@ -1458,7 +1488,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.5)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.5)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.5),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1466,7 +1496,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9905" />
 							<param name="slotnum" value="5" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.5)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.5)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.5),true)" />
 							<param name="labelvar" value="GridSlot5Label" />
@@ -1483,7 +1513,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.6)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.6)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1491,7 +1521,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9906" />
 							<param name="slotnum" value="6" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.6)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.6)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),true)" />
 							<param name="labelvar" value="GridSlot6Label" />
@@ -1507,7 +1537,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.6)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.6)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1515,7 +1545,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9906" />
 							<param name="slotnum" value="6" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.6)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.6)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),true)" />
 							<param name="labelvar" value="GridSlot6Label" />
@@ -1531,7 +1561,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.6)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.6)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.6),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1539,7 +1569,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9906" />
 							<param name="slotnum" value="6" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.6)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.6)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.6),true)" />
 							<param name="labelvar" value="GridSlot6Label" />
@@ -1556,7 +1586,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.7)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.7)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1564,7 +1594,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9907" />
 							<param name="slotnum" value="7" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.7)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.7)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),true)" />
 							<param name="labelvar" value="GridSlot7Label" />
@@ -1580,7 +1610,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.7)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.7)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1588,7 +1618,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9907" />
 							<param name="slotnum" value="7" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.7)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.7)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),true)" />
 							<param name="labelvar" value="GridSlot7Label" />
@@ -1604,7 +1634,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.7)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.7)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.7),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1612,7 +1642,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9907" />
 							<param name="slotnum" value="7" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.7)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.7)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.7),true)" />
 							<param name="labelvar" value="GridSlot7Label" />
@@ -1629,7 +1659,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.8)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.8)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1637,7 +1667,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9908" />
 							<param name="slotnum" value="8" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.8)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.8)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),true)" />
 							<param name="labelvar" value="GridSlot8Label" />
@@ -1653,7 +1683,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.8)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.8)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1661,7 +1691,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9908" />
 							<param name="slotnum" value="8" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.8)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.8)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),true)" />
 							<param name="labelvar" value="GridSlot8Label" />
@@ -1677,7 +1707,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.8)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.8)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.8),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1685,7 +1715,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9908" />
 							<param name="slotnum" value="8" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.8)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.8)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.8),true)" />
 							<param name="labelvar" value="GridSlot8Label" />
@@ -1702,7 +1732,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.9)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.9)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1710,7 +1740,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9909" />
 							<param name="slotnum" value="9" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.9)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.9)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),true)" />
 							<param name="labelvar" value="GridSlot9Label" />
@@ -1726,7 +1756,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.9)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.9)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1734,7 +1764,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9909" />
 							<param name="slotnum" value="9" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.9)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.9)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),true)" />
 							<param name="labelvar" value="GridSlot9Label" />
@@ -1750,7 +1780,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.9)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.9)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.9),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1758,7 +1788,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9909" />
 							<param name="slotnum" value="9" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.9)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.9)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.9),true)" />
 							<param name="labelvar" value="GridSlot9Label" />
@@ -1775,7 +1805,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.10)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.10)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1783,7 +1813,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9910" />
 							<param name="slotnum" value="10" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.10)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.10)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),true)" />
 							<param name="labelvar" value="GridSlot10Label" />
@@ -1799,7 +1829,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.10)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.10)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1807,7 +1837,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9910" />
 							<param name="slotnum" value="10" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.10)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.10)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),true)" />
 							<param name="labelvar" value="GridSlot10Label" />
@@ -1823,7 +1853,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.10)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.10)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.10),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1831,7 +1861,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9910" />
 							<param name="slotnum" value="10" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.10)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.10)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.10),true)" />
 							<param name="labelvar" value="GridSlot10Label" />
@@ -1848,7 +1878,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.11)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.11)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1856,7 +1886,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9911" />
 							<param name="slotnum" value="11" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.11)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.11)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),true)" />
 							<param name="labelvar" value="GridSlot11Label" />
@@ -1872,7 +1902,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.11)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.11)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1880,7 +1910,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9911" />
 							<param name="slotnum" value="11" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.11)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.11)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),true)" />
 							<param name="labelvar" value="GridSlot11Label" />
@@ -1896,7 +1926,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.11)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.11)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.11),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1904,7 +1934,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9911" />
 							<param name="slotnum" value="11" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.11)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.11)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.11),true)" />
 							<param name="labelvar" value="GridSlot11Label" />
@@ -1921,7 +1951,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.12)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.12)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -1929,7 +1959,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9912" />
 							<param name="slotnum" value="12" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.12)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.12)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),true)" />
 							<param name="labelvar" value="GridSlot12Label" />
@@ -1945,7 +1975,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.12)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.12)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -1953,7 +1983,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9912" />
 							<param name="slotnum" value="12" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.12)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.12)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),true)" />
 							<param name="labelvar" value="GridSlot12Label" />
@@ -1969,7 +1999,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.12)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.12)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.12),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -1977,7 +2007,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9912" />
 							<param name="slotnum" value="12" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.12)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.12)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.12),true)" />
 							<param name="labelvar" value="GridSlot12Label" />
@@ -1994,7 +2024,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.13)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.13)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2002,7 +2032,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9913" />
 							<param name="slotnum" value="13" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.13)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.13)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),true)" />
 							<param name="labelvar" value="GridSlot13Label" />
@@ -2018,7 +2048,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.13)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.13)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2026,7 +2056,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9913" />
 							<param name="slotnum" value="13" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.13)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.13)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),true)" />
 							<param name="labelvar" value="GridSlot13Label" />
@@ -2042,7 +2072,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.13)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.13)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.13),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2050,7 +2080,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9913" />
 							<param name="slotnum" value="13" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.13)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.13)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.13),true)" />
 							<param name="labelvar" value="GridSlot13Label" />
@@ -2067,7 +2097,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.14)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.14)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2075,7 +2105,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9914" />
 							<param name="slotnum" value="14" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.14)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.14)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),true)" />
 							<param name="labelvar" value="GridSlot14Label" />
@@ -2091,7 +2121,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.14)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.14)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2099,7 +2129,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9914" />
 							<param name="slotnum" value="14" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.14)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.14)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),true)" />
 							<param name="labelvar" value="GridSlot14Label" />
@@ -2115,7 +2145,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.14)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.14)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.14),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2123,7 +2153,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9914" />
 							<param name="slotnum" value="14" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.14)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.14)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.14),true)" />
 							<param name="labelvar" value="GridSlot14Label" />
@@ -2140,7 +2170,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.15)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.15)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2148,7 +2178,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9915" />
 							<param name="slotnum" value="15" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.15)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.15)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),true)" />
 							<param name="labelvar" value="GridSlot15Label" />
@@ -2164,7 +2194,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.15)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.15)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2172,7 +2202,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9915" />
 							<param name="slotnum" value="15" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.15)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.15)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),true)" />
 							<param name="labelvar" value="GridSlot15Label" />
@@ -2188,7 +2218,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.15)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.15)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.15),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2196,7 +2226,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9915" />
 							<param name="slotnum" value="15" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.15)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.15)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.15),true)" />
 							<param name="labelvar" value="GridSlot15Label" />
@@ -2213,7 +2243,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.16)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.16)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2221,7 +2251,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9916" />
 							<param name="slotnum" value="16" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.16)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.16)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),true)" />
 							<param name="labelvar" value="GridSlot16Label" />
@@ -2237,7 +2267,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.16)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.16)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2245,7 +2275,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9916" />
 							<param name="slotnum" value="16" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.16)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.16)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),true)" />
 							<param name="labelvar" value="GridSlot16Label" />
@@ -2261,7 +2291,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.16)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.16)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.16),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2269,7 +2299,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9916" />
 							<param name="slotnum" value="16" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.16)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.16)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.16),true)" />
 							<param name="labelvar" value="GridSlot16Label" />
@@ -2286,7 +2316,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.17)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.17)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2294,7 +2324,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9917" />
 							<param name="slotnum" value="17" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.17)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.17)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),true)" />
 							<param name="labelvar" value="GridSlot17Label" />
@@ -2310,7 +2340,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.17)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.17)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2318,7 +2348,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9917" />
 							<param name="slotnum" value="17" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.17)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.17)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),true)" />
 							<param name="labelvar" value="GridSlot17Label" />
@@ -2334,7 +2364,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.17)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.17)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.17),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2342,7 +2372,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9917" />
 							<param name="slotnum" value="17" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.17)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.17)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.17),true)" />
 							<param name="labelvar" value="GridSlot17Label" />
@@ -2359,7 +2389,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.18)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.18)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2367,7 +2397,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9918" />
 							<param name="slotnum" value="18" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.18)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.18)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),true)" />
 							<param name="labelvar" value="GridSlot18Label" />
@@ -2383,7 +2413,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.18)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.18)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2391,7 +2421,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9918" />
 							<param name="slotnum" value="18" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.18)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.18)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),true)" />
 							<param name="labelvar" value="GridSlot18Label" />
@@ -2407,7 +2437,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.18)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.18)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.18),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2415,7 +2445,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9918" />
 							<param name="slotnum" value="18" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.18)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.18)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.18),true)" />
 							<param name="labelvar" value="GridSlot18Label" />
@@ -2432,7 +2462,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.19)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.19)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2440,7 +2470,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9919" />
 							<param name="slotnum" value="19" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.19)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.19)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),true)" />
 							<param name="labelvar" value="GridSlot19Label" />
@@ -2456,7 +2486,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.19)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.19)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2464,7 +2494,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9919" />
 							<param name="slotnum" value="19" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.19)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.19)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),true)" />
 							<param name="labelvar" value="GridSlot19Label" />
@@ -2480,7 +2510,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.19)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.19)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.19),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2488,7 +2518,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9919" />
 							<param name="slotnum" value="19" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.19)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.19)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.19),true)" />
 							<param name="labelvar" value="GridSlot19Label" />
@@ -2505,7 +2535,7 @@
 				<control type="group">
 					<width>420</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.20)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),big)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.20)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),big)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>420</width>
@@ -2513,7 +2543,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9920" />
 							<param name="slotnum" value="20" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.20)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.20)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),true)" />
 							<param name="labelvar" value="GridSlot20Label" />
@@ -2529,7 +2559,7 @@
 				<control type="group">
 					<width>310</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.20)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),small)]</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.20)) + ![String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),big) | String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),small)]</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>310</width>
@@ -2537,7 +2567,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9920" />
 							<param name="slotnum" value="20" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.20)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.20)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),true)" />
 							<param name="labelvar" value="GridSlot20Label" />
@@ -2553,7 +2583,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>470</height>
-					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetName.20)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),small)</visible>
+					<visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetLabel.20)) + String.IsEqual(Container(9000).ListItem.Property(widgetStyle.20),small)</visible>
 					<control type="group">
 						<bottom>0</bottom>
 						<width>220</width>
@@ -2561,7 +2591,7 @@
 						<include content="SystemGridButton">
 							<param name="id" value="9920" />
 							<param name="slotnum" value="20" />
-							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetName.20)]" />
+							<param name="title" value="$INFO[Container(9000).ListItem.Property(widgetLabel.20)]" />
 							<param name="titlevisible" value="!String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),false)" />
 							<param name="sublabelvisible" value="String.IsEqual(Container(9000).ListItem.Property(widgetLabel.20),true)" />
 							<param name="labelvar" value="GridSlot20Label" />
@@ -2615,7 +2645,8 @@
 			<param name="contentvisible">true</param>
 			<param name="commontopvisible">false</param>
 			<param name="content">MediaMenuHome</param>
-			<param name="navigationid">9000</param>
+			<!-- Return through 9011 (clears VertSubOpen/VertShortcutOpen) so backing out collapses the chain -->
+			<param name="navigationid">9011</param>
 		</include>
 	</controls>
 </window>

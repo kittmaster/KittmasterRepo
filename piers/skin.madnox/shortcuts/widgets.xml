@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	widgets.xml - migrated from v2 overrides.xml <widget-groupings> (lines 78-268)
+
+	MIGRATION NOTES (read before editing):
+	- v2 <node label="X"> .................... -> v3 <group name="..." label="X">
+	- v2 <shortcut ...>path</shortcut> ....... -> v3 <widget ...><path>path</path></widget>
+	- v2 widget="KIND" (the widget kind) ..... -> v3 source="..." (output property: widgetSource)
+	      library  -> library      tmdb -> addon       pvr -> pvr
+	      addon    -> addon        favourites -> favourites
+	      (.xsp playlists were widget="library" in v2; kept as source="library" to match
+	       v2 artwork handling, which treats library and playlist identically)
+	- v2 widgetType="..." ................... -> v3 type="..."   (output property: widgetType)
+	- v2 widgetTarget="..." .................. -> v3 target="..." (output property: widgetTarget)
+	- v2 condition="..." (Kodi runtime) ...... -> v3 visible="..." (runtime visibility)
+	- v2 icon="..." .......................... -> v3 icon="..." (kept verbatim)
+	- v2 label="123"/$ADDON[]/$LOCALIZE[] .... kept verbatim (skinshortcuts auto-localizes numeric IDs)
+
+	WATCH-POINTS (preserved v2 values that fall outside the documented v3 enum; flagged, not changed):
+	- target="pvr"   on Live TV / Radio channel + timer widgets (v2 used widgetTarget=pvr)
+	- target="games" on the Games add-on widget       (v2 used widgetTarget=games)
+	  -> If v3 rejects these, the documented equivalents are tv/radio and programs respectively.
+
+	DEFERRED TO templates.xml PHASE (info-kind widgets whose v2 "path" is a $INCLUDE template,
+	not a real content path). Marked inline below with "DEFERRED" comments so the picker
+	structure is preserved. They re-enter once we decide the v3 template strategy:
+	    Live TV   -> TVRecordings
+	    Radio     -> RadioRecordings
+	    Weather   -> WeatherContentDaily / WeatherContentHourly / (WeatherContent36Hour, was commented out)
+	    System    -> SystemContent/CPU/Memory/Storage/Network/Uptime/Battery/Video/PVR/Version
+	    Favourites-> CustomFavouriteContent / CustomFavouriteAddonContent
+-->
+<widgets>
+
+	<!-- ============================================================ -->
+	<!-- Streaming Studios  (v2 label: $ADDON[plugin.video.themoviedb.helper 32174]) -->
+	<!-- ============================================================ -->
+	<group name="studios" label="$ADDON[plugin.video.themoviedb.helper 32174]" icon="icons/addons/tmdb.png">
+		<!-- Movie Studios (Disney, WB, etc) -->
+		<widget name="studios-movie-studios" label="$ADDON[plugin.video.themoviedb.helper 32190]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=all_studios&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- TV Networks (HBO, Netflix, etc) -->
+		<widget name="studios-tv-networks" label="$ADDON[plugin.video.themoviedb.helper 32189]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=all_networks&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- Movie Genres -->
+		<widget name="studios-movie-genres" label="$LOCALIZE[135]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=genres&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Watch Providers (Netflix, Hulu, etc) -->
+		<widget name="studios-watch-providers" label="$ADDON[plugin.video.themoviedb.helper 32411]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;type=movie&amp;widget=True</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Movies  (v2 label: 342) -->
+	<!-- ============================================================ -->
+	<group name="movies" label="342" icon="icons/addons/kodi.png">
+		<widget name="movies-inprogress" label="575" type="movies" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(movies)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/inprogress.xsp</path>
+		</widget>
+		<widget name="movies-recentlyadded" label="20382" type="movies" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(movies)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/recentlyadded.xsp</path>
+		</widget>
+		<widget name="movies-recentlyadded-watched" label="31386" type="movies" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(movies)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/recentlyadded(includewatched).xsp</path>
+		</widget>
+		<!-- Trending Movies (Day) -->
+		<widget name="movies-trending-day" label="$ADDON[plugin.video.themoviedb.helper 32178]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Trending Movies (Week) -->
+		<widget name="movies-trending-week" label="$ADDON[plugin.video.themoviedb.helper 32179]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=trending_week&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Popular Movies -->
+		<widget name="movies-popular" label="$ADDON[plugin.video.themoviedb.helper 32175]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=popular&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Top Rated Movies -->
+		<widget name="movies-top-rated" label="$ADDON[plugin.video.themoviedb.helper 32176]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=top_rated&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Upcoming Movies -->
+		<widget name="movies-upcoming" label="$ADDON[plugin.video.themoviedb.helper 32177]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=upcoming&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Now Playing (In Theatres) -->
+		<widget name="movies-now-playing" label="$ADDON[plugin.video.themoviedb.helper 32180]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=now_playing&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Highest Revenue -->
+		<widget name="movies-revenue" label="$ADDON[plugin.video.themoviedb.helper 32184]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=revenue_movies&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Most Voted Movies -->
+		<widget name="movies-most-voted" label="$ADDON[plugin.video.themoviedb.helper 32185]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=most_voted&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<!-- Movie Collections (Displays folders of sets) -->
+		<widget name="movies-collections" label="$ADDON[plugin.video.themoviedb.helper 32187]" type="movies" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=all_collections&amp;type=movie&amp;widget=True</path>
+		</widget>
+		<widget name="movies-top250" label="13409" type="movies" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(movies)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/top250.xsp</path>
+		</widget>
+		<widget name="movies-sets" label="20434" type="movies" target="videos" source="library" icon="icons/addons/kodi.png" visible="Library.HasContent(movies)">
+			<path>library://video/01movies/sets.xml/</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Episodes  (v2 label: 20360) -->
+	<!-- ============================================================ -->
+	<group name="episodes" label="20360" icon="icons/addons/kodi.png">
+		<widget name="episodes-recentlyadded" label="20382" type="episodes" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(tvshows)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyadded.xsp</path>
+		</widget>
+		<widget name="episodes-recentlyadded-watched" label="31386" type="episodes" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(tvshows)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyadded(includewatched).xsp</path>
+		</widget>
+		<widget name="episodes-recentlyreleased" label="31204" type="episodes" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(tvshows)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyreleased.xsp</path>
+		</widget>
+		<widget name="episodes-recentlyreleased-watched" label="31387" type="episodes" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(tvshows)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/02episodes/recentlyreleased(includewatched).xsp</path>
+		</widget>
+		<!-- In Progress Episodes (Your In-Progress) -->
+		<widget name="episodes-inprogress" label="$ADDON[plugin.video.themoviedb.helper 32196]" type="episodes" target="videos" source="library" icon="icons/addons/tmdb.png" visible="Library.HasContent(tvshows)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=inprogress&amp;type=episode&amp;widget=True</path>
+		</widget>
+		<!-- Next Up (Your Next Episodes) -->
+		<widget name="episodes-nextup" label="$ADDON[plugin.video.themoviedb.helper 32197]" type="episodes" target="videos" source="library" icon="icons/addons/tmdb.png" visible="Library.HasContent(tvshows)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=library_nextup&amp;widget=True</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- TV Shows  (v2 label: 20343) -->
+	<!-- ============================================================ -->
+	<group name="tvshows" label="20343" icon="icons/addons/kodi.png">
+		<widget name="tvshows-recentlyadded" label="20382" type="tvshows" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(tvshows)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/03tvshows/recentlyadded.xsp</path>
+		</widget>
+		<widget name="tvshows-inprogress" label="575" type="tvshows" target="videos" source="library" icon="icons/addons/kodi.png" visible="Library.HasContent(tvshows)">
+			<path>videodb://inprogresstvshows/</path>
+		</widget>
+		<!-- Trending TV (Day) -->
+		<widget name="tvshows-trending-day" label="$ADDON[plugin.video.themoviedb.helper 32178]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- Trending TV (Week) -->
+		<widget name="tvshows-trending-week" label="$ADDON[plugin.video.themoviedb.helper 32179]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=trending_week&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- Popular TV -->
+		<widget name="tvshows-popular" label="$ADDON[plugin.video.themoviedb.helper 32175]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=popular&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- Top Rated TV -->
+		<widget name="tvshows-top-rated" label="$ADDON[plugin.video.themoviedb.helper 32176]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=top_rated&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- Airing Today -->
+		<widget name="tvshows-airing-today" label="$ADDON[plugin.video.themoviedb.helper 32181]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=airing_today&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- On The Air (Currently Airing) -->
+		<widget name="tvshows-on-the-air" label="$ADDON[plugin.video.themoviedb.helper 32182]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=on_the_air&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- Most Voted TV -->
+		<widget name="tvshows-most-voted" label="$ADDON[plugin.video.themoviedb.helper 32185]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=most_voted&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+		<!-- Airing Next (Based on your library) -->
+		<widget name="tvshows-airingnext" label="$ADDON[plugin.video.themoviedb.helper 32458]" type="tvshows" target="videos" source="addon" icon="icons/addons/tmdb.png" visible="System.HasAddon(plugin.video.themoviedb.helper)">
+			<path>plugin://plugin.video.themoviedb.helper/?info=library_airingnext&amp;type=tvshow&amp;widget=True</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Live TV  (v2 label: 31173) -->
+	<!-- ============================================================ -->
+	<group name="livetv" label="31173" icon="icons/addons/kodi.png">
+		<!-- TV Recordings info widget: template fires on widgetType=tvrecordings -->
+		<widget name="livetv-recordings-widget" label="19025" type="tvrecordings" target="pvr" source="info" icon="icons/addons/kodi.png" visible="Pvr.HasTVChannels">
+			<path>skinshortcuts-template-TVRecordings</path>
+		</widget>
+		<widget name="livetv-channels" label="10700" type="tv" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasTVChannels">
+			<path>pvr://channels/tv/*</path>
+		</widget>
+		<widget name="livetv-lastplayed" label="568" type="tv" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasTVChannels">
+			<path>pvr://channels/tv/*?view=lastplayed</path>
+		</widget>
+		<widget name="livetv-recordings-active" label="19017" type="tv" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasTVChannels">
+			<path>pvr://recordings/tv/active</path>
+		</widget>
+		<widget name="livetv-timers" label="10703" type="tv" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasTVChannels">
+			<path>pvr://timers/tv/timers</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Radio  (v2 label: 19021) -->
+	<!-- ============================================================ -->
+	<group name="radio" label="19021" icon="icons/addons/kodi.png">
+		<!-- Radio Recordings info widget: template fires on widgetType=radiorecordings -->
+		<widget name="radio-recordings-widget" label="19025" type="radiorecordings" target="pvr" source="info" icon="icons/addons/kodi.png" visible="Pvr.HasRadioChannels">
+			<path>skinshortcuts-template-RadioRecordings</path>
+		</widget>
+		<widget name="radio-channels" label="19024" type="radio" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasRadioChannels">
+			<path>pvr://channels/radio/*</path>
+		</widget>
+		<widget name="radio-lastplayed" label="568" type="radio" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasRadioChannels">
+			<path>pvr://channels/radio/*?view=lastplayed</path>
+		</widget>
+		<widget name="radio-recordings-active" label="19017" type="radio" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasRadioChannels">
+			<path>pvr://recordings/radio/active</path>
+		</widget>
+		<!-- NOTE: v2 condition on this timer widget was Pvr.HasTVChannels (preserved verbatim, looks like an upstream typo for HasRadioChannels) -->
+		<widget name="radio-timers" label="10708" type="radio" target="pvr" source="pvr" icon="icons/addons/kodi.png" visible="Pvr.HasTVChannels">
+			<path>pvr://timers/radio/timers</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Albums  (v2 label: 132) -->
+	<!-- ============================================================ -->
+	<group name="albums" label="132" icon="icons/addons/kodi-pl.png">
+		<widget name="albums-recentlyadded" label="20382" type="albums" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/recentlyadded.xsp</path>
+		</widget>
+		<widget name="albums-recentlyreleased" label="31204" type="albums" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/recentlyreleased.xsp</path>
+		</widget>
+		<widget name="albums-mostplayed" label="31206" type="albums" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/mostplayed.xsp</path>
+		</widget>
+		<widget name="albums-random" label="590" type="albums" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/05albums/random.xsp</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Artists  (v2 label: 133) -->
+	<!-- ============================================================ -->
+	<group name="artists" label="133" icon="icons/addons/kodi-pl.png">
+		<widget name="artists-recentlyadded" label="20382" type="artists" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/06artists/recentlyadded.xsp</path>
+		</widget>
+		<widget name="artists-random" label="590" type="artists" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/06artists/random.xsp</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Songs  (v2 label: 134) -->
+	<!-- ============================================================ -->
+	<group name="songs" label="134" icon="icons/addons/kodi-pl.png">
+		<widget name="songs-recentlyadded" label="20382" type="songs" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/recentlyadded.xsp</path>
+		</widget>
+		<widget name="songs-recentlyreleased" label="31204" type="songs" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/recentlyreleased.xsp</path>
+		</widget>
+		<widget name="songs-mostplayed" label="31206" type="songs" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/mostplayed.xsp</path>
+		</widget>
+		<widget name="songs-random" label="590" type="songs" target="music" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(music)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/07songs/random.xsp</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Music Videos  (v2 label: 20389) -->
+	<!-- ============================================================ -->
+	<group name="musicvideos" label="20389" icon="icons/addons/kodi-pl.png">
+		<widget name="musicvideos-recentlyadded" label="20382" type="musicvideos" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(musicvideos)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/recentlyadded.xsp</path>
+		</widget>
+		<widget name="musicvideos-inprogress" label="575" type="musicvideos" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(musicvideos)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/inprogress.xsp</path>
+		</widget>
+		<widget name="musicvideos-mostplayed" label="31206" type="musicvideos" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(musicvideos)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/mostplayed.xsp</path>
+		</widget>
+		<widget name="musicvideos-recommended" label="31205" type="musicvideos" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(musicvideos)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/recommended.xsp</path>
+		</widget>
+		<widget name="musicvideos-random" label="590" type="musicvideos" target="videos" source="library" icon="icons/addons/kodi-pl.png" visible="Library.HasContent(musicvideos)">
+			<path>special://home/addons/resource.images.skin.madnox/resources/playlists/04musicvideos/random.xsp</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Pictures  (v2 label: 31418) - dynamic content only -->
+	<!-- v2: <content>picturesources</content> -->
+	<!-- ============================================================ -->
+	<group name="pictures" label="31418" icon="DefaultPicture.png">
+		<content source="sources" target="pictures" />
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Games  (v2 label: $LOCALIZE[10821]) -->
+	<!-- ============================================================ -->
+	<group name="games" label="$LOCALIZE[10821]" icon="DefaultAddonGame.png">
+		<widget name="games-addons" label="35049" type="games" target="games" source="addon">
+			<path>addons://sources/game/</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Add-ons  (v2 label: 24001) - nested nodes + browse shortcuts -->
+	<!-- ============================================================ -->
+	<group name="addons" label="24001" icon="DefaultAddon.png">
+		<group name="addons-video" label="14215">
+			<content source="addons" target="videos" />
+		</group>
+		<group name="addons-audio" label="14221">
+			<content source="addons" target="music" />
+		</group>
+		<group name="addons-image" label="14217">
+			<content source="addons" target="pictures" />
+		</group>
+		<group name="addons-program" label="10506">
+			<content source="addons" target="programs" />
+		</group>
+		<widget name="addons-program-source" label="10506" type="program" target="program" source="addon">
+			<path>addons://sources/executable</path>
+		</widget>
+		<widget name="addons-video-source" label="14215" type="video" target="videos" source="addon">
+			<path>addons://sources/video</path>
+		</widget>
+		<widget name="addons-music-source" label="14221" type="music" target="music" source="addon">
+			<path>addons://sources/audio</path>
+		</widget>
+		<widget name="addons-picture-source" label="14217" type="picture" target="pictures" source="addon">
+			<path>addons://sources/image</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Video Library  (v2 label: 32030) -->
+	<!-- v2: <content>video</content> + nested playlist-video + videosources -->
+	<!-- ============================================================ -->
+	<group name="videolibrary" label="32030" icon="DefaultVideo.png">
+		<content source="nodes" target="videos" />
+		<group name="videolibrary-playlists" label="559">
+			<content source="playlists" target="videos" />
+		</group>
+		<group name="videolibrary-sources" label="39030">
+			<content source="sources" target="videos" />
+		</group>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Music Library  (v2 label: 14237) -->
+	<!-- v2: <content>music</content> + nested playlist-audio + musicsources -->
+	<!-- ============================================================ -->
+	<group name="musiclibrary" label="14237" icon="DefaultMusicAlbums.png">
+		<content source="nodes" target="music" />
+		<group name="musiclibrary-playlists" label="559">
+			<content source="playlists" target="music" />
+		</group>
+		<group name="musiclibrary-sources" label="39030">
+			<content source="sources" target="music" />
+		</group>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Playlists  (v2 label: 136) -->
+	<!-- v2: <content>playlist-video</content> + <content>playlist-audio</content> -->
+	<!-- ============================================================ -->
+	<group name="playlists" label="136" icon="DefaultPlaylist.png">
+		<content source="playlists" target="videos" />
+		<content source="playlists" target="music" />
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Weather  (v2 label: 8) -->
+	<!-- ============================================================ -->
+	<group name="weather" label="8" icon="icons/addons/weathericons.png">
+		<!-- Daily forecast: template fires on widgetType=weatherinfodaily -->
+		<widget name="weather-daily" label="31090" type="weatherinfodaily" target="videos" source="info" icon="icons/addons/weathericons.png" visible="!String.IsEmpty(Weather.Plugin)">
+			<path>skinshortcuts-template-WeatherContentDaily</path>
+		</widget>
+		<!-- Hourly forecast: template fires on widgetType=weatherinfohourly -->
+		<widget name="weather-hourly" label="33036" type="weatherinfohourly" target="videos" source="info" icon="icons/addons/weathericons.png" visible="!String.IsEmpty(Weather.Plugin)">
+			<path>skinshortcuts-template-WeatherContentHourly</path>
+		</widget>
+		<!-- 36-Hour forecast: commented out in v2, preserved here for future use -->
+		<!-- <widget name="weather-36hour" label="33034" type="weatherinfo36hour" target="videos" source="info" icon="icons/addons/weathericons.png" visible="!String.IsEmpty(Weather.Plugin)">
+			<path>skinshortcuts-template-WeatherContent36Hour</path>
+		</widget> -->
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- System Info  (v2 label: 130) -->
+	<!-- All entries use type="system"; the single SystemContent template renders -->
+	<!-- a consolidated system info panel for whichever entry the user selects.  -->
+	<!-- ============================================================ -->
+	<group name="system" label="130" icon="icons/systeminfo/icons/system.png">
+		<widget name="system-general" label="System General" type="system" target="videos" source="info" icon="icons/systeminfo/icons/system.png">
+			<path>skinshortcuts-template-SystemContent</path>
+		</widget>
+		<widget name="system-cpu" label="CPU" type="system" target="videos" source="info" icon="icons/systeminfo/icons/cpu.png">
+			<path>skinshortcuts-template-SystemCPU</path>
+		</widget>
+		<widget name="system-memory" label="Memory" type="system" target="videos" source="info" icon="icons/systeminfo/icons/memory.png">
+			<path>skinshortcuts-template-SystemMemory</path>
+		</widget>
+		<widget name="system-storage" label="Storage" type="system" target="videos" source="info" icon="icons/systeminfo/icons/storage.png">
+			<path>skinshortcuts-template-SystemStorage</path>
+		</widget>
+		<widget name="system-network" label="Network" type="system" target="videos" source="info" icon="icons/systeminfo/icons/connected.png">
+			<path>skinshortcuts-template-SystemNetwork</path>
+		</widget>
+		<widget name="system-uptime" label="Uptime" type="system" target="videos" source="info" icon="icons/systeminfo/icons/uptime.png">
+			<path>skinshortcuts-template-SystemUptime</path>
+		</widget>
+		<widget name="system-battery" label="Battery" type="system" target="videos" source="info" icon="icons/systeminfo/icons/battery100.png" visible="!String.IsEqual(System.BatteryLevel,Not present)">
+			<path>skinshortcuts-template-SystemBattery</path>
+		</widget>
+		<widget name="system-video" label="Video" type="system" target="videos" source="info" icon="icons/systeminfo/icons/video.png">
+			<path>skinshortcuts-template-SystemVideo</path>
+		</widget>
+		<widget name="system-pvr" label="PVR" type="system" target="videos" source="info" icon="icons/systeminfo/icons/pvr.png" visible="System.HasPVRAddon">
+			<path>skinshortcuts-template-SystemPVR</path>
+		</widget>
+		<widget name="system-version" label="Version" type="system" target="videos" source="info" icon="icons/systeminfo/icons/system.png">
+			<path>skinshortcuts-template-SystemVersion</path>
+		</widget>
+	</group>
+
+	<!-- ============================================================ -->
+	<!-- Favourites  (v2 label: 1036) -->
+	<!-- ============================================================ -->
+	<group name="favourites" label="1036" icon="icons/addons/kodi.png">
+		<widget name="favourites-all" label="1036" type="favourites" target="videos" source="favourites" icon="icons/addons/kodi.png">
+			<path>favourites://*</path>
+		</widget>
+		<!-- Custom Favourites (script.favourites): template fires on widgetType=customfavourites -->
+		<widget name="favourites-custom" label="31292" type="customfavourites" target="videos" source="favourites" icon="icons/addons/favourites.png" visible="System.HasAddon(script.favourites)">
+			<path>skinshortcuts-template-CustomFavouriteContent</path>
+		</widget>
+		<!-- Custom Favourite Addons: template fires on widgetType=customfavouritesaddon -->
+		<widget name="favourites-custom-addon" label="31294" type="customfavouritesaddon" target="videos" source="favourites" icon="icons/addons/favourites.png">
+			<path>skinshortcuts-template-CustomFavouriteAddonContent</path>
+		</widget>
+	</group>
+
+</widgets>

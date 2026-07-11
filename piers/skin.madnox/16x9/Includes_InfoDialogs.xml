@@ -2409,7 +2409,7 @@
 		</control>
 
 		<!-- ACTOR GALLERY CONTROLS -->
-		<control id="99" type="button">
+		<control id="100" type="button">
 			<onup>noop</onup>
 			<ondown>noop</ondown>
 			<onleft condition="!String.IsEmpty(Container(10054).ListItemNoWrap(-1).Label)">Control.Move(10054,-1)</onleft>

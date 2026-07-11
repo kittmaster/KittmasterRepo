@@ -531,16 +531,21 @@
 				<control type="image">
 					<texture border="30" colordiffuse="$VAR[PanelListSeparatorColorVar]">buttons/list-select-nofocus.png</texture>
 				</control>
+				<!-- Icon: visible only for known artwork types or items with real system icons.
+				     $VAR[] does not evaluate per-item inside <visible>, so we use direct
+				     String.IsEqual(ListItem.Label) conditions which ARE per-item. -->
 				<control type="image">
+					<visible>[String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<top>10</top>
 					<left>40</left>
 					<bottom>10</bottom>
 					<width>80</width>
 					<aspectratio>keep</aspectratio>
-					<texture background="true" fallback="DefaultFile.png" diffuse="diffuse/list-icon.png">$INFO[ListItem.Icon]</texture>
+					<texture background="true" diffuse="diffuse/list-icon.png">$VAR[SelectDialogIconVar]</texture>
 				</control>
+				<!-- Main label WITH icon: indent to left=140 -->
 				<control type="label">
-					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<visible>!String.IsEmpty(ListItem.Label2) + [String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<top>11</top>
 					<left>140</left>
 					<right>40</right>
@@ -549,15 +554,45 @@
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="label">
-					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<visible>String.IsEmpty(ListItem.Label2) + [String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<left>140</left>
 					<right>40</right>
 					<textcolor>$VAR[PanelTextColorVar]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
+				<!-- Main label WITHOUT icon: flush to left=40 -->
 				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Label2) + ![String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
+					<top>11</top>
+					<left>40</left>
+					<right>40</right>
+					<height>40</height>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<visible>String.IsEmpty(ListItem.Label2) + ![String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
+					<left>40</left>
+					<right>40</right>
+					<textcolor>$VAR[PanelTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<!-- Label2 WITH icon -->
+				<control type="label">
+					<visible>[String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<bottom>11</bottom>
 					<left>140</left>
+					<right>40</right>
+					<height>40</height>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+				<!-- Label2 WITHOUT icon -->
+				<control type="label">
+					<visible>![String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
+					<bottom>11</bottom>
+					<left>40</left>
 					<right>40</right>
 					<height>40</height>
 					<font>Font25_Cond</font>
@@ -570,16 +605,19 @@
 					<texture border="10" colordiffuse="$VAR[PanelHighlightColorVar]">buttons/list-select-focus.png</texture>
 					<animation effect="fade" start="100" end="30" time="40" condition="!Control.HasFocus($PARAM[id])">Conditional</animation>
 				</control>
+				<!-- Icon -->
 				<control type="image">
+					<visible>[String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<top>10</top>
 					<left>40</left>
 					<bottom>10</bottom>
 					<width>80</width>
 					<aspectratio>keep</aspectratio>
-					<texture background="true" fallback="DefaultFile.png" diffuse="diffuse/list-icon.png">$INFO[ListItem.Icon]</texture>
+					<texture background="true" diffuse="diffuse/list-icon.png">$VAR[SelectDialogIconVar]</texture>
 				</control>
+				<!-- Main label WITH icon: indent to left=140 -->
 				<control type="label">
-					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<visible>!String.IsEmpty(ListItem.Label2) + [String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<top>11</top>
 					<left>140</left>
 					<right>40</right>
@@ -588,16 +626,47 @@
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="label">
-					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<visible>String.IsEmpty(ListItem.Label2) + [String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<left>140</left>
 					<right>40</right>
 					<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
+				<!-- Main label WITHOUT icon: flush to left=40 -->
 				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Label2) + ![String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
+					<top>11</top>
+					<left>40</left>
+					<right>40</right>
+					<height>40</height>
+					<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<visible>String.IsEmpty(ListItem.Label2) + ![String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
+					<left>40</left>
+					<right>40</right>
+					<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<!-- Label2 WITH icon -->
+				<control type="label">
+					<visible>[String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
 					<animation effect="fade" end="70" condition="true">conditional</animation>
 					<bottom>11</bottom>
 					<left>140</left>
+					<right>40</right>
+					<height>40</height>
+					<font>Font25_Cond</font>
+					<textcolor>$VAR[PanelFocusTextColorVar]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+				<!-- Label2 WITHOUT icon -->
+				<control type="label">
+					<visible>![String.IsEqual(ListItem.Label,$LOCALIZE[31248]) | String.IsEqual(ListItem.Label,$LOCALIZE[31260]) | String.IsEqual(ListItem.Label,$LOCALIZE[31250]) | String.IsEqual(ListItem.Label,$LOCALIZE[31201]) | String.IsEqual(ListItem.Label,$LOCALIZE[20445]) | String.IsEqual(ListItem.Label,$LOCALIZE[39114]) | String.IsEqual(ListItem.Label,$LOCALIZE[31165]) | String.IsEqual(ListItem.Label,$LOCALIZE[31202]) | !String.IsEqual(ListItem.Icon,DefaultAddonNone.png)]</visible>
+					<animation effect="fade" end="70" condition="true">conditional</animation>
+					<bottom>11</bottom>
+					<left>40</left>
 					<right>40</right>
 					<height>40</height>
 					<font>Font25_Cond</font>
@@ -679,6 +748,7 @@
 				<label>$INFO[Container(6).NumItems,, $LOCALIZE[31001]]$INFO[Container(6).CurrentPage, - ]$INFO[Container(6).NumPages,/]</label>
 			</control>
 			<control type="scrollbar" id="60">
+				<left>859</left>
 				<onright condition="Control.IsVisible(3)">3</onright>
 				<onright condition="Control.IsVisible(6)">6</onright>
 				<include>DialogScrollBar</include>

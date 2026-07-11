@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import xml.etree.ElementTree as ET; ET.parse\\(r'C:\\\\Appz\\\\Kodi_Portables\\\\Piers\\\\portable_data\\\\addons\\\\skin.madnox\\\\shortcuts\\\\templates.xml'\\); print\\('OK'\\)\")",
+      "Bash(find \"C:\\\\Appz\\\\Kodi_Portables\\\\Piers\\\\portable_data\" -name \"*.properties\" -o -name \"*.DATA\" -o -name \"properties*\" 2>/dev/null | grep -i shortcut | head -20)",
+      "Bash(find \"C:\\\\Users\\\\Chris Bertrand\\\\AppData\\\\Roaming\\\\Kodi\" -name \"*.properties\" 2>/dev/null | head -10; find \"C:\\\\Appz\\\\Kodi_Portables\\\\Piers\\\\portable_data\" -name \"*.properties\" 2>/dev/null | head -10)",
+      "Bash(python3 -c \"import xml.etree.ElementTree as ET; ET.parse\\('/c/Appz/Kodi_Portables/Piers/portable_data/addons/skin.madnox/shortcuts/properties.xml'\\); print\\('OK'\\)\")",
+      "Bash(python -c \"import xml.etree.ElementTree as ET; ET.parse\\(r'C:\\\\Appz\\\\Kodi_Portables\\\\Piers\\\\portable_data\\\\addons\\\\skin.madnox\\\\shortcuts\\\\properties.xml'\\); print\\('OK'\\)\")",
+      "Bash(python -c \"import xml.etree.ElementTree as ET; ET.parse\\(r'C:\\\\Appz\\\\Kodi_Portables\\\\Piers\\\\portable_data\\\\addons\\\\skin.madnox\\\\shortcuts\\\\properties.xml'\\); print\\('properties OK'\\)\")",
+      "Bash(python -c \"import xml.etree.ElementTree as ET; ET.parse\\(r'C:\\\\Appz\\\\Kodi_Portables\\\\Piers\\\\portable_data\\\\addons\\\\skin.madnox\\\\shortcuts\\\\templates.xml'\\); print\\('templates OK'\\)\")",
+      "Bash(grep -i '\\\\$INFO\\\\|\\\\$VAR')",
+      "Bash(grep -rn 'SetFocus\\(16001$INFO\\\\|SetFocus\\(16001\\\\[$\\\\]INFO' /c/Appz/Kodi_Portables/Piers/portable_data/addons/skin.madnox/16x9/)",
+      "Bash(awk -F'[:\"]' '$3 ~ /[Mm]enu/ {print}')",
+      "Bash(grep -v \"//\\\\|<!--\")",
+      "Bash(awk '/^\t<include name=\"VerticalMenu\">/,/^\t<\\\\/include>/' \"/c/Appz/Kodi_Portables/Omega/portable_data/addons/skin.madnox/16x9/Includes_Home.xml\")",
+      "Bash(awk '/^\t<include name=\"VerticalMenu\">/,/^\t<\\\\/include>/' \"/c/Appz/Kodi_Portables/Piers/portable_data/addons/skin.madnox/16x9/Includes_Home.xml\")"
+    ]
+  }
+}

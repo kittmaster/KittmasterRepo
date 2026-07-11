@@ -1221,11 +1221,11 @@
 		<value condition="Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(background),playlist) | String.IsEqual(Container(9001).ListItem.Property(coverBackground),fanart)]">$INFO[Control.GetLabel(7004)]</value>
 		<value condition="Control.HasFocus(9001) + String.IsEqual(Container(9001).ListItem.Property(background),cover) + !String.IsEmpty(Container(9001).ListItem.Property(coverBackground))">$INFO[Container(9001).ListItem.Property(coverBackground)]</value>
 		<value condition="Control.HasFocus(9001) + String.IsEqual(Container(9001).ListItem.Property(background),cover)">thumbs/coverbackground.jpg</value>
-		<value condition="Control.HasFocus(9001) + !String.IsEmpty(Container(9001).ListItem.Property(background))">$INFO[Container(9001).ListItem.Property(background)]</value>
+		<value condition="Control.HasFocus(9001) + !String.IsEmpty(Container(9001).ListItem.Property(background))">$INFO[Container(9001).ListItem.Property(backgroundPath)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(background),playlist) | String.IsEqual(Container(9000).ListItem.Property(coverBackground),fanart)">$INFO[Control.GetLabel(7002)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(background),cover) + !String.IsEmpty(Container(9000).ListItem.Property(coverBackground))">$INFO[Container(9000).ListItem.Property(coverBackground)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(background),cover)">thumbs/coverbackground.jpg</value>
-		<value condition="!String.IsEmpty(Container(9000).ListItem.Property(background))">$INFO[Container(9000).ListItem.Property(background)]</value>
+		<value condition="!String.IsEmpty(Container(9000).ListItem.Property(background))">$INFO[Container(9000).ListItem.Property(backgroundPath)]</value>
 	</variable>
 
 	<variable name="VideoBackgroundVar">

@@ -1,0 +1,144 @@
+{
+  "menus": {
+    "mainmenu": {
+      "items": [
+        {
+          "name": "pictures",
+          "properties": {
+            "backgroundLabel": "Pictures",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg",
+            "backgroundType": "static",
+            "InfoLine": "systeminfo"
+          },
+          "position": 0
+        },
+        {
+          "name": "musicvideos",
+          "properties": {
+            "backgroundLabel": "Music videos",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg",
+            "backgroundType": "static"
+          },
+          "position": 1
+        },
+        {
+          "name": "music",
+          "properties": {
+            "backgroundLabel": "Music",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg",
+            "backgroundType": "static"
+          },
+          "position": 2
+        },
+        {
+          "name": "movies",
+          "properties": {
+            "background": "cover",
+            "backgroundLabel": "Cover: Recent Movies",
+            "backgroundPath": "special://skin/extras/playlists/recentmovies.xsp",
+            "backgroundType": "playlist",
+            "backgroundPlaylistType": "movies",
+            "InfoLine": "movies",
+            "widget.1": "movies-recentlyadded",
+            "widgetLabel.1": "Recently added",
+            "widgetType.1": "movies",
+            "widgetTarget.1": "videos",
+            "widgetSource.1": "library",
+            "widgetPath.1": "special://home/addons/resource.images.skin.madnox/resources/playlists/01movies/recentlyadded.xsp",
+            "widgetStyle.1": "medium",
+            "widgetLimit.1": "15",
+            "widgetArtwork.1": "portraiticon",
+            "widgetShowLabel.1": "hidden"
+          },
+          "position": 3
+        },
+        {
+          "name": "tvshows",
+          "properties": {
+            "background": "cover",
+            "backgroundLabel": "Cover: Recent Shows",
+            "backgroundPath": "special://skin/extras/playlists/recenttvshows.xsp",
+            "backgroundType": "playlist",
+            "backgroundPlaylistType": "tvshows",
+            "InfoLine": "tvshows",
+            "widget.1": "tvshows-recentlyadded",
+            "widgetLabel.1": "Recently added",
+            "widgetType.1": "tvshows",
+            "widgetTarget.1": "videos",
+            "widgetSource.1": "library",
+            "widgetPath.1": "special://home/addons/resource.images.skin.madnox/resources/playlists/03tvshows/recentlyadded.xsp",
+            "widgetStyle.1": "medium",
+            "widgetLimit.1": "15",
+            "widgetArtwork.1": "portraiticon",
+            "widgetShowLabel.1": "hidden"
+          },
+          "position": 4
+        },
+        {
+          "name": "tv",
+          "properties": {
+            "backgroundLabel": "Live TV",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg",
+            "backgroundType": "static"
+          },
+          "position": 5
+        },
+        {
+          "name": "radio",
+          "properties": {
+            "backgroundLabel": "Radio",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg",
+            "backgroundType": "static"
+          },
+          "position": 6
+        },
+        {
+          "name": "videos",
+          "properties": {
+            "backgroundLabel": "Videos",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg",
+            "backgroundType": "static"
+          },
+          "position": 7
+        },
+        {
+          "name": "games",
+          "properties": {
+            "backgroundLabel": "Games",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg",
+            "backgroundType": "static"
+          },
+          "position": 8
+        },
+        {
+          "name": "addons",
+          "properties": {
+            "backgroundLabel": "Add-ons",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg",
+            "backgroundType": "static"
+          },
+          "position": 9
+        },
+        {
+          "name": "system",
+          "properties": {
+            "backgroundLabel": "Settings",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg",
+            "backgroundType": "static"
+          },
+          "position": 10
+        },
+        {
+          "name": "weather",
+          "properties": {
+            "backgroundLabel": "Weather",
+            "backgroundPath": "special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg",
+            "backgroundType": "static",
+            "InfoLine": "weather"
+          },
+          "position": 11
+        }
+      ]
+    }
+  }
+}
