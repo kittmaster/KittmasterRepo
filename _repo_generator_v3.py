@@ -246,11 +246,14 @@ class Generator:
 
     def _generate_md5_file(self, addons_xml_path, md5_path):
         """ Generates a new addons.xml.md5 file. """
-        master_hash = self._calculate_file_hash(addons_xml_path)
-        if master_hash is not None:
-             self._save_file(master_hash, file=md5_path)
-             return True
-        return False
+        # Text mode collapses CRLF->LF to match the bytes git serves; raw-byte hashing breaks Kodi's checksum verify.
+        try:
+            with open(addons_xml_path, "r", encoding="utf-8") as f:
+                self._save_file(hashlib.md5(f.read().encode("utf-8")).hexdigest(), file=md5_path)
+            return True
+        except Exception as e:
+            print(f"An error occurred updating {color_text(md5_path, 'yellow')}: {color_text(str(e), 'red')}")
+            return False
 
     def _save_file(self, data, file):
         """ Saves a file. """
