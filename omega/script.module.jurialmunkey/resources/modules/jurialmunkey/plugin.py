@@ -8,20 +8,26 @@ class KodiPlugin():
         self._addon = KodiAddon(addon_id)
         self._addon_name = self._addon.getAddonInfo('name')
         self._addon_path = self._addon.getAddonInfo('path')
-        self._addon_getsettingroute = {
-            'bool': self._addon.getSettingBool,
-            'int': self._addon.getSettingInt,
-            'str': self._addon.getSettingString}
-        self._addon_setsettingroute = {
-            'bool': self._addon.setSettingBool,
-            'int': self._addon.setSettingInt,
-            'str': self._addon.setSettingString}
 
     def get_setting(self, setting, mode='bool'):
-        return self._addon_getsettingroute[mode](setting)
+        def get_func():
+            if mode == 'bool':
+                return self._addon.getSettingBool
+            if mode == 'int':
+                return self._addon.getSettingInt
+            if mode == 'str':
+                return self._addon.getSettingString
+        return get_func()(setting)
 
     def set_setting(self, setting, data, mode='bool'):
-        return self._addon_setsettingroute[mode](setting, data)
+        def set_func():
+            if mode == 'bool':
+                return self._addon.setSettingBool
+            if mode == 'int':
+                return self._addon.setSettingInt
+            if mode == 'str':
+                return self._addon.setSettingString
+        return set_func()(setting, data)
 
     def get_localized(self, localize_int=0):
         if localize_int < 30000 or localize_int >= 33000:
