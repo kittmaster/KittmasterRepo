@@ -156,6 +156,53 @@ v0.4.0 (2025-03-23)
 			<icon>icon.png</icon>
 		</assets>
 	</extension>
+</addon><addon id="script.module.certifi" name="certifi" version="2023.5.7" provider-name="Certifi">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Certifi: Python SSL Certificates</summary>
+    <description lang="en_GB">Certifi is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project.</description>
+    <license>MPL-2.0</license>
+    <website>https://github.com/certifi/python-certifi</website>
+    <source>https://github.com/certifi/python-certifi</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="script.module.chardet" name="chardet" version="5.1.0" provider-name="Character Encoding Detector">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The Universal Character Encoding Detector</summary>
+    <description lang="en_GB">The Universal Character Encoding Detector</description>
+    <license>LGPL-2.1</license>
+    <platform>all</platform>
+    <website>https://chardet.readthedocs.io/</website>
+    <source>https://github.com/chardet/chardet</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="script.module.idna" name="idna" version="3.10.0" provider-name="Kim Davies">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Internationalized Domain Names for Python</summary>
+    <description lang="en_GB">Internationalized Domain Names for Python</description>
+    <license>BSD-3-Clause</license>
+    <platform>all</platform>
+    <website>https://github.com/kjd/idna</website>
+    <source>https://github.com/kjd/idna</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
 </addon><addon id="script.module.infotagger" name="InfoTagger" provider-name="jurialmunkey" version="0.0.8">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
@@ -216,6 +263,22 @@ v0.4.0 (2025-03-23)
     <platform>all</platform>
     <website>https://requests.readthedocs.io/</website>
     <source>https://github.com/psf/requests</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="script.module.urllib3" name="urllib3" version="2.2.3" provider-name="urllib3">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">urllib3 is a powerful, user-friendly HTTP client for Python</summary>
+    <description lang="en_GB">urllib3 is a powerful, user-friendly HTTP client for Python. Much of the Python ecosystem already uses urllib3 and you should too. urllib3 brings many critical features that are missing from the Python standard libraries</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://urllib3.readthedocs.io/</website>
+    <source>https://github.com/urllib3/urllib3</source>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>
